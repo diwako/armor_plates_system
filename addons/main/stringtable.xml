@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="ACRE">
+    <Package name="sys_gestures">
+        <Key ID="STR_diw_armor_plates_main_category">
+            <English>TFAR Gestures</English>
+        </Key>
+    </Package>
+</Project>
