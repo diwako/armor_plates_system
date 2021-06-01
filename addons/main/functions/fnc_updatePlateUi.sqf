@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 params ["_player"];
-private _plates = _player getVariable [QGVAR(plates), []];
+private _plates = (vestContainer _player) getVariable [QGVAR(plates), []];
 private _plateCtrls = uiNamespace getVariable [QGVAR(plateControls), []];
 private _count = count _plates;
 

@@ -11,8 +11,8 @@
 #define REQUIRED_VERSION 2.04
 
 #ifdef COMPONENT_BEAUTIFIED
-    #define COMPONENT_NAME QUOTE(Diwako's COMPONENT_BEAUTIFIED)
+    #define COMPONENT_NAME QUOTE(Armor Plates Medical COMPONENT_BEAUTIFIED)
 #else
-    #define COMPONENT_NAME QUOTE(Diwako's COMPONENT)
+    #define COMPONENT_NAME QUOTE(Armor Plates Medical COMPONENT)
 #endif
 

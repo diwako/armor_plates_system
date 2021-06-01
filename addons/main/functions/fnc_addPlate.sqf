@@ -59,7 +59,7 @@ _ctrl ctrlCommit GVAR(timeToAddPlate);
         !([_player] call FUNC(canAddPlate))
         }}}) exitWith {};
 
-    private _plates = _player getVariable [QGVAR(plates), []];
+    private _plates = (vestContainer _player) getVariable [QGVAR(plates), []];
 
     if (_plates isNotEqualTo []) then {
         // get last plate, it might be already damaged
@@ -71,7 +71,7 @@ _ctrl ctrlCommit GVAR(timeToAddPlate);
         _plates pushBack GVAR(maxPlateHealth);
     };
     _player removeItem QGVAR(plate);
-    _player setVariable [QGVAR(plates), _plates];
+    (vestContainer _player) setVariable [QGVAR(plates), _plates];
     [_player] call FUNC(updatePlateUi);
 
     // add another plate

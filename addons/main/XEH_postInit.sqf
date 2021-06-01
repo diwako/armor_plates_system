@@ -94,12 +94,19 @@ ctrlDelete (uiNamespace getVariable [QGVAR(mainControl), controlNull]);
 ctrlDelete (uiNamespace getVariable [QGVAR(hpControl), controlNull]);
 
 player addEventHandler ["Respawn", {
-    player setVariable [QGVAR(plates), []];
+    // player setVariable [QGVAR(plates), []];
     player setVariable [QGVAR(hp), GVAR(maxUnitHP)];
+    player setVariable [QGVAR(vestContainer), vestContainer player];
     [player] call FUNC(updatePlateUi);
     [player] call FUNC(updateHPUi);
     player setCaptive false;
     [] call FUNC(addPlayerHoldActions);
+}];
+
+player addEventHandler ["Killed", {
+    params ["_unit"];
+    private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
+    _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
 }];
 
 [] call FUNC(addPlayerHoldActions);
@@ -108,10 +115,23 @@ player addEventHandler ["Respawn", {
     time > 1
 }, {
     [] call FUNC(initPlates);
+    player setVariable [QGVAR(vestContainer), vestContainer player];
+    ["cba_events_loadoutEvent",{
+        params ["_unit", "_oldLoadout"];
+        private _currentVestContainer = vestContainer _unit;
+        private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
+
+        if ((isNull _currentVestContainer && {!isNull _oldVestcontainer}) ||
+            (!isNull _currentVestContainer && {isNull _oldVestcontainer}) ||
+            (_currentVestContainer isNotEqualTo _oldVestcontainer)) then {
+            _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
+            _unit setVariable [QGVAR(vestContainer), _currentVestContainer];
+            [_unit] call FUNC(updatePlateUi);
+        };
+    }] call CBA_fnc_addEventHandler;
 }] call CBA_fnc_waitUntilAndExecute;
 
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
-
 [LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
     private _player = call CBA_fnc_currentUnit;
     if ((stance _player) == "PRONE" || {
@@ -129,5 +149,5 @@ player addEventHandler ["Respawn", {
 },
 [DIK_T, [false, false, false]], false] call CBA_fnc_addKeybind;
 
-// player setVariable [QGVAR(plates), [GVAR(maxPlateHealth),GVAR(maxPlateHealth),GVAR(maxPlateHealth)]];
+// (vestContainer player) setVariable [QGVAR(plates), [GVAR(maxPlateHealth),GVAR(maxPlateHealth),GVAR(maxPlateHealth)]];
 // player setVariable [QGVAR(hp), 20];

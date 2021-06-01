@@ -16,7 +16,7 @@ switch (_bodyPart) do {
 _damage = _damage * GVAR(damageCoef);
 systemChat format ["%1 DMG: %2 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo];
 
-private _plates = _unit getVariable [QGVAR(plates), []];
+private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
 if (_plates isNotEqualTo []) then {
     for "_i" from ((count _plates) - 1) to 0 step -1 do {
         private _plateIntegrity = _plates select _i;

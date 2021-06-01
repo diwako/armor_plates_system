@@ -2,7 +2,7 @@
 params ["_player"];
 if ((vest _player) isEqualTo "") exitWith {false};
 
-private _plates = _player getVariable [QGVAR(plates), []];
+private _plates = (vestContainer _player) getVariable [QGVAR(plates), []];
 if ((count _plates) >= GVAR(numWearablePlates)) exitWith {false};
 
 private _items = (getItemCargo uniformContainer _player) select 0;
