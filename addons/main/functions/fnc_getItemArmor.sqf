@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: Pterolatypus
  * Returns the armor value the given item provides to a particular hitpoint, either from a cache or by reading the item config.
@@ -14,7 +15,6 @@
  *
  * Public: No
  */
-#define TYPE_UNIFORM 801
 params ["_item", "_hitpoint"];
 
 private _key = format ["%1$%2", _item, _hitpoint];

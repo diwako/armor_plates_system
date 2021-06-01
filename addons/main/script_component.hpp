@@ -1,4 +1,5 @@
 #define COMPONENT main
+#define COMPONENT_BEAUTIFIED Main
 #include "\z\diw_armor_plates\addons\main\script_mod.hpp"
 
 // #define DEBUG_MODE_FULL
@@ -12,3 +13,6 @@
 #endif
 
 #include "\z\diw_armor_plates\addons\main\script_macros.hpp"
+
+#define TYPE_UNIFORM 801
+#define HEIGHTMOD_HPBARS 0.5

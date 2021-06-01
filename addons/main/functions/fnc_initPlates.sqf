@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 private _staminaDisplay = uiNamespace getVariable [QGVAR(mainDisplay), displayNull];
 if (isNull _staminaDisplay) then {
     private _guiDisplay = uiNamespace getVariable ["IGUI_displays", []];
@@ -8,7 +9,7 @@ if (isNull _staminaDisplay) then {
     };
 };
 
-if (isNull _staminaDisplay)exitWith {
+if (isNull _staminaDisplay) exitWith {
     systemChat "Could not find stamina bar display...";
 };
 
@@ -32,15 +33,13 @@ if (isNull _ctrlGroup) then {
     _ctrlGroup ctrlCommit 0;
 };
 
-#define HEIGHTMOD 0.5
-
 private _plateCtrls = uiNamespace getVariable [QGVAR(plateControls), []];
 private _count = count _plateCtrls;
 if (_count isNotEqualTo GVAR(numWearablePlates)) then {
     private _width = GVAR(fullWidth) / GVAR(numWearablePlates);
     private _innerWidth = _width * 0.9;
     private _padding = (_width - _innerWidth) / 2;
-    private _height = (GVAR(fullHeight) / 2) * HEIGHTMOD;
+    private _height = (GVAR(fullHeight) / 2) * HEIGHTMOD_HPBARS;
     GVAR(innerWidth) = _innerWidth;
     if (_count < GVAR(numWearablePlates)) then {
         for "_i" from _count to (GVAR(numWearablePlates) - 1) do {
@@ -66,7 +65,7 @@ if (_count isNotEqualTo GVAR(numWearablePlates)) then {
 private _hpBar = uiNamespace getVariable [QGVAR(hpControl), controlNull];
 if (isNull _hpBar) then {
     private _ctrl = _staminaDisplay ctrlCreate ["RscText", -1, _ctrlGroup];
-    _ctrl ctrlSetPosition [0, GVAR(fullHeight) / 2, GVAR(fullWidth), (GVAR(fullHeight) / 2) * HEIGHTMOD];
+    _ctrl ctrlSetPosition [0, GVAR(fullHeight) / 2, GVAR(fullWidth), (GVAR(fullHeight) / 2) * HEIGHTMOD_HPBARS];
     _ctrl ctrlSetTextColor [1, 1, 1, 0];
     _ctrl ctrlSetBackgroundColor [1, 1, 1, 1];
     _ctrl ctrlSetText "hp";

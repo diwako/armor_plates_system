@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_unit", "_damage", "_bodyPart", "_instigator"];
 if (_damage <= 0 || {!alive _unit}) exitWith {};
 

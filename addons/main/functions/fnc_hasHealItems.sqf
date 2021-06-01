@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_unit"];
 
 private _items = (getItemCargo uniformContainer _unit) select 0;

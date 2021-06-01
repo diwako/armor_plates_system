@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
  * Author: Pterolatypus
  * Checks a unit's equipment to calculate the total armor on a hitpoint.
@@ -30,7 +31,7 @@ private _gear = [
 ];
 
 private _rags = _gear joinString "$";
-private _var = format ["GVAR(armorCache)$%1", _hitpoint];
+private _var = format ["QGVAR(armorCache$%1)", _hitpoint];
 _unit getVariable [_var, [""]] params ["_prevRags", "_armor"];
 
 if (_rags != _prevRags) then {

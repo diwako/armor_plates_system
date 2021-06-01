@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_unit"];
 if (GVAR(enableHpRegen)) then {
     if (!GVAR(enableHpRegenForAI) && {!isPlayer _unit}) exitWith {};

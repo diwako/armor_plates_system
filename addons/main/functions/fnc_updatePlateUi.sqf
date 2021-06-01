@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_player"];
 private _plates = _player getVariable [QGVAR(plates), []];
 private _plateCtrls = uiNamespace getVariable [QGVAR(plateControls), []];

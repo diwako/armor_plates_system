@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_player"];
 private _newPH = _player getVariable [QGVAR(hp), GVAR(maxUnitHP)];
 private _hpBar = uiNamespace getVariable [QGVAR(hpControl), controlNull];

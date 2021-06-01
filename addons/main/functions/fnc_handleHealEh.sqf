@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_unit", "_healer"];
 
 AISFinishHeal [_unit, _healer, true];

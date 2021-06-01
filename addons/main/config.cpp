@@ -5,8 +5,8 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"tfar_core"};
-        author = "ACRE2 Dev Team";
+        requiredAddons[] = {"cba_main"};
+        author = "diwako";
         url = "";
         authorUrl = "";
         VERSION_CONFIG;
@@ -14,5 +14,3 @@ class CfgPatches {
 };
 
 #include "CfgEventHandlers.hpp"
-#include "CfgMovesBasic.hpp"
-#include "CfgGesturesMale.hpp"

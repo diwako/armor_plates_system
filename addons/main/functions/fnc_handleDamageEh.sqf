@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 if !(local _unit) exitWith {nil};
 
@@ -27,7 +28,6 @@ if (
     {_damage isEqualTo (_curDamage + 0.005)}
 ) exitWith {
     [_unit, _newDamage, "body", _unit] call FUNC(receiveDamage);
-
     0
 };
 if (_newDamage < 0.05) exitWith {_curDamage};
@@ -42,7 +42,6 @@ if (
     {vectorMagnitude (velocity _vehicle) > 5}
 ) exitWith {
     [_unit, _newDamage, "body", _unit] call FUNC(receiveDamage);
-
     0
 };
 
@@ -55,5 +54,4 @@ private _var = format ["GVAR(lastHandleDamage)$%1", _hitPoint];
 if ((_unit getVariable [_var, -1]) isEqualTo _realDamage) exitWith {_curDamage};
 _unit setVariable [_var, _realDamage];
 [_unit, _realDamage, _hitPoint, _instigator] call FUNC(receiveDamage);
-
 0
