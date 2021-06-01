@@ -55,6 +55,7 @@ if (_newHP isEqualTo 0) exitWith {
         if !((lifeState _unit) == "INCAPACITATED") then {
             _unit setUnconscious true;
             _unit setCaptive true;
+            _unit setVariable [QGVAR(unconscious), true, true];
         };
         _unit setDamage 0.95;
     } else {

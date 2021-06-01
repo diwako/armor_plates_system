@@ -14,12 +14,8 @@ if (isNull _staminaDisplay) exitWith {
 };
 
 private _ctrlGroup = uiNamespace getVariable [QGVAR(mainControl), controlNull];
-GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
-GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+
 if (isNull _ctrlGroup) then {
-    // uiNamespace setVariable [QGVAR(display), _staminaDisplay];
-    // private _ctrlGroup = _staminaDisplay ctrlCreate ["RscText", 65481];
-    // private _ctrl = _staminaDisplay ctrlCreate ["RscControlsGroup", 65481];
     _ctrlGroup = _staminaDisplay ctrlCreate ["RscControlsGroupNoScrollbars", 65481];
     uiNamespace setVariable [QGVAR(mainControl), _ctrlGroup];
 

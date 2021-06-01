@@ -10,3 +10,6 @@ PREP(addPlayerHoldActions);
 PREP(getHitpointArmor);
 PREP(getItemArmor);
 PREP(startHpRegen);
+PREP(canAddPlate);
+PREP(addPlate);
+PREP(canPressKey);

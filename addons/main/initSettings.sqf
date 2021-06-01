@@ -1,5 +1,5 @@
-private _header = "Armor Plate System";
-private _category = [_header, "Armor Plates"];
+private _header = LLSTRING(category);
+private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 
 [
     QGVAR(numWearablePlates),
@@ -34,14 +34,23 @@ private _category = [_header, "Armor Plates"];
     }
 ] call CBA_fnc_addSetting;
 
-_category = [_header, "Health"];
+[
+    QGVAR(timeToAddPlate),
+    "SLIDER",
+    ["Time to add one plate", "How long does it take to add one plate to the vest in seconds"],
+    _category,
+    [0, 30, 5, 1],
+    true
+] call CBA_fnc_addSetting;
+
+_category = [_header, LLSTRING(subCategoryHealth)];
 
 [
     QGVAR(maxUnitHP),
     "SLIDER",
     ["Max Unit HP", "How much HP does a unit have"],
     _category,
-    [1, 500, 100, 0],
+    [1, 1000, 100, 0],
     true,
     {
         params ["_value"];
@@ -95,7 +104,7 @@ _category = [_header, "Health"];
 ] call CBA_fnc_addSetting;
 
 
-_category = [_header, "General"];
+_category = [_header, LLSTRING(subCategoryGeneral)];
 
 [
     QGVAR(damageEhVariant),

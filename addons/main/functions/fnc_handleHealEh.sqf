@@ -25,6 +25,6 @@ if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
 if (_unconcious) then {
     _unit setUnconscious false;
     _unit setCaptive false;
+    _unit setVariable [QGVAR(unconscious), false, true];
+    [_unit] call FUNC(startHpRegen);
 };
-
-[_unit] call FUNC(startHpRegen);

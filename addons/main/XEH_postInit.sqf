@@ -78,11 +78,18 @@ if (is3DEN) exitWith {};
 
 if !(hasInterface) exitWith {};
 
+GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
+GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+
 {
     ctrlDelete (_x select 0);
     ctrlDelete (_x select 1);
 } forEach (uiNamespace getVariable [QGVAR(plateControls), []]);
 uiNamespace setVariable [QGVAR(plateControls), []];
+
+{
+    ctrlDelete _x;
+} forEach (uiNamespace getVariable [QGVAR(plateProgressBar), []]);
 ctrlDelete (uiNamespace getVariable [QGVAR(mainControl), controlNull]);
 ctrlDelete (uiNamespace getVariable [QGVAR(hpControl), controlNull]);
 
@@ -103,5 +110,24 @@ player addEventHandler ["Respawn", {
     [] call FUNC(initPlates);
 }] call CBA_fnc_waitUntilAndExecute;
 
-player setVariable [QGVAR(plates), [GVAR(maxPlateHealth),GVAR(maxPlateHealth),GVAR(maxPlateHealth)]];
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
+
+[LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
+    private _player = call CBA_fnc_currentUnit;
+    if ((stance _player) == "PRONE" || {
+        !([_player] call FUNC(canPressKey)) || {
+        !([_player] call FUNC(canAddPlate))}}) exitWith {false};
+
+    GVAR(addPlateKeyUp) = false;
+    [_player] call FUNC(addPlate);
+
+    true
+},
+{
+    GVAR(addPlateKeyUp) = true;
+    false
+},
+[DIK_T, [false, false, false]], false] call CBA_fnc_addKeybind;
+
+// player setVariable [QGVAR(plates), [GVAR(maxPlateHealth),GVAR(maxPlateHealth),GVAR(maxPlateHealth)]];
 // player setVariable [QGVAR(hp), 20];

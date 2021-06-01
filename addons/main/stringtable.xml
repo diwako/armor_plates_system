@@ -2,7 +2,28 @@
 <Project name="ACRE">
     <Package name="sys_gestures">
         <Key ID="STR_diw_armor_plates_main_category">
-            <English>TFAR Gestures</English>
+            <English>Armor Plate System</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
+            <English>Armor Plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
+            <English>Health</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
+            <English>General</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateItem">
+            <English>Ceramic plate</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Short">
+            <English>Ceramic plate used to protect the body from kinetic impacts</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Use">
+            <English>Standard ceramic armor plating, just zip your vest open and push that fucker in ;)</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
+            <English>Add plate into vest</English>
         </Key>
     </Package>
 </Project>
