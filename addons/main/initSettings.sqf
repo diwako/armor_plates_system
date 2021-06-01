@@ -7,7 +7,18 @@ private _category = [_header, "Armor Plates"];
     ["Amount of plates wearable", "How many plates can you fit into your vest to give you protection"],
     _category,
     [0, 5, 3, 0],
-    true
+    true,
+    {
+        params ["_value"];
+        GVAR(numWearablePlates) = round _value;
+        if (time < 1) exitWith {};
+        {
+            ctrlDelete (_x select 0);
+            ctrlDelete (_x select 1);
+        } forEach (uiNamespace getVariable [QGVAR(plateControls), []]);
+        uiNamespace setVariable [QGVAR(plateControls), []];
+        [] call FUNC(initPlates);
+    }
 ] call CBA_fnc_addSetting;
 
 [
@@ -16,7 +27,11 @@ private _category = [_header, "Armor Plates"];
     ["Armor Plate HP", "Max HP of an armor plate"],
     _category,
     [1, 200, 50, 0],
-    true
+    true,
+    {
+        params ["_value"];
+        GVAR(maxPlateHealth) = round _value;
+    }
 ] call CBA_fnc_addSetting;
 
 _category = [_header, "Health"];
@@ -27,7 +42,11 @@ _category = [_header, "Health"];
     ["Max Unit HP", "How much HP does a unit have"],
     _category,
     [1, 500, 100, 0],
-    true
+    true,
+    {
+        params ["_value"];
+        GVAR(maxUnitHP) = round _value;
+    }
 ] call CBA_fnc_addSetting;
 
 [

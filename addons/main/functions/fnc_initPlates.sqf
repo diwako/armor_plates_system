@@ -49,7 +49,7 @@ if (_count isNotEqualTo GVAR(numWearablePlates)) then {
             _ctrlBack ctrlSetBackgroundColor [0, 0, 0, 0.33];
             _ctrlBack ctrlCommit 0;
             private _ctrl = _staminaDisplay ctrlCreate ["RscText", -1, _ctrlGroup];
-            _ctrl ctrlSetPosition [_padding + _width * _i, 0, _innerWidth, _height];
+            _ctrl ctrlSetPosition [_padding + _width * _i, 0, 0, _height];
             _ctrl ctrlSetTextColor [1, 1, 1, 0];
             _ctrl ctrlSetBackgroundColor [0.25, 0.25, 1, 1];
             _ctrl ctrlCommit 0;

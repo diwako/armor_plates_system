@@ -11,7 +11,7 @@ if (is3DEN) exitWith {};
 
     private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
         // condition show
-        "alive _target && {(lifeState _target) == 'INCAPACITATED' && {_this getUnitTrait 'Medic' && {(_target distance _this) < 4 && {[_this] call FUNC(hasHealItems) > 0}}}}",
+        format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {_this getUnitTrait 'Medic' && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)],
         // condition progress
         "alive _target && {(lifeState _target) == 'INCAPACITATED'}", {
         // code start
@@ -45,7 +45,7 @@ if (is3DEN) exitWith {};
 
     _arr call BIS_fnc_holdActionAdd;
     private _arr2 = +_arr;
-    _arr2 set [4, "alive _target && {(lifeState _target) == 'INCAPACITATED' && {!(_this getUnitTrait 'Medic') && {(_target distance _this) < 4 && {[_this] call FUNC(hasHealItems) > 0}}}}"];
+    _arr2 set [4, format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {!(_this getUnitTrait 'Medic') && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)]];
     _arr2 set [11, GVAR(noneMedicReviveTime)];
     _arr2 call BIS_fnc_holdActionAdd;
 
