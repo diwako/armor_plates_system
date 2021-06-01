@@ -6,6 +6,4 @@ ADDON = false;
 
 GVAR(armorCache) = false call CBA_fnc_createNamespace;
 
-if (hasInterface) then {};
-
 ADDON = true;

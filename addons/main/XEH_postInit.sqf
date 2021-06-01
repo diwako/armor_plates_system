@@ -2,6 +2,22 @@
 
 if (is3DEN) exitWith {};
 
+if (hasInterface) then {
+    {
+        ctrlDelete (_x select 0);
+        ctrlDelete (_x select 1);
+    } forEach (uiNamespace getVariable [QGVAR(plateControls), []]);
+    uiNamespace setVariable [QGVAR(plateControls), []];
+
+    {
+        ctrlDelete _x;
+    } forEach (uiNamespace getVariable [QGVAR(plateProgressBar), []]);
+    ctrlDelete (uiNamespace getVariable [QGVAR(mainControl), controlNull]);
+    ctrlDelete (uiNamespace getVariable [QGVAR(hpControl), controlNull]);
+};
+
+if (!GVAR(enable)) exitWith {};
+
 ["CAManBase", "Hit", {
     _this call FUNC(hitEh);
 }, true, [], true] call CBA_fnc_addClassEventHandler;
@@ -81,18 +97,6 @@ if !(hasInterface) exitWith {};
 GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
 GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 
-{
-    ctrlDelete (_x select 0);
-    ctrlDelete (_x select 1);
-} forEach (uiNamespace getVariable [QGVAR(plateControls), []]);
-uiNamespace setVariable [QGVAR(plateControls), []];
-
-{
-    ctrlDelete _x;
-} forEach (uiNamespace getVariable [QGVAR(plateProgressBar), []]);
-ctrlDelete (uiNamespace getVariable [QGVAR(mainControl), controlNull]);
-ctrlDelete (uiNamespace getVariable [QGVAR(hpControl), controlNull]);
-
 player addEventHandler ["Respawn", {
     // player setVariable [QGVAR(plates), []];
     player setVariable [QGVAR(hp), GVAR(maxUnitHP)];
@@ -142,8 +146,7 @@ player addEventHandler ["Killed", {
     [_player] call FUNC(addPlate);
 
     true
-},
-{
+}, {
     GVAR(addPlateKeyUp) = true;
     false
 },

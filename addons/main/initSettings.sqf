@@ -107,6 +107,17 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 _category = [_header, LLSTRING(subCategoryGeneral)];
 
 [
+    QGVAR(enable),
+    "CHECKBOX",
+    ["Enable the whole system", "Enables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!"],
+    _category,
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(damageEhVariant),
     "LIST",
     ["Damage EH", "Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!"],
