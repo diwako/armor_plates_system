@@ -46,15 +46,28 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 _category = [_header, LLSTRING(subCategoryHealth)];
 
 [
-    QGVAR(maxUnitHP),
+    QGVAR(maxPlayerHP),
     "SLIDER",
-    ["Max Unit HP", "How much HP does a unit have"],
+    ["Max Player HP", "How much HP does a player have"],
     _category,
     [1, 1000, 100, 0],
     true,
     {
         params ["_value"];
-        GVAR(maxUnitHP) = round _value;
+        GVAR(maxPlayerHP) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(maxAiHP),
+    "SLIDER",
+    ["Max AI HP", "How much HP does an AI have"],
+    _category,
+    [1, 1000, 100, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(maxAiHP) = round _value;
     }
 ] call CBA_fnc_addSetting;
 
@@ -163,6 +176,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(disallowFriendfire),
+    "CHECKBOX",
+    ["Disallow friendly fire", "Do not allow friendly from weapon fire"],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(medicReviveTime),
     "SLIDER",
     ["Medic revive time", "How long does it take to revive someone as a medic in seconds"],
@@ -178,4 +200,24 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     _category,
     [1, 60, 10, 1],
     true
+] call CBA_fnc_addSetting;
+
+_category = [_header, LLSTRING(subCategoryFeedback)];
+
+[
+    QGVAR(showDamageMarker),
+    "CHECKBOX",
+    ["Show damage markers", "Shows damage marker and direction of inconing damage"],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(downedFeedback),
+    "CHECKBOX",
+    ["Use downed feedback", "Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed."],
+    _category,
+    true,
+    false
 ] call CBA_fnc_addSetting;

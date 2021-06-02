@@ -1,9 +1,11 @@
 #include "script_component.hpp"
 params ["_player"];
-private _newPH = _player getVariable [QGVAR(hp), GVAR(maxUnitHP)];
+
+private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _player);
+private _newPH = _player getVariable [QGVAR(hp), _maxHp];
 private _hpBar = uiNamespace getVariable [QGVAR(hpControl), controlNull];
 private _pos = ctrlPosition _hpBar;
-private _diff = _newPH / GVAR(maxUnitHP);
+private _diff = _newPH / _maxHp;
 
 private _color = call {
     if (_diff < GVAR(maxHealRifleman) && {_diff > (GVAR(maxHealRifleman)/2)}) exitWith {

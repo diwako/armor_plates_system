@@ -1,10 +1,9 @@
 #include "script_component.hpp"
 params ["_player"];
 
-// GVAR(timeToAddPlate)
 private _display = findDisplay 46;
 if (isNull _display) exitWith {
-    systemChat "Could not find display, weird huh?";
+    ERROR("Could not find display, weird huh?");
 };
 
 private _height = GVAR(fullHeight)*2;
@@ -24,7 +23,7 @@ private _forGroundCtrl = _display ctrlCreate ["RscStructuredText", -1];
 _forGroundCtrl ctrlSetPosition [0, 0.5, 1, _height];
 _forGroundCtrl ctrlSetBackgroundColor [0,0,0,0];
 _forGroundCtrl ctrlSetTextColor [1,1,1,1];
-_forGroundCtrl ctrlSetStructuredText parseText "<t align='center' valign='middle' shadow='2 shadowColor='#000000' color='#ffffff'>Adding ceramic plate to vest</t>";
+_forGroundCtrl ctrlSetStructuredText parseText "<t align='center' valign='middle' shadow='2' shadowColor='#000000' color='#ffffff'>Adding ceramic plate to vest</t>";
 _forGroundCtrl ctrlCommit 0;
 
 uiNamespace setVariable [QGVAR(plateProgressBar), [_ctrl, _backCtrl, _forGroundCtrl]];

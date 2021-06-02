@@ -13,6 +13,9 @@
         <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
             <English>General</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryFeedback">
+            <English>Feedback</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_plateItem">
             <English>Ceramic plate</English>
         </Key>

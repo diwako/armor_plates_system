@@ -10,10 +10,11 @@ if (GVAR(enableHpRegen)) then {
         sleep 5;
 
         // Regenerate HP
-        while {(_unit getVariable [QGVAR(hp), GVAR(maxUnitHP)]) < GVAR(maxUnitHP) && {(lifeState _unit) != "INCAPACITATED"}} do {
-            private _newHp = (_unit getVariable [QGVAR(hp), GVAR(maxUnitHP)]) + (GVAR(hpRegenRate) * 0.1);
-            _unit setVariable [QGVAR(hp), _newHp min GVAR(maxUnitHP)];
-            _unit setDamage ((1 - (_newHp / GVAR(maxUnitHP))) min 0.45);
+        private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
+        while {(_unit getVariable [QGVAR(hp), _maxHp]) < _maxHp && {(lifeState _unit) != "INCAPACITATED"}} do {
+            private _newHp = (_unit getVariable [QGVAR(hp), _maxHp]) + (GVAR(hpRegenRate) * 0.1);
+            _unit setVariable [QGVAR(hp), _newHp min _maxHp];
+            _unit setDamage ((1 - (_newHp / _maxHp)) min 0.45);
 
             if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
                 [_unit] call FUNC(updateHPUi);

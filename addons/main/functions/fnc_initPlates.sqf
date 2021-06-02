@@ -10,7 +10,7 @@ if (isNull _staminaDisplay) then {
 };
 
 if (isNull _staminaDisplay) exitWith {
-    systemChat "Could not find stamina bar display...";
+    ERROR("Could not find stamina bar display...");
 };
 
 private _ctrlGroup = uiNamespace getVariable [QGVAR(mainControl), controlNull];
@@ -52,8 +52,7 @@ if (_count isNotEqualTo GVAR(numWearablePlates)) then {
             _plateCtrls pushBack [_ctrl, _ctrlBack];
         };
     } else {
-        // todo
-        systemChat "huh, this should not happen!";
+        ERROR("Armor plate UI elements can only be added by this function, did you call this by hand? Make sure to delete and clear the plate controls first!");
     };
     uiNamespace setVariable [QGVAR(plateControls), _plateCtrls];
 };

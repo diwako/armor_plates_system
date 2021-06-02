@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_unit", "", "_damage", "", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
+params ["_unit", "", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 // params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 if !(local _unit) exitWith {nil};
 
@@ -11,9 +11,7 @@ if (_hitPoint isEqualTo "") then {
     _curDamage = _unit getHitIndex _hitIndex;
 };
 
-if (GVAR(damageEhVariant) isNotEqualTo 1) exitWith {_curDamage};
-if !(isDamageAllowed _unit && {_unit getVariable ["ace_medical_allowDamage", true]}) exitWith {_curDamage};
-if (_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"]) exitWith {_curDamage};
+if (GVAR(damageEhVariant) isNotEqualTo 1 || {!(isDamageAllowed _unit) || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"]}}) exitWith {_curDamage};
 
 private _newDamage = _damage - _curDamage;
 if (_newDamage isEqualTo 0) exitWith {
@@ -30,7 +28,6 @@ if (
     [_unit, _newDamage, "body", _unit] call FUNC(receiveDamage);
     0
 };
-if (_newDamage < 0.05) exitWith {_curDamage};
 
 // Crashing a vehicle doesn't fire the EH for each hitpoint
 // It does fire the EH multiple times, but this seems to scale with the intensity of the crash
@@ -38,12 +35,27 @@ private _vehicle = vehicle _unit;
 if (
     _hitPoint isEqualTo "#structural" &&
     {_projectile isEqualTo ""} &&
-    {_vehicle != _unit} &&
+    {_vehicle isNotEqualTo _unit} &&
     {vectorMagnitude (velocity _vehicle) > 5}
 ) exitWith {
-    [_unit, _newDamage, "body", _unit] call FUNC(receiveDamage);
+    [_unit, _newDamage / 2, "vehicle", _unit] call FUNC(receiveDamage);
     0
 };
+
+if (
+    _hitPoint isEqualTo "incapacitated" &&
+    {_projectile isEqualTo ""} &&
+    {vectorMagnitude (velocity _unit) > 5}
+) exitWith {
+    [_unit, _newDamage * 2, "falldamage", _unit] call FUNC(receiveDamage);
+    0
+};
+
+if (_projectile isEqualTo "" && {isNull _source}) exitWith {
+    systemChat format ["DID NOT PASS DAMAGE: %1 | %2 | %3 | %4", _hitPoint, _projectile, _newDamage, _source];
+    _curDamage
+};
+
 
 // handle rest of damage
 private _armor = [_unit, _hitpoint] call FUNC(getHitpointArmor);
@@ -53,5 +65,5 @@ _hitPoint = [_hitPoint, "hit", ""] call CBA_fnc_replace;
 private _var = format ["GVAR(lastHandleDamage)$%1", _hitPoint];
 if ((_unit getVariable [_var, -1]) isEqualTo _realDamage) exitWith {_curDamage};
 _unit setVariable [_var, _realDamage];
-[_unit, _realDamage, _hitPoint, _instigator] call FUNC(receiveDamage);
+[_unit, _realDamage, _hitPoint, [_instigator, _source] select (isNull _instigator)] call FUNC(receiveDamage);
 0

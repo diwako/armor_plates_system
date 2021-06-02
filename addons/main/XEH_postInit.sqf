@@ -14,9 +14,19 @@ if (hasInterface) then {
     } forEach (uiNamespace getVariable [QGVAR(plateProgressBar), []]);
     ctrlDelete (uiNamespace getVariable [QGVAR(mainControl), controlNull]);
     ctrlDelete (uiNamespace getVariable [QGVAR(hpControl), controlNull]);
+
+    {
+        ctrlDelete _x;
+    } forEach (uiNamespace getVariable [QGVAR(feedBackCtrl), []]);
+    uiNamespace setVariable [QGVAR(feedBackCtrl), []]
 };
 
-if (!GVAR(enable)) exitWith {};
+if (isClass(configFile >> "CfgPatches" >> "ace_medical")) exitWith {
+    INFO("PostInit: Disabled --> ACE medical loaded");
+};
+if (!GVAR(enable)) exitWith {
+    INFO("Disabled --> CBA settings");
+};
 
 ["CAManBase", "Hit", {
     _this call FUNC(hitEh);
@@ -92,14 +102,30 @@ if (!GVAR(enable)) exitWith {};
     _unit switchMove _anim;
 }] call CBA_fnc_addEventHandler;
 
-if !(hasInterface) exitWith {};
+[QGVAR(downedMessage), {
+    if !(GVAR(downedFeedback)) exitWith {};
+    params ["_unit"];
+    private _player = call CBA_fnc_currentUnit;
+    if (_unit in (units _player)) then {
+        systemChat format [selectRandom [
+            "%1 just went down!",
+            "%1 just hit the dirt!",
+            "Heads up, %1 just keeled over!"
+        ], name _unit];
+        playSound "3DEN_notificationWarning";
+    };
+}] call CBA_fnc_addEventHandler;
+
+if !(hasInterface) exitWith {
+    INFO("Dedicated server / Headless client post init done");
+};
 
 GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
 GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 
 player addEventHandler ["Respawn", {
     // player setVariable [QGVAR(plates), []];
-    player setVariable [QGVAR(hp), GVAR(maxUnitHP)];
+    player setVariable [QGVAR(hp), GVAR(maxPlayerHP)];
     player setVariable [QGVAR(vestContainer), vestContainer player];
     [player] call FUNC(updatePlateUi);
     [player] call FUNC(updateHPUi);
@@ -133,6 +159,7 @@ player addEventHandler ["Killed", {
             [_unit] call FUNC(updatePlateUi);
         };
     }] call CBA_fnc_addEventHandler;
+    INFO("UI elements initialized");
 }] call CBA_fnc_waitUntilAndExecute;
 
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
@@ -151,6 +178,8 @@ player addEventHandler ["Killed", {
     false
 },
 [DIK_T, [false, false, false]], false] call CBA_fnc_addKeybind;
+
+INFO("Client post init done");
 
 // (vestContainer player) setVariable [QGVAR(plates), [GVAR(maxPlateHealth),GVAR(maxPlateHealth),GVAR(maxPlateHealth)]];
 // player setVariable [QGVAR(hp), 20];

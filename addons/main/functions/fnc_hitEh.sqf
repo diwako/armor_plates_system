@@ -1,7 +1,19 @@
 #include "script_component.hpp"
-// params ["_unit", "_source", "_damage", ["_instigator", objNull]];
-params ["_unit", "", "_damage", ["_instigator", objNull]];
+params ["_unit", "_source", "_damage", "_instigator"];
 
-if (!(local _unit) || {GVAR(damageEhVariant) isNotEqualTo 0}) exitWith {};
+if (!(local _unit) || {GVAR(damageEhVariant) isNotEqualTo 0 || {!(isDamageAllowed _unit)}}) exitWith {};
 
-[_unit, _damage, "body", _instigator] call FUNC(receiveDamage);
+if (isNull _instigator) exitWith {
+    private _vehicle = vehicle _unit;
+    if (_vehicle isNotEqualTo _unit &&
+        {vectorMagnitude (velocity _vehicle) > 5}
+    ) exitWith {
+        [_unit, _damage, "vehicle", _unit] call FUNC(receiveDamage);
+    };
+
+    if (vectorMagnitude (velocity _unit) > 5) exitWith {
+        [_unit, _damage * 50, "falldamage", _unit] call FUNC(receiveDamage);
+    };
+};
+
+[_unit, _damage, "body", [_instigator, _source] select (isNull _instigator)] call FUNC(receiveDamage);
