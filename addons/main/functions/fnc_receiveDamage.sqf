@@ -1,5 +1,6 @@
 #include "script_component.hpp"
-params ["_unit", "_damage", "_bodyPart", "_instigator"];
+// params ["_unit", "_damage", "_bodyPart", "_instigator"];
+params ["_unit", "_damage", "_bodyPart", ""];
 if (_damage <= 0 || {!alive _unit}) exitWith {};
 
 switch (_bodyPart) do {

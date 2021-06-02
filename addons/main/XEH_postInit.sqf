@@ -78,7 +78,7 @@ if (!GVAR(enable)) exitWith {};
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 ["unit", {
-    params ["_newUnit", "_oldUnit"];
+    params ["_newUnit"];
     [_newUnit] call FUNC(updatePlateUi);
     [_newUnit] call FUNC(updateHPUi);
 }] call CBA_fnc_addPlayerEventHandler;
@@ -121,7 +121,7 @@ player addEventHandler ["Killed", {
     [] call FUNC(initPlates);
     player setVariable [QGVAR(vestContainer), vestContainer player];
     ["cba_events_loadoutEvent",{
-        params ["_unit", "_oldLoadout"];
+        params ["_unit"];
         private _currentVestContainer = vestContainer _unit;
         private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
 

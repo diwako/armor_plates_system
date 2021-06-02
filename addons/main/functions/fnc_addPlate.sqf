@@ -7,7 +7,6 @@ if (isNull _display) exitWith {
     systemChat "Could not find display, weird huh?";
 };
 
-private _text = parseText "<t align='center'>Adding ceramic plate to vest</t>";
 private _height = GVAR(fullHeight)*2;
 private _backCtrl = _display ctrlCreate ["RscText", -1];
 _backCtrl ctrlSetPosition [0, 0.5, 1, _height];

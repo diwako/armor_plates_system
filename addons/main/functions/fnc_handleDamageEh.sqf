@@ -1,5 +1,6 @@
 #include "script_component.hpp"
-params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
+params ["_unit", "", "_damage", "", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
+// params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
 if !(local _unit) exitWith {nil};
 
 private _curDamage = 0;
@@ -10,7 +11,6 @@ if (_hitPoint isEqualTo "") then {
     _curDamage = _unit getHitIndex _hitIndex;
 };
 
-private _bodyPartN = ["hithead","","hitface","hitneck","hitchest","hitarms","incapacitated","hithands","hitdiaphragm","hitabdomen"] find _hitPoint;
 if (GVAR(damageEhVariant) isNotEqualTo 1) exitWith {_curDamage};
 if !(isDamageAllowed _unit && {_unit getVariable ["ace_medical_allowDamage", true]}) exitWith {_curDamage};
 if (_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"]) exitWith {_curDamage};
