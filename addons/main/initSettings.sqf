@@ -170,6 +170,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     [1, 60, 5, 1],
     true
 ] call CBA_fnc_addSetting;
+
 [
     QGVAR(noneMedicReviveTime),
     "SLIDER",

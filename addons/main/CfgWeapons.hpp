@@ -2,8 +2,6 @@ class CfgWeapons {
     class ItemCore;
     class CBA_MiscItem ;
     class CBA_MiscItem_ItemInfo;
-    class InventoryFirstAidKitItem_Base_F;
-    class MedikitItem;
 
     class GVAR(plate): CBA_MiscItem  {
         scope = 2;

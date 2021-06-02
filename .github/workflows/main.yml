@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the source code
+      uses: actions/checkout@master
+    - name: Validate SQF
+      run: python3 tools/sqf_validator.py
+    - name: Validate Config
+      run: python3 tools/config_style_checker.py
+    - name: Check for BOM
+      uses: arma-actions/bom-check@master
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the source code
+      uses: actions/checkout@master
+    - name: Lint (sqflint)
+      uses: jokoho48/sqflint@master
+      continue-on-error: true # No failure due to many false-positives
+    - uses: actions/upload-artifact@master
+      with:
+       name: 'sqfLint Log'
+       path: 'sqf.log'
+    - name: Validate SQFLinter Logs
+      run: python3 tools/sqf_linter_LogChecker.py
