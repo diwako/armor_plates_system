@@ -12,12 +12,11 @@ if (GVAR(disallowFriendfire) &&
     _instigator isNotEqualTo _unit && {
     (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {};
 
-private _headshot = false; // todo feedback
+// private _headshot = false; // todo feedback
 switch (_bodyPart) do {
-    // case "neck";
     case "face_hub";
     case "face";
-    case "head": {_headshot = true; _damage = _damage * GVAR(headshotMult)};
+    case "head": {/*_headshot = true;*/ _damage = _damage * GVAR(headshotMult)};
     case "arms";
     case "hands";
     case "legs": {_damage = _damage * GVAR(limbMult)};
