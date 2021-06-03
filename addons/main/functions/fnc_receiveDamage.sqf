@@ -12,7 +12,7 @@ if (GVAR(disallowFriendfire) &&
     _instigator isNotEqualTo _unit && {
     (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {};
 
-private _headshot = false;
+private _headshot = false; // todo feedback
 switch (_bodyPart) do {
     // case "neck";
     case "face_hub";
@@ -25,7 +25,9 @@ switch (_bodyPart) do {
 };
 
 _damage = _damage * GVAR(damageCoef);
-systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
+if !(isMultiplayer) then {
+    systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
+};
 
 private _player = call CBA_fnc_currentUnit;
 private _receivedDamage = false;
@@ -72,9 +74,7 @@ if (_newHP isEqualTo 0) exitWith {
     [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
     if (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) then {
         if !((lifeState _unit) == "INCAPACITATED") then {
-            _unit setUnconscious true;
-            _unit setCaptive true;
-            _unit setVariable [QGVAR(unconscious), true, true];
+            [_unit, true] call FUNC(setUnconscious);
         };
         _unit setDamage 0.95;
     } else {

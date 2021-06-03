@@ -14,3 +14,4 @@ PREP(canAddPlate);
 PREP(addPlate);
 PREP(canPressKey);
 PREP(showDamageFeedbackMarker);
+PREP(setUnconscious);

@@ -102,6 +102,30 @@ if (!GVAR(enable)) exitWith {
     _unit switchMove _anim;
 }] call CBA_fnc_addEventHandler;
 
+[QGVAR(setHidden), {
+    params ["_object", "_set"];
+
+    private _vis = [_object getUnitTrait "camouflageCoef"] param [0, 1];
+    if (_set) then {
+        if (_vis != 0) then {
+            _object setVariable [QGVAR(oldVisibility), _vis];
+            _object setUnitTrait ["camouflageCoef", 0];
+            {
+                if (side _x != side group _object) then {
+                    _x forgetTarget _object;
+                };
+            } forEach allGroups;
+        };
+    } else {
+        _vis = _object getVariable [QGVAR(oldVisibility), _vis];
+        _object setUnitTrait ["camouflageCoef", _vis];
+    };
+}] call CBA_fnc_addEventHandler;
+
+if !(hasInterface) exitWith {
+    INFO("Dedicated server / Headless client post init done");
+};
+
 [QGVAR(downedMessage), {
     if !(GVAR(downedFeedback)) exitWith {};
     params ["_unit"];
@@ -115,10 +139,6 @@ if (!GVAR(enable)) exitWith {
         playSound "3DEN_notificationWarning";
     };
 }] call CBA_fnc_addEventHandler;
-
-if !(hasInterface) exitWith {
-    INFO("Dedicated server / Headless client post init done");
-};
 
 GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
 GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);

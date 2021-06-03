@@ -26,7 +26,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     "SLIDER",
     ["Armor Plate HP", "Max HP of an armor plate"],
     _category,
-    [1, 200, 50, 0],
+    [1, 200, 25, 0],
     true,
     {
         params ["_value"];
@@ -39,7 +39,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     "SLIDER",
     ["Time to add one plate", "How long does it take to add one plate to the vest in seconds"],
     _category,
-    [0, 30, 5, 1],
+    [0, 30, 8, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -76,7 +76,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     "CHECKBOX",
     ["Enable HP regen", "Start hp regeneration after 5 seconds"],
     _category,
-    true,
+    false,
     true
 ] call CBA_fnc_addSetting;
 
@@ -94,7 +94,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     "SLIDER",
     ["HP regen rate", "How fast do my eyes stop bleeding?"],
     _category,
-    [1, 100, 15, 2],
+    [1, 100, 10, 2],
     true
 ] call CBA_fnc_addSetting;
 
@@ -103,7 +103,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     "SLIDER",
     ["Max heal % for medics", "How percentage of max health can a medic heal?"],
     _category,
-    [0, 2, 1, 0, true],
+    [0, 2, 0.75, 0, true],
     true
 ] call CBA_fnc_addSetting;
 
@@ -135,7 +135,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     "LIST",
     ["Damage EH", "Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!"],
     _category,
-    [[0, 1], ["Hit","HandleDamage"], 0],
+    [[0, 1], ["Hit","HandleDamage"], 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -176,6 +176,19 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(bleedoutTime),
+    "SLIDER",
+    ["Bleed out timer", "Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!"],
+    _category,
+    [0, 15 * 60, 60, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(bleedoutTime) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(disallowFriendfire),
     "CHECKBOX",
     ["Disallow friendly fire", "Do not allow friendly from weapon fire"],
@@ -189,7 +202,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     "SLIDER",
     ["Medic revive time", "How long does it take to revive someone as a medic in seconds"],
     _category,
-    [1, 60, 5, 1],
+    [1, 60, 8, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -198,7 +211,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     "SLIDER",
     ["None-medic revive time", "How long does it take to revive someone as not a medic in seconds"],
     _category,
-    [1, 60, 10, 1],
+    [1, 60, 16, 1],
     true
 ] call CBA_fnc_addSetting;
 
