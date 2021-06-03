@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 ADDON = false;
 
-if (isClass(configFile >> "CfgPatches" >> "ace_medical")) exitWith {
-    INFO("PreInit: Disabled --> ACE medical loaded");
+if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!isClass(configFile >> "CfgPatches" >> "ace_medical_engine")}) exitWith {
+    INFO("PreInit: Disabled --> old ACE medical loaded");
 };
 
 #include "XEH_PREP.hpp"

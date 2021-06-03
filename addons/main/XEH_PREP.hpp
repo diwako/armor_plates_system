@@ -15,3 +15,4 @@ PREP(addPlate);
 PREP(canPressKey);
 PREP(showDamageFeedbackMarker);
 PREP(setUnconscious);
+PREP(handleDamageEhACE);

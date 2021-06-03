@@ -19,8 +19,12 @@ if !(_selfOrUnkownDamage) then {
     private _relDir = [_instigator, _unit] call BIS_fnc_dirTo;
     _ctrl ctrlSetAngle [180 + _relDir - _camDirVec, 0.5, 0.5, true];
 };
-private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
-_ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
+if (GVAR(aceMedicalLoaded)) then {
+    _ctrl ctrlSetFade 0;
+} else {
+    private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
+    _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
+};
 _ctrl ctrlCommit 0.05;
 
 // addCamShake [50, 1, 2];

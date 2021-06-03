@@ -1,5 +1,6 @@
 private _header = LLSTRING(category);
 private _category = [_header, LLSTRING(subCategoryArmorPlates)];
+private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
 
 [
     QGVAR(numWearablePlates),
@@ -40,6 +41,126 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     ["Time to add one plate", "How long does it take to add one plate to the vest in seconds"],
     _category,
     [0, 30, 8, 1],
+    true
+] call CBA_fnc_addSetting;
+
+_category = [_header, LLSTRING(subCategoryFeedback)];
+
+[
+    QGVAR(showDamageMarker),
+    "CHECKBOX",
+    ["Show damage markers", "Shows damage marker and direction of inconing damage"],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(downedFeedback),
+    "CHECKBOX",
+    ["Use downed feedback", "Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed."],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+_category = [_header, LLSTRING(subCategoryGeneral)];
+
+[
+    QGVAR(enable),
+    "CHECKBOX",
+    ["Enable the whole system", "Enables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!"],
+    _category,
+    true,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(damageCoef),
+    "SLIDER",
+    ["Damage coefficient", "Coefficient which manipulates the incoming damage"],
+    _category,
+    [0.01, 100, [50, 5] select _aceMedicalLoaded, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(headshotMult),
+    "SLIDER",
+    ["Headshot Multiplier", "Damage multiplier on headshot"],
+    _category,
+    [0.01, 10, 2, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(limbMult),
+    "SLIDER",
+    ["Limb Multiplier", "Damage multiplier on limb shots"],
+    _category,
+    [0, 10, 0.7, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(disallowFriendfire),
+    "CHECKBOX",
+    ["Disallow friendly fire", "Do not allow friendly from weapon fire"],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+if (_aceMedicalLoaded) exitWith {};
+
+[
+    QGVAR(damageEhVariant),
+    "LIST",
+    ["Damage EH", "Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!"],
+    _category,
+    [[0, 1], ["Hit","HandleDamage"], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(enablePlayerUnconscious),
+    "CHECKBOX",
+    ["Enable player unconsciousness", "Start hp regeneration after 5 seconds"],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bleedoutTime),
+    "SLIDER",
+    ["Bleed out timer", "Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!"],
+    _category,
+    [0, 15 * 60, 60, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(bleedoutTime) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(medicReviveTime),
+    "SLIDER",
+    ["Medic revive time", "How long does it take to revive someone as a medic in seconds"],
+    _category,
+    [1, 60, 8, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(noneMedicReviveTime),
+    "SLIDER",
+    ["None-medic revive time", "How long does it take to revive someone as not a medic in seconds"],
+    _category,
+    [1, 60, 16, 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -114,123 +235,4 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     _category,
     [0, 1, 0.5, 0, true],
     true
-] call CBA_fnc_addSetting;
-
-
-_category = [_header, LLSTRING(subCategoryGeneral)];
-
-[
-    QGVAR(enable),
-    "CHECKBOX",
-    ["Enable the whole system", "Enables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!"],
-    _category,
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(damageEhVariant),
-    "LIST",
-    ["Damage EH", "Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!"],
-    _category,
-    [[0, 1], ["Hit","HandleDamage"], 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(damageCoef),
-    "SLIDER",
-    ["Damage coefficient", "Coefficient which manipulates the incoming damage"],
-    _category,
-    [0.01, 100, 50, 2],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(headshotMult),
-    "SLIDER",
-    ["Headshot Multiplier", "Damage multiplier on headshot"],
-    _category,
-    [0.01, 10, 2, 0, true],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(limbMult),
-    "SLIDER",
-    ["Limb Multiplier", "Damage multiplier on limb shots"],
-    _category,
-    [0, 10, 0.7, 0, true],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(enablePlayerUnconscious),
-    "CHECKBOX",
-    ["Enable player unconsciousness", "Start hp regeneration after 5 seconds"],
-    _category,
-    true,
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(bleedoutTime),
-    "SLIDER",
-    ["Bleed out timer", "Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!"],
-    _category,
-    [0, 15 * 60, 60, 0],
-    true,
-    {
-        params ["_value"];
-        GVAR(bleedoutTime) = round _value;
-    }
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(disallowFriendfire),
-    "CHECKBOX",
-    ["Disallow friendly fire", "Do not allow friendly from weapon fire"],
-    _category,
-    false,
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(medicReviveTime),
-    "SLIDER",
-    ["Medic revive time", "How long does it take to revive someone as a medic in seconds"],
-    _category,
-    [1, 60, 8, 1],
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(noneMedicReviveTime),
-    "SLIDER",
-    ["None-medic revive time", "How long does it take to revive someone as not a medic in seconds"],
-    _category,
-    [1, 60, 16, 1],
-    true
-] call CBA_fnc_addSetting;
-
-_category = [_header, LLSTRING(subCategoryFeedback)];
-
-[
-    QGVAR(showDamageMarker),
-    "CHECKBOX",
-    ["Show damage markers", "Shows damage marker and direction of inconing damage"],
-    _category,
-    true,
-    false
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(downedFeedback),
-    "CHECKBOX",
-    ["Use downed feedback", "Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed."],
-    _category,
-    true,
-    false
 ] call CBA_fnc_addSetting;

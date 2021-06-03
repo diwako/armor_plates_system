@@ -21,110 +21,128 @@ if (hasInterface) then {
     uiNamespace setVariable [QGVAR(feedBackCtrl), []]
 };
 
-if (isClass(configFile >> "CfgPatches" >> "ace_medical")) exitWith {
-    INFO("PostInit: Disabled --> ACE medical loaded");
+GVAR(aceMedicalLoaded) = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
+if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoaded)}) exitWith {
+    INFO("PostInit: Disabled --> old ACE medical loaded");
 };
 if (!GVAR(enable)) exitWith {
     INFO("Disabled --> CBA settings");
 };
+if (GVAR(aceMedicalLoaded)) then {
+    // ace medical
+    ["CAManBase", "InitPost", {
+        params ["_unit"];
+        _unit setVariable ["ace_medical_engine_$#structural", [0, 0]];
+        [{
+            (_this getVariable ["ace_medical_HandleDamageEHID", -1]) > -1
+        }, {
+            _this removeEventHandler ["HandleDamage", _this getVariable ["ace_medical_HandleDamageEHID", -1]];
+            private _id = _this addEventHandler ["HandleDamage", {
+                _this call FUNC(handleDamageEhACE);
+            }];
+            _this setVariable ["ace_medical_HandleDamageEHID", _id];
+        }, _unit] call CBA_fnc_waitUntilAndExecute;
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+} else {
+    // vanilla arma
+    ["CAManBase", "Hit", {
+        _this call FUNC(hitEh);
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-["CAManBase", "Hit", {
-    _this call FUNC(hitEh);
-}, true, [], true] call CBA_fnc_addClassEventHandler;
+    ["CAManBase", "InitPost", {
+        params ["_unit"];
 
-["CAManBase", "InitPost", {
-    params ["_unit"];
+        private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
+            // condition show
+            format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {_this getUnitTrait 'Medic' && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)],
+            // condition progress
+            "alive _target && {(lifeState _target) == 'INCAPACITATED'}", {
+            // code start
+            params ["_target", "_caller"];
+            private _isProne = stance _caller == "PRONE";
+            _caller setVariable [QGVAR(wasProne), _isProne];
+            private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+            private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+            _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+            if (_medicAnim != "") then {
+                _caller playMove _medicAnim;
+            };
+        }, {
+            // code progress
+        }, {
+            // codeCompleted
+            params ["_target", "_caller"];
+            private _ret = [_caller] call FUNC(hasHealItems);
+            if (_ret isEqualTo 1) then {
+                _caller removeItem "FirstAidKit";
+            };
+            [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
+        }, {
+            // code interrupted
+            params ["", "_caller"];
+            private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+            private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+            _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+            [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+        }, [], GVAR(medicReviveTime), 15, false, false, true];
 
-    private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
-        // condition show
-        format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {_this getUnitTrait 'Medic' && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)],
-        // condition progress
-        "alive _target && {(lifeState _target) == 'INCAPACITATED'}", {
-        // code start
-        params ["_target", "_caller"];
-        private _isProne = stance _caller == "PRONE";
-        _caller setVariable [QGVAR(wasProne), _isProne];
-        private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
-        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
-        _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-        if (_medicAnim != "") then {
-            _caller playMove _medicAnim;
-        };
-    }, {
-        // code progress
-    }, {
-        // codeCompleted
-        params ["_target", "_caller"];
-        private _ret = [_caller] call FUNC(hasHealItems);
-        if (_ret isEqualTo 1) then {
-            _caller removeItem "FirstAidKit";
-        };
-        [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
-    }, {
-        // code interrupted
-        params ["", "_caller"];
-        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
-        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
-        _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
-    }, [], GVAR(medicReviveTime), 15, false, false, true];
+        _arr call BIS_fnc_holdActionAdd;
+        private _arr2 = +_arr;
+        _arr2 set [4, format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {!(_this getUnitTrait 'Medic') && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)]];
+        _arr2 set [11, GVAR(noneMedicReviveTime)];
+        _arr2 call BIS_fnc_holdActionAdd;
 
-    _arr call BIS_fnc_holdActionAdd;
-    private _arr2 = +_arr;
-    _arr2 set [4, format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {!(_this getUnitTrait 'Medic') && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)]];
-    _arr2 set [11, GVAR(noneMedicReviveTime)];
-    _arr2 call BIS_fnc_holdActionAdd;
+        _unit addEventHandler ["HandleDamage", {
+            _this call FUNC(handleDamageEh);
+        }];
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-    _unit addEventHandler ["HandleDamage", {
-        _this call FUNC(handleDamageEh);
-    }];
-}, true, [], true] call CBA_fnc_addClassEventHandler;
+    ["CAManBase", "HandleHeal", {
+        [{
+            _this call FUNC(handleHealEh);
+        }, _this, 5] call CBA_fnc_waitAndExecute;
+        true
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-["CAManBase", "HandleHeal", {
-    [{
+    [QGVAR(heal), {
         _this call FUNC(handleHealEh);
-    }, _this, 5] call CBA_fnc_waitAndExecute;
-    true
-}, true, [], true] call CBA_fnc_addClassEventHandler;
+    }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(switchMove), {
+        params ["_unit", "_anim"];
+        _unit switchMove _anim;
+    }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(setHidden), {
+        params ["_object", "_set"];
+
+        private _vis = [_object getUnitTrait "camouflageCoef"] param [0, 1];
+        if (_set) then {
+            if (_vis != 0) then {
+                _object setVariable [QGVAR(oldVisibility), _vis];
+                _object setUnitTrait ["camouflageCoef", 0];
+                {
+                    if (side _x != side group _object) then {
+                        _x forgetTarget _object;
+                    };
+                } forEach allGroups;
+            };
+        } else {
+            _vis = _object getVariable [QGVAR(oldVisibility), _vis];
+            _object setUnitTrait ["camouflageCoef", _vis];
+        };
+    }] call CBA_fnc_addEventHandler;
+};
+
+if !(hasInterface) exitWith {
+    INFO("Dedicated server / Headless client post init done");
+};
 
 ["unit", {
     params ["_newUnit"];
     [_newUnit] call FUNC(updatePlateUi);
     [_newUnit] call FUNC(updateHPUi);
 }] call CBA_fnc_addPlayerEventHandler;
-
-[QGVAR(heal), {
-    _this call FUNC(handleHealEh);
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(switchMove), {
-    params ["_unit", "_anim"];
-    _unit switchMove _anim;
-}] call CBA_fnc_addEventHandler;
-
-[QGVAR(setHidden), {
-    params ["_object", "_set"];
-
-    private _vis = [_object getUnitTrait "camouflageCoef"] param [0, 1];
-    if (_set) then {
-        if (_vis != 0) then {
-            _object setVariable [QGVAR(oldVisibility), _vis];
-            _object setUnitTrait ["camouflageCoef", 0];
-            {
-                if (side _x != side group _object) then {
-                    _x forgetTarget _object;
-                };
-            } forEach allGroups;
-        };
-    } else {
-        _vis = _object getVariable [QGVAR(oldVisibility), _vis];
-        _object setUnitTrait ["camouflageCoef", _vis];
-    };
-}] call CBA_fnc_addEventHandler;
-
-if !(hasInterface) exitWith {
-    INFO("Dedicated server / Headless client post init done");
-};
 
 [QGVAR(downedMessage), {
     if !(GVAR(downedFeedback)) exitWith {};
@@ -159,7 +177,9 @@ player addEventHandler ["Killed", {
     _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
 }];
 
-[] call FUNC(addPlayerHoldActions);
+if !(GVAR(aceMedicalLoaded)) then {
+    [] call FUNC(addPlayerHoldActions);
+};
 
 [{
     time > 1
