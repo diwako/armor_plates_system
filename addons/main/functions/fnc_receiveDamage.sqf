@@ -25,7 +25,7 @@ switch (_bodyPart) do {
 
 _damage = _damage * GVAR(damageCoef);
 if !(isMultiplayer) then {
-    // systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
+    systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
 };
 
 private _player = call CBA_fnc_currentUnit;
@@ -47,7 +47,6 @@ if (_plates isNotEqualTo []) then {
 
             if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
                 GVAR(lastPlateBreakSound) = diag_frameNo;
-                systemChat "break plate";
                 playsound format [QGVAR(platebreak%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
             };
         };
@@ -66,12 +65,10 @@ if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
     if (_isHeadshot) then {
         GVAR(lastHPDamageSound) = diag_frameNo;
         playsound format [QGVAR(headshot%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
-        systemChat "headshot";
     } else {
         if (GVAR(lastHPDamageSound) isNotEqualTo diag_frameNo) then {
             GVAR(lastHPDamageSound) = diag_frameNo;
             playsound format [QGVAR(hit%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
-            systemChat "hit";
         };
     };
 };
