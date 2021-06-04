@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 params ["_unit", "_instigator", "_damage"];
+if (GVAR(lastDamageFeedbackMarkerShown) isEqualTo diag_frameNo) exitWith {};
+GVAR(lastDamageFeedbackMarkerShown) = diag_frameNo;
 private _display = findDisplay 46;
 if (isNull _display) exitWith {
     ERROR("display was null");
@@ -27,23 +29,26 @@ if (GVAR(aceMedicalLoaded)) then {
 };
 _ctrl ctrlCommit 0.05;
 
-// addCamShake [50, 1, 2];
-
 private _feedback = uiNamespace getVariable [QGVAR(feedBackCtrl), []];
 _feedback pushBack _ctrl;
 uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
 
 [{
-    ctrlCommitted _this;
+    (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameratoWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
+    ctrlCommitted (_this select 0);
 },{
-    _this ctrlSetFade 1;
-    _this ctrlCommit 5;
+    params ["_ctrl"];
+    _ctrl ctrlSetFade 1;
+    _ctrl ctrlSetPosition [-0.2, -0.2, 1.2, 1.2];
+    _ctrl ctrlCommit 5;
     [{
-        ctrlCommitted _this;
+        (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameratoWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
+        ctrlCommitted (_this select 0);
     },{
+        params ["_ctrl"];
         private _feedback = uiNamespace getVariable [QGVAR(feedBackCtrl), []];
-        _feedback = _feedback - [_this];
+        _feedback = _feedback - [_ctrl];
         uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
-        ctrlDelete _this;
+        ctrlDelete _ctrl;
     }, _this] call CBA_fnc_waitUntilAndExecute;
-}, _ctrl] call CBA_fnc_waitUntilAndExecute;
+}, [_ctrl, _instigator, _unit]] call CBA_fnc_waitUntilAndExecute;

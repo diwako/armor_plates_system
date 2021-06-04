@@ -12,11 +12,11 @@ if (GVAR(disallowFriendfire) &&
     _instigator isNotEqualTo _unit && {
     (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {-1};
 
-// private _headshot = false; // todo feedback
+private _isHeadshot = false;
 switch (_bodyPart) do {
     case "face_hub";
     case "face";
-    case "head": {/*_headshot = true;*/ _damage = _damage * GVAR(headshotMult)};
+    case "head": {_isHeadshot = _damage > 0.5; _damage = _damage * GVAR(headshotMult)};
     case "arms";
     case "hands";
     case "legs": {_damage = _damage * GVAR(limbMult)};
@@ -45,6 +45,10 @@ if (_plates isNotEqualTo []) then {
             _damage = abs _newDamage;
             _plates deleteAt _i;
 
+            if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
+                GVAR(lastPlateBreakSound) = diag_frameNo;
+                playsound format [QGVAR(platebreak%1_%2), 1 + floor random 7, GVAR(audioFeedback)];
+            };
         };
     };
     _unit setVariable [QGVAR(plates), _plates];
@@ -54,6 +58,17 @@ if (_plates isNotEqualTo []) then {
             [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
         };
         _receivedDamage = true;
+    };
+};
+
+if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
+    if (_isHeadshot) then {
+        playsound format [QGVAR(headshot%1_%2), 1 + floor random 2, GVAR(audioFeedback)];
+    } else {
+        if (GVAR(lastHPDamageSound) isNotEqualTo diag_frameNo) then {
+            GVAR(lastHPDamageSound) = diag_frameNo;
+            playsound format [QGVAR(hit%1_%2), 1 + floor random 10, GVAR(audioFeedback)];
+        };
     };
 };
 

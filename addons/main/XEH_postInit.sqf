@@ -138,6 +138,10 @@ if !(hasInterface) exitWith {
     INFO("Dedicated server / Headless client post init done");
 };
 
+GVAR(lastDamageFeedbackMarkerShown) = -1;
+GVAR(lastPlateBreakSound) = -1;
+GVAR(lastHPDamageSound) = -1;
+
 ["unit", {
     params ["_newUnit"];
     [_newUnit] call FUNC(updatePlateUi);
@@ -145,7 +149,7 @@ if !(hasInterface) exitWith {
 }] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(downedMessage), {
-    if !(GVAR(downedFeedback)) exitWith {};
+    if (GVAR(downedFeedback) isEqualTo 0) exitWith {};
     params ["_unit"];
     private _player = call CBA_fnc_currentUnit;
     if (_unit in (units _player)) then {
@@ -154,7 +158,9 @@ if !(hasInterface) exitWith {
             "%1 just hit the dirt!",
             "Heads up, %1 just keeled over!"
         ], name _unit];
-        playSound "3DEN_notificationWarning";
+        if (GVAR(downedFeedback) isEqualTo 2) then {
+            playSound "3DEN_notificationWarning";
+        };
     };
 }] call CBA_fnc_addEventHandler;
 
@@ -169,6 +175,7 @@ player addEventHandler ["Respawn", {
     [player] call FUNC(updateHPUi);
     player setCaptive false;
     [] call FUNC(addPlayerHoldActions);
+    player setVariable [QGVAR(unconscious), false, true];
 }];
 
 player addEventHandler ["Killed", {
@@ -184,6 +191,13 @@ if !(GVAR(aceMedicalLoaded)) then {
 [{
     time > 1
 }, {
+    if (GVAR(spawnWithFullPlates)) then {
+        private _plates = [];
+        for "_i" from 1 to GVAR(numWearablePlates) do {
+            _plates pushBack GVAR(maxPlateHealth);
+        };
+        (vestContainer player) setVariable [QGVAR(plates), _plates];
+    };
     [] call FUNC(initPlates);
     player setVariable [QGVAR(vestContainer), vestContainer player];
     ["cba_events_loadoutEvent",{

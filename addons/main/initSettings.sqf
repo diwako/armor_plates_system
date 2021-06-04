@@ -7,7 +7,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
     "SLIDER",
     ["Amount of plates wearable", "How many plates can you fit into your vest to give you protection"],
     _category,
-    [0, 5, 3, 0],
+    [0, 10, 3, 0],
     true,
     {
         params ["_value"];
@@ -44,6 +44,24 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(allowPlateReplace),
+    "CHECKBOX",
+    ["Allow replacing damaged plate", "Allows people to replace damaged plates, the damaged plate will be discarded"],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(spawnWithFullPlates),
+    "CHECKBOX",
+    ["Spawn with full plates", "When spawning or respawning you will start with maximum amount of plates already preloaded into your vest."],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [
@@ -57,11 +75,20 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [
     QGVAR(downedFeedback),
-    "CHECKBOX",
+    "LIST",
     ["Use downed feedback", "Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed."],
     _category,
-    true,
+    [[0, 1, 2], ["Off", "Show message", "Message and Sound"], 2],
     false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(audioFeedback),
+    "LIST",
+    ["Audio feedback", "Plays audio clip when taking damage, receiving a headshot or an armor plate just broke."],
+    _category,
+    [[0, 1, 2, 3, 4, 5, 6, 7], ["Off", "200% Volume", "175% Volume", "150% Volume", "100% Volume", "75% Volume", "50% Volume", "25% Volume"], 4],
+    true
 ] call CBA_fnc_addSetting;
 
 _category = [_header, LLSTRING(subCategoryGeneral)];

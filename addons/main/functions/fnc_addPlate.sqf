@@ -61,10 +61,13 @@ _ctrl ctrlCommit GVAR(timeToAddPlate);
 
     if (_plates isNotEqualTo []) then {
         // get last plate, it might be already damaged
-        private _lastPlate = _plates deleteAt ((count _plates) - 1);
+        private _count = count _plates;
+        private _lastPlate = _plates deleteAt (_count - 1);
         _plates pushBack GVAR(maxPlateHealth);
-        // add the last plate back
-        _plates pushBack _lastPlate;
+        if (_count < GVAR(numWearablePlates)) then {
+            // add the last plate back
+            _plates pushBack _lastPlate;
+        };
     } else {
         _plates pushBack GVAR(maxPlateHealth);
     };

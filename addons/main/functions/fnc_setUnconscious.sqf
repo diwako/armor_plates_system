@@ -18,9 +18,18 @@ if (_set) then {
         _unit setVariable [QGVAR(bleedoutTime), cba_missionTime];
         [{
             params ["_unit", "_time"];
-            if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time) then {
+            if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {(lifeState _unit) == "INCAPACITATED"}) then {
                 // kill them
+                [_unit, false] call FUNC(setUnconscious);
                 _unit setDamage 1;
+            } else {
+                if (_unit getVariable [QGVAR(unconscious), false]) then {
+                    // not sure what happened? Mission interfering?!
+                    [_unit, false] call FUNC(setUnconscious);
+                    systemChat "Hello there fellow player, diwako here.";
+                    systemChat "It seems the mission or some mod is interfering with this medical system of mine...";
+                    systemChat "Enjoy your free revive, I guess?!";
+                };
             };
         }, [_unit, cba_missionTime], GVAR(bleedoutTime)] call CBA_fnc_waitAndExecute;
     };
