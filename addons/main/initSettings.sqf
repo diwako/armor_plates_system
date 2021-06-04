@@ -87,7 +87,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     "LIST",
     ["Audio feedback", "Plays audio clip when taking damage, receiving a headshot or an armor plate just broke."],
     _category,
-    [[0, 1, 2, 3, 4], ["Off", "300% Volume", "200% Volume", "100% Volume", "50% Volume"], 3],
+    [[0, 1, 2, 3, 4], ["Off", "150% Volume", "125% Volume", "100% Volume", "75% Volume"], 3],
     true
 ] call CBA_fnc_addSetting;
 

@@ -9,7 +9,7 @@
     SOUND_ID(SOUNDNAME,1,db6); \
     SOUND_ID(SOUNDNAME,2,db3); \
     SOUND_ID(SOUNDNAME,3,db0); \
-    SOUND_ID(SOUNDNAME,5,db-3);
+    SOUND_ID(SOUNDNAME,4,db-3);
 
 
 class CfgSounds {
