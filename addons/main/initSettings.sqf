@@ -5,7 +5,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(numWearablePlates),
     "SLIDER",
-    ["Amount of plates wearable", "How many plates can you fit into your vest to give you protection"],
+    [LLSTRING(numWearablePlates), LLSTRING(numWearablePlates_desc)],
     _category,
     [0, 10, 3, 0],
     true,
@@ -25,7 +25,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(maxPlateHealth),
     "SLIDER",
-    ["Armor Plate HP", "Max HP of an armor plate"],
+    [LLSTRING(maxPlateHealth), LLSTRING(maxPlateHealth_desc)],
     _category,
     [1, 200, 25, 0],
     true,
@@ -38,7 +38,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(timeToAddPlate),
     "SLIDER",
-    ["Time to add one plate", "How long does it take to add one plate to the vest in seconds"],
+    [LLSTRING(timeToAddPlate), LLSTRING(timeToAddPlate_desc)],
     _category,
     [0, 30, 8, 1],
     true
@@ -47,7 +47,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(allowPlateReplace),
     "CHECKBOX",
-    ["Allow replacing damaged plate", "Allows people to replace damaged plates, the damaged plate will be discarded"],
+    [LLSTRING(allowPlateReplace), LLSTRING(allowPlateReplace_desc)],
     _category,
     true,
     true
@@ -56,7 +56,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(spawnWithFullPlates),
     "CHECKBOX",
-    ["Players spawn with full plates", "When spawning or respawning you will start with maximum amount of plates already preloaded into your vest."],
+    [LLSTRING(spawnWithFullPlates), LLSTRING(spawnWithFullPlates_desc)],
     _category,
     false,
     true
@@ -65,7 +65,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(AIchancePlateInVest),
     "SLIDER",
-    ["Chance for AI to carry plates in vests", "Chance in % if AI can have plates in their vest"],
+    [LLSTRING(AIchancePlateInVest), LLSTRING(AIchancePlateInVest_desc)],
     _category,
     [0, 1, 0.4, 0, true],
     true
@@ -74,7 +74,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(AIchancePlateInVestMaxNo),
     "SLIDER",
-    ["Amount added to vest", "0 == random up to max allowed carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their vest. Any number above the allowed carry capacity will be reduced to max carry capacity"],
+    [LLSTRING(AIchancePlateInVestMaxNo), LLSTRING(AIchancePlateInVestMaxNo_desc)],
     _category,
     [0, 10, 0, 0],
     true,
@@ -87,7 +87,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(AIchancePlateInInventory),
     "SLIDER",
-    ["Chance for AI to carry plates in inventory", "Chance in % if AI can have plates in their inventory. These plates can be looted!"],
+    [LLSTRING(AIchancePlateInInventory), LLSTRING(AIchancePlateInInventory_desc)],
     _category,
     [0, 1, 0.2, 0, true],
     true
@@ -96,7 +96,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(AIchancePlateInInventoryMaxNo),
     "SLIDER",
-    ["Amount added to inventory", "0 == random up to max allowed carry carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their inventory."],
+    [LLSTRING(AIchancePlateInInventoryMaxNo), LLSTRING(AIchancePlateInInventoryMaxNo_desc)],
     _category,
     [0, 10, 0, 0],
     true,
@@ -111,7 +111,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 [
     QGVAR(showDamageMarker),
     "CHECKBOX",
-    ["Show damage markers", "Shows damage marker and direction of inconing damage"],
+    [LLSTRING(showDamageMarker), LLSTRING(showDamageMarker_desc)],
     _category,
     true,
     false
@@ -120,18 +120,18 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 [
     QGVAR(downedFeedback),
     "LIST",
-    ["Use downed feedback", "Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed."],
+    [LLSTRING(downedFeedback), LLSTRING(downedFeedback_desc)],
     _category,
-    [[0, 1, 2], ["Off", "Show message", "Message and Sound"], 2],
+    [[0, 1, 2], [LLSTRING(downedFeedback_0), LLSTRING(downedFeedback_1), LLSTRING(downedFeedback_2)], 2],
     false
 ] call CBA_fnc_addSetting;
 
 [
     QGVAR(audioFeedback),
     "LIST",
-    ["Audio feedback", "Plays audio clip when taking damage, receiving a headshot or an armor plate just broke."],
+    [LLSTRING(audioFeedback), LLSTRING(audioFeedback_desc)],
     _category,
-    [[0, 1, 2, 3, 4], ["Off", "150% Volume", "125% Volume", "100% Volume", "75% Volume"], 3],
+    [[0, 1, 2, 3, 4], [LLSTRING(downedFeedback_0), LLSTRING(audioFeedback_1), LLSTRING(audioFeedback_2), LLSTRING(audioFeedback_3), LLSTRING(audioFeedback_4)], 3],
     true
 ] call CBA_fnc_addSetting;
 
@@ -140,7 +140,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 [
     QGVAR(enable),
     "CHECKBOX",
-    ["Enable the whole system", "Enables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!"],
+    [LLSTRING(enable), LLSTRING(enable_desc)],
     _category,
     true,
     true,
@@ -151,7 +151,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 [
     QGVAR(damageCoef),
     "SLIDER",
-    ["Damage coefficient", "Coefficient which manipulates the incoming damage"],
+    [LLSTRING(damageCoef), LLSTRING(damageCoef_desc)],
     _category,
     [0.01, 100, [50, 5] select _aceMedicalLoaded, 2],
     true
@@ -160,7 +160,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 [
     QGVAR(headshotMult),
     "SLIDER",
-    ["Headshot Multiplier", "Damage multiplier on headshot"],
+    [LLSTRING(headshotMult), LLSTRING(headshotMult_desc)],
     _category,
     [0.01, 10, 2, 0, true],
     true
@@ -169,7 +169,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 [
     QGVAR(limbMult),
     "SLIDER",
-    ["Limb Multiplier", "Damage multiplier on limb shots"],
+    [LLSTRING(limbMult), LLSTRING(limbMult_desc)],
     _category,
     [0, 10, 0.7, 0, true],
     true
@@ -178,7 +178,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 [
     QGVAR(disallowFriendfire),
     "CHECKBOX",
-    ["Disallow friendly fire", "Do not allow friendly from weapon fire"],
+    [LLSTRING(disallowFriendfire), LLSTRING(disallowFriendfire_desc)],
     _category,
     false,
     true
@@ -189,7 +189,7 @@ if (_aceMedicalLoaded) exitWith {};
 [
     QGVAR(damageEhVariant),
     "LIST",
-    ["Damage EH", "Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!"],
+    [LLSTRING(damageEhVariant), LLSTRING(damageEhVariant_desc)],
     _category,
     [[0, 1], ["Hit","HandleDamage"], 1],
     true
@@ -198,7 +198,7 @@ if (_aceMedicalLoaded) exitWith {};
 [
     QGVAR(enablePlayerUnconscious),
     "CHECKBOX",
-    ["Enable player unconsciousness", "Start hp regeneration after 5 seconds"],
+    [LLSTRING(enablePlayerUnconscious), LLSTRING(enablePlayerUnconscious_desc)],
     _category,
     true,
     true
@@ -207,7 +207,7 @@ if (_aceMedicalLoaded) exitWith {};
 [
     QGVAR(bleedoutTime),
     "SLIDER",
-    ["Bleed out timer", "Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!"],
+    [LLSTRING(bleedoutTime), LLSTRING(bleedoutTime_desc)],
     _category,
     [0, 15 * 60, 60, 0],
     true,
@@ -220,7 +220,7 @@ if (_aceMedicalLoaded) exitWith {};
 [
     QGVAR(medicReviveTime),
     "SLIDER",
-    ["Medic revive time", "How long does it take to revive someone as a medic in seconds"],
+    [LLSTRING(medicReviveTime), LLSTRING(medicReviveTime_desc)],
     _category,
     [1, 60, 8, 1],
     true
@@ -229,7 +229,7 @@ if (_aceMedicalLoaded) exitWith {};
 [
     QGVAR(noneMedicReviveTime),
     "SLIDER",
-    ["None-medic revive time", "How long does it take to revive someone as not a medic in seconds"],
+    [LLSTRING(noneMedicReviveTime), LLSTRING(noneMedicReviveTime_desc)],
     _category,
     [1, 60, 16, 1],
     true
@@ -240,7 +240,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(maxPlayerHP),
     "SLIDER",
-    ["Max Player HP", "How much HP does a player have"],
+    [LLSTRING(maxPlayerHP), LLSTRING(maxPlayerHP_desc)],
     _category,
     [1, 1000, 100, 0],
     true,
@@ -253,7 +253,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(maxAiHP),
     "SLIDER",
-    ["Max AI HP", "How much HP does an AI have"],
+    [LLSTRING(maxAiHP), LLSTRING(maxAiHP_desc)],
     _category,
     [1, 1000, 100, 0],
     true,
@@ -266,7 +266,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(enableHpRegen),
     "CHECKBOX",
-    ["Enable HP regen", "Start hp regeneration after 5 seconds"],
+    [LLSTRING(enableHpRegen), LLSTRING(enableHpRegen_desc)],
     _category,
     false,
     true
@@ -275,7 +275,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(enableHpRegenForAI),
     "CHECKBOX",
-    ["Enable HP regen for AI", "Allows AI to regen hp"],
+    [LLSTRING(enableHpRegenForAI), LLSTRING(enableHpRegenForAI_desc)],
     _category,
     false,
     true
@@ -284,7 +284,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(hpRegenRate),
     "SLIDER",
-    ["HP regen rate", "How fast do my eyes stop bleeding?"],
+    [LLSTRING(hpRegenRate), LLSTRING(hpRegenRate_desc)],
     _category,
     [1, 100, 10, 2],
     true
@@ -293,7 +293,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(maxHealMedic),
     "SLIDER",
-    ["Max heal % for medics", "How percentage of max health can a medic heal?"],
+    [LLSTRING(maxHealMedic), LLSTRING(maxHealMedic_desc)],
     _category,
     [0, 2, 0.75, 0, true],
     true
@@ -302,7 +302,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 [
     QGVAR(maxHealRifleman),
     "SLIDER",
-    ["Max heal % for non-medics", "How percentage of max health can a medic heal?"],
+    [LLSTRING(maxHealRifleman), LLSTRING(maxHealRifleman_desc)],
     _category,
     [0, 1, 0.5, 0, true],
     true

@@ -109,6 +109,7 @@ if (GVAR(aceMedicalLoaded)) then {
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 
     [QGVAR(heal), {
+        (_this select 0) setDamage 0;
         _this call FUNC(handleHealEh);
     }] call CBA_fnc_addEventHandler;
 
@@ -157,10 +158,10 @@ GVAR(lastHPDamageSound) = -1;
     params ["_unit"];
     private _player = call CBA_fnc_currentUnit;
     if (_unit in (units _player)) then {
-        systemChat format [selectRandom [
-            "%1 just went down!",
-            "%1 just hit the dirt!",
-            "Heads up, %1 just keeled over!"
+        systemChat format [localize selectRandom [
+            LSTRING(downedMessage1),
+            LSTRING(downedMessage2),
+            LSTRING(downedMessage3)
         ], name _unit];
         if (GVAR(downedFeedback) isEqualTo 2) then {
             playSound "3DEN_notificationWarning";
