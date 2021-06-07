@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_unit"];
 
-if (GVAR(numWearablePlates) isEqualTo 0 || {!local _unit || {isPlayer _unit}}) exitWith {};
+if (GVAR(numWearablePlates) isEqualTo 0 || {!local _unit || {isPlayer _unit || {(side group _unit) == civilian}}}) exitWith {};
 
 [{
     params ["_unit"];
