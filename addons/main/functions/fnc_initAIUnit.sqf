@@ -7,14 +7,16 @@ if (GVAR(numWearablePlates) isEqualTo 0 || {!local _unit || {isPlayer _unit || {
     params ["_unit"];
     if (GVAR(AIchancePlateInVest) > 0 && {(random 1) < GVAR(AIchancePlateInVest) && {!isNull (vestContainer _unit)}}) then {
         private _arr = [];
-        for "_i" from 1 to (ceil random GVAR(numWearablePlates)) do {
+        private _num = [GVAR(AIchancePlateInVestMaxNo) min GVAR(numWearablePlates), (ceil random GVAR(numWearablePlates))] select (GVAR(AIchancePlateInVestMaxNo) isEqualTo 0);
+        for "_i" from 1 to _num do {
             _arr pushBack GVAR(maxPlateHealth);
         };
         (vestContainer _unit) setVariable [QGVAR(plates), _arr];
     };
 
     if (GVAR(AIchancePlateInInventory) > 0 && {(random 1) < GVAR(AIchancePlateInInventory)}) then {
-        for "_i" from 1 to (ceil random GVAR(numWearablePlates)) do {
+        private _num = [GVAR(AIchancePlateInInventoryMaxNo), (ceil random GVAR(numWearablePlates))] select (GVAR(AIchancePlateInInventoryMaxNo) isEqualTo 0);
+        for "_i" from 1 to _num do {
             if (_unit canAdd QGVAR(plate)) then {
                 _unit addItem QGVAR(plate);
             };

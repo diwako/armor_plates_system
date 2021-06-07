@@ -56,7 +56,7 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(spawnWithFullPlates),
     "CHECKBOX",
-    ["Spawn with full plates", "When spawning or respawning you will start with maximum amount of plates already preloaded into your vest."],
+    ["Players spawn with full plates", "When spawning or respawning you will start with maximum amount of plates already preloaded into your vest."],
     _category,
     false,
     true
@@ -65,19 +65,45 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 [
     QGVAR(AIchancePlateInVest),
     "SLIDER",
-    ["Chance for AI to carry plates in vests", "Chance in % if AI can have plates in their vest. The amount is random between 1 and the maximum amount of allowed plates"],
+    ["Chance for AI to carry plates in vests", "Chance in % if AI can have plates in their vest"],
     _category,
     [0, 1, 0.4, 0, true],
     true
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(AIchancePlateInVestMaxNo),
+    "SLIDER",
+    ["Amount added to vest", "0 == random up to max allowed carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their vest. Any number above the allowed carry capacity will be reduced to max carry capacity"],
+    _category,
+    [0, 10, 0, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(AIchancePlateInVestMaxNo) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(AIchancePlateInInventory),
     "SLIDER",
-    ["Chance for AI to carry plates in inventory", "Chance in % if AI can have plates in their inventory. These plates can be looted! The amount is random between 1 and the maximum amount of allowed plates"],
+    ["Chance for AI to carry plates in inventory", "Chance in % if AI can have plates in their inventory. These plates can be looted!"],
     _category,
     [0, 1, 0.2, 0, true],
     true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(AIchancePlateInInventoryMaxNo),
+    "SLIDER",
+    ["Amount added to inventory", "0 == random up to max allowed carry carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their inventory."],
+    _category,
+    [0, 10, 0, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(AIchancePlateInInventoryMaxNo) = round _value;
+    }
 ] call CBA_fnc_addSetting;
 
 _category = [_header, LLSTRING(subCategoryFeedback)];
