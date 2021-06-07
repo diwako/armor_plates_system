@@ -23,7 +23,7 @@ if (_set) then {
                 [_unit, false] call FUNC(setUnconscious);
                 _unit setDamage 1;
             } else {
-                if (_unit getVariable [QGVAR(unconscious), false]) then {
+                if (alive _unit && {_unit getVariable [QGVAR(unconscious), false]}) then {
                     // not sure what happened? Mission or mod interfering?!
                     [_unit, false] call FUNC(setUnconscious);
                     [_unit, _unit] call FUNC(handleHealEh);
@@ -42,5 +42,6 @@ if (_set) then {
 _unit setUnconscious _set;
 [QGVAR(setHidden), [_unit , _set]] call CBA_fnc_globalEvent;
 _unit setVariable [QGVAR(unconscious), _set, true];
+_unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
 
 true

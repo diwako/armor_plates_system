@@ -42,6 +42,7 @@ if (GVAR(aceMedicalLoaded)) then {
             }];
             _this setVariable ["ace_medical_HandleDamageEHID", _id];
         }, _unit] call CBA_fnc_waitUntilAndExecute;
+        [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } else {
     // vanilla arma
@@ -92,9 +93,12 @@ if (GVAR(aceMedicalLoaded)) then {
         _arr2 set [11, GVAR(noneMedicReviveTime)];
         _arr2 call BIS_fnc_holdActionAdd;
 
-        _unit addEventHandler ["HandleDamage", {
+        private _id = _unit addEventHandler ["HandleDamage", {
             _this call FUNC(handleDamageEh);
         }];
+        _unit setVariable ["ace_medical_HandleDamageEHID", _id];
+
+        [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 
     ["CAManBase", "HandleHeal", {
@@ -167,21 +171,22 @@ GVAR(lastHPDamageSound) = -1;
 GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
 GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 
-player addEventHandler ["Respawn", {
+GVAR(respawnEHId) = player addEventHandler ["Respawn", {
+    params ["_unit"];
     // player setVariable [QGVAR(plates), []];
-    player setVariable [QGVAR(hp), GVAR(maxPlayerHP)];
-    player setVariable [QGVAR(vestContainer), vestContainer player];
-    [player] call FUNC(updatePlateUi);
-    [player] call FUNC(updateHPUi);
-    player setCaptive false;
+    _unit setVariable [QGVAR(hp), nil];
+    _unit setVariable [QGVAR(vestContainer), vestContainer _unit];
+    [_unit] call FUNC(updatePlateUi);
+    [_unit] call FUNC(updateHPUi);
     [] call FUNC(addPlayerHoldActions);
-    player setVariable [QGVAR(unconscious), false, true];
+    _unit setVariable [QGVAR(unconscious), false, true];
 }];
 
-player addEventHandler ["Killed", {
+GVAR(killedEHId) = player addEventHandler ["Killed", {
     params ["_unit"];
     private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
     _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
+    _unit setVariable [QGVAR(hp), nil];
 }];
 
 if !(GVAR(aceMedicalLoaded)) then {
@@ -200,7 +205,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     };
     [] call FUNC(initPlates);
     player setVariable [QGVAR(vestContainer), vestContainer player];
-    ["cba_events_loadoutEvent",{
+    GVAR(loadoutEHId) = ["cba_events_loadoutEvent",{
         params ["_unit"];
         private _currentVestContainer = vestContainer _unit;
         private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];

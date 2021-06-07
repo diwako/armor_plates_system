@@ -16,3 +16,4 @@ PREP(canPressKey);
 PREP(showDamageFeedbackMarker);
 PREP(setUnconscious);
 PREP(handleDamageEhACE);
+PREP(initAIUnit);

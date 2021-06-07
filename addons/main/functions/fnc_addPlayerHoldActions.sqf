@@ -9,6 +9,7 @@
     {},
     {},{
         params ["_target", ""];
+        [QGVAR(setHidden), [_target , false]] call CBA_fnc_localEvent;
         _target setDamage 1;
     },
     {},

@@ -62,6 +62,24 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(AIchancePlateInVest),
+    "SLIDER",
+    ["Chance for AI to carry plates in vests", "Chance in % if AI can have plates in their vest. The amount is random between 1 and the maximum amount of allowed plates"],
+    _category,
+    [0, 1, 0.4, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(AIchancePlateInInventory),
+    "SLIDER",
+    ["Chance for AI to carry plates in inventory", "Chance in % if AI can have plates in their inventory. These plates can be looted! The amount is random between 1 and the maximum amount of allowed plates"],
+    _category,
+    [0, 1, 0.2, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [
