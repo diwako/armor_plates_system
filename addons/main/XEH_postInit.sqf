@@ -147,10 +147,18 @@ GVAR(lastDamageFeedbackMarkerShown) = -1;
 GVAR(lastPlateBreakSound) = -1;
 GVAR(lastHPDamageSound) = -1;
 
+// disallow weapon firing during plate interaction when ace is loaded
+if !(isNil "ace_common_fnc_addActionEventHandler") then {
+    GVAR(weaponsEvtId) = [player, "DefaultAction", {!GVAR(addPlateKeyUp)}, {}] call ace_common_fnc_addActionEventHandler;
+};
 ["unit", {
-    params ["_newUnit"];
+    params ["_newUnit", "_oldUnit"];
     [_newUnit] call FUNC(updatePlateUi);
     [_newUnit] call FUNC(updateHPUi);
+    if !(isNil QGVAR(weaponsEvtId)) then {
+        [_oldUnit, "DefaultAction", GVAR(weaponsEvtId)] call ace_common_fnc_removeActionEventHandler;
+        GVAR(weaponsEvtId) = [_newUnit, "DefaultAction", {!GVAR(addPlateKeyUp)}, {}] call ace_common_fnc_addActionEventHandler;
+    };
 }] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(downedMessage), {
