@@ -106,6 +106,15 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
     }
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(plateColor),
+    "COLOR",
+    LLSTRING(plateColor),
+    _category,
+    [0.35, 0.35, 1, 0.8],
+    false
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [

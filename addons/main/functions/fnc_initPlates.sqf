@@ -42,12 +42,18 @@ if (_count isNotEqualTo GVAR(numWearablePlates)) then {
             private _ctrlBack = _staminaDisplay ctrlCreate ["RscText", -1, _ctrlGroup];
             _ctrlBack ctrlSetPosition [_padding + _width * _i, 0, _innerWidth, _height];
             _ctrlBack ctrlSetTextColor [1, 1, 1, 0];
-            _ctrlBack ctrlSetBackgroundColor [0, 0, 0, 0.33];
+            _ctrlBack ctrlSetBackgroundColor [
+                profileNamespace getvariable ['igui_bcg_RGB_R', 0],
+                profileNamespace getvariable ['igui_bcg_RGB_G', 0],
+                profileNamespace getvariable ['igui_bcg_RGB_B', 0],
+                profileNamespace getvariable ['igui_bcg_RGB_A', 0.33]
+            ];
             _ctrlBack ctrlCommit 0;
             private _ctrl = _staminaDisplay ctrlCreate ["RscText", -1, _ctrlGroup];
             _ctrl ctrlSetPosition [_padding + _width * _i, 0, 0, _height];
             _ctrl ctrlSetTextColor [1, 1, 1, 0];
-            _ctrl ctrlSetBackgroundColor [0.25, 0.25, 1, 1];
+            // _ctrl ctrlSetBackgroundColor [0.25, 0.25, 1, 1];
+            _ctrl ctrlSetBackgroundColor GVAR(plateColor);
             _ctrl ctrlCommit 0;
             _plateCtrls pushBack [_ctrl, _ctrlBack];
         };

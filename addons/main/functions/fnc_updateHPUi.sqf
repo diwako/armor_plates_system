@@ -11,16 +11,31 @@ if (GVAR(aceMedicalLoaded)) then {
     private _diff = _newPH / _maxHp;
 
     private _color = call {
-        if (_diff < GVAR(maxHealRifleman) && {_diff > (GVAR(maxHealRifleman)/2)}) exitWith {
-            [1, 0.5, 0.5, 1];
+        if (_diff <= GVAR(maxHealRifleman) && {_diff > (GVAR(maxHealRifleman)/2)}) exitWith {
+            [
+                profileNamespace getvariable ['igui_warning_RGB_R', 1],
+                profileNamespace getvariable ['igui_warning_RGB_G', 0.5],
+                profileNamespace getvariable ['igui_warning_RGB_B', 0.5],
+                profileNamespace getvariable ['igui_warning_RGB_A', 1]
+            ]
         };
-        if (_diff < (GVAR(maxHealRifleman)/2)) exitWith {
-            [1, 0.1, 0.1, 1];
+        if (_diff <= (GVAR(maxHealRifleman)/2)) exitWith {
+            [
+                profileNamespace getvariable ['igui_error_RGB_R', 1],
+                profileNamespace getvariable ['igui_error_RGB_G', 0.1],
+                profileNamespace getvariable ['igui_error_RGB_B', 0.1],
+                profileNamespace getvariable ['igui_error_RGB_A', 1]
+            ]
         };
         if (_diff > 1) exitWith {
-            [0.5, 0.5, 1, 1];
+            GVAR(plateColor)
         };
-        [1, 1, 1, 1];
+        [
+            profileNamespace getvariable ['igui_text_RGB_R', 0.13],
+            profileNamespace getvariable ['igui_text_RGB_G', 0.54],
+            profileNamespace getvariable ['igui_text_RGB_B', 0.21],
+            profileNamespace getvariable ['igui_text_RGB_A', 0.8]
+        ]
     };
 
     _hpBar ctrlSetBackgroundColor _color;

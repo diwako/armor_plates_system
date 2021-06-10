@@ -61,6 +61,9 @@
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo_desc">
             <English>0 == random up to max allowed carry carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their inventory.</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_plateColor">
+            <English>Plate UI color</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
         </Key>
@@ -237,6 +240,9 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage3">
             <English>Heads up, %1 just keeled over!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_addPlateToVest">
+            <English>Adding ceramic plate to vest</English>
         </Key>
     </Package>
 </Project>
