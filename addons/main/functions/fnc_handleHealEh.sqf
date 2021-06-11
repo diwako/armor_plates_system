@@ -17,10 +17,10 @@
 
     if (!_unconcious && {_newHp <= _curHp}) exitWith {
         systemChat LLSTRING(cannotHealMoreThanCurrent);
-        _unit setDamage ((1 - (_curHp / _maxHp)) min 0.45);
+        [_unit, _curHp, _maxHp] call FUNC(setA3Damage);
     };
     _unit setVariable [QGVAR(hp), _newHp];
-    _unit setDamage (1 - (_newHp / _maxHp)) min 0.45;
+    [_unit, _newHp, _maxHp] call FUNC(setA3Damage);
     if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
         [_unit] call FUNC(updateHPUi);
     };

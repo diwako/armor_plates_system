@@ -160,6 +160,12 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutTime_desc">
             <English>Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction">
+            <English>Bleed out timer subtraction</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction_desc">
+            <English>Every time a player goes down their remaining bleed out timer will be subtracted by the given value in seconds. If a player goes down too often their bleed out timer may reach 0 and they instantly die</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
         </Key>

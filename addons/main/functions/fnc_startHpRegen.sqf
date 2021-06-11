@@ -14,7 +14,7 @@ if (GVAR(enableHpRegen)) then {
         while {(_unit getVariable [QGVAR(hp), _maxHp]) < _maxHp && {(lifeState _unit) != "INCAPACITATED"}} do {
             private _newHp = (_unit getVariable [QGVAR(hp), _maxHp]) + (GVAR(hpRegenRate) * 0.1);
             _unit setVariable [QGVAR(hp), _newHp min _maxHp];
-            _unit setDamage ((1 - (_newHp / _maxHp)) min 0.45);
+            [_unit, _newHp, _maxHp] call FUNC(setA3Damage);
 
             if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
                 [_unit] call FUNC(updateHPUi);

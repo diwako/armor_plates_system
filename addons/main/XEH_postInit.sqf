@@ -189,6 +189,7 @@ GVAR(respawnEHId) = player addEventHandler ["Respawn", {
     [_unit] call FUNC(updateHPUi);
     [] call FUNC(addPlayerHoldActions);
     _unit setVariable [QGVAR(unconscious), false, true];
+    GVAR(bleedOutTimeMalus) = nil;
 }];
 
 GVAR(killedEHId) = player addEventHandler ["Killed", {
@@ -196,6 +197,7 @@ GVAR(killedEHId) = player addEventHandler ["Killed", {
     private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
     _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
     _unit setVariable [QGVAR(hp), nil];
+    GVAR(bleedOutTimeMalus) = nil;
 }];
 
 if !(GVAR(aceMedicalLoaded)) then {

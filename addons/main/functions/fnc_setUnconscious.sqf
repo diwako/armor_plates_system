@@ -16,6 +16,11 @@ if (currentWeapon _unit != primaryWeapon _unit) then {
 if (_set) then {
     if (GVAR(bleedoutTime) > 0) then {
         _unit setVariable [QGVAR(bleedoutTime), cba_missionTime];
+        if (isNil QGVAR(bleedOutTimeMalus)) then {
+            GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
+        };
+        GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
+        private _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
         [{
             params ["_unit", "_time"];
             private _unconscious = (lifeState _unit) == "INCAPACITATED";
@@ -35,7 +40,7 @@ if (_set) then {
                     systemChat "Enjoy your free revive, I guess?!";
                 };
             };
-        }, [_unit, cba_missionTime], GVAR(bleedoutTime)] call CBA_fnc_waitAndExecute;
+        }, [_unit, cba_missionTime], _restBleedout] call CBA_fnc_waitAndExecute;
     };
 } else {
     _unit setVariable [QGVAR(bleedoutTime), nil];

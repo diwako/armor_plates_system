@@ -227,6 +227,19 @@ if (_aceMedicalLoaded) exitWith {};
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(bleedoutTimeSubtraction),
+    "SLIDER",
+    [LLSTRING(bleedoutTimeSubtraction), LLSTRING(bleedoutTimeSubtraction_desc)],
+    _category,
+    [0, 15 * 60, 10, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(bleedoutTimeSubtraction) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(medicReviveTime),
     "SLIDER",
     [LLSTRING(medicReviveTime), LLSTRING(medicReviveTime_desc)],
