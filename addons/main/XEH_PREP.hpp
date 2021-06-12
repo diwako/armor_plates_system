@@ -18,3 +18,4 @@ PREP(setUnconscious);
 PREP(handleDamageEhACE);
 PREP(initAIUnit);
 PREP(setA3Damage);
+PREP(showDownedSkull);

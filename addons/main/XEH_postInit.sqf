@@ -18,7 +18,12 @@ if (hasInterface) then {
     {
         ctrlDelete _x;
     } forEach (uiNamespace getVariable [QGVAR(feedBackCtrl), []]);
-    uiNamespace setVariable [QGVAR(feedBackCtrl), []]
+    uiNamespace setVariable [QGVAR(feedBackCtrl), []];
+
+    {
+        ctrlDelete _x;
+    } forEach (uiNamespace getVariable [QGVAR(skullControls), []]);
+    uiNamespace setVariable [QGVAR(skullControls), []];
 };
 
 GVAR(aceMedicalLoaded) = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
@@ -146,6 +151,7 @@ if !(hasInterface) exitWith {
 GVAR(lastDamageFeedbackMarkerShown) = -1;
 GVAR(lastPlateBreakSound) = -1;
 GVAR(lastHPDamageSound) = -1;
+GVAR(skullID) = -1;
 
 // disallow weapon firing during plate interaction when ace is loaded
 if !(isNil "ace_common_fnc_addActionEventHandler") then {
@@ -197,6 +203,7 @@ GVAR(killedEHId) = player addEventHandler ["Killed", {
     private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
     _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
     _unit setVariable [QGVAR(hp), nil];
+    [false] call FUNC(showDownedSkull);
     GVAR(bleedOutTimeMalus) = nil;
 }];
 

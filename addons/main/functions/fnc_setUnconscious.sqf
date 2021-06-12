@@ -41,9 +41,15 @@ if (_set) then {
                 };
             };
         }, [_unit, cba_missionTime], _restBleedout] call CBA_fnc_waitAndExecute;
+        if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
+            [_set, _restBleedout] call FUNC(showDownedSkull);
+        };
     };
 } else {
     _unit setVariable [QGVAR(bleedoutTime), nil];
+    if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
+        [_set] call FUNC(showDownedSkull);
+    };
 };
 
 _unit setUnconscious _set;

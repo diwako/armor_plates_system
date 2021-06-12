@@ -220,6 +220,12 @@
         <Key ID="STR_diw_armor_plates_main_audioFeedback_4">
             <English>75% Volume</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedSkull">
+            <English>Show skull when downed</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedSkull_desc">
+            <English>Shows a slowly appearing skull when downed to indicate how much time is left on the bleedout timer</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_plateItem">
             <English>Ceramic plate</English>
         </Key>

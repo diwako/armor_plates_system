@@ -144,6 +144,19 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     true
 ] call CBA_fnc_addSetting;
 
+if (_aceMedicalLoaded) then {
+    GVAR(showDownedSkull) = false;
+} else {
+    [
+        QGVAR(showDownedSkull),
+        "CHECKBOX",
+        [LLSTRING(showDownedSkull), LLSTRING(showDownedSkull_desc)],
+        _category,
+        true,
+        false
+    ] call CBA_fnc_addSetting;
+};
+
 _category = [_header, LLSTRING(subCategoryGeneral)];
 
 [
