@@ -103,6 +103,30 @@ if (GVAR(aceMedicalLoaded)) then {
         }];
         _unit setVariable ["ace_medical_HandleDamageEHID", _id];
 
+        if (isPlayer _unit && {_unit isNotEqualTo player}) then {
+            // workaround for mods or missions healing the default a3 damage while the internal health is not at max
+            private _id = _unit addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
+                params ["_target", "_caller"];
+                private _healItem = [_caller] call FUNC(hasHealItems);
+                if (_healItem isEqualTo 1) then {
+                    _caller removeItem "FirstAidKit";
+                };
+                private _isProne = stance _caller == "PRONE";
+                private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medic", "AinvPpneMstpSlayW[wpn]Dnon_medic"] select _isProne;
+                private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+                if (_medicAnim != "") then {
+                    _caller playMove _medicAnim;
+                };
+                [{
+                    params ["_target", "_caller"];
+                    if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
+                    [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
+                }, _this, 5] call CBA_fnc_waitAndExecute;
+            }, [], 10, true, true, "", format ["alive _originalTarget && {(damage _originalTarget) isEqualTo 0 && {(_originalTarget getVariable ['%1' , %2]) < (%2 * ([%4, %5] select (_this getUnitTrait 'Medic'))) && {([_this] call %3) > 0}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic)], 2];
+            _unit setUserActionText [_id, format [localize "str_a3_cfgactions_healsoldier0", name _unit], "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];
+        };
+
         [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 
@@ -209,6 +233,19 @@ GVAR(killedEHId) = player addEventHandler ["Killed", {
 
 if !(GVAR(aceMedicalLoaded)) then {
     [] call FUNC(addPlayerHoldActions);
+
+    [] spawn {
+        // if !(isMultiplayer) exitWith {};
+        GVAR(playerDamageSync) = GVAR(maxPlayerHP);
+        while {true} do {
+            private _oldValue = player getVariable [QGVAR(hp), GVAR(maxPlayerHP)];
+            if (_oldValue isNotEqualTo GVAR(playerDamageSync)) then {
+                player setVariable [QGVAR(hp), _oldValue, true];
+                GVAR(playerDamageSync) = _oldValue;
+            };
+            sleep 5;
+        };
+    };
 };
 
 [{
@@ -257,6 +294,3 @@ if !(GVAR(aceMedicalLoaded)) then {
 [DIK_T, [false, false, false]], false] call CBA_fnc_addKeybind;
 
 INFO("Client post init done");
-
-// (vestContainer player) setVariable [QGVAR(plates), [GVAR(maxPlateHealth),GVAR(maxPlateHealth),GVAR(maxPlateHealth)]];
-// player setVariable [QGVAR(hp), 20];

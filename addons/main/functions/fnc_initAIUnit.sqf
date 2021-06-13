@@ -24,4 +24,4 @@ if (GVAR(numWearablePlates) isEqualTo 0 || {!local _unit || {isPlayer _unit || {
         };
         _container addItemCargoGlobal [QGVAR(plate), _num];
     };
-}, [_unit], 1] call CBA_fnc_waitAndExecute;
+}, [_unit], 5] call CBA_fnc_waitAndExecute;
