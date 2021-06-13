@@ -106,7 +106,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if (isPlayer _unit && {_unit isNotEqualTo player}) then {
             // workaround for mods or missions healing the default a3 damage while the internal health is not at max
             private _id = _unit addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
-                params ["_target", "_caller"];
+                params ["", "_caller"];
                 private _healItem = [_caller] call FUNC(hasHealItems);
                 if (_healItem isEqualTo 1) then {
                     _caller removeItem "FirstAidKit";
