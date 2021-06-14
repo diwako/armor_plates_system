@@ -201,6 +201,9 @@ if !(GVAR(aceMedicalLoaded)) then {
                 player setVariable [QGVAR(hp), _oldValue, true];
                 GVAR(playerDamageSync) = _oldValue;
             };
+            if ((damage player) isEqualTo 0 && {_oldValue < GVAR(maxPlayerHP)}) then {
+                [player, _oldValue, GVAR(maxPlayerHP)] call FUNC(setA3Damage);
+            };
             sleep 5;
         };
     };
