@@ -141,7 +141,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     [LLSTRING(audioFeedback), LLSTRING(audioFeedback_desc)],
     _category,
     [[0, 1, 2, 3, 4], [LLSTRING(downedFeedback_0), LLSTRING(audioFeedback_1), LLSTRING(audioFeedback_2), LLSTRING(audioFeedback_3), LLSTRING(audioFeedback_4)], 3],
-    true
+    false
 ] call CBA_fnc_addSetting;
 
 if (_aceMedicalLoaded) then {

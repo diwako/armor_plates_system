@@ -196,13 +196,15 @@ if !(GVAR(aceMedicalLoaded)) then {
         // if !(isMultiplayer) exitWith {};
         GVAR(playerDamageSync) = GVAR(maxPlayerHP);
         while {true} do {
-            private _oldValue = player getVariable [QGVAR(hp), GVAR(maxPlayerHP)];
-            if (_oldValue isNotEqualTo GVAR(playerDamageSync)) then {
-                player setVariable [QGVAR(hp), _oldValue, true];
-                GVAR(playerDamageSync) = _oldValue;
-            };
-            if ((damage player) isEqualTo 0 && {_oldValue < GVAR(maxPlayerHP)}) then {
-                [player, _oldValue, GVAR(maxPlayerHP)] call FUNC(setA3Damage);
+            if (alive player) then {
+                private _oldValue = player getVariable [QGVAR(hp), GVAR(maxPlayerHP)];
+                if (_oldValue isNotEqualTo GVAR(playerDamageSync)) then {
+                    player setVariable [QGVAR(hp), _oldValue, true];
+                    GVAR(playerDamageSync) = _oldValue;
+                };
+                if ((damage player) isEqualTo 0 && {_oldValue < GVAR(maxPlayerHP)}) then {
+                    [player, _oldValue, GVAR(maxPlayerHP)] call FUNC(setA3Damage);
+                };
             };
             sleep 5;
         };

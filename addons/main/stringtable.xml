@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project name="ACRE">
-    <Package name="sys_gestures">
+<Project name="diw_armor_plates">
+    <Package name="main">
         <Key ID="STR_diw_armor_plates_main_category">
             <English>Armor Plate System</English>
         </Key>
