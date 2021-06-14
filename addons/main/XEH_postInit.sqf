@@ -58,75 +58,15 @@ if (GVAR(aceMedicalLoaded)) then {
     ["CAManBase", "InitPost", {
         params ["_unit"];
 
-        private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
-            // condition show
-            format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {_this getUnitTrait 'Medic' && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)],
-            // condition progress
-            "alive _target && {(lifeState _target) == 'INCAPACITATED'}", {
-            // code start
-            params ["_target", "_caller"];
-            private _isProne = stance _caller == "PRONE";
-            _caller setVariable [QGVAR(wasProne), _isProne];
-            private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
-            private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
-            _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-            if (_medicAnim != "") then {
-                _caller playMove _medicAnim;
-            };
-        }, {
-            // code progress
-        }, {
-            // codeCompleted
-            params ["_target", "_caller"];
-            private _ret = [_caller] call FUNC(hasHealItems);
-            if (_ret isEqualTo 1) then {
-                _caller removeItem "FirstAidKit";
-            };
-            [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
-        }, {
-            // code interrupted
-            params ["", "_caller"];
-            private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
-            private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
-            _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-            [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
-        }, [], GVAR(medicReviveTime), 15, false, false, true];
-
-        _arr call BIS_fnc_holdActionAdd;
-        private _arr2 = +_arr;
-        _arr2 set [4, format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {!(_this getUnitTrait 'Medic') && {(_target distance _this) < 4 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)]];
-        _arr2 set [11, GVAR(noneMedicReviveTime)];
-        _arr2 call BIS_fnc_holdActionAdd;
-
-        private _id = _unit addEventHandler ["HandleDamage", {
-            _this call FUNC(handleDamageEh);
-        }];
-        _unit setVariable ["ace_medical_HandleDamageEHID", _id];
-
-        if (isPlayer _unit && {_unit isNotEqualTo player}) then {
-            // workaround for mods or missions healing the default a3 damage while the internal health is not at max
-            private _id = _unit addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
-                params ["", "_caller"];
-                private _healItem = [_caller] call FUNC(hasHealItems);
-                if (_healItem isEqualTo 1) then {
-                    _caller removeItem "FirstAidKit";
-                };
-                private _isProne = stance _caller == "PRONE";
-                private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medic", "AinvPpneMstpSlayW[wpn]Dnon_medic"] select _isProne;
-                private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
-                _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-                if (_medicAnim != "") then {
-                    _caller playMove _medicAnim;
-                };
-                [{
-                    params ["_target", "_caller"];
-                    if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
-                    [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
-                }, _this, 5] call CBA_fnc_waitAndExecute;
-            }, [], 10, true, true, "", format ["alive _originalTarget && {(damage _originalTarget) isEqualTo 0 && {(_originalTarget getVariable ['%1' , %2]) < (%2 * ([%4, %5] select (_this getUnitTrait 'Medic'))) && {([_this] call %3) > 0}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic)], 2];
-            _unit setUserActionText [_id, format [localize "str_a3_cfgactions_healsoldier0", name _unit], "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];
+        // prevent re adding of handle damage eh for players
+        if (_unit getVariable [QGVAR(HandleDamageEHID), -1] isEqualTo -1) then {
+            private _id = _unit addEventHandler ["HandleDamage", {
+                _this call FUNC(handleDamageEh);
+            }];
+            _unit setVariable [QGVAR(HandleDamageEHID), _id];
         };
 
+        [_unit] call FUNC(addActionsToUnit);
         [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 
@@ -140,6 +80,12 @@ if (GVAR(aceMedicalLoaded)) then {
     [QGVAR(heal), {
         (_this select 0) setDamage 0;
         _this call FUNC(handleHealEh);
+    }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(respawned), {
+        if !(hasInterface) exitWith {};
+        params ["_unit"];
+        [_unit] call FUNC(addActionsToUnit);
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(switchMove), {
@@ -210,26 +156,38 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
 GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
 GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
 
-GVAR(respawnEHId) = player addEventHandler ["Respawn", {
+GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     params ["_unit"];
-    // player setVariable [QGVAR(plates), []];
+    if !(local _unit) exitWith {};
+    _unit setVariable [QGVAR(plates), nil];
     _unit setVariable [QGVAR(hp), nil];
     _unit setVariable [QGVAR(vestContainer), vestContainer _unit];
-    [_unit] call FUNC(updatePlateUi);
-    [_unit] call FUNC(updateHPUi);
-    [] call FUNC(addPlayerHoldActions);
     _unit setVariable [QGVAR(unconscious), false, true];
-    GVAR(bleedOutTimeMalus) = nil;
-}];
 
-GVAR(killedEHId) = player addEventHandler ["Killed", {
+    if (_unit isEqualTo player) then {
+        [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
+        [_unit] call FUNC(updatePlateUi);
+        if !(GVAR(aceMedicalLoaded)) then {
+            [_unit] call FUNC(updateHPUi);
+            [] call FUNC(addPlayerHoldActions);
+            GVAR(bleedOutTimeMalus) = nil;
+        };
+    };
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+GVAR(killedEHId) = ["CAManBase", "Killed",{
     params ["_unit"];
+    if !(local _unit) exitWith {};
     private _oldVestcontainer = _unit getVariable [QGVAR(vestContainer), objNull];
     _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
     _unit setVariable [QGVAR(hp), nil];
-    [false] call FUNC(showDownedSkull);
-    GVAR(bleedOutTimeMalus) = nil;
-}];
+    _unit setVariable [QGVAR(unconscious), false, true];
+
+    if (!GVAR(aceMedicalLoaded) && {_unit isEqualTo player}) then {
+        GVAR(bleedOutTimeMalus) = nil;
+        [false] call FUNC(showDownedSkull);
+    };
+}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 if !(GVAR(aceMedicalLoaded)) then {
     [] call FUNC(addPlayerHoldActions);

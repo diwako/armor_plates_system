@@ -39,5 +39,5 @@ private _id = player addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal
         if (!alive _target || {_target getVariable [QGVAR(unconscious), false]}) exitWith {};
         [QGVAR(heal), [_target, _target]] call CBA_fnc_localEvent;
     }, _this, 5] call CBA_fnc_waitAndExecute;
-}, [], 10, true, true, "", format ["alive _target && {(damage _target) isEqualTo 0 && {(_target getVariable ['%1' , %2]) < (%2 * ([%4, %5] select (_target getUnitTrait 'Medic'))) && {([_target] call %3) > 0}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic)], 2];
+}, [], 10, true, true, "", format ["alive _target && {_originalTarget isEqualTo _this && {(damage _target) isEqualTo 0 && {(_target getVariable ['%1' , %2]) < (%2 * ([%4, %5] select (_target getUnitTrait 'Medic'))) && {([_target] call %3) > 0}}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic)], 2];
 player setUserActionText [_id, localize "str_a3_cfgactions_healsoldierself0", "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];

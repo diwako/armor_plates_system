@@ -19,3 +19,4 @@ PREP(handleDamageEhACE);
 PREP(initAIUnit);
 PREP(setA3Damage);
 PREP(showDownedSkull);
+PREP(addActionsToUnit);
