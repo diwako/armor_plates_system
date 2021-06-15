@@ -2,4 +2,5 @@
 *.hpp text eol=crlf
 *.cpp text eol=crlf
 *.paa binary
+*.psd binary
 *.fsm text eol=crlf
