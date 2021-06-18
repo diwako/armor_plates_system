@@ -72,6 +72,7 @@ if (GVAR(aceMedicalLoaded)) then {
 
     ["CAManBase", "HandleHeal", {
         [{
+            (_this select 0) setDamage 0;
             _this call FUNC(handleHealEh);
         }, _this, 5] call CBA_fnc_waitAndExecute;
         true

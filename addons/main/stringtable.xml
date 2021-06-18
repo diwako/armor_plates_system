@@ -256,5 +256,8 @@
         <Key ID="STR_diw_armor_plates_main_addPlateToVest">
             <English>Adding ceramic plate to vest</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveUnit">
+            <English>Reviving %1, keep holding the button!</English>
+        </Key>
     </Package>
 </Project>

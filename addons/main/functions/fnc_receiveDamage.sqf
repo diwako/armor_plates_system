@@ -24,9 +24,9 @@ switch (_bodyPart) do {
 };
 
 _damage = _damage * GVAR(damageCoef);
-if !(isMultiplayer) then {
-    systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
-};
+// if !(isMultiplayer) then {
+//     systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
+// };
 
 private _player = call CBA_fnc_currentUnit;
 private _receivedDamage = false;

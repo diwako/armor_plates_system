@@ -5,6 +5,9 @@
 },{
     params ["_unit", "_healer"];
     if !(alive _unit) exitWith {};
+    if !(local _unit) exitWith {
+        [QGVAR(heal), [_unit, _healer], _unit] call CBA_fnc_targetEvent;
+    };
     private _unconcious = (lifeState _unit) == "INCAPACITATED";
 
     if (!_unconcious && {GVAR(enableHpRegen) && {isPlayer _unit}}) exitWith {
@@ -19,7 +22,7 @@
         systemChat LLSTRING(cannotHealMoreThanCurrent);
         [_unit, _curHp, _maxHp] call FUNC(setA3Damage);
     };
-    _unit setVariable [QGVAR(hp), _newHp];
+    _unit setVariable [QGVAR(hp), _newHp, true];
     [_unit, _newHp, _maxHp] call FUNC(setA3Damage);
     if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
         [_unit] call FUNC(updateHPUi);
@@ -28,5 +31,10 @@
         [_unit, false] call FUNC(setUnconscious);
         [_unit] call FUNC(startHpRegen);
     };
-}, _this, 10] call CBA_fnc_waitUntilAndExecute;
-
+}, _this, 10, {
+    params ["_unit", "_healer"];
+    systemChat format ["DEBUG: %1 could not be healed by %2, wait timer ran out: ", name _unit, name _healer];
+    systemChat format ["Patient local %1", local _unit];
+    systemChat format ["Medic local %1, is medic %2", local _healer, _healer getUnitTrait "Medic"];
+    systemChat "Report this to diwako with a screenshot";
+}] call CBA_fnc_waitUntilAndExecute;

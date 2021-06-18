@@ -20,3 +20,5 @@ PREP(initAIUnit);
 PREP(setA3Damage);
 PREP(showDownedSkull);
 PREP(addActionsToUnit);
+PREP(createProgressBar);
+PREP(deleteProgressBar);

@@ -11,7 +11,7 @@ if (GVAR(aceMedicalLoaded)) then {
     private _diff = _newPH / _maxHp;
 
     private _color = call {
-        if (_diff < 1 && {_diff <= GVAR(maxHealRifleman) && {_diff > (GVAR(maxHealRifleman)/2)}}) exitWith {
+        if (_diff < 1 && {_diff < GVAR(maxHealRifleman) && {_diff > (GVAR(maxHealRifleman)/2)}}) exitWith {
             [
                 profileNamespace getvariable ['igui_warning_RGB_R', 1],
                 profileNamespace getvariable ['igui_warning_RGB_G', 0.5],
