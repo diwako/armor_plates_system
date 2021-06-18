@@ -187,6 +187,7 @@ GVAR(killedEHId) = ["CAManBase", "Killed",{
     if (!GVAR(aceMedicalLoaded) && {_unit isEqualTo player}) then {
         GVAR(bleedOutTimeMalus) = nil;
         [false] call FUNC(showDownedSkull);
+        call FUNC(deleteProgressBar);
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
