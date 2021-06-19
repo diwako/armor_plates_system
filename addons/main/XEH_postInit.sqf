@@ -123,6 +123,8 @@ GVAR(lastDamageFeedbackMarkerShown) = -1;
 GVAR(lastPlateBreakSound) = -1;
 GVAR(lastHPDamageSound) = -1;
 GVAR(skullID) = -1;
+GVAR(downedUnitIndicatorDrawEh) = -1;
+GVAR(downedUnitIndicatorDrawCache) = [];
 
 // disallow weapon firing during plate interaction when ace is loaded
 if !(isNil "ace_common_fnc_addActionEventHandler") then {
@@ -193,9 +195,13 @@ GVAR(killedEHId) = ["CAManBase", "Killed",{
 
 if !(GVAR(aceMedicalLoaded)) then {
     [] call FUNC(addPlayerHoldActions);
+    if (GVAR(showDownedUnitIndicator)) then {
+        GVAR(downedUnitIndicatorDrawEh) = addMissionEventHandler ["Draw3D", {
+            call FUNC(drawDownedUnitIndicator);
+        }];
+    };
 
     [] spawn {
-        // if !(isMultiplayer) exitWith {};
         GVAR(playerDamageSync) = GVAR(maxPlayerHP);
         while {true} do {
             if (alive player) then {
@@ -207,6 +213,15 @@ if !(GVAR(aceMedicalLoaded)) then {
                 if ((damage player) isEqualTo 0 && {_oldValue < GVAR(maxPlayerHP)}) then {
                     [player, _oldValue, GVAR(maxPlayerHP)] call FUNC(setA3Damage);
                 };
+            };
+            if (GVAR(showDownedUnitIndicator)) then {
+                private _player = call CBA_fnc_currentUnit;
+                private _side = side group _player;
+                GVAR(downedUnitIndicatorDrawCache) = allUnits select {
+                    _x getVariable [QGVAR(unconscious), false] && {
+                    alive _x && {
+                    _side isEqualTo (side group _x)}}};
+                GVAR(downedUnitIndicatorDrawCache) = GVAR(downedUnitIndicatorDrawCache) - [_player];
             };
             sleep 5;
         };

@@ -226,6 +226,24 @@
         <Key ID="STR_diw_armor_plates_main_showDownedSkull_desc">
             <English>Shows a slowly appearing skull when downed to indicate how much time is left on the bleedout timer</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator">
+            <English>Show icon over downed units</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator_desc">
+            <English>Shows an icon in 3D space over a friendly downed unit</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange">
+            <English>Range for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange_desc">
+            <English>The maximum range you can see a downed friendly unit</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
+            <English>Size for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize_desc">
+            <English>The size for the downed icon</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_plateItem">
             <English>Ceramic plate</English>
         </Key>

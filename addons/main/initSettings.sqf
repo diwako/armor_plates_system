@@ -146,6 +146,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 
 if (_aceMedicalLoaded) then {
     GVAR(showDownedSkull) = false;
+    GVAR(showDownedUnitIndicator) = false;
 } else {
     [
         QGVAR(showDownedSkull),
@@ -153,6 +154,52 @@ if (_aceMedicalLoaded) then {
         [LLSTRING(showDownedSkull), LLSTRING(showDownedSkull_desc)],
         _category,
         true,
+        false
+    ] call CBA_fnc_addSetting;
+
+    [
+        QGVAR(showDownedUnitIndicator),
+        "CHECKBOX",
+        [LLSTRING(showDownedUnitIndicator), LLSTRING(showDownedUnitIndicator_desc)],
+        _category,
+        true,
+        false, {
+            params ["_value"];
+            if (time < 1) exitWith {};
+            if (_value) then {
+                if (GVAR(downedUnitIndicatorDrawEh) < 0) then {
+                    GVAR(downedUnitIndicatorDrawEh) = addMissionEventHandler ["Draw3D", {
+                        call FUNC(drawDownedUnitIndicator);
+                    }];
+                };
+            } else {
+                if (GVAR(downedUnitIndicatorDrawEh) >= 0) then {
+                    removeMissionEventHandler ["Draw3D", GVAR(downedUnitIndicatorDrawEh)];
+                    GVAR(downedUnitIndicatorDrawEh) = -1;
+                };
+            }
+        }
+    ] call CBA_fnc_addSetting;
+
+    [
+        QGVAR(showDownedUnitIndicatorRange),
+        "SLIDER",
+        [LLSTRING(showDownedUnitIndicatorRange), LLSTRING(showDownedUnitIndicatorRange_desc)],
+        _category,
+        [0, 500, 100, 0],
+        false,
+        {
+            params ["_value"];
+            GVAR(showDownedUnitIndicatorRange) = round _value;
+        }
+    ] call CBA_fnc_addSetting;
+
+    [
+        QGVAR(showDownedUnitIndicatorSize),
+        "SLIDER",
+        [LLSTRING(showDownedUnitIndicatorSize), LLSTRING(showDownedUnitIndicatorSize_desc)],
+        _category,
+        [0, 10, 2, 2],
         false
     ] call CBA_fnc_addSetting;
 };

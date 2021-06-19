@@ -22,3 +22,4 @@ PREP(showDownedSkull);
 PREP(addActionsToUnit);
 PREP(createProgressBar);
 PREP(deleteProgressBar);
+PREP(drawDownedUnitIndicator);
