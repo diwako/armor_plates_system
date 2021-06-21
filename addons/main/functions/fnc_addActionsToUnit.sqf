@@ -3,8 +3,7 @@ params ["_unit"];
 
 private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
     // condition show
-    format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {_this getUnitTrait 'Medic' && {(_target distance _this) < 5 && {[_this] call %1 > 0}}}}", QFUNC(hasHealItems)],
-    // condition progress
+    format ["_this getUnitTrait 'Medic' && {[_this, _originalTarget] call %1}", QFUNC(canRevive)],
     "alive _target && {(lifeState _target) == 'INCAPACITATED'}", {
     // code start
     params ["_target", "_caller", "", "_arguments"];
@@ -41,7 +40,7 @@ private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_re
 
 _arr call BIS_fnc_holdActionAdd;
 private _arr2 = +_arr;
-_arr2 set [4, format ["alive _originalTarget && { _originalTarget isNotEqualTo _this && {(lifeState _originalTarget) == 'INCAPACITATED' && {!(_this getUnitTrait 'Medic') && {(_originalTarget distance _this) < 5 && {[_this] call %1 > 0}}}}}", QFUNC(hasHealItems)]];
+_arr2 set [4, format ["!(_this getUnitTrait 'Medic') && {[_this, _originalTarget] call %1}", QFUNC(canRevive)]];
 _arr2 set [10, [GVAR(noneMedicReviveTime)]];
 _arr2 set [11, GVAR(noneMedicReviveTime)];
 _arr2 call BIS_fnc_holdActionAdd;

@@ -52,9 +52,9 @@ if (
 };
 
 if (_projectile isEqualTo "" && {isNull _source}) exitWith {
-    if !(isMultiplayer) then {
-        systemChat format ["DID NOT PASS DAMAGE: %1 | %2 | %3 | %4", _hitPoint, _projectile, _newDamage, _source];
-    };
+    // if !(isMultiplayer) then {
+    //     systemChat format ["DID NOT PASS DAMAGE: %1 | %2 | %3 | %4", _hitPoint, _projectile, _newDamage, _source];
+    // };
     _curDamage
 };
 

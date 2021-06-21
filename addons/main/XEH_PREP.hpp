@@ -23,3 +23,4 @@ PREP(addActionsToUnit);
 PREP(createProgressBar);
 PREP(deleteProgressBar);
 PREP(drawDownedUnitIndicator);
+PREP(canRevive);

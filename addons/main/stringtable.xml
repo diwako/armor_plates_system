@@ -2,7 +2,7 @@
 <Project name="diw_armor_plates">
     <Package name="main">
         <Key ID="STR_diw_armor_plates_main_category">
-            <English>Armor Plate System</English>
+            <English>Armor Plates System</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
             <English>Armor Plates</English>
