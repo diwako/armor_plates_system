@@ -29,4 +29,4 @@ This system makes heavy use of CBA settings, allowing server owners or mission m
 
 Right now the support is rather minimal. The armor plates will stop incoming bullet damage, but it will not stop damage from car crashes, fall damage or from drowning. Most of this mod’s features are geared for the standalone use without ACE medical and are not available when ACE medical is loaded alongside this mod.
 
-Steam workshop: TBD
+Steam workshop: https://steamcommunity.com/sharedfiles/filedetails/?edit=true&id=2523439183
