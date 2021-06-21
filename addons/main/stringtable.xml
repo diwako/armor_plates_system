@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="diw_armor_plates">
+    <Package name="main">
+        <Key ID="STR_diw_armor_plates_main_category">
+            <English>Armor Plates System</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
+            <English>Armor Plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_numWearablePlates">
+            <English>Amount of plates wearable</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_numWearablePlates_desc">
+            <English>How many plates can you fit into your vest to give you protection</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlateHealth">
+            <English>Armor Plate HP</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlateHealth_desc">
+            <English>Max HP of an armor plate</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_timeToAddPlate">
+            <English>Time to add one plate</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_timeToAddPlate_desc">
+            <English>How long does it take to add one plate to the vest in seconds</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowPlateReplace">
+            <English>Allow replacing damaged plate</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowPlateReplace_desc">
+            <English>Allows people to replace damaged plates, the damaged plate will be discarded</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates">
+            <English>Players spawn with full plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates_desc">
+            <English>When spawning or respawning you will start with maximum amount of plates already preloaded into your vest.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest">
+            <English>Chance for AI to carry plates in vests</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest_desc">
+            <English>Chance in % if AI can have plates in their vest</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInVestMaxNo">
+            <English>Amount added to vest</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInVestMaxNo_desc">
+            <English>0 == random up to max allowed carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their vest. Any number above the allowed carry capacity will be reduced to max carry capacity</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventory">
+            <English>Chance for AI to carry plates in inventory</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventory_desc">
+            <English>Chance in % if AI can have plates in their inventory. These plates can be looted!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo">
+            <English>Amount added to inventory</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo_desc">
+            <English>0 == random up to max allowed carry carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their inventory.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateColor">
+            <English>Plate UI color</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
+            <English>Health</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlayerHP">
+            <English>Max Player HP</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlayerHP_desc">
+            <English>How much HP does a player have</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxAiHP">
+            <English>Max AI HP</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxAiHP_desc">
+            <English>How much HP does an AI have</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHpRegen">
+            <English>Enable HP regen</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHpRegen_desc">
+            <English>Start HP regeneration after 5 seconds</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHpRegenForAI">
+            <English>Enable HP regen for AI</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHpRegenForAI_desc">
+            <English>Allows AI to regenerate HP</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hpRegenRate">
+            <English>HP regen rate</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hpRegenRate_desc">
+            <English>How fast do my eyes stop bleeding?</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealMedic">
+            <English>Max heal % for medics</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealMedic_desc">
+            <English>How percentage of max health can a medic heal?</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealRifleman">
+            <English>Max heal % for non-medics</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealRifleman_desc">
+            <English>How percentage of max health can a rifleman heal?</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
+            <English>General</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enable">
+            <English>Enable the whole system</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enable_desc">
+            <English>nables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_damageCoef">
+            <English>Damage coefficient</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_damageCoef_desc">
+            <English>Coefficient which manipulates the incoming damage</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headshotMult">
+            <English>Headshot Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headshotMult_desc">
+            <English>Damage multiplier on headshot</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_limbMult">
+            <English>Limb Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_limbMult_desc">
+            <English>Damage multiplier on limb shots</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
+            <English>Disallow friendly fire</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_disallowFriendfire_desc">
+            <English>Do not allow friendly from weapon fire</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_damageEhVariant">
+            <English>Damage EH</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_damageEhVariant_desc">
+            <English>Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enablePlayerUnconscious">
+            <English>Enable player unconsciousness</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enablePlayerUnconscious_desc">
+            <English>Enables the unconscious implementation, when a player reaches 0 HP</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTime">
+            <English>Bleed out timer</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTime_desc">
+            <English>Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction">
+            <English>Bleed out timer subtraction</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction_desc">
+            <English>Every time a player goes down their remaining bleed out timer will be subtracted by the given value in seconds. If a player goes down too often their bleed out timer may reach 0 and they instantly die</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_medicReviveTime">
+            <English>Medic revive time</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_medicReviveTime_desc">
+            <English>How long does it take to revive someone as a medic in seconds</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_noneMedicReviveTime">
+            <English>None-medic revive time</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_noneMedicReviveTime_desc">
+            <English>How long does it take to revive someone as not a medic in seconds</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryFeedback">
+            <English>Feedback</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDamageMarker">
+            <English>Show damage markers</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDamageMarker_desc">
+            <English>Shows damage marker and direction of inconing damage</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedFeedback">
+            <English>Downed feedback</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedFeedback_desc">
+            <English>Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedFeedback_0">
+            <English>Off</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedFeedback_1">
+            <English>Show message</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedFeedback_2">
+            <English>Message and Sound</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback">
+            <English>Audio feedback</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback_desc">
+            <English>Plays audio clip when taking damage, receiving a headshot or an armor plate just broke.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback_1">
+            <English>150% Volume</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback_2">
+            <English>125% Volume</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback_3">
+            <English>100% Volume</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback_4">
+            <English>75% Volume</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedSkull">
+            <English>Show skull when downed</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedSkull_desc">
+            <English>Shows a slowly appearing skull when downed to indicate how much time is left on the bleedout timer</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator">
+            <English>Show icon over downed units</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator_desc">
+            <English>Shows an icon in 3D space over a friendly downed unit</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange">
+            <English>Range for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange_desc">
+            <English>The maximum range you can see a downed friendly unit</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
+            <English>Size for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize_desc">
+            <English>The size for the downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateItem">
+            <English>Ceramic plate</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Short">
+            <English>Ceramic plate used to protect the body from kinetic impacts</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Use">
+            <English>Standard ceramic armor plating, just zip your vest open and push that fucker in ;)</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
+            <English>Add plate into vest</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_cannotHealWhileRegenOn">
+            <English>Cannot heal when HP regeneration is on!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_cannotHealMoreThanCurrent">
+            <English>Healing failed, cannot heal more than current HP!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedMessage1">
+            <English>%1 just went down!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedMessage2">
+            <English>%1 just hit the dirt!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedMessage3">
+            <English>Heads up, %1 just keeled over!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_addPlateToVest">
+            <English>Adding ceramic plate to vest</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveUnit">
+            <English>Reviving %1, keep holding the button!</English>
+        </Key>
+    </Package>
+</Project>
