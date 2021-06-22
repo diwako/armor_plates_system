@@ -37,8 +37,8 @@ private _player = call CBA_fnc_currentUnit;
 private _receivedDamage = false;
 private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
 if (_plates isNotEqualTo []) then {
-    // exit out and let red of function handle the remaining damage
-    // if torso was not hit and plates only protect torso
+    // exit out and let rest of function handle the remaining damage
+    // if torso was not hit and plates are set to only protect the torso
     if (!_isTorso && {GVAR(protectOnlyTorso)}) exitWith {};
     for "_i" from ((count _plates) - 1) to 0 step -1 do {
         private _plateIntegrity = _plates select _i;
