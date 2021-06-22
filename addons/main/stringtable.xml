@@ -35,7 +35,7 @@
             <English>Only protect torso</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso_desc">
-            <English>When enabled ceramic plates will only protect the torso, when disabled ceramic plates will protect limbs and head as well</English>
+            <English>When enabled ceramic plates will only protect the torso, when disabled ceramic plates will protect limbs and head as well. This will only work with HandleDamage as damage handler!</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates">
             <English>Players spawn with full plates</English>
