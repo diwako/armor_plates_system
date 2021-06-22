@@ -26,7 +26,6 @@ if (hasInterface) then {
     uiNamespace setVariable [QGVAR(skullControls), []];
 };
 
-GVAR(aceMedicalLoaded) = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
 if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoaded)}) exitWith {
     INFO("PostInit: Disabled --> old ACE medical loaded");
 };

@@ -1,14 +1,18 @@
 #include "script_component.hpp"
 ADDON = false;
 
-if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!isClass(configFile >> "CfgPatches" >> "ace_medical_engine")}) exitWith {
+GVAR(aceMedicalLoaded) = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
+if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoaded)}) exitWith {
     INFO("PreInit: Disabled --> old ACE medical loaded");
 };
 
 #include "XEH_PREP.hpp"
+if (GVAR(aceMedicalLoaded)) then {
+    #include "initSettingsACE.sqf"
+} else {
+    #include "initSettings.sqf"
 
-#include "initSettings.sqf"
-
-GVAR(armorCache) = false call CBA_fnc_createNamespace;
+    GVAR(armorCache) = false call CBA_fnc_createNamespace;
+};
 
 ADDON = true;
