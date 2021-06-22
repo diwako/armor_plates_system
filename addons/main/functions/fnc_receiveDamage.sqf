@@ -13,6 +13,7 @@ if (GVAR(disallowFriendfire) &&
     (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {-1};
 
 private _isHeadshot = false;
+private _isTorso = false;
 switch (_bodyPart) do {
     case "face_hub";
     case "face";
@@ -20,7 +21,11 @@ switch (_bodyPart) do {
     case "arms";
     case "hands";
     case "legs": {_damage = _damage * GVAR(limbMult)};
-    default {};
+    case "vehicle";
+    case "incapacitated";
+    case "#structural";
+    case "falldamage": {};
+    default {_isTorso = true};
 };
 
 _damage = _damage * GVAR(damageCoef);
@@ -32,6 +37,9 @@ private _player = call CBA_fnc_currentUnit;
 private _receivedDamage = false;
 private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
 if (_plates isNotEqualTo []) then {
+    // exit out and let red of function handle the remaining damage
+    // if torso was not hit and plates only protect torso
+    if (!_isTorso && {GVAR(protectOnlyTorso)}) exitWith {};
     for "_i" from ((count _plates) - 1) to 0 step -1 do {
         private _plateIntegrity = _plates select _i;
         private _newDamage = _plateIntegrity - _damage;

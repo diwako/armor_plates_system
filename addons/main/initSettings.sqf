@@ -54,6 +54,15 @@ private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_e
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(protectOnlyTorso),
+    "CHECKBOX",
+    [LLSTRING(protectOnlyTorso), LLSTRING(protectOnlyTorso_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(spawnWithFullPlates),
     "CHECKBOX",
     [LLSTRING(spawnWithFullPlates), LLSTRING(spawnWithFullPlates_desc)],
