@@ -277,5 +277,14 @@
         <Key ID="STR_diw_armor_plates_main_reviveUnit">
             <English>Reviving %1, keep holding the button!</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_Eden_options">
+            <English>APS Options</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_Eden_maxHp">
+            <English>Max HP</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_Eden_maxHp_desc">
+            <English>Set the maximum HP this unit can have.</English>
+        </Key>
     </Package>
 </Project>

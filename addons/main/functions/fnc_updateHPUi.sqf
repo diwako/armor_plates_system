@@ -6,7 +6,7 @@ private _pos = ctrlPosition _hpBar;
 if (GVAR(aceMedicalLoaded)) then {
     _pos set [2, 0];
 } else {
-    private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _player);
+    private _maxHp = _player getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _player)];
     private _newPH = _player getVariable [QGVAR(hp), _maxHp];
     private _diff = _newPH / _maxHp;
 
