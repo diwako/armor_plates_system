@@ -8,7 +8,7 @@
 #define PRIORITY_LEFT_LEG   (1 + random 1)
 #define PRIORITY_RIGHT_LEG  (1 + random 1)
 
-params ["_unit", "_selection", "_damage", "_shooter", "_ammo", "_hitPointIndex", "_instigator", "_hitpoint"];
+params ["_unit", "", "_damage", "_shooter", "_ammo", "_hitPointIndex", "_instigator", "_hitpoint"];
 if !(local _unit) exitWith {nil};
 
 private _curDamage = 0;
