@@ -1,41 +1,29 @@
 #include "script_component.hpp"
-params ["_unit", "_damage", "_bodyPart", "_instigator", "_ammo"];
+params ["_unit", "_damage", "_actualDamage", "_instigator", "_ammo"];
 if (_damage <= 0 || {!alive _unit}) exitWith {0};
 
-if (GVAR(disallowFriendfire) &&
-    {!isNull _instigator && {
-    _instigator isNotEqualTo _unit && {
-    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {-1};
-
-// if !(isMultiplayer) then {
-//     systemChat format ["%1 DMG: %2 form %5 --> %3 | %4", name _unit, _damage, _bodyPart, diag_frameNo, name _instigator];
-// };
-
-private _caliber = getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_Caliber");
-private _mass = getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_bulletMass");
-systemChat str _mmPenned;
-
+private _initialActualDamage = _actualDamage;
 private _player = call CBA_fnc_currentUnit;
-private _receivedDamage = false;
 private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
-if (_bodyPart isEqualTo "Body" && {_plates isNotEqualTo []}) then {
+if (_plates isNotEqualTo []) then {
+    private _caliber = getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_Caliber");
+    private _mass = getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_bulletMass");
     for "_i" from ((count _plates) - 1) to 0 step -1 do {
         private _plateIntegrity = _plates select _i;
-        private _newDamage = _plateIntegrity - _damage;
+        private _newDamage = _plateIntegrity - _actualDamage;
         private _pennDamage = 0;
-        private _mmPenned = _damage * _caliber * _mass / GVAR(plateThickness);
-        if (_mmPenned > 1) then {
+        private _mmPenned = (_actualDamage * _caliber * _mass) * (125 / 1000);
+        if (_mmPenned > GVAR(plateThickness)) then {
             // plate was penetrated!
-            _pennDamage = _damage * ((_mmPenned - 1) min 0.5);
-            systemChat format ["PENNED! %1 | %2", _mmPenned, _pennDamage];
+            _pennDamage = _actualDamage * (1 - (GVAR(plateThickness) / _mmPenned));
         };
         if (_newDamage > 0) then {
             // plate managed to soak the damage
-            _plates set [_i, _newDamage];
-            _damage = _pennDamage;
+            _plates set [_i, _newDamage / (GVAR(maxPlateHealth) / _plateIntegrity)];
+            _actualDamage = _pennDamage;
         } else {
             // the plate shattered
-            _damage = (abs _newDamage) + _pennDamage;
+            _actualDamage = (abs _newDamage) + _pennDamage;
             _plates deleteAt _i;
 
             if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
@@ -50,7 +38,6 @@ if (_bodyPart isEqualTo "Body" && {_plates isNotEqualTo []}) then {
         if (GVAR(showDamageMarker)) then {
             [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
         };
-        _receivedDamage = true;
     };
 };
 
@@ -61,4 +48,4 @@ if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
     };
 };
 
-_damage
+_damage * (_actualDamage / _initialActualDamage)

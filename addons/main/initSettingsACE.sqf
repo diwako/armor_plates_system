@@ -39,7 +39,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     "SLIDER",
     [LLSTRING(maxPlateHealth), LLSTRING(maxPlateHealth_desc)],
     _category,
-    [1, 15, 1, 0],
+    [1, 50, 15, 0],
     true,
     {
         params ["_value"];
@@ -62,15 +62,6 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     [LLSTRING(allowPlateReplace), LLSTRING(allowPlateReplace_desc)],
     _category,
     true,
-    true
-] call CBA_fnc_addSetting;
-
-[
-    QGVAR(protectOnlyTorso),
-    "CHECKBOX",
-    [LLSTRING(protectOnlyTorso), LLSTRING(protectOnlyTorso_desc)],
-    _category,
-    false,
     true
 ] call CBA_fnc_addSetting;
 
@@ -143,7 +134,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     "CHECKBOX",
     [LLSTRING(showDamageMarker), LLSTRING(showDamageMarker_desc)],
     _category,
-    true,
+    false,
     false
 ] call CBA_fnc_addSetting;
 
@@ -152,7 +143,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     "LIST",
     [LLSTRING(audioFeedback), LLSTRING(audioFeedback_desc)],
     _category,
-    [[0, 1, 2, 3, 4], [LLSTRING(downedFeedback_0), LLSTRING(audioFeedback_1), LLSTRING(audioFeedback_2), LLSTRING(audioFeedback_3), LLSTRING(audioFeedback_4)], 3],
+    [[0, 1, 2, 3, 4], [LLSTRING(downedFeedback_0), LLSTRING(audioFeedback_1), LLSTRING(audioFeedback_2), LLSTRING(audioFeedback_3), LLSTRING(audioFeedback_4)], 0],
     false
 ] call CBA_fnc_addSetting;
 

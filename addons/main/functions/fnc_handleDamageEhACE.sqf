@@ -21,21 +21,30 @@ if (_hitPoint isEqualTo "") then {
 
 if (!isDamageAllowed _unit || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"] || {_unit getVariable ["ace_medical_allowDamage", false]}}) exitWith {_curDamage};
 
+if (GVAR(disallowFriendfire) &&
+    {!isNull _instigator && {
+    _instigator isNotEqualTo _unit && {
+    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {_curDamage};
+
 private _newDamage = _damage - _curDamage;
 if (_newDamage isEqualTo 0) exitWith {
     _curDamage
 };
 
-private _armor = [_unit, _hitpoint] call ace_medical_engine_fnc_getHitpointArmor;
-private _realDamage = _newDamage * _armor;
-_unit setVariable [format ["ace_medical_engine_$%1", _hitPoint], [_realDamage, _newDamage]];
-
 if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
+    if (GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}) then {
+        [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
+    };
+
     if (_ammo isEqualTo "") exitWith {
         // let ace do the thing
         _this call ace_medical_engine_fnc_handleDamage;
         0;
     };
+
+    private _armor = [_unit, _hitpoint] call ace_medical_engine_fnc_getHitpointArmor;
+    private _realDamage = _newDamage * _armor;
+    _unit setVariable [format ["ace_medical_engine_$%1", _hitPoint], [_realDamage, _newDamage]];
 
     // write hitpoint damage to unit var
 
@@ -110,17 +119,37 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
     if (_receivedDamage > 1E-3) then {
         // APS code begin
 
-        private _damageLeft = [_unit, _receivedDamage, _woundedHitPoint, [_instigator, _shooter] select (isNull _instigator), _ammo] call FUNC(receiveDamageACE);
-        // private _bodyArmor = [player, "HitBody"] call ace_medical_engine_fnc_getHitpointArmor;
-        // _damageLeft = _damageLeft / _bodyArmor;
+        private _aceSelection = "";
+        {
+            if ((_unit getVariable [_x, [0,0]]) isEqualTo _damageBody) then {
+                _aceSelection = [_x, "ace_medical_engine_$", ""] call CBA_fnc_replace;
+                break;
+            };
+        } forEach [
+            "ace_medical_engine_$HitPelvis",
+            "ace_medical_engine_$HitAbdomen",
+            "ace_medical_engine_$HitDiaphragm",
+            "ace_medical_engine_$HitChest"
+        ];
+        // _aceSelection is HitBody, HitLegs etc
+        private _bodyArmor = [vest _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor;
+        private _hitPointArmor = getNumber ((configOf _unit) >> "HitPoints" >> _aceSelection >> "armor");
 
-        _unit setVariable ["ace_medical_engine_$HitBody", [_realDamage, _newDamage]];
+        private _actualDamage = _receivedDamage;
 
-        systemChat format ["D %1 | L %2 | %3", _receivedDamage, _damageLeft, _damageSelectionArray];
+        if (_bodyArmor > 0 && {_hitPointArmor > 0}) then {
+            _actualDamage = _damage * (_hitPointArmor + _bodyArmor) / _hitPointArmor / _bodyArmor * 0.96;
+        };
+
+        private _damageLeft = [_unit, _receivedDamage, _actualDamage, [_instigator, _shooter] select (isNull _instigator), _ammo] call FUNC(receiveDamageACE);
+
+        if (_damageLeft > 0) then {
+            systemChat format ["D %1 | L %2 | %3", _receivedDamage, _damageLeft, _bodyArmor];
+        };
 
         // APS code end
 
-        // ["ace_medical_woundReceived", [_unit, _woundedHitPoint, _damageLeft, _shooter, _ammo, _damageSelectionArray]] call CBA_fnc_localEvent;
+        ["ace_medical_woundReceived", [_unit, _woundedHitPoint, _damageLeft, _shooter, _ammo, _damageSelectionArray]] call CBA_fnc_localEvent;
     };
 
     // Clear stored damages otherwise they will influence future damage events
@@ -136,30 +165,6 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
     0
 };
 
-// Drowning doesn't fire the EH for each hitpoint
-// Damage occurs in consistent increments
-if (
-    _hitPoint isEqualTo "#structural" &&
-    {getOxygenRemaining _unit <= 0.5} &&
-    {_damage isEqualTo (_curDamage + 0.005)}
-) exitWith {
-    // let ace do the thing
-    _this call ace_medical_engine_fnc_handleDamage;
-    0
-};
-
-// Crashing a vehicle doesn't fire the EH for each hitpoint so the "ace_hdbracket" code never runs
-// It does fire the EH multiple times, but this seems to scale with the intensity of the crash
-private _vehicle = vehicle _unit;
-if (
-    _hitPoint isEqualTo "#structural" &&
-    {_ammo isEqualTo ""} &&
-    {_vehicle != _unit} &&
-    {vectorMagnitude (velocity _vehicle) > 5}
-) exitWith {
-    // let ace do the thing
-    _this call ace_medical_engine_fnc_handleDamage;
-    0
-};
-
+// let ace do the thing
+_this call ace_medical_engine_fnc_handleDamage;
 0
