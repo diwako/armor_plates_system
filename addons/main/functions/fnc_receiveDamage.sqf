@@ -35,7 +35,8 @@ _damage = _damage * GVAR(damageCoef);
 
 private _player = call CBA_fnc_currentUnit;
 private _receivedDamage = false;
-private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
+private _vest = vestContainer _unit;
+private _plates = _vest getVariable [QGVAR(plates), []];
 if (_plates isNotEqualTo []) then {
     // exit out and let rest of function handle the remaining damage
     // if torso was not hit and plates are set to only protect the torso
@@ -52,6 +53,7 @@ if (_plates isNotEqualTo []) then {
             // the plate shattered bleeding damage into lower plates
             _damage = abs _newDamage;
             _plates deleteAt _i;
+            _vest setVariable ["ace_movement_vLoad", 0 max ((_vest getVariable ["ace_movement_vLoad", 0]) - PLATE_MASS), true];
 
             if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
                 GVAR(lastPlateBreakSound) = diag_frameNo;

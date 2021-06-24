@@ -235,7 +235,9 @@ if !(GVAR(aceMedicalLoaded)) then {
         for "_i" from 1 to GVAR(numWearablePlates) do {
             _plates pushBack GVAR(maxPlateHealth);
         };
-        (vestContainer player) setVariable [QGVAR(plates), _plates];
+        private _vest = vestContainer player;
+        _vest setVariable [QGVAR(plates), _plates];
+        _vest setVariable ["ace_movement_vLoad", (_vest getVariable ["ace_movement_vLoad", 0]) + (PLATE_MASS * GVAR(numWearablePlates)), true];
     };
     [] call FUNC(initPlates);
     player setVariable [QGVAR(vestContainer), vestContainer player];

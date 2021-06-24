@@ -4,7 +4,8 @@ if (_damage <= 0 || {!alive _unit}) exitWith {0};
 
 private _initialActualDamage = _actualDamage;
 private _player = call CBA_fnc_currentUnit;
-private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
+private _vest = vestContainer _unit;
+private _plates = _vest getVariable [QGVAR(plates), []];
 if (_plates isNotEqualTo []) then {
     private _caliber = getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_Caliber");
     private _mass = getNumber (configFile >> "CfgAmmo" >> _ammo >> "ACE_bulletMass");
@@ -25,6 +26,7 @@ if (_plates isNotEqualTo []) then {
             // the plate shattered
             _actualDamage = (abs _newDamage) + _pennDamage;
             _plates deleteAt _i;
+            _vest setVariable ["ace_movement_vLoad", 0 max ((_vest getVariable ["ace_movement_vLoad", 0]) - PLATE_MASS), true];
 
             if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
                 GVAR(lastPlateBreakSound) = diag_frameNo;
