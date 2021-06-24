@@ -1,16 +1,16 @@
 #include "script_component.hpp"
 params ["_unit", "_damage", "_bodyPart", "_instigator"];
-if (_damage <= 0 || {!alive _unit}) exitWith {0};
+if (_damage <= 0 || {!alive _unit}) exitWith {};
 
 private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
 private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
 
-if (_curHp <= 0) exitWith {-1};
+if (_curHp <= 0) exitWith {};
 
 if (GVAR(disallowFriendfire) &&
     {!isNull _instigator && {
     _instigator isNotEqualTo _unit && {
-    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {-1};
+    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {};
 
 private _isHeadshot = false;
 private _isTorso = false;
@@ -82,7 +82,7 @@ if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
 };
 
 // no need to update unit health if there is no damage left
-if (_damage isEqualTo 0) exitWith {_damage};
+if (_damage isEqualTo 0) exitWith {};
 
 private _newHP = (_curHp - _damage) max 0;
 _unit setVariable [QGVAR(hp), [_newHP, 100] select GVAR(aceMedicalLoaded)];
@@ -92,8 +92,6 @@ if (_player isEqualTo _unit) then {
         [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
     };
 };
-
-if (GVAR(aceMedicalLoaded)) exitWith {_damage / GVAR(damageCoef)};
 
 if (_newHP isEqualTo 0) exitWith {
     [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
