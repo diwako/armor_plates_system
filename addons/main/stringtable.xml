@@ -292,5 +292,14 @@
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp_desc">
             <English>Set the maximum HP this unit can have. DOES NOTHING WITH ACE MEDICAL LOADED!</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_allowSelfRevive">
+            <English>Allow self revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowSelfRevive_desc">
+            <English>Allows players to self revive when downed. It takes double the amount of time they would need to revive someone else. Can only revive if they have medical supplies on them.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
+            <English>Get up by yourself</English>
+        </Key>
     </Package>
 </Project>
