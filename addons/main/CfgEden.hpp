@@ -3,16 +3,13 @@ class Cfg3DEN {
         class Slider;
         class GVAR(maxHpSlider): Slider {
             attributeLoad = "params [""_ctrlGroup""];\
-            if (isClass(configFile >> 'CfgPatches' >> 'ace_medical_engine')) exitWith {};\
             private _slider = _ctrlGroup controlsGroupCtrl 100;\
             private _edit = _ctrlGroup controlsGroupCtrl 101;\
             _slider sliderSetPosition _value;\
             _edit ctrlSetText (if (_value < 0.1) then {localize ""str_disp_default""} else {[_value, 1, 1] call CBA_fnc_formatNumber});";
             attributeSave = "params [""_ctrlGroup""];\
-            if (isClass(configFile >> 'CfgPatches' >> 'ace_medical_engine')) exitWith {};\
             sliderPosition (_ctrlGroup controlsGroupCtrl 100); ";
             onLoad = "params [""_ctrlGroup""];\
-            if (isClass(configFile >> 'CfgPatches' >> 'ace_medical_engine')) exitWith {};\
             private _slider = _ctrlGroup controlsGroupCtrl 100;\
             private _edit = _ctrlGroup controlsGroupCtrl 101;\
             _slider sliderSetRange [0, 1000];\

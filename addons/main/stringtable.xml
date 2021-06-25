@@ -284,7 +284,7 @@
             <English>Max HP</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp_desc">
-            <English>Set the maximum HP this unit can have.</English>
+            <English>Set the maximum HP this unit can have. DOES NOTHING WITH ACE MEDICAL LOADED!</English>
         </Key>
     </Package>
 </Project>
