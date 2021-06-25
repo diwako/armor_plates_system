@@ -24,7 +24,7 @@ if !(_selfOrUnkownDamage) then {
 if (GVAR(aceMedicalLoaded)) then {
     _ctrl ctrlSetFade 0;
 } else {
-    private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
+    private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
     _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
 };
 _ctrl ctrlCommit 0.05;

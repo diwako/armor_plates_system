@@ -212,16 +212,17 @@ if !(GVAR(aceMedicalLoaded)) then {
     };
 
     [] spawn {
-        GVAR(playerDamageSync) = GVAR(maxPlayerHP);
+        GVAR(playerDamageSync) = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
         while {true} do {
             if (alive player) then {
-                private _oldValue = player getVariable [QGVAR(hp), GVAR(maxPlayerHP)];
+                private _maxHp = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
+                private _oldValue = player getVariable [QGVAR(hp), _maxHp];
                 if (_oldValue isNotEqualTo GVAR(playerDamageSync)) then {
                     player setVariable [QGVAR(hp), _oldValue, true];
                     GVAR(playerDamageSync) = _oldValue;
                 };
-                if ((damage player) isEqualTo 0 && {_oldValue < GVAR(maxPlayerHP)}) then {
-                    [player, _oldValue, GVAR(maxPlayerHP)] call FUNC(setA3Damage);
+                if ((damage player) isEqualTo 0 && {_oldValue < _maxHp}) then {
+                    [player, _oldValue, _maxHp] call FUNC(setA3Damage);
                 };
             };
             if (GVAR(showDownedUnitIndicator)) then {
