@@ -8,7 +8,7 @@
     if !(local _unit) exitWith {
         [QGVAR(heal), [_unit, _healer], _unit] call CBA_fnc_targetEvent;
     };
-    private _unconcious = (lifeState _unit) == "INCAPACITATED";
+    private _unconcious = (lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]};
 
     if (!_unconcious && {GVAR(enableHpRegen) && {isPlayer _unit}}) exitWith {
         systemChat LLSTRING(cannotHealWhileRegenOn);

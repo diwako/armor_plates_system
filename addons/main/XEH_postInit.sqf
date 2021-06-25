@@ -94,6 +94,16 @@ if (GVAR(aceMedicalLoaded)) then {
         _unit switchMove _anim;
     }] call CBA_fnc_addEventHandler;
 
+    [QGVAR(wokeUpCheck), {
+        // check if someone is stuck in a downed animation
+        params ["_unit"];
+        if (!alive _unit) exitWith {};
+        private _animation = animationState _unit;
+        if ((_animation == "unconscious" || {_animation == "deadstate" || {_animation find "unconscious" != -1}}) && {lifeState _unit != "INCAPACITATED"}) then {
+            [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+        };
+    }] call CBA_fnc_addEventHandler;
+
     [QGVAR(setHidden), {
         params ["_object", "_set"];
 

@@ -50,6 +50,15 @@ if (_set) then {
     if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
         [_set] call FUNC(showDownedSkull);
     };
+    if (isNull objectParent _unit) then {
+        [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+        if (currentWeapon _unit == secondaryWeapon _unit && {currentWeapon _unit != ""}) then {
+            [QGVAR(switchMove), [_unit, "AmovPknlMstpSrasWlnrDnon"]] call CBA_fnc_globalEvent;
+        };
+        [{
+            [QGVAR(wokeUpCheck), [_this]] call CBA_fnc_globalEvent;
+        }, _unit, 0.5] call CBA_fnc_waitAndExecute;
+    };
 };
 
 _unit setUnconscious _set;
