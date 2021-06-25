@@ -326,6 +326,15 @@ if (_aceMedicalLoaded) exitWith {};
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(allowSelfRevive),
+    "CHECKBOX",
+    [LLSTRING(allowSelfRevive), LLSTRING(allowSelfRevive_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryHealth)];
 
 [
