@@ -143,10 +143,6 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
 
         private _damageLeft = [_unit, _receivedDamage, _actualDamage, [_instigator, _shooter] select (isNull _instigator), _ammo] call FUNC(receiveDamageACE);
 
-        if (_damageLeft > 0) then {
-            systemChat format ["D %1 | L %2 | %3", _receivedDamage, _damageLeft, _bodyArmor];
-        };
-
         // APS code end
 
         ["ace_medical_woundReceived", [_unit, _woundedHitPoint, _damageLeft, _shooter, _ammo, _damageSelectionArray]] call CBA_fnc_localEvent;
