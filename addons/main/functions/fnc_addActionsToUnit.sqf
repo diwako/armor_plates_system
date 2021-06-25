@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 params ["_unit"];
 
-private _arr = [_unit, "Heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
+private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
     // condition show
     format ["_this getUnitTrait 'Medic' && {[_this, _originalTarget] call %1}", QFUNC(canRevive)],
     "alive _target && {(lifeState _target) == 'INCAPACITATED' && {alive _this && {(lifeState _this) != 'INCAPACITATED'}}}", {
