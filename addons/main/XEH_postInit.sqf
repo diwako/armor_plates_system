@@ -256,6 +256,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     INFO("UI elements initialized");
 }] call CBA_fnc_waitUntilAndExecute;
 
+GVAR(addPlateKeyUp) = true;
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 [LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
     private _player = call CBA_fnc_currentUnit;
