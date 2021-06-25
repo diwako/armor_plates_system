@@ -93,6 +93,16 @@ if (GVAR(aceMedicalLoaded)) then {
         _unit switchMove _anim;
     }] call CBA_fnc_addEventHandler;
 
+    [QGVAR(wokeUpCheck), {
+        // check if someone is stuck in a downed animation
+        params ["_unit"];
+        if (!alive _unit) exitWith {};
+        private _animation = animationState _unit;
+        if ((_animation == "unconscious" || {_animation == "deadstate" || {_animation find "unconscious" != -1}}) && {lifeState _unit != "INCAPACITATED"}) then {
+            [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+        };
+    }] call CBA_fnc_addEventHandler;
+
     [QGVAR(setHidden), {
         params ["_object", "_set"];
 
@@ -201,16 +211,17 @@ if !(GVAR(aceMedicalLoaded)) then {
     };
 
     [] spawn {
-        GVAR(playerDamageSync) = GVAR(maxPlayerHP);
+        GVAR(playerDamageSync) = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
         while {true} do {
             if (alive player) then {
-                private _oldValue = player getVariable [QGVAR(hp), GVAR(maxPlayerHP)];
+                private _maxHp = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
+                private _oldValue = player getVariable [QGVAR(hp), _maxHp];
                 if (_oldValue isNotEqualTo GVAR(playerDamageSync)) then {
                     player setVariable [QGVAR(hp), _oldValue, true];
                     GVAR(playerDamageSync) = _oldValue;
                 };
-                if ((damage player) isEqualTo 0 && {_oldValue < GVAR(maxPlayerHP)}) then {
-                    [player, _oldValue, GVAR(maxPlayerHP)] call FUNC(setA3Damage);
+                if ((damage player) isEqualTo 0 && {_oldValue < _maxHp}) then {
+                    [player, _oldValue, _maxHp] call FUNC(setA3Damage);
                 };
             };
             if (GVAR(showDownedUnitIndicator)) then {
@@ -257,6 +268,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     INFO("UI elements initialized");
 }] call CBA_fnc_waitUntilAndExecute;
 
+GVAR(addPlateKeyUp) = true;
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 [LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
     private _player = call CBA_fnc_currentUnit;

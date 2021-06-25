@@ -2,7 +2,7 @@
 params ["_unit", "_damage", "_bodyPart", "_instigator"];
 if (_damage <= 0 || {!alive _unit}) exitWith {};
 
-private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
+private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
 private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
 
 if (_curHp <= 0) exitWith {};

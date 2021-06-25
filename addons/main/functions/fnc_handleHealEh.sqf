@@ -8,12 +8,13 @@
     if !(local _unit) exitWith {
         [QGVAR(heal), [_unit, _healer], _unit] call CBA_fnc_targetEvent;
     };
-    private _unconcious = (lifeState _unit) == "INCAPACITATED";
+    private _unconcious = (lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]};
 
     if (!_unconcious && {GVAR(enableHpRegen) && {isPlayer _unit}}) exitWith {
         systemChat LLSTRING(cannotHealWhileRegenOn);
     };
-    private _maxHp = [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit);
+
+    private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
     private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
     private _maxHeal = [GVAR(maxHealRifleman), GVAR(maxHealMedic)] select (_healer getUnitTrait "Medic");
     private _newHp = _maxHp * _maxHeal;
