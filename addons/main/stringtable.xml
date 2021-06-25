@@ -377,6 +377,11 @@
             <English>Reviving %1, keep holding the button!</English>
             <Polish>Leczysz gracza %1, trzymaj ten guzik!</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_plateThickness">
+            <English>Thickness</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateThickness_desc">
+            <English>Sets the thickness of each plate. The thicker it is the less likely it is for a bullet to penetrate it before its integrety has reached 0</English>
         <Key ID="STR_diw_armor_plates_main_Eden_options">
             <English>APS Options</English>
         </Key>

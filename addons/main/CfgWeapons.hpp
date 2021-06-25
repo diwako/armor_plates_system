@@ -12,7 +12,7 @@ class CfgWeapons {
         descriptionShort = CSTRING(plateIteml_Desc_Short);
         descriptionUse = CSTRING(plateIteml_Desc_Use);
         class ItemInfo: CBA_MiscItem_ItemInfo {
-            mass = 35;
+            mass = PLATE_MASS;
         };
     };
 };

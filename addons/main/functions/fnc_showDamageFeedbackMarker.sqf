@@ -39,7 +39,7 @@ uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
 },{
     params ["_ctrl"];
     _ctrl ctrlSetFade 1;
-    _ctrl ctrlSetPosition [-0.2, -0.2, 1.2, 1.2];
+    _ctrl ctrlSetPosition [-0.2, -0.2, 1.4, 1.4];
     _ctrl ctrlCommit 5;
     [{
         (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameratoWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];

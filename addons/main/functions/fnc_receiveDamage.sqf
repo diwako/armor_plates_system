@@ -1,16 +1,16 @@
 #include "script_component.hpp"
 params ["_unit", "_damage", "_bodyPart", "_instigator"];
-if (_damage <= 0 || {!alive _unit}) exitWith {0};
+if (_damage <= 0 || {!alive _unit}) exitWith {};
 
 private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
 private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
 
-if (_curHp <= 0) exitWith {-1};
+if (_curHp <= 0) exitWith {};
 
 if (GVAR(disallowFriendfire) &&
     {!isNull _instigator && {
     _instigator isNotEqualTo _unit && {
-    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {-1};
+    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {};
 
 private _isHeadshot = false;
 private _isTorso = false;
@@ -35,7 +35,8 @@ _damage = _damage * GVAR(damageCoef);
 
 private _player = call CBA_fnc_currentUnit;
 private _receivedDamage = false;
-private _plates = (vestContainer _unit) getVariable [QGVAR(plates), []];
+private _vest = vestContainer _unit;
+private _plates = _vest getVariable [QGVAR(plates), []];
 if (_plates isNotEqualTo []) then {
     // exit out and let rest of function handle the remaining damage
     // if torso was not hit and plates are set to only protect the torso
@@ -52,6 +53,7 @@ if (_plates isNotEqualTo []) then {
             // the plate shattered bleeding damage into lower plates
             _damage = abs _newDamage;
             _plates deleteAt _i;
+            _vest setVariable ["ace_movement_vLoad", 0 max ((_vest getVariable ["ace_movement_vLoad", 0]) - PLATE_MASS), true];
 
             if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
                 GVAR(lastPlateBreakSound) = diag_frameNo;
@@ -82,7 +84,7 @@ if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
 };
 
 // no need to update unit health if there is no damage left
-if (_damage isEqualTo 0) exitWith {_damage};
+if (_damage isEqualTo 0) exitWith {};
 
 private _newHP = (_curHp - _damage) max 0;
 _unit setVariable [QGVAR(hp), [_newHP, 100] select GVAR(aceMedicalLoaded)];
@@ -92,8 +94,6 @@ if (_player isEqualTo _unit) then {
         [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
     };
 };
-
-if (GVAR(aceMedicalLoaded)) exitWith {_damage / GVAR(damageCoef)};
 
 if (_newHP isEqualTo 0) exitWith {
     [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
