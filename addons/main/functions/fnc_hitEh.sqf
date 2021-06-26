@@ -16,4 +16,4 @@ if (isNull _instigator) exitWith {
     };
 };
 
-[_unit, _damage, "body", [_instigator, _source] select (isNull _instigator)] call FUNC(receiveDamage);
+[_unit, _damage, "body", [_source, _instigator] select (isNull _source)] call FUNC(receiveDamage);
