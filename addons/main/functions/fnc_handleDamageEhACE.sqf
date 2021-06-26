@@ -22,9 +22,9 @@ if (_hitPoint isEqualTo "") then {
 if (!isDamageAllowed _unit || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"] || {_unit getVariable ["ace_medical_allowDamage", false]}}) exitWith {_curDamage};
 
 if (GVAR(disallowFriendfire) &&
-    {!isNull _instigator && {
-    _instigator isNotEqualTo _unit && {
-    (side group _unit) isEqualTo (side group _instigator)}}}) exitWith {_curDamage};
+    {!isNull _shooter && {
+    _shooter isNotEqualTo _unit && {
+    (side group _unit) isEqualTo (side group _shooter)}}}) exitWith {_curDamage};
 
 private _newDamage = _damage - _curDamage;
 if (_newDamage isEqualTo 0) exitWith {

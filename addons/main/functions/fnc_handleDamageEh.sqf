@@ -67,5 +67,5 @@ _hitPoint = [_hitPoint, "hit", ""] call CBA_fnc_replace;
 private _var = format ["GVAR(lastHandleDamage)$%1", _hitPoint];
 if ((_unit getVariable [_var, -1]) isEqualTo _realDamage) exitWith {_curDamage};
 _unit setVariable [_var, _realDamage];
-[_unit, _realDamage, _hitPoint, [_instigator, _source] select (isNull _instigator)] call FUNC(receiveDamage);
+[_unit, _realDamage, _hitPoint, [_source, _instigator] select (isNull _source)] call FUNC(receiveDamage);
 0
