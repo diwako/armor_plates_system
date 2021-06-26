@@ -3,7 +3,7 @@
     <Package name="main">
         <Key ID="STR_diw_armor_plates_main_category">
             <English>Armor Plates System</English>
-            <Polish>System płyt balistycznych</Polish>
+            <Polish>System Płyt Balistycznych</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
             <English>Armor Plates</English>
@@ -379,26 +379,35 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateThickness">
             <English>Thickness</English>
+            <Polish>Grubość płyt</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateThickness_desc">
             <English>Sets the thickness of each plate. The thicker it is the less likely it is for a bullet to penetrate it before its integrety has reached 0</English>
+            <Polish>Ustawia grubość każdej płyty balistycznej. Im grubsza jest, tym mniejsza szansa, że pocisk ją spenetruje zanim jej wytrzymałość spadnie do 0.</Polish>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_options">
             <English>APS Options</English>
+            <Polish>Ustawienia SPB</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp">
             <English>Max HP</English>
+            <Polish>Maks. HP</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp_desc">
             <English>Set the maximum HP this unit can have. DOES NOTHING WITH ACE MEDICAL LOADED!</English>
+            <Polish>Ustawia maksymalną liczbę HP dla tej jednostki. NIE DZIAŁA Z ACE MEDICAL!</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive">
             <English>Allow self revive</English>
+            <Polish>Zezwól na samodzielne podniesienie</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_desc">
             <English>Allows players to self revive when downed. It takes double the amount of time they would need to revive someone else. Can only revive if they have medical supplies on them.</English>
+            <Polish>Pozwala graczom na samodzielne uleczenie się, gdy leżą na ziemi. Trwa to dwa razy więcej czasu niż gdy robi to ktoś inny. Gracz może się podnieść tylko, jeżeli ma przy sobie medykamenty.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
+            <Polish>Podnieś się</Polish>
         </Key>
     </Package>
 </Project>
