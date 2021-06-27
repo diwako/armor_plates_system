@@ -69,7 +69,7 @@ private _arr = [player, LLSTRING(allowSelfRevive_action), "\a3\ui_f\data\IGUI\Cf
 
 _arr call BIS_fnc_holdActionAdd;
 private _arr2 = +_arr;
-_arr2 set [4, format ["%2 && {!(_this getUnitTrait 'Medic') && {([_this] call %1) > 0}}", QFUNC(hasHealItems), QGVAR(allowSelfRevive)]];
+_arr2 set [4, format ["%2 && {!(_this getUnitTrait 'Medic') && {(lifeState _this) == 'INCAPACITATED' && {([_this] call %1) > 0}}}", QFUNC(hasHealItems), QGVAR(allowSelfRevive)]];
 _arr2 set [10, [GVAR(noneMedicReviveTime) * 2]];
 _arr2 set [11, GVAR(noneMedicReviveTime) * 2];
 _arr2 call BIS_fnc_holdActionAdd;
