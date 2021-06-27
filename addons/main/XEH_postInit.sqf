@@ -40,11 +40,14 @@ if (GVAR(aceMedicalLoaded)) then {
         [{
             (_this getVariable ["ace_medical_HandleDamageEHID", -1]) > -1
         }, {
-            _this removeEventHandler ["HandleDamage", _this getVariable ["ace_medical_HandleDamageEHID", -1]];
+            private _oldEHID = _this getVariable ["ace_medical_HandleDamageEHID", -1];
+            _this removeEventHandler ["HandleDamage", _oldEHID];
             private _id = _this addEventHandler ["HandleDamage", {
                 _this call FUNC(handleDamageEhACE);
             }];
             _this setVariable ["ace_medical_HandleDamageEHID", _id];
+            _this setVariable ["aps_HandleDamageEHID", _id];
+            _this setVariable ["ace_medical_HandleDamageEHID_old", _oldEHID];
         }, _unit] call CBA_fnc_waitUntilAndExecute;
         [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
