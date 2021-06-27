@@ -238,6 +238,29 @@ if !(GVAR(aceMedicalLoaded)) then {
     };
 };
 
+// ace interactions
+if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
+    private _action = [QGVAR(addPlate), LLSTRING(addPlateKeyBind),
+        "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa", {
+        params ["", "_player"];
+        [GVAR(timeToAddPlate), [_player], {
+            param [0] params ["_player"];
+            [_player] call FUNC(addPlate);
+        }, {}, LLSTRING(addPlateToVest), {
+            param [0] params ["_player"];
+            (stance _player) != "PRONE" || {
+            [_player] call FUNC(canPressKey) || {
+            [_player] call FUNC(canAddPlate)}}
+        }] call ace_common_fnc_progressBar
+    }, {
+        params ["", "_player"];
+        (stance _player) != "PRONE" || {
+        [_player] call FUNC(canPressKey) || {
+        [_player] call FUNC(canAddPlate)}}
+    },{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;
+    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
+
 [{
     time > 1
 }, {
@@ -277,7 +300,7 @@ GVAR(addPlateKeyUp) = true;
         !([_player] call FUNC(canAddPlate))}}) exitWith {false};
 
     GVAR(addPlateKeyUp) = false;
-    [_player] call FUNC(addPlate);
+    [_player] call FUNC(addPlateKeyPress);
 
     true
 }, {
