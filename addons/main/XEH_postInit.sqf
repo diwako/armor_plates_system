@@ -236,6 +236,10 @@ if !(GVAR(aceMedicalLoaded)) then {
             sleep 5;
         };
     };
+
+    [QGVAR(requestAIRevive), {
+        _this spawn FUNC(aiMoveAndHealUnit);
+    }] call CBA_fnc_addEventHandler;
 };
 
 [{

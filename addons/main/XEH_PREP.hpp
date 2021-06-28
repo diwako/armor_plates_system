@@ -28,4 +28,6 @@ if (GVAR(aceMedicalLoaded)) then {
     PREP(showDownedSkull);
     PREP(addActionsToUnit);
     PREP(setUnconscious);
+    PREP(requestAIRevive);
+    PREP(aiMoveAndHealUnit);
 };
