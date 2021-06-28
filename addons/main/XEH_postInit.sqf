@@ -180,9 +180,9 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(unconscious), false, true];
 
     if (_unit isEqualTo player) then {
-        [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
         [_unit] call FUNC(updatePlateUi);
         if !(GVAR(aceMedicalLoaded)) then {
+            [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
             [_unit] call FUNC(updateHPUi);
             [] call FUNC(addPlayerHoldActions);
             GVAR(bleedOutTimeMalus) = nil;
