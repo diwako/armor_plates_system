@@ -2,6 +2,9 @@
 #define AI_MODES ["AUTOCOMBAT", "COVER", "SUPPRESSION", "TARGET", "AUTOTARGET"]
 params ["_unit", "_medic"];
 
+// hello linter, _unit is used, please stop giving me a false positive, thanks
+damage _unit;
+
 if !(local _medic) exitWith {
     [QGVAR(requestAIRevive), _this, _medic] call CBA_fnc_targetEvent;
 };
@@ -11,6 +14,9 @@ if !(canSuspend) exitWith {
 };
 
 private _aiFeatures = AI_MODES apply {[_x, _medic checkAIFeature _x]};
+// hello linter, _aiFeatures is used, please stop giving me a false positive, thanks
+count _aiFeatures; // 5
+
 _medic setVariable [QGVAR(hasHealRequest), true, true];
 _medic forceSpeed (_medic getSpeed "FAST");
 _medic doMove getPosATL _unit;
@@ -62,3 +68,11 @@ _medic setVariable [QGVAR(hasHealRequest), nil, true];
 sleep 3;
 _medic doFollow leader _medic;
 _medic forceSpeed -1;
+
+private _group = group _medic;
+private _queue = _group getVariable [QGVAR(reviveQueue), []];
+if (_queue isNotEqualTo []) then {
+    private _newPatient = _queue deleteAt 0;
+    [_newPatient, _medic] call FUNC(aiMoveAndHealUnit);
+    _group setVariable [QGVAR(reviveQueue), _queue, true];
+};
