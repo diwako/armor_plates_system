@@ -427,5 +427,17 @@
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor_desc">
             <English>ONLY USE THIS IF YOU DO NOT OVERWRITE THE UNITS LOADOUT VIA SCRIPT!! Sets the amount of lootable plates in unit's inventory. Use a negative value to leave unset.</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_enableAIUnconscious">
+            <English>Enable AI unconsciousness</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableAIUnconscious_desc">
+            <English>Allows AI from a player squad to fall unconscious instead of straight up dying</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
+            <English>AI revive squad mates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
+            <English>Enables the abillity for AI to revive unconscious squad mates</English>
+        </Key>
     </Package>
 </Project>
