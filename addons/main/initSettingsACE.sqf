@@ -44,6 +44,20 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     {
         params ["_value"];
         GVAR(maxPlateHealth) = round _value;
+        if (time < 1) exitWith {};
+        {
+            private _vest = vestContainer _x;
+            if (isNull _vest) then {continue};
+            private _plates = _vest getVariable [QGVAR(plates), []];
+            {
+                if (_x > GVAR(maxPlateHealth)) then {
+                    _plates set [_forEachIndex, GVAR(maxPlateHealth)];
+                };
+            } forEach _plates;
+        } forEach allUnits;
+        if (hasInterface) then {
+            [player] call FUNC(updatePlateUi);
+        };
     }
 ] call CBA_fnc_addSetting;
 
