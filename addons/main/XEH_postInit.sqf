@@ -175,6 +175,7 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(hp), nil];
     _unit setVariable [QGVAR(vestContainer), vestContainer _unit];
     _unit setVariable [QGVAR(unconscious), false, true];
+    _unit setVariable [QGVAR(beingRevived), nil, true];
 
     if (_unit isEqualTo player) then {
         [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;

@@ -47,6 +47,7 @@ if (_set) then {
     };
 } else {
     _unit setVariable [QGVAR(bleedoutTime), nil];
+    _unit setVariable [QGVAR(beingRevived), nil, true];
     if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
         [_set] call FUNC(showDownedSkull);
     };
