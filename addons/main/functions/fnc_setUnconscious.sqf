@@ -15,12 +15,15 @@ if (currentWeapon _unit != primaryWeapon _unit) then {
 
 if (_set) then {
     if (GVAR(bleedoutTime) > 0) then {
+        private _restBleedout = GVAR(bleedoutTime);
         _unit setVariable [QGVAR(bleedoutTime), cba_missionTime];
-        if (isNil QGVAR(bleedOutTimeMalus)) then {
-            GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
+        if (_unit isEqualTo player) then {
+            if (isNil QGVAR(bleedOutTimeMalus)) then {
+                GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
+            };
+            GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
+            _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
         };
-        GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
-        private _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
         [{
             params ["_unit", "_time"];
             private _unconscious = (lifeState _unit) == "INCAPACITATED";
@@ -66,5 +69,9 @@ _unit setUnconscious _set;
 [QGVAR(setHidden), [_unit , _set]] call CBA_fnc_globalEvent;
 _unit setVariable [QGVAR(unconscious), _set, true];
 _unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
+
+if (_set && {GVAR(requestAIforHelp)}) then {
+    [_unit] call FUNC(requestAIRevive);
+};
 
 true
