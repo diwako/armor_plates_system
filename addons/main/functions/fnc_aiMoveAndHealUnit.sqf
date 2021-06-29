@@ -15,7 +15,7 @@ if !(canSuspend) exitWith {
 
 private _aiFeatures = AI_MODES apply {[_x, _medic checkAIFeature _x]};
 // hello linter, _aiFeatures is used, please stop giving me a false positive, thanks
-count _aiFeatures; // 5
+_aiFeatures isEqualTo []; // false
 
 _medic setVariable [QGVAR(hasHealRequest), true, true];
 _medic forceSpeed (_medic getSpeed "FAST");
