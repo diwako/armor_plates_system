@@ -6,6 +6,7 @@ PREP(createProgressBar);
 PREP(deleteProgressBar);
 PREP(initAIUnit);
 PREP(initPlates);
+PREP(moduleHeal);
 PREP(showDamageFeedbackMarker);
 PREP(updateHPUi);
 PREP(updatePlateUi);
@@ -16,6 +17,7 @@ if (GVAR(aceMedicalLoaded)) then {
 } else {
     PREP(addActionsToUnit);
     PREP(addPlayerHoldActions);
+    PREP(aiMoveAndHealUnit);
     PREP(canRevive);
     PREP(drawDownedUnitIndicator);
     PREP(getHitpointArmor);
@@ -25,6 +27,7 @@ if (GVAR(aceMedicalLoaded)) then {
     PREP(hasHealItems);
     PREP(hitEh);
     PREP(receiveDamage);
+    PREP(requestAIRevive);
     PREP(setA3Damage);
     PREP(setUnconscious);
     PREP(showDownedSkull);

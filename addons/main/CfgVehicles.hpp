@@ -13,4 +13,22 @@ class CfgVehicles {
             MACRO_ADDITEM(plate,1);
         };
     };
+
+    class Module_F;
+    class GVAR(moduleBase): Module_F {
+        author = CSTRING(category);
+        category = "APS";
+        function = "";
+        functionPriority = 1;
+        isGlobal = 1;
+        isTriggerActivated = 0;
+        scope = 1;
+        scopeCurator = 2;
+    };
+    class GVAR(moduleHeal): GVAR(moduleBase) {
+        curatorCanAttach = 1;
+        displayName = CSTRING(zeus_module_heal);
+        function = QFUNC(moduleHeal);
+        icon = "\A3\ui_f\data\Map\VehicleIcons\pictureHeal_ca.paa";
+    };
 };

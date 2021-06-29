@@ -275,6 +275,24 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(enableAIUnconscious),
+    "CHECKBOX",
+    [LLSTRING(enableAIUnconscious), LLSTRING(enableAIUnconscious_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(requestAIforHelp),
+    "CHECKBOX",
+    [LLSTRING(requestAIforHelp), LLSTRING(requestAIforHelp_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(bleedoutTime),
     "SLIDER",
     [LLSTRING(bleedoutTime), LLSTRING(bleedoutTime_desc)],

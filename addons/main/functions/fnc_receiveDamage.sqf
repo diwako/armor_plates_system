@@ -97,7 +97,10 @@ if (_player isEqualTo _unit) then {
 
 if (_newHP isEqualTo 0) exitWith {
     [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
-    if (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) then {
+    private _setUnconscious = (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) ||
+    {GVAR(enableAIUnconscious) && {!isPlayer _unit && {_unit in (units player)}}};
+
+    if (_setUnconscious) then {
         if !((lifeState _unit) == "INCAPACITATED") then {
             [_unit, true] call FUNC(setUnconscious);
         };
