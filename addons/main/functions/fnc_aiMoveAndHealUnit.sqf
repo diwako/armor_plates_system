@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-#define AI_MODES ["AUTOCOMBAT", "COVER", "SUPPRESSION", "TARGET", "AUTOTARGET", "FSM"]
+#define AI_MODES ["AUTOCOMBAT", "COVER", "SUPPRESSION", "TARGET", "AUTOTARGET"]
 params ["_unit", "_medic"];
 
 if !(local _medic) exitWith {
@@ -9,11 +9,12 @@ if !(local _medic) exitWith {
 if !(canSuspend) exitWith {
     _this spawn FUNC(aiMoveAndHealUnit);
 };
+
+private _aiFeatures = AI_MODES apply {[_x, _medic checkAIFeature _x]};
 _medic setVariable [QGVAR(hasHealRequest), true, true];
 _medic forceSpeed (_medic getSpeed "FAST");
 _medic doMove getPosATL _unit;
 _medic setUnitPos "AUTO";
-private _aiFeatures = AI_MODES apply {[_x, _medic checkAIFeature _x]};
 {_medic disableAI _x} foreach AI_MODES;
 while {
     alive _unit && {(lifeState _unit) == 'INCAPACITATED'} &&
@@ -24,22 +25,23 @@ while {
         _medic forceSpeed (_medic getSpeed "FAST");
         _medic doMove getPosATL _unit;
         _medic setUnitPos "AUTO";
-        systemChat "run";
+        sleep 2;
     };
-    sleep 2;
+    sleep 1;
 };
 
-_medic setVariable [QGVAR(hasHealRequest), nil, true];
 {
     if (_x select 1) then {
         _medic enableAI (_x select 0);
     };
 } foreach _aiFeatures;
-if !(alive _unit && {(lifeState _unit) == 'INCAPACITATED'}) exitWith {};
+if !(alive _unit && {(lifeState _unit) == 'INCAPACITATED'}) exitWith {
+    _medic setVariable [QGVAR(hasHealRequest), nil, true];
+};
 if !(alive _medic && {(lifeState _medic) != 'INCAPACITATED'}) exitWith {
-    // medic just went down, request help for patient and medic
+    // medic just went down, request help for patient. medic will request due to getting downed
     [_unit] call FUNC(requestAIRevive);
-    [_medic] call FUNC(requestAIRevive);
+    _medic setVariable [QGVAR(hasHealRequest), nil, true];
 };
 
 _medic forceSpeed 0;
@@ -56,7 +58,7 @@ if (_medicAnim != "") then {
 sleep 5;
 _unit setDamage 0;
 [_unit, _medic] call FUNC(handleHealEh);
-
+_medic setVariable [QGVAR(hasHealRequest), nil, true];
 sleep 3;
 _medic doFollow leader _medic;
 _medic forceSpeed -1;
