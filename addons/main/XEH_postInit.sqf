@@ -175,6 +175,7 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(hp), nil];
     _unit setVariable [QGVAR(vestContainer), vestContainer _unit];
     _unit setVariable [QGVAR(unconscious), false, true];
+    _unit setVariable [QGVAR(beingRevived), nil, true];
 
     if (_unit isEqualTo player) then {
         [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
@@ -241,14 +242,26 @@ if !(GVAR(aceMedicalLoaded)) then {
 [{
     time > 1
 }, {
-    if (GVAR(spawnWithFullPlates)) then {
+    private _3den_maxPlateInVest = player getVariable [QGVAR(3den_maxPlateInVest), -1];
+    if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates)}) then {
         private _plates = [];
-        for "_i" from 1 to GVAR(numWearablePlates) do {
+        private _num = [GVAR(numWearablePlates), _3den_maxPlateInVest] select (_3den_maxPlateInVest >= 0);
+        for "_i" from 1 to _num do {
             _plates pushBack GVAR(maxPlateHealth);
         };
         private _vest = vestContainer player;
         _vest setVariable [QGVAR(plates), _plates];
-        _vest setVariable ["ace_movement_vLoad", (_vest getVariable ["ace_movement_vLoad", 0]) + (PLATE_MASS * GVAR(numWearablePlates)), true];
+        _vest setVariable ["ace_movement_vLoad", (_vest getVariable ["ace_movement_vLoad", 0]) + (PLATE_MASS * _num), true];
+    };
+    private _3den_maxPlateInInventory = player getVariable [QGVAR(3den_maxPlateInInventory), -1];
+    if (_3den_maxPlateInInventory > 0) then {
+        private _container = switch (true) do {
+            case ((vest player) isNotEqualTo ""): {vestContainer player};
+            case ((uniform player) isNotEqualTo ""): {uniformContainer player};
+            case ((backpack player) isNotEqualTo ""): {backpackContainer player};
+            default {objNull};
+        };
+        _container addItemCargoGlobal [QGVAR(plate), _3den_maxPlateInInventory];
     };
     [] call FUNC(initPlates);
     player setVariable [QGVAR(vestContainer), vestContainer player];
