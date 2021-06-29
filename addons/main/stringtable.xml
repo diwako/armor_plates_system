@@ -409,5 +409,17 @@
             <English>Get up by yourself</English>
             <Polish>Podnieś się</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlateInVest">
+            <English>Plates in vest</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlateInVest_desc">
+            <English>Adds plates pre equipped in unit's vest. Use a negative value to leave unset. Cannot add more than maximum allowed by settings. Will overwrite CBA's AI plate in vest setting!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlateInInventor">
+            <English>Plates in inventory</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxPlateInInventor_desc">
+            <English>ONLY USE THIS IF YOU DO NOT OVERWRITE THE UNITS LOADOUT VIA SCRIPT!! Sets the amount of lootable plates in unit's inventory. Use a negative value to leave unset.</English>
+        </Key>
     </Package>
 </Project>
