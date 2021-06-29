@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+if (GVAR(aceMedicalLoaded)) exitWith {};
 params ["_unit"];
 
 private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",

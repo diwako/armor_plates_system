@@ -40,11 +40,14 @@ if (GVAR(aceMedicalLoaded)) then {
         [{
             (_this getVariable ["ace_medical_HandleDamageEHID", -1]) > -1
         }, {
-            _this removeEventHandler ["HandleDamage", _this getVariable ["ace_medical_HandleDamageEHID", -1]];
+            private _oldEHID = _this getVariable ["ace_medical_HandleDamageEHID", -1];
+            _this removeEventHandler ["HandleDamage", _oldEHID];
             private _id = _this addEventHandler ["HandleDamage", {
                 _this call FUNC(handleDamageEhACE);
             }];
             _this setVariable ["ace_medical_HandleDamageEHID", _id];
+            _this setVariable ["aps_HandleDamageEHID", _id];
+            _this setVariable ["ace_medical_HandleDamageEHID_old", _oldEHID];
         }, _unit] call CBA_fnc_waitUntilAndExecute;
         [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
@@ -178,9 +181,9 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(beingRevived), nil, true];
 
     if (_unit isEqualTo player) then {
-        [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
         [_unit] call FUNC(updatePlateUi);
         if !(GVAR(aceMedicalLoaded)) then {
+            [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
             [_unit] call FUNC(updateHPUi);
             [] call FUNC(addPlayerHoldActions);
             GVAR(bleedOutTimeMalus) = nil;
@@ -243,6 +246,29 @@ if !(GVAR(aceMedicalLoaded)) then {
     }] call CBA_fnc_addEventHandler;
 };
 
+// ace interactions
+if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
+    private _action = [QGVAR(addPlate), LLSTRING(addPlateKeyBind),
+        "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa", {
+        params ["", "_player"];
+        [GVAR(timeToAddPlate), [_player], {
+            param [0] params ["_player"];
+            [_player] call FUNC(addPlate);
+        }, {}, LLSTRING(addPlateToVest), {
+            param [0] params ["_player"];
+            (stance _player) != "PRONE" || {
+            [_player] call FUNC(canPressKey) || {
+            [_player] call FUNC(canAddPlate)}}
+        }] call ace_common_fnc_progressBar
+    }, {
+        params ["", "_player"];
+        (stance _player) != "PRONE" || {
+        [_player] call FUNC(canPressKey) || {
+        [_player] call FUNC(canAddPlate)}}
+    },{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;
+    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
+
 [{
     time > 1
 }, {
@@ -294,7 +320,7 @@ GVAR(addPlateKeyUp) = true;
         !([_player] call FUNC(canAddPlate))}}) exitWith {false};
 
     GVAR(addPlateKeyUp) = false;
-    [_player] call FUNC(addPlate);
+    [_player] call FUNC(addPlateKeyPress);
 
     true
 }, {
