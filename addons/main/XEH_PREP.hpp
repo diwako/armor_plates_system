@@ -8,6 +8,7 @@ PREP(showDamageFeedbackMarker);
 PREP(initAIUnit);
 PREP(createProgressBar);
 PREP(deleteProgressBar);
+PREP(moduleHeal);
 
 if (GVAR(aceMedicalLoaded)) then {
     PREP(handleDamageEhACE);
