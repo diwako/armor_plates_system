@@ -260,10 +260,10 @@ if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
             GVAR(addingPlate) = false;
         }, LLSTRING(addPlateToVest), {
             param [0] params ["_player"];
-            (stance _player) != "PRONE" || {
-            [_player] call FUNC(canPressKey) || {
+            (stance _player) != "PRONE" && {
+            [_player] call FUNC(canPressKey) && {
             [_player] call FUNC(canAddPlate)}}
-        }] call ace_common_fnc_progressBar
+        }, ["isNotInside"]] call ace_common_fnc_progressBar
     }, {
         params ["", "_player"];
         (stance _player) != "PRONE" && {
