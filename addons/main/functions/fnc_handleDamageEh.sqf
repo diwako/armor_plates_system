@@ -11,7 +11,7 @@ if (_hitPoint isEqualTo "") then {
     _curDamage = _unit getHitIndex _hitIndex;
 };
 
-if (GVAR(damageEhVariant) isNotEqualTo 1 || {!(isDamageAllowed _unit) || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"]}}) exitWith {_curDamage};
+if (GVAR(damageEhVariant) isNotEqualTo 1 || {!(isDamageAllowed _unit)}) exitWith {_curDamage};
 
 private _newDamage = _damage - _curDamage;
 if (_newDamage < 1E-3) exitWith {
@@ -70,5 +70,25 @@ _hitPoint = [_hitPoint, "hit", ""] call CBA_fnc_replace;
 private _var = format ["GVAR(lastHandleDamage)$%1", _hitPoint];
 if ((_unit getVariable [_var, -1]) isEqualTo _realDamage) exitWith {_curDamage};
 _unit setVariable [_var, _realDamage];
-[_unit, _realDamage, _hitPoint, [_source, _instigator] select (isNull _source)] call FUNC(receiveDamage);
+
+if (GVAR(useHandleDamageFiltering)) then {
+    private _damageCache = _unit getVariable [QGVAR(damageCache), []];
+    if (_damageCache isEqualTo []) then {
+        _unit setVariable [QGVAR(damageCache), _damageCache];
+        [{
+            params ["_unit", "_source"];
+            private _damageCache = _unit getVariable [QGVAR(damageCache), []];
+            if (_damageCache isNotEqualTo []) then {
+                _damageCache sort false;
+                (_damageCache select 0) params ["_realDamage", "_hitPoint"];
+                [_unit, _realDamage, _hitPoint, _source] call FUNC(receiveDamage);
+            };
+            _unit setVariable [QGVAR(damageCache), nil];
+        }, [_unit, [_source, _instigator] select (isNull _source)]] call CBA_fnc_execNextFrame;
+    };
+    _damageCache pushBack [_realDamage, _hitPoint];
+} else {
+    [_unit, _realDamage, _hitPoint, [_source, _instigator] select (isNull _source)] call FUNC(receiveDamage);
+};
+
 0

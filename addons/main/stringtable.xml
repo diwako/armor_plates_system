@@ -439,5 +439,11 @@
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering">
+            <English>Filter HandleDamage EH</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering_desc">
+            <English>Adds a filter to only pass highest damage value when using HandleDamage as damage EH. Makes HandleDamage much more predictable, less chaotic but also less damaging overall</English>
+        </Key>
     </Package>
 </Project>
