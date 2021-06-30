@@ -11,7 +11,7 @@ if (isNull _instigator) exitWith {
         [_unit, _damage, "vehicle", _unit] call FUNC(receiveDamage);
     };
 
-    if (vectorMagnitude (velocity _unit) > 5) exitWith {
+    if (_vehicle isEqualTo _unit && {((velocity _unit) select 2) < -5}) exitWith {
         [_unit, _damage * 50, "falldamage", _unit] call FUNC(receiveDamage);
     };
 };

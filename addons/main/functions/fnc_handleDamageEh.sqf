@@ -47,7 +47,7 @@ if (
     _projectile isEqualTo "" && {
     vectorMagnitude (velocity _unit) > 5}}
 ) exitWith {
-    if (_hitPoint isEqualTo "incapacitated") then {
+    if (_hitPoint isEqualTo "incapacitated" && {((velocity _unit) select 2) < -5}) then {
         [_unit, _newDamage * 2, "falldamage", _unit] call FUNC(receiveDamage);
         0
     } else {
