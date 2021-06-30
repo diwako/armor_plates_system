@@ -32,7 +32,7 @@ if (_newDamage isEqualTo 0) exitWith {
 };
 
 if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
-    if (GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}) then {
+    if (_newDamage > 1E-3 && {GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}}) then {
         [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
     };
 

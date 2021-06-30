@@ -10,7 +10,8 @@ assignees: ""
 
 - **Arma 3:** `x.xx` [e.g. 1.00 stable, rc, dev, profiling]
 - **CBA:** `3.x.x` [e.g. 3.0.0 stable]
-- **APS:** `0.x.x` [eg. 1.5.0 stable]
+- **APS:** `0.x.x` [eg. 0.4.0 stable]
+- **ACE:** `0.x.x` [eg. 1.0.0 stable, Optional if not using ACE medical] \
   _Make sure to reproduce the issue with only CBA and Armor Plates on a newly created mission!_
 
 **Description:**
