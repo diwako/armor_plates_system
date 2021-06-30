@@ -251,10 +251,14 @@ if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
     private _action = [QGVAR(addPlate), LLSTRING(addPlateKeyBind),
         "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa", {
         params ["", "_player"];
+        GVAR(addingPlate) = true;
         [GVAR(timeToAddPlate), [_player], {
             param [0] params ["_player"];
             [_player] call FUNC(addPlate);
-        }, {}, LLSTRING(addPlateToVest), {
+            GVAR(addingPlate) = false;
+        }, {
+            GVAR(addingPlate) = false;
+        }, LLSTRING(addPlateToVest), {
             param [0] params ["_player"];
             (stance _player) != "PRONE" || {
             [_player] call FUNC(canPressKey) || {
@@ -262,8 +266,8 @@ if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
         }] call ace_common_fnc_progressBar
     }, {
         params ["", "_player"];
-        (stance _player) != "PRONE" || {
-        [_player] call FUNC(canPressKey) || {
+        (stance _player) != "PRONE" && {
+        [_player] call FUNC(canPressKey) && {
         [_player] call FUNC(canAddPlate)}}
     },{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
@@ -312,8 +316,10 @@ if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
 }] call CBA_fnc_waitUntilAndExecute;
 
 GVAR(addPlateKeyUp) = true;
+GVAR(addingPlate) = false;
 #include "\a3\ui_f\hpp\defineDIKCodes.inc"
 [LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
+    if (GVAR(addingPlate)) exitWith {};
     private _player = call CBA_fnc_currentUnit;
     if ((stance _player) == "PRONE" || {
         !([_player] call FUNC(canPressKey)) || {
