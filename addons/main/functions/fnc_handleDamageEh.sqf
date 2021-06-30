@@ -14,7 +14,7 @@ if (_hitPoint isEqualTo "") then {
 if (GVAR(damageEhVariant) isNotEqualTo 1 || {!(isDamageAllowed _unit) || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"]}}) exitWith {_curDamage};
 
 private _newDamage = _damage - _curDamage;
-if (_newDamage isEqualTo 0) exitWith {
+if (_newDamage < 1E-3) exitWith {
     _curDamage
 };
 
@@ -43,21 +43,24 @@ if (
 };
 
 if (
-    _hitPoint isEqualTo "incapacitated" &&
-    {_projectile isEqualTo ""} &&
-    {vectorMagnitude (velocity _unit) > 5}
+    _projectile isEqualTo "" && {
+    ([_source, _instigator] select (isNull _source)) isEqualTo _unit && {
+    vectorMagnitude (velocity _unit) > 5 || {((velocity _unit) select 2) < -2}}}
 ) exitWith {
-    [_unit, _newDamage * 2, "falldamage", _unit] call FUNC(receiveDamage);
-    0
+    if (_hitPoint isEqualTo "incapacitated") then {
+        [_unit, _newDamage * 3.25, "falldamage", _unit] call FUNC(receiveDamage);
+        0
+    } else {
+        _curDamage
+    };
 };
 
 if (_projectile isEqualTo "" && {isNull _source}) exitWith {
     // if !(isMultiplayer) then {
-    //     systemChat format ["DID NOT PASS DAMAGE: %1 | %2 | %3 | %4", _hitPoint, _projectile, _newDamage, _source];
+        // systemChat format ["DID NOT PASS DAMAGE: %1 | %2 | %3 | %4", _hitPoint, _projectile, _newDamage, _source];
     // };
     _curDamage
 };
-
 
 // handle rest of damage
 private _armor = [_unit, _hitpoint] call FUNC(getHitpointArmor);
