@@ -411,39 +411,51 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_heal">
             <English>Heal unit</English>
+            <Polish>Ulecz jednostkę</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
+            <Polish>Wybrano niepoprawny cel.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInVest">
             <English>Plates in vest</English>
+            <Polish>Płyty w kamizelce</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInVest_desc">
             <English>Adds plates pre equipped in unit's vest. Use a negative value to leave unset. Cannot add more than maximum allowed by settings. Will overwrite CBA's AI plate in vest setting!</English>
+            <Polish>Dodaje wyposażone przez jednostkę płyty do jej kamizelki. Wprowadź negatywną wartość by wyłączyć to ustawienie. Nie można dodać więcej niż liczba w ustawieniach moda. Ta opcja nadpisze wcześniejszą wartość wprowadzoną w ustawieniach kamizelek!</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor">
             <English>Plates in inventory</English>
+            <Polish>Płyty w ekwipunku</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor_desc">
             <English>ONLY USE THIS IF YOU DO NOT OVERWRITE THE UNITS LOADOUT VIA SCRIPT!! Sets the amount of lootable plates in unit's inventory. Use a negative value to leave unset.</English>
+            <Polish>UŻYWAJ TEGO TYLKO, GDY NIE NADPISUJESZ WYPOSAŻENIA JEDNOSTKOM PRZEZ SKRYPT!!! Umieszcza wskazaną liczbę zbieralnych płyt w ekwipunku jednostki. Wprowadź negatywną wartość by wyłączyć to ustawienie.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableAIUnconscious">
             <English>Enable AI unconsciousness</English>
+            <Polish>Włącz nieprzytomność botom</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableAIUnconscious_desc">
             <English>Allows AI from a player squad to fall unconscious instead of straight up dying</English>
+            <Polish>Pozwala botom z oddziału gracza na tracenie przytomności zamiast nagłego umierania.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
+            <Polish>Leczenie przez AI</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
+            <Polish>Dodaje botom możliwość leczenia nieprzytomnych sojuszników.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering">
             <English>Filter HandleDamage EH</English>
+            <Polish>Filtrowanie HandleDamage EH</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering_desc">
-            <English>Adds a filter to only pass highest damage value when using HandleDamage as damage EH. Makes HandleDamage much more predictable, less chaotic but also less damaging overall</English>
+            <English>Adds a filter to only pass highest damage value when using HandleDamage as damage EH. Makes HandleDamage much more predictable, less chaotic but also less damaging overall.</English>
+            <Polish>Dodaje filtr przekazujący jedynie najwyższą wartość obrażeń podczas używania HandleDamage jako EH. Dzięki temu HandleDamage staje się bardziej przewidywalne, mniej chaotyczne, ale tym samym suma zadawanych obrażeń jest mniejsza.</Polish>
         </Key>
     </Package>
 </Project>
