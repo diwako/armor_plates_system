@@ -85,6 +85,10 @@ if (GVAR(aceMedicalLoaded)) then {
         _this call FUNC(handleHealEh);
     }] call CBA_fnc_addEventHandler;
 
+    [QGVAR(revive), {
+        _this call FUNC(revive);
+    }] call CBA_fnc_addEventHandler;
+
     [QGVAR(respawned), {
         if !(hasInterface) exitWith {};
         params ["_unit"];

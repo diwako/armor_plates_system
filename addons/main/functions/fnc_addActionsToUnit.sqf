@@ -33,7 +33,7 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     if (_ret isEqualTo 1) then {
         _caller removeItem "FirstAidKit";
     };
-    [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
+    [QGVAR(revive), [_target, _caller], _target] call CBA_fnc_targetEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
 }, {
     // code interrupted

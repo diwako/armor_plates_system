@@ -34,10 +34,7 @@ if (_set) then {
             } else {
                 if (alive _unit && {_unit getVariable [QGVAR(unconscious), false] && {!_unconscious}}) then {
                     // not sure what happened? Mission or mod interfering?!
-                    [_unit, false] call FUNC(setUnconscious);
-                    _unit setDamage 0;
-                    [_unit, _unit] call FUNC(handleHealEh);
-                    [_unit] call FUNC(startHpRegen);
+                    [_unit, _unit] call FUNC(revive);
                     systemChat "Hello there fellow player, diwako here.";
                     systemChat "It seems the mission or some mod is interfering with this medical system of mine...";
                     systemChat "Enjoy your free revive, I guess?!";

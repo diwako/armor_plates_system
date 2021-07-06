@@ -56,8 +56,7 @@ if (_medicAnim != "") then {
 };
 
 sleep 5;
-_unit setDamage 0;
-[_unit, _medic] call FUNC(handleHealEh);
+[_unit, _medic] call FUNC(revive);
 _medic setVariable [QGVAR(hasHealRequest), nil, true];
 sleep 3;
 _medic doFollow leader _medic;
