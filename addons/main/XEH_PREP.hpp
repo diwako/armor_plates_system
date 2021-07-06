@@ -28,6 +28,7 @@ if (GVAR(aceMedicalLoaded)) then {
     PREP(hitEh);
     PREP(receiveDamage);
     PREP(requestAIRevive);
+    PREP(revive);
     PREP(setA3Damage);
     PREP(setUnconscious);
     PREP(showDownedSkull);

@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+// [player, 2, "head", player] call diw_armor_plates_main_fnc_receiveDamage
 params ["_unit", "_damage", "_bodyPart", "_instigator"];
 if (_damage <= 0 || {!alive _unit}) exitWith {};
 

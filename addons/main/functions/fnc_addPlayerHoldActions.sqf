@@ -74,7 +74,7 @@ private _arr = [player, LLSTRING(allowSelfRevive_action), "\a3\ui_f\data\IGUI\Cf
     if (_ret isEqualTo 1) then {
         _target removeItem "FirstAidKit";
     };
-    [QGVAR(heal), [_target, _target], _target] call CBA_fnc_localEvent;
+    [QGVAR(revive), [_target, _target], _target] call CBA_fnc_localEvent;
 }, {
     // code interrupted
     call FUNC(deleteProgressBar);
