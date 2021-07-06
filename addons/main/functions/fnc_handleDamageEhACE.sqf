@@ -19,7 +19,7 @@ if (_hitPoint isEqualTo "") then {
     _curDamage = _unit getHitIndex _hitPointIndex;
 };
 
-if (!isDamageAllowed _unit || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"] || {_unit getVariable ["ace_medical_allowDamage", false]}}) exitWith {_curDamage};
+if (!isDamageAllowed _unit || {_hitPoint in ["hithead", "hitbody", "hithands", "hitlegs"] || {!(_unit getVariable ["ace_medical_allowDamage", true])}}) exitWith {_curDamage};
 
 if (GVAR(disallowFriendfire) &&
     {!isNull _shooter && {
