@@ -457,5 +457,20 @@
             <English>Adds a filter to only pass highest damage value when using HandleDamage as damage EH. Makes HandleDamage much more predictable, less chaotic but also less damaging overall.</English>
             <Polish>Dodaje filtr przekazujący jedynie najwyższą wartość obrażeń podczas używania HandleDamage jako EH. Dzięki temu HandleDamage staje się bardziej przewidywalne, mniej chaotyczne, ale tym samym suma zadawanych obrażeń jest mniejsza.</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_giveUp">
+            <English>Give up</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_giveUp_text">
+            <English>Are you really sure you want to give up? If you select &quot;Yes&quot; you will die, if you select &quot;No&quot; you will stay on the ground waiting to be revived!&lt;br/&gt;Make your choice now.&lt;br/&gt;&lt;br/&gt;You can disable this dialog from showing up by disabling it in the Feedback section in the &quot;Addon Options&quot; menu!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_giveUp_title">
+            <English>Hold up!</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showGiveUpDialog">
+            <English>Show &quot;Give up&quot; dialog</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showGiveUpDialog_desc">
+            <English>Shows a confirmation dialog when fully executing the &quot;Give up&quot; action.</English>
+        </Key>
     </Package>
 </Project>

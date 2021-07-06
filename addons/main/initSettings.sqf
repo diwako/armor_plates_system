@@ -207,6 +207,15 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(showGiveUpDialog),
+    "CHECKBOX",
+    [LLSTRING(showGiveUpDialog), LLSTRING(showGiveUpDialog_desc)],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryGeneral)];
 
 [

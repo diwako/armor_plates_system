@@ -1,22 +1,35 @@
 #include "script_component.hpp"
 [
     player,
-    "Give up",
+    LLSTRING(giveUp),
     "\A3\Ui_f\data\IGUI\Cfg\Revive\overlayIcons\d50_ca.paa",
     "\A3\Ui_f\data\IGUI\Cfg\Revive\overlayIcons\d100_ca.paa",
     "alive _target && {(lifeState _target) == 'INCAPACITATED' && {_target isEqualTo (call CBA_fnc_currentUnit)}}",
     "alive _target",
     {},
     {},{
-        params ["_target", ""];
-        [QGVAR(setHidden), [_target , false]] call CBA_fnc_localEvent;
-        _target setDamage 1;
+        _this spawn {
+            params ["_target", ""];
+            private _response = true;
+            if (GVAR(showGiveUpDialog)) then {
+                _response = [
+                    LLSTRING(giveUp_text), // body
+                    LLSTRING(giveUp_title), // title
+                    localize "str_lib_info_yes", // true return
+                    localize "str_lib_info_no", // false return
+                    nil, nil, false] call BIS_fnc_guiMessage;
+            };
+            if (_response) then {
+                [QGVAR(setHidden), [_target , false]] call CBA_fnc_localEvent;
+                _target setDamage 1;
+            };
+        };
     },
     {},
     [],
-    3,
+    5,
     1000,
-    true,
+    false,
     true
 ] call BIS_fnc_holdActionAdd;
 
