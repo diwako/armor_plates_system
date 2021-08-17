@@ -4,478 +4,716 @@
         <Key ID="STR_diw_armor_plates_main_category">
             <English>Armor Plates System</English>
             <Polish>System Płyt Balistycznych</Polish>
+            <Chinesesimp>防弹插板系统</Chinesesimp>
+            <Chinese>防彈插板系統</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
             <English>Armor Plates</English>
             <Polish>Płyty balistyczne</Polish>
+            <Chinesesimp>防弹插板</Chinesesimp>
+            <Chinese>防彈插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_numWearablePlates">
             <English>Amount of plates wearable</English>
             <Polish>Liczba płyt do założenia</Polish>
+            <Chinesesimp>可穿戴的插板数</Chinesesimp>
+            <Chinese>可穿戴的插板數</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_numWearablePlates_desc">
             <English>How many plates can you fit into your vest to give you protection</English>
             <Polish>Ile płyt pancernych naraz możesz włożyć do swojej kamizelki.</Polish>
+            <Chinesesimp>你能在背心里塞下多少块插板来保护自己</Chinesesimp>
+            <Chinese>你能在背心裡塞下多少塊插板來保護自己</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateHealth">
             <English>Armor Plate HP</English>
             <Polish>HP płyty</Polish>
+            <Chinesesimp>防弹插板HP</Chinesesimp>
+            <Chinese>防彈插板HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateHealth_desc">
             <English>Max HP of an armor plate</English>
             <Polish>Maks. HP pojedynczej płyty balistycznej.</Polish>
+            <Chinesesimp>防弹插板最大HP</Chinesesimp>
+            <Chinese>防彈插板最大HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_timeToAddPlate">
             <English>Time to add one plate</English>
             <Polish>Czas włożenia płyty</Polish>
+            <Chinesesimp>插板塞入时间</Chinesesimp>
+            <Chinese>插板塞入時間</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_timeToAddPlate_desc">
             <English>How long does it take to add one plate to the vest in seconds</English>
             <Polish>Jak długo (w sekundach) trwa włożenie jednej płyty do kamizelki.</Polish>
+            <Chinesesimp>往背心里塞一块防弹插板需要多长时间</Chinesesimp>
+            <Chinese>往背心裡塞一塊防彈插板需要多長時間</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowPlateReplace">
             <English>Allow replacing damaged plate</English>
             <Polish>Zezwól na zastępowanie uszkodzonych płyt</Polish>
+            <Chinesesimp>允许更换损坏的插板</Chinesesimp>
+            <Chinese>允許更換損壞的插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowPlateReplace_desc">
             <English>Allows people to replace damaged plates, the damaged plate will be discarded</English>
             <Polish>Zezwól graczom na zastępowanie uszkodzonych płyt nowymi. Te zniszczone znikną.</Polish>
+            <Chinesesimp>允许玩家更换损坏的插板，更换下的插板将被丢弃</Chinesesimp>
+            <Chinese>允許玩家更換損壞的插板，更換下的插板將被丟棄</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso">
             <English>Only protect torso</English>
             <Polish>Chroń tylko korpus</Polish>
+            <Chinesesimp>仅保护躯干</Chinesesimp>
+            <Chinese>僅保護軀幹</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso_desc">
             <English>When enabled ceramic plates will only protect the torso, when disabled ceramic plates will protect limbs and head as well. This will only work with HandleDamage as damage handler!</English>
             <Polish>Gdy włączone, płyty balistyczne będą chronić tylko tors, a wyłączone zapewnią ochronę kończyn i głowy. Ta opcja działa tylko z włączonym HandleDamage!</Polish>
+            <Chinesesimp>启用时，陶瓷板将只保护躯干；禁用时，陶瓷板将同时也保护四肢和头部。这只在HandleDamage作为伤害处理程序时起效！</Chinesesimp>
+            <Chinese>啟用時，陶瓷板將只保護軀幹；禁用時，陶瓷板將同時也保護四肢和頭部。這只在HandleDamage作為傷害處理程序時起效！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates">
             <English>Players spawn with full plates</English>
             <Polish>Gracze zaczynają z włożonymi płytami</Polish>
+            <Chinesesimp>玩家生成时就有满防弹插板</Chinesesimp>
+            <Chinese>玩家生成時就有滿防彈插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates_desc">
             <English>When spawning or respawning you will start with maximum amount of plates already preloaded into your vest.</English>
             <Polish>Gdy gracz wchodzi na serwer bądź się odradza, zaczyna z maksymalną liczbą płyt włożonych już w kamizelkę.</Polish>
+            <Chinesesimp>生成或重生时，玩家将在背心中预装最大数量的防弹插板</Chinesesimp>
+            <Chinese>生成或重生時，玩家將在背心中預裝最大數量的防彈插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest">
             <English>Chance for AI to carry plates in vests</English>
             <Polish>Szansa na AI mające płyty w kamizelce</Polish>
+            <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
+            <Chinese>AI背心中有機率塞有防彈插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest_desc">
             <English>Chance in % if AI can have plates in their vest</English>
             <Polish>Szansa w %, czy AI będzie miało założone płyty balistyczne. Nie da się ich wyciągnąć z botów.</Polish>
+            <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
+            <Chinese>AI背心中有機率塞有防彈插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVestMaxNo">
             <English>Amount added to vest</English>
             <Polish>Liczba dodanych do kamizelki</Polish>
+            <Chinesesimp>背心可塞入数量</Chinesesimp>
+            <Chinese>背心可塞入數量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVestMaxNo_desc">
             <English>0 == random up to max allowed carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their vest. Any number above the allowed carry capacity will be reduced to max carry capacity</English>
             <Polish>Wartość 0 oznacza losową liczbę płyt w kamizelce, aż do maksymalnego udźwigu jednostki. Jakakolwiek inna wartość to konkretna liczba płyt, które zostaną dodane każdemu AI mogącemu nosić je w kamizelce.</Polish>
+            <Chinesesimp>0 == 随机到最大允许携带量，任何其他数字是将被添加到任意被选中的AI的背心携带防弹插板的数量；一旦高于允许携带量，将被减少至最大携带量。</Chinesesimp>
+            <Chinese>0 == 隨機到最大允許攜帶量，任何其他數字是將被添加到任意被選中的AI的背心攜帶防彈插板的數量；一旦高於允許攜帶量，將被減少至最大攜帶量。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventory">
             <English>Chance for AI to carry plates in inventory</English>
             <Polish>Szansa na AI mająca płyty w ekwipunku</Polish>
+            <Chinesesimp>AI有几率在库存中携带插板</Chinesesimp>
+            <Chinese>AI有機率在庫存中攜帶插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventory_desc">
             <English>Chance in % if AI can have plates in their inventory. These plates can be looted!</English>
             <Polish>Szansa w %, czy AI będzie miało płyty balistyczne w ekwipunku. Gracze mogą je zabierać!</Polish>
+            <Chinesesimp>AI库存中有几率携带防弹插板。这些插板可以被掠夺！</Chinesesimp>
+            <Chinese>AI庫存中有機率攜帶防彈插板。這些插板可以被掠奪！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo">
             <English>Amount added to inventory</English>
             <Polish>Liczba dodanych do ekwipunku</Polish>
+            <Chinesesimp>库存可携带容量</Chinesesimp>
+            <Chinese>庫存可攜帶容量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo_desc">
             <English>0 == random up to max allowed carry carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their inventory.</English>
             <Polish>Wartość 0 oznacza losową liczbę płyt w ekwipunku, aż do maksymalnego udźwigu jednostki. Jakakolwiek inna wartość to konkretna liczba płyt, które zostaną dodane każdemu AI mogącemu nosić je w ekwipunku.</Polish>
+            <Chinesesimp>0 == 随机最大允许携带容量，任何其他数字将被添加到任意被选择AI的的库存携带防弹插板的数量</Chinesesimp>
+            <Chinese>0 == 隨機最大允許攜帶容量，任何其他數字將被添加到任意被選擇AI的的庫存攜帶防彈插板的數量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateColor">
             <English>Plate UI color</English>
             <Polish>Kolor płyt w interfejsie</Polish>
+            <Chinesesimp>插板UI颜色</Chinesesimp>
+            <Chinese>插板UI顏色</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
             <Polish>Punkty życia</Polish>
+            <Chinesesimp>健康</Chinesesimp>
+            <Chinese>健康</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlayerHP">
             <English>Max Player HP</English>
             <Polish>Maks. HP gracza</Polish>
+            <Chinesesimp>玩家最大HP</Chinesesimp>
+            <Chinese>玩家最大HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlayerHP_desc">
             <English>How much HP does a player have</English>
             <Polish>Ile punktów życia może mieć gracz.</Polish>
+            <Chinesesimp>玩家有多少HP</Chinesesimp>
+            <Chinese>玩家有多少HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxAiHP">
             <English>Max AI HP</English>
             <Polish>Maks. HP AI</Polish>
+            <Chinesesimp>AI最大HP</Chinesesimp>
+            <Chinese>AI最大HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxAiHP_desc">
             <English>How much HP does an AI have</English>
             <Polish>Ile punktów życia może mieć bot.</Polish>
+            <Chinesesimp>AI有多少HP</Chinesesimp>
+            <Chinese>AI有多少HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegen">
             <English>Enable HP regen</English>
             <Polish>Włącz regenerację HP</Polish>
+            <Chinesesimp>启用HP回复</Chinesesimp>
+            <Chinese>啟用HP回复</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegen_desc">
             <English>Start HP regeneration after 5 seconds</English>
             <Polish>Regeneracja rozpoczyna się po 5 sekundach.</Polish>
+            <Chinesesimp>5秒后开始HP回复</Chinesesimp>
+            <Chinese>5秒後開始HP回复</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegenForAI">
             <English>Enable HP regen for AI</English>
             <Polish>Włącz regenerację HP botom</Polish>
+            <Chinesesimp>AI启用HP回复</Chinesesimp>
+            <Chinese>AI啟用HP回复</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegenForAI_desc">
             <English>Allows AI to regenerate HP</English>
             <Polish>Pozwala botom na regenerację punktów życia.</Polish>
+            <Chinesesimp>允许AI回复HP</Chinesesimp>
+            <Chinese>允許AI回复HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
             <Polish>Mnożnik regeneracji HP</Polish>
+            <Chinesesimp>HP回复速度</Chinesesimp>
+            <Chinese>HP回复速度</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate_desc">
             <English>How fast do my eyes stop bleeding?</English>
             <Polish>Szybkość regeneracji życia. Im niższa wartość, tym wolniejsza regeneracja.</Polish>
+            <Chinesesimp>HP回复速度；值越低，回复速度越慢。</Chinesesimp>
+            <Chinese>HP回复速度；值越低，回复速度越慢。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>
             <Polish>Maks. % uleczenia przez medyka</Polish>
+            <Chinesesimp>医护兵最大治疗百分比</Chinesesimp>
+            <Chinese>醫護兵最大治療百分比</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic_desc">
             <English>How percentage of max health can a medic heal?</English>
             <Polish>Ile % maksymalnego życia może przywrócić medyk?</Polish>
+            <Chinesesimp>医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
+            <Chinese>醫療兵最大治療生命值百分比是多少？</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRifleman">
             <English>Max heal % for non-medics</English>
             <Polish>Maks. % uleczenia przez nie-medyków</Polish>
+            <Chinesesimp>非医护兵最大治疗百分比</Chinesesimp>
+            <Chinese>非醫護兵最大治療百分比</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRifleman_desc">
             <English>How percentage of max health can a rifleman heal?</English>
             <Polish>Ile % maksymalnego życia może przywrócić gracz bez uprawnień medyka?</Polish>
+            <Chinesesimp>非医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
+            <Chinese>非醫療兵最大治療生命值百分比是多少？</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
             <English>General</English>
             <Polish>Ogólne</Polish>
+            <Chinesesimp>通用</Chinesesimp>
+            <Chinese>通用</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enable">
             <English>Enable the whole system</English>
             <Polish>Włącz cały system</Polish>
+            <Chinesesimp>系统整体启用</Chinesesimp>
+            <Chinese>系統整體啟用</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enable_desc">
             <English>Enables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!</English>
             <Polish>Włącza całość systemu modyfikacji, wyłącz jeśli zamieszasz grać z innym systemem medycznym. NIE MOŻNA PRZEŁĄCZYĆ W TRAKCIE MISJI!</Polish>
+            <Chinesesimp>启用该系统，如果你想玩一个拥有自我医疗系统的任务，请禁用。在任务中无法切换为关闭或开启！</Chinesesimp>
+            <Chinese>啟用該系統，如果你想玩一個擁有自我醫療系統的任務，請禁用。在任務中無法切換為關閉或開啟！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageCoef">
             <English>Damage coefficient</English>
             <Polish>Mnożnik obrażeń</Polish>
+            <Chinesesimp>伤害系数</Chinesesimp>
+            <Chinese>傷害係數</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageCoef_desc">
             <English>Coefficient which manipulates the incoming damage</English>
             <Polish>Mnożnik decydujący o otrzymywanych obrażeniach.</Polish>
+            <Chinesesimp>控制来袭伤害造成的损伤数值</Chinesesimp>
+            <Chinese>控制來襲傷害造成的損傷數值</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headshotMult">
             <English>Headshot Multiplier</English>
             <Polish>Mnoż. trafień w głowę</Polish>
+            <Chinesesimp>爆头伤害(倍率)</Chinesesimp>
+            <Chinese>爆頭傷害(倍率)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headshotMult_desc">
             <English>Damage multiplier on headshot</English>
             <Polish>Mnożnik obrażeń otrzymywanych podczas postrzału w głowę.</Polish>
+            <Chinesesimp>头部中弹时受到的伤害倍数</Chinesesimp>
+            <Chinese>頭部中彈時受到的傷害倍數</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_limbMult">
             <English>Limb Multiplier</English>
             <Polish>Mnoż. trafień w kończyny</Polish>
+            <Chinesesimp>肢体伤害(倍率)</Chinesesimp>
+            <Chinese>肢體傷害(倍率)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_limbMult_desc">
             <English>Damage multiplier on limb shots</English>
             <Polish>Mnożnik obrażeń otrzymywanych podczas postrzału w ręce lub nogi.</Polish>
+            <Chinesesimp>肢体中弹时受到的伤害倍数</Chinesesimp>
+            <Chinese>肢體中彈時受到的傷害倍數</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
             <Polish>Wyłącz ogień przyjacielski</Polish>
+            <Chinesesimp>禁止友军误伤</Chinesesimp>
+            <Chinese>禁止友軍誤傷</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire_desc">
             <English>Do not allow friendly from weapon fire</English>
             <Polish>Wyłącza otrzymywanie obrażeń od sojuszników.</Polish>
+            <Chinesesimp>不允许友军受到误击</Chinesesimp>
+            <Chinese>不允許友軍受到誤擊</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
             <Polish>EH obrażeń</Polish>
+            <Chinesesimp>伤害EH</Chinesesimp>
+            <Chinese>傷害EH</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant_desc">
             <English>Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!</English>
             <Polish>Typ EventHandlera obrażeń, który będzie wykorzystywany w misji. Tylko HandleDamage obsługuje mnożniki obrażeń do części ciała!</Polish>
+            <Chinesesimp>应该启用哪种伤害EH，请注意，只有HandleDamage可以对身体部位进行倍增/减。</Chinesesimp>
+            <Chinese>應該啟用哪種傷害EH，請注意，只有HandleDamage可以對身體部位進行倍增/減。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enablePlayerUnconscious">
             <English>Enable player unconsciousness</English>
             <Polish>Włącz nieprzytomność gracza</Polish>
+            <Chinesesimp>启用无意识</Chinesesimp>
+            <Chinese>啟用無意識</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enablePlayerUnconscious_desc">
             <English>Enables the unconscious implementation, when a player reaches 0 HP</English>
             <Polish>Włącza nieprzytomność u graczy, których HP zejdzie do 0.</Polish>
+            <Chinesesimp>当一名玩家达到0HP时，使其陷入无意识状态</Chinesesimp>
+            <Chinese>當一名玩家達到0HP時，使其陷入無意識狀態</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTime">
             <English>Bleed out timer</English>
             <Polish>Czas krwawienia</Polish>
+            <Chinesesimp>失血时间(秒)</Chinesesimp>
+            <Chinese>失血時間(秒)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTime_desc">
             <English>Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!</English>
             <Polish>Czas w sekundach, w którym ranny będzie się wykrwawiać. 0 oznacza wyłączenie licznika!</Polish>
+            <Chinesesimp>某人可以躺在地上失血多久。0意味着它被禁用！</Chinesesimp>
+            <Chinese>某人可以躺在地上失血多久。 0意味著它被禁用！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction">
             <English>Bleed out timer subtraction</English>
             <Polish>Pomniejszanie licznika czasu</Polish>
+            <Chinesesimp>失血时间缩减(秒)</Chinesesimp>
+            <Chinese>失血時間縮減(秒)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction_desc">
             <English>Every time a player goes down their remaining bleed out timer will be subtracted by the given value in seconds. If a player goes down too often their bleed out timer may reach 0 and they instantly die</English>
             <Polish>Przy każdej kolejnej utracie nieprzytomności przez gracza, czas krwawienia będzie zmniejszany o podaną liczbę sekund. Jeśli gracz zbyt często się wykrwawia, licznik może dojść do 0, a gracz natychmiastowo umrze.</Polish>
+            <Chinesesimp>每次玩家倒下时，他们的剩余失血时间将被减去一个给定的数值。如果玩家倒下的次数太多，他们的失血时间可能会达到0，其会立即死亡。</Chinesesimp>
+            <Chinese>每次玩家倒下時，他們的剩餘失血時間將被減去一個給定的數值。如果玩家倒下的次數太多，他們的失血時間可能會達到0，其會立即死亡。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
             <Polish>Czas leczenia przez medyka</Polish>
+            <Chinesesimp>医护兵复活时间(秒)</Chinesesimp>
+            <Chinese>醫護兵復活時間(秒)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime_desc">
             <English>How long does it take to revive someone as a medic in seconds</English>
             <Polish>Jak długo (w sekundach) zajmuje medykowi podniesienie rannego gracza.</Polish>
+            <Chinesesimp>医护兵需要多长时间才能把人救活</Chinesesimp>
+            <Chinese>醫護兵需要多長時間才能把人救活</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noneMedicReviveTime">
             <English>None-medic revive time</English>
             <Polish>Czas leczenia przez nie-medyka</Polish>
+            <Chinesesimp>非医护兵复活时间(秒)</Chinesesimp>
+            <Chinese>非醫護兵復活時間(秒)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noneMedicReviveTime_desc">
             <English>How long does it take to revive someone as not a medic in seconds</English>
             <Polish>Jak długo (w sekundach) zajmuje nie-medykowi podniesienie rannego gracza.</Polish>
+            <Chinesesimp>非医护兵需要多长时间才能把人救活</Chinesesimp>
+            <Chinese>非醫護兵需要多長時間才能把人救活</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryFeedback">
             <English>Feedback</English>
             <Polish>Reakcje</Polish>
+            <Chinesesimp>反馈</Chinesesimp>
+            <Chinese>反饋</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDamageMarker">
             <English>Show damage markers</English>
             <Polish>Pokaż markery obrażeń</Polish>
+            <Chinesesimp>显示损伤标记</Chinesesimp>
+            <Chinese>顯示損傷標記</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDamageMarker_desc">
             <English>Shows damage marker and direction of inconing damage</English>
             <Polish>Pokazuje charakterystyczne markery wskazujące otrzymanie obrażeń i ich kierunek.</Polish>
+            <Chinesesimp>显示损伤标记和侵入方向</Chinesesimp>
+            <Chinese>顯示損傷標記和侵入方向</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback">
             <English>Downed feedback</English>
             <Polish>Ekran nieprzytomności</Polish>
+            <Chinesesimp>无意识反馈</Chinesesimp>
+            <Chinese>無意識反饋</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_desc">
             <English>Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed.</English>
             <Polish>Pokazuje tekst w czacie i odtwarza dźwięk, kiedy sojusznicza jednostka z twojej drużyny traci przytomność.</Polish>
+            <Chinesesimp>当你的小队中的友军被击倒时，在聊天中显示文字并播放声音。</Chinesesimp>
+            <Chinese>當你的小隊中的友軍被擊倒時，在聊天中顯示文字並播放聲音。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_0">
             <English>Off</English>
             <Polish>Brak</Polish>
+            <Chinesesimp>关闭</Chinesesimp>
+            <Chinese>關閉</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_1">
             <English>Show message</English>
             <Polish>Tylko wiadomość</Polish>
+            <Chinesesimp>显示文字</Chinesesimp>
+            <Chinese>顯示文字</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_2">
             <English>Message and Sound</English>
             <Polish>Wiadomość i dźwięk</Polish>
+            <Chinesesimp>文字与声音</Chinesesimp>
+            <Chinese>文字與聲音</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback">
             <English>Audio feedback</English>
             <Polish>Reakcja dźwiękowa</Polish>
+            <Chinesesimp>音频反馈</Chinesesimp>
+            <Chinese>音頻反饋</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_desc">
             <English>Plays audio clip when taking damage, receiving a headshot or an armor plate just broke.</English>
             <Polish>Odtwarza dźwięk podczas otrzymywania obrażeń, strzału w głowę lub gdy niszczy się płyta balistyczna.</Polish>
+            <Chinesesimp>在受到伤害、被爆头或防弹插板刚刚破损时播放音频片段</Chinesesimp>
+            <Chinese>在受到傷害、被爆頭或防彈插板剛剛破損時播放​​音頻片段</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_1">
             <English>150% Volume</English>
             <Polish>150% głośności</Polish>
+            <Chinesesimp>150%音量</Chinesesimp>
+            <Chinese>150%音量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_2">
             <English>125% Volume</English>
             <Polish>125% głośności</Polish>
+            <Chinesesimp>125%音量</Chinesesimp>
+            <Chinese>125%音量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_3">
             <English>100% Volume</English>
             <Polish>100% głośności</Polish>
+            <Chinesesimp>100%音量</Chinesesimp>
+            <Chinese>100%音量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_4">
             <English>75% Volume</English>
             <Polish>75% głośności</Polish>
+            <Chinesesimp>75%音量</Chinesesimp>
+            <Chinese>75%音量</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedSkull">
             <English>Show skull when downed</English>
             <Polish>Pokaż czaszkę podczas nieprzytomności</Polish>
+            <Chinesesimp>昏迷时显示骷髅头</Chinesesimp>
+            <Chinese>昏迷時顯示骷髏頭</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedSkull_desc">
             <English>Shows a slowly appearing skull when downed to indicate how much time is left on the bleedout timer</English>
             <Polish>Pokazuje powoli rozjaśniającą się ikonę czaszki, która informuje ile czasu zostało do całkowitego wykrwawienia.</Polish>
+            <Chinesesimp>昏迷时显示一个缓慢出现的骷髅头，以表明还剩多少失血时间</Chinesesimp>
+            <Chinese>昏迷時顯示一個緩慢出現的骷髏頭，以表明還剩多少失血時間</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator">
             <English>Show icon over downed units</English>
             <Polish>Pokaż ikonę nad rannymi</Polish>
+            <Chinesesimp>倒地单位显示图标</Chinesesimp>
+            <Chinese>倒地單位顯示圖標</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator_desc">
             <English>Shows an icon in 3D space over a friendly downed unit</English>
             <Polish>Pokazuje ikonę 3D nad ranną, sojuszniczą jednostką.</Polish>
+            <Chinesesimp>为一名倒地友军单位显示一个三维空间图标</Chinesesimp>
+            <Chinese>為一名倒地友軍單位顯示一個三維空間圖標</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange">
             <English>Range for downed icon</English>
             <Polish>Zasięg wyświetlania ikony</Polish>
+            <Chinesesimp>倒地图标范围</Chinesesimp>
+            <Chinese>倒地圖標範圍</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange_desc">
             <English>The maximum range you can see a downed friendly unit</English>
             <Polish>Maksymalna odległość, z której widać ikonę nad rannym sojusznikiem.</Polish>
+            <Chinesesimp>能够看到一名倒地友军单位的最大距离</Chinesesimp>
+            <Chinese>能夠看到一名倒地友軍單位的最大距離</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
             <Polish>Rozmiar ikony</Polish>
+            <Chinesesimp>倒地图标尺寸</Chinesesimp>
+            <Chinese>倒地圖標尺寸</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize_desc">
             <English>The size for the downed icon</English>
             <Polish>Rozmiar ikony nad rannym sojusznikiem.</Polish>
+            <Chinesesimp>倒地图标的尺寸大小</Chinesesimp>
+            <Chinese>倒地圖標的尺寸大小</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateItem">
             <English>Ceramic plate</English>
             <Polish>Płyta ceramiczna</Polish>
+            <Chinesesimp>陶瓷插板</Chinesesimp>
+            <Chinese>陶瓷插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Short">
             <English>Ceramic plate used to protect the body from kinetic impacts</English>
             <Polish>Płyta balistyczna chroniąca użytkownika przed nadlatującymi pociskami.</Polish>
+            <Chinesesimp>用来保护身体免受动能冲击的陶瓷插板</Chinesesimp>
+            <Chinese>用來保護身體免受動能衝擊的陶瓷插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Use">
             <English>Standard ceramic armor plating, just zip your vest open and push that fucker in ;)</English>
             <Polish>Standardowa ceramiczna płyta. Rozepnij kamizelkę i wepchnij skurwysyna (klawisz T)</Polish>
+            <Chinesesimp>标准的陶瓷防弹插板，只要拉开你的背心拉链，然后把那个该死的东西塞进去 ;)</Chinesesimp>
+            <Chinese>標準的陶瓷防彈插板，只要拉開你的背心拉鍊，然後把那個該死的東西塞進去 ;)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
             <English>Add plate into vest</English>
             <Polish>Dodaj płytę do kamizelki</Polish>
+            <Chinesesimp>背心塞入插板</Chinesesimp>
+            <Chinese>背心塞入插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_cannotHealWhileRegenOn">
             <English>Cannot heal when HP regeneration is on!</English>
             <Polish>Nie można leczyć gdy regeneracja HP jest włączona!</Polish>
+            <Chinesesimp>当HP回复启用时无法进行治疗！</Chinesesimp>
+            <Chinese>當HP回复啟用時無法進行治療！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_cannotHealMoreThanCurrent">
             <English>Healing failed, cannot heal more than current HP!</English>
             <Polish>Leczenie nieudane, nie można przywrócić więcej HP!</Polish>
+            <Chinesesimp>治疗失败，无法治疗超过当前的HP值！</Chinesesimp>
+            <Chinese>治療失敗，無法治療超過當前的HP值！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage1">
             <English>%1 just went down!</English>
             <Polish>Gracz %1 właśnie padł!</Polish>
+            <Chinesesimp>%1 刚刚倒地！</Chinesesimp>
+            <Chinese>%1 剛剛倒地！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage2">
             <English>%1 just hit the dirt!</English>
             <Polish>Gracz %1 leży na ziemi!</Polish>
+            <Chinesesimp>%1 刚刚晕倒在地！</Chinesesimp>
+            <Chinese>%1 剛剛暈倒在地！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage3">
             <English>Heads up, %1 just keeled over!</English>
             <Polish>Uwaga, gracz %1 jest nieprzytomny!</Polish>
+            <Chinesesimp>注意，%1 刚刚倒地！</Chinesesimp>
+            <Chinese>注意，%1 剛剛倒地！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateToVest">
             <English>Adding ceramic plate to vest</English>
             <Polish>Dodawanie płyty do kamizelki...</Polish>
+            <Chinesesimp>背心塞入陶瓷插板</Chinesesimp>
+            <Chinese>背心塞入陶瓷插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveUnit">
             <English>Reviving %1, keep holding the button!</English>
             <Polish>Leczysz gracza %1, trzymaj ten guzik!</Polish>
+            <Chinesesimp>复活 %1中，继续按住按钮！</Chinesesimp>
+            <Chinese>復活 %1中，繼續按住按鈕！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateThickness">
             <English>Thickness</English>
             <Polish>Grubość płyt</Polish>
+            <Chinesesimp>厚度</Chinesesimp>
+            <Chinese>厚度</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateThickness_desc">
             <English>Sets the thickness of each plate. The thicker it is the less likely it is for a bullet to penetrate it before its integrety has reached 0</English>
             <Polish>Ustawia grubość każdej płyty balistycznej. Im grubsza jest, tym mniejsza szansa, że pocisk ją spenetruje zanim jej wytrzymałość spadnie do 0.</Polish>
+            <Chinesesimp>设定每块插板的厚度。越厚，子弹在其完整性达到0之前穿透它的可能性就越小。</Chinesesimp>
+            <Chinese>設定每塊插板的厚度。越厚，子彈在其完整性達到0之前穿透它的可能性就越小。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_options">
             <English>APS Options</English>
             <Polish>Ustawienia SPB</Polish>
+            <Chinesesimp>APS选项</Chinesesimp>
+            <Chinese>APS選項</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp">
             <English>Max HP</English>
             <Polish>Maks. HP</Polish>
+            <Chinesesimp>最大HP值</Chinesesimp>
+            <Chinese>最大HP值</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp_desc">
             <English>Set the maximum HP this unit can have. DOES NOTHING WITH ACE MEDICAL LOADED!</English>
             <Polish>Ustawia maksymalną liczbę HP dla tej jednostki. NIE DZIAŁA Z ACE MEDICAL!</Polish>
+            <Chinesesimp>设置该单位可以拥有的最大HP值。加载ACE医疗下无效</Chinesesimp>
+            <Chinese>設置該單位可以擁有的最大HP值。加載ACE醫療下無效</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive">
             <English>Allow self revive</English>
             <Polish>Zezwól na samodzielne podniesienie</Polish>
+            <Chinesesimp>允许自我复苏</Chinesesimp>
+            <Chinese>允許自我複蘇</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_desc">
             <English>Allows players to self revive when downed. It takes double the amount of time they would need to revive someone else. Can only revive if they have medical supplies on them.</English>
             <Polish>Pozwala graczom na samodzielne uleczenie się, gdy leżą na ziemi. Trwa to dwa razy więcej czasu niż gdy robi to ktoś inny. Gracz może się podnieść tylko, jeżeli ma przy sobie medykamenty.</Polish>
+            <Chinesesimp>允许玩家在被击倒时自我复活。它所需要的时间是复活别人的两倍。只有当身上有医疗用品下才能复活。</Chinesesimp>
+            <Chinese>允許玩家在被擊倒時自我複活。它所需要的時間是複活別人的兩倍。只有當身上有醫療用品下才能複活。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
             <Polish>Podnieś się</Polish>
+            <Chinesesimp>起身</Chinesesimp>
+            <Chinese>起身</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_heal">
             <English>Heal unit</English>
             <Polish>Ulecz jednostkę</Polish>
+            <Chinesesimp>治疗单位</Chinesesimp>
+            <Chinese>治療單位</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
             <Polish>Wybrano niepoprawny cel.</Polish>
+            <Chinesesimp>选择的目标无效</Chinesesimp>
+            <Chinese>選擇的目標無效</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInVest">
             <English>Plates in vest</English>
             <Polish>Płyty w kamizelce</Polish>
+            <Chinesesimp>背心中的插板</Chinesesimp>
+            <Chinese>背心中的插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInVest_desc">
             <English>Adds plates pre equipped in unit's vest. Use a negative value to leave unset. Cannot add more than maximum allowed by settings. Will overwrite CBA's AI plate in vest setting!</English>
             <Polish>Dodaje wyposażone przez jednostkę płyty do jej kamizelki. Wprowadź negatywną wartość by wyłączyć to ustawienie. Nie można dodać więcej niż liczba w ustawieniach moda. Ta opcja nadpisze wcześniejszą wartość wprowadzoną w ustawieniach kamizelek!</Polish>
+            <Chinesesimp>在单位的背心中加入预先装备的插板。使用负值可不设置。不能添加超过设置允许的最大值。将覆盖CBA的AI插板在背心的设置！</Chinesesimp>
+            <Chinese>在單位的背心中加入預先裝備的插板。使用負值可不設置。不能添加超過設置允許的最大值。將覆蓋CBA的AI插板在背心的設置！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor">
             <English>Plates in inventory</English>
             <Polish>Płyty w ekwipunku</Polish>
+            <Chinesesimp>库存中的插板</Chinesesimp>
+            <Chinese>庫存中的插板</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor_desc">
             <English>ONLY USE THIS IF YOU DO NOT OVERWRITE THE UNITS LOADOUT VIA SCRIPT!! Sets the amount of lootable plates in unit's inventory. Use a negative value to leave unset.</English>
             <Polish>UŻYWAJ TEGO TYLKO, GDY NIE NADPISUJESZ WYPOSAŻENIA JEDNOSTKOM PRZEZ SKRYPT!!! Umieszcza wskazaną liczbę zbieralnych płyt w ekwipunku jednostki. Wprowadź negatywną wartość by wyłączyć to ustawienie.</Polish>
+            <Chinesesimp>只有在你不通过脚本覆盖单位装备的情况下才可使用这个功能！！设置单位库存中可掠夺的插板数量。使用负值可不设置。</Chinesesimp>
+            <Chinese>只有在你不通過腳本覆蓋單位裝備的情況下才可使用這個功能！ ！設置單位庫存中可掠奪的插板數量。使用負值可不設置。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableAIUnconscious">
             <English>Enable AI unconsciousness</English>
             <Polish>Włącz nieprzytomność botom</Polish>
+            <Chinesesimp>启用AI无意识</Chinesesimp>
+            <Chinese>啟用AI無意識</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableAIUnconscious_desc">
             <English>Allows AI from a player squad to fall unconscious instead of straight up dying</English>
             <Polish>Pozwala botom z oddziału gracza na tracenie przytomności zamiast nagłego umierania.</Polish>
+            <Chinesesimp>允许玩家小队的AI陷入昏迷而不是直接死亡</Chinesesimp>
+            <Chinese>允許玩家小隊的AI陷入昏迷而不是直接死亡</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
             <Polish>Leczenie przez AI</Polish>
+            <Chinesesimp>AI复活队友</Chinesesimp>
+            <Chinese>AI復活隊友</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
             <Polish>Dodaje botom możliwość leczenia nieprzytomnych sojuszników.</Polish>
+            <Chinesesimp>允许AI能够唤醒无意识的队友</Chinesesimp>
+            <Chinese>允許AI能夠喚醒無意識的隊友</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering">
             <English>Filter HandleDamage EH</English>
             <Polish>Filtrowanie HandleDamage EH</Polish>
+            <Chinesesimp>筛选HandleDamage EH</Chinesesimp>
+            <Chinese>篩選HandleDamage EH</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering_desc">
             <English>Adds a filter to only pass highest damage value when using HandleDamage as damage EH. Makes HandleDamage much more predictable, less chaotic but also less damaging overall.</English>
             <Polish>Dodaje filtr przekazujący jedynie najwyższą wartość obrażeń podczas używania HandleDamage jako EH. Dzięki temu HandleDamage staje się bardziej przewidywalne, mniej chaotyczne, ale tym samym suma zadawanych obrażeń jest mniejsza.</Polish>
+            <Chinesesimp>增加了一个筛选功能，当使用HandleDamage作为伤害EH时，只传递最高的伤害值。使得HandleDamage更可预测，不那么混乱，但总体上也不那么具有伤害性。</Chinesesimp>
+            <Chinese>增加了一個篩選功能，當使用HandleDamage作為傷害EH時，只傳遞最高的傷害值。使得HandleDamage更可預測，不那麼混亂，但總體上也不那麼具有傷害性。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp">
             <English>Give up</English>
-            <Polish>Poddaj się</English>
+            <Polish>Poddaj się</Polish>
+            <Chinesesimp>放弃</Chinesesimp>
+            <Chinese>放棄</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_text">
             <English>Are you really sure you want to give up? If you select &quot;Yes&quot; you will die, if you select &quot;No&quot; you will stay on the ground waiting to be revived!&lt;br/&gt;Make your choice now.&lt;br/&gt;&lt;br/&gt;You can disable this dialog from showing up by disabling it in the Feedback section in the &quot;Addon Options&quot; menu!</English>
             <Polish>Czy na pewno chcesz się poddać? Jeśli wybierzesz TAK, umrzesz, jeśli wybierzesz NIE, będziesz dalej leżeć na ziemi w oczekiwaniu na ratunek!&lt;br/&gt;Zdecyduj się teraz.&lt;br/&gt;Możesz ukryć to okno poprzez wyłączenie odpowiedniej opcji w sekcji Reakcje w ustawieniach modyfikacji.</Polish>
+            <Chinesesimp>你真的确定要放弃吗？如果你选择&quot;是&quot;你会死亡，如果你选择&quot;否&quot; 你需要躺在地上继续等待救援！&lt;br/&gt;现在就做出选择吧。&lt;br/&gt;&lt;br/&gt;你可以通过在&quot;插件选项&quot;菜单中的反馈部分禁用该对话框，使其不显示！</Chinesesimp>
+            <Chinese>你真的確定要放棄嗎？如果你選擇&quot;是&quot;你會死亡，如果你選擇&quot;否&quot; 你需要躺在地上繼續等待救援！ &lt;br/&gt;現在就做出選擇吧。 &lt;br/&gt;&lt;br/&gt;你可以通過在&quot;插件選項&quot;菜單中的反饋部分禁用該對話框，使其不顯示！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_title">
             <English>Hold up!</English>
             <Polish>Poczekaj!</Polish>
+            <Chinesesimp>等等！</Chinesesimp>
+            <Chinese>等等！</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog">
             <English>Show &quot;Give up&quot; dialog</English>
             <Polish>Pokaż okno &quot;Poddaj się&quot;</Polish>
+            <Chinesesimp>显示&quot;放弃&quot;对话框</Chinesesimp>
+            <Chinese>顯示&quot;放棄&quot;對話框</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog_desc">
             <English>Shows a confirmation dialog when fully executing the &quot;Give up&quot; action.</English>
             <Polish>Pokazuje okno wymuszające dodatkowe potwierdzenie poddania się podczas nieprzytomności.</Polish>
+            <Chinesesimp>在完全执行&quot;放弃&quot;动作时显示一个确认对话框。</Chinesesimp>
+            <Chinese>在完全執行&quot;放棄&quot;動作時顯示一個確認對話框。</Chinese>
         </Key>
     </Package>
 </Project>
