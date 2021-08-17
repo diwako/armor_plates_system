@@ -363,6 +363,28 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     true
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(visibleBleedoutTimer),
+    "LIST",
+    [LLSTRING(visibleBleedoutTimer), LLSTRING(visibleBleedoutTimer_desc)],
+    _category,
+    [[0, 1, 2], ["str_a3_cfgvehicles_modulesector_f_arguments_taskowner_values_nobody_0", "str_a3_rscdisplaycampaignlobby_mediconly", "str_a3_cfgvehicles_modulesector_f_arguments_taskowner_values_everyone_0"], 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bleedoutTimerRange),
+    "SLIDER",
+    [LLSTRING(bleedoutTimerRange), LLSTRING(bleedoutTimerRange_desc)],
+    _category,
+    [0, 500, 100, 0],
+    false,
+    {
+        params ["_value"];
+        GVAR(bleedoutTimerRange) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryHealth)];
 
 [

@@ -41,6 +41,7 @@ if (_set) then {
                 };
             };
         }, [_unit, cba_missionTime], _restBleedout] call CBA_fnc_waitAndExecute;
+        _unit setVariable [QGVAR(bleedoutKillTime), cba_missionTime + _restBleedout, true];
         if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
             [_set, _restBleedout] call FUNC(showDownedSkull);
         };
@@ -48,6 +49,7 @@ if (_set) then {
 } else {
     _unit setVariable [QGVAR(bleedoutTime), nil];
     _unit setVariable [QGVAR(beingRevived), nil, true];
+    _unit setVariable [QGVAR(bleedoutKillTime), nil, true];
     if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
         [_set] call FUNC(showDownedSkull);
     };
