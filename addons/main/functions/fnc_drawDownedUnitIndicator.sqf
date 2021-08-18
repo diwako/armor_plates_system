@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 
-private _size = GVAR(showDownedUnitIndicatorSize) * ((call CBA_fnc_getFov) select 1);
+private _zoom = (call CBA_fnc_getFov) select 1;
+private _size = GVAR(showDownedUnitIndicatorSize) * _zoom;
 private _camPos = positionCameraToWorld [0, 0, 0];
 private _color = [
     profileNamespace getvariable ['igui_error_RGB_R', 1],
@@ -18,6 +19,6 @@ private _isMedic = (call CBA_fnc_currentUnit) getUnitTrait "Medic";
     if (_distance > GVAR(bleedoutTimerRange)) then {continue};
     private _timeRemaining = round ((_x getVariable [QGVAR(bleedoutKillTime), -1]) - cba_missionTime);
     if (_timeRemaining >= 0 && { GVAR(visibleBleedoutTimer) > 0 && { _isMedic || GVAR(visibleBleedoutTimer) == 2 } }) then {
-        drawIcon3D ["", [1, 1, 1, 1], (ASLtoAGL visiblePositionASL _x) vectorAdd [0, 0, 0.5], 0, 0, 0, str _timeRemaining, 2, 0.06, "RobotoCondensed", "center", false, -0.0005, -0.015];
+        drawIcon3D ["", [1, 1, 1, 1], (ASLtoAGL visiblePositionASL _x) vectorAdd [0, 0, 0.5], 0, 0, 0, str _timeRemaining, 2, 0.06 * _zoom, "RobotoCondensed", "center", false, -0.0005, -0.015 * _zoom];
     };
 } forEach (GVAR(downedUnitIndicatorDrawCache) select {_x getVariable [QGVAR(unconscious), false]});
