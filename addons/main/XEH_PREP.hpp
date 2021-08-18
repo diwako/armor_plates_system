@@ -4,6 +4,7 @@ PREP(canAddPlate);
 PREP(canPressKey);
 PREP(createProgressBar);
 PREP(deleteProgressBar);
+PREP(fillVestWithPlates);
 PREP(initAIUnit);
 PREP(initPlates);
 PREP(moduleHeal);
