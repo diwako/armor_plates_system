@@ -715,5 +715,17 @@
             <Chinesesimp>在完全执行&quot;放弃&quot;动作时显示一个确认对话框。</Chinesesimp>
             <Chinese>在完全執行&quot;放棄&quot;動作時顯示一個確認對話框。</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
+            <English>Show bleedout timer to</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer_desc">
+            <English>Applicable players will see a countdown over the wounded icon displaying the time until death.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange">
+            <English>Range for bleed out timer</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange_desc">
+            <English>The maximum range you can see the countdown to death over the downed icon.</English>
+        </Key>
     </Package>
 </Project>
