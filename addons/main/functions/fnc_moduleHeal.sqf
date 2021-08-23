@@ -14,9 +14,9 @@ if (GVAR(aceMedicalLoaded)) then {
     ["ace_medical_treatment_fullHealLocal", [_unit], _unit] call CBA_fnc_targetEvent;
 } else {
     if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) then {
-        [_unit, _unit] call FUNC(revive);
+        [_unit, _unit, false] call FUNC(revive);
     } else {
         _unit setDamage 0;
-        [_unit, _unit] call FUNC(handleHealEh);
+        [_unit, _unit, false] call FUNC(handleHealEh);
     };
 };

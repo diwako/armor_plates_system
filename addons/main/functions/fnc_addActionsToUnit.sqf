@@ -34,11 +34,7 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     // codeCompleted
     params ["_target", "_caller"];
     call FUNC(deleteProgressBar);
-    private _ret = [_caller] call FUNC(hasHealItems);
-    if (_ret isEqualTo 1) then {
-        _caller removeItem "FirstAidKit";
-    };
-    [QGVAR(revive), [_target, _caller], _target] call CBA_fnc_targetEvent;
+    [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
     private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
@@ -69,10 +65,6 @@ _arr2 call BIS_fnc_holdActionAdd;
     // First Aid action for healing others
     private _id = _unit addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
         params ["", "_caller"];
-        private _healItem = [_caller] call FUNC(hasHealItems);
-        if (_healItem isEqualTo 1) then {
-            _caller removeItem "FirstAidKit";
-        };
         private _isProne = stance _caller == "PRONE";
         private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
@@ -83,7 +75,7 @@ _arr2 call BIS_fnc_holdActionAdd;
         [{
             params ["_target", "_caller"];
             if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
-            [QGVAR(heal), [_target, _caller], _target] call CBA_fnc_targetEvent;
+            [QGVAR(heal), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
         }, _this, 5] call CBA_fnc_waitAndExecute;
     }, [], 10, true, true, "", format ["alive _originalTarget && { _originalTarget isNotEqualTo _this && {(damage _originalTarget) isEqualTo 0 && {(_originalTarget getVariable ['%1' , %2]) < (%2 * ([%4, %5] select (_this getUnitTrait 'Medic'))) && {([_this] call %3) > 0}}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic)], 2];
     _unit setUserActionText [_id, format [localize "str_a3_cfgactions_healsoldier0", getText ((configOf _unit) >> "displayName")], "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];

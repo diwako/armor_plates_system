@@ -74,8 +74,9 @@ if (GVAR(aceMedicalLoaded)) then {
 
     ["CAManBase", "HandleHeal", {
         [{
-            (_this select 0) setDamage 0;
-            _this call FUNC(handleHealEh);
+            params ["_unit", "_healer"];
+            _unit setDamage 0;
+            [_unit, _healer, true] call FUNC(handleHealEh);
         }, _this, 5] call CBA_fnc_waitAndExecute;
         true
     }, true, [], true] call CBA_fnc_addClassEventHandler;
@@ -83,6 +84,13 @@ if (GVAR(aceMedicalLoaded)) then {
     [QGVAR(heal), {
         (_this select 0) setDamage 0;
         _this call FUNC(handleHealEh);
+    }] call CBA_fnc_addEventHandler;
+    
+    [QGVAR(consumeFAK), {
+        params ["_unit"];
+        if (([_unit] call FUNC(hasHealItems)) isEqualTo 1) then {
+            _unit removeItem "FirstAidKit";
+        };
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(revive), {

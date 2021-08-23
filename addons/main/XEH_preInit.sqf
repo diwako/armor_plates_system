@@ -12,6 +12,7 @@ if (GVAR(aceMedicalLoaded)) then {
 } else {
     #include "initSettings.sqf"
 
+    [] call FUNC(disableThirdParty);
     GVAR(armorCache) = false call CBA_fnc_createNamespace;
 };
 
