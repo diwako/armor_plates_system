@@ -4,7 +4,7 @@ params ["_unit"];
 
 private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
     // condition show
-    format ["_this getUnitTrait 'Medic' && { !(_target getVariable ['%2', false]) && {[_this, _originalTarget] call %1}}", QFUNC(canRevive), QGVAR(beingRevived)],
+    format ["_this getUnitTrait 'Medic' && { !(_target getVariable ['%2', false] && {alive (_target getVariable ['%3', objNull])}) && {[_this, _originalTarget] call %1}}", QFUNC(canRevive), QGVAR(beingRevived), QGVAR(revivingUnit)],
     "alive _target && {(lifeState _target) == 'INCAPACITATED' && {alive _this && {(lifeState _this) != 'INCAPACITATED'}}}", {
     // code start
     params ["_target", "_caller", "", "_arguments"];
@@ -20,11 +20,13 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     };
     [format [LLSTRING(reviveUnit), name _target], _time] call FUNC(createProgressBar);
     _target setVariable [QGVAR(beingRevived), true, true];
+    _target setVariable [QGVAR(revivingUnit), _caller, true];
 }, {
     // code progress
     params ["_target", "_caller"];
     if !(_target getVariable [QGVAR(beingRevived), false]) then {
         _target setVariable [QGVAR(beingRevived), true, true];
+        _target setVariable [QGVAR(revivingUnit), _caller, true];
     };
     private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
     if (_medicAnim != "" && { animationState _caller != _medicAnim }) then {
@@ -40,6 +42,7 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
     [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
+    _target setVariable [QGVAR(revivingUnit), nil, true];
 }, {
     // code interrupted
     params ["_target", "_caller"];
@@ -49,11 +52,12 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
     [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
+    _target setVariable [QGVAR(revivingUnit), nil, true];
 }, [GVAR(medicReviveTime)], GVAR(medicReviveTime), 15, false, false, true];
 
 _arr call BIS_fnc_holdActionAdd;
 private _arr2 = +_arr;
-_arr2 set [4, format ["!(_this getUnitTrait 'Medic') && { !(_target getVariable ['%2', false]) && {[_this, _originalTarget] call %1}}", QFUNC(canRevive), QGVAR(beingRevived)]];
+_arr2 set [4, format ["!(_this getUnitTrait 'Medic') && { !(_target getVariable ['%2', false] && {alive (_target getVariable ['%3', objNull])}) && {[_this, _originalTarget] call %1}}", QFUNC(canRevive), QGVAR(beingRevived), QGVAR(revivingUnit)]];
 _arr2 set [10, [GVAR(noneMedicReviveTime)]];
 _arr2 set [11, GVAR(noneMedicReviveTime)];
 _arr2 call BIS_fnc_holdActionAdd;
