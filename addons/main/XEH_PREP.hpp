@@ -8,6 +8,7 @@ PREP(initAIUnit);
 PREP(initPlates);
 PREP(moduleHeal);
 PREP(showDamageFeedbackMarker);
+PREP(updateCtrlPosition);
 PREP(updateHPUi);
 PREP(updatePlateUi);
 

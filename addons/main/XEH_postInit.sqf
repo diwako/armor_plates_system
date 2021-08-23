@@ -93,6 +93,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if !(hasInterface) exitWith {};
         params ["_unit"];
         [_unit] call FUNC(addActionsToUnit);
+        [_unit, uiNamespace getVariable [QGVAR(mainControl), controlNull]] call FUNC(fnc_updateCtrlPosition);
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(switchMove), {
@@ -129,6 +130,15 @@ if (GVAR(aceMedicalLoaded)) then {
             _object setUnitTrait ["camouflageCoef", _vis];
         };
     }] call CBA_fnc_addEventHandler;
+    
+    // event handlers for fixing plate UI in vehicles
+    ["CAManBase", "GetInMan", {
+        [_this select 0, uiNamespace getVariable [QGVAR(mainControl), controlNull]] call FUNC(updateCtrlPosition);
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
+    
+    ["CAManBase", "GetOutMan", {
+        [_this select 0, uiNamespace getVariable [QGVAR(mainControl), controlNull]] call FUNC(updateCtrlPosition);
+    }, true, [], true] call CBA_fnc_addClassEventHandler;
 };
 
 if !(hasInterface) exitWith {
@@ -150,6 +160,7 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
     params ["_newUnit", "_oldUnit"];
     [_newUnit] call FUNC(updatePlateUi);
     [_newUnit] call FUNC(updateHPUi);
+    [_newUnit, uiNamespace getVariable [QGVAR(mainControl), controlNull]] call FUNC(updateCtrlPosition);
     if !(isNil QGVAR(weaponsEvtId)) then {
         [_oldUnit, "DefaultAction", GVAR(weaponsEvtId)] call ace_common_fnc_removeActionEventHandler;
         GVAR(weaponsEvtId) = [_newUnit, "DefaultAction", {!GVAR(addPlateKeyUp)}, {}] call ace_common_fnc_addActionEventHandler;
