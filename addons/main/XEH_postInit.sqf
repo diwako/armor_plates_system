@@ -193,7 +193,15 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(beingRevived), nil, true];
 
     if (_unit isEqualTo player) then {
+        if (GVAR(spawnWithFullPlates)) then {
+            [{
+                params ["_unit"];
+                [_unit] call FUNC(fillVestWithPlates);
+                [_unit] call FUNC(updatePlateUi);
+            }, [_unit], 1] call CBA_fnc_waitAndExecute;
+        };
         [_unit] call FUNC(updatePlateUi);
+
         if !(GVAR(aceMedicalLoaded)) then {
             [QGVAR(respawned), [_unit]] call CBA_fnc_globalEvent;
             [_unit] call FUNC(updateHPUi);
@@ -290,14 +298,7 @@ if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
 }, {
     private _3den_maxPlateInVest = player getVariable [QGVAR(3den_maxPlateInVest), -1];
     if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates)}) then {
-        private _plates = [];
-        private _num = [GVAR(numWearablePlates), _3den_maxPlateInVest] select (_3den_maxPlateInVest >= 0);
-        for "_i" from 1 to _num do {
-            _plates pushBack GVAR(maxPlateHealth);
-        };
-        private _vest = vestContainer player;
-        _vest setVariable [QGVAR(plates), _plates];
-        _vest setVariable ["ace_movement_vLoad", (_vest getVariable ["ace_movement_vLoad", 0]) + (PLATE_MASS * _num), true];
+        [player] call FUNC(fillVestWithPlates);
     };
     private _3den_maxPlateInInventory = player getVariable [QGVAR(3den_maxPlateInInventory), -1];
     if (_3den_maxPlateInInventory > 0) then {
