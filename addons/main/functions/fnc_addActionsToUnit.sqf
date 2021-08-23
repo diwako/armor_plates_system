@@ -14,6 +14,7 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
     _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+    _caller setVariable [QGVAR(medicAnim), _medicAnim];
     if (_medicAnim != "") then {
         _caller playMove _medicAnim;
     };
@@ -21,15 +22,23 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     _target setVariable [QGVAR(beingRevived), true, true];
 }, {
     // code progress
-    params ["_target"];
+    params ["_target", "_caller"];
     if !(_target getVariable [QGVAR(beingRevived), false]) then {
         _target setVariable [QGVAR(beingRevived), true, true];
+    };
+    private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
+    if (_medicAnim != "" && { animationState _caller != _medicAnim }) then {
+        _caller playMove _medicAnim;
     };
 }, {
     // codeCompleted
     params ["_target", "_caller"];
     call FUNC(deleteProgressBar);
     [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
+    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
 }, {
     // code interrupted
@@ -53,10 +62,11 @@ _arr2 call BIS_fnc_holdActionAdd;
 // if (isPlayer _unit && {_unit isNotEqualTo player}) then {
 // if (_unit isNotEqualTo player) then {
     // workaround for mods or missions healing the default a3 damage while the internal health is not at max
+    // First Aid action for healing others
     private _id = _unit addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
         params ["", "_caller"];
         private _isProne = stance _caller == "PRONE";
-        private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medic", "AinvPpneMstpSlayW[wpn]Dnon_medic"] select _isProne;
+        private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
         _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
         if (_medicAnim != "") then {

@@ -34,6 +34,7 @@
 ] call BIS_fnc_holdActionAdd;
 
 // workaround for mods or missions healing the default a3 damage while the internal health is not at max
+// First Aid action for healing self
 private _id = player addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
     params ["_target"];
     private _isProne = stance _target == "PRONE";
