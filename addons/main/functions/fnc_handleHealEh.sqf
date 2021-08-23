@@ -3,10 +3,10 @@
     params ["_unit"];
     (damage _unit) isEqualTo 0 || {!alive _unit}
 },{
-    params ["_unit", "_healer"];
+    params ["_unit", "_healer", "_consumeFAK"];
     if !(alive _unit) exitWith {};
     if !(local _unit) exitWith {
-        [QGVAR(heal), [_unit, _healer], _unit] call CBA_fnc_targetEvent;
+        [QGVAR(heal), [_unit, _healer, _consumeFAK], _unit] call CBA_fnc_targetEvent;
     };
     if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) exitWith {};
 
@@ -27,6 +27,9 @@
     [_unit, _newHp, _maxHp] call FUNC(setA3Damage);
     if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
         [_unit] call FUNC(updateHPUi);
+    };
+    if (_consumeFAK) then {
+        [QGVAR(consumeFAK), [_healer], _healer] call CBA_fnc_targetEvent;
     };
 }, _this, 10, {
     params ["_unit", "_healer"];
