@@ -85,11 +85,12 @@ if (GVAR(aceMedicalLoaded)) then {
         (_this select 0) setDamage 0;
         _this call FUNC(handleHealEh);
     }] call CBA_fnc_addEventHandler;
-    
+
     [QGVAR(consumeFAK), {
         params ["_unit"];
         if (([_unit] call FUNC(hasHealItems)) isEqualTo 1) then {
-            _unit removeItem "FirstAidKit";
+            _unit removeItem (_unit getVariable [QGVAR(availableFirstAidKit), ""]);
+            _unit setVariable [QGVAR(availableFirstAidKit), nil];
         };
     }] call CBA_fnc_addEventHandler;
 
@@ -154,6 +155,7 @@ GVAR(downedUnitIndicatorDrawCache) = [];
 if !(isNil "ace_common_fnc_addActionEventHandler") then {
     GVAR(weaponsEvtId) = [player, "DefaultAction", {!GVAR(addPlateKeyUp)}, {}] call ace_common_fnc_addActionEventHandler;
 };
+
 ["unit", {
     params ["_newUnit", "_oldUnit"];
     [_newUnit] call FUNC(updatePlateUi);
@@ -162,6 +164,10 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
         [_oldUnit, "DefaultAction", GVAR(weaponsEvtId)] call ace_common_fnc_removeActionEventHandler;
         GVAR(weaponsEvtId) = [_newUnit, "DefaultAction", {!GVAR(addPlateKeyUp)}, {}] call ace_common_fnc_addActionEventHandler;
     };
+}] call CBA_fnc_addPlayerEventHandler;
+
+["loadout", {
+    GVAR(uniqueItemsCache) = nil;
 }] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(downedMessage), {
@@ -233,6 +239,9 @@ if !(GVAR(aceMedicalLoaded)) then {
             call FUNC(drawDownedUnitIndicator);
         }];
     };
+
+    GVAR(firsAidKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 401" configClasses (configFile >> "CfgWeapons") apply {configName _x};
+    GVAR(mediKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 619" configClasses (configFile >> "CfgWeapons") apply {configName _x};
 
     [] spawn {
         GVAR(playerDamageSync) = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
