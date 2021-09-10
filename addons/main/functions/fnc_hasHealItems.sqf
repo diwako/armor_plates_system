@@ -7,7 +7,7 @@ if (_unit getUnitTrait "Medic" && {(GVAR(mediKitItems) arrayIntersect _items) is
     2
 };
 
-private _availableFirstAidKitItems = GVAR(firsAidKitItems) arrayIntersect _items;
+private _availableFirstAidKitItems = GVAR(firstAidKitItems) arrayIntersect _items;
 if (_availableFirstAidKitItems isNotEqualTo []) exitWith {
     _unit setVariable [QGVAR(availableFirstAidKit), _availableFirstAidKitItems select 0];
     1

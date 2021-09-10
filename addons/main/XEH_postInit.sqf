@@ -240,7 +240,7 @@ if !(GVAR(aceMedicalLoaded)) then {
         }];
     };
 
-    GVAR(firsAidKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 401" configClasses (configFile >> "CfgWeapons") apply {configName _x};
+    GVAR(firstAidKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 401" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     GVAR(mediKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 619" configClasses (configFile >> "CfgWeapons") apply {configName _x};
 
     [] spawn {
