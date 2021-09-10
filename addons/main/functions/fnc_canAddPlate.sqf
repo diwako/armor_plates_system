@@ -2,9 +2,7 @@
 params ["_player"];
 if ((vest _player) isEqualTo "") exitWith {false};
 
-private _items = call FUNC(uniqueItems);
-
-if !(QGVAR(plate) in _items) exitWith {false};
+if !(GVAR(hasPlateInInvetory)) exitWith {false};
 
 private _plates = (vestContainer _player) getVariable [QGVAR(plates), []];
 if ((count _plates) >= GVAR(numWearablePlates)) exitWith {

@@ -150,6 +150,7 @@ GVAR(lastHPDamageSound) = -1;
 GVAR(skullID) = -1;
 GVAR(downedUnitIndicatorDrawEh) = -1;
 GVAR(downedUnitIndicatorDrawCache) = [];
+GVAR(hasPlateInInvetory) = QGVAR(plate) in (player call FUNC(uniqueItems));
 
 // disallow weapon firing during plate interaction when ace is loaded
 if !(isNil "ace_common_fnc_addActionEventHandler") then {
@@ -167,7 +168,9 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
 }] call CBA_fnc_addPlayerEventHandler;
 
 ["loadout", {
+    params ["_unit"];
     GVAR(uniqueItemsCache) = nil;
+    GVAR(hasPlateInInvetory) = QGVAR(plate) in (_unit call FUNC(uniqueItems));
 }] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(downedMessage), {
