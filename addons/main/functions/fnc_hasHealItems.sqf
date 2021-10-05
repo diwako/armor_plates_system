@@ -1,16 +1,15 @@
 #include "script_component.hpp"
 params ["_unit"];
 
-private _items = (getItemCargo uniformContainer _unit) select 0;
-_items append ((getItemCargo vestContainer _unit) select 0);
-_items append ((getItemCargo backpackContainer _unit) select 0);
-_items = _items arrayIntersect _items;
+private _items = call FUNC(uniqueItems);
 
-if (_unit getUnitTrait "Medic" && {"Medikit" in _items}) exitWith {
+if (_unit getUnitTrait "Medic" && {(GVAR(mediKitItems) arrayIntersect _items) isNotEqualTo []}) exitWith {
     2
 };
 
-if ("FirstAidKit" in _items) exitWith {
+private _availableFirstAidKitItems = GVAR(firstAidKitItems) arrayIntersect _items;
+if (_availableFirstAidKitItems isNotEqualTo []) exitWith {
+    _unit setVariable [QGVAR(availableFirstAidKit), _availableFirstAidKitItems select 0];
     1
 };
 0
