@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 // [player, 2, "head", player] call diw_armor_plates_main_fnc_receiveDamage
-params ["_unit", "_damage", "_bodyPart", "_instigator"];
+params ["_unit", "_damage", "_bodyPart", "_instigator", "_ammo"];
 if (_damage <= 0 || {!alive _unit}) exitWith {};
 
 private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
@@ -35,42 +35,9 @@ _damage = _damage * GVAR(damageCoef);
 // };
 
 private _player = call CBA_fnc_currentUnit;
-private _receivedDamage = false;
-private _vest = vestContainer _unit;
-private _plates = _vest getVariable [QGVAR(plates), []];
-if (_plates isNotEqualTo []) then {
-    // exit out and let rest of function handle the remaining damage
-    // if torso was not hit and plates are set to only protect the torso
-    if (!_isTorso && {GVAR(protectOnlyTorso)}) exitWith {};
-    for "_i" from ((count _plates) - 1) to 0 step -1 do {
-        private _plateIntegrity = _plates select _i;
-        private _newDamage = _plateIntegrity - _damage;
-        if (_newDamage > 0) then {
-            // plate managed to soak the damage
-            _plates set [_i, _newDamage];
-            _damage = 0;
-            break;
-        } else {
-            // the plate shattered bleeding damage into lower plates
-            _damage = abs _newDamage;
-            _plates deleteAt _i;
-            _vest setVariable ["ace_movement_vLoad", 0 max ((_vest getVariable ["ace_movement_vLoad", 0]) - PLATE_MASS), true];
-
-            if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
-                GVAR(lastPlateBreakSound) = diag_frameNo;
-                playsound format [QGVAR(platebreak%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
-            };
-        };
-    };
-    _unit setVariable [QGVAR(plates), _plates];
-    if (_player isEqualTo _unit) then {
-        [_unit] call FUNC(updatePlateUi);
-        if (GVAR(showDamageMarker)) then {
-            [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
-        };
-        _receivedDamage = true;
-    };
-};
+private _returnedDamage = [_unit, _damage, _isTorso, _player, _ammo, _instigator] call FUNC(handleArmorDamage);
+_damage = _returnedDamage select 0;
+private _receivedDamage = _returnedDamage select 1;
 
 if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
     if (_isHeadshot) then {
