@@ -607,6 +607,18 @@
             <Chinesesimp>允许玩家在被击倒时自我复活。它所需要的时间是复活别人的两倍。只有当身上有医疗用品下才能复活。</Chinesesimp>
             <Chinese>允許玩家在被擊倒時自我複活。它所需要的時間是複活別人的兩倍。只有當身上有醫療用品下才能複活。</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideHP">
+            <English>Automatically hide HP bar</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideHP_desc">
+            <English>Hides the HP bar after 5 seconds. Will only hide if HP is above warning level! Press the &quot;Add plate into vest&quot; key to show again</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideArmor">
+            <English>Automatically hide plate bars</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideArmor_desc">
+            <English>Hides the plate bars after 5 seconds. Press the &quot;Add plate into vest&quot; key to show again</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
             <Polish>Podnieś się</Polish>

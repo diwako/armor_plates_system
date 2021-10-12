@@ -182,3 +182,14 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     false,
     true
 ] call CBA_fnc_addSetting;
+
+GVAR(allowHideHP) = true;
+
+[
+    QGVAR(allowHideArmor),
+    "CHECKBOX",
+    [LLSTRING(allowHideArmor), LLSTRING(allowHideArmor_desc)],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
