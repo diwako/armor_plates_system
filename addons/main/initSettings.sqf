@@ -230,6 +230,15 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(bleedoutTimerColor),
+    "COLOR",
+    LLSTRING(bleedoutTimerColor),
+    _category,
+    [1, 1, 1, 1],
+    false
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(showGiveUpDialog),
     "CHECKBOX",
     [LLSTRING(showGiveUpDialog), LLSTRING(showGiveUpDialog_desc)],
