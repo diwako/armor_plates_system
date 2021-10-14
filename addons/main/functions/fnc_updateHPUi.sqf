@@ -52,7 +52,7 @@ if !(isNil QGVAR(hideHPHandle)) then {
 if (GVAR(allowHideHP) && {_hide}) then {
     GVAR(hideHPHandle) = [_hpBar] spawn {
         params ["_hpBar"];
-        sleep 5;
+        sleep GVAR(hideUiSeconds);
         _hpBar ctrlSetFade 1;
         _hpBar ctrlCommit 1;
     };

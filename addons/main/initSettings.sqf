@@ -412,6 +412,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(hideUiSeconds),
+    "SLIDER",
+    [LLSTRING(hideUiSeconds), LLSTRING(hideUiSeconds_desc)],
+    _category,
+    [1, 600, 5, 1],
+    false
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryHealth)];
 
 [

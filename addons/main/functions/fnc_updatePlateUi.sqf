@@ -28,7 +28,7 @@ if !(isNil QGVAR(hidePlateHandle)) then {
 };
 if (GVAR(allowHideArmor)) then {
     GVAR(hidePlateHandle) = _plateCtrls spawn {
-        sleep 5;
+        sleep GVAR(hideUiSeconds);
         {
             {
                 _x ctrlSetFade 1;

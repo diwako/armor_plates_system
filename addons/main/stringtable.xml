@@ -619,6 +619,12 @@
         <Key ID="STR_diw_armor_plates_main_allowHideArmor_desc">
             <English>Hides the plate bars after 5 seconds. Press the &quot;Add plate into vest&quot; key to show again</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_hideUiSeconds">
+            <English>Hide UI timeout</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hideUiSeconds_desc">
+            <English>When hiding the UI is enabeld, it will use this setting's specified time in seconds before any UI bars start to vanish</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
             <English>Bleedout timer color</English>
         </Key>
