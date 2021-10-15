@@ -609,6 +609,8 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
             <English>Bleedout timer color</English>
+            <Chinesesimp>失血计时器颜色</Chinesesimp>
+            <Chinese>失血計時器顏色</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
@@ -720,15 +722,23 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
+            <Chinesesimp>显示失血计时器至</Chinesesimp>
+            <Chinese>顯示失血計時器至</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer_desc">
             <English>Applicable players will see a countdown over the wounded icon displaying the time until death.</English>
+            <Chinesesimp>适用的玩家会在受伤的图标上看到一个死亡倒计时。</Chinesesimp>
+            <Chinese>適用的玩家將在受傷圖標上看到死亡倒計時。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange">
             <English>Range for bleed out timer</English>
+            <Chinesesimp>失血计时器的范围</Chinesesimp>
+            <Chinese>失血計時器的範圍</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange_desc">
             <English>The maximum range you can see the countdown to death over the downed icon.</English>
+            <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围。</Chinesesimp>
+            <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍。</Chinese>
         </Key>
     </Package>
 </Project>
