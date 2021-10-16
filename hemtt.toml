@@ -5,7 +5,7 @@ template = "cba"
 mainprefix = "z"
 folder_optionals = true
 sig_version = 3
-version = "0.5.0"
+version = "0.6.0"
 exclude = [
     "*.psd",
     "*.png",
