@@ -27,15 +27,11 @@ if (GVAR(disallowFriendfire) &&
     (side group _unit) isEqualTo (side group _shooter)}}}) exitWith {_curDamage};
 
 private _newDamage = _damage - _curDamage;
-if (_newDamage isEqualTo 0) exitWith {
+if (_newDamage isEqualTo 0 || {_newDamage < 1E-3}) exitWith {
     _curDamage
 };
 
 if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
-    if (_newDamage > 1E-3 && {GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}}) then {
-        [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
-    };
-
     if (_ammo isEqualTo "") exitWith {
         // let ace do the thing
         _this call ace_medical_engine_fnc_handleDamage;
@@ -108,7 +104,14 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
         _damageSelectionArray = [1, 1]; // sum of weights would be 0
     };
 
-    if (_woundedHitPoint isNotEqualTo "Body") exitWith {
+    if (_receivedDamage < 1E-3) exitWith {_curDamage};
+
+    if (GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}) then {
+        [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
+    };
+
+    private _isTorso = _woundedHitPoint isEqualTo "Body";
+    if (GVAR(protectOnlyTorso) && {!_isTorso}) exitWith {
         // let ace do the thing
         _unit setVariable [format ["ace_medical_engine_$%1", _hitPoint], nil];
         _this call ace_medical_engine_fnc_handleDamage;
@@ -141,7 +144,7 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
             _actualDamage = _damage * (_hitPointArmor + _bodyArmor) / _hitPointArmor / _bodyArmor * 0.96;
         };
 
-        private _damageLeft = [_unit, _receivedDamage, _actualDamage, [_instigator, _shooter] select (isNull _instigator), _ammo] call FUNC(receiveDamageACE);
+        private _damageLeft = [_unit, _receivedDamage, _actualDamage, [_instigator, _shooter] select (isNull _instigator), _ammo, _isTorso] call FUNC(receiveDamageACE);
 
         // APS code end
 
@@ -163,4 +166,3 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
 
 // let ace do the thing
 _this call ace_medical_engine_fnc_handleDamage;
-0

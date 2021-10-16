@@ -25,7 +25,7 @@ if (
     {getOxygenRemaining _unit <= 0.5} &&
     {_damage isEqualTo (_curDamage + 0.005)}
 ) exitWith {
-    [_unit, _newDamage, "body", _unit] call FUNC(receiveDamage);
+    [_unit, _newDamage, "body", _unit, _projectile] call FUNC(receiveDamage);
     0
 };
 
@@ -38,7 +38,7 @@ if (
     {_vehicle isNotEqualTo _unit} &&
     {vectorMagnitude (velocity _vehicle) > 5}
 ) exitWith {
-    [_unit, _newDamage / 2, "vehicle", _unit] call FUNC(receiveDamage);
+    [_unit, _newDamage / 2, "vehicle", _unit, _projectile] call FUNC(receiveDamage);
     0
 };
 
@@ -48,7 +48,7 @@ if (
     vectorMagnitude (velocity _unit) > 5 || {((velocity _unit) select 2) < -2}}}
 ) exitWith {
     if (_hitPoint isEqualTo "incapacitated") then {
-        [_unit, _newDamage * 3.25, "falldamage", _unit] call FUNC(receiveDamage);
+        [_unit, _newDamage * 3.25, "falldamage", _unit, _projectile] call FUNC(receiveDamage);
         0
     } else {
         _curDamage
@@ -76,19 +76,19 @@ if (GVAR(useHandleDamageFiltering)) then {
     if (_damageCache isEqualTo []) then {
         _unit setVariable [QGVAR(damageCache), _damageCache];
         [{
-            params ["_unit", "_source"];
+            params ["_unit", "_source", "_projectile"];
             private _damageCache = _unit getVariable [QGVAR(damageCache), []];
             if (_damageCache isNotEqualTo []) then {
                 _damageCache sort false;
                 (_damageCache select 0) params ["_realDamage", "_hitPoint"];
-                [_unit, _realDamage, _hitPoint, _source] call FUNC(receiveDamage);
+                [_unit, _realDamage, _hitPoint, _source, _projectile] call FUNC(receiveDamage);
             };
             _unit setVariable [QGVAR(damageCache), nil];
-        }, [_unit, [_source, _instigator] select (isNull _source)]] call CBA_fnc_execNextFrame;
+        }, [_unit, [_source, _instigator] select (isNull _source), _projectile]] call CBA_fnc_execNextFrame;
     };
     _damageCache pushBack [_realDamage, _hitPoint];
 } else {
-    [_unit, _realDamage, _hitPoint, [_source, _instigator] select (isNull _source)] call FUNC(receiveDamage);
+    [_unit, _realDamage, _hitPoint, [_source, _instigator] select (isNull _source), _projectile] call FUNC(receiveDamage);
 };
 
 0

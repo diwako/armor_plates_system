@@ -32,6 +32,9 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoa
 if (!GVAR(enable)) exitWith {
     INFO("Disabled --> CBA settings");
 };
+
+GVAR(ammoPenCache) = createHashMap;
+
 if (GVAR(aceMedicalLoaded)) then {
     // ace medical
     ["CAManBase", "InitPost", {

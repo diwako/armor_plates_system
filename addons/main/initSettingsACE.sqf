@@ -22,16 +22,34 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(armorHandlingMode),
+    "LIST",
+    [LLSTRING(armorHandlingMode), LLSTRING(armorHandlingMode_desc)],
+    _category,
+    [["arcade", "realism"], [LLSTRING(armorHandlingMode_arcade), LLSTRING(armorHandlingMode_realism)], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(plateThickness),
     "SLIDER",
     [LLSTRING(plateThickness), LLSTRING(plateThickness_desc)],
     _category,
-    [0, 50, 25, 0],
+    [0, 200, 25, 0],
     true,
     {
         params ["_value"];
         GVAR(plateThickness) = round _value;
     }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(protectOnlyTorso),
+    "CHECKBOX",
+    [LLSTRING(protectOnlyTorso), LLSTRING(protectOnlyTorso_desc)],
+    _category,
+    true,
+    true
 ] call CBA_fnc_addSetting;
 
 [

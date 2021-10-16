@@ -5,6 +5,7 @@ PREP(canPressKey);
 PREP(createProgressBar);
 PREP(deleteProgressBar);
 PREP(fillVestWithPlates);
+PREP(handleArmorDamage);
 PREP(initAIUnit);
 PREP(initPlates);
 PREP(moduleHeal);
