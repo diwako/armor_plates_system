@@ -730,5 +730,17 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange_desc">
             <English>The maximum range you can see the countdown to death over the downed icon.</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
+            <English>Armor Handling Mode</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode_desc">
+            <English>Allows to set the armor handling mode. Arcade will not allow penetration through plates, realism however will and plates will shatter faster when damaged</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode_arcade">
+            <English>Arcade</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode_realism">
+            <English>Realism</English>
+        </Key>
     </Package>
 </Project>
