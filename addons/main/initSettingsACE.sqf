@@ -200,3 +200,23 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     false,
     true
 ] call CBA_fnc_addSetting;
+
+GVAR(allowHideHP) = true;
+
+[
+    QGVAR(allowHideArmor),
+    "CHECKBOX",
+    [LLSTRING(allowHideArmor), LLSTRING(allowHideArmor_desc)],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(hideUiSeconds),
+    "SLIDER",
+    [LLSTRING(hideUiSeconds), LLSTRING(hideUiSeconds_desc)],
+    _category,
+    [1, 600, 5, 1],
+    false
+] call CBA_fnc_addSetting;
