@@ -612,6 +612,27 @@
             <Chinesesimp>失血计时器颜色</Chinesesimp>
             <Chinese>失血計時器顏色</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideHP">
+            <English>Automatically hide HP bar</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideHP_desc">
+            <English>Hides the HP bar after a certain time. Will only hide if HP is above warning level! Press the &quot;Add plate into vest&quot; key to show again</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideArmor">
+            <English>Automatically hide plate bars</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowHideArmor_desc">
+            <English>Hides the plate bars after a certain time. Press the &quot;Add plate into vest&quot; key to show again</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hideUiSeconds">
+            <English>Hide UI timeout</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hideUiSeconds_desc">
+            <English>When hiding the UI is enabeld, it will use this setting's specified time in seconds before any UI bars start to face away</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
+            <English>Bleedout timer color</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
             <Polish>Podnieś się</Polish>
@@ -739,6 +760,18 @@
             <English>The maximum range you can see the countdown to death over the downed icon.</English>
             <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围。</Chinesesimp>
             <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍。</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
+            <English>Armor Handling Mode</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode_desc">
+            <English>Allows to set the armor handling mode. Arcade will not allow penetration through plates, realism however will and plates will shatter faster when damaged</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode_arcade">
+            <English>Arcade</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_armorHandlingMode_realism">
+            <English>Realism</English>
         </Key>
     </Package>
 </Project>

@@ -3,8 +3,10 @@ params ["_player"];
 
 private _hpBar = uiNamespace getVariable [QGVAR(hpControl), controlNull];
 private _pos = ctrlPosition _hpBar;
+private _hide = false;
 if (GVAR(aceMedicalLoaded)) then {
     _pos set [2, 0];
+    _hide = true;
 } else {
     private _maxHp = _player getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _player)];
     private _newPH = _player getVariable [QGVAR(hp), _maxHp];
@@ -27,6 +29,7 @@ if (GVAR(aceMedicalLoaded)) then {
                 profileNamespace getvariable ['igui_error_RGB_A', 1]
             ]
         };
+        _hide = true;
         if (_diff > 1) exitWith {
             GVAR(plateColor)
         };
@@ -42,5 +45,19 @@ if (GVAR(aceMedicalLoaded)) then {
     _pos set [2, GVAR(fullWidth) * _diff];
 };
 
+if !(isNil QGVAR(hideHPHandle)) then {
+    terminate GVAR(hideHPHandle);
+    GVAR(hideHPHandle) = nil;
+};
+if (GVAR(allowHideHP) && {_hide}) then {
+    GVAR(hideHPHandle) = [_hpBar] spawn {
+        params ["_hpBar"];
+        sleep GVAR(hideUiSeconds);
+        _hpBar ctrlSetFade 1;
+        _hpBar ctrlCommit 1;
+    };
+};
+
+_hpBar ctrlSetFade 0;
 _hpBar ctrlSetPosition _pos;
 _hpBar ctrlCommit 0.1;

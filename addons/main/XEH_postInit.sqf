@@ -32,6 +32,9 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoa
 if (!GVAR(enable)) exitWith {
     INFO("Disabled --> CBA settings");
 };
+
+GVAR(ammoPenCache) = createHashMap;
+
 if (GVAR(aceMedicalLoaded)) then {
     // ace medical
     ["CAManBase", "InitPost", {
@@ -346,6 +349,12 @@ GVAR(addingPlate) = false;
 [LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
     if (GVAR(addingPlate)) exitWith {};
     private _player = call CBA_fnc_currentUnit;
+    if (GVAR(allowHideArmor)) then {
+        [_player] call FUNC(updatePlateUi);
+    };
+    if (GVAR(allowHideHP)) then {
+        [_player] call FUNC(updateHPUi);
+    };
     if ((stance _player) == "PRONE" || {
         !([_player] call FUNC(canPressKey)) || {
         !([_player] call FUNC(canAddPlate))}}) exitWith {false};
