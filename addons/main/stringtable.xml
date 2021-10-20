@@ -609,41 +609,49 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
             <English>Bleedout timer color</English>
+            <Polish>Kolor licznika wykrwawienia</Polish>
             <Chinesesimp>失血计时器颜色</Chinesesimp>
             <Chinese>失血計時器顏色</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideHP">
             <English>Automatically hide HP bar</English>
+            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
             <Chinesesimp>自动隐藏HP条</Chinesesimp>
             <Chinese>自動隱藏HP條</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideHP_desc">
             <English>Hides the HP bar after a certain time. Will only hide if HP is above warning level! Press the &quot;Add plate into vest&quot; key to show again</English>
+            <Polish>Ukrywa pasek życia po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
             <Chinesesimp>在一定时间后隐藏HP条。只有在HP超过警告水平时才会隐藏！按&quot;添加插板进入背心&quot;键，以再次显示。</Chinesesimp>
             <Chinese>在一定時間後隱藏HP條。只有在HP超過警告水平時才會隱藏！按&quot;添加插板進入背心&quot;鍵，以再次顯示。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor">
             <English>Automatically hide plate bars</English>
+            <Polish>Automatycznie ukrywa paski pancerza</Polish>
             <Chinesesimp>自动隐藏插板条</Chinesesimp>
             <Chinese>自動隱藏插板條</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor_desc">
             <English>Hides the plate bars after a certain time. Press the &quot;Add plate into vest&quot; key to show again</English>
+            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
             <Chinesesimp>在一定时间后隐藏插板条。按&quot;添加插板进入背心&quot;键，以再次显示。</Chinesesimp>
             <Chinese>一段時間後隱藏插板條。按&quot;添加插板進入背心&quot;鍵，以再次顯示。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds">
             <English>Hide UI timeout</English>
+            <Polish>Czas ukrycia UI</Polish>
             <Chinesesimp>隐藏UI超时</Chinesesimp>
             <Chinese>隱藏 UI 超時</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds_desc">
             <English>When hiding the UI is enabeld, it will use this setting's specified time in seconds before any UI bars start to face away</English>
+            <Polish>Kiedy ukrywanie interfejsu jest włączone, UI zacznie znikać po upłynięciu stosownego czasu</Polish>
             <Chinesesimp>当隐藏UI被启用时，它将在任何UI条开始面向别处之前，使用这个设置的指定时间(秒)</Chinesesimp>
             <Chinese>當隱藏UI被啟用時，它將在任何UI條開始面向別處之前，使用這個設置的指定時間(秒)</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
             <English>Bleedout timer color</English>
+            <Polish>Kolor licznika wykrwawienia</Polish>
             <Chinesesimp>失血计时器颜色</Chinesesimp>
             <Chinese>失血計時器顏色</Chinese>
         </Key>
@@ -757,41 +765,49 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
+            <Polish>Pokaż licznik graczom</Polish>
             <Chinesesimp>显示失血计时器至</Chinesesimp>
             <Chinese>顯示失血計時器至</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer_desc">
             <English>Applicable players will see a countdown over the wounded icon displaying the time until death.</English>
+            <Polish>Stosowni gracze będą widzieć licznik nad ikoną rannego pokazujący czas do śmierci.</Polish>
             <Chinesesimp>适用的玩家会在受伤的图标上看到一个死亡倒计时。</Chinesesimp>
             <Chinese>適用的玩家將在受傷圖標上看到死亡倒計時。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange">
             <English>Range for bleed out timer</English>
+            <Polish>Zasięg renderowania licznika</Polish>
             <Chinesesimp>失血计时器的范围</Chinesesimp>
             <Chinese>失血計時器的範圍</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange_desc">
             <English>The maximum range you can see the countdown to death over the downed icon.</English>
+            <Polish>Maksymalny zasięg w którym widać licznik obok ikony rannego.</Polish>
             <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围。</Chinesesimp>
             <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍。</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
+            <Polish>Tryb pancerza</Polish>
             <Chinesesimp>插板控制模式</Chinesesimp>
             <Chinese>插板控制模式</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode_desc">
             <English>Allows to set the armor handling mode. Arcade will not allow penetration through plates, realism however will and plates will shatter faster when damaged</English>
+            <Polish>Określa mechanikę otrzymywania obrażeń. Tryb Rozrywki nie bierze pod uwagę penetracji płyt, natomiast w Realizmie płyty będą mniej chronić, gdy zostaną uszkodzone</Polish>
             <Chinesesimp>允许设置插板控制模式。街机模式将不允许穿透板块，但是逼真现实主义会，且板块在损坏时会更快地破碎</Chinesesimp>
             <Chinese>允許設置插板控制模式。街機模式將不允許穿透板塊，但是逼真現實主義會，且板塊在損壞時會更快地破碎</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode_arcade">
             <English>Arcade</English>
+            <Polish>Rozrywka</Polish>
             <Chinesesimp>街机模式</Chinesesimp>
             <Chinese>街機模式</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode_realism">
             <English>Realism</English>
+            <Polish>Realizm</Polish>
             <Chinesesimp>逼真现实主义</Chinesesimp>
             <Chinese>逼真現實主義</Chinese>
         </Key>
