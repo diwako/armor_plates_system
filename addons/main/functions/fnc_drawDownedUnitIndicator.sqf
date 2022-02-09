@@ -12,7 +12,7 @@ private _isMedic = (call CBA_fnc_currentUnit) getUnitTrait "Medic";
 
 {
     private _distance = _x distance _camPos;
-	if ( _distance > GVAR(showDownedUnitIndicatorRange) && { GVAR(visibleBleedoutTimer) == 0 || {_distance > GVAR(bleedoutTimerRange) || { !(_isMedic || GVAR(visibleBleedoutTimer) == 2 ) } } } ) then {continue};
+    if ( _distance > GVAR(showDownedUnitIndicatorRange) && { GVAR(visibleBleedoutTimer) == 0 || {_distance > GVAR(bleedoutTimerRange) || { !(_isMedic || GVAR(visibleBleedoutTimer) == 2 ) } } } ) then {continue};
     private _sizeFinal = linearConversion [0, GVAR(showDownedUnitIndicatorRange), _distance, _size, _size/10, true];
     drawIcon3D [["\a3\ui_f\data\igui\cfg\actions\bandage_ca.paa", "\A3\ui_f\data\Map\VehicleIcons\pictureHeal_ca.paa"] select (_x getVariable [QGVAR(beingRevived), false]), _color, (ASLtoAGL visiblePositionASL _x) vectorAdd [0, 0, 0.5], _sizeFinal, _sizeFinal, 0, "", 0, 0, "RobotoCondensed", "center", true, 0, 0.5];
     if (_distance > GVAR(bleedoutTimerRange)) then {continue};
