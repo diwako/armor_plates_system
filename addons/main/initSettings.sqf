@@ -221,6 +221,19 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(showDownedUnitIndicatorRangeMedic),
+    "SLIDER",
+    [LLSTRING(showDownedUnitIndicatorRangeMedic), LLSTRING(showDownedUnitIndicatorRangeMedic_desc)],
+    _category,
+    [0, 500, 100, 0],
+    false,
+    {
+        params ["_value"];
+        GVAR(showDownedUnitIndicatorRangeMedic) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(showDownedUnitIndicatorSize),
     "SLIDER",
     [LLSTRING(showDownedUnitIndicatorSize), LLSTRING(showDownedUnitIndicatorSize_desc)],
