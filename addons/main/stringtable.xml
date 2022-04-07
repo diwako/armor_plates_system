@@ -487,6 +487,12 @@
             <Chinesesimp>能够看到一名倒地友军单位的最大距离</Chinesesimp>
             <Chinese>能夠看到一名倒地友軍單位的最大距離</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic">
+            <English>Medic Range for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic_desc">
+            <English>The maximum range medics can see a downed friendly unit</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
             <Polish>Rozmiar ikony</Polish>
