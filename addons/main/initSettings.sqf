@@ -265,6 +265,19 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(bleedoutTimerRangeMedic),
+    "SLIDER",
+    [LLSTRING(bleedoutTimerRangeMedic), LLSTRING(bleedoutTimerRangeMedic_desc)],
+    _category,
+    [0, 500, 100, 0],
+    false,
+    {
+        params ["_value"];
+        GVAR(bleedoutTimerRangeMedic) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(bleedoutTimerColor),
     "COLOR",
     LLSTRING(bleedoutTimerColor),
