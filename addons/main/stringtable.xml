@@ -793,6 +793,12 @@
             <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围。</Chinesesimp>
             <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍。</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic">
+            <English>Medic Range for bleed out timer</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
+            <English>The maximum range medics can see the countdown to death over the downed icon.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
             <Polish>Tryb pancerza</Polish>
