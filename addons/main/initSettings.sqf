@@ -390,6 +390,19 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(minBleedoutTime),
+    "SLIDER",
+    [LLSTRING(minBleedoutTime), LLSTRING(minBleedoutTime_desc)],
+    _category,
+    [0, 15 * 60, 0, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(minBleedoutTime) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(medicReviveTime),
     "SLIDER",
     [LLSTRING(medicReviveTime), LLSTRING(medicReviveTime_desc)],
