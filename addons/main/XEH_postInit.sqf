@@ -285,7 +285,7 @@ if !(GVAR(aceMedicalLoaded)) then {
         private _action = ["apsRevive", localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
             {
                 private _isMedic = _player getUnitTrait 'Medic';
-                private _reviveDelay = ([diw_armor_plates_main_noneMedicReviveTime,diw_armor_plates_main_medicReviveTime] select _isMedic);
+                private _reviveDelay = ([GVAR(noneMedicReviveTime),GVAR(medicReviveTime)] select _isMedic);
                 if (isNull objectParent _player) then {
                     private _isProne = stance _player == "PRONE";
                     _player setVariable [QGVAR(wasProne), _isProne];
