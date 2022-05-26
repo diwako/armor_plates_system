@@ -69,9 +69,6 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
         0;
     };
 
-    private _armor = [_unit, _hitpoint] call ace_medical_engine_fnc_getHitpointArmor;
-    private _realDamage = _newDamage * _armor;
-
     _unit setVariable ["ace_medical_lastDamageSource", _shooter];
     _unit setVariable ["ace_medical_lastInstigator", _instigator];
 
