@@ -284,6 +284,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     if (_aceInteractLoaded) then {
         private _action = ["apsRevive", localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
             {
+                params ["_target", "_player", ""];
                 private _isMedic = _player getUnitTrait 'Medic';
                 private _reviveDelay = ([GVAR(noneMedicReviveTime),GVAR(medicReviveTime)] select _isMedic);
                 if (isNull objectParent _player) then {
@@ -301,6 +302,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                 _target setVariable [QGVAR(revivingUnit), _player, true];
               
                 [_reviveDelay, [_target,_player], { // complete
+                    params ["_args"];
                     _args params ["_target", "_caller"];
                     [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
                     if (isNull objectParent _caller) then {
@@ -312,6 +314,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     _target setVariable [QGVAR(beingRevived), nil, true];
                     _target setVariable [QGVAR(revivingUnit), nil, true];
                 }, {// fail
+                    params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {        
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
@@ -323,6 +326,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     _target setVariable [QGVAR(revivingUnit), nil, true];  
                 }, format [LLSTRING(reviveUnit), name _target], // title
                 { // pfh
+                    params ["_args"];
                     _args params ["_target", "_caller"];
                     if !(_target getVariable [QGVAR(beingRevived), false]) then {
                         _target setVariable [QGVAR(beingRevived), true, true];
