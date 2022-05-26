@@ -30,7 +30,7 @@ if (_set) then {
             if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
                 // kill them
                 [_unit, false] call FUNC(setUnconscious);
-                _unit setDamage 1;
+                _unit setHitPointDamage ["hitHead", 1, true, _unit];
             } else {
                 if (alive _unit && {_unit getVariable [QGVAR(unconscious), false] && {!_unconscious}}) then {
                     // not sure what happened? Mission or mod interfering?!
