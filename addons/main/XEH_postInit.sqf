@@ -200,6 +200,7 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     if !(local _unit) exitWith {};
     _unit setVariable [QGVAR(plates), nil];
     _unit setVariable [QGVAR(hp), nil];
+    _unit setVariable [QGVAR(downedHp), nil];
     _unit setVariable [QGVAR(vestContainer), vestContainer _unit];
     _unit setVariable [QGVAR(unconscious), false, true];
     _unit setVariable [QGVAR(beingRevived), nil, true];

@@ -301,6 +301,12 @@
             <Chinesesimp>不允许友军受到误击</Chinesesimp>
             <Chinese>不允許友軍受到誤擊</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage">
+            <English>Allow damage on unconscious units</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage_desc">
+            <English>Allows that unconscious units can take damage. This allows the execution of unconscious units</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
             <Polish>EH obrażeń</Polish>

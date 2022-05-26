@@ -354,6 +354,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(allowDownedDamage),
+    "CHECKBOX",
+    [LLSTRING(allowDownedDamage), LLSTRING(allowDownedDamage_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(damageEhVariant),
     "LIST",
     [LLSTRING(damageEhVariant), LLSTRING(damageEhVariant_desc)],
