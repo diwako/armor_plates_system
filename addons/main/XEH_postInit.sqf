@@ -326,7 +326,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     _args params ["_target", "_caller"];
                     if !(_target getVariable [QGVAR(beingRevived), false]) then {
                         _target setVariable [QGVAR(beingRevived), true, true];
-                        _target setVariable [QGVAR(revivingUnit), _caller, true]; };
+                        _target setVariable [QGVAR(revivingUnit), _caller, true];
                     };
                     private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
                     if (isNull objectParent _caller && {_medicAnim != "" && { animationState _caller != _medicAnim }}) then {
