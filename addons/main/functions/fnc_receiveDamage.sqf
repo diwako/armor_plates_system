@@ -22,6 +22,7 @@ switch (_bodyPart) do {
     case "neck": {_damage = _damage * GVAR(headshotMult)};
     case "arms";
     case "hands";
+    case "pelvis": {_isTorso = true; _damage = _damage * GVAR(pelvisMult)};
     case "legs": {_damage = _damage * GVAR(limbMult)};
     case "vehicle";
     case "incapacitated";
