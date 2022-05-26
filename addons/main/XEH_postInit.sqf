@@ -339,6 +339,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     true
                 }, ["isNotInside"]] call ace_common_fnc_progressBar;
             },{ // Condition
+                params ["_target", "_player", ""];
                 !(_target getVariable [QGVAR(beingRevived), false] && {alive (_target getVariable [QGVAR(revivingUnit), objNull])}) && {[_player, _target] call FUNC(canRevive)}
             },
             {}, [], [0,0,0], 5,[false,true,false,false,false]
