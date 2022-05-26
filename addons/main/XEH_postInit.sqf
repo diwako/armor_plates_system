@@ -51,7 +51,7 @@ if (GVAR(aceMedicalLoaded)) then {
             _this setVariable ["ace_medical_HandleDamageEHID", _id];
             _this setVariable ["aps_HandleDamageEHID", _id];
             _this setVariable ["ace_medical_HandleDamageEHID_old", _oldEHID];
-        }, _unit] call CBA_fnc_waitUntilAndExecute;
+        }, _unit, 10] call CBA_fnc_waitUntilAndExecute;
         [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } else {
