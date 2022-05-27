@@ -21,7 +21,7 @@
             };
             if (_response) then {
                 [QGVAR(setHidden), [_target , false]] call CBA_fnc_localEvent;
-                _target setDamage 1;
+                _target setHitPointDamage ["hitHead", 1, true, _target];
             };
         };
     },

@@ -283,6 +283,12 @@
             <Chinesesimp>肢体中弹时受到的伤害倍数</Chinesesimp>
             <Chinese>肢體中彈時受到的傷害倍數</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_pelvisMult">
+            <English>Pelvis Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pelvisMult_desc">
+            <English>Damage multiplier on pelvis shots</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
             <Polish>Wyłącz ogień przyjacielski</Polish>
@@ -294,6 +300,12 @@
             <Polish>Wyłącza otrzymywanie obrażeń od sojuszników.</Polish>
             <Chinesesimp>不允许友军受到误击</Chinesesimp>
             <Chinese>不允許友軍受到誤擊</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage">
+            <English>Allow damage on unconscious units</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage_desc">
+            <English>Allows that unconscious units can take damage. This allows the execution of unconscious units</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
@@ -342,6 +354,12 @@
             <Polish>Przy każdej kolejnej utracie nieprzytomności przez gracza, czas krwawienia będzie zmniejszany o podaną liczbę sekund. Jeśli gracz zbyt często się wykrwawia, licznik może dojść do 0, a gracz natychmiastowo umrze.</Polish>
             <Chinesesimp>每次玩家倒下时，他们的剩余失血时间将被减去一个给定的数值。如果玩家倒下的次数太多，他们的失血时间可能会达到0，其会立即死亡。</Chinesesimp>
             <Chinese>每次玩家倒下時，他們的剩餘失血時間將被減去一個給定的數值。如果玩家倒下的次數太多，他們的失血時間可能會達到0，其會立即死亡。</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_minBleedoutTime">
+            <English>Minimum Bleedout time</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
+            <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop">
             <English>Enable Pressure Wound action</English>
@@ -513,6 +531,12 @@
             <Polish>Maksymalna odległość, z której widać ikonę nad rannym sojusznikiem.</Polish>
             <Chinesesimp>能够看到一名倒地友军单位的最大距离</Chinesesimp>
             <Chinese>能夠看到一名倒地友軍單位的最大距離</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic">
+            <English>Medic Range for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic_desc">
+            <English>The maximum range medics can see a downed friendly unit</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
@@ -813,6 +837,12 @@
             <Polish>Maksymalny zasięg w którym widać licznik obok ikony rannego.</Polish>
             <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围。</Chinesesimp>
             <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍。</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic">
+            <English>Medic Range for bleed out timer</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
+            <English>The maximum range medics can see the countdown to death over the downed icon.</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>

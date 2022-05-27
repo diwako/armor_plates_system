@@ -24,7 +24,7 @@ if (_set) then {
                     GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
                 };
                 GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
-                _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
+                _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max GVAR(minBleedoutTime);
             };
             _unit setVariable [QGVAR(bleedoutKillTime), _downTime + _restBleedout, true];     
         } else {
@@ -40,7 +40,7 @@ if (_set) then {
             if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
                 // kill them
                 [_unit, false] call FUNC(setUnconscious);
-                _unit setDamage 1;
+                _unit setHitPointDamage ["hitHead", 1, true, _unit];
             } else {
                 if (alive _unit && {_unit getVariable [QGVAR(unconscious), false] && {!_unconscious}}) then {
                     // not sure what happened? Mission or mod interfering?!

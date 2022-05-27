@@ -221,6 +221,19 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(showDownedUnitIndicatorRangeMedic),
+    "SLIDER",
+    [LLSTRING(showDownedUnitIndicatorRangeMedic), LLSTRING(showDownedUnitIndicatorRangeMedic_desc)],
+    _category,
+    [0, 500, 100, 0],
+    false,
+    {
+        params ["_value"];
+        GVAR(showDownedUnitIndicatorRangeMedic) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(showDownedUnitIndicatorSize),
     "SLIDER",
     [LLSTRING(showDownedUnitIndicatorSize), LLSTRING(showDownedUnitIndicatorSize_desc)],
@@ -248,6 +261,19 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     {
         params ["_value"];
         GVAR(bleedoutTimerRange) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bleedoutTimerRangeMedic),
+    "SLIDER",
+    [LLSTRING(bleedoutTimerRangeMedic), LLSTRING(bleedoutTimerRangeMedic_desc)],
+    _category,
+    [0, 500, 100, 0],
+    false,
+    {
+        params ["_value"];
+        GVAR(bleedoutTimerRangeMedic) = round _value;
     }
 ] call CBA_fnc_addSetting;
 
@@ -310,9 +336,27 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(pelvisMult),
+    "SLIDER",
+    [LLSTRING(pelvisMult), LLSTRING(pelvisMult_desc)],
+    _category,
+    [0, 10, 0.5, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(disallowFriendfire),
     "CHECKBOX",
     [LLSTRING(disallowFriendfire), LLSTRING(disallowFriendfire_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowDownedDamage),
+    "CHECKBOX",
+    [LLSTRING(allowDownedDamage), LLSTRING(allowDownedDamage_desc)],
     _category,
     false,
     true
@@ -390,6 +434,19 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(minBleedoutTime),
+    "SLIDER",
+    [LLSTRING(minBleedoutTime), LLSTRING(minBleedoutTime_desc)],
+    _category,
+    [0, 15 * 60, 0, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(minBleedoutTime) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(bleedoutStop),
     "LIST",
     [LLSTRING(bleedoutStop), LLSTRING(bleedoutStop_desc)],
@@ -407,7 +464,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     true,
     {
         params ["_value"];
-        diw_aps_medRange_bleedoutRecover = (parseNumber (_value toFixed 1));
+        GVAR(bleedoutRecover) = (parseNumber (_value toFixed 1));
     }
 ] call CBA_fnc_addSetting;
 
