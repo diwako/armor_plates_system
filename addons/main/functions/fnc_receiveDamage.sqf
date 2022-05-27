@@ -6,7 +6,7 @@ if (_damage <= 0 || {!alive _unit}) exitWith {};
 private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
 private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
 
-if (_curHp <= 0) exitWith {};
+if (_curHp <= 0 && {!GVAR(allowDownedDamage)}) exitWith {};
 
 if (GVAR(disallowFriendfire) &&
     {!isNull _instigator && {
@@ -66,18 +66,29 @@ if (_player isEqualTo _unit) then {
 };
 
 if (_newHP isEqualTo 0) exitWith {
-    [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
-    private _setUnconscious = (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) ||
-    {GVAR(enableAIUnconscious) && {!isPlayer _unit && {_unit in (units player)}}};
+    private _lifestate = (lifeState _unit) != "INCAPACITATED";
+    if (_lifestate) then {
+        [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
+        private _setUnconscious = (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) ||
+        {GVAR(enableAIUnconscious) && {!isPlayer _unit && {_unit in (units player)}}};
 
-    if (_setUnconscious) then {
-        if !((lifeState _unit) == "INCAPACITATED") then {
-            [_unit, true] call FUNC(setUnconscious);
+        if (_setUnconscious) then {
+            if (_lifestate) then {
+                [_unit, true] call FUNC(setUnconscious);
+            };
+            [_unit, 0, _maxHp, _instigator] call FUNC(setA3Damage);
+        } else {
+            // kill
+            _unit setHitPointDamage ["hitHead", 1, true, _instigator];
         };
-        [_unit, 0, _maxHp, _instigator] call FUNC(setA3Damage);
     } else {
-        // kill
-        _unit setHitPointDamage ["hitHead", 1, true, _instigator];
+        // damage to downed units
+        private _downedHp = _unit getVariable [QGVAR(downedHp), _maxHp];
+        private _newDownedHP = (_downedHp - _damage) max 0;
+        _unit setVariable [QGVAR(downedHp), _newDownedHP];
+        if (_downedHp isEqualTo 0) then {
+            _unit setHitPointDamage ["hitHead", 1, true, _instigator];
+        };
     };
 };
 
