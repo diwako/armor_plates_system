@@ -74,12 +74,12 @@ if (_newHP isEqualTo 0) exitWith {
         if !((lifeState _unit) == "INCAPACITATED") then {
             [_unit, true] call FUNC(setUnconscious);
         };
-        [_unit, 0, _maxHp] call FUNC(setA3Damage);
+        [_unit, 0, _maxHp, _instigator] call FUNC(setA3Damage);
     } else {
         // kill
-        _unit setDamage 1;
+        _unit setHitPointDamage ["hitHead", 1, true, _instigator];
     };
 };
 
-[_unit, _newHp, _maxHp] call FUNC(setA3Damage);
+[_unit, _newHp, _maxHp, _instigator] call FUNC(setA3Damage);
 [_unit] call FUNC(startHpRegen);
