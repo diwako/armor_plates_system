@@ -110,7 +110,7 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
     _allDamages sort false;
     _allDamages = _allDamages apply {[_x select 2, _x select 3, _x select 0]};
 
-    (_allDamages select 0) params ["_receivedDamage", "_woundedHitPoint"];
+    (_allDamages select 0) params ["_receivedDamage"];
     if (_receivedDamage > 1E-3) then {
         [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
     };
