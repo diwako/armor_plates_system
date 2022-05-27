@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-#include "\z\ace\addons\medical_engine\script_macros_medical.hpp"
 
 #define PRIORITY_HEAD       3
 #define PRIORITY_BODY       4
