@@ -340,7 +340,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     };
                     _target setVariable [QGVAR(isHold), nil, true];
                     _target setVariable [QGVAR(holdingUnit), nil, true];  
-                }, format ["Preventing %1 from bleeding out, stay put!", name _target], // title
+                }, format [LLSTRING(pressureUnit), name _target], // title
                 { // pfh
                     params ["_args"];
                     _args params ["_target", "_caller"];
