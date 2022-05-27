@@ -493,6 +493,12 @@
             <Chinesesimp>能够看到一名倒地友军单位的最大距离</Chinesesimp>
             <Chinese>能夠看到一名倒地友軍單位的最大距離</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic">
+            <English>Medic Range for downed icon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic_desc">
+            <English>The maximum range medics can see a downed friendly unit</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
             <Polish>Rozmiar ikony</Polish>
@@ -792,6 +798,12 @@
             <Polish>Maksymalny zasięg w którym widać licznik obok ikony rannego.</Polish>
             <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围。</Chinesesimp>
             <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍。</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic">
+            <English>Medic Range for bleed out timer</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
+            <English>The maximum range medics can see the countdown to death over the downed icon.</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
