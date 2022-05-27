@@ -139,6 +139,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if !(_unit getVariable [QGVAR(holdLimiter), false]) then {
             _unit setVariable [QGVAR(holdLimiter), true, true];
             [{
+                params ["_unit"];
                 if !(_unit getVariable [QGVAR(unconscious), false]) exitWith {
                     _unit setVariable [QGVAR(holdLimiter), nil, true];
                 };
@@ -408,6 +409,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         if !(local _target) then { _target setVariable [QGVAR(holdLimiter), true]; };
                         [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
                     };
+                    true;
                  }, ["isNotInside"]] call ace_common_fnc_progressBar;
             },
             {
