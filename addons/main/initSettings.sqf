@@ -310,6 +310,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(pelvisMult),
+    "SLIDER",
+    [LLSTRING(pelvisMult), LLSTRING(pelvisMult_desc)],
+    _category,
+    [0, 10, 0.5, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(disallowFriendfire),
     "CHECKBOX",
     [LLSTRING(disallowFriendfire), LLSTRING(disallowFriendfire_desc)],

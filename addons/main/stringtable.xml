@@ -283,6 +283,12 @@
             <Chinesesimp>肢体中弹时受到的伤害倍数</Chinesesimp>
             <Chinese>肢體中彈時受到的傷害倍數</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_pelvisMult">
+            <English>Pelvis Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pelvisMult_desc">
+            <English>Damage multiplier on pelvis shots</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
             <Polish>Wyłącz ogień przyjacielski</Polish>
