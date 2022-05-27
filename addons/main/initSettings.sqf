@@ -447,6 +447,28 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(bleedoutStop),
+    "LIST",
+    [LLSTRING(bleedoutStop), LLSTRING(bleedoutStop_desc)],
+    _category,
+    [[0, 1, 2, 3], [LLSTRING(downedFeedback_0), LLSTRING(bleedoutStop_1), LLSTRING(bleedoutStop_2), LLSTRING(bleedoutStop_3)], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(bleedoutRecover),
+    "SLIDER",
+    [LLSTRING(bleedoutRecover), LLSTRING(bleedoutRecover_desc)],
+    _category,
+    [0, 12, 4.0, 1],
+    true,
+    {
+        params ["_value"];
+        GVAR(bleedoutRecover) = (parseNumber (_value toFixed 1));
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(medicReviveTime),
     "SLIDER",
     [LLSTRING(medicReviveTime), LLSTRING(medicReviveTime_desc)],

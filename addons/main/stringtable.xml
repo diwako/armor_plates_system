@@ -361,6 +361,33 @@
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
             <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutStop">
+            <English>Enable Pressure Wound action</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutStop_desc">
+            <English>Action allows players to delay bleedout until/while another unit revives. Revives can also be allowed to do the same.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutStop_1">
+            <English>Enable</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutStop_2">
+            <English>Enable + Medic revives</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutStop_3">
+            <English>Enable + Revives</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutRecover">
+            <English>Pressure Wound bleedout recovery</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
+            <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pressureWound">
+            <English>Pressure Wound</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pressureUnit">
+            <English>Preventing %1 from bleeding out, keep holding the button!</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
             <Polish>Czas leczenia przez medyka</Polish>

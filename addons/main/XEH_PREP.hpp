@@ -23,6 +23,7 @@ if (GVAR(aceMedicalLoaded)) then {
     PREP(addPlayerHoldActions);
     PREP(aiMoveAndHealUnit);
     PREP(canRevive);
+    PREP(canHold);
     PREP(disableThirdParty);
     PREP(drawDownedUnitIndicator);
     PREP(getHitpointArmor);

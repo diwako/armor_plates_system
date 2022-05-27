@@ -28,6 +28,10 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
         _target setVariable [QGVAR(beingRevived), true, true];
         _target setVariable [QGVAR(revivingUnit), _caller, true];
     };
+    if (GVAR(bleedoutStop) > 1 && {!(_target getVariable [QGVAR(holdLimiter), false]) && {GVAR(bleedoutStop) == 3 || {_caller getUnitTrait 'Medic'}}}) then {
+        if !(local _target) then { _target setVariable [QGVAR(holdLimiter), true]; };
+        [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
+    };
     private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
     if (_medicAnim != "" && { animationState _caller != _medicAnim }) then {
         _caller playMove _medicAnim;
@@ -86,3 +90,62 @@ _arr2 call BIS_fnc_holdActionAdd;
     3];
     _unit setUserActionText [_id, format [localize "str_a3_cfgactions_healsoldier0", getText ((configOf _unit) >> "displayName")], "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];
 // };
+
+if !(GVAR(bleedoutStop) > 0) exitWith {};
+// Stop Bleeding
+private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleeding_ca.paa", "\a3\ui_f\data\IGUI\Cfg\Actions\bandage_ca.paa",
+    // condition show
+    format ["!(_target getVariable ['%2', false] && {alive (_target getVariable ['%3', objNull])}) && {[_this, _originalTarget] call %1}", QFUNC(canHold), QGVAR(isHold), QGVAR(holdingUnit)],
+    "alive _target && {(lifeState _target) isEqualTo 'INCAPACITATED' && {alive _this && {(lifeState _this) isNotEqualTo 'INCAPACITATED'}}}", {
+    // code start
+    params ["_target", "_caller", "", ""];
+    private _isProne = stance _caller == "PRONE";
+    _caller setVariable [QGVAR(wasProne), _isProne];
+    private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+    _caller setVariable [QGVAR(medicAnim), _medicAnim];
+    if (_medicAnim != "") then {
+        _caller playMove _medicAnim;
+    };
+    [format [LLSTRING(pressureUnit), name _target], 21.5] call FUNC(createProgressBar);
+    _target setVariable [QGVAR(isHold), true, true];
+    _target setVariable [QGVAR(holdingUnit), _caller, true];
+}, {
+    // code progress
+    params ["_target", "_caller"];
+    if !(_target getVariable [QGVAR(isHold), false]) then {
+        _target setVariable [QGVAR(isHold), true, true];
+        _target setVariable [QGVAR(holdingUnit), _caller, true];
+    };
+    if !(_target getVariable [QGVAR(holdLimiter), false]) then {
+        if !(local _target) then {_target setVariable [QGVAR(holdLimiter), true];};
+        [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
+    };
+    private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
+    if (_medicAnim != "" && { animationState _caller != _medicAnim }) then {
+        _caller playMove _medicAnim;
+    };
+}, {
+    // codeCompleted
+    params ["_target", "_caller"];
+    call FUNC(deleteProgressBar);
+    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+    _target setVariable [QGVAR(isHold), nil, true];
+    _target setVariable [QGVAR(holdingUnit), nil, true];
+}, {
+    // code interrupted
+    params ["_target", "_caller"];
+    call FUNC(deleteProgressBar);
+    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+    _target setVariable [QGVAR(isHold), nil, true];
+    _target setVariable [QGVAR(holdingUnit), nil, true];
+}, [], 21.5, 14, false, false, true];
+
+_arr3 call BIS_fnc_holdActionAdd;
