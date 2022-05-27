@@ -40,18 +40,10 @@ if (GVAR(aceMedicalLoaded)) then {
     ["CAManBase", "InitPost", {
         params ["_unit"];
         _unit setVariable ["ace_medical_engine_$#structural", [0, 0]];
-        [{
-            (_this getVariable ["ace_medical_HandleDamageEHID", -1]) > -1
-        }, {
-            private _oldEHID = _this getVariable ["ace_medical_HandleDamageEHID", -1];
-            _this removeEventHandler ["HandleDamage", _oldEHID];
-            private _id = _this addEventHandler ["HandleDamage", {
-                _this call FUNC(handleDamageEhACE);
-            }];
-            _this setVariable ["ace_medical_HandleDamageEHID", _id];
-            _this setVariable ["aps_HandleDamageEHID", _id];
-            _this setVariable ["ace_medical_HandleDamageEHID_old", _oldEHID];
-        }, _unit] call CBA_fnc_waitUntilAndExecute;
+        private _id = _unit addEventHandler ["HandleDamage", {
+            _this call FUNC(handleDamageEhACE);
+        }];
+        _unit setVariable ["aps_HandleDamageEHID", _id];
         [_unit] call FUNC(initAIUnit);
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 } else {
@@ -281,7 +273,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     [QGVAR(requestAIRevive), {
         _this spawn FUNC(aiMoveAndHealUnit);
     }] call CBA_fnc_addEventHandler;
-    
+
     if (_aceInteractLoaded) then {
         private _action = ["apsRevive", localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
             {
@@ -301,7 +293,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                 };
                 _target setVariable [QGVAR(beingRevived), true, true];
                 _target setVariable [QGVAR(revivingUnit), _player, true];
-              
+
                 [_reviveDelay, [_target,_player], { // complete
                     params ["_args"];
                     _args params ["_target", "_caller"];
@@ -317,14 +309,14 @@ if !(GVAR(aceMedicalLoaded)) then {
                 }, {// fail
                     params ["_args"];
                     _args params ["_target", "_caller"];
-                    if (isNull objectParent _caller) then {        
+                    if (isNull objectParent _caller) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
                     };
                     _target setVariable [QGVAR(beingRevived), nil, true];
-                    _target setVariable [QGVAR(revivingUnit), nil, true];  
+                    _target setVariable [QGVAR(revivingUnit), nil, true];
                 }, format [LLSTRING(reviveUnit), name _target], // title
                 { // pfh
                     params ["_args"];
