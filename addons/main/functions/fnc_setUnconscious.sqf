@@ -26,14 +26,14 @@ if (_set) then {
                 GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
                 _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max GVAR(minBleedoutTime);
             };
-            _unit setVariable [QGVAR(bleedoutKillTime), _downTime + _restBleedout, true];     
+            _unit setVariable [QGVAR(bleedoutKillTime), _downTime + _restBleedout, true];
         } else {
-            _downTime = (_unit getVariable [QGVAR(bleedoutTime), -1]); 
+            _downTime = (_unit getVariable [QGVAR(bleedoutTime), -1]);
             _restBleedout = ((_unit getVariable [QGVAR(bleedoutKillTime), -1]) - cba_missionTime);
         };
         [{
             params ["_unit", "_time"];
-            private _unconscious = (lifeState _unit) == "INCAPACITATED";            
+            private _unconscious = (lifeState _unit) == "INCAPACITATED";
             if (cba_missionTime < (_unit getVariable [QGVAR(bleedoutKillTime), -1]) && {_unconscious}) exitWith {
                 [_unit, true, true] call FUNC(setUnconscious);
             };

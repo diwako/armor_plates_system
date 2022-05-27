@@ -148,7 +148,7 @@ if (GVAR(aceMedicalLoaded)) then {
                     _unit setVariable [QGVAR(bleedoutKillTime), _recovered, true];
                 };
                 _unit setVariable [QGVAR(holdLimiter), false, true];
-            }, _unit, 3] call CBA_fnc_waitAndExecute; 
+            }, _unit, 3] call CBA_fnc_waitAndExecute;
         };
     }] call CBA_fnc_addEventHandler;
 };
@@ -361,7 +361,7 @@ if !(GVAR(aceMedicalLoaded)) then {
             {}, [], [0,0,0], 5,[false,true,false,false,false]
         ] call ace_interact_menu_fnc_createAction;
         ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-        
+
         if (GVAR(bleedoutStop) > 0) then {
             private _action = ["apsPreventBleed", LLSTRING(pressureWound), "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleeding_ca.paa",
             {
@@ -378,12 +378,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                      };
                 };
                 _target setVariable [QGVAR(isHold), true, true];
-                _target setVariable [QGVAR(holdingUnit), _player, true];    
-          
+                _target setVariable [QGVAR(holdingUnit), _player, true];
+
                 [21.5, [_target,_player], { // complete
                     params ["_args"];
                     _args params ["_target", "_caller"];
-                    if (isNull objectParent _caller) then {  
+                    if (isNull objectParent _caller) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
@@ -394,14 +394,14 @@ if !(GVAR(aceMedicalLoaded)) then {
                 }, {// fail
                     params ["_args"];
                     _args params ["_target", "_caller"];
-                    if (isNull objectParent _caller) then {        
+                    if (isNull objectParent _caller) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
                     };
                     _target setVariable [QGVAR(isHold), nil, true];
-                    _target setVariable [QGVAR(holdingUnit), nil, true];  
+                    _target setVariable [QGVAR(holdingUnit), nil, true];
                 }, format [LLSTRING(pressureUnit), name _target], // title
                 { // pfh
                     params ["_args"];
