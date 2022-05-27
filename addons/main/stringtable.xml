@@ -367,6 +367,9 @@
         <Key ID="STR_diw_armor_plates_main_pressureWound">
             <English>Pressure Wound</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_pressureUnit">
+            <English>Preventing %1 from bleeding out, keep holding the button!</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
             <Polish>Czas leczenia przez medyka</Polish>
