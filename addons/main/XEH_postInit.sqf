@@ -239,6 +239,7 @@ GVAR(killedEHId) = ["CAManBase", "Killed",{
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
+private _aceInteractLoaded = !(isNil "ace_interact_menu_fnc_addActionToClass");
 if !(GVAR(aceMedicalLoaded)) then {
     [] call FUNC(addPlayerHoldActions);
     if (GVAR(showDownedUnitIndicator)) then {
@@ -280,10 +281,76 @@ if !(GVAR(aceMedicalLoaded)) then {
     [QGVAR(requestAIRevive), {
         _this spawn FUNC(aiMoveAndHealUnit);
     }] call CBA_fnc_addEventHandler;
+    
+    if (_aceInteractLoaded) then {
+        private _action = ["apsRevive", localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
+            {
+                params ["_target", "_player", ""];
+                private _isMedic = _player getUnitTrait 'Medic';
+                private _reviveDelay = ([GVAR(noneMedicReviveTime),GVAR(medicReviveTime)] select _isMedic);
+                if (isNull objectParent _player) then {
+                    private _isProne = stance _player == "PRONE";
+                    _player setVariable [QGVAR(wasProne), _isProne];
+                    private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+                    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
+                    _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+                    _player setVariable [QGVAR(medicAnim), _medicAnim];
+                    if (_medicAnim != "") then {
+                        _player playMove _medicAnim;
+                    };
+                };
+                _target setVariable [QGVAR(beingRevived), true, true];
+                _target setVariable [QGVAR(revivingUnit), _player, true];
+              
+                [_reviveDelay, [_target,_player], { // complete
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+                    [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
+                    if (isNull objectParent _caller) then {
+                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                    };
+                    _target setVariable [QGVAR(beingRevived), nil, true];
+                    _target setVariable [QGVAR(revivingUnit), nil, true];
+                }, {// fail
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+                    if (isNull objectParent _caller) then {        
+                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                    };
+                    _target setVariable [QGVAR(beingRevived), nil, true];
+                    _target setVariable [QGVAR(revivingUnit), nil, true];  
+                }, format [LLSTRING(reviveUnit), name _target], // title
+                { // pfh
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+                    if !(_target getVariable [QGVAR(beingRevived), false]) then {
+                        _target setVariable [QGVAR(beingRevived), true, true];
+                        _target setVariable [QGVAR(revivingUnit), _caller, true];
+                    };
+                    private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
+                    if (isNull objectParent _caller && {_medicAnim != "" && { animationState _caller != _medicAnim }}) then {
+                        _caller playMove _medicAnim;
+                    };
+                    true
+                }, ["isNotInside"]] call ace_common_fnc_progressBar;
+            },{ // Condition
+                params ["_target", "_player", ""];
+                !(_target getVariable [QGVAR(beingRevived), false] && {alive (_target getVariable [QGVAR(revivingUnit), objNull])}) && {[_player, _target] call FUNC(canRevive)}
+            },
+            {}, [], [0,0,0], 5,[false,true,false,false,false]
+        ] call ace_interact_menu_fnc_createAction;
+        ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+    };
 };
 
 // ace interactions
-if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
+if (_aceInteractLoaded) then {
     private _action = [QGVAR(addPlate), LLSTRING(addPlateKeyBind),
         "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa", {
         params ["", "_player"];
