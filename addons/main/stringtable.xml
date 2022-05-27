@@ -364,6 +364,9 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
             <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_pressureWound">
+            <English>Pressure Wound</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
             <Polish>Czas leczenia przez medyka</Polish>
