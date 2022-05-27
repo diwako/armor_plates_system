@@ -349,9 +349,6 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_desc">
             <English>Action allows players to delay bleedout until/while another unit revives. Revives can also be allowed to do the same.</English>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_bleedoutStop_0">
-            <English>Disable</English>
-        </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_1">
             <English>Enable</English>
         </Key>
@@ -362,7 +359,7 @@
             <English>Enable + Revives</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover">
-            <English>Bleedout recovery</English>
+            <English>Pressure Wound bleedout recovery</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
             <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
