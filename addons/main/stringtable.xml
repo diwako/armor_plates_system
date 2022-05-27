@@ -355,6 +355,12 @@
             <Chinesesimp>每次玩家倒下时，他们的剩余失血时间将被减去一个给定的数值。如果玩家倒下的次数太多，他们的失血时间可能会达到0，其会立即死亡。</Chinesesimp>
             <Chinese>每次玩家倒下時，他們的剩餘失血時間將被減去一個給定的數值。如果玩家倒下的次數太多，他們的失血時間可能會達到0，其會立即死亡。</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_minBleedoutTime">
+            <English>Minimum Bleedout time</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
+            <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
             <Polish>Czas leczenia przez medyka</Polish>

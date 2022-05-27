@@ -22,7 +22,7 @@ if (_set) then {
                 GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
             };
             GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
-            _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
+            _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max GVAR(minBleedoutTime);
         };
         [{
             params ["_unit", "_time"];
