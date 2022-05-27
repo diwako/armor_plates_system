@@ -15,6 +15,7 @@ PREP(updateHPUi);
 PREP(updatePlateUi);
 
 if (GVAR(aceMedicalLoaded)) then {
+    PREP(aceDamageHandler);
     PREP(handleDamageEhACE);
     PREP(receiveDamageACE);
 } else {

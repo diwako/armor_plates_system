@@ -11,7 +11,7 @@
 
 params ["_unit", "", "_damage", "_shooter", "_ammo", "_hitPointIndex", "_instigator", "_hitpoint"];
 if !(local _unit) exitWith {nil};
-
+if !(GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}) exitWith {};
 private _oldDamage = 0;
 
 if (_hitPoint isEqualTo "") then {
@@ -22,19 +22,19 @@ if (_hitPoint isEqualTo "") then {
 };
 
 if (!isDamageAllowed _unit || {!(_unit getVariable ["ace_medical_allowDamage", true])}) exitWith {
-    _oldDamage
+    nil
 };
 
 if (GVAR(disallowFriendfire) &&
     {!isNull _shooter && {
     _shooter isNotEqualTo _unit && {
     (side group _unit) isEqualTo (side group _shooter)}}}) exitWith {
-    _oldDamage
+    nil
 };
 
 private _newDamage = _damage - _oldDamage;
 if (_hitPoint isNotEqualTo "ace_hdbracket" && {_newDamage isEqualTo 0 || {_newDamage < 1E-3}}) exitWith {
-    _oldDamage
+    nil
 };
 
 // drowning
@@ -43,9 +43,7 @@ if (
     {getOxygenRemaining _unit <= 0.5} &&
     {_damage isEqualTo (_oldDamage + 0.005)}
 ) exitWith {
-    ["ace_medical_woundReceived", [_unit, [[_newDamage, "Body", _newDamage]], _unit, "drowning"]] call CBA_fnc_localEvent;
-
-    0
+    nil
 };
 
 // car crash
@@ -57,22 +55,19 @@ if (
     {_vehicle != _unit} &&
     {vectorMagnitude (velocity _vehicle) > 5}
 ) exitWith {
-    ["ace_medical_woundReceived", [_unit, [[_newDamage, _hitPoint, _newDamage]], _unit, "vehiclecrash"]] call CBA_fnc_localEvent;
-    0
+    nil
 };
 
 
 if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
-    if (_ammo isEqualTo "") exitWith {
-        // let ace do the thing
-        _this call ace_medical_engine_fnc_handleDamage;
-        0;
+    if (_ammo isEqualTo "" || {
+        !GVAR(showDamageMarker) || {
+        (call CBA_fnc_currentUnit) isNotEqualTo _unit
+    }}) exitWith {
+        nil
     };
 
-    _unit setVariable ["ace_medical_lastDamageSource", _shooter];
-    _unit setVariable ["ace_medical_lastInstigator", _instigator];
-
-    private _damageStructural = _unit getVariable [QGVAR($#structural), [0,0]];
+    private _damageStructural = _unit getVariable ["ace_medical_engine_$#structural", [0,0]];
 
     // --- Head
     private _damageHead = [
@@ -117,60 +112,10 @@ if (_hitPoint isEqualTo "ace_hdbracket") exitWith {
 
     (_allDamages select 0) params ["_receivedDamage", "_woundedHitPoint"];
     if (_receivedDamage > 1E-3) then {
-        if (GVAR(showDamageMarker) && {(call CBA_fnc_currentUnit) isEqualTo _unit}) then {
-            [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
-        };
-
-        private _isTorso = _woundedHitPoint isEqualTo "Body";
-        if (GVAR(protectOnlyTorso) && {!_isTorso}) exitWith {
-            // let ace do the thing
-            _unit setVariable [format ["ace_medical_engine_$%1", _hitPoint], nil];
-            _this call ace_medical_engine_fnc_handleDamage;
-            0
-        };
-
-        // APS code begin
-        private _aceSelection = "";
-        {
-            if ((_unit getVariable [_x, [0,0]]) isEqualTo _damageBody) then {
-                _aceSelection = [_x, "ace_medical_engine_$", ""] call CBA_fnc_replace;
-                break;
-            };
-        } forEach [
-            "ace_medical_engine_$HitFace","ace_medical_engine_$HitNeck","ace_medical_engine_$HitHead",
-            "ace_medical_engine_$HitPelvis","ace_medical_engine_$HitAbdomen","ace_medical_engine_$HitDiaphragm","ace_medical_engine_$HitChest","ace_medical_engine_$HitBody",
-            "ace_medical_engine_$HitLeftArm","ace_medical_engine_$HitRightArm","ace_medical_engine_$HitLeftLeg","ace_medical_engine_$HitRightLeg",
-            "ace_medical_engine_$#structural"
-        ];
-        // _aceSelection is HitBody, HitLegs etc
-        private _bodyArmor = [vest _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor;
-        private _hitPointArmor = getNumber ((configOf _unit) >> "HitPoints" >> _aceSelection >> "armor");
-
-        private _actualDamage = _receivedDamage;
-
-        if (_bodyArmor > 0 && {_hitPointArmor > 0}) then {
-            _actualDamage = _damage * (_hitPointArmor + _bodyArmor) / _hitPointArmor / _bodyArmor * 0.96;
-        };
-
-        private _damageLeft = [_unit, _receivedDamage, _actualDamage, [_instigator, _shooter] select (isNull _instigator), _ammo, _isTorso] call FUNC(receiveDamageACE);
-        (_allDamages select 0) set [0, _damageLeft];
-
-        // APS code end
-        ["ace_medical_woundReceived", [_unit, _allDamages, _shooter, _ammo]] call CBA_fnc_localEvent;
+        [_unit, [_instigator, _shooter] select (isNull _instigator), _newDamage] call FUNC(showDamageFeedbackMarker);
     };
 
-    {
-        _unit setVariable [_x, nil];
-    } forEach [
-        "ace_medical_engine_$HitFace","ace_medical_engine_$HitNeck","ace_medical_engine_$HitHead",
-        "ace_medical_engine_$HitPelvis","ace_medical_engine_$HitAbdomen","ace_medical_engine_$HitDiaphragm","ace_medical_engine_$HitChest","ace_medical_engine_$HitBody",
-        "ace_medical_engine_$HitLeftArm","ace_medical_engine_$HitRightArm","ace_medical_engine_$HitLeftLeg","ace_medical_engine_$HitRightLeg",
-        "ace_medical_engine_$#structural"
-    ];
-
-    0
+    nil
 };
 
-// let ace do the thing
-_this call ace_medical_engine_fnc_handleDamage;
-0
+nil
