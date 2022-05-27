@@ -157,7 +157,7 @@ if (GVAR(aceMedicalLoaded)) then {
                 _unit setVariable [QGVAR(holdLimiter), false, true];
             }, _unit, 3] call CBA_fnc_waitAndExecute; 
         };
-    }, []] call CBA_fnc_addEventHandlerArgs;
+    }] call CBA_fnc_addEventHandler;
 };
 
 if !(hasInterface) exitWith {
