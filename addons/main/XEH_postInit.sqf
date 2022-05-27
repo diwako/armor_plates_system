@@ -141,6 +141,23 @@ if (GVAR(aceMedicalLoaded)) then {
             _object setUnitTrait ["camouflageCoef", _vis];
         };
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(bleedRecovery), {
+        params ["_unit"];
+        if !(_unit getVariable [QGVAR(holdLimiter), false]) then {
+            _unit setVariable [QGVAR(holdLimiter), true, true];
+            [{
+                if !(_unit getVariable [QGVAR(unconscious), false]) exitWith {
+                    _unit setVariable [QGVAR(holdLimiter), nil, true];
+                };
+                if (_unit getVariable [QGVAR(isHold), false]  || {GVAR(bleedoutStop) > 1 && {_unit getVariable [QGVAR(beingRevived), false]}}) then {
+                    private _recovered = ((_unit getVariable [QGVAR(bleedoutKillTime), -1]) + GVAR(bleedoutRecover));
+                    _unit setVariable [QGVAR(bleedoutKillTime), _recovered, true];
+                };
+                _unit setVariable [QGVAR(holdLimiter), false, true];
+            }, _unit, 3] call CBA_fnc_waitAndExecute; 
+        };
+    }, []] call CBA_fnc_addEventHandlerArgs;
 };
 
 if !(hasInterface) exitWith {
@@ -238,6 +255,7 @@ GVAR(killedEHId) = ["CAManBase", "Killed",{
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
+private _aceInteractLoaded = !(isNil "ace_interact_menu_fnc_addActionToClass");
 if !(GVAR(aceMedicalLoaded)) then {
     [] call FUNC(addPlayerHoldActions);
     if (GVAR(showDownedUnitIndicator)) then {
@@ -279,10 +297,81 @@ if !(GVAR(aceMedicalLoaded)) then {
     [QGVAR(requestAIRevive), {
         _this spawn FUNC(aiMoveAndHealUnit);
     }] call CBA_fnc_addEventHandler;
+
+    if (_aceInteractLoaded) then {
+
+        if (GVAR(bleedoutStop) > 0) then {
+            private _action = ["apsPreventBleed", LLSTRING(pressureWound), "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleeding_ca.paa",
+            {
+                params ["_target", "_player", ""];
+                if (isNull objectParent _player) then {
+                    private _isProne = stance _player == "PRONE";
+                    _player setVariable [QGVAR(wasProne), _isProne];
+                    private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+                    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
+                    _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+                    _player setVariable [QGVAR(medicAnim), _medicAnim];
+                    if (_medicAnim != "") then {
+                        _player playMove _medicAnim;
+                     };
+                };
+                _target setVariable [QGVAR(isHold), true, true];
+                _target setVariable [QGVAR(holdingUnit), _player, true];    
+          
+                [21.5, [_target,_player], { // complete
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+                    if (isNull objectParent _caller) then {        
+                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                    };
+                    _target setVariable [QGVAR(isHold), nil, true];
+                    _target setVariable [QGVAR(holdingUnit), nil, true];
+                }, {// fail
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+                    if (isNull objectParent _caller) then {        
+                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
+                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                    };
+                    _target setVariable [QGVAR(isHold), nil, true];
+                    _target setVariable [QGVAR(holdingUnit), nil, true];  
+                }, format ["Preventing %1 from bleeding out, stay put!", name _target], // title
+                { // pfh
+                    params ["_args"];
+                    _args params ["_target", "_caller"];
+                    if !(_target getVariable [QGVAR(isHold), false]) then {
+                        _target setVariable [QGVAR(isHold), true, true];
+                        _target setVariable [QGVAR(holdingUnit), _caller, true];
+                    };
+                    if !(_target getVariable [QGVAR(holdLimiter), false]) then {
+                        if !(local _target) then { _target setVariable [QGVAR(holdLimiter), true]; };
+                        [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
+                    };
+                    private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
+                    if (isNull objectParent _caller && {_medicAnim != "" && { animationState _caller != _medicAnim }}) then {
+                        _caller playMove _medicAnim;
+                    };
+                    true
+                 }, ["isNotInside"]] call ace_common_fnc_progressBar;
+            },
+            {
+                params ["_target", "_player", ""];
+                !(_target getVariable [QGVAR(isHold), false] && {alive (_target getVariable [QGVAR(holdingUnit), objNull])}) && {[_player, _target] call FUNC(canHold)}
+            },
+                {}, [], [0,0,0], 5,[false,true,false,false,false]
+            ] call ace_interact_menu_fnc_createAction;
+            ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+        };
+    };
 };
 
 // ace interactions
-if !(isNil "ace_interact_menu_fnc_addActionToClass") then {
+if (_aceInteractLoaded) then {
     private _action = [QGVAR(addPlate), LLSTRING(addPlateKeyBind),
         "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa", {
         params ["", "_player"];
