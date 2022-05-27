@@ -1,11 +1,11 @@
 #include "script_component.hpp"
-params ["_unit", "_set"];
+params ["_unit", "_set",["_recover", false]];
 
 if (isNull _unit || {!local _unit || {!alive _unit} || {!(_unit isKindOf "CAManBase")}}) exitWith {
     false
 };
 
-if (_set isEqualTo (_unit getVariable [QGVAR(unconscious), false])) exitWith {
+if (!_recover && {_set isEqualTo (_unit getVariable [QGVAR(unconscious), false])}) exitWith {
     false
 };
 
@@ -16,17 +16,27 @@ if (currentWeapon _unit != primaryWeapon _unit) then {
 if (_set) then {
     if (GVAR(bleedoutTime) > 0) then {
         private _restBleedout = GVAR(bleedoutTime);
-        _unit setVariable [QGVAR(bleedoutTime), cba_missionTime];
-        if (_unit isEqualTo player) then {
-            if (isNil QGVAR(bleedOutTimeMalus)) then {
-                GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
+        private _downTime = cba_missionTime;
+        if (!_recover) then {
+            _unit setVariable [QGVAR(bleedoutTime), _downTime];
+            if (_unit isEqualTo player) then {
+                if (isNil QGVAR(bleedOutTimeMalus)) then {
+                    GVAR(bleedOutTimeMalus) = - GVAR(bleedoutTimeSubtraction);
+                };
+                GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
+                _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
             };
-            GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
-            _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max 0;
+            _unit setVariable [QGVAR(bleedoutKillTime), _downTime + _restBleedout, true];     
+        } else {
+            _downTime = (_unit getVariable [QGVAR(bleedoutTime), -1]); 
+            _restBleedout = ((_unit getVariable [QGVAR(bleedoutKillTime), -1]) - cba_missionTime);
         };
         [{
             params ["_unit", "_time"];
-            private _unconscious = (lifeState _unit) == "INCAPACITATED";
+            private _unconscious = (lifeState _unit) == "INCAPACITATED";            
+            if (cba_missionTime < (_unit getVariable [QGVAR(bleedoutKillTime), -1]) && {_unconscious}) exitWith {
+                [_unit, true, true] call FUNC(setUnconscious);
+            };
             if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
                 // kill them
                 [_unit, false] call FUNC(setUnconscious);
@@ -40,9 +50,9 @@ if (_set) then {
                     systemChat "Enjoy your free revive, I guess?!";
                 };
             };
-        }, [_unit, cba_missionTime], _restBleedout] call CBA_fnc_waitAndExecute;
-        _unit setVariable [QGVAR(bleedoutKillTime), cba_missionTime + _restBleedout, true];
+        }, [_unit, _downTime], _restBleedout] call CBA_fnc_waitAndExecute;
         if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
+            if (_recover) then { [false] call FUNC(showDownedSkull); };
             [_set, _restBleedout] call FUNC(showDownedSkull);
         };
     };
