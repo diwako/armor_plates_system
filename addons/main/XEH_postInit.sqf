@@ -415,6 +415,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     if !(_target getVariable [QGVAR(holdLimiter), false]) then {
                         if !(local _target) then { _target setVariable [QGVAR(holdLimiter), true]; };
                         [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
+					};
                  }, ["isNotInside"]] call ace_common_fnc_progressBar;
             },
             {
@@ -425,7 +426,7 @@ if !(GVAR(aceMedicalLoaded)) then {
             ] call ace_interact_menu_fnc_createAction;
             ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
         };
-    };
+	};
 };
 
 // ace interactions
