@@ -24,7 +24,16 @@ if (_set) then {
             GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
             _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max GVAR(minBleedoutTime);
         };
+
+        _unit setVariable [QGVAR(bleedoutKillTime), cba_missionTime + _restBleedout, true];
+        if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
+            [_set, _restBleedout, _unit] call FUNC(showDownedSkull);
+        };
         [{
+            params ["_unit"];
+            private _timeLeft = (_unit getVariable [QGVAR(bleedoutKillTime), -1]) - cba_missionTime;
+            _timeLeft <= 0 || {(lifeState _unit) != "INCAPACITATED"}
+        }, {
             params ["_unit", "_time"];
             private _unconscious = (lifeState _unit) == "INCAPACITATED";
             if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
@@ -40,11 +49,7 @@ if (_set) then {
                     systemChat "Enjoy your free revive, I guess?!";
                 };
             };
-        }, [_unit, cba_missionTime], _restBleedout] call CBA_fnc_waitAndExecute;
-        _unit setVariable [QGVAR(bleedoutKillTime), cba_missionTime + _restBleedout, true];
-        if (GVAR(showDownedSkull) && {_unit isEqualTo player}) then {
-            [_set, _restBleedout, _unit] call FUNC(showDownedSkull);
-        };
+        }, [_unit, cba_missionTime]] call CBA_fnc_waitUntilAndExecute;
     };
 } else {
     _unit setVariable [QGVAR(bleedoutTime), nil];
