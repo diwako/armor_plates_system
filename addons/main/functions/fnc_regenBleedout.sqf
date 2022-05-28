@@ -1,3 +1,5 @@
+#include "script_component.hpp"
+params ["_unit"];
 /*
     Credit to MajorDanvers
     Slowly regenerates bleedout timer, faster when closer to death
@@ -5,8 +7,6 @@
     15 minutes to regen first down
     For coeff == 1, 1 second regenerated per duration of bleedout timer
 */
-#include "script_component.hpp"
-params ["_unit"];
 
 // If player has not gone down or has fully recovered, wait until they are down
 if (isNil QGVAR(bleedOutTimeMalus)) then {
