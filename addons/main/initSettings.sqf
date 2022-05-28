@@ -358,8 +358,30 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     "CHECKBOX",
     [LLSTRING(allowDownedDamage), LLSTRING(allowDownedDamage_desc)],
     _category,
-    false,
+    [[0, 1, 2, 3], [LLSTRING(downedFeedback_0), LLSTRING(allowDownedDamage_1), LLSTRING(allowDownedDamage_2), LLSTRING(allowDownedDamage_3)], 0],
     true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(downedDamageHP),
+    "SLIDER",
+    [LLSTRING(downedDamageHP), LLSTRING(downedDamageHP_desc)],
+    _category,
+    [0.01, 10, 1, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(downedDamageHits),
+    "SLIDER",
+    [LLSTRING(downedDamageHits), LLSTRING(downedDamageHits_desc)],
+    _category,
+    [1, 20, 5, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(downedDamageHits) = round _value;
+    }
 ] call CBA_fnc_addSetting;
 
 [
