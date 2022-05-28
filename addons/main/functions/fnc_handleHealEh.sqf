@@ -24,7 +24,8 @@
         [_unit, _curHp, _maxHp] call FUNC(setA3Damage);
     };
     _unit setVariable [QGVAR(hp), _newHp, true];
-    _unit setVariable [QGVAR(downedHp), _maxHp, true];
+    _unit setVariable [QGVAR(downedHp), nil];
+    _unit setVariable [QGVAR(downedHits), nil];
     [_unit, _newHp, _maxHp] call FUNC(setA3Damage);
     if ((call CBA_fnc_currentUnit) isEqualTo _unit) then {
         [_unit] call FUNC(updateHPUi);
