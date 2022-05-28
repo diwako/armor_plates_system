@@ -21,8 +21,7 @@ if (isNil {malus}) then {
         },
         FUNC(regenBleedout), [_unit]
     ] call CBA_fnc_waitUntilAndExecute;
-}
-else {
+} else {
     // Every _nextRegen seconds, increase down timer by 1 second (reduce malus by 1 second)
     private _nextRegen = (bleedout - malus - subtraction) / coeff; // d(malus)/d(time) = 1/60 when malus = 0
     [
