@@ -1,8 +1,8 @@
 #include "script_component.hpp"
-params ["_show", "_time"];
-
+params ["_show", "_time", "_unit"];
+if (GVAR(skullActive) isEqualTo _show) exitWith {};
 if (_show) then {
-    if (_time <= 0) exitWith {};
+    if (_time <= 0 || {!alive _unit}) exitWith {};
     if ((uiNamespace getVariable [QGVAR(skullControls), []]) isEqualTo []) then {
         // init
         private _display = findDisplay 46;
@@ -55,37 +55,43 @@ if (_show) then {
         GVAR(downedBlur) ppEffectAdjust [0];
         GVAR(downedBlur) ppEffectCommit 0;
     };
-    GVAR(skullID) = _time spawn {
-        private _waitTime = _this / 2;
-        private _maxTimePerPart = _waitTime / 7;
-        private _controls = + (uiNamespace getVariable [QGVAR(skullControls), []]);
-        (_controls select 0) ctrlSetFade 0;
-        (_controls select 0) ctrlCommit (random [_this / 4, _waitTime, _this]);
-        _controls deleteAt 0;
-        _controls = _controls call BIS_fnc_arrayShuffle;
-        sleep _waitTime;
+
+    GVAR(skullActive) = true;
+    private _controlsCopy = + (uiNamespace getVariable [QGVAR(skullControls), []]);
+    _controlsCopy = _controlsCopy call BIS_fnc_arrayShuffle;
+    private _waitTime = _time / 2;
+    private _maxTimePerPart = _waitTime / 7;
+    private _first = _controlsCopy deleteAt 0;
+    _first setVariable [QGVAR(timeToShow), random [_time / 4, _waitTime, _time]];
+    {
+        _x setVariable [QGVAR(timeToShow), random [_waitTime / 4, _waitTime / 2, _waitTime]];
+        private _rnd = (random _maxTimePerPart) min _waitTime;
+        _waitTime = (_waitTime - _rnd) max 0;
+    } forEach _controlsCopy;
+    _controlsCopy pushBack _first;
+    [{
+        params ["_controls", "_unit"];
+        private _timeLeft = (_unit getVariable [QGVAR(bleedoutKillTime), -1]) - cba_missionTime;
         {
-            _x ctrlSetFade 0;
-            _x ctrlCommit (random [_waitTime / 4, _waitTime / 2, _waitTime]);
-            private _rnd = (random _maxTimePerPart) min _waitTime;
-            _waitTime = (_waitTime - _rnd) max 0;
-            sleep _rnd;
+            _x ctrlSetFade (linearConversion [_x getVariable [QGVAR(timeToShow), 0], 0, _timeLeft, 1, 0, true]);
+            _x ctrlCommit 0;
         } forEach _controls;
-    };
+
+        !GVAR(skullActive)
+    }, {
+        if !(isNil QGVAR(downedBlur)) then {
+            GVAR(downedBlur) ppEffectAdjust [0];
+            GVAR(downedBlur) ppEffectCommit 0.5;
+        };
+        {
+            _x ctrlSetFade 1;
+            _x ctrlCommit (random 1);
+        } forEach (uiNamespace getVariable [QGVAR(skullControls), []]);
+    }, [_controlsCopy, _unit]] call CBA_fnc_waitUntilAndExecute;
     GVAR(downedBlur) ppEffectAdjust [4];
     GVAR(downedBlur) ppEffectCommit _time;
 } else {
-    if (GVAR(skullID) isNotEqualTo -1) then {
-        terminate GVAR(skullID);
-    };
-    if !(isNil QGVAR(downedBlur)) then {
-        GVAR(downedBlur) ppEffectAdjust [0];
-        GVAR(downedBlur) ppEffectCommit 0.5;
-    };
-    {
-        _x ctrlSetFade 1;
-        _x ctrlCommit (random 1);
-    } forEach (uiNamespace getVariable [QGVAR(skullControls), []]);
+    GVAR(skullActive) = false;
 };
 
 true
