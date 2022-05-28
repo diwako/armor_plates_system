@@ -9,6 +9,7 @@ PREP(handleArmorDamage);
 PREP(initAIUnit);
 PREP(initPlates);
 PREP(moduleHeal);
+PREP(regenBleedout);
 PREP(showDamageFeedbackMarker);
 PREP(uniqueItems);
 PREP(updateHPUi);
