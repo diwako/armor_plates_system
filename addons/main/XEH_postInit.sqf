@@ -164,6 +164,7 @@ GVAR(skullID) = -1;
 GVAR(downedUnitIndicatorDrawEh) = -1;
 GVAR(downedUnitIndicatorDrawCache) = [];
 GVAR(hasPlateInInvetory) = QGVAR(plate) in (player call FUNC(uniqueItems));
+GVAR(skullActive) = false;
 
 // disallow weapon firing during plate interaction when ace is loaded
 if !(isNil "ace_common_fnc_addActionEventHandler") then {
