@@ -307,6 +307,27 @@
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_desc">
             <English>Allows that unconscious units can take damage. This allows the execution of unconscious units</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage_1">
+            <English>Downed Hitpoints</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage_2">
+            <English>Hit count</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowDownedDamage_3">
+            <English>Both</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedDamageHP">
+            <English>Downed HP Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedDamageHP_desc">
+            <English>Multiplied by a unit's max hp to determine how much damage they can take while down.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedDamageHits">
+            <English>Downed Hits count</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_downedDamageHits_desc">
+            <English>Number of hits a unit can take while down before dying.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
             <Polish>EH obrażeń</Polish>
