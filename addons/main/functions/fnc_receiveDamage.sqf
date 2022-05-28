@@ -85,9 +85,12 @@ if (_newHP isEqualTo 0) exitWith {
     } else {
         // damage to downed units
         private _downedHits = 0;
-        If (_downDamage > 1) then {_downedHits = ((_unit getVariable [QGVAR(downedHits),0]) + 1); };
+        If (_downDamage > 1) then {
+            _downedHits = ((_unit getVariable [QGVAR(downedHits),0]) + 1);
+            _unit setVariable [QGVAR(downedHits), _downedHits];
+        };
         if (_downDamage == 2 && {_downedHits < GVAR(downedDamageHits)}) exitWith {};
-        private _downedHp = _unit getVariable [QGVAR(downedHp), _maxHp];
+        private _downedHp = _unit getVariable [QGVAR(downedHp), (_maxHp * GVAR(downedDamageHP))];
         private _newDownedHP = (_downedHp - _damage) max 0;
         _unit setVariable [QGVAR(downedHp), _newDownedHP];
         if (_downedHits >= GVAR(downedDamageHits) || {_downedHp isEqualTo 0}) then {
