@@ -93,7 +93,7 @@ if (_newHP isEqualTo 0) exitWith {
         private _downedHp = _unit getVariable [QGVAR(downedHp), (_maxHp * GVAR(downedDamageHP))];
         private _newDownedHP = (_downedHp - _damage) max 0;
         _unit setVariable [QGVAR(downedHp), _newDownedHP];
-        if (_downedHits >= GVAR(downedDamageHits) || {_downedHp isEqualTo 0}) then {
+        if (_downedHits >= GVAR(downedDamageHits) || {_newDownedHP isEqualTo 0}) then {
             _unit setHitPointDamage ["hitHead", 1, true, _instigator];
         };
     };
