@@ -58,24 +58,30 @@ if (_show) then {
 
     GVAR(skullActive) = true;
     private _controlsCopy = + (uiNamespace getVariable [QGVAR(skullControls), []]);
-    _controlsCopy = _controlsCopy call BIS_fnc_arrayShuffle;
     private _waitTime = _time / 2;
     private _maxTimePerPart = _waitTime / 7;
     private _first = _controlsCopy deleteAt 0;
-    _first setVariable [QGVAR(timeToShow), random [_time / 4, _waitTime, _time]];
+    _first setVariable [QGVAR(timeToShow), _time];
+    _first setVariable [QGVAR(timeToComplete), 0];
+    _controlsCopy = _controlsCopy call BIS_fnc_arrayShuffle;
+    private _rnd = 0;
     {
-        _x setVariable [QGVAR(timeToShow), random [_waitTime / 4, _waitTime / 2, _waitTime]];
-        private _rnd = (random _maxTimePerPart) min _waitTime;
+        _x setVariable [QGVAR(timeToShow), _waitTime - _rnd];
+        _x setVariable [QGVAR(timeToComplete), _waitTime - _rnd - (random [_waitTime / 4, _waitTime / 2, _waitTime])];
+        _rnd = (random _maxTimePerPart) min _waitTime;
         _waitTime = (_waitTime - _rnd) max 0;
     } forEach _controlsCopy;
     _controlsCopy pushBack _first;
     [{
-        params ["_controls", "_unit"];
+        params ["_controls", "_unit", "_time", "_halfTime"];
         private _timeLeft = (_unit getVariable [QGVAR(bleedoutKillTime), -1]) - cba_missionTime;
         {
-            _x ctrlSetFade (linearConversion [_x getVariable [QGVAR(timeToShow), 0], 0, _timeLeft, 1, 0, true]);
+            _x ctrlSetFade (linearConversion [_x getVariable [QGVAR(timeToShow), _halfTime], _x getVariable [QGVAR(timeToComplete), 0], _timeLeft, 1, 0, true]);
             _x ctrlCommit 0;
         } forEach _controls;
+
+        GVAR(downedBlur) ppEffectAdjust [linearConversion [_time, 0, _timeLeft, 0, 4, true]];
+        GVAR(downedBlur) ppEffectCommit 0;
 
         !GVAR(skullActive)
     }, {
@@ -87,9 +93,7 @@ if (_show) then {
             _x ctrlSetFade 1;
             _x ctrlCommit (random 1);
         } forEach (uiNamespace getVariable [QGVAR(skullControls), []]);
-    }, [_controlsCopy, _unit]] call CBA_fnc_waitUntilAndExecute;
-    GVAR(downedBlur) ppEffectAdjust [4];
-    GVAR(downedBlur) ppEffectCommit _time;
+    }, [_controlsCopy, _unit, _time, _time / 2]] call CBA_fnc_waitUntilAndExecute;
 } else {
     GVAR(skullActive) = false;
 };

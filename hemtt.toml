@@ -105,5 +105,5 @@ steps_windows = [
 steps_linux = [
     "echo 'Compiling Arma Scripts does not work yet on Linux'"
 ]
-only_release = false
+only_release = true
 show_output = true
