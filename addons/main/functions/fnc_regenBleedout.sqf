@@ -11,7 +11,7 @@ params ["_unit"];
 #define malus GVAR(bleedOutTimeMalus)
 #define bleedout GVAR(bleedoutTime)
 #define subtraction GVAR(bleedoutTimeSubtraction)
-#define coeff 1
+#define coeff GVAR(bleedoutRegenCoeff)
 
 // If player has not gone down or has fully recovered, wait until they are down
 if (isNil {malus}) then {
@@ -27,7 +27,7 @@ else {
     private _nextRegen = (bleedout - malus - subtraction) / coeff; // d(malus)/d(time) = 1/60 when malus = 0
     [
         {
-            if (!(_unit getVariable [QGVAR(unconscious),false])) then {
+            if (!(_unit getVariable [QGVAR(unconscious),false]) && GVAR(enableBleedoutTimerRegen)) then {
                 malus = malus - 1;
                 if (malus <= (-1 * subtraction)) then {malus = nil};
             };
