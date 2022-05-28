@@ -5,8 +5,9 @@ if (_damage <= 0 || {!alive _unit}) exitWith {};
 
 private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
 private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
+private _downDamage = GVAR(allowDownedDamage);
 
-if (_curHp <= 0 && {!GVAR(allowDownedDamage)}) exitWith {};
+if (_curHp <= 0 && {_downDamage < 1}) exitWith {};
 
 if (GVAR(disallowFriendfire) &&
     {!isNull _instigator && {
@@ -83,10 +84,13 @@ if (_newHP isEqualTo 0) exitWith {
         };
     } else {
         // damage to downed units
+        private _downedHits = 0;
+        If (_downDamage > 1) then {_downedHits = ((_unit getVariable [QGVAR(downedHits),0]) + 1); };
+        if (_downDamage == 2 && {_downedHits < GVAR(downedDamageHits)}) exitWith {};
         private _downedHp = _unit getVariable [QGVAR(downedHp), _maxHp];
         private _newDownedHP = (_downedHp - _damage) max 0;
         _unit setVariable [QGVAR(downedHp), _newDownedHP];
-        if (_downedHp isEqualTo 0) then {
+        if (_downedHits == GVAR(downedDamageHits) || {_downedHp isEqualTo 0}) then {
             _unit setHitPointDamage ["hitHead", 1, true, _instigator];
         };
     };
