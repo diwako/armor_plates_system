@@ -139,6 +139,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if !(_unit getVariable [QGVAR(holdLimiter), false]) then {
             _unit setVariable [QGVAR(holdLimiter), true, true];
             [{
+                params ["_unit"];
                 if !(_unit getVariable [QGVAR(unconscious), false]) exitWith {
                     _unit setVariable [QGVAR(holdLimiter), nil, true];
                 };
@@ -342,6 +343,10 @@ if !(GVAR(aceMedicalLoaded)) then {
                         _target setVariable [QGVAR(beingRevived), true, true];
                         _target setVariable [QGVAR(revivingUnit), _caller, true];
                     };
+                    if (GVAR(bleedoutStop) > 1 && {!(_target getVariable [QGVAR(holdLimiter), false]) && {GVAR(bleedoutStop) == 3 || {_caller getUnitTrait 'Medic'}}}) then {
+                        if !(local _target) then { _target setVariable [QGVAR(holdLimiter), true]; };
+                        [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
+                    };
                     private _medicAnim = _caller getVariable [QGVAR(medicAnim), ""];
                     if (isNull objectParent _caller && {_medicAnim != "" && { animationState _caller != _medicAnim }}) then {
                         _caller playMove _medicAnim;
@@ -408,6 +413,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         if !(local _target) then { _target setVariable [QGVAR(holdLimiter), true]; };
                         [QGVAR(bleedRecovery), _target, _target] call CBA_fnc_targetEvent;
                     };
+                    true;
                  }, ["isNotInside"]] call ace_common_fnc_progressBar;
             },
             {
