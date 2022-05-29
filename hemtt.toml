@@ -5,7 +5,7 @@ template = "cba"
 mainprefix = "z"
 folder_optionals = true
 sig_version = 3
-version = "0.6.0"
+version = "0.7.0"
 exclude = [
     "*.psd",
     "*.png",
@@ -25,11 +25,13 @@ key_name = "{{prefix}}_{{version}}"
 authority = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
 
 check = [
-    "!version_set"
+    "!version_set",
+    "!compile_scripts"
 ]
 
 postbuild = [
-    "!version_unset"
+    "!version_unset",
+    "!remove_compiled_scripts"
 ]
 
 releasebuild = [
@@ -78,6 +80,30 @@ steps_linux = [
 ]
 steps_windows = [
     "powershell -Command foreach ($f in 'releases/{{semver.major}}.{{semver.minor}}.{{semver.patch}}/@diw_armor_plates/mod.cpp') {(Get-Content $f) -replace '{version}', '{{semver.major}}.{{semver.minor}}.{{semver.patch}}' -join \"`n\" ^| Set-Content -NoNewline $f; Add-Content -NoNewline \"`n\" $f}",
+]
+only_release = true
+show_output = true
+
+[scripts.compile_scripts]
+steps_windows = [
+    "echo 'Compile Arma Scripts'",
+    "ArmaScriptCompiler.exe"
+]
+
+steps_linux = [
+    "echo 'Compiling Arma Scripts does not work yet on Linux'"
+]
+only_release = true
+# only_release = false
+show_output = true
+
+[scripts.remove_compiled_scripts]
+steps_windows = [
+    "echo 'remove Compiled Scripts'",
+    "powershell -Command Remove-Item './addons/*' -Recurse -Include *.sqfc"
+]
+steps_linux = [
+    "echo 'Compiling Arma Scripts does not work yet on Linux'"
 ]
 only_release = true
 show_output = true
