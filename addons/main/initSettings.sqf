@@ -295,6 +295,28 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(showFAKCount),
+    "CHECKBOX",
+    [LLSTRING(showFAKCount), LLSTRING(showFAKCount_desc)],
+    _category,
+    true,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(showFAKCountMinimum),
+    "SLIDER",
+    [LLSTRING(showFAKCountMinimum), LLSTRING(showFAKCountMinimum_desc)],
+    _category,
+    [0, 10, 3, 0],
+    false,
+    {
+        params ["_value"];
+        GVAR(showFAKCountMinimum) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryGeneral)];
 
 [
@@ -355,7 +377,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 
 [
     QGVAR(allowDownedDamage),
-    "CHECKBOX",
+    "LIST",
     [LLSTRING(allowDownedDamage), LLSTRING(allowDownedDamage_desc)],
     _category,
     [[0, 1, 2, 3], [LLSTRING(downedFeedback_0), LLSTRING(allowDownedDamage_1), LLSTRING(allowDownedDamage_2), LLSTRING(allowDownedDamage_3)], 0],

@@ -835,6 +835,24 @@
             <Chinesesimp>在完全执行&quot;放弃&quot;动作时显示一个确认对话框。</Chinesesimp>
             <Chinese>在完全執行&quot;放棄&quot;動作時顯示一個確認對話框。</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_showFAKCount">
+            <English>Display number of remaining FAKs</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showFAKCount_desc">
+            <English>Shows the number of remaining FAKs after a healing action.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showFAKCount_hint1">
+            <English>%1 has been used</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showFAKCount_hint2">
+            <English>%1 healing item(s) remaining</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum">
+            <English>Show FAK hint only with minimum FAKs</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum_desc">
+            <English>Only shows the FAK count hint if the remaining FAKs after healing are given number or below</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
             <Polish>Pokaż licznik graczom</Polish>
