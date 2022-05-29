@@ -13,7 +13,7 @@ if (_add) then {
         _player playActionNow (format [QGVAR(addPlate_%1), floor GVAR(timeToAddPlate)]);
     };
     if (_seconds > MAX) then {
-        _player playActionNow (format [QGVAR(addPlate_%1), MAX)]);
+        _player playActionNow (format [QGVAR(addPlate_%1), MAX]);
     };
 } else {
     _player playActionNow QGVAR(stopGesture);
