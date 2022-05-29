@@ -14,6 +14,8 @@ class CfgMovesBasic {
         GVAR(addPlate_12)= QGVAR(addPlate_12);
         GVAR(addPlate_13)= QGVAR(addPlate_13);
         GVAR(addPlate_14)= QGVAR(addPlate_14);
+        GVAR(addPlate_15)= QGVAR(addPlate_15);
+        GVAR(addPlate_16)= QGVAR(addPlate_16);
         GVAR(stopGesture) = QGVAR(stopGesture);
     };
     class Actions {
