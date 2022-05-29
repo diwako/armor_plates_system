@@ -85,6 +85,28 @@ if (GVAR(aceMedicalLoaded)) then {
         params ["_unit"];
         if (([_unit] call FUNC(hasHealItems)) isEqualTo 1) then {
             _unit removeItem (_unit getVariable [QGVAR(availableFirstAidKit), ""]);
+            if (GVAR(showFAKCount) && {_unit isEqualTo (call CBA_fnc_currentUnit)}) then {
+                // check how many faks are left
+                private _count = 0;
+                private _fnc_count = {
+                    params ["_items", "_amounts"];
+                    {
+                        if (_x in GVAR(firstAidKitItems)) then {
+                            _count = _count + (_amounts select _forEachIndex);
+                        };
+                    } forEach _items;
+                };
+                (getItemCargo uniformContainer _unit) call _fnc_count;
+                (getItemCargo vestContainer _unit) call _fnc_count;
+                (getItemCargo backpackContainer _unit) call _fnc_count;
+                if (_count <= GVAR(showFAKCountMinimum)) then {
+                    [
+                        [getText (configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableFirstAidKit), ""]) >> "picture"), 4],
+                        [format [LLSTRING(showFAKCount_hint1), getText (configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableFirstAidKit), ""]) >> "displayName")]],
+                        [format [LLSTRING(showFAKCount_hint2), _count]],
+                    true] call CBA_fnc_notify;
+                };
+            };
             _unit setVariable [QGVAR(availableFirstAidKit), nil];
         };
     }] call CBA_fnc_addEventHandler;
