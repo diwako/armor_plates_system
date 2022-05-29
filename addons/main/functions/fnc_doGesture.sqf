@@ -18,6 +18,7 @@ if (_add) then {
         _player setVariable [QGVAR(nextGestureSound), cba_missionTime + (_seconds * 0.15) + 1];
         [{
             params ["_player", "_gestureTime"];
+            if ((_player getVariable [QGVAR(gestureStart), -1]) isNotEqualTo _gestureTime) exitWith {};
             systemChat "Sound: Ziiiiiiiip";
         }, [_player, cba_missionTime], _seconds * 0.15] call CBA_fnc_waitAndExecute;
     };
