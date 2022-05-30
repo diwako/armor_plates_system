@@ -4,9 +4,16 @@ private _copy = +_allDamages;
 
 if ((_copy select 0 select 0) > 0) then {
     (_copy select 0) params ["_damage", "_bodyPart"];
-    if (_damage isEqualTo 0 || {_bodyPart == "#structural"}) then {continue};
+    private _parentShooter = _shooter;
+    if (GVAR(disallowFriendfire) &&
+        {!isNull _parentShooter && {
+        _parentShooter isNotEqualTo _unit && {
+        (side group _unit) isEqualTo (side group _parentShooter)}}}) exitWith {
+            _copy = [];
+        };
+    if (_damage isEqualTo 0 || {_bodyPart == "#structural"}) exitWith {};
     private _isTorso = _bodyPart isEqualTo "Body";
-    if (GVAR(protectOnlyTorso) && {!_isTorso}) then {continue};
+    if (GVAR(protectOnlyTorso) && {!_isTorso}) exitWith {};
 
     // _aceSelection is HitBody, HitLegs etc
     private _aceSelection = format ["Hit%1", _bodyPart];
@@ -23,9 +30,10 @@ if ((_copy select 0 select 0) > 0) then {
     };
 
     // _shooter and _ammo exist in the scope above
-    private _damageLeft = [_unit, _damage, _actualDamage, _shooter, _ammo, _isTorso] call FUNC(receiveDamageACE);
+    private _damageLeft = [_unit, _damage, _actualDamage, _parentShooter, _ammo, _isTorso] call FUNC(receiveDamageACE);
     (_copy select 0) set [0, _damageLeft];
 };
 
 // if you want to do nothing, just exitWith {_this}. if you return nil or [] it will block further handling
+if (_copy isEqualTo []) exitWith {[]};
 [_unit, _copy, _typeOfDamage] //return

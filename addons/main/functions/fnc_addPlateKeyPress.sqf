@@ -8,6 +8,7 @@ _player setVariable [QGVAR(wasSprintingAllowed), isSprintAllowed _player];
 _player allowSprint false;
 _player setVariable [QGVAR(wasForceWalked), isForcedWalk _player];
 _player forceWalk true;
+[_player] call FUNC(doGesture);
 
 [{
     params ["_player", "_ctrl"];
@@ -21,6 +22,7 @@ _player forceWalk true;
     _player allowSprint (_player getVariable [QGVAR(wasSprintingAllowed), true]);
     _player forceWalk (_player getVariable [QGVAR(wasForceWalked), true]);
     call FUNC(deleteProgressBar);
+    [_player, false] call FUNC(doGesture);
 
     if (GVAR(addPlateKeyUp) || {
         (stance _player) == "PRONE" || {

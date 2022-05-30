@@ -17,6 +17,7 @@ files = [
     "*.paa",
     "LICENSE",
     "readme.txt",
+    "authors.txt",
     "readme.md"
 ]
 include = ["./include"]

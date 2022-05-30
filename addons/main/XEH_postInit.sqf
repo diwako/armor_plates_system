@@ -457,12 +457,15 @@ if (_aceInteractLoaded) then {
         "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa", {
         params ["", "_player"];
         GVAR(addingPlate) = true;
+        [_player] call FUNC(doGesture);
         [GVAR(timeToAddPlate), [_player], {
             param [0] params ["_player"];
             [_player] call FUNC(addPlate);
             GVAR(addingPlate) = false;
         }, {
+            param [0] params ["_player"];
             GVAR(addingPlate) = false;
+            [_player, false] call FUNC(doGesture);
         }, LLSTRING(addPlateToVest), {
             param [0] params ["_player"];
             (stance _player) != "PRONE" && {
