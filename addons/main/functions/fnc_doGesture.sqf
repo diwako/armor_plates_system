@@ -19,7 +19,7 @@ if (_add) then {
         [{
             params ["_player", "_gestureTime"];
             if ((_player getVariable [QGVAR(gestureStart), -1]) isNotEqualTo _gestureTime) exitWith {};
-            systemChat "Sound: Ziiiiiiiip";
+            playSound3D [format [QPATHTO_R(sounds\platesOpen%1.ogg), floor random 4], _player, false, getPosASL _player, 0.75, 1, 7];
         }, [_player, cba_missionTime], _seconds * 0.15] call CBA_fnc_waitAndExecute;
     };
 
@@ -27,14 +27,14 @@ if (_add) then {
         [{
             params ["_player", "_gestureTime"];
             if ((_player getVariable [QGVAR(gestureStart), -1]) isNotEqualTo _gestureTime) exitWith {};
-            systemChat "Sound: Sliiiiiiide";
+            playSound3D [format [QPATHTO_R(sounds\platesMid%1.ogg), floor random 4], _player, false, getPosASL _player, 1, 1, 7];
         }, [_player, cba_missionTime], _seconds * 0.55] call CBA_fnc_waitAndExecute;
     };
 
     [{
         params ["_player", "_gestureTime"];
         if ((_player getVariable [QGVAR(gestureStart), -1]) isNotEqualTo _gestureTime) exitWith {};
-        systemChat "Sound: Zoooooop";
+        playSound3D [format [QPATHTO_R(sounds\platesClose%1.ogg), floor random 4], _player, false, getPosASL _player, 0.75, 1, 7];
     }, [_player, cba_missionTime], _seconds * 0.75] call CBA_fnc_waitAndExecute;
 } else {
     _player playActionNow QGVAR(stopGesture);
