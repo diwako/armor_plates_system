@@ -13,6 +13,18 @@ class CfgVehicles {
             MACRO_ADDITEM(plate,1);
         };
     };
+    
+    class Item_Base_F;
+    class GVAR(autoinjector): Item_Base_F {
+        scope = 2;
+        scopeCurator = 2;
+        displayName = "Auto-Injector";
+        author = "diawko, alien314";
+        vehicleClass = "Items";
+        class TransportItems {
+            MACRO_ADDITEM(injector,1);
+        };
+    };
 
     class Module_F;
     class GVAR(moduleBase): Module_F {
