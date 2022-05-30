@@ -589,6 +589,15 @@
             <Chinesesimp>标准的陶瓷防弹插板，只要拉开你的背心拉链，然后把那个该死的东西塞进去 ;)</Chinesesimp>
             <Chinese>標準的陶瓷防彈插板，只要拉開你的背心拉鍊，然後把那個該死的東西塞進去 ;)</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_autoinjectorItem">
+            <English>Auto-Injector</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Short">
+            <English>Auto-Injector for reducing trauma to the body.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Use">
+            <English>Standard auto-injector, just stick it in ;)</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
             <English>Add plate into vest</English>
             <Polish>Dodaj płytę do kamizelki</Polish>
