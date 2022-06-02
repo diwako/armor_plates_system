@@ -74,6 +74,15 @@ _unit setUnconscious _set;
 _unit setVariable [QGVAR(unconscious), _set, true];
 _unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
 
+if (GVAR(radioModUnconRestrictions) > 0) then {
+    _unit setVariable ["acre_sys_core_isDisabledRadio", _set, GVAR(AcreLoaded)];
+    _unit setVariable ["tf_unable_to_use_radio", _set, GVAR(TfarLoaded)];
+    if (GVAR(radioModUnconRestrictions) isEqualTo 2) then {
+        _unit setVariable ["acre_sys_core_isDisabled", _set, GVAR(AcreLoaded)];
+        _unit setVariable ["tf_voiceVolume", [1, 0] select _set, GVAR(TfarLoaded)];
+    };
+};
+
 if (_set && {GVAR(requestAIforHelp)}) then {
     [_unit] call FUNC(requestAIRevive);
 };
