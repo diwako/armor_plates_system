@@ -75,8 +75,25 @@ _unit setVariable [QGVAR(unconscious), _set, true];
 _unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
 
 if (GVAR(radioModUnconRestrictions) > 0) then {
-    _unit setVariable ["acre_sys_core_isDisabledRadio", _set, GVAR(AcreLoaded)];
-    _unit setVariable ["tf_unable_to_use_radio", _set, GVAR(TfarLoaded)];
+    // ACRE
+    private _player = call CBA_fnc_currentUnit;
+    if (GVAR(AcreLoaded)) then {
+        _unit setVariable ["acre_sys_core_isDisabledRadio", _set, true];
+        if (_player isEqualTo _unit) then {
+            [-1] call acre_sys_core_fnc_handleMultiPttKeyPressUp;
+            [0] call acre_sys_core_fnc_handleMultiPttKeyPressUp;
+            [1] call acre_sys_core_fnc_handleMultiPttKeyPressUp;
+            [2] call acre_sys_core_fnc_handleMultiPttKeyPressUp;
+        };
+    };
+
+    // TFAR
+    if (GVAR(TfarLoaded)) then {
+        _unit setVariable ["tf_unable_to_use_radio", _set, true];
+        if (_player isEqualTo _unit) then {
+            _unit call TFAR_fnc_releaseAllTangents;
+        };
+    };
     if (GVAR(radioModUnconRestrictions) isEqualTo 2) then {
         _unit setVariable ["acre_sys_core_isDisabled", _set, GVAR(AcreLoaded)];
         _unit setVariable ["tf_voiceVolume", [1, 0] select _set, GVAR(TfarLoaded)];
