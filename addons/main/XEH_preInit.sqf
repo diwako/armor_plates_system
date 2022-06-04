@@ -16,4 +16,7 @@ if (GVAR(aceMedicalLoaded)) then {
     GVAR(armorCache) = false call CBA_fnc_createNamespace;
 };
 
+GVAR(AcreLoaded) = isClass (configFile >> "CfgPatches" >> "acre_main");
+GVAR(TfarLoaded) = isClass (configFile >> "CfgPatches" >> "tfar_core");
+
 ADDON = true;

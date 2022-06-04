@@ -781,6 +781,18 @@
             <Chinesesimp>允许玩家小队的AI陷入昏迷而不是直接死亡</Chinesesimp>
             <Chinese>允許玩家小隊的AI陷入昏迷而不是直接死亡</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions">
+            <English>Radio Mod restrictions on uncon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_desc">
+            <English>Allows or disallows the usage of radios, can also be set to disallow speaking entirely</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_1">
+            <English>No radio</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_2">
+            <English>No speaking at all</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
             <Polish>Leczenie przez AI</Polish>
