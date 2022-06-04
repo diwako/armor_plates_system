@@ -7,8 +7,6 @@ private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayer
 private _curHp = _unit getVariable [QGVAR(hp), _maxHp];
 private _downDamage = GVAR(allowDownedDamage);
 
-if (_curHp <= 0 && {_downDamage < 1}) exitWith {};
-
 if (GVAR(disallowFriendfire) &&
     {!isNull _instigator && {
     _instigator isNotEqualTo _unit && {
@@ -68,10 +66,10 @@ if (_player isEqualTo _unit) then {
 
 if (_newHP isEqualTo 0) exitWith {
     private _lifestate = (lifeState _unit) != "INCAPACITATED";
+    private _setUnconscious = (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) ||
+        {GVAR(enableAIUnconscious) && {!isPlayer _unit && {_unit in (units player)}}};
     if (_lifestate) then {
         [QGVAR(downedMessage), [_unit], (units _unit) - [_unit]] call CBA_fnc_targetEvent;
-        private _setUnconscious = (GVAR(enablePlayerUnconscious) && {isPlayer _unit}) ||
-        {GVAR(enableAIUnconscious) && {!isPlayer _unit && {_unit in (units player)}}};
 
         if (_setUnconscious) then {
             if (_lifestate) then {
@@ -84,6 +82,16 @@ if (_newHP isEqualTo 0) exitWith {
         };
     } else {
         // damage to downed units
+        if (_downDamage isEqualTo 0) exitWith {
+            // catch in case other scripts or mods use setUnconscious
+            if (_setUnconscious) then {
+                if !(_unit getVariable [QGVAR(unconscious), false]) then {
+                    [_unit, true] call FUNC(setUnconscious);
+                };
+            } else {
+                _unit setHitPointDamage ["hitHead", 1, true, _instigator];
+            };
+        };
         private _downedHits = 0;
         if (_downDamage > 1) then {
             _downedHits = ((_unit getVariable [QGVAR(downedHits),0]) + 1);
@@ -93,7 +101,7 @@ if (_newHP isEqualTo 0) exitWith {
         private _downedHp = _unit getVariable [QGVAR(downedHp), (_maxHp * GVAR(downedDamageHP))];
         private _newDownedHP = (_downedHp - _damage) max 0;
         _unit setVariable [QGVAR(downedHp), _newDownedHP];
-        if (_downedHits >= GVAR(downedDamageHits) || {_newDownedHP isEqualTo 0 || {_downDamage isEqualTo 0}}) then {
+        if (_downedHits >= GVAR(downedDamageHits) || {_newDownedHP isEqualTo 0}) then {
             _unit setHitPointDamage ["hitHead", 1, true, _instigator];
         };
     };
