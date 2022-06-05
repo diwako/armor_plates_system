@@ -647,3 +647,12 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     [0, 1, 0.5, 0, true],
     true
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowLimping),
+    "CHECKBOX",
+    [LLSTRING(allowLimping), LLSTRING(allowLimping_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;

@@ -919,5 +919,11 @@
             <Chinesesimp>逼真现实主义</Chinesesimp>
             <Chinese>逼真現實主義</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_allowLimping">
+            <English>Allow extended limb damage</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
+            <English>Allows for limping and more sway the more damage a unit has</English>
+        </Key>
     </Package>
 </Project>
