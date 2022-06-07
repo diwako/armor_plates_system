@@ -4,6 +4,7 @@ PREP(canAddPlate);
 PREP(canPressKey);
 PREP(createProgressBar);
 PREP(deleteProgressBar);
+PREP(doGesture);
 PREP(fillVestWithPlates);
 PREP(handleArmorDamage);
 PREP(initAIUnit);

@@ -443,6 +443,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(radioModUnconRestrictions),
+    "LIST",
+    [LLSTRING(radioModUnconRestrictions), LLSTRING(radioModUnconRestrictions)],
+    _category,
+    [[0, 1, 2], [LLSTRING(downedFeedback_0), LLSTRING(radioModUnconRestrictions_1), LLSTRING(radioModUnconRestrictions_2)], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(requestAIforHelp),
     "CHECKBOX",
     [LLSTRING(requestAIforHelp), LLSTRING(requestAIforHelp_desc)],
