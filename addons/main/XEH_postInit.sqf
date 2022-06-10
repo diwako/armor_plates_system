@@ -37,27 +37,17 @@ GVAR(ammoPenCache) = createHashMap;
 
 ["CAManBase", "Local", {
     params ["_unit", "_isLocal"];
-
-    if (_isLocal && {alive _unit && {GVAR(numWearablePlates) isNotEqualTo 0 && {isNil {((vestContainer _unit) getVariable [QGVAR(plates), nil])}}}}) then {
-        if (isPlayer _unit || {(side group _unit) == civilian}) exitWith {};
-        private _3den_maxPlateInVest = _unit getVariable [QGVAR(3den_maxPlateInVest), -1];
-        if (_3den_maxPlateInVest >= 0 || {GVAR(AIchancePlateInVest) > 0 && {(random 1) < GVAR(AIchancePlateInVest) && {!isNull (vestContainer _unit)}}}) then {
-            private _arr = [];
-            private _num = if (_3den_maxPlateInVest >= 0) then {
-                _3den_maxPlateInVest min GVAR(numWearablePlates)
-            } else {
-                [
-                    GVAR(AIchancePlateInVestMaxNo) min GVAR(numWearablePlates),
-                    (ceil random GVAR(numWearablePlates))
-                ] select (GVAR(AIchancePlateInVestMaxNo) isEqualTo 0);
-            };
-            for "_i" from 1 to _num do {
-                _arr pushBack GVAR(maxPlateHealth);
-            };
-            (vestContainer _unit) setVariable [QGVAR(plates), _arr];
-        };
+    if (_isLocal || {!alive _unit || {GVAR(numWearablePlates) isNotEqualTo 0 || {isNull (vestContainer _unit)}}}) exitWith {};
+    private _plateHp = ((vestContainer _unit) getVariable [QGVAR(plates), nil]);
+    if !(isNil "_plateHp") then {
+        ["plateSync", [_unit,_plateHp], _unit] call CBA_fnc_targetEvent;
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
+
+["plateSync", {
+    params ["_unit", "_plateHp"];
+    (vestContainer _unit) setVariable [QGVAR(plates),_plateHp];
+}] call CBA_fnc_addEventHandlerArgs;
 
 if (GVAR(aceMedicalLoaded)) then {
     // ace medical
