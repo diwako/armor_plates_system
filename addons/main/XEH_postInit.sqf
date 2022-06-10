@@ -37,7 +37,9 @@ GVAR(ammoPenCache) = createHashMap;
 
 ["CAManBase", "Local", {
     params ["_unit", "_isLocal"];
-    if (_isLocal && {alive _unit && {isNil {((vestContainer _unit) getVariable [QGVAR(plates), nil])}}}) then {
+
+    if (_isLocal && {alive _unit && {GVAR(numWearablePlates) isNotEqualTo 0 && {isNil {((vestContainer _unit) getVariable [QGVAR(plates), nil])}}}}) then {
+        if (isPlayer _unit || {(side group _unit) == civilian}) exitWith {};
         private _3den_maxPlateInVest = _unit getVariable [QGVAR(3den_maxPlateInVest), -1];
         if (_3den_maxPlateInVest >= 0 || {GVAR(AIchancePlateInVest) > 0 && {(random 1) < GVAR(AIchancePlateInVest) && {!isNull (vestContainer _unit)}}}) then {
             private _arr = [];
