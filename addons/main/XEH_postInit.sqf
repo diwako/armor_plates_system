@@ -35,6 +35,28 @@ if (!GVAR(enable)) exitWith {
 
 GVAR(ammoPenCache) = createHashMap;
 
+["CAManBase", "Local", {
+    params ["_unit", "_isLocal"];
+    if (_isLocal && {alive _unit && {isNil {((vestContainer _unit) getVariable [QGVAR(plates), nil])}}}) then {
+        private _3den_maxPlateInVest = _unit getVariable [QGVAR(3den_maxPlateInVest), -1];
+        if (_3den_maxPlateInVest >= 0 || {GVAR(AIchancePlateInVest) > 0 && {(random 1) < GVAR(AIchancePlateInVest) && {!isNull (vestContainer _unit)}}}) then {
+            private _arr = [];
+            private _num = if (_3den_maxPlateInVest >= 0) then {
+                _3den_maxPlateInVest min GVAR(numWearablePlates)
+            } else {
+                [
+                    GVAR(AIchancePlateInVestMaxNo) min GVAR(numWearablePlates),
+                    (ceil random GVAR(numWearablePlates))
+                ] select (GVAR(AIchancePlateInVestMaxNo) isEqualTo 0);
+            };
+            for "_i" from 1 to _num do {
+                _arr pushBack GVAR(maxPlateHealth);
+            };
+            (vestContainer _unit) setVariable [QGVAR(plates), _arr];
+        };
+    };
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
 if (GVAR(aceMedicalLoaded)) then {
     // ace medical
     ["CAManBase", "InitPost", {
