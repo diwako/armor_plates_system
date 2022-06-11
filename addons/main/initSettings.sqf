@@ -647,3 +647,38 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     [0, 1, 0.5, 0, true],
     true
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorUses),
+    "SLIDER",
+    [LLSTRING(injectorUses), LLSTRING(injectorUses_desc)],
+    _category,
+    [1, 20, 5, 0],
+    true,
+    {
+        params ["_value"];
+        GVAR(injectorUses) = round _value;
+    }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorEffect),
+    "LIST",
+    [LLSTRING(injectorEffect), LLSTRING(injectorEffect_desc)],
+    _category,
+    [[0, 1, 2, 3], [LLSTRING(downedFeedback_0), LLSTRING(injectorEffect_1), LLSTRING(injectorEffect_2), LLSTRING(injectorEffect_3)], 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorCoef),
+    "SLIDER",
+    [LLSTRING(injectorCoef), LLSTRING(injectorCoef_desc)],
+    _category,
+    [0.1, 12, 1.0, 1],
+    true,
+    {
+        params ["_value"];
+        GVAR(injectorCoef) = (parseNumber (_value toFixed 1));
+    }
+] call CBA_fnc_addSetting;
