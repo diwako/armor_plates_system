@@ -474,6 +474,8 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     [LLSTRING(enableBleedoutTimerRegen), LLSTRING(enableBleedoutTimerRegen_desc)],
     _category,
     true,
+    true,
+    {},
     true
 ] call CBA_fnc_addSetting;
 

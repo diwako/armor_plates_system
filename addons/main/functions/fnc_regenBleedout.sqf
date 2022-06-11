@@ -21,7 +21,7 @@ if (isNil QGVAR(bleedOutTimeMalus)) then {
     private _nextRegen = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus) - GVAR(bleedoutTimeSubtraction)) / GVAR(bleedoutRegenCoeff); // d(malus)/d(time) = 1/60 when malus = 0
     [
         {
-            if (!(_unit getVariable [QGVAR(unconscious),false]) && GVAR(enableBleedoutTimerRegen)) then {
+            if !(_unit getVariable [QGVAR(unconscious),false]) then {
                 GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) - 1;
                 if (GVAR(bleedOutTimeMalus) <= (-1 * GVAR(bleedoutTimeSubtraction))) then {GVAR(bleedOutTimeMalus) = nil};
             };
@@ -31,4 +31,3 @@ if (isNil QGVAR(bleedOutTimeMalus)) then {
         _nextRegen
     ] call CBA_fnc_waitAndExecute;
 };
-
