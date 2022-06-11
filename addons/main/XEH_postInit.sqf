@@ -133,8 +133,8 @@ if (GVAR(aceMedicalLoaded)) then {
                 private _newInjector = (QGVAR(autoInjector) + "_" + (str _uses));
                 private _given = [_unit, _newInjector] call CBA_fnc_addItem;
                 if !(_given) then {
-	                private _ground = "GroundWeaponHolder" createVehicle (position _unit);
-	                _ground addItemCargoGlobal [_newInjector, 1]; };
+                    private _ground = "GroundWeaponHolder" createVehicle (position _unit);
+                    _ground addItemCargoGlobal [_newInjector, 1]; };
             } else {
                 private _usedUp = "MedicalGarbage_01_Injector_F" createVehicle (getPosATL _unit);
                 _usedUp setDir (random 360);
