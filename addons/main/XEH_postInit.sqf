@@ -40,11 +40,11 @@ GVAR(ammoPenCache) = createHashMap;
     if (_isLocal || {!alive _unit || {GVAR(numWearablePlates) isNotEqualTo 0 || {isNull (vestContainer _unit)}}}) exitWith {};
     private _plateHp = ((vestContainer _unit) getVariable [QGVAR(plates), nil]);
     if !(isNil "_plateHp") then {
-        ["plateSync", [_unit,_plateHp], _unit] call CBA_fnc_targetEvent;
+        [QGVAR(plateSync), [_unit,_plateHp], _unit] call CBA_fnc_targetEvent;
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-["plateSync", {
+[QGVAR(plateSync), {
     params ["_unit", "_plateHp"];
     (vestContainer _unit) setVariable [QGVAR(plates),_plateHp];
 }] call CBA_fnc_addEventHandlerArgs;
