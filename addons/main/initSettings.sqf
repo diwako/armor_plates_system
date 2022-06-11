@@ -469,22 +469,11 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(enableBleedoutTimerRegen),
-    "CHECKBOX",
-    [LLSTRING(enableBleedoutTimerRegen), LLSTRING(enableBleedoutTimerRegen_desc)],
-    _category,
-    true,
-    true,
-    {},
-    true
-] call CBA_fnc_addSetting;
-
-[
     QGVAR(bleedoutRegenCoeff),
     "SLIDER",
     [LLSTRING(bleedoutRegenCoeff), LLSTRING(bleedoutRegenCoeff_desc)],
     _category,
-    [0.1, 10, 1.0, 1],
+    [0.0, 10, 0.0, 1],
     true,
     {
         params ["_value"];

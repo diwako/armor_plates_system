@@ -151,10 +151,6 @@ if (GVAR(aceMedicalLoaded)) then {
             }, _unit, 3] call CBA_fnc_waitAndExecute;
         };
     }] call CBA_fnc_addEventHandler;
-
-    if (GVAR(enableBleedoutTimerRegen)) then {
-        player call FUNC(regenBleedout);
-    };
 };
 
 if !(hasInterface) exitWith {

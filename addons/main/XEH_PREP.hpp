@@ -33,7 +33,6 @@ if (GVAR(aceMedicalLoaded)) then {
     PREP(hasHealItems);
     PREP(hitEh);
     PREP(receiveDamage);
-    PREP(regenBleedout);
     PREP(requestAIRevive);
     PREP(revive);
     PREP(setA3Damage);
