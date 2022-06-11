@@ -26,7 +26,7 @@ class CfgWeapons {
         GVAR(usesRemaining) = 20;
     };
     class GVAR(autoInjector)_1: GVAR(autoInjector)  {
-		scopeArsenal = 0;
+        scopeArsenal = 0;
         ace_arsenal_hide = 1;
         ace_arsenal_uniqueBase = QGVAR(autoInjector);
         descriptionShort = CSTRING(autoinjectorItemUsed_Desc_Short_1);
