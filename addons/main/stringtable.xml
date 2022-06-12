@@ -140,19 +140,19 @@
             <Chinese>插板UI顏色</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength">
-            <English>Plate animation headbob</English>
+            <English>Plate animation headbob scale</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
-            <English>Strength of first-person headbob during plate adding animation</English>
+            <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
             <English>Minimal</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
-            <English>Average</English>
+            <English>Medium</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
-            <English>Strong</English>
+            <English>High</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
