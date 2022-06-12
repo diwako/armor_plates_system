@@ -122,8 +122,11 @@ if (GVAR(aceMedicalLoaded)) then {
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(switchMove), {
-        params ["_unit", "_anim"];
+        params ["_unit", "_anim", ["_weaponReady", true]];
         _unit switchMove _anim;
+        if (_weaponReady) then {
+            _unit action ["WeaponInHand", _unit];
+        };
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(wokeUpCheck), {
