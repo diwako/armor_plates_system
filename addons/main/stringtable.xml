@@ -139,6 +139,21 @@
             <Chinesesimp>插板UI颜色</Chinesesimp>
             <Chinese>插板UI顏色</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength">
+            <English>Plate animation headbob</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
+            <English>Strength of first-person headbob during plate adding animation</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
+            <English>Minimal</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
+            <English>Average</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
+            <English>Strong</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
             <Polish>Punkty życia</Polish>
