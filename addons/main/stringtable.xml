@@ -409,6 +409,12 @@
         <Key ID="STR_diw_armor_plates_main_pressureUnit">
             <English>Preventing %1 from bleeding out, keep holding the button!</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutRegenCoeff">
+            <English>Bleedout timer recovery coefficient</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_bleedoutRegenCoeff_desc">
+            <English>Speed of bleedout timer recovery. Zero is disabled, higher is faster. Approximately how many seconds recovered per bleedout timer duration. (default: 0).</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
             <Polish>Czas leczenia przez medyka</Polish>

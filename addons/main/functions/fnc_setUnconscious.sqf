@@ -23,6 +23,13 @@ if (_set) then {
             };
             GVAR(bleedOutTimeMalus) = GVAR(bleedOutTimeMalus) + GVAR(bleedoutTimeSubtraction);
             _restBleedout = (GVAR(bleedoutTime) - GVAR(bleedOutTimeMalus)) max GVAR(minBleedoutTime);
+
+            // For coeff == 1, 1 second regenerated per duration of bleedout timer. coeff == 0 is no regeneration.
+            private _timeSinceLastDown = (cba_missionTime - (_unit getVariable [QGVAR(timeLastDowned), cba_missionTime]));
+            private _regen = round(sqrt(2*GVAR(bleedoutRegenCoeff)*_timeSinceLastDown + _restBleedout^2) - _restBleedout);
+            _restBleedout = (_restBleedout + _regen) min GVAR(bleedoutTime);
+
+            _unit setVariable [QGVAR(timeLastDowned), cba_missionTime];
         };
 
         _unit setVariable [QGVAR(bleedoutKillTime), cba_missionTime + _restBleedout, true];
