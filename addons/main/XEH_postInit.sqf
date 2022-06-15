@@ -35,6 +35,20 @@ if (!GVAR(enable)) exitWith {
 
 GVAR(ammoPenCache) = createHashMap;
 
+["CAManBase", "Local", {
+    params ["_unit", "_isLocal"];
+    if (_isLocal || {!alive _unit || {GVAR(numWearablePlates) isEqualTo 0 || {isNull (vestContainer _unit)}}}) exitWith {};
+    private _plateHp = ((vestContainer _unit) getVariable [QGVAR(plates), nil]);
+    if !(isNil "_plateHp") then {
+        [QGVAR(plateSync), [_unit,_plateHp], _unit] call CBA_fnc_targetEvent;
+    };
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
+[QGVAR(plateSync), {
+    params ["_unit", "_plateHp"];
+    (vestContainer _unit) setVariable [QGVAR(plates),_plateHp];
+}] call CBA_fnc_addEventHandlerArgs;
+
 if (GVAR(aceMedicalLoaded)) then {
     // ace medical
     ["CAManBase", "InitPost", {
