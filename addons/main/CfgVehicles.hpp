@@ -7,7 +7,7 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 2;
         displayName = "Armor Plate";
-        author = "diawko";
+        author = "diwako";
         vehicleClass = "Items";
         class TransportItems {
             MACRO_ADDITEM(plate,1);
@@ -20,7 +20,7 @@ class CfgVehicles {
         model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F"; // model = QPATHTOF(data\autoInjector.p3d);
         editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\MedicalGarbage_01_Injector_F.jpg";
         displayName = "Auto-Injector";
-        author = "diawko, alien314";
+        author = "alien314";
         vehicleClass = "Items";
         class TransportItems {
             MACRO_ADDITEM(injector,1);

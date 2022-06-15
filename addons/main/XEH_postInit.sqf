@@ -117,29 +117,30 @@ if (GVAR(aceMedicalLoaded)) then {
 
     [QGVAR(consumeInjectorUse), {
         params ["_unit"];
-        if (([_unit] call FUNC(hasInjector)) isEqualTo 1) then {
-            private _uses = [configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableInjector), ""]) >> QGVAR(usesRemaining), "NUMBER", GVAR(injectorUses)] call CBA_fnc_getConfigEntry;
-            if (_uses > GVAR(injectorUses)) then {_uses = GVAR(injectorUses)};
-            _uses = _uses - 1;
+        if ([_unit] call FUNC(hasInjector)) then {
+            private _uses = 0;
+            _unit removeItem (_unit getVariable [QGVAR(availableInjector), ""]);
+			private _fnc_count = {
+				params ["_items", "_amounts"];
+				{
+					if (_x in GVAR(injectorItems)) then {
+						_uses = _uses + (_amounts select _forEachIndex);
+					};
+				} forEach _items;
+			};
+			(getItemCargo uniformContainer _unit) call _fnc_count;
+			(getItemCargo vestContainer _unit) call _fnc_count;
+			(getItemCargo backpackContainer _unit) call _fnc_count;
             if (_unit isEqualTo (call CBA_fnc_currentUnit)) then {
                 [
                     [getText (configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableInjector), ""]) >> "picture"), 4],
-                    [format [LLSTRING(showUseCount_hint1), getText (configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableInjector), ""]) >> "displayName")]],
-                    [format [LLSTRING(showUseCount_hint2), _uses]],
+                    [format [LLSTRING(showFAKCount_hint1), getText (configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableInjector), ""]) >> "displayName")]],
+                    [format [LLSTRING(showFAKCount_hint2), _uses]],
                 true] call CBA_fnc_notify;
             };
-            _unit removeItem (_unit getVariable [QGVAR(availableInjector), ""]);
-            if (_uses > 0) then {
-                private _newInjector = (QGVAR(autoInjector) + "_" + (str _uses));
-                private _given = [_unit, _newInjector] call CBA_fnc_addItem;
-                if !(_given) then {
-                    private _ground = "GroundWeaponHolder" createVehicle (position _unit);
-                    _ground addItemCargoGlobal [_newInjector, 1]; };
-            } else {
-                private _usedUp = "MedicalGarbage_01_Injector_F" createVehicle (getPosATL _unit);
-                _usedUp setDir (random 360);
-                _usedUp enableSimulationGlobal false;
-            };
+			private _usedUp = "MedicalGarbage_01_Injector_F" createVehicle (getPosATL _unit);
+			_usedUp setDir (random 360);
+			_usedUp enableSimulationGlobal false;
             _unit setVariable [QGVAR(availableInjector), nil];
         };
     }] call CBA_fnc_addEventHandler;
@@ -317,7 +318,7 @@ if !(GVAR(aceMedicalLoaded)) then {
 
     GVAR(firstAidKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 401" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     GVAR(mediKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 619" configClasses (configFile >> "CfgWeapons") apply {configName _x};
-    GVAR(injectorItems) = format ["getNumber (_x >> '%1') > 0", QGVAR(usesRemaining)] configClasses (configFile >> "CfgWeapons") apply {configName _x};
+    GVAR(injectorItems) = format ["getNumber (_x >> '%1') > 0", QGVAR(isInjector)] configClasses (configFile >> "CfgWeapons") apply {configName _x};
 
     [] spawn {
         GVAR(playerDamageSync) = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
@@ -530,7 +531,7 @@ if (_aceInteractLoaded) then {
         }, _this, 1] call CBA_fnc_waitAndExecute;
     }, {
         params ["_target", "_player"];
-        alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector)) > 0}}
+        alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
     },{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
     ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;

@@ -964,65 +964,11 @@
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use Injector on %1</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
+            <English>Self</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
             <English>Use Injector</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_1">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 1</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_2">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 2</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_3">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 3</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_4">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 4</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_5">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 5</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_6">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 6</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_7">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 7</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_8">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 8</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_9">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 9</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_10">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 10</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_11">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 11</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_12">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 12</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_13">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 13</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_14">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 14</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_15">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 15</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_16">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 16</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_17">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 17</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_18">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 18</English>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_autoinjectorItemUsed_Desc_Short_19">
-            <English>Auto-Injector for reducing trauma to the body. Remaining uses: 19</English>
         </Key>
     </Package>
 </Project>

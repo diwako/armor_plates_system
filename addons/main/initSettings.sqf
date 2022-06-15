@@ -648,7 +648,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     true
 ] call CBA_fnc_addSetting;
 
-[
+/*[
     QGVAR(injectorUses),
     "SLIDER",
     [LLSTRING(injectorUses), LLSTRING(injectorUses_desc)],
@@ -659,7 +659,7 @@ _category = [_header, LLSTRING(subCategoryHealth)];
         params ["_value"];
         GVAR(injectorUses) = round _value;
     }
-] call CBA_fnc_addSetting;
+] call CBA_fnc_addSetting;*/
 
 [
     QGVAR(injectorEffect),
