@@ -139,6 +139,21 @@
             <Chinesesimp>插板UI颜色</Chinesesimp>
             <Chinese>插板UI顏色</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_readyAfterRevive">
+            <English>Weapon ready after reviving/pressing</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_readyAfterRevive_desc">
+            <English>Whether your weapon is up after reviving someone or pressing a wound</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_readyAfterRevive_0">
+            <English>Never</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_readyAfterRevive_1">
+            <English>After canceling</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_readyAfterRevive_2">
+            <English>Always</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
             <Polish>Punkty życia</Polish>

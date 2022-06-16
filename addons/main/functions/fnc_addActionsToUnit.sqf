@@ -44,7 +44,7 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+    [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
     _target setVariable [QGVAR(revivingUnit), nil, true];
 }, {
@@ -54,7 +54,7 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+    [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
     _target setVariable [QGVAR(revivingUnit), nil, true];
 }, [GVAR(medicReviveTime)], GVAR(medicReviveTime), 15, false, false, true];
@@ -133,7 +133,7 @@ private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleed
     private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+    [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(isHold), nil, true];
     _target setVariable [QGVAR(holdingUnit), nil, true];
 }, {
@@ -143,7 +143,7 @@ private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleed
     private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-    [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+    [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(isHold), nil, true];
     _target setVariable [QGVAR(holdingUnit), nil, true];
 }, [], 21.5, 14, false, false, true];
