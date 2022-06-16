@@ -10,6 +10,6 @@
 
 
 #define MACRO_ADDITEM(ITEM,COUNT) class _xx_##ITEM { \
-    name = #ITEM; \
+    name = QGVAR(ITEM); \
     count = COUNT; \
 }

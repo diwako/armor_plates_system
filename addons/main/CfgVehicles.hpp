@@ -7,10 +7,19 @@ class CfgVehicles {
         scope = 2;
         scopeCurator = 2;
         displayName = "Armor Plate";
-        author = "diawko";
+        author = "diwako";
         vehicleClass = "Items";
         class TransportItems {
             MACRO_ADDITEM(plate,1);
+        };
+    };
+
+    class GVAR(autoInjectorItem): GVAR(plateItem) {
+        editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\MedicalGarbage_01_Injector_F.jpg";
+        displayName = "Auto-Injector";
+        author = "alien314";
+        class TransportItems {
+            MACRO_ADDITEM(autoInjector,1);
         };
     };
 
