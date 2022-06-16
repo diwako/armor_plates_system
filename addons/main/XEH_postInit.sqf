@@ -135,7 +135,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if (!alive _unit) exitWith {};
         private _animation = animationState _unit;
         if ((_animation == "unconscious" || {_animation == "deadstate" || {_animation find "unconscious" != -1}}) && {lifeState _unit != "INCAPACITATED"}) then {
-            [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+            [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon", false]] call CBA_fnc_globalEvent;
         };
     }] call CBA_fnc_addEventHandler;
 
