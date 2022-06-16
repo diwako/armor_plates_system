@@ -120,17 +120,17 @@ if (GVAR(aceMedicalLoaded)) then {
         if ([_unit] call FUNC(hasInjector)) then {
             private _uses = 0;
             _unit removeItem (_unit getVariable [QGVAR(availableInjector), ""]);
-			private _fnc_count = {
-				params ["_items", "_amounts"];
-				{
-					if (_x in GVAR(injectorItems)) then {
-						_uses = _uses + (_amounts select _forEachIndex);
-					};
-				} forEach _items;
-			};
-			(getItemCargo uniformContainer _unit) call _fnc_count;
-			(getItemCargo vestContainer _unit) call _fnc_count;
-			(getItemCargo backpackContainer _unit) call _fnc_count;
+            private _fnc_count = {
+                params ["_items", "_amounts"];
+                {
+                    if (_x in GVAR(injectorItems)) then {
+                        _uses = _uses + (_amounts select _forEachIndex);
+                    };
+                } forEach _items;
+            };
+            (getItemCargo uniformContainer _unit) call _fnc_count;
+            (getItemCargo vestContainer _unit) call _fnc_count;
+            (getItemCargo backpackContainer _unit) call _fnc_count;
             if (_unit isEqualTo (call CBA_fnc_currentUnit)) then {
                 [
                     [getText (configFile >> "CfgWeapons" >> (_unit getVariable [QGVAR(availableInjector), ""]) >> "picture"), 4],
@@ -138,9 +138,9 @@ if (GVAR(aceMedicalLoaded)) then {
                     [format [LLSTRING(showFAKCount_hint2), _uses]],
                 true] call CBA_fnc_notify;
             };
-			private _usedUp = "MedicalGarbage_01_Injector_F" createVehicle (getPosATL _unit);
-			_usedUp setDir (random 360);
-			_usedUp enableSimulationGlobal false;
+            private _usedUp = "MedicalGarbage_01_Injector_F" createVehicle (getPosATL _unit);
+            _usedUp setDir (random 360);
+            _usedUp enableSimulationGlobal false;
             _unit setVariable [QGVAR(availableInjector), nil];
         };
     }] call CBA_fnc_addEventHandler;

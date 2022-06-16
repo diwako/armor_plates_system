@@ -152,18 +152,18 @@ _arr3 call BIS_fnc_holdActionAdd;
 
 
 private _id2Array = ["<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa' size='1.8' shadow=2 />", {
-	params ["", "_caller"];
-	private _isProne = stance _caller == "PRONE";
-	private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
-	private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
-	_medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-	if (_medicAnim != "") then {
-		_caller playMove _medicAnim;
-	};
-	[{params ["_target", "_caller"];
-		if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
-		[QGVAR(reduceMalus), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
-	}, _this, 1] call CBA_fnc_waitAndExecute;
+    params ["", "_caller"];
+    private _isProne = stance _caller == "PRONE";
+    private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+    if (_medicAnim != "") then {
+        _caller playMove _medicAnim;
+    };
+    [{params ["_target", "_caller"];
+        if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
+        [QGVAR(reduceMalus), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
+    }, _this, 1] call CBA_fnc_waitAndExecute;
 }, [], 9, false, true, "",
 format ["_this getUnitTrait 'Medic' && {alive _originalTarget && {([_this] call %1) && {!(_originalTarget isEqualTo _this && {isNil '%2'})}}}", QFUNC(hasInjector), QGVAR(bleedoutTimeMalus)],
 2.5];
