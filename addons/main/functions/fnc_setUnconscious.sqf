@@ -59,9 +59,9 @@ if (_set) then {
         [_set] call FUNC(showDownedSkull);
     };
     if (isNull objectParent _unit) then {
-        [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+        [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon", false]] call CBA_fnc_globalEvent;
         if (currentWeapon _unit == secondaryWeapon _unit && {currentWeapon _unit != ""}) then {
-            [QGVAR(switchMove), [_unit, "AmovPknlMstpSrasWlnrDnon"]] call CBA_fnc_globalEvent;
+            [QGVAR(switchMove), [_unit, "AmovPknlMstpSrasWlnrDnon", false]] call CBA_fnc_globalEvent;
         };
         [{
             [QGVAR(wokeUpCheck), [_this]] call CBA_fnc_globalEvent;
