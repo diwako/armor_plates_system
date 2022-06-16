@@ -15,7 +15,6 @@ class CfgVehicles {
     };
 
     class GVAR(autoInjectorItem): GVAR(plateItem) {
-        model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F"; // model = QPATHTOF(data\autoInjector.p3d);
         editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\MedicalGarbage_01_Injector_F.jpg";
         displayName = "Auto-Injector";
         author = "alien314";
