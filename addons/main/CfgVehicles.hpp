@@ -14,16 +14,13 @@ class CfgVehicles {
         };
     };
 
-    class GVAR(autoInjector): Item_Base_F {
-        scope = 2;
-        scopeCurator = 2;
+    class GVAR(autoInjectorItem): GVAR(plateItem) {
         model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F"; // model = QPATHTOF(data\autoInjector.p3d);
         editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\MedicalGarbage_01_Injector_F.jpg";
         displayName = "Auto-Injector";
         author = "alien314";
-        vehicleClass = "Items";
         class TransportItems {
-            MACRO_ADDITEM(injector,1);
+            MACRO_ADDITEM(autoInjector,1);
         };
     };
 

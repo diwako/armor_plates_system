@@ -41,9 +41,7 @@ switch (GVAR(injectorEffect)) do
 
 GVAR(bleedOutTimeMalus) = _adjustedMalus;
 
-private _unconscious = _unit getVariable [QGVAR(unconscious), false];
-
-if (_unconscious) then {
+if (_unit getVariable [QGVAR(unconscious), false]) then {
     if (isNil "_adjustedMalus") then { _adjustedMalus = 0; };
     _unit setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - _adjustedMalus)), true];
 };
