@@ -145,6 +145,15 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(headBobStrength),
+    "LIST",
+    [LLSTRING(headBobStrength), LLSTRING(headBobStrength_desc)],
+    _category,
+    [[0, 1, 2], [LLSTRING(headBobStrength_0), LLSTRING(headBobStrength_1), LLSTRING(headBobStrength_2)], 1],
+    false
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [
@@ -654,5 +663,14 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     [LLSTRING(maxHealRifleman), LLSTRING(maxHealRifleman_desc)],
     _category,
     [0, 1, 0.5, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowLimping),
+    "CHECKBOX",
+    [LLSTRING(allowLimping), LLSTRING(allowLimping_desc)],
+    _category,
+    false,
     true
 ] call CBA_fnc_addSetting;

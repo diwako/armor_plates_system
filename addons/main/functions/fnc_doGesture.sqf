@@ -10,7 +10,7 @@ if (missionNamespace getVariable ["ace_common_isReloading", false]) exitWith {};
 if (_add) then {
     private _seconds = (floor GVAR(timeToAddPlate)) min MAX;
     if (_seconds < MIN) exitWith {};
-    _player playActionNow (format [QGVAR(addPlate_%1), _seconds]);
+    _player playActionNow (format [QGVAR(addPlate_%1_%2), _seconds, GVAR(headBobStrength)]);
 
     // prevent button spam for sound
     _player setVariable [QGVAR(gestureStart), cba_missionTime];

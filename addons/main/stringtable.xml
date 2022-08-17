@@ -154,6 +154,21 @@
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_2">
             <English>Always</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength">
+            <English>Plate animation headbob scale</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
+            <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
+            <English>Minimal</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
+            <English>Medium</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
+            <English>High</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
             <Polish>Punkty życia</Polish>
@@ -300,9 +315,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_pelvisMult">
             <English>Pelvis Multiplier</English>
+            <Polish>Mnożnik dla miednicy</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pelvisMult_desc">
             <English>Damage multiplier on pelvis shots</English>
+            <Polish>Mnożnik obrażeń przy trafieniach w miednicę</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
@@ -318,30 +335,39 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage">
             <English>Allow damage on unconscious units</English>
+            <Polish>Zezwól na otrzymywanie obrażeń przez nieprzytomnego</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_desc">
             <English>Allows that unconscious units can take damage. This allows the execution of unconscious units</English>
+            <Polish>Umożliwia nieprzytomnym jednostkom otrzymywanie obrażeń. Pozwala na wykonywanie egzekucji</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_1">
             <English>Downed Hitpoints</English>
+            <Polish>Punkty życia w nieprzytomności</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_2">
             <English>Hit count</English>
+            <Polish>Liczba trafień</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_3">
             <English>Both</English>
+            <Polish>Oba</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP">
             <English>Downed HP Multiplier</English>
+            <Polish>Mnożnik HP nieprzytomnej jednostki</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP_desc">
             <English>Multiplied by a unit's max hp to determine how much damage they can take while down.</English>
+            <Polish>Mnożone przez maksymalne zdrowie jednostki w celu obliczenia, ile obrażeń może przyjąć podczas nieprzytomności.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits">
             <English>Downed Hits count</English>
+            <Polish>Trafienia nieprzytomnej jednostki</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits_desc">
             <English>Number of hits a unit can take while down before dying.</English>
+            <Polish>Liczba trafień które nieprzytomna jednostka może przyjąć zanim umrze.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
@@ -393,36 +419,47 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime">
             <English>Minimum Bleedout time</English>
+            <Polish>Minimalny czas krwawienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
             <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
+            <Polish>Czas krwawienia w sekundach, który otrzymuje gracz bez względu na liczbę poprzednich powaleń.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop">
             <English>Enable Pressure Wound action</English>
+            <Polish>Włącz uciskanie rany</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_desc">
             <English>Action allows players to delay bleedout until/while another unit revives. Revives can also be allowed to do the same.</English>
+            <Polish>Akcja ta umożliwia graczowi spowolnienie krwawienia zanim ranna jednostka zostanie uratowana. Wskrzeszanie działa na podobnej zasadzie.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_1">
             <English>Enable</English>
+            <Polish>Włączone</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_2">
             <English>Enable + Medic revives</English>
+            <Polish>Włączone + Wskrzeszanie przez medyka</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_3">
             <English>Enable + Revives</English>
+            <Polish>Włączone + Wskrzeszanie</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover">
             <English>Pressure Wound bleedout recovery</English>
+            <Polish>Zatrzymywanie krwawienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
             <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
+            <Polish>Sekundy krwawienia odzyskiwane co 3 sekundy uciskania rany (domyślnie: 4, stabilizuje się podczas wykonywania działania, ping ma wpływ na aktualizowanie tych wartości).</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureWound">
             <English>Pressure Wound</English>
+            <Polish>Uciskaj ranę</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureUnit">
             <English>Preventing %1 from bleeding out, keep holding the button!</English>
+            <Polish>Zatrzymujesz krwawienie u: %1, trzymaj przycisk!</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
@@ -570,9 +607,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic">
             <English>Medic Range for downed icon</English>
+            <Polish>Zasięg widzenia ikon dla medyka</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic_desc">
             <English>The maximum range medics can see a downed friendly unit</English>
+            <Polish>Maksymalny zasięg w którym medycy widzą nieprzytomną jednostkę sojuszniczą.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
@@ -798,15 +837,19 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions">
             <English>Radio Mod restrictions on uncon</English>
+            <Polish>Ograniczenia radia nieprzytomnego</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_desc">
             <English>Allows or disallows the usage of radios, can also be set to disallow speaking entirely</English>
+            <Polish>Pozwala na włączanie lub wyłączanie korzystania z radia przez rannego, może też wyłączyć możliwość mówienia w ogóle.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_1">
             <English>No radio</English>
+            <Polish>Brak radia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_2">
             <English>No speaking at all</English>
+            <Polish>Brak możliwości mówienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
@@ -864,21 +907,27 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount">
             <English>Display number of remaining FAKs</English>
+            <Polish>Pokaż liczbę pozostałych FAKów</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_desc">
             <English>Shows the number of remaining FAKs after a healing action.</English>
+            <Polish>Pokazuje liczbę posiadanych FAKów po leczeniu.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint1">
             <English>%1 has been used</English>
+            <Polish>Zużyto: %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint2">
             <English>%1 healing item(s) remaining</English>
+            <Polish>Pozostałychh przedmiotów leczących: %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum">
             <English>Show FAK hint only with minimum FAKs</English>
+            <Polish>Pokaż podpowiedź o FAKach tylko z ich minimalną ilością</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum_desc">
             <English>Only shows the FAK count hint if the remaining FAKs after healing are given number or below</English>
+            <Polish>Pokazuje informację o FAKach, jeśli jest w ich ekwipunku tyle lub mniej.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
@@ -906,9 +955,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic">
             <English>Medic Range for bleed out timer</English>
+            <Polish>Zasięg renderowania licznika dla medyka</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
+            <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
@@ -933,6 +984,12 @@
             <Polish>Realizm</Polish>
             <Chinesesimp>逼真现实主义</Chinesesimp>
             <Chinese>逼真現實主義</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowLimping">
+            <English>Allow extended limb damage</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
+            <English>Allows for limping and more sway the more damage a unit has</English>
         </Key>
     </Package>
 </Project>
