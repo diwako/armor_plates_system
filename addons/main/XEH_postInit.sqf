@@ -136,8 +136,11 @@ if (GVAR(aceMedicalLoaded)) then {
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(switchMove), {
-        params ["_unit", "_anim"];
+        params ["_unit", "_anim", ["_weaponReady", true]];
         _unit switchMove _anim;
+        if (_weaponReady) then {
+            _unit action ["WeaponInHand", _unit];
+        };
     }] call CBA_fnc_addEventHandler;
 
     [QGVAR(wokeUpCheck), {
@@ -146,7 +149,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if (!alive _unit) exitWith {};
         private _animation = animationState _unit;
         if ((_animation == "unconscious" || {_animation == "deadstate" || {_animation find "unconscious" != -1}}) && {lifeState _unit != "INCAPACITATED"}) then {
-            [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+            [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon", false]] call CBA_fnc_globalEvent;
         };
     }] call CBA_fnc_addEventHandler;
 
@@ -358,7 +361,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                        [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
                     };
                     _target setVariable [QGVAR(beingRevived), nil, true];
                     _target setVariable [QGVAR(revivingUnit), nil, true];
@@ -369,7 +372,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                        [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
                     };
                     _target setVariable [QGVAR(beingRevived), nil, true];
                     _target setVariable [QGVAR(revivingUnit), nil, true];
@@ -424,7 +427,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                        [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
                     };
                     _target setVariable [QGVAR(isHold), nil, true];
                     _target setVariable [QGVAR(holdingUnit), nil, true];
@@ -435,7 +438,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
-                        [QGVAR(switchMove), [_caller, _anim]] call CBA_fnc_globalEvent;
+                        [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
                     };
                     _target setVariable [QGVAR(isHold), nil, true];
                     _target setVariable [QGVAR(holdingUnit), nil, true];

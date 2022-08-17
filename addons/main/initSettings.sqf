@@ -326,6 +326,15 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     }
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(readyAfterRevive),
+    "LIST",
+    [LLSTRING(readyAfterRevive), LLSTRING(readyAfterRevive_desc)],
+    _category,
+    [[0, 1, 2], [LLSTRING(readyAfterRevive_0), LLSTRING(readyAfterRevive_1), LLSTRING(readyAfterRevive_2)], 1],
+    false
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryGeneral)];
 
 [
