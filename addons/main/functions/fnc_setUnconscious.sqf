@@ -38,7 +38,6 @@ if (_set) then {
             private _unconscious = (lifeState _unit) == "INCAPACITATED";
             if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
                 // kill them
-                [_unit, false] call FUNC(setUnconscious);
                 _unit setHitPointDamage ["hitHead", 1, true, _unit];
             } else {
                 if (alive _unit && {_unit getVariable [QGVAR(unconscious), false] && {!_unconscious}}) then {
@@ -59,9 +58,9 @@ if (_set) then {
         [_set] call FUNC(showDownedSkull);
     };
     if (isNull objectParent _unit) then {
-        [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon"]] call CBA_fnc_globalEvent;
+        [QGVAR(switchMove), [_unit, "AmovPpneMstpSnonWnonDnon", false]] call CBA_fnc_globalEvent;
         if (currentWeapon _unit == secondaryWeapon _unit && {currentWeapon _unit != ""}) then {
-            [QGVAR(switchMove), [_unit, "AmovPknlMstpSrasWlnrDnon"]] call CBA_fnc_globalEvent;
+            [QGVAR(switchMove), [_unit, "AmovPknlMstpSrasWlnrDnon", false]] call CBA_fnc_globalEvent;
         };
         [{
             [QGVAR(wokeUpCheck), [_this]] call CBA_fnc_globalEvent;
