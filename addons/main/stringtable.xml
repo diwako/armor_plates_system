@@ -164,38 +164,55 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive">
             <English>Weapon ready after reviving/pressing</English>
+            <Polish>Broń przygotowana po ożywieniu/uciskaniu</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_desc">
             <English>Whether your weapon is up after reviving someone or pressing a wound</English>
+            <Polish>Broń jest gotowa do strzału po ożywieniu kogoś lub po uciskaniu rany.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_0">
             <English>Never</English>
+            <Polish>Nigdy</Polish>
             <Russian>Никогда</Russian>
+        </Key>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_1">
             <English>After canceling</English>
+            <Polish>Po anulowaniu</Polish>
+            <Russian>После отмены</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_2">
             <English>Always</English>
+            <Polish>Zawsze</Polish>
             <Russian>Всегда</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength">
             <English>Plate animation headbob scale</English>
+            <Polish>Skala animacji ruchu głową</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
             <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
+            <Polish>Mnożnik poruszania głową w 1. osobie podczas animacji dodawania płyty. Właściwa intensywność animacji zależy od czasu dokładania płyt.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
             <English>Minimal</English>
+            <Polish>Minimalna</Polish>
             <Russian>Минимум</Russian>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
+       <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
             <English>Medium</English>
+            <Polish>Normalna</Polish>
             <Russian>Среднее</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
             <English>High</English>
-            <Russian>Максимум</Russian>
+            <Polish>Duża</Polish>
+            <Russian>Маскимум</Russian>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
+            <English>Medium</English>
+            <Polish>Normalna</Polish>
+        </Key>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
@@ -904,7 +921,7 @@
             <Polish>Kolor licznika wykrwawienia</Polish>
             <Chinesesimp>失血计时器颜色</Chinesesimp>
             <Chinese>失血計時器顏色</Chinese>
-            <Russian>Цвет таймера кровотечения</Russian>
+             <Russian>Цвет таймера кровопотери</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
@@ -1148,9 +1165,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping">
             <English>Allow extended limb damage</English>
+            <Polish>Zezwól na rozszerzone obrażenia kończyn</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
             <English>Allows for limping and more sway the more damage a unit has</English>
+            <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
         </Key>
     </Package>
 </Project>
