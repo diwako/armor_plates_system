@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_unit", "_healer", "_consumeFAK"];
+params [["_unit", objNull], ["_healer", objNull], ["_consumeFAK", false]];
 if !(alive _unit) exitWith {};
 if !(local _unit) exitWith {
     [QGVAR(revive), [_unit, _healer, _consumeFAK], _unit] call CBA_fnc_targetEvent;
