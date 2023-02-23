@@ -965,6 +965,24 @@
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
             <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority">
+            <English>Hold Action Priority</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_desc">
+            <English>Whether to prioritize reviving or pressing wound, when both are possible. Needs mission restart.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_0">
+            <English>Revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_1">
+            <English>Press Wound</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionRange">
+            <English>Revive/Press Wound range</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionRange_desc">
+            <English>Range in meters from the target where revive and press wound actions become possible.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
             <Polish>Tryb pancerza</Polish>

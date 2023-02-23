@@ -558,6 +558,28 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(holdActionPriority),
+    "LIST",
+    [LLSTRING(holdActionPriority), LLSTRING(holdActionPriority_desc)],
+    _category,
+    [[0, 1], [LLSTRING(holdActionPriority_0), LLSTRING(holdActionPriority_1)], 0],
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(holdActionRange),
+    "SLIDER",
+    [LLSTRING(holdActionRange), LLSTRING(holdActionRange_desc)],
+    _category,
+    [0, 12, 5.0, 1],
+    true,
+    {
+        params ["_value"];
+        GVAR(holdActionRange) = (parseNumber (_value toFixed 1));
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowSelfRevive),
     "CHECKBOX",
     [LLSTRING(allowSelfRevive), LLSTRING(allowSelfRevive_desc)],

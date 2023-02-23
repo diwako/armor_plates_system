@@ -146,6 +146,6 @@ private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleed
     [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(isHold), nil, true];
     _target setVariable [QGVAR(holdingUnit), nil, true];
-}, [], 21.5, 14, false, false, true];
+}, [], 21.5, (14.5 + GVAR(holdActionPriority)), false, false, true];
 
 _arr3 call BIS_fnc_holdActionAdd;
