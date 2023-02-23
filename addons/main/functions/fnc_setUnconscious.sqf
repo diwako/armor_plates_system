@@ -38,6 +38,7 @@ if (_set) then {
             private _unconscious = (lifeState _unit) == "INCAPACITATED";
             if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
                 // kill them
+                [_unit, false] call FUNC(setUnconscious);
                 _unit setHitPointDamage ["hitHead", 1, true, _unit];
             } else {
                 if (alive _unit && {_unit getVariable [QGVAR(unconscious), false] && {!_unconscious}}) then {
