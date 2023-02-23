@@ -141,33 +141,43 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive">
             <English>Weapon ready after reviving/pressing</English>
+            <Polish>Broń przygotowana po ożywieniu/uciskaniu</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_desc">
             <English>Whether your weapon is up after reviving someone or pressing a wound</English>
+            <Polish>Broń jest gotowa do strzału po ożywieniu kogoś lub po uciskaniu rany.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_0">
             <English>Never</English>
+            <Polish>Nigdy</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_1">
             <English>After canceling</English>
+            <Polish>Po anulowaniu</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_2">
             <English>Always</English>
+            <Polish>Zawsze</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength">
             <English>Plate animation headbob scale</English>
+            <Polish>Skala animacji ruchu głową</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
             <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
+            <Polish>Mnożnik poruszania głową w 1. osobie podczas animacji dodawania płyty. Właściwa intensywność animacji zależy od czasu dokładania płyt.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
             <English>Minimal</English>
+            <Polish>Minimalna</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
             <English>Medium</English>
+            <Polish>Normalna</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
             <English>High</English>
+            <Polish>Duża</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
@@ -784,12 +794,6 @@
             <Chinesesimp>当隐藏UI被启用时，它将在任何UI条开始面向别处之前，使用这个设置的指定时间(秒)</Chinesesimp>
             <Chinese>當隱藏UI被啟用時，它將在任何UI條開始面向別處之前，使用這個設置的指定時間(秒)</Chinese>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
-            <English>Bleedout timer color</English>
-            <Polish>Kolor licznika wykrwawienia</Polish>
-            <Chinesesimp>失血计时器颜色</Chinesesimp>
-            <Chinese>失血計時器顏色</Chinese>
-        </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
             <Polish>Podnieś się</Polish>
@@ -970,6 +974,24 @@
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
             <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority">
+            <English>Hold Action Priority</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_desc">
+            <English>Whether to prioritize reviving or pressing wound, when both are possible. Needs mission restart.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_0">
+            <English>Revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_1">
+            <English>Press Wound</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionRange">
+            <English>Revive/Press Wound range</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionRange_desc">
+            <English>Range in meters from the target where revive and press wound actions become possible.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
             <Polish>Tryb pancerza</Polish>
@@ -996,9 +1018,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping">
             <English>Allow extended limb damage</English>
+            <Polish>Zezwól na rozszerzone obrażenia kończyn</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
             <English>Allows for limping and more sway the more damage a unit has</English>
+            <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses">
             <English>Auto-Injector use count</English>

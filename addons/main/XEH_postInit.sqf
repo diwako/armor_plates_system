@@ -433,7 +433,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                 params ["_target", "_player", ""];
                 !(_target getVariable [QGVAR(beingRevived), false] && {alive (_target getVariable [QGVAR(revivingUnit), objNull])}) && {[_player, _target] call FUNC(canRevive)}
             },
-            {}, [], [0,0,0], 5,[false,true,false,false,false]
+            {}, [], [0,0,0], GVAR(holdActionRange),[false,true,false,false,false]
         ] call ace_interact_menu_fnc_createAction;
         ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
@@ -496,7 +496,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                 params ["_target", "_player", ""];
                 !(_target getVariable [QGVAR(isHold), false] && {alive (_target getVariable [QGVAR(holdingUnit), objNull])}) && {[_player, _target] call FUNC(canHold)}
             },
-                {}, [], [0,0,0], 5,[false,true,false,false,false]
+                {}, [], [0,0,0], GVAR(holdActionRange),[false,true,false,false,false]
             ] call ace_interact_menu_fnc_createAction;
             ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
         };
