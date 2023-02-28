@@ -165,10 +165,12 @@
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive">
             <English>Weapon ready after reviving/pressing</English>
             <Polish>Broń przygotowana po ożywieniu/uciskaniu</Polish>
+            <Russian>Оружие на изготовке после ревайва/всегда</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_desc">
             <English>Whether your weapon is up after reviving someone or pressing a wound</English>
             <Polish>Broń jest gotowa do strzału po ożywieniu kogoś lub po uciskaniu rany.</Polish>
+            <Russian>Независимо от того, поднято ли ваше оружие после оживления кого-то или надавливания на рану</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_0">
             <English>Never</English>
@@ -189,11 +191,13 @@
         <Key ID="STR_diw_armor_plates_main_headBobStrength">
             <English>Plate animation headbob scale</English>
             <Polish>Skala animacji ruchu głową</Polish>
+            <Russian>Шкала анимации бронепластины</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
             <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
             <Polish>Mnożnik poruszania głową w 1. osobie podczas animacji dodawania płyty. Właściwa intensywność animacji zależy od czasu dokładania płyt.</Polish>
-        </Key>
+            <Russian>Множитель на вращение головы от первого лица во время анимации добавления бронепластин. Фактическая интенсивность зависит от времени добавления пластин</Russian>    
+     </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
             <English>Minimal</English>
             <Polish>Minimalna</Polish>
@@ -212,6 +216,7 @@
         <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
             <English>Medium</English>
             <Polish>Normalna</Polish>
+             <Russian>Среднее</Russian>
         </Key>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
@@ -385,10 +390,12 @@
         <Key ID="STR_diw_armor_plates_main_pelvisMult">
             <English>Pelvis Multiplier</English>
             <Polish>Mnożnik dla miednicy</Polish>
+            <Russian>Множитель таза</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pelvisMult_desc">
             <English>Damage multiplier on pelvis shots</English>
             <Polish>Mnożnik obrażeń przy trafieniach w miednicę</Polish>
+            <Russian>Множитель урона при выстрелах в таз</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
@@ -432,18 +439,22 @@
         <Key ID="STR_diw_armor_plates_main_downedDamageHP">
             <English>Downed HP Multiplier</English>
             <Polish>Mnożnik HP nieprzytomnej jednostki</Polish>
+            <Russian>Множитель урона при выстрелах в таз</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP_desc">
             <English>Multiplied by a unit's max hp to determine how much damage they can take while down.</English>
             <Polish>Mnożone przez maksymalne zdrowie jednostki w celu obliczenia, ile obrażeń może przyjąć podczas nieprzytomności.</Polish>
+            <Russian>Умножается на максимальное здоровье юнита, чтобы определить, какой урон он может выдержать, пока лежит.</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits">
             <English>Downed Hits count</English>
             <Polish>Trafienia nieprzytomnej jednostki</Polish>
+            <Russian>Убить бессознательного юнита</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits_desc">
             <English>Number of hits a unit can take while down before dying.</English>
             <Polish>Liczba trafień które nieprzytomna jednostka może przyjąć zanim umrze.</Polish>
+            <Russian>Количество попаданий, которое юнит может выдержать перед смертью.</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
@@ -509,14 +520,17 @@
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
             <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
             <Polish>Czas krwawienia w sekundach, który otrzymuje gracz bez względu na liczbę poprzednich powaleń.</Polish>
+            <Russian>Секунды времени кровотечения, которое игрок получает независимо от того, сколько раз он был сбит с ног.</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop">
             <English>Enable Pressure Wound action</English>
             <Polish>Włącz uciskanie rany</Polish>
+            <Russian>Включить бессознательное состояние</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_desc">
             <English>Action allows players to delay bleedout until/while another unit revives. Revives can also be allowed to do the same.</English>
             <Polish>Akcja ta umożliwia graczowi spowolnienie krwawienia zanim ranna jednostka zostanie uratowana. Wskrzeszanie działa na podobnej zasadzie.</Polish>
+             <Russian>Действие позволяет игрокам отсрочить кровотечение до тех пор, пока другой юнит не оживет. Возрождения также могут быть разрешены делать то же самое</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_1">
             <English>Enable</English>
@@ -536,18 +550,22 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover">
             <English>Pressure Wound bleedout recovery</English>
             <Polish>Zatrzymywanie krwawienia</Polish>
+            <Russian>Остановка кровотечения</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
             <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
             <Polish>Sekundy krwawienia odzyskiwane co 3 sekundy uciskania rany (domyślnie: 4, stabilizuje się podczas wykonywania działania, ping ma wpływ na aktualizowanie tych wartości).</Polish>
+            <Russian>Секунды времени кровотечения восстанавливаются каждые 3 секунды, пока действие удерживается (по умолчанию: 4, должно более или менее стабилизироваться во время действия, может повлиять пинг).</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureWound">
             <English>Pressure Wound</English>
             <Polish>Uciskaj ranę</Polish>
+            <Russian>Кровотечение</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureUnit">
             <English>Preventing %1 from bleeding out, keep holding the button!</English>
             <Polish>Zatrzymujesz krwawienie u: %1, trzymaj przycisk!</Polish>
+            <Russian>Чтобы предотвратить кровотечение %1, продолжайте удерживать кнопку!</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
@@ -1076,7 +1094,7 @@
         <Key ID="STR_diw_armor_plates_main_showFAKCount_desc">
             <English>Shows the number of remaining FAKs after a healing action.</English>
             <Polish>Pokazuje liczbę posiadanych FAKów po leczeniu.</Polish>
-             <Russian>Показывает количество оставшихся бинтов после лечения.</Russian>
+            <Russian>Показывает количество оставшихся бинтов после лечения.</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint1">
             <English>%1 has been used</English>
@@ -1134,6 +1152,7 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
             <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
+             <Russian>Макс. расстояние от медика чтобы видеть значок убитого.</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
@@ -1166,10 +1185,12 @@
         <Key ID="STR_diw_armor_plates_main_allowLimping">
             <English>Allow extended limb damage</English>
             <Polish>Zezwól na rozszerzone obrażenia kończyn</Polish>
+            <Russian>Разрешить расширенное повреждение конечностей</Russian>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
             <English>Allows for limping and more sway the more damage a unit has</English>
             <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
+            <Russian>Позволяет хромать и больше раскачиваться, чем больше урона у юнита.</Russian>
         </Key>
     </Package>
 </Project>
