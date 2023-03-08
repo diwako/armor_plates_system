@@ -555,23 +555,26 @@ if (_aceInteractLoaded) then {
 };
 
 /* Plate transfer events for compatibility use
-  Use `"diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;` before altering unit loadout, and 
-  `"diw_armor_plates_main_transfer" call CBA_fnc_localEvent;` after altering the loadout to maintain the
+  Using cba_fnc_getLoadout/cba_fnc_setLoadout when altering loadout should automatically load plates.
+  If using vanilla functions, use `"diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;` before altering unit
+  loadout, and `"diw_armor_plates_main_transfer" call CBA_fnc_localEvent;` after altering the loadout to maintain the
   player's plates when changing loadout/vest.
 */
 [QGVAR(transferStart), {
     if (isNull (vestContainer player)) exitWith {GVAR(plateTransfer) = nil};
-    GVAR(plateTransfer) = [(vestContainer player),(vestContainer player) getVariable [QGVAR(plates),[]]];
+    private _vest = vestContainer player;
+    GVAR(plateTransfer) = [_vest, _vest getVariable [QGVAR(plates),[]]];
 }] call CBA_fnc_addEventHandler;
 [QGVAR(transfer), {
     if (isNil QGVAR(plateTransfer) || {isNull (vestContainer player)}) exitWith {GVAR(plateTransfer) = nil;};
-    if ( (vestContainer player) isEqualTo (GVAR(plateTransfer) # 0) ) exitWith {GVAR(plateTransfer) = nil;};
-    (vestContainer player) setVariable [QGVAR(plates),(GVAR(plateTransfer) # 1)];
+    private _vest = vestContainer player;
+    if ( _vest isEqualTo (GVAR(plateTransfer) # 0) ) exitWith {GVAR(plateTransfer) = nil;};
+    _vest setVariable [QGVAR(plates),(GVAR(plateTransfer) # 1)];
     [player] call FUNC(updatePlateUi);
     GVAR(plateTransfer) = nil;
 }] call CBA_fnc_addEventHandler;
 
-// Ace Arsenal plate transfer
+/*/ Ace Arsenal plate transfer
 private _aceArsenalLoaded = !(isNil "ace_arsenal_fnc_openBox");
 if (_aceArsenalLoaded) then {
     ["ace_arsenal_displayOpened", {
@@ -580,7 +583,43 @@ if (_aceArsenalLoaded) then {
     ["ace_arsenal_displayClosed", {
         "diw_armor_plates_main_transfer" call CBA_fnc_localEvent;
     }] call CBA_fnc_addEventHandler;
-};
+};//*/
+
+["CBA_loadoutSet", {
+    params ["_unit", "", "_extradata"];
+    if (isNull (vestContainer _unit)) exitWith {};
+    private _plates = _extradata getOrDefault [QGVAR(plates), []];
+
+    // setting check
+    private _count = count _plates;
+    private _platesMax = GVAR(numWearablePlates);
+    private _plateMaxHp = GVAR(maxPlateHealth);
+    if (_count > _platesMax) then {
+        for "_i" from _platesMax to (_count -1) do {
+            _plates deleteAt _platesMax;
+        };
+        _count = _platesMax;
+    };
+    if ((_plates # 0) > _plateMaxHp) then {
+        _plates = _plates apply { [_x, _plateMaxHp] select (_x > _plateMaxHp) };
+    };
+
+    private _vest = vestContainer _unit;
+    private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
+    _vest setVariable [QGVAR(plates),_plates];
+    _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * _count), true];
+    [_unit] call FUNC(updatePlateUi);
+}] call CBA_fnc_addEventHandler;
+
+["CBA_loadoutGet", {
+    params ["_unit", "", "_extradata"];
+    if (isNull (vestContainer _unit)) exitWith {};
+    private _plates = [];
+    _plates = (vestContainer _unit) getVariable [QGVAR(plates),[]];
+    if (_plates isNotEqualTo []) then {
+        _extradata set [QGVAR(plates), _plates];
+    };
+}] call CBA_fnc_addEventHandler;
 
 [{
     time > 1
