@@ -554,6 +554,34 @@ if (_aceInteractLoaded) then {
     ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
+/* Plate transfer events for compatibility use
+    Use `"diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;` before altering unit loadout, and 
+    `"diw_armor_plates_main_transfer" call CBA_fnc_localEvent;` after altering the loadout to maintain the
+    player's plates when changing loadout/vest. 
+*/
+[QGVAR(transferStart), {
+    if (isNull (vestContainer player)) exitWith {GVAR(plateTransfer) = nil};
+    GVAR(plateTransfer) = [(vestContainer player),(vestContainer player) getVariable [QGVAR(plates),[]]];
+}] call CBA_fnc_addEventHandler;
+[QGVAR(transfer), {
+	if (isNil QGVAR(plateTransfer) || {isNull (vestContainer player)}) exitWith {GVAR(plateTransfer) = nil;};
+	if ( (vestContainer player) isEqualTo (GVAR(plateTransfer) # 0) ) exitWith {GVAR(plateTransfer) = nil;};
+	(vestContainer player) setVariable [QGVAR(plates),(GVAR(plateTransfer) # 1)];
+	[player] call FUNC(updatePlateUi);
+	GVAR(plateTransfer) = nil;
+}] call CBA_fnc_addEventHandler;
+
+// Ace Arsenal plate transfer
+private _aceArsenalLoaded = !(isNil "ace_arsenal_fnc_openBox");
+if (_aceArsenalLoaded) then {
+    ["ace_arsenal_displayOpened", {
+        "diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;
+    }] call CBA_fnc_addEventHandler;
+    ["ace_arsenal_displayClosed", {
+        "diw_armor_plates_main_transfer" call CBA_fnc_localEvent;
+    }] call CBA_fnc_addEventHandler;
+};
+
 [{
     time > 1
 }, {
