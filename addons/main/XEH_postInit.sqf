@@ -554,8 +554,6 @@ if (_aceInteractLoaded) then {
     ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
-
-
 /* Plate transfer events for compatibility use
   Use `"diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;` before altering unit loadout, and 
   `"diw_armor_plates_main_transfer" call CBA_fnc_localEvent;` after altering the loadout to maintain the
