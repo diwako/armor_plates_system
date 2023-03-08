@@ -571,6 +571,7 @@ if (_aceInteractLoaded) then {
     if ( _vest isEqualTo (GVAR(plateTransfer) # 0) ) exitWith {GVAR(plateTransfer) = nil;};
     private _plates = (GVAR(plateTransfer) # 1);
     _vest setVariable [QGVAR(plates),_plates];
+    private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * (count _plates)), true];
     [player] call FUNC(updatePlateUi);
     GVAR(plateTransfer) = nil;
