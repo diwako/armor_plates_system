@@ -617,8 +617,7 @@ if (_aceArsenalLoaded) then {
 ["CBA_loadoutGet", {
     params ["_unit", "", "_extradata"];
     if (isNull (vestContainer _unit)) exitWith {};
-    private _plates = [];
-    _plates = (vestContainer _unit) getVariable [QGVAR(plates),[]];
+    private _plates = (vestContainer _unit) getVariable [QGVAR(plates),[]];
     if (_plates isNotEqualTo []) then {
         _extradata set [QGVAR(plates), _plates];
     };
