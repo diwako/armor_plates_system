@@ -540,6 +540,19 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(bleedoutRegenCoeff),
+    "SLIDER",
+    [LLSTRING(bleedoutRegenCoeff), LLSTRING(bleedoutRegenCoeff_desc)],
+    _category,
+    [0.0, 10, 0.0, 1],
+    true,
+    {
+        params ["_value"];
+        GVAR(bleedoutRegenCoeff) = (parseNumber (_value toFixed 1));
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(medicReviveTime),
     "SLIDER",
     [LLSTRING(medicReviveTime), LLSTRING(medicReviveTime_desc)],
