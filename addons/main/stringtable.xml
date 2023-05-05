@@ -812,6 +812,15 @@
             <Chinesesimp>治疗单位</Chinesesimp>
             <Chinese>治療單位</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_zeus_module_plates">
+            <English>Fill unit vest with plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_zeus_module_malus">
+            <English>Reset a unit/group bleedout timers</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_zeus_module_malusGlobal">
+            <English>Reset all player bleedout timers</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
             <Polish>Wybrano niepoprawny cel.</Polish>

@@ -42,6 +42,13 @@ class CfgVehicles {
         function = QFUNC(moduleHeal);
         icon = "\A3\ui_f\data\Map\VehicleIcons\pictureHeal_ca.paa";
     };
+    class GVAR(modulePlate): GVAR(moduleBase) {
+        curatorCanAttach = 1;
+        displayName = CSTRING(zeus_module_plate);
+        isGlobal = 0;
+        function = QFUNC(modulePlate);
+        icon = "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa";
+    };
     class GVAR(moduleResetMalus): GVAR(moduleBase) {
         curatorCanAttach = 1;
         displayName = CSTRING(zeus_module_malus);
