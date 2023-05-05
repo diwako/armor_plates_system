@@ -6,11 +6,16 @@ if !(local _logic) exitWith {};
 private _unit = attachedTo _logic;
 deleteVehicle _logic;
 
-if (isNull _unit || {(_unit isKindOf "CAManBase") && {!alive _unit}}) exitWith {
+private _tName = (typeName _unit);
+private _isObj = _tName isEqualTo "OBJECT";
+private _isPerson = (_isObj && {(_unit isKindOf "CAManBase")});
+if (isNull _unit || { _isPerson && {!alive _unit}}) exitWith {
     [objNull, LLSTRING(invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
 if (GVAR(aceMedicalLoaded)) exitWith {};
+
+if (!_isPerson && {_isObj}) then {_unit = crew _unit;};
 
 [_unit, { params ["_unit"];
     if !(_unit isKindOf "CAManBase") then {_unit = player;};
