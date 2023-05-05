@@ -13,7 +13,7 @@ if (isNull _unit || {(_unit isKindOf "CAManBase") && {!alive _unit}}) exitWith {
 if (GVAR(aceMedicalLoaded)) exitWith {};
 
 [_unit, { params ["_unit"];
-    if !(_unit isKindOf "CAManBase") {_unit = player;};
+    if !(_unit isKindOf "CAManBase") then {_unit = player;};
     if (!alive _unit) exitWith {};
     diw_armor_plates_main_bleedOutTimeMalus = nil;
     if (_unit getVariable [QGVAR(unconscious), false]) then {
