@@ -8,6 +8,7 @@ class CfgVehicles {
         scopeCurator = 2;
         displayName = "Armor Plate";
         author = "diwako";
+        model = "\A3\Weapons_F\DummyItemHorizontal.p3d";
         vehicleClass = "Items";
         class TransportItems {
             MACRO_ADDITEM(plate,1);
@@ -18,6 +19,7 @@ class CfgVehicles {
         editorPreview = "\A3\EditorPreviews_F_Orange\Data\CfgVehicles\MedicalGarbage_01_Injector_F.jpg";
         displayName = "Auto-Injector";
         author = "alien314";
+        model = "\A3\Weapons_F\DummyItem.p3d";
         class TransportItems {
             MACRO_ADDITEM(autoInjector,1);
         };
