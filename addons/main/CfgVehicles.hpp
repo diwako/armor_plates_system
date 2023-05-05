@@ -42,4 +42,17 @@ class CfgVehicles {
         function = QFUNC(moduleHeal);
         icon = "\A3\ui_f\data\Map\VehicleIcons\pictureHeal_ca.paa";
     };
+    class GVAR(moduleResetMalus): GVAR(moduleBase) {
+        curatorCanAttach = 1;
+        displayName = CSTRING(zeus_module_malus);
+        isGlobal = 0;
+        function = QFUNC(moduleResetMalus);
+        icon = QPATHTOF(ui\autoInjector_ca.paa);
+    };
+    class GVAR(moduleResetMalusGlobal): GVAR(moduleBase) {
+        curatorCanAttach = 1;
+        displayName = CSTRING(zeus_module_malusGlobal);
+        function = "diw_armor_plates_main_bleedOutTimeMalus = nil";
+        icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa";
+    };
 };
