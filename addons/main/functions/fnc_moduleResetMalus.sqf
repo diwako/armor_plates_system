@@ -8,7 +8,7 @@ deleteVehicle _logic;
 
 private _isObj = (typeName _unit) isEqualTo "OBJECT";
 private _isPerson = (_isObj && {(_unit isKindOf "CAManBase")});
-if (isNull _unit || { _isPerson && {!alive _unit} }) exitWith {
+if (isNull _unit || { !_isObj || { _isPerson && {!alive _unit} } }) exitWith {
     [objNull, LLSTRING(invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
 };
 

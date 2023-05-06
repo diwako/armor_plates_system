@@ -813,7 +813,7 @@
             <Chinese>治療單位</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_plate">
-            <English>Fill unit vest with plates</English>
+            <English>Fill unit/crew vests with plates</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malus">
             <English>Reset unit/crew bleedout timers</English>
