@@ -12,6 +12,7 @@ PREP(initPlates);
 PREP(moduleHeal);
 PREP(modulePlate);
 PREP(moduleResetMalus);
+PREP(moduleResetMalusGlobal);
 PREP(showDamageFeedbackMarker);
 PREP(uniqueItems);
 PREP(updateHPUi);

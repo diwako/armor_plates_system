@@ -45,21 +45,19 @@ class CfgVehicles {
     class GVAR(modulePlate): GVAR(moduleBase) {
         curatorCanAttach = 1;
         displayName = CSTRING(zeus_module_plate);
-        isGlobal = 0;
         function = QFUNC(modulePlate);
         icon = "\a3\ui_f\data\gui\rsc\rscdisplayarsenal\vest_ca.paa";
     };
     class GVAR(moduleResetMalus): GVAR(moduleBase) {
         curatorCanAttach = 1;
         displayName = CSTRING(zeus_module_malus);
-        isGlobal = 0;
         function = QFUNC(moduleResetMalus);
         icon = QPATHTOF(ui\autoInjector_ca.paa);
     };
     class GVAR(moduleResetMalusGlobal): GVAR(moduleBase) {
         curatorCanAttach = 1;
         displayName = CSTRING(zeus_module_malusGlobal);
-        function = "diw_armor_plates_main_bleedOutTimeMalus = nil";
+        function = QFUNC(moduleResetMalusGlobal);
         icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa";
     };
 };

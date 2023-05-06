@@ -6,17 +6,23 @@ if !(local _logic) exitWith {};
 private _unit = attachedTo _logic;
 deleteVehicle _logic;
 
-if (isNull _unit || {!(_unit isKindOf "CAManBase") || {!alive _unit}}) exitWith {
+private _isObj = (typeName _unit) isEqualTo "OBJECT";
+private _isPerson = (_isObj && {(_unit isKindOf "CAManBase")});
+if (isNull _unit || { _isPerson && {!alive _unit} }) exitWith {
     [objNull, LLSTRING(zeus_invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
+if (!_isPerson && {_isObj}) then {_unit = crew _unit;} else {_unit = [_unit]};
+
 if (GVAR(aceMedicalLoaded)) then {
-    ["ace_medical_treatment_fullHealLocal", [_unit], _unit] call CBA_fnc_targetEvent;
+    {["ace_medical_treatment_fullHealLocal", [_x], _x] call CBA_fnc_targetEvent;} forEach _unit;
 } else {
-    if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) then {
-        [_unit, _unit, false] call FUNC(revive);
-    } else {
-        _unit setDamage 0;
-        [_unit, _unit, false] call FUNC(handleHealEh);
-    };
+    {
+        if ((lifeState _x) == "INCAPACITATED" || {_x getVariable [QGVAR(unconscious), false]}) then {
+            [_x, _x, false] call FUNC(revive);
+        } else {
+            _x setDamage 0;
+            [_x, _x, false] call FUNC(handleHealEh);
+        };
+    } forEach _unit;
 };
