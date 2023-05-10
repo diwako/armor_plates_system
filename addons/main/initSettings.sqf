@@ -558,6 +558,28 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(holdActionPriority),
+    "LIST",
+    [LLSTRING(holdActionPriority), LLSTRING(holdActionPriority_desc)],
+    _category,
+    [[0, 1], [LLSTRING(holdActionPriority_0), LLSTRING(holdActionPriority_1)], 0],
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(holdActionRange),
+    "SLIDER",
+    [LLSTRING(holdActionRange), LLSTRING(holdActionRange_desc)],
+    _category,
+    [0, 12, 5.0, 1],
+    true,
+    {
+        params ["_value"];
+        GVAR(holdActionRange) = (parseNumber (_value toFixed 1));
+    }
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowSelfRevive),
     "CHECKBOX",
     [LLSTRING(allowSelfRevive), LLSTRING(allowSelfRevive_desc)],
@@ -673,4 +695,26 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     _category,
     false,
     true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorEffect),
+    "LIST",
+    [LLSTRING(injectorEffect), LLSTRING(injectorEffect_desc)],
+    _category,
+    [[0, 1, 2, 3], [LLSTRING(downedFeedback_0), LLSTRING(injectorEffect_1), LLSTRING(injectorEffect_2), LLSTRING(injectorEffect_3)], 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorCoef),
+    "SLIDER",
+    [LLSTRING(injectorCoef), LLSTRING(injectorCoef_desc)],
+    _category,
+    [0.1, 12, 1.0, 1],
+    true,
+    {
+        params ["_value"];
+        GVAR(injectorCoef) = (parseNumber (_value toFixed 1));
+    }
 ] call CBA_fnc_addSetting;

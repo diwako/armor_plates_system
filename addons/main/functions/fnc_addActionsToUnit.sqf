@@ -146,6 +146,26 @@ private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleed
     [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(isHold), nil, true];
     _target setVariable [QGVAR(holdingUnit), nil, true];
-}, [], 21.5, 14, false, false, true];
+}, [], 21.5, (14.5 + GVAR(holdActionPriority)), false, false, true];
 
 _arr3 call BIS_fnc_holdActionAdd;
+
+
+private _id2Array = ["<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa' size='1.8' shadow=2 />", {
+    params ["", "_caller"];
+    private _isProne = stance _caller == "PRONE";
+    private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+    private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+    if (_medicAnim != "") then {
+        _caller playMove _medicAnim;
+    };
+    [{params ["_target", "_caller"];
+        if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
+        [QGVAR(reduceMalus), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
+    }, _this, 1] call CBA_fnc_waitAndExecute;
+}, [], 9, false, true, "",
+format ["_this getUnitTrait 'Medic' && {alive _originalTarget && {([_this] call %1) && {!(_originalTarget isEqualTo _this && {isNil '%2'})}}}", QFUNC(hasInjector), QGVAR(bleedoutTimeMalus)],
+2.5];
+private _id2 = _unit addAction _id2Array;
+_unit setUserActionText [_id2, format [LLSTRING(useInjector), ([getText ((configOf _unit) >> "displayName"), LLSTRING(useInjectorSelf)] select (_unit isEqualTo player))], "<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa' size='1.8' shadow=2 />"];

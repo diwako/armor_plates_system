@@ -653,6 +653,15 @@
             <Chinesesimp>标准的陶瓷防弹插板，只要拉开你的背心拉链，然后把那个该死的东西塞进去 ;)</Chinesesimp>
             <Chinese>標準的陶瓷防彈插板，只要拉開你的背心拉鍊，然後把那個該死的東西塞進去 ;)</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_autoinjectorItem">
+            <English>Auto-Injector</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Short">
+            <English>Auto-Injector for reducing trauma to the body.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Use">
+            <English>Standard auto-injector, just stick it in ;)</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
             <English>Add plate into vest</English>
             <Polish>Dodaj płytę do kamizelki</Polish>
@@ -965,6 +974,24 @@
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
             <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority">
+            <English>Hold Action Priority</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_desc">
+            <English>Whether to prioritize reviving or pressing wound, when both are possible. Needs mission restart.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_0">
+            <English>Revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionPriority_1">
+            <English>Press Wound</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionRange">
+            <English>Revive/Press Wound range</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_holdActionRange_desc">
+            <English>Range in meters from the target where revive and press wound actions become possible.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
             <Polish>Tryb pancerza</Polish>
@@ -996,6 +1023,48 @@
         <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
             <English>Allows for limping and more sway the more damage a unit has</English>
             <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorUses">
+            <English>Auto-Injector use count</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorUses_desc">
+            <English>How many times an auto-injector can be used.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorEffect">
+            <English>Auto-Injector effect</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorEffect_desc">
+            <English>How auto-injector effects remaining bleedout time</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorEffect_1">
+            <English>Nullify bleedout time penalty</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorEffect_2">
+            <English>Halve bleedout time penalty</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorEffect_3">
+            <English>Number of downs</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorCoef">
+            <English>Auto-injector coefficient</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorCoef_desc">
+            <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
+            <English>%1 has been used</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showUseCount_hint2">
+            <English>%1 use(s) remaining</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_useInjector">
+            <English>Use Injector on %1</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
+            <English>Self</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_useInjectorAce">
+            <English>Use Injector</English>
         </Key>
     </Package>
 </Project>
