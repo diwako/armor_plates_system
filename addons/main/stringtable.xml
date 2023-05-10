@@ -1073,7 +1073,8 @@
             <Polish>Użyj iniektora na %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
-            <English>Sobie</English>
+            <English>Self</English>
+            <Polish>Sobie</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
             <English>Use Injector</English>
