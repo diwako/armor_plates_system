@@ -1026,45 +1026,58 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses">
             <English>Auto-Injector use count</English>
+            <Polish>Liczba użyć auto-iniektora</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses_desc">
             <English>How many times an auto-injector can be used.</English>
+            <Polish>Ile razy gracz może skorzystać z auto-iniektora.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect">
             <English>Auto-Injector effect</English>
+            <Polish>Efekty auto-iniektora</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_desc">
             <English>How auto-injector effects remaining bleedout time</English>
+            <Polish>Jak auto-iniektor wpływa na pozostały czas krwawienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_1">
             <English>Nullify bleedout time penalty</English>
+            <Polish>Zeruje karę czasową od krwawienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_2">
             <English>Halve bleedout time penalty</English>
+            <Polish>Zmniejsza o połowę karę czasową od krwawienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_3">
             <English>Number of downs</English>
+            <Polish>Liczba padnięć</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorCoef">
             <English>Auto-injector coefficient</English>
+            <Polish>Współczynnik auto-iniektora</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorCoef_desc">
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
+            <Polish>Jak wiele padnięć anuluje auto-iniektor z ustawienia 'Liczba padnięć'</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
+            <Polish>Użyto przedmiotu %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showUseCount_hint2">
             <English>%1 use(s) remaining</English>
+            <Polish>Pozostałych użyć: %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use Injector on %1</English>
+            <Polish>Użyj iniektora na %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
-            <English>Self</English>
+            <English>Sobie</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
             <English>Use Injector</English>
+            <Polish>Użyj iniektora</Polish>
         </Key>
     </Package>
 </Project>
