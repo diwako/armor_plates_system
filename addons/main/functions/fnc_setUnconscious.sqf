@@ -73,6 +73,8 @@ _unit setUnconscious _set;
 [QGVAR(setHidden), [_unit , _set]] call CBA_fnc_globalEvent;
 _unit setVariable [QGVAR(unconscious), _set, true];
 _unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
+[QGVAR(downState), [_unit, _set]] call CBA_fnc_globalEvent;
+if (_set && {isCopilotEnabled vehicle _unit}) then {_unit action ["UnlockVehicleControl", vehicle _unit];};
 
 if (GVAR(radioModUnconRestrictions) > 0) then {
     // ACRE
