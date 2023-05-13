@@ -245,9 +245,6 @@
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
             <English>How to handle healing with regen enabled.</English>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_enableHealRegen_0">
-            <English>Disable</English>
-        </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_1">
             <English>Allow</English>
         </Key>
