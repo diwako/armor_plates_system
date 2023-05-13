@@ -239,6 +239,12 @@
             <Chinesesimp>允许AI回复HP</Chinesesimp>
             <Chinese>允許AI回复HP</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen">
+            <English>Enable Heal with regen</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
+            <English>Allow healing with regen on</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
             <Polish>Mnożnik regeneracji HP</Polish>

@@ -10,7 +10,7 @@
     };
     if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) exitWith {};
 
-    if (GVAR(enableHpRegen) && {isPlayer _unit}) exitWith {
+    if (GVAR(enableHpRegen) && {!GVAR(enableHealRegen) && {isPlayer _unit}}) exitWith {
         systemChat LLSTRING(cannotHealWhileRegenOn);
     };
 
