@@ -685,10 +685,10 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 
 [
     QGVAR(enableHealRegen),
-    "CHECKBOX",
+    "LIST",
     [LLSTRING(enableHealRegen), LLSTRING(enableHealRegen_desc)],
     _category,
-    false,
+    [[0, 1, 2], [LLSTRING(downedFeedback_0), LLSTRING(enableHealRegen_1), LLSTRING(enableHealRegen_2)], 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -697,7 +697,16 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     "SLIDER",
     [LLSTRING(hpRegenRate), LLSTRING(hpRegenRate_desc)],
     _category,
-    [1, 100, 10, 2],
+    [0.1, 100, 10, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(hpRegenDelay),
+    "SLIDER",
+    [LLSTRING(hpRegenDelay), LLSTRING(hpRegenDelay_desc)],
+    _category,
+    [0.1, 100, 5, 1],
     true
 ] call CBA_fnc_addSetting;
 

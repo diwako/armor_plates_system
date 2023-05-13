@@ -240,10 +240,19 @@
             <Chinese>允許AI回复HP</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen">
-            <English>Enable Heal with regen</English>
+            <English>Healing with Regen on</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
-            <English>Allow healing with regen on</English>
+            <English>How to handle healing with regen enabled.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_0">
+            <English>Disable</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_1">
+            <English>Allow</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_2">
+            <English>Allow and delay regen</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
@@ -256,6 +265,12 @@
             <Polish>Szybkość regeneracji życia. Im niższa wartość, tym wolniejsza regeneracja.</Polish>
             <Chinesesimp>HP回复速度；值越低，回复速度越慢。</Chinesesimp>
             <Chinese>HP回复速度；值越低，回复速度越慢。</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hpRegenDelay">
+            <English>HP regen delay</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hpRegenDelay_desc">
+            <English>How long before hp regen begins?</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>

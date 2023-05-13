@@ -10,9 +10,10 @@
     };
     if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) exitWith {};
 
-    if (GVAR(enableHpRegen) && {!GVAR(enableHealRegen) && {isPlayer _unit}}) exitWith {
+    if (GVAR(enableHpRegen) && {GVAR(enableHealRegen) < 1 && {isPlayer _unit}}) exitWith {
         systemChat LLSTRING(cannotHealWhileRegenOn);
     };
+    if (GVAR(enableHealRegen) > 1) then {[_unit] call FUNC(startHPRegen);};
 
     private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
     private _curHp = _unit getVariable [QGVAR(hp), _maxHp];

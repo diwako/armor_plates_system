@@ -7,7 +7,7 @@ if (GVAR(enableHpRegen)) then {
     };
     private _handle = _unit spawn {
         private _unit = _this;
-        sleep 5;
+        sleep GVAR(hpRegenDelay);
 
         // Regenerate HP
         private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
