@@ -580,7 +580,7 @@ if !(GVAR(aceMedicalLoaded)) then {
         [LLSTRING(commandRevive),[5],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"]
     ];
 
-	{[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach GVAR(medVees);
+    {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach GVAR(medVees);
 };
 
 // ace interactions
