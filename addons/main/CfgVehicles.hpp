@@ -60,4 +60,13 @@ class CfgVehicles {
         function = QFUNC(moduleResetMalusGlobal);
         icon = "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa";
     };
+
+    class Camping_base_F;
+    class Land_MedicalTent_01_base_F : Camping_base_F {
+        class EventHandlers {
+            class CBA_Extended_EventHandlers {
+                init = "call cba_xeh_fnc_init";
+            }
+        };
+    };
 };

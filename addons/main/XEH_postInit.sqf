@@ -564,7 +564,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     };
 
     [LLSTRING(category), QGVAR(commOpen), LLSTRING(commOpenKeyBind), {
-        if (GVAR(commEnable)) exitWith {false};
+        if (!GVAR(commEnable)) exitWith {false};
         if (commandingMenu isEqualTo ("#USER:" + QGVAR(commMenu))) exitWith {showCommandingMenu "";};
         showCommandingMenu ("#USER:" + QGVAR(commMenu));
         true
@@ -578,6 +578,8 @@ if !(GVAR(aceMedicalLoaded)) then {
         [LLSTRING(commandHeal),[4],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"],
         [LLSTRING(commandRevive),[5],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"]
     ];
+
+	{[_x, "init", {_this spawn FUNC(addStructureHeal)}, true, [], true] call CBA_fnc_addClassEventHandler;} forEach ["B_Slingload_01_Medevac_F","O_Heli_Transport_04_medevac_F","Land_PortableCabinet_01_medical_base_F","Box_UAV_06_medical_base_F"];
 };
 
 // ace interactions
