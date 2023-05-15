@@ -924,6 +924,33 @@
             <Chinesesimp>AI复活队友</Chinesesimp>
             <Chinese>AI復活隊友</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_commEnable">
+            <English>Enable AI commands</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_commEnable_desc">
+            <English>Enables the ability to command Medic AI to heal/revive through the Command menu (access with new keybind).</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_noMedic">
+            <English>No medic available.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reqHeal">
+            <English>Request Heal</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reqRevive">
+            <English>Request Revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_commandHeal">
+            <English>Heal target</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_commandRevive">
+            <English>Revive target</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_commMenu">
+            <English>APS Commands</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_commOpenKeyBind">
+            <English>APS Commands Menu</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
             <Polish>Dodaje botom możliwość leczenia nieprzytomnych sojuszników.</Polish>
