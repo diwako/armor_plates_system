@@ -14,7 +14,7 @@ private _id = _structure addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\
             params ["_target", "_caller"];
             if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
             if !(_caller getUnitTrait "Medic") then {
-                _caller setUnitTrait ["Medic", true]
+                _caller setUnitTrait ["Medic", true];
                 [{  params ["_caller"];
                     _caller setUnitTrait ["Medic", false]; 
                 }, [_caller], 1] call CBA_fnc_waitAndExecute;
