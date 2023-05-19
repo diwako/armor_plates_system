@@ -12,6 +12,6 @@ if (isNull _unit || { !_isObj || { _isPerson && {!alive _unit} } }) exitWith {
     [objNull, LLSTRING(invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
-if (!_isPerson && {_isObj}) then {_unit = crew _unit;};
+if (!_isPerson && {_isObj}) then {_unit = crew _unit;} else {_unit = [_unit]};
 
-[_unit] remoteExec [QFUNC(fillVestWithPlates),_unit];
+{[QGVAR(fillPlates), [_x], _x] call CBA_fnc_targetEvent;} forEach _unit;

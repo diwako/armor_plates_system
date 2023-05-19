@@ -224,6 +224,22 @@ if (GVAR(aceMedicalLoaded)) then {
             }, _unit, 3] call CBA_fnc_waitAndExecute;
         };
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(resetMalus), {
+        params ["_unit"];
+        if (!alive _unit || {!isPlayer _unit}) exitWith {};
+        GVAR(bleedOutTimeMalus) = nil;
+        if (_unit getVariable [QGVAR(unconscious), false]) then {
+            _unit setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - 0)), true];
+        };
+    }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(fillPlates), {
+        params ["_unit"];
+        if (!alive _unit) exitWith {};
+        _unit call FUNC(fillVestWithPlates);
+        if (isPlayer _unit) then { _unit call FUNC(updatePlateUi); };
+    }] call CBA_fnc_addEventHandler;
 };
 
 if !(hasInterface) exitWith {
