@@ -20,7 +20,7 @@ if (GVAR(aceMedicalLoaded)) then {
     {
         if !(_x getUnitTrait "Medic") then {
             _x setUnitTrait ["Medic", true];
-            [{  params ["_caller","_isMedic"];
+            [{  params ["_caller"];
                 _caller setUnitTrait ["Medic", false]; 
             }, [_x], 1] call CBA_fnc_waitAndExecute;
         };
