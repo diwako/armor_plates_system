@@ -13,10 +13,13 @@ private _id = _structure addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\
         [{
             params ["_target", "_caller"];
             if (!alive _target || {!alive _caller || {_caller getVariable [QGVAR(unconscious), false]}}) exitWith {};
-            private _isMedic = _caller getUnitTrait "Medic";
-            if (!_isMedic) then {_caller setUnitTrait ["Medic", true]};
+            if !(_caller getUnitTrait "Medic") then {
+                _caller setUnitTrait ["Medic", true]
+                [{  params ["_caller"];
+                    _caller setUnitTrait ["Medic", false]; 
+                }, [_caller], 1] call CBA_fnc_waitAndExecute;
+            };
             [QGVAR(heal), [_caller, _caller, false], _caller] call CBA_fnc_targetEvent;
-            [{params ["_caller","_isMedic"];if (!_isMedic) then {_caller setUnitTrait ["Medic", false]}; }, [_caller,_isMedic], 1] call CBA_fnc_waitAndExecute;
         }, _this, 5] call CBA_fnc_waitAndExecute;
     }, [], 10, true, true, "",
     format ["!(_this getVariable ['%6',false]) && {alive _this && {(_this getVariable ['%1' , %2]) < (_this getVariable ['%7', ([%8,%2] select (isPlayer _this)) * %5]) }}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic), QGVAR(unconscious), QGVAR(maxHp), QGVAR(maxAiHp)],
