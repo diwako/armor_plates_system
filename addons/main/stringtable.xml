@@ -734,7 +734,7 @@
             <Polish>Pokazuje powoli rozjaśniającą się ikonę czaszki, która informuje ile czasu zostało do całkowitego wykrwawienia.</Polish>
             <Chinesesimp>昏迷时显示一个缓慢出现的骷髅头，以表明还剩多少失血时间</Chinesesimp>
             <Chinese>昏迷時顯示一個緩慢出現的骷髏頭，以表明還剩多少失血時間</Chinese>
-            <Korean>무력화되면 출혈 타이머에 남은 시간을 표시하기 위해 두개걸이 천천히 나타납니다.</Korean>
+            <Korean>무력화되면 출혈 타이머에 남은 시간을 표시하기 위해 두개골이 천천히 나타납니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator">
             <English>Show icon over downed units</English>
@@ -945,7 +945,7 @@
             <Polish>Ukrywa pasek życia po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
             <Chinesesimp>在一定时间后隐藏HP条。只有在HP超过警告水平时才会隐藏！按&quot;添加插板进入背心&quot;键，以再次显示。</Chinesesimp>
             <Chinese>在一定時間後隱藏HP條。只有在HP超過警告水平時才會隱藏！按&quot;添加插板進入背心&quot;鍵，以再次顯示。</Chinese>
-            <Korean>일정 시간이 지나면 체력 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
+            <Korean>일정 시간이 지나면 체력 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 &quot;조끼에 방탄판 삽입&quot; 키를 누르십시오.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor">
             <English>Automatically hide plate bars</English>
@@ -959,7 +959,7 @@
             <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
             <Chinesesimp>在一定时间后隐藏插板条。按&quot;添加插板进入背心&quot;键，以再次显示。</Chinesesimp>
             <Chinese>一段時間後隱藏插板條。按&quot;添加插板進入背心&quot;鍵，以再次顯示。</Chinese>
-            <Korean>일정 시간이 지나면 방탄 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
+            <Korean>일정 시간이 지나면 방탄 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 &quot;조끼에 방탄판 삽입&quot; 키를 누르십시오.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds">
             <English>Hide UI timeout</English>
@@ -1149,7 +1149,7 @@
             <Polish>Czy na pewno chcesz się poddać? Jeśli wybierzesz TAK, umrzesz, jeśli wybierzesz NIE, będziesz dalej leżeć na ziemi w oczekiwaniu na ratunek!&lt;br/&gt;Zdecyduj się teraz.&lt;br/&gt;Możesz ukryć to okno poprzez wyłączenie odpowiedniej opcji w sekcji Reakcje w ustawieniach modyfikacji.</Polish>
             <Chinesesimp>你真的确定要放弃吗？如果你选择&quot;是&quot;你会死亡，如果你选择&quot;否&quot; 你需要躺在地上继续等待救援！&lt;br/&gt;现在就做出选择吧。&lt;br/&gt;&lt;br/&gt;你可以通过在&quot;插件选项&quot;菜单中的反馈部分禁用该对话框，使其不显示！</Chinesesimp>
             <Chinese>你真的確定要放棄嗎？如果你選擇&quot;是&quot;你會死亡，如果你選擇&quot;否&quot; 你需要躺在地上繼續等待救援！ &lt;br/&gt;現在就做出選擇吧。 &lt;br/&gt;&lt;br/&gt;你可以通過在&quot;插件選項&quot;菜單中的反饋部分禁用該對話框，使其不顯示！</Chinese>
-            <Korean>정말 포기하실 겁니까? "예"를 선택하면 당신은 죽을 것이고, "아니오"를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;"Addon Options" 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
+            <Korean>정말 포기하실 겁니까? &quot;예&quot;를 선택하면 당신은 죽을 것이고, &quot;아니오&quot;를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;&quot;Addon Options&quot; 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_title">
             <English>Hold up!</English>
@@ -1163,14 +1163,14 @@
             <Polish>Pokaż okno &quot;Poddaj się&quot;</Polish>
             <Chinesesimp>显示&quot;放弃&quot;对话框</Chinesesimp>
             <Chinese>顯示&quot;放棄&quot;對話框</Chinese>
-            <Korean>"포기" 대화 상자 표시</Korean>
+            <Korean>&quot;포기&quot; 대화 상자 표시</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog_desc">
             <English>Shows a confirmation dialog when fully executing the &quot;Give up&quot; action.</English>
             <Polish>Pokazuje okno wymuszające dodatkowe potwierdzenie poddania się podczas nieprzytomności.</Polish>
             <Chinesesimp>在完全执行&quot;放弃&quot;动作时显示一个确认对话框。</Chinesesimp>
             <Chinese>在完全執行&quot;放棄&quot;動作時顯示一個確認對話框。</Chinese>
-            <Korean>"포기" 행동을 완전히 실행할 때 확인 대화 상자를 표시합니다.</Korean>
+            <Korean>&quot;포기&quot; 행동을 완전히 실행할 때 확인 대화 상자를 표시합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount">
             <English>Display number of remaining FAKs</English>
