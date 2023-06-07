@@ -3,6 +3,8 @@ params ["_unit"];
 
 private _items = call FUNC(uniqueItems);
 
+if (GVAR(enableHpRegen) && {!GVAR(enableHealRegen)}) exitWith {-1};
+
 if (_unit getUnitTrait "Medic" && {(GVAR(mediKitItems) arrayIntersect _items) isNotEqualTo []}) exitWith {
     2
 };

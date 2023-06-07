@@ -10,7 +10,7 @@ if (GVAR(enableHpRegen)) then {
         sleep GVAR(hpRegenDelay);
 
         // Regenerate HP
-        private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
+        private _maxHp = (_unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)]) * GVAR(maxHealRegen);
         while {(_unit getVariable [QGVAR(hp), _maxHp]) < _maxHp && {(lifeState _unit) != "INCAPACITATED"}} do {
             private _newHp = (_unit getVariable [QGVAR(hp), _maxHp]) + (GVAR(hpRegenRate) * 0.1);
             _unit setVariable [QGVAR(hp), _newHp min _maxHp];

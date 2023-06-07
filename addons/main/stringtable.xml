@@ -269,6 +269,12 @@
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay_desc">
             <English>How long before hp regen begins?</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealRegen">
+            <English>Max heal % for regen</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealRegen_desc">
+            <English>What percentage of max health can be regenerated?</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>
             <Polish>Maks. % uleczenia przez medyka</Polish>
@@ -276,7 +282,7 @@
             <Chinese>醫護兵最大治療百分比</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic_desc">
-            <English>How percentage of max health can a medic heal?</English>
+            <English>What percentage of max health can a medic heal?</English>
             <Polish>Ile % maksymalnego życia może przywrócić medyk?</Polish>
             <Chinesesimp>医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
             <Chinese>醫療兵最大治療生命值百分比是多少？</Chinese>
@@ -989,6 +995,21 @@
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum_desc">
             <English>Only shows the FAK count hint if the remaining FAKs after healing are given number or below</English>
             <Polish>Pokazuje informację o FAKach, jeśli jest w ich ekwipunku tyle lub mniej.</Polish>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveItems">
+            <English>Required Items to Revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveItems_desc">
+            <English>Sets what items are need to perform revives.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveItems_0">
+            <English>None Required</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_healItems">
+            <English>Required Items to Heal</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_healItems_desc">
+            <English>Sets what items are need to perform healing.</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
