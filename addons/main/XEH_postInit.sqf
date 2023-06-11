@@ -225,12 +225,11 @@ if (GVAR(aceMedicalLoaded)) then {
         };
     }] call CBA_fnc_addEventHandler;
 
-    [QGVAR(resetMalus), {
-        params ["_unit"];
-        if (!alive _unit || {!isPlayer _unit}) exitWith {};
+    [QGVAR(resetMalus), {       
+        if (!alive player) exitWith {};
         GVAR(bleedOutTimeMalus) = nil;
-        if (_unit getVariable [QGVAR(unconscious), false]) then {
-            _unit setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - 0)), true];
+        if (player getVariable [QGVAR(unconscious), false]) then {
+            player setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - 0)), true];
         };
     }] call CBA_fnc_addEventHandler;
 
