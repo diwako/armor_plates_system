@@ -232,14 +232,14 @@ if (GVAR(aceMedicalLoaded)) then {
             player setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - 0)), true];
         };
     }] call CBA_fnc_addEventHandler;
-
-    [QGVAR(fillPlates), {
-        params ["_unit"];
-        if (!alive _unit) exitWith {};
-        _unit call FUNC(fillVestWithPlates);
-        if (isPlayer _unit) then { _unit call FUNC(updatePlateUi); };
-    }] call CBA_fnc_addEventHandler;
 };
+
+[QGVAR(fillPlates), {
+    params ["_unit"];
+    if (!alive _unit) exitWith {};
+    _unit call FUNC(fillVestWithPlates);
+    if (isPlayer _unit) then { _unit call FUNC(updatePlateUi); };
+}] call CBA_fnc_addEventHandler;
 
 if !(hasInterface) exitWith {
     INFO("Dedicated server / Headless client post init done");
