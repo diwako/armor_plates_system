@@ -232,6 +232,14 @@ if (GVAR(aceMedicalLoaded)) then {
             player setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - 0)), true];
         };
     }] call CBA_fnc_addEventHandler;
+
+    addMissionEventHandler ["ControlsShifted", {
+        params ["", "", "_vehicle", "_copilotEnabled", "_controlsUnlocked"];
+        if (_copilotEnabled) then { 
+            if !(_controlsUnlocked) exitWith {_vehicle setVariable [QGVAR(controlsUnlocked),nil];};
+            _vehicle setVariable [QGVAR(controlsUnlocked),true];
+        };
+    }];
 };
 
 [QGVAR(fillPlates), {

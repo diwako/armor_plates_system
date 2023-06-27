@@ -483,6 +483,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(pilotUncon),
+    "LIST",
+    [LLSTRING(pilotUncon), LLSTRING(pilotUncon_desc)],
+    _category,
+    [[0, 1, 2], [LLSTRING(pilotUncon_0), LLSTRING(pilotUncon_1), LLSTRING(pilotUncon_2)], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(requestAIforHelp),
     "CHECKBOX",
     [LLSTRING(requestAIforHelp), LLSTRING(requestAIforHelp_desc)],
