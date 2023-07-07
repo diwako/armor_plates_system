@@ -1138,22 +1138,22 @@
             <Polish>Pozostałych użyć: %1</Polish>
         </Key> -->
         <Key ID="STR_diw_armor_plates_main_useInjector">
-            <English>Use Injector on %1</English>
-            <Polish>Użyj iniektora na %1</Polish>
+            <English>Use auto-injector on %1</English>
+            <Polish>Użyj auto-iniektora na %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
             <English>Self</English>
             <Polish>Sobie</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
-            <English>Use Injector</English>
-            <Polish>Użyj iniektora</Polish>
+            <English>Use auto-injector</English>
+            <Polish>Użyj auto-iniektora</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorComnfirm_text">
-            <English>Use injector on %1?</English>
+            <English>Use auto-injector on %1?</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorComnfirm">
-            <English>Show Injector Confirm dialog</English>
+            <English>Show Auto-Injector Confirm dialog</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorComnfirm_desc">
             <English>Shows a confirmation dialog when using an injector.</English>
