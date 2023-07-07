@@ -785,3 +785,12 @@ _category = [_header, LLSTRING(subCategoryHealth)];
         GVAR(injectorCoef) = (parseNumber (_value toFixed 1));
     }
 ] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorConfirm),
+    "CHECKBOX",
+    [LLSTRING(injectorConfirm), LLSTRING(injectorConfirm_desc)],
+    _category,
+    false,
+    false
+] call CBA_fnc_addSetting;
