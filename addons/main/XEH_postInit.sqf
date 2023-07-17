@@ -172,6 +172,7 @@ if (GVAR(aceMedicalLoaded)) then {
     [QGVAR(switchMove), {
         params ["_unit", "_anim", ["_weaponReady", true]];
         _unit switchMove _anim;
+        _unit playMoveNow _anim; // clear playMove queue
         if (_weaponReady) then {
             _unit action ["WeaponInHand", _unit];
         };
