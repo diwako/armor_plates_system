@@ -173,7 +173,7 @@ private _id2Array = ["<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_
         private _response = true;
         if (GVAR(injectorConfirm)) then {
             _response = [
-                format [LLSTRING(injectorComnfirm_text),(name _target)], // body
+                format [LLSTRING(injectorConfirm_text),(name _target)], // body
                 LLSTRING(giveUp_title), // title
                 localize "str_lib_info_yes", // true return
                 localize "str_lib_info_no", // false return
