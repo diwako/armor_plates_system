@@ -1149,13 +1149,13 @@
             <English>Use auto-injector</English>
             <Polish>Użyj auto-iniektora</Polish>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorComnfirm_text">
+        <Key ID="STR_diw_armor_plates_main_injectorConfirm_text">
             <English>Use auto-injector on %1?</English>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorComnfirm">
+        <Key ID="STR_diw_armor_plates_main_injectorConfirm">
             <English>Show Auto-Injector Confirm dialog</English>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorComnfirm_desc">
+        <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
             <English>Shows a confirmation dialog when using an injector.</English>
         </Key>
     </Package>
