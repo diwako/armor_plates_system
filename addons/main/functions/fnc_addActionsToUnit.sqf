@@ -41,8 +41,12 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     params ["_target", "_caller"];
     call FUNC(deleteProgressBar);
     [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
-    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+    private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+    private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+	if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+    _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
     [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
@@ -51,8 +55,12 @@ private _arr = [_unit, localize "str_heal", "\a3\ui_f\data\IGUI\Cfg\holdactions\
     // code interrupted
     params ["_target", "_caller"];
     call FUNC(deleteProgressBar);
-    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+    private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+    private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+	if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+    _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
     [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(beingRevived), nil, true];
@@ -130,8 +138,12 @@ private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleed
     // codeCompleted
     params ["_target", "_caller"];
     call FUNC(deleteProgressBar);
-    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+    private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+    private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+	if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+    _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
     [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(isHold), nil, true];
@@ -140,8 +152,12 @@ private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleed
     // code interrupted
     params ["_target", "_caller"];
     call FUNC(deleteProgressBar);
-    private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+   private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+    private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
     private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+    private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+	if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+    _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
     _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
     [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
     _target setVariable [QGVAR(isHold), nil, true];

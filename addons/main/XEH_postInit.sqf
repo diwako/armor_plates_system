@@ -417,8 +417,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     _args params ["_target", "_caller"];
                     [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
                     };
@@ -428,8 +432,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
                     };
@@ -483,8 +491,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
                     };
@@ -494,8 +506,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
                     };
