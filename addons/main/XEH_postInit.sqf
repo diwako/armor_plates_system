@@ -556,42 +556,69 @@ if (_aceInteractLoaded) then {
 
 /* Plate transfer events for compatibility use
   Using cba_fnc_getLoadout/cba_fnc_setLoadout when altering loadout should automatically load plates.
-  If using vanilla functions, use `"diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;` before altering unit
-  loadout, and `"diw_armor_plates_main_transfer" call CBA_fnc_localEvent;` after altering the loadout to maintain the
-  player's plates when changing loadout/vest.
+
+  If using vanilla functions, use `diw_armor_plates_main_plateTransferArsenal = true;`, if you want the plateRefillArsenal setting to affect the transfer, then `["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;` before altering unit loadout, and `["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;` after altering the loadout to maintain the player's plates when changing loadout/vest.
 */
-[QGVAR(transferStart), {
-    if (isNull (vestContainer player)) exitWith {GVAR(plateTransfer) = nil};
-    private _vest = vestContainer player;
-    GVAR(plateTransfer) = [_vest, _vest getVariable [QGVAR(plates),[]]];
+[QGVAR(transferStart), { params [["_unit",player]];
+    private _vest = vestContainer _unit;
+    if (isNull _vest) exitWith {};
+    GVAR(plateTransfer) = [_unit, (_vest getVariable [QGVAR(plates),[]])];
 }] call CBA_fnc_addEventHandler;
 [QGVAR(transfer), {
-    if (isNil QGVAR(plateTransfer) || {isNull (vestContainer player)}) exitWith {GVAR(plateTransfer) = nil;};
-    private _vest = vestContainer player;
-    if ( _vest isEqualTo (GVAR(plateTransfer) # 0) ) exitWith {GVAR(plateTransfer) = nil;};
-    private _plates = (GVAR(plateTransfer) # 1);
+    private _plates = (missionNamespace getVariable [QGVAR(plateTransfer),nil]);
+    GVAR(plateTransfer) = nil;
+    private _unit = (_plates # 0);
+    private _plates = (_plates # 1);
+    private _vest = vestContainer _unit;
+    if (isNil '_unit' || {isNull _vest}) exitWith {};
+    /*private _isArsenal = (missionNamespace getVariable [QGVAR(plateTransferArsenal),false]);
+    if (GVAR(plateRefillArsenal) && {_isArsenal}) then {
+        _plates = [];
+        for '_i' from 1 to GVAR(numWearablePlates) do {_plates pushBack GVAR(maxPlateHealth)};
+    };
+    GVAR(plateTransferArsenal) = nil;*/
+    if (isNil '_plates') exitWith {};
     _vest setVariable [QGVAR(plates),_plates];
     private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * (count _plates)), true];
-    [player] call FUNC(updatePlateUi);
-    GVAR(plateTransfer) = nil;
+    if (_unit isEqualTo player) then {[_unit] call FUNC(updatePlateUi);};
 }] call CBA_fnc_addEventHandler;
+
+// Vanilla arsenal
+[missionNamespace, "arsenalPreOpen", { params ["", "_center"];
+    private _unit = nearestObject [_center,"CAManBase"];
+    //GVAR(plateTransferArsenal) = true;
+    ["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;
+}] call BIS_fnc_addScriptedEventHandler;
+
+[missionNamespace, "arsenalClosed", {
+    0 spawn { sleep 1;
+        ["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;
+    };
+}] call BIS_fnc_addScriptedEventHandler;
 
 /*/ Ace Arsenal plate transfer
 private _aceArsenalLoaded = !(isNil "ace_arsenal_fnc_openBox");
 if (_aceArsenalLoaded) then {
     ["ace_arsenal_displayOpened", {
-        "diw_armor_plates_main_transferStart" call CBA_fnc_localEvent;
+        //GVAR(plateTransferArsenal) = true;
+        //["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;
     }] call CBA_fnc_addEventHandler;
-    ["ace_arsenal_displayClosed", {
-        "diw_armor_plates_main_transfer" call CBA_fnc_localEvent;
-    }] call CBA_fnc_addEventHandler;
+    //["ace_arsenal_displayClosed", {
+        //["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;
+    //}] call CBA_fnc_addEventHandler;
 };//*/
 
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extradata"];
     if (isNull (vestContainer _unit)) exitWith {};
     private _plates = _extradata getOrDefault [QGVAR(plates), []];
+    //private _isArsenal = (missionNamespace getVariable [QGVAR(plateTransferArsenal),false]);
+    /*if (GVAR(plateRefillArsenal) && {_isArsenal}) then {
+        _plates = [];
+        for '_i' from 1 to GVAR(numWearablePlates) do {_plates pushBack GVAR(maxPlateHealth)};
+    };
+    GVAR(plateTransferArsenal) = nil;*/
 
     // setting check
     private _count = count _plates;
@@ -611,7 +638,7 @@ if (_aceArsenalLoaded) then {
     private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
     _vest setVariable [QGVAR(plates),_plates];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * _count), true];
-    [_unit] call FUNC(updatePlateUi);
+    if (_unit isEqualTo player) then {[_unit] call FUNC(updatePlateUi);};
 }] call CBA_fnc_addEventHandler;
 
 ["CBA_loadoutGet", {
