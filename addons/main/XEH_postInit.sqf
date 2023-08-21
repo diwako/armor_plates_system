@@ -559,12 +559,14 @@ if (_aceInteractLoaded) then {
 
   If using vanilla functions, use `diw_armor_plates_main_plateTransferArsenal = true;`, if you want the plateRefillArsenal setting to affect the transfer, then `["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;` before altering unit loadout, and `["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;` after altering the loadout to maintain the player's plates when changing loadout/vest.
 */
-[QGVAR(transferStart), { params [["_unit",player]];
+[QGVAR(transferStart), { params [["_unit",player,[objNull]]];
+    if (!local _unit) exitWith {[QGVAR(transfer), [_unit], _unit] call CBA_fnc_targetEvent;};
     private _vest = vestContainer _unit;
     if (isNull _vest) exitWith {};
     GVAR(plateTransfer) = [_unit, (_vest getVariable [QGVAR(plates),[]])];
 }] call CBA_fnc_addEventHandler;
-[QGVAR(transfer), {
+[QGVAR(transfer), { params [["_unit",player,[objNull]]];
+    if (!local _unit) exitWith {[QGVAR(transfer), [_unit], _unit] call CBA_fnc_targetEvent;};
     private _plates = (missionNamespace getVariable [QGVAR(plateTransfer),nil]);
     GVAR(plateTransfer) = nil;
     private _unit = (_plates # 0);
@@ -587,13 +589,17 @@ if (_aceInteractLoaded) then {
 // Vanilla arsenal
 [missionNamespace, "arsenalPreOpen", { params ["", "_center"];
     private _unit = nearestObject [_center,"CAManBase"];
+    if (isNull _unit) then {_unit = player};
+    GVAR(transferTarg) = _unit;
     //GVAR(plateTransferArsenal) = true;
-    ["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;
+    ["diw_armor_plates_main_transferStart",[_unit],_unit] call CBA_fnc_targetEvent;
 }] call BIS_fnc_addScriptedEventHandler;
 
 [missionNamespace, "arsenalClosed", {
     0 spawn { sleep 1;
-        ["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;
+        private _unit = GVAR(transferTarg);
+        GVAR(transferTarg) = nil;
+        ["diw_armor_plates_main_transfer",[_unit],_unit] call CBA_fnc_targetEvent;;
     };
 }] call BIS_fnc_addScriptedEventHandler;
 
