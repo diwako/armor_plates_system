@@ -64,9 +64,9 @@ class CfgVehicles {
     class Camping_base_F;
     class Land_MedicalTent_01_base_F : Camping_base_F {
         class EventHandlers {
-            class CBA_Extended_EventHandlers {
-                init = "call cba_xeh_fnc_init";
-            }
+            class GVAR(medTent) {
+                postInit = QUOTE(_this spawn FUNC(addStructureHeal););
+            };
         };
     };
 };
