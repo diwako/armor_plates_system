@@ -566,7 +566,7 @@ if (_aceInteractLoaded) then {
 }] call CBA_fnc_addEventHandler;
 [QGVAR(transfer), { params [["_unit",player,[objNull]]];
     private _plates = (missionNamespace getVariable [QGVAR(plateTransfer),nil]);
-	if (isNil '_plates') exitWith {};
+    if (isNil '_plates') exitWith {};
     GVAR(plateTransfer) = nil;
     private _unit = (_plates # 0);
     private _plates = (_plates # 1);
