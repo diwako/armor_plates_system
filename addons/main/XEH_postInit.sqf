@@ -557,29 +557,21 @@ if (_aceInteractLoaded) then {
 /* Plate transfer events for compatibility use
   Using cba_fnc_getLoadout/cba_fnc_setLoadout when altering loadout should automatically load plates.
 
-  If using vanilla functions, use `diw_armor_plates_main_plateTransferArsenal = true;`, if you want the plateRefillArsenal setting to affect the transfer, then `["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;` before altering unit loadout, and `["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;` after altering the loadout to maintain the player's plates when changing loadout/vest.
+  If using vanilla functions, use `diw_armor_plates_main_plateTransferArsenal = true;`, if you want the plateRefillArsenal setting to affect the transfer, then `["diw_armor_plates_main_transferStart",[_unit], _unit] call CBA_fnc_targetEvent;` before altering unit loadout, and `["diw_armor_plates_main_transfer",[_unit], _unit] call CBA_fnc_targetEvent;` after altering the loadout to maintain the player's plates when changing loadout/vest.
 */
 [QGVAR(transferStart), { params [["_unit",player,[objNull]]];
-    if (!local _unit) exitWith {[QGVAR(transfer), [_unit], _unit] call CBA_fnc_targetEvent;};
     private _vest = vestContainer _unit;
     if (isNull _vest) exitWith {};
     GVAR(plateTransfer) = [_unit, (_vest getVariable [QGVAR(plates),[]])];
 }] call CBA_fnc_addEventHandler;
 [QGVAR(transfer), { params [["_unit",player,[objNull]]];
-    if (!local _unit) exitWith {[QGVAR(transfer), [_unit], _unit] call CBA_fnc_targetEvent;};
     private _plates = (missionNamespace getVariable [QGVAR(plateTransfer),nil]);
+	if (isNil '_plates') exitWith {};
     GVAR(plateTransfer) = nil;
     private _unit = (_plates # 0);
     private _plates = (_plates # 1);
     private _vest = vestContainer _unit;
     if (isNil '_unit' || {isNull _vest}) exitWith {};
-    /*private _isArsenal = (missionNamespace getVariable [QGVAR(plateTransferArsenal),false]);
-    if (GVAR(plateRefillArsenal) && {_isArsenal}) then {
-        _plates = [];
-        for '_i' from 1 to GVAR(numWearablePlates) do {_plates pushBack GVAR(maxPlateHealth)};
-    };
-    GVAR(plateTransferArsenal) = nil;*/
-    if (isNil '_plates') exitWith {};
     _vest setVariable [QGVAR(plates),_plates];
     private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * (count _plates)), true];
@@ -591,40 +583,21 @@ if (_aceInteractLoaded) then {
     private _unit = nearestObject [_center,"CAManBase"];
     if (isNull _unit) then {_unit = player};
     GVAR(transferTarg) = _unit;
-    //GVAR(plateTransferArsenal) = true;
-    ["diw_armor_plates_main_transferStart",[_unit],_unit] call CBA_fnc_targetEvent;
+    [QGVAR(transferStart),[_unit],_unit] call CBA_fnc_targetEvent;
 }] call BIS_fnc_addScriptedEventHandler;
 
 [missionNamespace, "arsenalClosed", {
     0 spawn { sleep 1;
         private _unit = GVAR(transferTarg);
         GVAR(transferTarg) = nil;
-        ["diw_armor_plates_main_transfer",[_unit],_unit] call CBA_fnc_targetEvent;;
+        [QGVAR(transfer),[_unit],_unit] call CBA_fnc_targetEvent;
     };
 }] call BIS_fnc_addScriptedEventHandler;
-
-/*/ Ace Arsenal plate transfer
-private _aceArsenalLoaded = !(isNil "ace_arsenal_fnc_openBox");
-if (_aceArsenalLoaded) then {
-    ["ace_arsenal_displayOpened", {
-        //GVAR(plateTransferArsenal) = true;
-        //["diw_armor_plates_main_transferStart",[]] call CBA_fnc_localEvent;
-    }] call CBA_fnc_addEventHandler;
-    //["ace_arsenal_displayClosed", {
-        //["diw_armor_plates_main_transfer",[]] call CBA_fnc_localEvent;
-    //}] call CBA_fnc_addEventHandler;
-};//*/
 
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extradata"];
     if (isNull (vestContainer _unit)) exitWith {};
     private _plates = _extradata getOrDefault [QGVAR(plates), []];
-    //private _isArsenal = (missionNamespace getVariable [QGVAR(plateTransferArsenal),false]);
-    /*if (GVAR(plateRefillArsenal) && {_isArsenal}) then {
-        _plates = [];
-        for '_i' from 1 to GVAR(numWearablePlates) do {_plates pushBack GVAR(maxPlateHealth)};
-    };
-    GVAR(plateTransferArsenal) = nil;*/
 
     // setting check
     private _count = count _plates;
