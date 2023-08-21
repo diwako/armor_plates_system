@@ -1156,7 +1156,7 @@
             <English>Show Auto-Injector Confirm dialog</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
-            <English>Shows a confirmation dialog when using an injector.</English>
+            <English>Shows a confirmation dialog when using an auto-injector.</English>
         </Key>
     </Package>
 </Project>

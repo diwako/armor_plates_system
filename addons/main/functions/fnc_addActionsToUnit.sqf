@@ -94,7 +94,7 @@ _arr2 call BIS_fnc_holdActionAdd;
             [QGVAR(heal), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
         }, _this, 5] call CBA_fnc_waitAndExecute;
     }, [], 10, true, true, "",
-    format ["!(_originalTarget getVariable ['%6',false]) && {alive _originalTarget && { _originalTarget isNotEqualTo _this && {((damage _originalTarget) isEqualTo 0 || %9 isEqualTo 0) && {(_originalTarget getVariable ['%1' , %2]) < (_originalTarget getVariable ['%7', ([%8,%2] select (isPlayer _originalTarget)) * ([%4, %5] select (_this getUnitTrait 'Medic'))]) && {([_this] call %3) >= %9}}}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic), QGVAR(unconscious), QGVAR(maxHp), QGVAR(maxAiHp), QGVAR(healItems)],
+    format ["!(_originalTarget getVariable ['%6',false]) && {alive _originalTarget && { _originalTarget isNotEqualTo _this && {((damage _originalTarget) isEqualTo 0 || {%9 isEqualTo 0}) && {(_originalTarget getVariable ['%1' , %2]) < (_originalTarget getVariable ['%7', ([%8,%2] select (isPlayer _originalTarget)) * ([%4, %5] select (_this getUnitTrait 'Medic'))]) && {([_this] call %3) >= %9}}}}}", QGVAR(hp), QGVAR(maxPlayerHP), QFUNC(hasHealItems), QGVAR(maxHealRifleman), QGVAR(maxHealMedic), QGVAR(unconscious), QGVAR(maxHp), QGVAR(maxAiHp), QGVAR(healItems)],
     3];
     _unit setUserActionText [_id, format [localize "str_a3_cfgactions_healsoldier0", getText ((configOf _unit) >> "displayName")], "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];
 // };
