@@ -506,6 +506,8 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     [LLSTRING(commEnable), LLSTRING(commEnable_desc)],
     _category,
     false,
+    true,
+    {},
     true
 ] call CBA_fnc_addSetting;
 
