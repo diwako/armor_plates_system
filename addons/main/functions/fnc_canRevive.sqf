@@ -7,4 +7,4 @@ _target isNotEqualTo _unit && {
 (_target distance _unit) < GVAR(holdActionRange) && {
 !(_unit getVariable ["ace_dragging_isDragging", false]) && {
 !(_unit getVariable ["ace_dragging_isCarrying", false]) && {
-([_unit] call FUNC(hasHealItems)) > 0}}}}}}
+(([_unit] call FUNC(hasHealItems)) >= GVAR(reviveItems))}}}}}}
