@@ -541,27 +541,6 @@ if !(GVAR(aceMedicalLoaded)) then {
             ] call ace_interact_menu_fnc_createAction;
             ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
         };
-
-        private _action2 = [QGVAR(useInjector), LLSTRING(useInjectorAce),
-            "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa", {
-            params ["_target", "_player"];
-            private _isProne = stance _player == "PRONE";
-            private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
-            private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
-            _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-            if (_medicAnim != "") then {
-                _player playMove _medicAnim;
-            };
-            [{params ["_target", "_player"];
-                if (!alive _target || {!alive _player || {_player getVariable [QGVAR(unconscious), false]}}) exitWith {};
-                [QGVAR(reduceMalus), [_target, _player, true], _target] call CBA_fnc_targetEvent;
-            }, _this, 1] call CBA_fnc_waitAndExecute;
-        }, {
-            params ["_target", "_player"];
-            alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
-        },{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
-        ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
-        ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
     };
 
     [LLSTRING(category), QGVAR(commOpen), LLSTRING(commOpenKeyBind), {
@@ -611,6 +590,27 @@ if (_aceInteractLoaded) then {
         [_player] call FUNC(canAddPlate)}}
     },{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+	private _action2 = [QGVAR(useInjector), LLSTRING(useInjectorAce),
+		"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa", {
+		params ["_target", "_player"];
+		private _isProne = stance _player == "PRONE";
+		private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+		private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
+		_medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+		if (_medicAnim != "") then {
+			_player playMove _medicAnim;
+		};
+		[{params ["_target", "_player"];
+			if (!alive _target || {!alive _player || {_player getVariable [QGVAR(unconscious), false]}}) exitWith {};
+			[QGVAR(reduceMalus), [_target, _player, true], _target] call CBA_fnc_targetEvent;
+		}, _this, 1] call CBA_fnc_waitAndExecute;
+	}, {
+		params ["_target", "_player"];
+		alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
+	},{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
+	["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
+	["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 /* Plate transfer events for compatibility use
