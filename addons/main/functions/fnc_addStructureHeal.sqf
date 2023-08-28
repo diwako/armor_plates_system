@@ -1,6 +1,8 @@
 #include "script_component.hpp"
 params["_structure"];
 
+if (_structure isKindOf "CAManBase") exitWith {};
+
 private _id = _structure addAction ["<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />", {
         params ["", "_caller"];
         private _isProne = stance _caller == "PRONE";
