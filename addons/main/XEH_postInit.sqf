@@ -291,7 +291,7 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(beingRevived), nil, true];
 
     if (_unit isEqualTo player) then {
-        if (GVAR(spawnWithFullPlates)) then {
+        if (GVAR(spawnWithFullPlates) && {!((vest player) in GVAR(vestBlacklist))}) then {
             [{
                 params ["_unit"];
                 [_unit] call FUNC(fillVestWithPlates);
@@ -561,7 +561,7 @@ if (_aceInteractLoaded) then {
 */
 [QGVAR(transferStart), { params [["_unit",player,[objNull]]];
     private _vest = vestContainer _unit;
-    if (isNull _vest) exitWith {};
+    if (isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
     GVAR(plateTransfer) = [_unit, (_vest getVariable [QGVAR(plates),[]])];
 }] call CBA_fnc_addEventHandler;
 [QGVAR(transfer), { params [["_unit",player,[objNull]]];
@@ -571,7 +571,7 @@ if (_aceInteractLoaded) then {
     private _unit = (_plates # 0);
     private _plates = (_plates # 1);
     private _vest = vestContainer _unit;
-    if (isNil '_unit' || {isNull _vest}) exitWith {};
+    if (isNil '_unit' || {isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}}) exitWith {};
     _vest setVariable [QGVAR(plates),_plates];
     private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * (count _plates)), true];
@@ -596,7 +596,7 @@ if (_aceInteractLoaded) then {
 
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extradata"];
-    if (isNull (vestContainer _unit)) exitWith {};
+    if (isNull (vestContainer _unit) || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
     private _plates = _extradata getOrDefault [QGVAR(plates), []];
 
     // setting check
@@ -622,7 +622,7 @@ if (_aceInteractLoaded) then {
 
 ["CBA_loadoutGet", {
     params ["_unit", "", "_extradata"];
-    if (isNull (vestContainer _unit)) exitWith {};
+    if (isNull (vestContainer _unit) || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
     private _plates = (vestContainer _unit) getVariable [QGVAR(plates),[]];
     if (_plates isNotEqualTo []) then {
         _extradata set [QGVAR(plates), _plates];
@@ -633,7 +633,7 @@ if (_aceInteractLoaded) then {
     time > 1
 }, {
     private _3den_maxPlateInVest = player getVariable [QGVAR(3den_maxPlateInVest), -1];
-    if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates)}) then {
+    if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates) && {!((vest player) in GVAR(vestBlacklist))}}) then {
         [player] call FUNC(fillVestWithPlates);
     };
     private _3den_maxPlateInInventory = player getVariable [QGVAR(3den_maxPlateInInventory), -1];
