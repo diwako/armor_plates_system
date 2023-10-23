@@ -336,6 +336,7 @@ if !(GVAR(aceMedicalLoaded)) then {
     GVAR(firstAidKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 401" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     GVAR(mediKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 619" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     GVAR(injectorItems) = format ["getNumber (_x >> '%1') > 0", QGVAR(isInjector)] configClasses (configFile >> "CfgWeapons") apply {configName _x};
+    GVAR(medVees) = "getNumber (_x >> 'attendant') > 0" configClasses (configFile >> "CfgVehicles") apply {configName _x};
 
     [] spawn {
         GVAR(playerDamageSync) = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
@@ -501,6 +502,24 @@ if !(GVAR(aceMedicalLoaded)) then {
             ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
         };
     };
+
+    [LLSTRING(category), QGVAR(commOpen), LLSTRING(commOpenKeyBind), {
+        if (!GVAR(commEnable)) exitWith {false};
+        if (commandingMenu isEqualTo ("#USER:" + QGVAR(commMenu))) exitWith {showCommandingMenu "";};
+        showCommandingMenu ("#USER:" + QGVAR(commMenu));
+        true
+    }, "",
+    [DIK_T, [false, false, true]], false] call CBA_fnc_addKeybind;
+
+    GVAR(commMenu) = [ [LLSTRING(commMenu),false],
+        ["base",[0],"",-5,[["expression",""]],"0","0"],
+        [LLSTRING(reqHeal),[2],"",-5,[["expression","[player] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","1"],
+        [LLSTRING(reqRevive),[3],"",-5,[["expression","[player] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","1"],
+        [LLSTRING(commandHeal),[4],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"],
+        [LLSTRING(commandRevive),[5],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"]
+    ];
+
+    {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach GVAR(medVees);
 };
 
 // ace interactions
