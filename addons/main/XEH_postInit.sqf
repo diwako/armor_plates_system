@@ -291,7 +291,7 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     _unit setVariable [QGVAR(beingRevived), nil, true];
 
     if (_unit isEqualTo player) then {
-        if (GVAR(spawnWithFullPlates)) then {
+        if (GVAR(spawnWithFullPlates) && {!((vest player) in GVAR(vestBlacklist))}) then {
             [{
                 params ["_unit"];
                 [_unit] call FUNC(fillVestWithPlates);
@@ -554,11 +554,86 @@ if (_aceInteractLoaded) then {
     ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
+/* Plate transfer events for compatibility use
+  Using cba_fnc_getLoadout/cba_fnc_setLoadout when altering loadout should automatically load plates.
+
+  If using vanilla functions, use `diw_armor_plates_main_plateTransferArsenal = true;`, if you want the plateRefillArsenal setting to affect the transfer, then `["diw_armor_plates_main_transferStart",[_unit], _unit] call CBA_fnc_targetEvent;` before altering unit loadout, and `["diw_armor_plates_main_transfer",[_unit], _unit] call CBA_fnc_targetEvent;` after altering the loadout to maintain the player's plates when changing loadout/vest.
+*/
+[QGVAR(transferStart), { params [["_unit",player,[objNull]]];
+    private _vest = vestContainer _unit;
+    if (isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
+    GVAR(plateTransfer) = [_unit, (_vest getVariable [QGVAR(plates),[]])];
+}] call CBA_fnc_addEventHandler;
+[QGVAR(transfer), { params [["_unit",player,[objNull]]];
+    private _plates = (missionNamespace getVariable [QGVAR(plateTransfer),nil]);
+    if (isNil '_plates') exitWith {};
+    GVAR(plateTransfer) = nil;
+    private _unit = (_plates # 0);
+    private _plates = (_plates # 1);
+    private _vest = vestContainer _unit;
+    if (isNil '_unit' || {isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}}) exitWith {};
+    _vest setVariable [QGVAR(plates),_plates];
+    private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
+    _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * (count _plates)), true];
+    if (_unit isEqualTo player) then {[_unit] call FUNC(updatePlateUi);};
+}] call CBA_fnc_addEventHandler;
+
+// Vanilla arsenal
+[missionNamespace, "arsenalPreOpen", { params ["", "_center"];
+    private _unit = nearestObject [_center,"CAManBase"];
+    if (isNull _unit) then {_unit = player};
+    GVAR(transferTarg) = _unit;
+    [QGVAR(transferStart),[_unit],_unit] call CBA_fnc_targetEvent;
+}] call BIS_fnc_addScriptedEventHandler;
+
+[missionNamespace, "arsenalClosed", {
+    0 spawn { sleep 1;
+        private _unit = GVAR(transferTarg);
+        GVAR(transferTarg) = nil;
+        [QGVAR(transfer),[_unit],_unit] call CBA_fnc_targetEvent;
+    };
+}] call BIS_fnc_addScriptedEventHandler;
+
+["CBA_loadoutSet", {
+    params ["_unit", "", "_extradata"];
+    if (isNull (vestContainer _unit) || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
+    private _plates = _extradata getOrDefault [QGVAR(plates), []];
+
+    // setting check
+    private _count = count _plates;
+    private _platesMax = GVAR(numWearablePlates);
+    private _plateMaxHp = GVAR(maxPlateHealth);
+    if (_count > _platesMax) then {
+        for "_i" from _platesMax to (_count -1) do {
+            _plates deleteAt _platesMax;
+        };
+        _count = _platesMax;
+    };
+    if ((_plates # 0) > _plateMaxHp) then {
+        _plates = _plates apply { [_x, _plateMaxHp] select (_x > _plateMaxHp) };
+    };
+
+    private _vest = vestContainer _unit;
+    private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
+    _vest setVariable [QGVAR(plates),_plates];
+    _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * _count), true];
+    if (_unit isEqualTo player) then {[_unit] call FUNC(updatePlateUi);};
+}] call CBA_fnc_addEventHandler;
+
+["CBA_loadoutGet", {
+    params ["_unit", "", "_extradata"];
+    if (isNull (vestContainer _unit) || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
+    private _plates = (vestContainer _unit) getVariable [QGVAR(plates),[]];
+    if (_plates isNotEqualTo []) then {
+        _extradata set [QGVAR(plates), _plates];
+    };
+}] call CBA_fnc_addEventHandler;
+
 [{
     time > 1
 }, {
     private _3den_maxPlateInVest = player getVariable [QGVAR(3den_maxPlateInVest), -1];
-    if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates)}) then {
+    if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates) && {!((vest player) in GVAR(vestBlacklist))}}) then {
         [player] call FUNC(fillVestWithPlates);
     };
     private _3den_maxPlateInInventory = player getVariable [QGVAR(3den_maxPlateInInventory), -1];

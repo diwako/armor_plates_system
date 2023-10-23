@@ -179,6 +179,12 @@
             <English>High</English>
             <Polish>Duża</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_vestBlacklist">
+            <English>Vest Blacklist</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_vestBlacklist_desc">
+            <English>List of vest class names to have plate insertion disabled. Class names can be found with {vest player} or ctrl+c when selected in ACE arsenal. (ex. vestclassname1, vestclassname2)</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
             <Polish>Punkty życia</Polish>

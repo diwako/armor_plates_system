@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 params ["_player"];
-if ((vest _player) isEqualTo "") exitWith {false};
+private _vest = vest _player;
+if (_vest isEqualTo "" || {_vest in GVAR(vestBlacklist)}) exitWith {false};
 
 if !(GVAR(hasPlateInInvetory)) exitWith {false};
 
