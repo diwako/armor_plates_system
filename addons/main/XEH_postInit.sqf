@@ -77,17 +77,20 @@ if (GVAR(aceMedicalLoaded)) then {
             _unit setVariable [QGVAR(HandleDamageEHID), _id];
         };
 
+        if (_unit getVariable [QGVAR(HandleHealEHID), -1] isEqualTo -1) then {
+            private _id = _unit addEventHandler ["HandleHeal", {
+                [{
+                    params ["_unit", "_healer"];
+                    _unit setDamage 0;
+                    [_unit, _healer, true] call FUNC(handleHealEh);
+                }, _this, 5] call CBA_fnc_waitAndExecute;
+                true
+            }];
+            _unit setVariable [QGVAR(HandleHealEHID), _id];
+        };
+
         [_unit] call FUNC(addActionsToUnit);
         [_unit] call FUNC(initAIUnit);
-    }, true, [], true] call CBA_fnc_addClassEventHandler;
-
-    ["CAManBase", "HandleHeal", {
-        [{
-            params ["_unit", "_healer"];
-            _unit setDamage 0;
-            [_unit, _healer, true] call FUNC(handleHealEh);
-        }, _this, 5] call CBA_fnc_waitAndExecute;
-        true
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 
     [QGVAR(heal), {
