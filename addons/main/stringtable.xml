@@ -299,6 +299,12 @@
             <Chinesesimp>非医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
             <Chinese>非醫療兵最大治療生命值百分比是多少？</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_healAtMedic">
+            <English>Allow Players to Heal at Medics</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_healAtMedic_desc">
+            <English>Players will have an addAction on units classed as medics to heal to the percentage medics give.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
             <English>General</English>
             <Polish>Ogólne</Polish>
