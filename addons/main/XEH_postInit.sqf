@@ -77,17 +77,17 @@ if (GVAR(aceMedicalLoaded)) then {
             _unit setVariable [QGVAR(HandleDamageEHID), _id];
         };
 
+        _unit addEventHandler ["HandleHeal", {
+            [{
+                params ["_unit", "_healer"];
+                _unit setDamage 0;
+                [_unit, _healer, true] call FUNC(handleHealEh);
+            }, _this, 5] call CBA_fnc_waitAndExecute;
+            true
+        }];
+
         [_unit] call FUNC(addActionsToUnit);
         [_unit] call FUNC(initAIUnit);
-    }, true, [], true] call CBA_fnc_addClassEventHandler;
-
-    ["CAManBase", "HandleHeal", {
-        [{
-            params ["_unit", "_healer"];
-            _unit setDamage 0;
-            [_unit, _healer, true] call FUNC(handleHealEh);
-        }, _this, 5] call CBA_fnc_waitAndExecute;
-        true
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 
     [QGVAR(heal), {
@@ -224,7 +224,22 @@ if (GVAR(aceMedicalLoaded)) then {
             }, _unit, 3] call CBA_fnc_waitAndExecute;
         };
     }] call CBA_fnc_addEventHandler;
+
+    [QGVAR(resetMalus), {       
+        if (!alive player) exitWith {};
+        GVAR(bleedOutTimeMalus) = nil;
+        if (player getVariable [QGVAR(unconscious), false]) then {
+            player setVariable [QGVAR(bleedoutKillTime),(cba_missionTime + (GVAR(bleedoutTime) - 0)), true];
+        };
+    }] call CBA_fnc_addEventHandler;
 };
+
+[QGVAR(fillPlates), {
+    params ["_unit"];
+    if (!alive _unit) exitWith {};
+    _unit call FUNC(fillVestWithPlates);
+    if (isPlayer _unit) then { _unit call FUNC(updatePlateUi); };
+}] call CBA_fnc_addEventHandler;
 
 if !(hasInterface) exitWith {
     INFO("Dedicated server / Headless client post init done");
