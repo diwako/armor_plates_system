@@ -163,7 +163,8 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     true,
     {   params ["_value"];
         GVAR(vestBlacklist) = ([(_value call CBA_fnc_removeWhitespace), ","] call CBA_fnc_split);
-    }
+    },
+    true
 ] call CBA_fnc_addSetting;
 
 _category = [_header, LLSTRING(subCategoryFeedback)];
