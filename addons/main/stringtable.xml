@@ -142,42 +142,52 @@
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive">
             <English>Weapon ready after reviving/pressing</English>
             <Polish>Broń przygotowana po ożywieniu/uciskaniu</Polish>
+            <Chinesesimp>复活/按压后武器准备就绪</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_desc">
             <English>Whether your weapon is up after reviving someone or pressing a wound</English>
             <Polish>Broń jest gotowa do strzału po ożywieniu kogoś lub po uciskaniu rany.</Polish>
+            <Chinesesimp>不管是复活某人还是按压伤口后，您的武器都会抬起</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_0">
             <English>Never</English>
             <Polish>Nigdy</Polish>
+            <Chinesesimp>从不</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_1">
             <English>After canceling</English>
             <Polish>Po anulowaniu</Polish>
+            <Chinesesimp>取消后</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_2">
             <English>Always</English>
             <Polish>Zawsze</Polish>
+            <Chinesesimp>总是</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength">
             <English>Plate animation headbob scale</English>
             <Polish>Skala animacji ruchu głową</Polish>
+            <Chinesesimp>插板头部晃动大小</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
             <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
             <Polish>Mnożnik poruszania głową w 1. osobie podczas animacji dodawania płyty. Właściwa intensywność animacji zależy od czasu dokładania płyt.</Polish>
+            <Chinesesimp>插板动画中第一人称头部旋转的倍数。实际强度取决于添加插板数量的时间。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
             <English>Minimal</English>
             <Polish>Minimalna</Polish>
+            <Chinesesimp>最小</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
             <English>Medium</English>
             <Polish>Normalna</Polish>
+            <Chinesesimp>中等</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
             <English>High</English>
             <Polish>Duża</Polish>
+            <Chinesesimp>高</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
@@ -326,10 +336,12 @@
         <Key ID="STR_diw_armor_plates_main_pelvisMult">
             <English>Pelvis Multiplier</English>
             <Polish>Mnożnik dla miednicy</Polish>
+            <Chinesesimp>骨盆部位伤害（倍数）</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pelvisMult_desc">
             <English>Damage multiplier on pelvis shots</English>
             <Polish>Mnożnik obrażeń przy trafieniach w miednicę</Polish>
+            <Chinesesimp>骨盆中弹时的伤害倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
@@ -346,38 +358,47 @@
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage">
             <English>Allow damage on unconscious units</English>
             <Polish>Zezwól na otrzymywanie obrażeń przez nieprzytomnego</Polish>
+            <Chinesesimp>允许对昏迷单位造成伤害</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_desc">
             <English>Allows that unconscious units can take damage. This allows the execution of unconscious units</English>
             <Polish>Umożliwia nieprzytomnym jednostkom otrzymywanie obrażeń. Pozwala na wykonywanie egzekucji</Polish>
+            <Chinesesimp>允许昏迷单位受到伤害。允许处决昏迷单位</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_1">
             <English>Downed Hitpoints</English>
             <Polish>Punkty życia w nieprzytomności</Polish>
+            <Chinesesimp>减少的HP值</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_2">
             <English>Hit count</English>
             <Polish>Liczba trafień</Polish>
+            <Chinesesimp>命中次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_3">
             <English>Both</English>
             <Polish>Oba</Polish>
+            <Chinesesimp>都有</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP">
             <English>Downed HP Multiplier</English>
             <Polish>Mnożnik HP nieprzytomnej jednostki</Polish>
+            <Chinesesimp>减少HP伤害的倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP_desc">
             <English>Multiplied by a unit's max hp to determine how much damage they can take while down.</English>
             <Polish>Mnożone przez maksymalne zdrowie jednostki w celu obliczenia, ile obrażeń może przyjąć podczas nieprzytomności.</Polish>
+            <Chinesesimp>乘以一个单位的最大HP值以决定它们在被击倒时可以受到多少伤害。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits">
             <English>Downed Hits count</English>
             <Polish>Trafienia nieprzytomnej jednostki</Polish>
+            <Chinesesimp>被击倒次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits_desc">
             <English>Number of hits a unit can take while down before dying.</English>
             <Polish>Liczba trafień które nieprzytomna jednostka może przyjąć zanim umrze.</Polish>
+            <Chinesesimp>一个单位在倒地后死亡前可承受的打击次数。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
@@ -430,46 +451,57 @@
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime">
             <English>Minimum Bleedout time</English>
             <Polish>Minimalny czas krwawienia</Polish>
+            <Chinesesimp>最小流血时间</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
             <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
             <Polish>Czas krwawienia w sekundach, który otrzymuje gracz bez względu na liczbę poprzednich powaleń.</Polish>
+            <Chinesesimp>玩家不管被击倒多少次都能获得几秒钟的失血时间以缓冲死亡</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop">
             <English>Enable Pressure Wound action</English>
             <Polish>Włącz uciskanie rany</Polish>
+            <Chinesesimp>启用按压伤口动作</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_desc">
             <English>Action allows players to delay bleedout until/while another unit revives. Revives can also be allowed to do the same.</English>
             <Polish>Akcja ta umożliwia graczowi spowolnienie krwawienia zanim ranna jednostka zostanie uratowana. Wskrzeszanie działa na podobnej zasadzie.</Polish>
+            <Chinesesimp>允许玩家延迟失血，直到/当另一个单位复活。也可以让复活者做同样的事情。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_1">
             <English>Enable</English>
             <Polish>Włączone</Polish>
+            <Chinesesimp>启用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_2">
             <English>Enable + Medic revives</English>
             <Polish>Włączone + Wskrzeszanie przez medyka</Polish>
+            <Chinesesimp>启用+医疗复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_3">
             <English>Enable + Revives</English>
             <Polish>Włączone + Wskrzeszanie</Polish>
+            <Chinesesimp>启用+复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover">
             <English>Pressure Wound bleedout recovery</English>
             <Polish>Zatrzymywanie krwawienia</Polish>
+            <Chinesesimp>按压伤口恢复失血</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
             <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
             <Polish>Sekundy krwawienia odzyskiwane co 3 sekundy uciskania rany (domyślnie: 4, stabilizuje się podczas wykonywania działania, ping ma wpływ na aktualizowanie tych wartości).</Polish>
+            <Chinesesimp>保持动作期间每3秒恢复失血时间的次数（默认值：4，在动作期间应基本稳定，ping可能会受影响）。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureWound">
             <English>Pressure Wound</English>
             <Polish>Uciskaj ranę</Polish>
+            <Chinesesimp>按压伤口</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureUnit">
             <English>Preventing %1 from bleeding out, keep holding the button!</English>
             <Polish>Zatrzymujesz krwawienie u: %1, trzymaj przycisk!</Polish>
+            <Chinesesimp>为防止%1失血，继续按住按钮！</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
@@ -618,10 +650,12 @@
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic">
             <English>Medic Range for downed icon</English>
             <Polish>Zasięg widzenia ikon dla medyka</Polish>
+            <Chinesesimp>被击倒图标的医疗范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic_desc">
             <English>The maximum range medics can see a downed friendly unit</English>
             <Polish>Maksymalny zasięg w którym medycy widzą nieprzytomną jednostkę sojuszniczą.</Polish>
+            <Chinesesimp>医护人员能看到被击倒友军的最大范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
@@ -655,12 +689,15 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorItem">
             <English>Auto-Injector</English>
+            <Chinesesimp>自动注射器</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Short">
             <English>Auto-Injector for reducing trauma to the body.</English>
+            <Chinesesimp>用于减少身体创伤的自动注射器。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Use">
             <English>Standard auto-injector, just stick it in ;)</English>
+            <Chinesesimp>标准自动注射器，只需将其插入即可；)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
             <English>Add plate into vest</English>
@@ -851,18 +888,22 @@
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions">
             <English>Radio Mod restrictions on uncon</English>
             <Polish>Ograniczenia radia nieprzytomnego</Polish>
+            <Chinesesimp>无线电 Mod 对昏迷状态的人的限制</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_desc">
             <English>Allows or disallows the usage of radios, can also be set to disallow speaking entirely</English>
             <Polish>Pozwala na włączanie lub wyłączanie korzystania z radia przez rannego, może też wyłączyć możliwość mówienia w ogóle.</Polish>
+            <Chinesesimp>允许或禁止使用收音机，也可以设置为完全禁止说话</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_1">
             <English>No radio</English>
             <Polish>Brak radia</Polish>
+            <Chinesesimp>禁用无线电</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_2">
             <English>No speaking at all</English>
             <Polish>Brak możliwości mówienia</Polish>
+            <Chinesesimp>完全禁言</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
@@ -921,26 +962,32 @@
         <Key ID="STR_diw_armor_plates_main_showFAKCount">
             <English>Display number of remaining FAKs</English>
             <Polish>Pokaż liczbę pozostałych FAKów</Polish>
+            <Chinesesimp>显示剩余 FAK 的数量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_desc">
             <English>Shows the number of remaining FAKs after a healing action.</English>
             <Polish>Pokazuje liczbę posiadanych FAKów po leczeniu.</Polish>
+            <Chinesesimp>显示治疗操作后剩余的 FAK 数量。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint1">
             <English>%1 has been used</English>
             <Polish>Zużyto: %1</Polish>
+            <Chinesesimp>%1 已被使用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint2">
             <English>%1 healing item(s) remaining</English>
             <Polish>Pozostałychh przedmiotów leczących: %1</Polish>
+            <Chinesesimp>剩余 %1 个治疗项目</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum">
             <English>Show FAK hint only with minimum FAKs</English>
             <Polish>Pokaż podpowiedź o FAKach tylko z ich minimalną ilością</Polish>
+            <Chinesesimp>仅显示最小FAK提示</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum_desc">
             <English>Only shows the FAK count hint if the remaining FAKs after healing are given number or below</English>
             <Polish>Pokazuje informację o FAKach, jeśli jest w ich ekwipunku tyle lub mniej.</Polish>
+            <Chinesesimp>当治愈指定或以下剩余的FAK数量，才会显示FAK数量提示</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
@@ -969,28 +1016,36 @@
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic">
             <English>Medic Range for bleed out timer</English>
             <Polish>Zasięg renderowania licznika dla medyka</Polish>
+            <Chinesesimp>失血计时器所需的医疗范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
             <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
+            <Chinesesimp>医护人员看到从倒地到死亡倒计时图标的最大范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority">
             <English>Hold Action Priority</English>
+            <Chinesesimp>保持行动优先权</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_desc">
             <English>Whether to prioritize reviving or pressing wound, when both are possible. Needs mission restart.</English>
+            <Chinesesimp>是优先复活还是按压伤口，当两者都有可能时。需要重新启动任务。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_0">
             <English>Revive</English>
+            <Chinesesimp>复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_1">
             <English>Press Wound</English>
+            <Chinesesimp>按压伤口</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionRange">
             <English>Revive/Press Wound range</English>
+            <Chinesesimp>复活/按压的范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionRange_desc">
             <English>Range in meters from the target where revive and press wound actions become possible.</English>
+            <Chinesesimp>可进行复活和按压伤口操作的目标距离（米）。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
@@ -1019,52 +1074,68 @@
         <Key ID="STR_diw_armor_plates_main_allowLimping">
             <English>Allow extended limb damage</English>
             <Polish>Zezwól na rozszerzone obrażenia kończyn</Polish>
+            <Chinesesimp>允许延长肢体损伤</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
             <English>Allows for limping and more sway the more damage a unit has</English>
             <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
+            <Chinesesimp>当单位受到的伤害越多跛行和晃动的幅度越大</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses">
             <English>Auto-Injector use count</English>
+            <Chinesesimp>自动注射器使用次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses_desc">
             <English>How many times an auto-injector can be used.</English>
+            <Chinesesimp>自动注射器可以使用多少次。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect">
             <English>Auto-Injector effect</English>
+            <Chinesesimp>自动注射器的效果</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_desc">
             <English>How auto-injector effects remaining bleedout time</English>
+            <Chinesesimp>自动注射器对剩余失血时间的影响</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_1">
             <English>Nullify bleedout time penalty</English>
+            <Chinesesimp>取消失血时间惩罚</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_2">
             <English>Halve bleedout time penalty</English>
+            <Chinesesimp>失血惩罚时间减半</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_3">
             <English>Number of downs</English>
+            <Chinesesimp>击倒次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorCoef">
             <English>Auto-injector coefficient</English>
+            <Chinesesimp>自动注射器系数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorCoef_desc">
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
+            <Chinesesimp>自动注射器在"击倒次数"设置下取消倒下的次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
+            <Chinesesimp>%1已使用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showUseCount_hint2">
             <English>%1 use(s) remaining</English>
+            <Chinesesimp>剩余%1次使用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use Injector on %1</English>
+            <Chinesesimp>在%1上使用注射器</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
             <English>Self</English>
+            <Chinesesimp>自己</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
             <English>Use Injector</English>
+            <Chinesesimp>使用注射器</Chinesesimp>
         </Key>
     </Package>
 </Project>
