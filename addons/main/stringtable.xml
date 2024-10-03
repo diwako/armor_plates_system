@@ -1024,12 +1024,12 @@
             <English>Allows for limping and more sway the more damage a unit has</English>
             <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorUses">
+        <!-- <Key ID="STR_diw_armor_plates_main_injectorUses">
             <English>Auto-Injector use count</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses_desc">
             <English>How many times an auto-injector can be used.</English>
-        </Key>
+        </Key> -->
         <Key ID="STR_diw_armor_plates_main_injectorEffect">
             <English>Auto-Injector effect</English>
         </Key>
@@ -1051,12 +1051,12 @@
         <Key ID="STR_diw_armor_plates_main_injectorCoef_desc">
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
+        <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showUseCount_hint2">
             <English>%1 use(s) remaining</English>
-        </Key>
+        </Key> -->
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use Injector on %1</English>
         </Key>

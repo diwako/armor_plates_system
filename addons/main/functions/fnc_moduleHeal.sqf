@@ -7,7 +7,7 @@ private _unit = attachedTo _logic;
 deleteVehicle _logic;
 
 if (isNull _unit || {!(_unit isKindOf "CAManBase") || {!alive _unit}}) exitWith {
-    [objNull, LLSTRING(invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
+    [objNull, LLSTRING(zeus_invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
 if (GVAR(aceMedicalLoaded)) then {
