@@ -1129,6 +1129,9 @@
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
             <Polish>Jak wiele padnięć anuluje auto-iniektor z ustawienia 'Liczba padnięć'</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
+            <English>Auto-injector has been used on %1</English>
+        </Key>
         <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
             <Polish>Użyto przedmiotu %1</Polish>
