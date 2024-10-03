@@ -21,7 +21,7 @@ if (GVAR(aceMedicalLoaded)) then {
         if !(_x getUnitTrait "Medic") then {
             _x setUnitTrait ["Medic", true];
             [{  params ["_caller"];
-                _caller setUnitTrait ["Medic", false]; 
+                _caller setUnitTrait ["Medic", false];
             }, [_x], 1] call CBA_fnc_waitAndExecute;
         };
         if ((lifeState _x) == "INCAPACITATED" || {_x getVariable [QGVAR(unconscious), false]}) then {

@@ -19,8 +19,8 @@ if (isNull _ctrlGroup) then {
     _ctrlGroup = _staminaDisplay ctrlCreate ["RscControlsGroupNoScrollbars", 65481];
     uiNamespace setVariable [QGVAR(mainControl), _ctrlGroup];
 
-    private _ctrlx = (profilenamespace getvariable ["IGUI_GRID_STAMINA_X", ((safezoneX + safezoneW) - (10 * ( ((safezoneW / safezoneH) min 1.2) / 40)) - 4.3 * ( ((safezoneW / safezoneH) min 1.2) / 40))]);
-    private _ctrly = (profilenamespace getvariable ["IGUI_GRID_STAMINA_Y", (safezoneY + 4.05 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25))]);
+    private _ctrlx = (profileNamespace getVariable ["IGUI_GRID_STAMINA_X", ((safeZoneX + safeZoneW) - (10 * ( ((safeZoneW / safeZoneH) min 1.2) / 40)) - 4.3 * ( ((safeZoneW / safeZoneH) min 1.2) / 40))]);
+    private _ctrly = (profileNamespace getVariable ["IGUI_GRID_STAMINA_Y", (safeZoneY + 4.05 * ( ( ((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25))]);
     _ctrly = _ctrly + GVAR(fullHeight);
     _ctrlGroup ctrlSetPosition [_ctrlx, _ctrly, GVAR(fullWidth), GVAR(fullHeight)];
     _ctrlGroup ctrlSetTextColor [1, 1, 1, 1];
@@ -43,10 +43,10 @@ if (_count isNotEqualTo GVAR(numWearablePlates)) then {
             _ctrlBack ctrlSetPosition [_padding + _width * _i, 0, _innerWidth, _height];
             _ctrlBack ctrlSetTextColor [1, 1, 1, 0];
             _ctrlBack ctrlSetBackgroundColor [
-                profileNamespace getvariable ['igui_bcg_RGB_R', 0],
-                profileNamespace getvariable ['igui_bcg_RGB_G', 0],
-                profileNamespace getvariable ['igui_bcg_RGB_B', 0],
-                profileNamespace getvariable ['igui_bcg_RGB_A', 0.33]
+                profileNamespace getVariable ['igui_bcg_RGB_R', 0],
+                profileNamespace getVariable ['igui_bcg_RGB_G', 0],
+                profileNamespace getVariable ['igui_bcg_RGB_B', 0],
+                profileNamespace getVariable ['igui_bcg_RGB_A', 0.33]
             ];
             _ctrlBack ctrlCommit 0;
             private _ctrl = _staminaDisplay ctrlCreate ["RscText", -1, _ctrlGroup];

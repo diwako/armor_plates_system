@@ -24,7 +24,7 @@ switch (GVAR(armorHandlingMode)) do {
 
                 if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
                     GVAR(lastPlateBreakSound) = diag_frameNo;
-                    playsound format [QGVAR(platebreak%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
+                    playSound format [QGVAR(platebreak%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
                 };
             };
         };
@@ -72,7 +72,7 @@ switch (GVAR(armorHandlingMode)) do {
 
                 if (_player isEqualTo _unit && {GVAR(audioFeedback) > 0 && {GVAR(lastPlateBreakSound) isNotEqualTo diag_frameNo}}) then {
                     GVAR(lastPlateBreakSound) = diag_frameNo;
-                    playsound format [QGVAR(platebreak%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
+                    playSound format [QGVAR(platebreak%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
                 };
             };
         };

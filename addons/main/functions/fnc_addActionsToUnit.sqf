@@ -168,7 +168,7 @@ _arr3 call BIS_fnc_holdActionAdd;
 
 
 private _id2Array = ["<img image='\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa' size='1.8' shadow=2 />", {
-    _this spawn {  
+    _this spawn {
         params ["_target", "_caller"];
         private _response = true;
         if (GVAR(injectorConfirm)) then {

@@ -14,10 +14,10 @@ private _height = GVAR(fullHeight);
 private _backCtrl = _display ctrlCreate ["RscText", -1];
 _backCtrl ctrlSetPosition [0 - (10 * pixelW), 0.5 - (10 * pixelH), 1 + (20 * pixelW), _height + (20 * pixelH)];
 _backCtrl ctrlSetBackgroundColor [
-    profileNamespace getvariable ['igui_bcg_RGB_R', 0],
-    profileNamespace getvariable ['igui_bcg_RGB_G', 0],
-    profileNamespace getvariable ['igui_bcg_RGB_B', 0],
-    // profileNamespace getvariable ['igui_bcg_RGB_A', 0.75]
+    profileNamespace getVariable ['igui_bcg_RGB_R', 0],
+    profileNamespace getVariable ['igui_bcg_RGB_G', 0],
+    profileNamespace getVariable ['igui_bcg_RGB_B', 0],
+    // profileNamespace getVariable ['igui_bcg_RGB_A', 0.75]
     0.75 // lets use a set value instead as the defautl alpha is very light
 ];
 _backCtrl ctrlSetTextColor [1,1,1,1];
@@ -26,10 +26,10 @@ _backCtrl ctrlCommit 0;
 private _ctrl = _display ctrlCreate ["RscText", -1];
 _ctrl ctrlSetPosition [0, 0.5, 0, _height];
 _ctrl ctrlSetBackgroundColor [
-    profileNamespace getvariable ['igui_warning_RGB_R', 0.13],
-    profileNamespace getvariable ['igui_warning_RGB_G', 0.54],
-    profileNamespace getvariable ['igui_warning_RGB_B', 0.21],
-    profileNamespace getvariable ['igui_warning_RGB_A', 0.8]
+    profileNamespace getVariable ['igui_warning_RGB_R', 0.13],
+    profileNamespace getVariable ['igui_warning_RGB_G', 0.54],
+    profileNamespace getVariable ['igui_warning_RGB_B', 0.21],
+    profileNamespace getVariable ['igui_warning_RGB_A', 0.8]
 ];
 _ctrl ctrlSetTextColor [0,0,0,1];
 _ctrl ctrlCommit 0;

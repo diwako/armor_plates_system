@@ -300,8 +300,8 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
     };
 }] call CBA_fnc_addEventHandler;
 
-GVAR(fullWidth) = 10 * ( ((safezoneW / safezoneH) min 1.2) / 40);
-GVAR(fullHeight) = 0.75 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25);
+GVAR(fullWidth) = 10 * ( ((safeZoneW / safeZoneH) min 1.2) / 40);
+GVAR(fullHeight) = 0.75 * ( ( ((safeZoneW / safeZoneH) min 1.2) / 1.2) / 25);
 
 GVAR(respawnEHId) = ["CAManBase", "Respawn", {
     params ["_unit"];

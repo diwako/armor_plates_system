@@ -10,7 +10,7 @@ _actualDamage = _returnedDamage select 0;
 if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
     if (GVAR(lastHPDamageSound) isNotEqualTo diag_frameNo) then {
         GVAR(lastHPDamageSound) = diag_frameNo;
-        playsound format [QGVAR(hit%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
+        playSound format [QGVAR(hit%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
     };
 };
 
