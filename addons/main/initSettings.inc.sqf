@@ -501,6 +501,17 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(commEnable),
+    "CHECKBOX",
+    [LLSTRING(commEnable), LLSTRING(commEnable_desc)],
+    _category,
+    false,
+    true,
+    {},
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(bleedoutTime),
     "SLIDER",
     [LLSTRING(bleedoutTime), LLSTRING(bleedoutTime_desc)],
@@ -752,6 +763,17 @@ _category = [_header, LLSTRING(subCategoryHealth)];
     [LLSTRING(maxHealRifleman), LLSTRING(maxHealRifleman_desc)],
     _category,
     [0, 1, 0.5, 0, true],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(healAtMedic),
+    "CHECKBOX",
+    [LLSTRING(healAtMedic), LLSTRING(healAtMedic_desc)],
+    _category,
+    false,
+    true,
+    {},
     true
 ] call CBA_fnc_addSetting;
 

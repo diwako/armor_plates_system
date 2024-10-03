@@ -226,7 +226,7 @@ if (GVAR(aceMedicalLoaded)) then {
         };
     }] call CBA_fnc_addEventHandler;
 
-    [QGVAR(resetMalus), {       
+    [QGVAR(resetMalus), {
         if (!alive player) exitWith {};
         GVAR(bleedOutTimeMalus) = nil;
         if (player getVariable [QGVAR(unconscious), false]) then {
@@ -236,7 +236,7 @@ if (GVAR(aceMedicalLoaded)) then {
 
     addMissionEventHandler ["ControlsShifted", {
         params ["", "", "_vehicle", "_copilotEnabled", "_controlsUnlocked"];
-        if (_copilotEnabled) then { 
+        if (_copilotEnabled) then {
             if !(_controlsUnlocked) exitWith {_vehicle setVariable [QGVAR(controlsUnlocked),nil];};
             _vehicle setVariable [QGVAR(controlsUnlocked),true];
         };
@@ -540,38 +540,25 @@ if !(GVAR(aceMedicalLoaded)) then {
             ] call ace_interact_menu_fnc_createAction;
             ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
         };
-
-        private _action2 = [QGVAR(useInjector), LLSTRING(useInjectorAce),
-            "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa", {
-            _this spawn {
-                params ["_target", "_player"];
-                private _response = true;
-                if (GVAR(injectorConfirm)) then {
-                    _response = [
-                        format [LLSTRING(injectorComnfirm_text),(name _target)], // body
-                        LLSTRING(giveUp_title), // title
-                        localize "str_lib_info_yes", // true return
-                        localize "str_lib_info_no", // false return
-                        nil, nil, false] call BIS_fnc_guiMessage;
-                };
-                if (!_response) exitWith {};
-                if (!alive _target || {!alive _player || {_player getVariable [QGVAR(unconscious), false]}}) exitWith {};
-                private _isProne = stance _player == "PRONE";
-                private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
-                private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
-                _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-                if (_medicAnim != "") then {
-                    _player playMove _medicAnim;
-                };
-                [QGVAR(reduceMalus), [_target, _player, true], _target] call CBA_fnc_targetEvent;
-            };
-        }, {
-            params ["_target", "_player"];
-            alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
-        },{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
-        ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
-        ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
     };
+
+    [LLSTRING(category), QGVAR(commOpen), LLSTRING(commOpenKeyBind), {
+        if (!GVAR(commEnable)) exitWith {false};
+        if (commandingMenu isEqualTo ("#USER:" + QGVAR(commMenu))) exitWith {showCommandingMenu "";};
+        showCommandingMenu ("#USER:" + QGVAR(commMenu));
+        true
+    }, "",
+    [DIK_T, [false, false, true]], false] call CBA_fnc_addKeybind;
+
+    GVAR(commMenu) = [ [LLSTRING(commMenu),false],
+        ["base",[0],"",-5,[["expression",""]],"0","0"],
+        [LLSTRING(reqHeal),[2],"",-5,[["expression","[player] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","1"],
+        [LLSTRING(reqRevive),[3],"",-5,[["expression","[player] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","1"],
+        [LLSTRING(commandHeal),[4],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"],
+        [LLSTRING(commandRevive),[5],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"]
+    ];
+
+    {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach ("getNumber (_x >> 'attendant') > 0" configClasses (configFile >> "CfgVehicles") apply {configName _x});
 };
 
 // ace interactions
@@ -602,6 +589,27 @@ if (_aceInteractLoaded) then {
         [_player] call FUNC(canAddPlate)}}
     },{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+    private _action2 = [QGVAR(useInjector), LLSTRING(useInjectorAce),
+        "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa", {
+        params ["_target", "_player"];
+        private _isProne = stance _player == "PRONE";
+        private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
+        _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+        if (_medicAnim != "") then {
+            _player playMove _medicAnim;
+        };
+        [{params ["_target", "_player"];
+            if (!alive _target || {!alive _player || {_player getVariable [QGVAR(unconscious), false]}}) exitWith {};
+            [QGVAR(reduceMalus), [_target, _player, true], _target] call CBA_fnc_targetEvent;
+        }, _this, 1] call CBA_fnc_waitAndExecute;
+    }, {
+        params ["_target", "_player"];
+        alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
+    },{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
+    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
+    ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 /* Plate transfer events for compatibility use
