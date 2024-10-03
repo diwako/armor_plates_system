@@ -1,0 +1,45 @@
+name = "diw_armor_plates"
+prefix = "diw_armor_plates"
+author = "diwako"
+template = "cba"
+mainprefix = "z"
+
+[version]
+path = "addons/main/script_version.hpp"
+git_hash = 0
+
+[files]
+include = [
+    "mod.cpp",
+    "*.paa",
+    "LICENSE",
+    "readme.txt",
+    "authors.txt",
+    "readme.md",
+    "*.p3d",
+    "*.rvmat",
+]
+exclude = [
+    "*.psd",
+    "*.png",
+    "*.tga"
+]
+
+[hemtt.signing]
+key_name = "{{prefix}}_{{version}}"
+authority = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+[hemtt.release]
+folder = "diw_armor_plates"
+
+
+[hemtt.launch.default]
+workshop = [
+    "450814997", # CBA_A3's Workshop ID
+    "1779063631", # Zeus Enhanced's Workshop ID
+    "463939057", # ace Enhanced's Workshop ID
+]
+
+parameters = [
+    "-world=empty",
+]

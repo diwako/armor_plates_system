@@ -8,9 +8,9 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoa
 
 #include "XEH_PREP.hpp"
 if (GVAR(aceMedicalLoaded)) then {
-    #include "initSettingsACE.sqf"
+    #include "initSettingsACE.inc.sqf"
 } else {
-    #include "initSettings.sqf"
+    #include "initSettings.inc.sqf"
 
     [] call FUNC(disableThirdParty);
     GVAR(armorCache) = false call CBA_fnc_createNamespace;

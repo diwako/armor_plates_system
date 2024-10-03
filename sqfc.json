@@ -1,7 +1,0 @@
-{
-    "inputDirs": ["P:/z/diw_armor_plates/addons"],
-    "includePaths": ["P:/"],
-    "excludeList": ["initSettingsACE.sqf", "initSettings.sqf"],
-    "outputDir": "P:/",
-    "workerThreads": 0
-}

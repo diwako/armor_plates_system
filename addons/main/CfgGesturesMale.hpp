@@ -1,4 +1,5 @@
 class CfgMovesBasic {
+    class Default;
     class ManActions {
         GVAR(addPlate_base)= QGVAR(addPlate_base);
         GVAR(addPlate_2_0)= QGVAR(addPlate_2_0);
@@ -179,5 +180,12 @@ class CfgGesturesMale {
             enableOptics = 1;
             mask = "empty";
         };
+    };
+};
+class CfgMovesMaleSdr: CfgMovesBasic {
+    class StandBase;
+    // mark as on ladder animation
+    class LadderCivilStatic: StandBase {
+        GVAR(isLadder) = 1;
     };
 };
