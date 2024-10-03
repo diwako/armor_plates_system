@@ -6,7 +6,7 @@ if (GVAR(numWearablePlates) isEqualTo 0 || {!local _unit || {isPlayer _unit || {
 [{
     params ["_unit"];
     private _3den_maxPlateInVest = _unit getVariable [QGVAR(3den_maxPlateInVest), -1];
-    if (_3den_maxPlateInVest >= 0 || {GVAR(AIchancePlateInVest) > 0 && {(random 1) < GVAR(AIchancePlateInVest) && {!isNull (vestContainer _unit)}}}) then {
+    if (_3den_maxPlateInVest >= 0 || {GVAR(AIchancePlateInVest) > 0 && {(random 1) < GVAR(AIchancePlateInVest) && {!isNull (vestContainer _unit) && {!((vest _unit) in GVAR(vestBlacklist))}}}}) then {
         private _arr = [];
         private _num = if (_3den_maxPlateInVest >= 0) then {
             _3den_maxPlateInVest min GVAR(numWearablePlates)
