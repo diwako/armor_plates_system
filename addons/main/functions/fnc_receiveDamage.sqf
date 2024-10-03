@@ -43,11 +43,11 @@ private _receivedDamage = _returnedDamage select 1;
 if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
     if (_isHeadshot) then {
         GVAR(lastHPDamageSound) = diag_frameNo;
-        playsound format [QGVAR(headshot%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
+        playSound format [QGVAR(headshot%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
     } else {
         if (GVAR(lastHPDamageSound) isNotEqualTo diag_frameNo) then {
             GVAR(lastHPDamageSound) = diag_frameNo;
-            playsound format [QGVAR(hit%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
+            playSound format [QGVAR(hit%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
         };
     };
 };

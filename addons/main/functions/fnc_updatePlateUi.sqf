@@ -34,6 +34,6 @@ if (GVAR(allowHideArmor)) then {
                 _x ctrlSetFade 1;
                 _x ctrlCommit 1;
             } forEach  _x;
-        } foreAch _this;
+        } forEach _this;
     };
 };

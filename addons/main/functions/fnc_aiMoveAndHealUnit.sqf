@@ -15,7 +15,7 @@ _medic setVariable [QGVAR(hasHealRequest), true, true];
 _medic forceSpeed (_medic getSpeed "FAST");
 _medic doMove getPosATL _unit;
 _medic setUnitPos "AUTO";
-{_medic disableAI _x} foreach AI_MODES;
+{_medic disableAI _x} forEach AI_MODES;
 while {
     alive _unit && {(lifeState _unit) == 'INCAPACITATED' || {(_unit getVariable [QGVAR(hp), GVAR(maxPlayerHP)]) < ((_unit getVariable [QGVAR(maxHp), ([GVAR(maxAiHp),GVAR(maxPlayerHP)] select (isPlayer _unit))]) * GVAR(maxHealMedic))}} &&
     alive _medic && {(lifeState _medic) != 'INCAPACITATED'} &&
@@ -34,7 +34,7 @@ while {
     if (_x select 1) then {
         _medic enableAI (_x select 0);
     };
-} foreach _aiFeatures;
+} forEach _aiFeatures;
 if !(alive _unit && {(lifeState _unit) == 'INCAPACITATED' || {(_unit getVariable [QGVAR(hp), GVAR(maxPlayerHP)]) < ((_unit getVariable [QGVAR(maxHp), ([GVAR(maxAiHp),GVAR(maxPlayerHP)] select (isPlayer _unit))]) * GVAR(maxHealMedic))}}) exitWith {
     _medic setVariable [QGVAR(hasHealRequest), nil, true];
 };

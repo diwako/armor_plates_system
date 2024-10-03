@@ -10,7 +10,7 @@ if (_consumeUse) then {
 };
 
 if (isNil QGVAR(bleedOutTimeMalus) || {!isPlayer _unit && {!isNil QGVAR(bleedOutTimeMalus)}}) exitWith {
-    [{params ["_unit"]; 
+    [{params ["_unit"];
         [_unit, true] call FUNC(setUnconscious);
         private _isPlayer = isPlayer _unit;
         if (!_isPlayer) then {

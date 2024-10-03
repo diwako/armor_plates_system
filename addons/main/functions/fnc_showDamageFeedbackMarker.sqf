@@ -17,7 +17,7 @@ _ctrl ctrlSetFade 1;
 _ctrl ctrlCommit 0;
 
 if !(_selfOrUnkownDamage) then {
-    private _camDirVec = (positionCameratoWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir;
+    private _camDirVec = (positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir;
     private _relDir = [_instigator, _unit] call BIS_fnc_dirTo;
     _ctrl ctrlSetAngle [180 + _relDir - _camDirVec, 0.5, 0.5, true];
 };
@@ -34,7 +34,7 @@ _feedback pushBack _ctrl;
 uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
 
 [{
-    (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameratoWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
+    (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
     ctrlCommitted (_this select 0);
 },{
     params ["_ctrl"];
@@ -42,7 +42,7 @@ uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
     _ctrl ctrlSetPosition [-0.2, -0.2, 1.4, 1.4];
     _ctrl ctrlCommit 5;
     [{
-        (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameratoWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
+        (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
         ctrlCommitted (_this select 0);
     },{
         params ["_ctrl"];
