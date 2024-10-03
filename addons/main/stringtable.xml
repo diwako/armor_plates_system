@@ -239,6 +239,18 @@
             <Chinesesimp>允许AI回复HP</Chinesesimp>
             <Chinese>允許AI回复HP</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen">
+            <English>Healing with Regen on</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
+            <English>How to handle healing with regen enabled.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_1">
+            <English>Allow</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_enableHealRegen_2">
+            <English>Allow and delay regen</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
             <Polish>Mnożnik regeneracji HP</Polish>
@@ -251,6 +263,18 @@
             <Chinesesimp>HP回复速度；值越低，回复速度越慢。</Chinesesimp>
             <Chinese>HP回复速度；值越低，回复速度越慢。</Chinese>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_hpRegenDelay">
+            <English>HP regen delay</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_hpRegenDelay_desc">
+            <English>How long before hp regen begins?</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealRegen">
+            <English>Max heal % for regen</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_maxHealRegen_desc">
+            <English>What percentage of max health can be regenerated?</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>
             <Polish>Maks. % uleczenia przez medyka</Polish>
@@ -258,7 +282,7 @@
             <Chinese>醫護兵最大治療百分比</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic_desc">
-            <English>How percentage of max health can a medic heal?</English>
+            <English>What percentage of max health can a medic heal?</English>
             <Polish>Ile % maksymalnego życia może przywrócić medyk?</Polish>
             <Chinesesimp>医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
             <Chinese>醫療兵最大治療生命值百分比是多少？</Chinese>
@@ -972,6 +996,21 @@
             <English>Only shows the FAK count hint if the remaining FAKs after healing are given number or below</English>
             <Polish>Pokazuje informację o FAKach, jeśli jest w ich ekwipunku tyle lub mniej.</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveItems">
+            <English>Required Items to Revive</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveItems_desc">
+            <English>Sets what items are need to perform revives.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_reviveItems_0">
+            <English>None Required</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_healItems">
+            <English>Required Items to Heal</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_healItems_desc">
+            <English>Sets what items are need to perform healing.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
             <Polish>Pokaż licznik graczom</Polish>
@@ -1090,6 +1129,9 @@
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
             <Polish>Jak wiele padnięć anuluje auto-iniektor z ustawienia 'Liczba padnięć'</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
+            <English>Auto-injector has been used on %1</English>
+        </Key>
         <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
             <Polish>Użyto przedmiotu %1</Polish>
@@ -1099,16 +1141,25 @@
             <Polish>Pozostałych użyć: %1</Polish>
         </Key> -->
         <Key ID="STR_diw_armor_plates_main_useInjector">
-            <English>Use Injector on %1</English>
-            <Polish>Użyj iniektora na %1</Polish>
+            <English>Use auto-injector on %1</English>
+            <Polish>Użyj auto-iniektora na %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
             <English>Self</English>
             <Polish>Sobie</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
-            <English>Use Injector</English>
-            <Polish>Użyj iniektora</Polish>
+            <English>Use auto-injector</English>
+            <Polish>Użyj auto-iniektora</Polish>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorConfirm_text">
+            <English>Use auto-injector on %1?</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorConfirm">
+            <English>Show Auto-Injector Confirm dialog</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
+            <English>Shows a confirmation dialog when using an auto-injector.</English>
         </Key>
     </Package>
 </Project>

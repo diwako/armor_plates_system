@@ -417,8 +417,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     _args params ["_target", "_caller"];
                     [QGVAR(revive), [_target, _caller, true], _target] call CBA_fnc_targetEvent;
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
                     };
@@ -428,8 +432,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
                     };
@@ -483,8 +491,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
                     };
@@ -494,8 +506,12 @@ if !(GVAR(aceMedicalLoaded)) then {
                     params ["_args"];
                     _args params ["_target", "_caller"];
                     if (isNull objectParent _caller) then {
-                        private _anim = ["amovpknlmstpsloww[wpn]dnon", "amovppnemstpsrasw[wpn]dnon"] select (_caller getVariable [QGVAR(wasProne), false]);
+                        private _wasProne = (_caller getVariable [QGVAR(wasProne), false]);
+                        private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
+                        private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
+                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
                     };
@@ -524,6 +540,37 @@ if !(GVAR(aceMedicalLoaded)) then {
             ] call ace_interact_menu_fnc_createAction;
             ["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
         };
+
+        private _action2 = [QGVAR(useInjector), LLSTRING(useInjectorAce),
+            "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa", {
+            _this spawn {
+                params ["_target", "_player"];
+                private _response = true;
+                if (GVAR(injectorConfirm)) then {
+                    _response = [
+                        format [LLSTRING(injectorComnfirm_text),(name _target)], // body
+                        LLSTRING(giveUp_title), // title
+                        localize "str_lib_info_yes", // true return
+                        localize "str_lib_info_no", // false return
+                        nil, nil, false] call BIS_fnc_guiMessage;
+                };
+                if (!_response) exitWith {};
+                if (!alive _target || {!alive _player || {_player getVariable [QGVAR(unconscious), false]}}) exitWith {};
+                private _isProne = stance _player == "PRONE";
+                private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
+                private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
+                _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
+                if (_medicAnim != "") then {
+                    _player playMove _medicAnim;
+                };
+                [QGVAR(reduceMalus), [_target, _player, true], _target] call CBA_fnc_targetEvent;
+            };
+        }, {
+            params ["_target", "_player"];
+            alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
+        },{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
+        ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
+        ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
     };
 };
 
@@ -555,27 +602,6 @@ if (_aceInteractLoaded) then {
         [_player] call FUNC(canAddPlate)}}
     },{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;
     ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action, true] call ace_interact_menu_fnc_addActionToClass;
-
-    private _action2 = [QGVAR(useInjector), LLSTRING(useInjectorAce),
-        "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_revive_ca.paa", {
-        params ["_target", "_player"];
-        private _isProne = stance _player == "PRONE";
-        private _medicAnim = ["AinvPknlMstpSlayW[wpn]Dnon_medicOther", "AinvPpneMstpSlayW[wpn]Dnon_medicOther"] select _isProne;
-        private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _player, secondaryWeapon _player, handgunWeapon _player] find currentWeapon _player, "non"];
-        _medicAnim = [_medicAnim, "[wpn]", _wpn] call CBA_fnc_replace;
-        if (_medicAnim != "") then {
-            _player playMove _medicAnim;
-        };
-        [{params ["_target", "_player"];
-            if (!alive _target || {!alive _player || {_player getVariable [QGVAR(unconscious), false]}}) exitWith {};
-            [QGVAR(reduceMalus), [_target, _player, true], _target] call CBA_fnc_targetEvent;
-        }, _this, 1] call CBA_fnc_waitAndExecute;
-    }, {
-        params ["_target", "_player"];
-        alive _target && {_player getUnitTrait 'Medic' && {(_player call FUNC(hasInjector))}}
-    },{},[], [0,0,0], 2.5] call ace_interact_menu_fnc_createAction;
-    ["CAManBase", 1, ["ACE_SelfActions", "ACE_Equipment"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
-    ["CAManBase", 0, ["ACE_MainActions"], _action2, true] call ace_interact_menu_fnc_addActionToClass;
 };
 
 /* Plate transfer events for compatibility use

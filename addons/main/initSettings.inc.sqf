@@ -602,6 +602,24 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(reviveItems),
+    "LIST",
+    [LLSTRING(reviveItems), LLSTRING(reviveItems_desc)],
+    _category,
+    [[0, 1, 2], [LLSTRING(reviveItems_0), format ["%1 / %2", localize "STR_A3_cfgWeapons_FirstAidKit0", localize "STR_A3_cfgWeapons_Medikit0"], "STR_A3_cfgWeapons_Medikit0"], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(healItems),
+    "LIST",
+    [LLSTRING(healItems), LLSTRING(healItems_desc)],
+    _category,
+    [[0, 1, 2], [LLSTRING(reviveItems_0), format ["%1 / %2", localize "STR_A3_cfgWeapons_FirstAidKit0", localize "STR_A3_cfgWeapons_Medikit0"], "STR_A3_cfgWeapons_Medikit0"], 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(allowSelfRevive),
     "CHECKBOX",
     [LLSTRING(allowSelfRevive), LLSTRING(allowSelfRevive_desc)],
@@ -684,11 +702,38 @@ _category = [_header, LLSTRING(subCategoryHealth)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(enableHealRegen),
+    "LIST",
+    [LLSTRING(enableHealRegen), LLSTRING(enableHealRegen_desc)],
+    _category,
+    [[0, 1, 2], [LLSTRING(downedFeedback_0), LLSTRING(enableHealRegen_1), LLSTRING(enableHealRegen_2)], 0],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(hpRegenRate),
     "SLIDER",
     [LLSTRING(hpRegenRate), LLSTRING(hpRegenRate_desc)],
     _category,
-    [1, 100, 10, 2],
+    [0.1, 100, 10, 2],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(hpRegenDelay),
+    "SLIDER",
+    [LLSTRING(hpRegenDelay), LLSTRING(hpRegenDelay_desc)],
+    _category,
+    [0.1, 100, 5, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(maxHealRegen),
+    "SLIDER",
+    [LLSTRING(maxHealRegen), LLSTRING(maxHealRegen_desc)],
+    _category,
+    [0, 2, 1, 0, true],
     true
 ] call CBA_fnc_addSetting;
 
@@ -739,4 +784,13 @@ _category = [_header, LLSTRING(subCategoryHealth)];
         params ["_value"];
         GVAR(injectorCoef) = (parseNumber (_value toFixed 1));
     }
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(injectorConfirm),
+    "CHECKBOX",
+    [LLSTRING(injectorConfirm), LLSTRING(injectorConfirm_desc)],
+    _category,
+    false,
+    false
 ] call CBA_fnc_addSetting;
