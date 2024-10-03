@@ -226,7 +226,7 @@ if (GVAR(aceMedicalLoaded)) then {
         };
     }] call CBA_fnc_addEventHandler;
 
-    [QGVAR(resetMalus), {       
+    [QGVAR(resetMalus), {
         if (!alive player) exitWith {};
         GVAR(bleedOutTimeMalus) = nil;
         if (player getVariable [QGVAR(unconscious), false]) then {
@@ -236,7 +236,7 @@ if (GVAR(aceMedicalLoaded)) then {
 
     addMissionEventHandler ["ControlsShifted", {
         params ["", "", "_vehicle", "_copilotEnabled", "_controlsUnlocked"];
-        if (_copilotEnabled) then { 
+        if (_copilotEnabled) then {
             if !(_controlsUnlocked) exitWith {_vehicle setVariable [QGVAR(controlsUnlocked),nil];};
             _vehicle setVariable [QGVAR(controlsUnlocked),true];
         };
@@ -360,7 +360,6 @@ if !(GVAR(aceMedicalLoaded)) then {
     GVAR(firstAidKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 401" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     GVAR(mediKitItems) = "getNumber (_x >> 'ItemInfo' >> 'type') isEqualTo 619" configClasses (configFile >> "CfgWeapons") apply {configName _x};
     GVAR(injectorItems) = format ["getNumber (_x >> '%1') > 0", QGVAR(isInjector)] configClasses (configFile >> "CfgWeapons") apply {configName _x};
-    GVAR(medVees) = "getNumber (_x >> 'attendant') > 0" configClasses (configFile >> "CfgVehicles") apply {configName _x};
 
     [] spawn {
         GVAR(playerDamageSync) = player getVariable [QGVAR(maxHP), GVAR(maxPlayerHP)];
@@ -559,7 +558,7 @@ if !(GVAR(aceMedicalLoaded)) then {
         [LLSTRING(commandRevive),[5],"",-5,[["expression","[cursorTarget] call diw_armor_plates_main_fnc_commandHeal;"]],"!isAlone","CursorOnFriendly"]
     ];
 
-    {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach GVAR(medVees);
+    {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach ("getNumber (_x >> 'attendant') > 0" configClasses (configFile >> "CfgVehicles") apply {configName _x});
 };
 
 // ace interactions
