@@ -879,6 +879,21 @@
             <English>No speaking at all</English>
             <Polish>Brak możliwości mówienia</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_pilotUncon">
+            <English>Unlock Pilot Controls when downed</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pilotUncon_desc">
+            <English>How to handle controls when pilot goes unconscious and has a co-pilot.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pilotUncon_0">
+            <English>Do not unlock controls</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pilotUncon_1">
+            <English>Unlock Controls</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_pilotUncon_2">
+            <English>Unlock and Lock when revived</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
             <Polish>Leczenie przez AI</Polish>

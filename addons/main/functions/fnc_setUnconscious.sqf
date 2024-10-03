@@ -73,6 +73,7 @@ _unit setUnconscious _set;
 [QGVAR(setHidden), [_unit , _set]] call CBA_fnc_globalEvent;
 _unit setVariable [QGVAR(unconscious), _set, true];
 _unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
+[QGVAR(downState), [_unit, _set]] call CBA_fnc_globalEvent;
 
 if (GVAR(radioModUnconRestrictions) > 0) then {
     // ACRE
@@ -97,6 +98,22 @@ if (GVAR(radioModUnconRestrictions) > 0) then {
     if (GVAR(radioModUnconRestrictions) isEqualTo 2) then {
         _unit setVariable ["acre_sys_core_isDisabled", _set, GVAR(AcreLoaded)];
         _unit setVariable ["tf_voiceVolume", [1, 0] select _set, GVAR(TfarLoaded)];
+    };
+};
+
+if (GVAR(pilotUncon) > 0 && {alive _unit}) then {
+    private _vic = vehicle _unit;
+    if (isCopilotEnabled _vic && {driver _vic isEqualTo _unit && {!(_vic getVariable [QGVAR(controlsUnlocked),false]) && {!isNull (_vic turretUnit [0])}}}) exitWith {
+        if (_set) then {
+            if (currentPilot _vic isEqualTo _unit) then {
+                _unit action ["UnlockVehicleControl", _vic];
+                if (GVAR(pilotUncon) > 1) then {_unit setVariable [QGVAR(unlocked),true]};
+            };
+        };
+    };
+    if ( GVAR(pilotUncon) > 1 && {(_unit getVariable [QGVAR(unlocked),false]) }) then {
+        _unit action ["LockVehicleControl", _vic];
+        _unit setVariable [QGVAR(unlocked),nil]
     };
 };
 
