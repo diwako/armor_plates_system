@@ -2,7 +2,7 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {QGVAR(moduleHeal),QGVAR(plateItem),QGVAR(autoInjectorItem)};
+        units[] = {QGVAR(moduleHeal),QGVAR(modulePlate),QGVAR(moduleResetMalus),QGVAR(moduleResetMalusGlobal),QGVAR(plateItem),QGVAR(autoInjectorItem)};
         weapons[] = {QGVAR(plate),QGVAR(autoInjector)};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"cba_main"};
