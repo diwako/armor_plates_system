@@ -154,6 +154,19 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(vestBlacklist),
+    "EDITBOX",
+    [LLSTRING(vestBlacklist), LLSTRING(vestBlacklist_desc)],
+    _category,
+    "",
+    true,
+    {   params ["_value"];
+        GVAR(vestBlacklist) = ([(_value call CBA_fnc_removeWhitespace), ","] call CBA_fnc_split);
+    },
+    true
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [
@@ -463,7 +476,7 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
 [
     QGVAR(radioModUnconRestrictions),
     "LIST",
-    [LLSTRING(radioModUnconRestrictions), LLSTRING(radioModUnconRestrictions)],
+    [LLSTRING(radioModUnconRestrictions), LLSTRING(radioModUnconRestrictions_desc)],
     _category,
     [[0, 1, 2], [LLSTRING(downedFeedback_0), LLSTRING(radioModUnconRestrictions_1), LLSTRING(radioModUnconRestrictions_2)], 1],
     true

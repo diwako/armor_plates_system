@@ -179,6 +179,12 @@
             <English>High</English>
             <Polish>Duża</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_vestBlacklist">
+            <English>Vest Blacklist</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_vestBlacklist_desc">
+            <English>List of vest class names to have plate insertion disabled. Class names can be found with {vest player} or ctrl+c when selected in ACE arsenal. (ex. vestclassname1, vestclassname2)</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
             <Polish>Punkty życia</Polish>
@@ -801,10 +807,19 @@
             <Chinese>起身</Chinese>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_heal">
-            <English>Heal unit</English>
+            <English>Heal unit/crew</English>
             <Polish>Ulecz jednostkę</Polish>
             <Chinesesimp>治疗单位</Chinesesimp>
             <Chinese>治療單位</Chinese>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_zeus_module_plate">
+            <English>Fill unit/crew vests with plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_zeus_module_malus">
+            <English>Reset unit/crew bleedout timers</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_zeus_module_malusGlobal">
+            <English>Reset all player bleedout timers</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
@@ -1024,14 +1039,14 @@
             <English>Allows for limping and more sway the more damage a unit has</English>
             <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorUses">
+        <!-- <Key ID="STR_diw_armor_plates_main_injectorUses">
             <English>Auto-Injector use count</English>
             <Polish>Liczba użyć auto-iniektora</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorUses_desc">
             <English>How many times an auto-injector can be used.</English>
             <Polish>Ile razy gracz może skorzystać z auto-iniektora.</Polish>
-        </Key>
+        </Key> -->
         <Key ID="STR_diw_armor_plates_main_injectorEffect">
             <English>Auto-Injector effect</English>
             <Polish>Efekty auto-iniektora</Polish>
@@ -1060,14 +1075,14 @@
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
             <Polish>Jak wiele padnięć anuluje auto-iniektor z ustawienia 'Liczba padnięć'</Polish>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
+        <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
             <Polish>Użyto przedmiotu %1</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showUseCount_hint2">
             <English>%1 use(s) remaining</English>
             <Polish>Pozostałych użyć: %1</Polish>
-        </Key>
+        </Key> -->
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use Injector on %1</English>
             <Polish>Użyj iniektora na %1</Polish>

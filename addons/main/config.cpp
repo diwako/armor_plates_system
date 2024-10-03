@@ -2,7 +2,7 @@
 class CfgPatches {
     class ADDON {
         name = COMPONENT_NAME;
-        units[] = {QGVAR(moduleHeal),QGVAR(plateItem),QGVAR(autoInjectorItem)};
+        units[] = {QGVAR(moduleHeal),QGVAR(modulePlate),QGVAR(moduleResetMalus),QGVAR(moduleResetMalusGlobal),QGVAR(plateItem),QGVAR(autoInjectorItem)};
         weapons[] = {QGVAR(plate),QGVAR(autoInjector)};
         requiredVersion = REQUIRED_VERSION;
         requiredAddons[] = {"cba_main"};
@@ -16,10 +16,9 @@ class CfgPatches {
 #include "CfgEden.hpp"
 #include "CfgEventHandlers.hpp"
 #include "CfgFactionClasses.hpp"
-#include "CfgMoves.hpp"
+#include "CfgGesturesMale.hpp"
 #include "CfgSounds.hpp"
 #include "CfgVehicles.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgFunctions.hpp"
-#include "CfgGesturesMale.hpp"
 #include "ACE_Medical_Injuries.hpp"
