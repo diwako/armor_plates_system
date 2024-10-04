@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+if !(hasInterface) exitWith {};
 private _staminaDisplay = uiNamespace getVariable [QGVAR(mainDisplay), displayNull];
 if (isNull _staminaDisplay) then {
     private _guiDisplay = uiNamespace getVariable ["IGUI_displays", []];
