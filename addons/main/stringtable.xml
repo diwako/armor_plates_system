@@ -224,9 +224,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_vestBlacklist">
             <English>Vest Blacklist</English>
+            <Korean>조끼 블랙리스트</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_vestBlacklist_desc">
             <English>List of vest class names to have plate insertion disabled. Class names can be found with {vest player} or ctrl+c when selected in ACE arsenal. (ex. vestclassname1, vestclassname2)</English>
+            <Korean>방탄판 삽입을 비활성화할 조끼의 클레스네임 목록입니다. 클래스네임은 ACE 무기고에서 선택하면 {vest player} 또는 컨트롤+c 키로 찾을 수 있습니다. (예: vestclassname1, vestclassname2)</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
@@ -293,15 +295,19 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen">
             <English>Healing with Regen on</English>
+            <Korean>자연회복 중 치료</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
             <English>How to handle healing with regen enabled.</English>
+            <Korean>자연회복을 활성화한 상태에서 치료를 할 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_1">
             <English>Allow</English>
+            <Korean>허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_2">
             <English>Allow and delay regen</English>
+            <Korean>자연회복을 지연하고 허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
@@ -319,15 +325,19 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay">
             <English>HP regen delay</English>
+            <Korean>체력 자연회복 지연 시간</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay_desc">
             <English>How long before hp regen begins?</English>
+            <Korean>체력 자연회복이 시작되기까지 얼마나 걸릴 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRegen">
             <English>Max heal % for regen</English>
+            <Korean>자연회복 최대 체력량 (%)</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRegen_desc">
             <English>What percentage of max health can be regenerated?</English>
+            <Korean>최대 체력의 몇 퍼센트까지 자연회복이 가능한 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>
@@ -359,9 +369,11 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_healAtMedic">
             <English>Allow Players to Heal at Medics</English>
+            <Korean>플레이어가 의무병처럼 치료 허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healAtMedic_desc">
             <English>Players will have an addAction on units classed as medics to heal to the percentage medics give.</English>
+            <Korean>플레이어는 의무병으로 분류된 유닛에게 addAction을 사용하여 의무병이 주는 백분율로 치료합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
             <English>General</English>
@@ -972,17 +984,17 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideHP">
             <English>Automatically hide HP bar</English>
-            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
+            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
             <Chinesesimp>自动隐藏HP条</Chinesesimp>
             <Chinese>自動隱藏HP條</Chinese>
             <Korean>체력 표시줄 자동 숨기기</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideHP_desc">
-            <English>Hides the HP bar after a certain time. Will only hide if HP is above warning level! Press the &quot;Add plate into vest&quot; key to show again</English>
-            <Polish>Ukrywa pasek życia po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
-            <Chinesesimp>在一定时间后隐藏HP条.只有在HP超过警告水平时才会隐藏!按&quot;添加插板进入背心&quot;键,以再次显示.</Chinesesimp>
-            <Chinese>在一定時間後隱藏HP條.只有在HP超過警告水平時才會隱藏!按&quot;添加插板進入背心&quot;鍵,以再次顯示.</Chinese>
-            <Korean>일정 시간이 지나면 체력 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 &quot;조끼에 방탄판 삽입&quot; 키를 누르십시오.</Korean>
+            <English>Hides the HP bar after a certain time. Will only hide if HP is above warning level! Press the "Add plate into vest" key to show again</English>
+            <Polish>Ukrywa pasek życia po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
+            <Chinesesimp>在一定时间后隐藏HP条.只有在HP超过警告水平时才会隐藏!按"添加插板进入背心"键,以再次显示.</Chinesesimp>
+            <Chinese>在一定時間後隱藏HP條.只有在HP超過警告水平時才會隱藏!按"添加插板進入背心"鍵,以再次顯示.</Chinese>
+            <Korean>일정 시간이 지나면 체력 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor">
             <English>Automatically hide plate bars</English>
@@ -992,11 +1004,11 @@
             <Korean>방탄 표시줄 자동 숨기기</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor_desc">
-            <English>Hides the plate bars after a certain time. Press the &quot;Add plate into vest&quot; key to show again</English>
-            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz &quot;Dodaj płytę do kamizelki&quot; by pokazać ponownie</Polish>
-            <Chinesesimp>在一定时间后隐藏插板条.按&quot;添加插板进入背心&quot;键,以再次显示.</Chinesesimp>
-            <Chinese>一段時間後隱藏插板條.按&quot;添加插板進入背心&quot;鍵,以再次顯示.</Chinese>
-            <Korean>일정 시간이 지나면 방탄 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 &quot;조끼에 방탄판 삽입&quot; 키를 누르십시오.</Korean>
+            <English>Hides the plate bars after a certain time. Press the "Add plate into vest" key to show again</English>
+            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
+            <Chinesesimp>在一定时间后隐藏插板条.按"添加插板进入背心"键,以再次显示.</Chinesesimp>
+            <Chinese>一段時間後隱藏插板條.按"添加插板進入背心"鍵,以再次顯示.</Chinese>
+            <Korean>일정 시간이 지나면 방탄 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds">
             <English>Hide UI timeout</English>
@@ -1028,12 +1040,15 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_plate">
             <English>Fill unit/crew vests with plates</English>
+            <Korean>유닛/승무원 조끼에 방탄판 채우기</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malus">
             <English>Reset unit/crew bleedout timers</English>
+            <Korean>유닛/승무원 과다출혈 타이머 재설정</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malusGlobal">
             <English>Reset all player bleedout timers</English>
+            <Korean>모든 플레이어 과다출혈 타이머 재설정</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
@@ -1110,18 +1125,23 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon">
             <English>Unlock Pilot Controls when downed</English>
+            <Korean>조종사 의식불명 시 조종간 잠금해제</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_desc">
             <English>How to handle controls when pilot goes unconscious and has a co-pilot.</English>
+            <Korean>조종사가 의식불명 상태에서 부조종사가 있는 경우 조종을 할 수 있을 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_0">
             <English>Do not unlock controls</English>
+            <Korean>비허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_1">
             <English>Unlock Controls</English>
+            <Korean>허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_2">
             <English>Unlock and Lock when revived</English>
+            <Korean>허용, 조종사 소생 시 비허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
@@ -1132,30 +1152,39 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_commEnable">
             <English>Enable AI commands</English>
+            <Korean>인공지능 지휘 활성화</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commEnable_desc">
             <English>Enables the ability to command Medic AI to heal/revive through the Command menu (access with new keybind).</English>
+            <Korean>지휘 메뉴를 통해 인공지능 의무병에게 치료/소생 명령을 내릴 수 있는 기능을 제공합니다(새로운 키 설정 필요).</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noMedic">
             <English>No medic available.</English>
+            <Korean>사용 가능 의무병 없음.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reqHeal">
             <English>Request Heal</English>
+            <Korean>치료 요청</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reqRevive">
             <English>Request Revive</English>
+            <Korean>소생 요청</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commandHeal">
             <English>Heal target</English>
+            <Korean>대상 치료</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commandRevive">
             <English>Revive target</English>
+            <Korean>대상 소생</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commMenu">
             <English>APS Commands</English>
+            <Korean>APS 지휘</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commOpenKeyBind">
             <English>APS Commands Menu</English>
+            <Korean>APS 지휘 메뉴</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
@@ -1186,11 +1215,11 @@
             <Korean>포기</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_text">
-            <English>Are you really sure you want to give up? If you select &quot;Yes&quot; you will die, if you select &quot;No&quot; you will stay on the ground waiting to be revived!&lt;br/&gt;Make your choice now.&lt;br/&gt;&lt;br/&gt;You can disable this dialog from showing up by disabling it in the Feedback section in the &quot;Addon Options&quot; menu!</English>
+            <English>Are you really sure you want to give up? If you select "Yes" you will die, if you select "No" you will stay on the ground waiting to be revived!&lt;br/&gt;Make your choice now.&lt;br/&gt;&lt;br/&gt;You can disable this dialog from showing up by disabling it in the Feedback section in the "Addon Options" menu!</English>
             <Polish>Czy na pewno chcesz się poddać? Jeśli wybierzesz TAK, umrzesz, jeśli wybierzesz NIE, będziesz dalej leżeć na ziemi w oczekiwaniu na ratunek!&lt;br/&gt;Zdecyduj się teraz.&lt;br/&gt;Możesz ukryć to okno poprzez wyłączenie odpowiedniej opcji w sekcji Reakcje w ustawieniach modyfikacji.</Polish>
-            <Chinesesimp>你真的确定要放弃吗？如果你选择&quot;是&quot;你会死亡,如果你选择&quot;否&quot; 你需要躺在地上继续等待救援!&lt;br/&gt;现在就做出选择吧.&lt;br/&gt;&lt;br/&gt;你可以通过在&quot;插件选项&quot;菜单中的反馈部分禁用该对话框,使其不显示!</Chinesesimp>
-            <Chinese>你真的確定要放棄嗎？如果你選擇&quot;是&quot;你會死亡,如果你選擇&quot;否&quot; 你需要躺在地上繼續等待救援! &lt;br/&gt;現在就做出選擇吧. &lt;br/&gt;&lt;br/&gt;你可以通過在&quot;插件選項&quot;菜單中的反饋部分禁用該對話框,使其不顯示!</Chinese>
-            <Korean>정말 포기하실 겁니까? &quot;예&quot;를 선택하면 당신은 죽을 것이고, &quot;아니오&quot;를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;&quot;Addon Options&quot; 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
+            <Chinesesimp>你真的确定要放弃吗？如果你选择"是"你会死亡,如果你选择"否" 你需要躺在地上继续等待救援!&lt;br/&gt;现在就做出选择吧.&lt;br/&gt;&lt;br/&gt;你可以通过在"插件选项"菜单中的反馈部分禁用该对话框,使其不显示!</Chinesesimp>
+            <Chinese>你真的確定要放棄嗎？如果你選擇"是"你會死亡,如果你選擇"否" 你需要躺在地上繼續等待救援! &lt;br/&gt;現在就做出選擇吧. &lt;br/&gt;&lt;br/&gt;你可以通過在"插件選項"菜單中的反饋部分禁用該對話框,使其不顯示!</Chinese>
+            <Korean>정말 포기하실 겁니까? "예"를 선택하면 당신은 죽을 것이고, "아니오"를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;"Addon Options" 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_title">
             <English>Hold up!</English>
@@ -1200,18 +1229,18 @@
             <Korean>잠깐!</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog">
-            <English>Show &quot;Give up&quot; dialog</English>
-            <Polish>Pokaż okno &quot;Poddaj się&quot;</Polish>
-            <Chinesesimp>显示&quot;放弃&quot;对话框</Chinesesimp>
-            <Chinese>顯示&quot;放棄&quot;對話框</Chinese>
-            <Korean>&quot;포기&quot; 대화 상자 표시</Korean>
+            <English>Show "Give up" dialog</English>
+            <Polish>Pokaż okno "Poddaj się"</Polish>
+            <Chinesesimp>显示"放弃"对话框</Chinesesimp>
+            <Chinese>顯示"放棄"對話框</Chinese>
+            <Korean>"포기" 대화 상자 표시</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog_desc">
-            <English>Shows a confirmation dialog when fully executing the &quot;Give up&quot; action.</English>
+            <English>Shows a confirmation dialog when fully executing the "Give up" action.</English>
             <Polish>Pokazuje okno wymuszające dodatkowe potwierdzenie poddania się podczas nieprzytomności.</Polish>
-            <Chinesesimp>在完全执行&quot;放弃&quot;动作时显示一个确认对话框.</Chinesesimp>
-            <Chinese>在完全執行&quot;放棄&quot;動作時顯示一個確認對話框.</Chinese>
-            <Korean>&quot;포기&quot; 행동을 완전히 실행할 때 확인 대화 상자를 표시합니다.</Korean>
+            <Chinesesimp>在完全执行"放弃"动作时显示一个确认对话框.</Chinesesimp>
+            <Chinese>在完全執行"放棄"動作時顯示一個確認對話框.</Chinese>
+            <Korean>"포기" 행동을 완전히 실행할 때 확인 대화 상자를 표시합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount">
             <English>Display number of remaining FAKs</English>
@@ -1251,18 +1280,23 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems">
             <English>Required Items to Revive</English>
+            <Korean>소생에 필요한 아이템</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_desc">
             <English>Sets what items are need to perform revives.</English>
+            <Korean>소생에 필요한 아이템을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_0">
             <English>None Required</English>
+            <Korean>요구하지 않음</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems">
             <English>Required Items to Heal</English>
+            <Korean>치료에 필요한 아이템</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems_desc">
             <English>Sets what items are need to perform healing.</English>
+            <Korean>치료에 필요한 아이템을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
@@ -1430,6 +1464,7 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
             <English>Auto-injector has been used on %1</English>
+            <Korean>%1에게 자동주사기가 사용되었습니다.</Korean>
         </Key>
         <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
@@ -1463,12 +1498,15 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_text">
             <English>Use auto-injector on %1?</English>
+            <Korean>%1에게 자동주사기를 사용합니까?</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm">
             <English>Show Auto-Injector Confirm dialog</English>
+            <Korean>자동주사기 확인 대화 상자 표시</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
             <English>Shows a confirmation dialog when using an auto-injector.</English>
+            <Korean>자동주사기를 사용할 때 확인 대화 상자를 표시합니다.</Korean>
         </Key>
     </Package>
 </Project>
