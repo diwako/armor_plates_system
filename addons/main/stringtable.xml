@@ -225,10 +225,12 @@
         <Key ID="STR_diw_armor_plates_main_vestBlacklist">
             <English>Vest Blacklist</English>
             <Korean>조끼 블랙리스트</Korean>
+            <Polish>Czarna lista kamizelek</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_vestBlacklist_desc">
             <English>List of vest class names to have plate insertion disabled. Class names can be found with {vest player} or ctrl+c when selected in ACE arsenal. (ex. vestclassname1, vestclassname2)</English>
             <Korean>방탄판 삽입을 비활성화할 조끼의 클레스네임 목록입니다. 클래스네임은 ACE 무기고에서 선택하면 {vest player} 또는 컨트롤+c 키로 찾을 수 있습니다. (예: vestclassname1, vestclassname2)</Korean>
+            <Polish>Lista klas kamizelek, które mają mieć wyłączoną możliwość uzupełniania płyt. Klasy można znaleźć poprzez {vest player} lub Ctrl+C, gdy wybrana w arsenale ACE. (np. kamizelka1, kamizelka2)</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
@@ -296,18 +298,22 @@
         <Key ID="STR_diw_armor_plates_main_enableHealRegen">
             <English>Healing with Regen on</English>
             <Korean>자연회복 중 치료</Korean>
+            <Polish>Leczenie z regeneracją</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
             <English>How to handle healing with regen enabled.</English>
             <Korean>자연회복을 활성화한 상태에서 치료를 할 지 여부입니다.</Korean>
+            <Polish>Jak obsługiwać leczenie z włączoną regeneracją zdrowia.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_1">
             <English>Allow</English>
             <Korean>허용</Korean>
+            <Polish>Zezwól</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_2">
             <English>Allow and delay regen</English>
             <Korean>자연회복을 지연하고 허용</Korean>
+            <Polish>Zezwól i opóźnij regenerację</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
@@ -326,18 +332,22 @@
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay">
             <English>HP regen delay</English>
             <Korean>체력 자연회복 지연 시간</Korean>
+            <Polish>Opóźnienie regeneracji HP</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay_desc">
             <English>How long before hp regen begins?</English>
             <Korean>체력 자연회복이 시작되기까지 얼마나 걸릴 지 여부입니다.</Korean>
+            <Polish>Jak długo trzeba czekać na regenerację HP?</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRegen">
             <English>Max heal % for regen</English>
             <Korean>자연회복 최대 체력량 (%)</Korean>
+            <Polish>Maks. % zdrowia do regeneracji</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRegen_desc">
             <English>What percentage of max health can be regenerated?</English>
             <Korean>최대 체력의 몇 퍼센트까지 자연회복이 가능한 지 여부입니다.</Korean>
+            <Polish>Jaki procent maks. zdrowia może być zregenerowany?</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>
@@ -370,10 +380,12 @@
         <Key ID="STR_diw_armor_plates_main_healAtMedic">
             <English>Allow Players to Heal at Medics</English>
             <Korean>플레이어가 의무병처럼 치료 허용</Korean>
+            <Polish>Zezwól graczom na leczenie u medyków</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healAtMedic_desc">
             <English>Players will have an addAction on units classed as medics to heal to the percentage medics give.</English>
             <Korean>플레이어는 의무병으로 분류된 유닛에게 addAction을 사용하여 의무병이 주는 백분율로 치료합니다.</Korean>
+            <Polish>Gracze będą mieć dostępną akcją addAction na jednostkach medycznych, by uleczyć zdrowie o pewien procent.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
             <English>General</English>
@@ -859,16 +871,19 @@
             <English>Auto-Injector</English>
             <Chinesesimp>自动注射器</Chinesesimp>
             <Korean>자동주사기</Korean>
+            <Polish>Auto-iniektor</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Short">
             <English>Auto-Injector for reducing trauma to the body.</English>
             <Chinesesimp>用于减少身体创伤的自动注射器.</Chinesesimp>
             <Korean>신체의 외상을 줄이기 위한 자동주사기.</Korean>
+            <Polish>Auto-iniektor do obniżania obrażeń ciała.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Use">
             <English>Standard auto-injector, just stick it in ;)</English>
             <Chinesesimp>标准自动注射器,只需将其插入即可；)</Chinesesimp>
             <Korean>표준 자동주사기, 걍 꽂으세요 ;)</Korean>
+            <Polish>Standardowy auto-iniektor, po prostu go wbij ;)</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
             <English>Add plate into vest</English>
@@ -1041,14 +1056,17 @@
         <Key ID="STR_diw_armor_plates_main_zeus_module_plate">
             <English>Fill unit/crew vests with plates</English>
             <Korean>유닛/승무원 조끼에 방탄판 채우기</Korean>
+            <Polish>Uzupełnij kamizelki jednostek</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malus">
             <English>Reset unit/crew bleedout timers</English>
             <Korean>유닛/승무원 출혈 타이머 재설정</Korean>
+            <Polish>Zresetuj liczniki krwawienia jednostek</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malusGlobal">
             <English>Reset all player bleedout timers</English>
             <Korean>모든 플레이어 출혈 타이머 재설정</Korean>
+            <Polish>Zresetuj liczniki krwawienia graczy</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
@@ -1126,22 +1144,27 @@
         <Key ID="STR_diw_armor_plates_main_pilotUncon">
             <English>Unlock Pilot Controls when downed</English>
             <Korean>조종사 의식불명 시 조종간 잠금해제</Korean>
+            <Polish>Odblokuj kontrolę pilota, gdy nieprzytomny</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_desc">
             <English>How to handle controls when pilot goes unconscious and has a co-pilot.</English>
             <Korean>조종사가 의식불명 상태에서 부조종사가 있는 경우 조종을 할 수 있을 지 여부입니다.</Korean>
+            <Polish>W jaki sposób obsługiwać kontrolę pojazdu, gdy pilot jest nieprzytomny, a obecny jest kopilot.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_0">
             <English>Do not unlock controls</English>
             <Korean>비허용</Korean>
+            <Polish>Nie odblokuj kontroli</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_1">
             <English>Unlock Controls</English>
             <Korean>허용</Korean>
+            <Polish>Odblokuj kontrolę</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_2">
             <English>Unlock and Lock when revived</English>
             <Korean>허용, 조종사 소생 시 비허용</Korean>
+            <Polish>Zablokuj i odblokuj po ożywieniu</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
@@ -1153,38 +1176,47 @@
         <Key ID="STR_diw_armor_plates_main_commEnable">
             <English>Enable AI commands</English>
             <Korean>인공지능 지휘 활성화</Korean>
+            <Polish>Włącz komendy AI</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commEnable_desc">
             <English>Enables the ability to command Medic AI to heal/revive through the Command menu (access with new keybind).</English>
             <Korean>지휘 메뉴를 통해 인공지능 의무병에게 치료/소생 명령을 내릴 수 있는 기능을 제공합니다(새로운 키 설정 필요).</Korean>
+            <Polish>Włącza możliwość dowodzenia AI medykiem w celu leczenia/ożywiania przez menu dowodzenia (dostępne z nowym skrótem klawiszowym).</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noMedic">
             <English>No medic available.</English>
             <Korean>사용 가능 의무병 없음.</Korean>
+            <Polish>Brak dostępnych medyków.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reqHeal">
             <English>Request Heal</English>
             <Korean>치료 요청</Korean>
+            <Polish>Zażądaj leczenia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reqRevive">
             <English>Request Revive</English>
             <Korean>소생 요청</Korean>
+            <Polish>Zażądaj ożywienia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commandHeal">
             <English>Heal target</English>
             <Korean>대상 치료</Korean>
+            <Polish>Ulecz cel</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commandRevive">
             <English>Revive target</English>
             <Korean>대상 소생</Korean>
+            <Polish>Ożyw cel</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commMenu">
             <English>APS Commands</English>
             <Korean>APS 지휘</Korean>
+            <Polish>Komendy APS</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commOpenKeyBind">
             <English>APS Commands Menu</English>
             <Korean>APS 지휘 메뉴</Korean>
+            <Polish>Menu komend APS</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
@@ -1281,22 +1313,27 @@
         <Key ID="STR_diw_armor_plates_main_reviveItems">
             <English>Required Items to Revive</English>
             <Korean>소생에 필요한 아이템</Korean>
+            <Polish>Przedmioty wymagane do ożywiania</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_desc">
             <English>Sets what items are need to perform revives.</English>
             <Korean>소생에 필요한 아이템을 설정합니다.</Korean>
+            <Polish>Określa listę przedmiotów wymaganych do ożywiania.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_0">
             <English>None Required</English>
             <Korean>요구하지 않음</Korean>
+            <Polish>Brak wymaganych</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems">
             <English>Required Items to Heal</English>
             <Korean>치료에 필요한 아이템</Korean>
+            <Polish>Wymagane przedmioty do leczenia</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems_desc">
             <English>Sets what items are need to perform healing.</English>
             <Korean>치료에 필요한 아이템을 설정합니다.</Korean>
+            <Polish>Określa listę przedmiotów wymaganych do leczenia.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
@@ -1342,31 +1379,37 @@
             <English>Hold Action Priority</English>
             <Chinesesimp>保持行动优先权</Chinesesimp>
             <Korean>행동 우선 순위 보류</Korean>
+            <Polish>Priorytet akcji HoldAction</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_desc">
             <English>Whether to prioritize reviving or pressing wound, when both are possible. Needs mission restart.</English>
             <Chinesesimp>是优先复活还是按压伤口,当两者都有可能时.需要重新启动任务.</Chinesesimp>
             <Korean>둘 다 가능할 때 상처 압박과 소생 중 어느 것을 우선 시할 것인지 여부를 결정합니다. 임무 재시작이 필요합니다.</Korean>
+            <Polish>Określa czy priorytetyzować ożywianie, czy uciskanie ran, gdy obie są dostępne. Wymaga restartu misji.</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_0">
             <English>Revive</English>
             <Chinesesimp>复活</Chinesesimp>
             <Korean>소생</Korean>
+            <Polish>Ożyw</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_1">
             <English>Press Wound</English>
             <Chinesesimp>按压伤口</Chinesesimp>
             <Korean>상처 압박</Korean>
+            <Polish>Uciskaj ranę</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionRange">
             <English>Revive/Press Wound range</English>
             <Chinesesimp>复活/按压的范围</Chinesesimp>
             <Korean>소생/상처 압박 거리</Korean>
+            <Polish>Zasięg ożywienia/uciskania ran</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionRange_desc">
             <English>Range in meters from the target where revive and press wound actions become possible.</English>
             <Chinesesimp>可进行复活和按压伤口操作的目标距离(米).</Chinesesimp>
             <Korean>소생 및 상처 압박 행동이 가능한 대상의 거리를 미터 단위로 지정합니다.</Korean>
+            <Polish>Dystans (w metrach) od celu, w którym można użyć akcji ożywienia/uciskania ran</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
@@ -1465,6 +1508,7 @@
         <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
             <English>Auto-injector has been used on %1</English>
             <Korean>%1에게 자동주사기가 사용되었습니다.</Korean>
+            <Polish>Użyto auto-iniektora na: %1</Polish>
         </Key>
         <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
@@ -1481,7 +1525,7 @@
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use auto-injector on %1</English>
             <Chinesesimp>在%1上使用注射器</Chinesesimp>
-            <Polish>Użyj auto-iniektora na %1</Polish>
+            <Polish>Użyj auto-iniektora na: %1</Polish>
             <Korean>%1에게 주사기 사용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
@@ -1499,14 +1543,17 @@
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_text">
             <English>Use auto-injector on %1?</English>
             <Korean>%1에게 자동주사기를 사용합니까?</Korean>
+            <Polish>Użyć auto-iniektora na: %1?</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm">
             <English>Show Auto-Injector Confirm dialog</English>
             <Korean>자동주사기 확인 대화 상자 표시</Korean>
+            <Polish>Pokaż potwierdzenie użycia auto-iniektora</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
             <English>Shows a confirmation dialog when using an auto-injector.</English>
             <Korean>자동주사기를 사용할 때 확인 대화 상자를 표시합니다.</Korean>
+            <Polish>Pokazuje okno potwierdzenia użycia auto-iniektora</Polish>
         </Key>
     </Package>
 </Project>
