@@ -83,7 +83,7 @@ if (GVAR(aceMedicalLoaded)) then {
                 _unit setDamage 0;
                 [_unit, _healer, true] call FUNC(handleHealEh);
             }, _this, 5] call CBA_fnc_waitAndExecute;
-            true
+            false
         }];
 
         [_unit] call FUNC(addActionsToUnit);
