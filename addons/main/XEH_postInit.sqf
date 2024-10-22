@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+#include "\a3\ui_f\hpp\defineDIKCodes.inc"
 
 if (is3DEN) exitWith {};
 
@@ -548,7 +549,7 @@ if !(GVAR(aceMedicalLoaded)) then {
         showCommandingMenu ("#USER:" + QGVAR(commMenu));
         true
     }, "",
-    [DIK_T, [false, false, true]], false] call CBA_fnc_addKeybind;
+    [DIK_Y, [false, false, true]], false] call CBA_fnc_addKeybind;
 
     GVAR(commMenu) = [ [LLSTRING(commMenu),false],
         ["base",[0],"",-5,[["expression",""]],"0","0"],
@@ -724,7 +725,7 @@ if (_aceInteractLoaded) then {
 
 GVAR(addPlateKeyUp) = true;
 GVAR(addingPlate) = false;
-#include "\a3\ui_f\hpp\defineDIKCodes.inc"
+
 [LLSTRING(category), QGVAR(addPlate), LLSTRING(addPlateKeyBind), {
     if (GVAR(addingPlate)) exitWith {};
     private _player = call CBA_fnc_currentUnit;
