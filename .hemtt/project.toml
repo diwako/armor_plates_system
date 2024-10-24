@@ -43,3 +43,6 @@ workshop = [
 parameters = [
     "-world=empty",
 ]
+
+[lints.stringtables.sorted]
+enabled = false
