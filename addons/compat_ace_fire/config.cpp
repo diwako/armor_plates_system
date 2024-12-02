@@ -7,7 +7,7 @@
 
 #ifndef PATCH_SKIP
 class CfgPatches {
-    class DOUBLES(NAME,notLoaded) {
+    class DOUBLES(ADDON,notLoaded) {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
@@ -15,8 +15,8 @@ class CfgPatches {
         VERSION_CONFIG;
     };
 };
-class DOUBLES(COMPONENT_NAME,notLoaded) {
-    NAME = PATCH_SKIP;
+class DOUBLES(PREFIX,notLoaded) {
+    ADDON = "ACE Fire";
 };
 #else
 class CfgPatches {
