@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
-#if __has_include("\z\ace\addons\fire\script_component.hpp")
-#define PATCH_SKIP "ACE Fire"
+#if __has_include("\z\ace\addons\overpressure\script_component.hpp")
+#define PATCH_SKIP "ACE Overpressure"
 #endif
 
 #ifndef PATCH_SKIP
