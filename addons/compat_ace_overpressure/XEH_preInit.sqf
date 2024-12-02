@@ -6,12 +6,10 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoa
     INFO("PreInit: Disabled --> old ACE medical loaded");
 };
 
-#include "XEH_PREP.hpp"
-call compile preprocessFileLineNumbers format["%1\XEH_preInit.sqf",REPLACEPATH];
-if (GVAR(aceMedicalLoaded)) then {
+if (GVAR(aceMedicalLoaded)) exitWith {
     //#include "initSettingsACE.inc.sqf"
-} else {
-    #include "initSettings.inc.sqf"
 };
+
+#include "initSettings.inc.sqf"
 
 ADDON = true;
