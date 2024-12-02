@@ -60,7 +60,7 @@ _opValues params ["_overpressureAngle", "_overpressureRange", "_overpressureDama
                 if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
                     [_x, _damage, "body", "backblast", _firer] call ace_medical_fnc_addDamageToUnit;
                 } else {
-                    if ( EGVAR(main,enable) && {!(GVAR(finishDowns) && {lifestate _x isEqualTo "INCAPACITATED"} ) } ) exitWith {
+                    if ( EGVAR(main,enable) && {!(GVAR(finishDowns) && {lifeState _x isEqualTo "INCAPACITATED"} ) } ) exitWith {
                         _damage = _damage * GVAR(bbdmgCoef);
                         if (GVAR(ignoreArmor)) then {
                             private _vest = vestContainer _unit;
