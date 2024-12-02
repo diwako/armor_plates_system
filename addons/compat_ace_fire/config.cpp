@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 
+#pragma hemtt flag pe23_ignore_has_include
 #if __has_include("\z\ace\addons\fire\script_component.hpp")
 #define PATCH_SKIP "ACE Fire"
 #endif
