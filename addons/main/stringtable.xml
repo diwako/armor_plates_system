@@ -7,6 +7,7 @@
             <Chinesesimp>防弹插板系统</Chinesesimp>
             <Chinese>防彈插板系統</Chinese>
             <Korean>방탄판 시스템</Korean>
+            <French>Système de plaques d'armure</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
             <English>Armor Plates</English>
@@ -14,6 +15,7 @@
             <Chinesesimp>防弹插板</Chinesesimp>
             <Chinese>防彈插板</Chinese>
             <Korean>방탄판</Korean>
+            <French>Plaque d'armure</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_numWearablePlates">
             <English>Amount of plates wearable</English>
@@ -21,6 +23,7 @@
             <Chinesesimp>可穿戴的插板数</Chinesesimp>
             <Chinese>可穿戴的插板數</Chinese>
             <Korean>착용 가능한 방탄판 갯수</Korean>
+            <French>Nombre de plaques à porter</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_numWearablePlates_desc">
             <English>How many plates can you fit into your vest to give you protection</English>
@@ -28,6 +31,7 @@
             <Chinesesimp>你能在背心里塞下多少块插板来保护自己</Chinesesimp>
             <Chinese>你能在背心裡塞下多少塊插板來保護自己</Chinese>
             <Korean>사용자를 보호하기 위해 조끼에 넣을 수 있는 방탄판 갯수</Korean>
+            <French>Combien de plaques d'armure pouvez-vous mettre à la fois dans votre gilet ?</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateHealth">
             <English>Armor Plate HP</English>
@@ -35,6 +39,7 @@
             <Chinesesimp>防弹插板HP</Chinesesimp>
             <Chinese>防彈插板HP</Chinese>
             <Korean>방탄판 체력</Korean>
+            <French>Plaque d'armure HP</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateHealth_desc">
             <English>Max HP of an armor plate</English>
@@ -42,6 +47,7 @@
             <Chinesesimp>防弹插板最大HP</Chinesesimp>
             <Chinese>防彈插板最大HP</Chinese>
             <Korean>방탄판의 최대 체력</Korean>
+            <French>HP maximale d'une seule plaque d'armure.</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_timeToAddPlate">
             <English>Time to add one plate</English>
@@ -49,6 +55,7 @@
             <Chinesesimp>插板塞入时间</Chinesesimp>
             <Chinese>插板塞入時間</Chinese>
             <Korean>방탄판 삽입 시간</Korean>
+            <French>Temps pour ajouter une plaque</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_timeToAddPlate_desc">
             <English>How long does it take to add one plate to the vest in seconds</English>
@@ -56,6 +63,7 @@
             <Chinesesimp>往背心里塞一块防弹插板需要多长时间</Chinesesimp>
             <Chinese>往背心裡塞一塊防彈插板需要多長時間</Chinese>
             <Korean>방탄판 하나를 조끼에 삽입하는 데 걸리는 시간 (초 단위)</Korean>
+            <French>Combien de temps faut-il pour ajouter une plaque au gilet, en secondes ?</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowPlateReplace">
             <English>Allow replacing damaged plate</English>
@@ -63,6 +71,7 @@
             <Chinesesimp>允许更换损坏的插板</Chinesesimp>
             <Chinese>允許更換損壞的插板</Chinese>
             <Korean>손상된 방탄판 교체 허용</Korean>
+            <French>Permettre le remplacement de la plaque endommagée</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowPlateReplace_desc">
             <English>Allows people to replace damaged plates, the damaged plate will be discarded</English>
@@ -70,6 +79,7 @@
             <Chinesesimp>允许玩家更换损坏的插板,更换下的插板将被丢弃</Chinesesimp>
             <Chinese>允許玩家更換損壞的插板,更換下的插板將被丟棄</Chinese>
             <Korean>손상된 방탄판 교체를 허용합니다. 손상된 방탄판은 버려집니다.</Korean>
+            <French>Permet de remplacer les plaques endommagées, la plaque endommagée étant mise au rebut.</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso">
             <English>Only protect torso</English>
@@ -77,6 +87,7 @@
             <Chinesesimp>仅保护躯干</Chinesesimp>
             <Chinese>僅保護軀幹</Chinese>
             <Korean>상체만 보호</Korean>
+            <French>Protéger uniquement le torse</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso_desc">
             <English>When enabled ceramic plates will only protect the torso, when disabled ceramic plates will protect limbs and head as well. This will only work with HandleDamage as damage handler!</English>
@@ -84,6 +95,7 @@
             <Chinesesimp>启用时,陶瓷板将只保护躯干；禁用时,陶瓷板将同时也保护四肢和头部.这只在HandleDamage作为伤害处理程序时起效!</Chinesesimp>
             <Chinese>啟用時,陶瓷板將只保護軀幹；禁用時,陶瓷板將同時也保護四肢和頭部.這只在HandleDamage作為傷害處理程序時起效!</Chinese>
             <Korean>활성화가 되면 세라믹 방탄판은 몸통만 보호하고 비활성화하면 세라믹 방탄판이 사지와 머리도 보호합니다. 이 옵션은 데미지 처리 시스템으로 HandleDamage만 사용할 수 있습니다!</Korean>
+            <French>Lorsque cette option est activée, les plaques en céramique ne protègent que le torse. Lorsque cette option est désactivée, les plaques en céramique protègent également les membres et la tête. Cela ne fonctionnera qu'avec HandleDamage comme gestionnaire de dégâts !</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates">
             <English>Players spawn with full plates</English>
@@ -91,6 +103,7 @@
             <Chinesesimp>玩家生成时就有满防弹插板</Chinesesimp>
             <Chinese>玩家生成時就有滿防彈插板</Chinese>
             <Korean>최대 방탄판 체력으로 스폰</Korean>
+            <French>Les joueurs apparaissent avec des plaques complètes</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates_desc">
             <English>When spawning or respawning you will start with maximum amount of plates already preloaded into your vest.</English>
@@ -98,6 +111,7 @@
             <Chinesesimp>生成或重生时,玩家将在背心中预装最大数量的防弹插板</Chinesesimp>
             <Chinese>生成或重生時,玩家將在背心中預裝最大數量的防彈插板</Chinese>
             <Korean>스폰 또는 리스폰 시 조끼에 최대 체력의 방탄판을 착용한 채로 시작합니다.</Korean>
+            <French>Lors de l'apparition ou de la réapparition, vous commencerez avec le nombre maximum de plaques déjà chargées dans votre gilet.</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest">
             <English>Chance for AI to carry plates in vests</English>
@@ -105,6 +119,7 @@
             <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
             <Chinese>AI背心中有機率塞有防彈插板</Chinese>
             <Korean>인공지능이 방탄판을 조끼에 착용할 확률</Korean>
+            <French>Possibilité pour l'IA de porter des plaques dans des gilets pare-balles</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest_desc">
             <English>Chance in % if AI can have plates in their vest</English>
