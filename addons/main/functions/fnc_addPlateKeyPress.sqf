@@ -3,11 +3,15 @@ params ["_player"];
 
 private _ctrl = [LLSTRING(addPlateToVest), GVAR(timeToAddPlate)] call FUNC(createProgressBar);
 if (isNull _ctrl) exitWith {};
-
-_player setVariable [QGVAR(wasSprintingAllowed), isSprintAllowed _player];
-_player allowSprint false;
-_player setVariable [QGVAR(wasForceWalked), isForcedWalk _player];
-_player forceWalk true;
+if (isNil "ace_common_fnc_statusEffect_set") then {
+    _player setVariable [QGVAR(wasSprintingAllowed), isSprintAllowed _player];
+    _player allowSprint false;
+    _player setVariable [QGVAR(wasForceWalked), isForcedWalk _player];
+    _player forceWalk true;
+} else {
+    [_player, "blockSprint", QUOTE(ADDON), true] call ace_common_fnc_statusEffect_set;
+    [_player, "forceWalk", QUOTE(ADDON), true] call ace_common_fnc_statusEffect_set;
+};
 [_player] call FUNC(doGesture);
 
 [{
@@ -19,8 +23,13 @@ _player forceWalk true;
     !([_player] call FUNC(canAddPlate))}}}}
 }, {
     params ["_player"];
-    _player allowSprint (_player getVariable [QGVAR(wasSprintingAllowed), true]);
-    _player forceWalk (_player getVariable [QGVAR(wasForceWalked), true]);
+    if (isNil "ace_common_fnc_statusEffect_set") then {
+        _player allowSprint (_player getVariable [QGVAR(wasSprintingAllowed), true]);
+        _player forceWalk (_player getVariable [QGVAR(wasForceWalked), true]);
+    } else {
+        [_player, "blockSprint", QUOTE(ADDON), false] call ace_common_fnc_statusEffect_set;
+        [_player, "forceWalk", QUOTE(ADDON), false] call ace_common_fnc_statusEffect_set;
+    };
     call FUNC(deleteProgressBar);
     [_player, false] call FUNC(doGesture);
 
