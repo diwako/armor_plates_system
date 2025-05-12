@@ -45,4 +45,4 @@ parameters = [
 ]
 
 [lints.stringtables.sorted]
-enabled = false
+options.only-lang = true

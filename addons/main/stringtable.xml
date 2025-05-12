@@ -3,1678 +3,1678 @@
     <Package name="main">
         <Key ID="STR_diw_armor_plates_main_category">
             <English>Armor Plates System</English>
-            <Polish>System Płyt Balistycznych</Polish>
-            <Chinesesimp>防弹插板系统</Chinesesimp>
-            <Chinese>防彈插板系統</Chinese>
-            <Korean>방탄판 시스템</Korean>
             <French>Système de plaques d'armure</French>
+            <Polish>System Płyt Balistycznych</Polish>
+            <Korean>방탄판 시스템</Korean>
+            <Chinese>防彈插板系統</Chinese>
+            <Chinesesimp>防弹插板系统</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryArmorPlates">
             <English>Armor Plates</English>
-            <Polish>Płyty balistyczne</Polish>
-            <Chinesesimp>防弹插板</Chinesesimp>
-            <Chinese>防彈插板</Chinese>
-            <Korean>방탄판</Korean>
             <French>Plaque d'armure</French>
+            <Polish>Płyty balistyczne</Polish>
+            <Korean>방탄판</Korean>
+            <Chinese>防彈插板</Chinese>
+            <Chinesesimp>防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_numWearablePlates">
             <English>Amount of plates wearable</English>
-            <Polish>Liczba płyt do założenia</Polish>
-            <Chinesesimp>可穿戴的插板数</Chinesesimp>
-            <Chinese>可穿戴的插板數</Chinese>
-            <Korean>착용 가능한 방탄판 갯수</Korean>
             <French>Nombre de plaques à porter</French>
+            <Polish>Liczba płyt do założenia</Polish>
+            <Korean>착용 가능한 방탄판 갯수</Korean>
+            <Chinese>可穿戴的插板數</Chinese>
+            <Chinesesimp>可穿戴的插板数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_numWearablePlates_desc">
             <English>How many plates can you fit into your vest to give you protection</English>
-            <Polish>Ile płyt pancernych naraz możesz włożyć do swojej kamizelki.</Polish>
-            <Chinesesimp>你能在背心里塞下多少块插板来保护自己</Chinesesimp>
-            <Chinese>你能在背心裡塞下多少塊插板來保護自己</Chinese>
-            <Korean>사용자를 보호하기 위해 조끼에 넣을 수 있는 방탄판 갯수</Korean>
             <French>Combien de plaques d'armure pouvez-vous mettre à la fois dans votre gilet ?</French>
+            <Polish>Ile płyt pancernych naraz możesz włożyć do swojej kamizelki.</Polish>
+            <Korean>사용자를 보호하기 위해 조끼에 넣을 수 있는 방탄판 갯수</Korean>
+            <Chinese>你能在背心裡塞下多少塊插板來保護自己</Chinese>
+            <Chinesesimp>你能在背心里塞下多少块插板来保护自己</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateHealth">
             <English>Armor Plate HP</English>
-            <Polish>HP płyty</Polish>
-            <Chinesesimp>防弹插板HP</Chinesesimp>
-            <Chinese>防彈插板HP</Chinese>
-            <Korean>방탄판 체력</Korean>
             <French>Plaque d'armure HP</French>
+            <Polish>HP płyty</Polish>
+            <Korean>방탄판 체력</Korean>
+            <Chinese>防彈插板HP</Chinese>
+            <Chinesesimp>防弹插板HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateHealth_desc">
             <English>Max HP of an armor plate</English>
-            <Polish>Maks. HP pojedynczej płyty balistycznej.</Polish>
-            <Chinesesimp>防弹插板最大HP</Chinesesimp>
-            <Chinese>防彈插板最大HP</Chinese>
-            <Korean>방탄판의 최대 체력</Korean>
             <French>HP maximale d'une seule plaque d'armure.</French>
+            <Polish>Maks. HP pojedynczej płyty balistycznej.</Polish>
+            <Korean>방탄판의 최대 체력</Korean>
+            <Chinese>防彈插板最大HP</Chinese>
+            <Chinesesimp>防弹插板最大HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_timeToAddPlate">
             <English>Time to add one plate</English>
-            <Polish>Czas włożenia płyty</Polish>
-            <Chinesesimp>插板塞入时间</Chinesesimp>
-            <Chinese>插板塞入時間</Chinese>
-            <Korean>방탄판 삽입 시간</Korean>
             <French>Temps pour ajouter une plaque</French>
+            <Polish>Czas włożenia płyty</Polish>
+            <Korean>방탄판 삽입 시간</Korean>
+            <Chinese>插板塞入時間</Chinese>
+            <Chinesesimp>插板塞入时间</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_timeToAddPlate_desc">
             <English>How long does it take to add one plate to the vest in seconds</English>
-            <Polish>Jak długo (w sekundach) trwa włożenie jednej płyty do kamizelki.</Polish>
-            <Chinesesimp>往背心里塞一块防弹插板需要多长时间</Chinesesimp>
-            <Chinese>往背心裡塞一塊防彈插板需要多長時間</Chinese>
-            <Korean>방탄판 하나를 조끼에 삽입하는 데 걸리는 시간 (초 단위)</Korean>
             <French>Combien de temps faut-il pour ajouter une plaque au gilet, en secondes ?</French>
+            <Polish>Jak długo (w sekundach) trwa włożenie jednej płyty do kamizelki.</Polish>
+            <Korean>방탄판 하나를 조끼에 삽입하는 데 걸리는 시간 (초 단위)</Korean>
+            <Chinese>往背心裡塞一塊防彈插板需要多長時間</Chinese>
+            <Chinesesimp>往背心里塞一块防弹插板需要多长时间</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowPlateReplace">
             <English>Allow replacing damaged plate</English>
-            <Polish>Zezwól na zastępowanie uszkodzonych płyt</Polish>
-            <Chinesesimp>允许更换损坏的插板</Chinesesimp>
-            <Chinese>允許更換損壞的插板</Chinese>
-            <Korean>손상된 방탄판 교체 허용</Korean>
             <French>Permettre le remplacement de la plaque endommagée</French>
+            <Polish>Zezwól na zastępowanie uszkodzonych płyt</Polish>
+            <Korean>손상된 방탄판 교체 허용</Korean>
+            <Chinese>允許更換損壞的插板</Chinese>
+            <Chinesesimp>允许更换损坏的插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowPlateReplace_desc">
             <English>Allows people to replace damaged plates, the damaged plate will be discarded</English>
-            <Polish>Zezwól graczom na zastępowanie uszkodzonych płyt nowymi. Te zniszczone znikną.</Polish>
-            <Chinesesimp>允许玩家更换损坏的插板,更换下的插板将被丢弃</Chinesesimp>
-            <Chinese>允許玩家更換損壞的插板,更換下的插板將被丟棄</Chinese>
-            <Korean>손상된 방탄판 교체를 허용합니다. 손상된 방탄판은 버려집니다.</Korean>
             <French>Permet de remplacer les plaques endommagées, la plaque endommagée étant mise au rebut.</French>
+            <Polish>Zezwól graczom na zastępowanie uszkodzonych płyt nowymi. Te zniszczone znikną.</Polish>
+            <Korean>손상된 방탄판 교체를 허용합니다. 손상된 방탄판은 버려집니다.</Korean>
+            <Chinese>允許玩家更換損壞的插板,更換下的插板將被丟棄</Chinese>
+            <Chinesesimp>允许玩家更换损坏的插板,更换下的插板将被丢弃</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso">
             <English>Only protect torso</English>
-            <Polish>Chroń tylko korpus</Polish>
-            <Chinesesimp>仅保护躯干</Chinesesimp>
-            <Chinese>僅保護軀幹</Chinese>
-            <Korean>상체만 보호</Korean>
             <French>Protéger uniquement le torse</French>
+            <Polish>Chroń tylko korpus</Polish>
+            <Korean>상체만 보호</Korean>
+            <Chinese>僅保護軀幹</Chinese>
+            <Chinesesimp>仅保护躯干</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_protectOnlyTorso_desc">
             <English>When enabled ceramic plates will only protect the torso, when disabled ceramic plates will protect limbs and head as well. This will only work with HandleDamage as damage handler!</English>
-            <Polish>Gdy włączone, płyty balistyczne będą chronić tylko tors, a wyłączone zapewnią ochronę kończyn i głowy. Ta opcja działa tylko z włączonym HandleDamage!</Polish>
-            <Chinesesimp>启用时,陶瓷板将只保护躯干；禁用时,陶瓷板将同时也保护四肢和头部.这只在HandleDamage作为伤害处理程序时起效!</Chinesesimp>
-            <Chinese>啟用時,陶瓷板將只保護軀幹；禁用時,陶瓷板將同時也保護四肢和頭部.這只在HandleDamage作為傷害處理程序時起效!</Chinese>
-            <Korean>활성화가 되면 세라믹 방탄판은 몸통만 보호하고 비활성화하면 세라믹 방탄판이 사지와 머리도 보호합니다. 이 옵션은 데미지 처리 시스템으로 HandleDamage만 사용할 수 있습니다!</Korean>
             <French>Lorsque cette option est activée, les plaques en céramique ne protègent que le torse. Lorsque cette option est désactivée, les plaques en céramique protègent également les membres et la tête. Cela ne fonctionnera qu'avec HandleDamage comme gestionnaire de dégâts !</French>
+            <Polish>Gdy włączone, płyty balistyczne będą chronić tylko tors, a wyłączone zapewnią ochronę kończyn i głowy. Ta opcja działa tylko z włączonym HandleDamage!</Polish>
+            <Korean>활성화가 되면 세라믹 방탄판은 몸통만 보호하고 비활성화하면 세라믹 방탄판이 사지와 머리도 보호합니다. 이 옵션은 데미지 처리 시스템으로 HandleDamage만 사용할 수 있습니다!</Korean>
+            <Chinese>啟用時,陶瓷板將只保護軀幹；禁用時,陶瓷板將同時也保護四肢和頭部.這只在HandleDamage作為傷害處理程序時起效!</Chinese>
+            <Chinesesimp>启用时,陶瓷板将只保护躯干；禁用时,陶瓷板将同时也保护四肢和头部.这只在HandleDamage作为伤害处理程序时起效!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates">
             <English>Players spawn with full plates</English>
-            <Polish>Gracze zaczynają z włożonymi płytami</Polish>
-            <Chinesesimp>玩家生成时就有满防弹插板</Chinesesimp>
-            <Chinese>玩家生成時就有滿防彈插板</Chinese>
-            <Korean>최대 방탄판 체력으로 스폰</Korean>
             <French>Les joueurs apparaissent avec des plaques complètes</French>
+            <Polish>Gracze zaczynają z włożonymi płytami</Polish>
+            <Korean>최대 방탄판 체력으로 스폰</Korean>
+            <Chinese>玩家生成時就有滿防彈插板</Chinese>
+            <Chinesesimp>玩家生成时就有满防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_spawnWithFullPlates_desc">
             <English>When spawning or respawning you will start with maximum amount of plates already preloaded into your vest.</English>
-            <Polish>Gdy gracz wchodzi na serwer bądź się odradza, zaczyna z maksymalną liczbą płyt włożonych już w kamizelkę.</Polish>
-            <Chinesesimp>生成或重生时,玩家将在背心中预装最大数量的防弹插板</Chinesesimp>
-            <Chinese>生成或重生時,玩家將在背心中預裝最大數量的防彈插板</Chinese>
-            <Korean>스폰 또는 리스폰 시 조끼에 최대 체력의 방탄판을 착용한 채로 시작합니다.</Korean>
             <French>Lors de l'apparition ou de la réapparition, vous commencerez avec le nombre maximum de plaques déjà chargées dans votre gilet.</French>
+            <Polish>Gdy gracz wchodzi na serwer bądź się odradza, zaczyna z maksymalną liczbą płyt włożonych już w kamizelkę.</Polish>
+            <Korean>스폰 또는 리스폰 시 조끼에 최대 체력의 방탄판을 착용한 채로 시작합니다.</Korean>
+            <Chinese>生成或重生時,玩家將在背心中預裝最大數量的防彈插板</Chinese>
+            <Chinesesimp>生成或重生时,玩家将在背心中预装最大数量的防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest">
             <English>Chance for AI to carry plates in vests</English>
-            <Polish>Szansa na AI mające płyty w kamizelce</Polish>
-            <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
-            <Chinese>AI背心中有機率塞有防彈插板</Chinese>
-            <Korean>인공지능이 방탄판을 조끼에 착용할 확률</Korean>
             <French>Possibilité pour l'IA de porter des plaques dans des gilets pare-balles</French>
+            <Polish>Szansa na AI mające płyty w kamizelce</Polish>
+            <Korean>인공지능이 방탄판을 조끼에 착용할 확률</Korean>
+            <Chinese>AI背心中有機率塞有防彈插板</Chinese>
+            <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVest_desc">
             <English>Chance in % if AI can have plates in their vest</English>
-            <Polish>Szansa w %, czy AI będzie miało założone płyty balistyczne. Nie da się ich wyciągnąć z botów.</Polish>
-            <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
-            <Chinese>AI背心中有機率塞有防彈插板</Chinese>
-            <Korean>인공지능이 조끼에 방탄판을 착용할 퍼센트 확률입니다.</Korean>
             <French>Chance en % que l'IA puisse avoir des plaques dans son gilet</French>
+            <Polish>Szansa w %, czy AI będzie miało założone płyty balistyczne. Nie da się ich wyciągnąć z botów.</Polish>
+            <Korean>인공지능이 조끼에 방탄판을 착용할 퍼센트 확률입니다.</Korean>
+            <Chinese>AI背心中有機率塞有防彈插板</Chinese>
+            <Chinesesimp>AI背心中有几率塞有防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVestMaxNo">
             <English>Amount added to vest</English>
-            <Polish>Liczba dodanych do kamizelki</Polish>
-            <Chinesesimp>背心可塞入数量</Chinesesimp>
-            <Chinese>背心可塞入數量</Chinese>
-            <Korean>조끼 추가량</Korean>
             <French>Nombre ajouté au gilet</French>
+            <Polish>Liczba dodanych do kamizelki</Polish>
+            <Korean>조끼 추가량</Korean>
+            <Chinese>背心可塞入數量</Chinese>
+            <Chinesesimp>背心可塞入数量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInVestMaxNo_desc">
             <English>0 == random up to max allowed carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their vest. Any number above the allowed carry capacity will be reduced to max carry capacity</English>
-            <Polish>Wartość 0 oznacza losową liczbę płyt w kamizelce, aż do maksymalnego udźwigu jednostki. Jakakolwiek inna wartość to konkretna liczba płyt, które zostaną dodane każdemu AI mogącemu nosić je w kamizelce.</Polish>
-            <Chinesesimp>0 == 随机到最大允许携带量,任何其他数字是将被添加到任意被选中的AI的背心携带防弹插板的数量；一旦高于允许携带量,将被减少至最大携带量.</Chinesesimp>
-            <Chinese>0 == 隨機到最大允許攜帶量,任何其他數字是將被添加到任意被選中的AI的背心攜帶防彈插板的數量；一旦高於允許攜帶量,將被減少至最大攜帶量.</Chinese>
-            <Korean>0은 허용한 최대 소지 용량을 랜덤으로, 그 밖의 모든 수치는 조끼에 방탄판을 가지고 있도록 선택된 모든 인공지능에 추가되는 양입니다. 허용한 운반 용량을 초과하면 최대 소지 용량으로 줄어듭니다.</Korean>
             <French>Une valeur de 0 indique un nombre aléatoire de plaques dans le gilet, jusqu'à la capacité de transport maximale de l'unité. Toute autre valeur correspond au nombre spécifique de plaques qui seront ajoutées à toute IA pouvant les transporter dans le gilet.</French>
+            <Polish>Wartość 0 oznacza losową liczbę płyt w kamizelce, aż do maksymalnego udźwigu jednostki. Jakakolwiek inna wartość to konkretna liczba płyt, które zostaną dodane każdemu AI mogącemu nosić je w kamizelce.</Polish>
+            <Korean>0은 허용한 최대 소지 용량을 랜덤으로, 그 밖의 모든 수치는 조끼에 방탄판을 가지고 있도록 선택된 모든 인공지능에 추가되는 양입니다. 허용한 운반 용량을 초과하면 최대 소지 용량으로 줄어듭니다.</Korean>
+            <Chinese>0 == 隨機到最大允許攜帶量,任何其他數字是將被添加到任意被選中的AI的背心攜帶防彈插板的數量；一旦高於允許攜帶量,將被減少至最大攜帶量.</Chinese>
+            <Chinesesimp>0 == 随机到最大允许携带量,任何其他数字是将被添加到任意被选中的AI的背心携带防弹插板的数量；一旦高于允许携带量,将被减少至最大携带量.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventory">
             <English>Chance for AI to carry plates in inventory</English>
-            <Polish>Szansa na AI mająca płyty w ekwipunku</Polish>
-            <Chinesesimp>AI有几率在库存中携带插板</Chinesesimp>
-            <Chinese>AI有機率在庫存中攜帶插板</Chinese>
-            <Korean>인공지능이 소지품에서 방탄판을 가지고 있을 확률</Korean>
             <French>Possibilité pour l'IA de porter des plaques dans son inventaire</French>
+            <Polish>Szansa na AI mająca płyty w ekwipunku</Polish>
+            <Korean>인공지능이 소지품에서 방탄판을 가지고 있을 확률</Korean>
+            <Chinese>AI有機率在庫存中攜帶插板</Chinese>
+            <Chinesesimp>AI有几率在库存中携带插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventory_desc">
             <English>Chance in % if AI can have plates in their inventory. These plates can be looted!</English>
-            <Polish>Szansa w %, czy AI będzie miało płyty balistyczne w ekwipunku. Gracze mogą je zabierać!</Polish>
-            <Chinesesimp>AI库存中有几率携带防弹插板.这些插板可以被掠夺!</Chinesesimp>
-            <Chinese>AI庫存中有機率攜帶防彈插板.這些插板可以被掠奪!</Chinese>
-            <Korean>인공지능이 소지품에 방탄판을 가지고 있을 퍼센트값입니다. 이 방탄판들은 노획 가능합니다!</Korean>
             <French>Chance en % que l'IA puisse avoir des plaques dans son inventaire. Ces plaques peuvent être pillées !</French>
+            <Polish>Szansa w %, czy AI będzie miało płyty balistyczne w ekwipunku. Gracze mogą je zabierać!</Polish>
+            <Korean>인공지능이 소지품에 방탄판을 가지고 있을 퍼센트값입니다. 이 방탄판들은 노획 가능합니다!</Korean>
+            <Chinese>AI庫存中有機率攜帶防彈插板.這些插板可以被掠奪!</Chinese>
+            <Chinesesimp>AI库存中有几率携带防弹插板.这些插板可以被掠夺!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo">
             <English>Amount added to inventory</English>
-            <Polish>Liczba dodanych do ekwipunku</Polish>
-            <Chinesesimp>库存可携带容量</Chinesesimp>
-            <Chinese>庫存可攜帶容量</Chinese>
-            <Korean>소지품 추가량</Korean>
             <French>Montant ajouté à l'inventaire</French>
+            <Polish>Liczba dodanych do ekwipunku</Polish>
+            <Korean>소지품 추가량</Korean>
+            <Chinese>庫存可攜帶容量</Chinese>
+            <Chinesesimp>库存可携带容量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_AIchancePlateInInventoryMaxNo_desc">
             <English>0 == random up to max allowed carry carry capacity, any other number is the amount that will be added to any AI that is selected to carry plates in their inventory.</English>
-            <Polish>Wartość 0 oznacza losową liczbę płyt w ekwipunku, aż do maksymalnego udźwigu jednostki. Jakakolwiek inna wartość to konkretna liczba płyt, które zostaną dodane każdemu AI mogącemu nosić je w ekwipunku.</Polish>
-            <Chinesesimp>0 == 随机最大允许携带容量,任何其他数字将被添加到任意被选择AI的的库存携带防弹插板的数量</Chinesesimp>
-            <Chinese>0 == 隨機最大允許攜帶容量,任何其他數字將被添加到任意被選擇AI的的庫存攜帶防彈插板的數量</Chinese>
-            <Korean>0은 허용한 최대 소지 용량을 랜덤으로, 그 밖의 모든 수치는 소지품에서 방탄판을 가지고 있도록 선택된 모든 인공지능에 추가되는 양입니다.</Korean>
             <French>Une valeur de 0 indique un nombre aléatoire de plaques dans l'inventaire, jusqu'à la capacité de transport maximale de l'unité. Toute autre valeur correspond au nombre spécifique de plaques qui seront ajoutées à toute IA pouvant les transporter dans l'inventaire.</French>
+            <Polish>Wartość 0 oznacza losową liczbę płyt w ekwipunku, aż do maksymalnego udźwigu jednostki. Jakakolwiek inna wartość to konkretna liczba płyt, które zostaną dodane każdemu AI mogącemu nosić je w ekwipunku.</Polish>
+            <Korean>0은 허용한 최대 소지 용량을 랜덤으로, 그 밖의 모든 수치는 소지품에서 방탄판을 가지고 있도록 선택된 모든 인공지능에 추가되는 양입니다.</Korean>
+            <Chinese>0 == 隨機最大允許攜帶容量,任何其他數字將被添加到任意被選擇AI的的庫存攜帶防彈插板的數量</Chinese>
+            <Chinesesimp>0 == 随机最大允许携带容量,任何其他数字将被添加到任意被选择AI的的库存携带防弹插板的数量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateColor">
             <English>Plate UI color</English>
-            <Polish>Kolor płyt w interfejsie</Polish>
-            <Chinesesimp>插板UI颜色</Chinesesimp>
-            <Chinese>插板UI顏色</Chinese>
-            <Korean>방탄판 UI 색깔</Korean>
             <French>Couleur des plaques dans l'interface</French>
+            <Polish>Kolor płyt w interfejsie</Polish>
+            <Korean>방탄판 UI 색깔</Korean>
+            <Chinese>插板UI顏色</Chinese>
+            <Chinesesimp>插板UI颜色</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive">
             <English>Weapon ready after reviving/pressing</English>
-            <Polish>Broń przygotowana po ożywieniu/uciskaniu</Polish>
-            <Chinesesimp>复活/按压后武器准备就绪</Chinesesimp>
-            <Korean>소생/상처 압박 후 무기 들기</Korean>
             <French>Armes préparées après le réveil/la pression</French>
+            <Polish>Broń przygotowana po ożywieniu/uciskaniu</Polish>
+            <Korean>소생/상처 압박 후 무기 들기</Korean>
+            <Chinesesimp>复活/按压后武器准备就绪</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_desc">
             <English>Whether your weapon is up after reviving someone or pressing a wound</English>
-            <Polish>Broń jest gotowa do strzału po ożywieniu kogoś lub po uciskaniu rany.</Polish>
-            <Chinesesimp>不管是复活某人还是按压伤口后,您的武器都会抬起</Chinesesimp>
-            <Korean>누군가를 소생시키거나 지혈한 후 무기를 드는 지 여부입니다.</Korean>
             <French>L'arme est prête à tirer après avoir réanimé une personne ou appliqué une pression sur une blessure.</French>
+            <Polish>Broń jest gotowa do strzału po ożywieniu kogoś lub po uciskaniu rany.</Polish>
+            <Korean>누군가를 소생시키거나 지혈한 후 무기를 드는 지 여부입니다.</Korean>
+            <Chinesesimp>不管是复活某人还是按压伤口后,您的武器都会抬起</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_0">
             <English>Never</English>
-            <Polish>Nigdy</Polish>
-            <Chinesesimp>从不</Chinesesimp>
-            <Korean>들지 않음</Korean>
             <French>Jamais</French>
+            <Polish>Nigdy</Polish>
+            <Korean>들지 않음</Korean>
+            <Chinesesimp>从不</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_1">
             <English>After canceling</English>
-            <Polish>Po anulowaniu</Polish>
-            <Chinesesimp>取消后</Chinesesimp>
-            <Korean>취소 후</Korean>
             <French>Après l'annulation</French>
+            <Polish>Po anulowaniu</Polish>
+            <Korean>취소 후</Korean>
+            <Chinesesimp>取消后</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_readyAfterRevive_2">
             <English>Always</English>
-            <Polish>Zawsze</Polish>
-            <Chinesesimp>总是</Chinesesimp>
-            <Korean>항상</Korean>
             <French>Toujours</French>
+            <Polish>Zawsze</Polish>
+            <Korean>항상</Korean>
+            <Chinesesimp>总是</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength">
             <English>Plate animation headbob scale</English>
-            <Polish>Skala animacji ruchu głową</Polish>
-            <Chinesesimp>插板头部晃动大小</Chinesesimp>
-            <Korean>방탄판 애니메이션 머리 흔들림 규모</Korean>
             <French>Échelle de l'animation du mouvement de la tête</French>
+            <Polish>Skala animacji ruchu głową</Polish>
+            <Korean>방탄판 애니메이션 머리 흔들림 규모</Korean>
+            <Chinesesimp>插板头部晃动大小</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_desc">
             <English>Multiplier on first-person head rotation during plate adding animation. Actual intensity depends on the time to add plates.</English>
-            <Polish>Mnożnik poruszania głową w 1. osobie podczas animacji dodawania płyty. Właściwa intensywność animacji zależy od czasu dokładania płyt.</Polish>
-            <Chinesesimp>插板动画中第一人称头部旋转的倍数.实际强度取决于添加插板数量的时间.</Chinesesimp>
-            <Korean>방탄판 추가 애니메이션 중 1인칭 머리 회전 배율. 실제 강도는 방탄판을 삽입하는 시간에 따라 달라집니다.</Korean>
             <French>Multiplicateur du mouvement de la tête à la 1ère personne pendant l'animation d'ajout de disque. L'intensité réelle de l'animation dépend du moment où la plaque est ajoutée.</French>
+            <Polish>Mnożnik poruszania głową w 1. osobie podczas animacji dodawania płyty. Właściwa intensywność animacji zależy od czasu dokładania płyt.</Polish>
+            <Korean>방탄판 추가 애니메이션 중 1인칭 머리 회전 배율. 실제 강도는 방탄판을 삽입하는 시간에 따라 달라집니다.</Korean>
+            <Chinesesimp>插板动画中第一人称头部旋转的倍数.实际强度取决于添加插板数量的时间.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_0">
             <English>Minimal</English>
-            <Polish>Minimalna</Polish>
-            <Chinesesimp>最小</Chinesesimp>
-            <Korean>최소</Korean>
             <French>Minimum</French>
+            <Polish>Minimalna</Polish>
+            <Korean>최소</Korean>
+            <Chinesesimp>最小</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_1">
             <English>Medium</English>
-            <Polish>Normalna</Polish>
-            <Chinesesimp>中等</Chinesesimp>
-            <Korean>중간</Korean>
             <French>Moyen</French>
+            <Polish>Normalna</Polish>
+            <Korean>중간</Korean>
+            <Chinesesimp>中等</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headBobStrength_2">
             <English>High</English>
-            <Polish>Duża</Polish>
-            <Chinesesimp>高</Chinesesimp>
-            <Korean>높음</Korean>
             <French>Haut</French>
+            <Polish>Duża</Polish>
+            <Korean>높음</Korean>
+            <Chinesesimp>高</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_vestBlacklist">
             <English>Vest Blacklist</English>
-            <Korean>조끼 블랙리스트</Korean>
-            <Polish>Czarna lista kamizelek</Polish>
             <French>Liste noire des gilets</French>
+            <Polish>Czarna lista kamizelek</Polish>
+            <Korean>조끼 블랙리스트</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_vestBlacklist_desc">
             <English>List of vest class names to have plate insertion disabled. Class names can be found with {vest player} or ctrl+c when selected in ACE arsenal. (ex. vestclassname1, vestclassname2)</English>
-            <Korean>방탄판 삽입을 비활성화할 조끼의 클레스네임 목록입니다. 클래스네임은 ACE 무기고에서 선택하면 {vest player} 또는 컨트롤+c 키로 찾을 수 있습니다. (예: vestclassname1, vestclassname2)</Korean>
-            <Polish>Lista klas kamizelek, które mają mieć wyłączoną możliwość uzupełniania płyt. Klasy można znaleźć poprzez {vest player} lub Ctrl+C, gdy wybrana w arsenale ACE. (np. kamizelka1, kamizelka2)</Polish>
             <French>Liste des noms de classes de gilets dont l'insertion de plaques est désactivée. Les noms de classe peuvent être trouvés avec {vest player} ou ctrl+c lorsqu'ils sont sélectionnés dans l'arsenal ACE. (ex. vestclassname1, vestclassname2)</French>
+            <Polish>Lista klas kamizelek, które mają mieć wyłączoną możliwość uzupełniania płyt. Klasy można znaleźć poprzez {vest player} lub Ctrl+C, gdy wybrana w arsenale ACE. (np. kamizelka1, kamizelka2)</Polish>
+            <Korean>방탄판 삽입을 비활성화할 조끼의 클레스네임 목록입니다. 클래스네임은 ACE 무기고에서 선택하면 {vest player} 또는 컨트롤+c 키로 찾을 수 있습니다. (예: vestclassname1, vestclassname2)</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryHealth">
             <English>Health</English>
-            <Polish>Punkty życia</Polish>
-            <Chinesesimp>健康</Chinesesimp>
-            <Chinese>健康</Chinese>
-            <Korean>체력</Korean>
             <French>Points de vie</French>
+            <Polish>Punkty życia</Polish>
+            <Korean>체력</Korean>
+            <Chinese>健康</Chinese>
+            <Chinesesimp>健康</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlayerHP">
             <English>Max Player HP</English>
-            <Polish>Maks. HP gracza</Polish>
-            <Chinesesimp>玩家最大HP</Chinesesimp>
-            <Chinese>玩家最大HP</Chinese>
-            <Korean>플레이어 최대 체력</Korean>
             <French>HP max. du joueur</French>
+            <Polish>Maks. HP gracza</Polish>
+            <Korean>플레이어 최대 체력</Korean>
+            <Chinese>玩家最大HP</Chinese>
+            <Chinesesimp>玩家最大HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlayerHP_desc">
             <English>How much HP does a player have</English>
-            <Polish>Ile punktów życia może mieć gracz.</Polish>
-            <Chinesesimp>玩家有多少HP</Chinesesimp>
-            <Chinese>玩家有多少HP</Chinese>
-            <Korean>플레이어가 보유한 체력량입니다.</Korean>
             <French>Nombre de points de vie qu'un joueur peut avoir.</French>
+            <Polish>Ile punktów życia może mieć gracz.</Polish>
+            <Korean>플레이어가 보유한 체력량입니다.</Korean>
+            <Chinese>玩家有多少HP</Chinese>
+            <Chinesesimp>玩家有多少HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxAiHP">
             <English>Max AI HP</English>
-            <Polish>Maks. HP AI</Polish>
-            <Chinesesimp>AI最大HP</Chinesesimp>
-            <Chinese>AI最大HP</Chinese>
-            <Korean>인공지능 최대 체력</Korean>
             <French>Max AI HP</French>
+            <Polish>Maks. HP AI</Polish>
+            <Korean>인공지능 최대 체력</Korean>
+            <Chinese>AI最大HP</Chinese>
+            <Chinesesimp>AI最大HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxAiHP_desc">
             <English>How much HP does an AI have</English>
-            <Polish>Ile punktów życia może mieć bot.</Polish>
-            <Chinesesimp>AI有多少HP</Chinesesimp>
-            <Chinese>AI有多少HP</Chinese>
-            <Korean>인공지능이 보유한 체력량입니다.</Korean>
             <French>Nombre de points de vie qu'un bot peut avoir.</French>
+            <Polish>Ile punktów życia może mieć bot.</Polish>
+            <Korean>인공지능이 보유한 체력량입니다.</Korean>
+            <Chinese>AI有多少HP</Chinese>
+            <Chinesesimp>AI有多少HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegen">
             <English>Enable HP regen</English>
-            <Polish>Włącz regenerację HP</Polish>
-            <Chinesesimp>启用HP回复</Chinesesimp>
-            <Chinese>啟用HP回复</Chinese>
-            <Korean>체력 자연회복 활성화</Korean>
             <French>Activer la régénération des HP</French>
+            <Polish>Włącz regenerację HP</Polish>
+            <Korean>체력 자연회복 활성화</Korean>
+            <Chinese>啟用HP回复</Chinese>
+            <Chinesesimp>启用HP回复</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegen_desc">
             <English>Start HP regeneration after 5 seconds</English>
-            <Polish>Regeneracja rozpoczyna się po 5 sekundach.</Polish>
-            <Chinesesimp>5秒后开始HP回复</Chinesesimp>
-            <Chinese>5秒後開始HP回复</Chinese>
-            <Korean>활성화 시 5초 후 체력을 자연회복합니다.</Korean>
             <French>La régénération commence après 5 secondes.</French>
+            <Polish>Regeneracja rozpoczyna się po 5 sekundach.</Polish>
+            <Korean>활성화 시 5초 후 체력을 자연회복합니다.</Korean>
+            <Chinese>5秒後開始HP回复</Chinese>
+            <Chinesesimp>5秒后开始HP回复</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegenForAI">
             <English>Enable HP regen for AI</English>
-            <Polish>Włącz regenerację HP botom</Polish>
-            <Chinesesimp>AI启用HP回复</Chinesesimp>
-            <Chinese>AI啟用HP回复</Chinese>
-            <Korean>인공지능 체력 자연회복 활성화</Korean>
             <French>Activation de la régénération des HP pour les bots</French>
+            <Polish>Włącz regenerację HP botom</Polish>
+            <Korean>인공지능 체력 자연회복 활성화</Korean>
+            <Chinese>AI啟用HP回复</Chinese>
+            <Chinesesimp>AI启用HP回复</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHpRegenForAI_desc">
             <English>Allows AI to regenerate HP</English>
-            <Polish>Pozwala botom na regenerację punktów życia.</Polish>
-            <Chinesesimp>允许AI回复HP</Chinesesimp>
-            <Chinese>允許AI回复HP</Chinese>
-            <Korean>활성화 시 인공지능이 체력을 자연회복합니다.</Korean>
             <French>Permet aux bots de régénérer leurs points de vie.</French>
+            <Polish>Pozwala botom na regenerację punktów życia.</Polish>
+            <Korean>활성화 시 인공지능이 체력을 자연회복합니다.</Korean>
+            <Chinese>允許AI回复HP</Chinese>
+            <Chinesesimp>允许AI回复HP</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen">
             <English>Healing with Regen on</English>
-            <Korean>자연회복 중 치료</Korean>
-            <Polish>Leczenie z regeneracją</Polish>
             <French>Guérison avec Regen activé</French>
+            <Polish>Leczenie z regeneracją</Polish>
+            <Korean>자연회복 중 치료</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_desc">
             <English>How to handle healing with regen enabled.</English>
-            <Korean>자연회복을 활성화한 상태에서 치료를 할 지 여부입니다.</Korean>
-            <Polish>Jak obsługiwać leczenie z włączoną regeneracją zdrowia.</Polish>
             <French>Comment gérer la guérison lorsque la régénération est activée.</French>
+            <Polish>Jak obsługiwać leczenie z włączoną regeneracją zdrowia.</Polish>
+            <Korean>자연회복을 활성화한 상태에서 치료를 할 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_1">
             <English>Allow</English>
-            <Korean>허용</Korean>
-            <Polish>Zezwól</Polish>
             <French>Autoriser</French>
+            <Polish>Zezwól</Polish>
+            <Korean>허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableHealRegen_2">
             <English>Allow and delay regen</English>
-            <Korean>자연회복을 지연하고 허용</Korean>
-            <Polish>Zezwól i opóźnij regenerację</Polish>
             <French>Autoriser et retarder la régénération</French>
+            <Polish>Zezwól i opóźnij regenerację</Polish>
+            <Korean>자연회복을 지연하고 허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate">
             <English>HP regen rate</English>
-            <Polish>Mnożnik regeneracji HP</Polish>
-            <Chinesesimp>HP回复速度</Chinesesimp>
-            <Chinese>HP回复速度</Chinese>
-            <Korean>체력 자연회복 속도</Korean>
             <French>Taux de régénération des HP</French>
+            <Polish>Mnożnik regeneracji HP</Polish>
+            <Korean>체력 자연회복 속도</Korean>
+            <Chinese>HP回复速度</Chinese>
+            <Chinesesimp>HP回复速度</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenRate_desc">
             <English>How fast do my eyes stop bleeding?</English>
-            <Polish>Szybkość regeneracji życia. Im niższa wartość, tym wolniejsza regeneracja.</Polish>
-            <Chinesesimp>HP回复速度；值越低,回复速度越慢.</Chinesesimp>
-            <Chinese>HP回复速度；值越低,回复速度越慢.</Chinese>
-            <Korean>체력 자연회복의 속도를 조절하며, 값이 낮을수록 회복 속도가 느려집니다.</Korean>
             <French>Multiplicateur de régénération des HP</French>
+            <Polish>Szybkość regeneracji życia. Im niższa wartość, tym wolniejsza regeneracja.</Polish>
+            <Korean>체력 자연회복의 속도를 조절하며, 값이 낮을수록 회복 속도가 느려집니다.</Korean>
+            <Chinese>HP回复速度；值越低,回复速度越慢.</Chinese>
+            <Chinesesimp>HP回复速度；值越低,回复速度越慢.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay">
             <English>HP regen delay</English>
-            <Korean>체력 자연회복 지연 시간</Korean>
-            <Polish>Opóźnienie regeneracji HP</Polish>
             <French>Délai de régénération des HP</French>
+            <Polish>Opóźnienie regeneracji HP</Polish>
+            <Korean>체력 자연회복 지연 시간</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hpRegenDelay_desc">
             <English>How long before hp regen begins?</English>
-            <Korean>체력 자연회복이 시작되기까지 얼마나 걸릴 지 여부입니다.</Korean>
-            <Polish>Jak długo trzeba czekać na regenerację HP?</Polish>
             <French>Combien de temps faut-il pour régénérer les HP ?</French>
+            <Polish>Jak długo trzeba czekać na regenerację HP?</Polish>
+            <Korean>체력 자연회복이 시작되기까지 얼마나 걸릴 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRegen">
             <English>Max heal % for regen</English>
-            <Korean>자연회복 최대 체력량 (%)</Korean>
-            <Polish>Maks. % zdrowia do regeneracji</Polish>
             <French>Pourcentage maximum de santé à régénérer</French>
+            <Polish>Maks. % zdrowia do regeneracji</Polish>
+            <Korean>자연회복 최대 체력량 (%)</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRegen_desc">
             <English>What percentage of max health can be regenerated?</English>
-            <Korean>최대 체력의 몇 퍼센트까지 자연회복이 가능한 지 여부입니다.</Korean>
-            <Polish>Jaki procent maks. zdrowia może być zregenerowany?</Polish>
             <French>Quel pourcentage de la santé maximale peut être régénéré ?</French>
+            <Polish>Jaki procent maks. zdrowia może być zregenerowany?</Polish>
+            <Korean>최대 체력의 몇 퍼센트까지 자연회복이 가능한 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic">
             <English>Max heal % for medics</English>
-            <Polish>Maks. % uleczenia przez medyka</Polish>
-            <Chinesesimp>医护兵最大治疗百分比</Chinesesimp>
-            <Chinese>醫護兵最大治療百分比</Chinese>
-            <Korean>의무병 치료양</Korean>
             <French>Pourcentage maximum de guérison pour les médecins</French>
+            <Polish>Maks. % uleczenia przez medyka</Polish>
+            <Korean>의무병 치료양</Korean>
+            <Chinese>醫護兵最大治療百分比</Chinese>
+            <Chinesesimp>医护兵最大治疗百分比</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealMedic_desc">
             <English>What percentage of max health can a medic heal?</English>
-            <Polish>Ile % maksymalnego życia może przywrócić medyk?</Polish>
-            <Chinesesimp>医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
-            <Chinese>醫療兵最大治療生命值百分比是多少？</Chinese>
-            <Korean>의무병이 최대 몇 %의 체력을 회복하는지 결정합니다.</Korean>
             <French>Quel pourcentage de la santé maximale un infirmier peut-il soigner ?</French>
+            <Polish>Ile % maksymalnego życia może przywrócić medyk?</Polish>
+            <Korean>의무병이 최대 몇 %의 체력을 회복하는지 결정합니다.</Korean>
+            <Chinese>醫療兵最大治療生命值百分比是多少？</Chinese>
+            <Chinesesimp>医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRifleman">
             <English>Max heal % for non-medics</English>
-            <Polish>Maks. % uleczenia przez nie-medyków</Polish>
-            <Chinesesimp>非医护兵最大治疗百分比</Chinesesimp>
-            <Chinese>非醫護兵最大治療百分比</Chinese>
-            <Korean>일반병 치료양</Korean>
             <French>Pourcentage maximal de guérison pour les non-médecins</French>
+            <Polish>Maks. % uleczenia przez nie-medyków</Polish>
+            <Korean>일반병 치료양</Korean>
+            <Chinese>非醫護兵最大治療百分比</Chinese>
+            <Chinesesimp>非医护兵最大治疗百分比</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxHealRifleman_desc">
             <English>How percentage of max health can a rifleman heal?</English>
-            <Polish>Ile % maksymalnego życia może przywrócić gracz bez uprawnień medyka?</Polish>
-            <Chinesesimp>非医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
-            <Chinese>非醫療兵最大治療生命值百分比是多少？</Chinese>
-            <Korean>일반병이 최대 몇 %의 체력을 회복하는지 결정합니다.</Korean>
             <French>Quel pourcentage de santé maximale un fusilier peut-il soigner ?</French>
+            <Polish>Ile % maksymalnego życia może przywrócić gracz bez uprawnień medyka?</Polish>
+            <Korean>일반병이 최대 몇 %의 체력을 회복하는지 결정합니다.</Korean>
+            <Chinese>非醫療兵最大治療生命值百分比是多少？</Chinese>
+            <Chinesesimp>非医疗兵最大治疗生命值百分比是多少？</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healAtMedic">
             <English>Allow Players to Heal at Medics</English>
-            <Korean>플레이어가 의무병처럼 치료 허용</Korean>
-            <Polish>Zezwól graczom na leczenie u medyków</Polish>
             <French>Permettre aux joueurs de se soigner auprès des médecins</French>
+            <Polish>Zezwól graczom na leczenie u medyków</Polish>
+            <Korean>플레이어가 의무병처럼 치료 허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healAtMedic_desc">
             <English>Players will have an addAction on units classed as medics to heal to the percentage medics give.</English>
-            <Korean>플레이어는 의무병으로 분류된 유닛에게 addAction을 사용하여 의무병이 주는 백분율로 치료합니다.</Korean>
-            <Polish>Gracze będą mieć dostępną akcją addAction na jednostkach medycznych, by uleczyć zdrowie o pewien procent.</Polish>
             <French>Les joueurs disposeront d'une addAction sur les unités médicales pour soigner la santé d'un certain pourcentage.</French>
+            <Polish>Gracze będą mieć dostępną akcją addAction na jednostkach medycznych, by uleczyć zdrowie o pewien procent.</Polish>
+            <Korean>플레이어는 의무병으로 분류된 유닛에게 addAction을 사용하여 의무병이 주는 백분율로 치료합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryGeneral">
             <English>General</English>
-            <Polish>Ogólne</Polish>
-            <Chinesesimp>通用</Chinesesimp>
-            <Chinese>通用</Chinese>
-            <Korean>일반</Korean>
             <French>Général</French>
+            <Polish>Ogólne</Polish>
+            <Korean>일반</Korean>
+            <Chinese>通用</Chinese>
+            <Chinesesimp>通用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enable">
             <English>Enable the whole system</English>
-            <Polish>Włącz cały system</Polish>
-            <Chinesesimp>系统整体启用</Chinesesimp>
-            <Chinese>系統整體啟用</Chinese>
-            <Korean>전체 시스템 활성화</Korean>
             <French>Activer l'ensemble du système</French>
+            <Polish>Włącz cały system</Polish>
+            <Korean>전체 시스템 활성화</Korean>
+            <Chinese>系統整體啟用</Chinese>
+            <Chinesesimp>系统整体启用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enable_desc">
             <English>Enables the system, disable if you want to play a mission with its own medical system. CANNOT BE TOGGLED OFF OR ON DURING THE MISSION!</English>
-            <Polish>Włącza całość systemu modyfikacji, wyłącz jeśli zamieszasz grać z innym systemem medycznym. NIE MOŻNA PRZEŁĄCZYĆ W TRAKCIE MISJI!</Polish>
-            <Chinesesimp>启用该系统,如果你想玩一个拥有自我医疗系统的任务,请禁用.在任务中无法切换为关闭或开启!</Chinesesimp>
-            <Chinese>啟用該系統,如果你想玩一個擁有自我醫療系統的任務,請禁用.在任務中無法切換為關閉或開啟!</Chinese>
-            <Korean>시스템을 활성화하며, 자체적인 의료 시스템으로 플레이하려면 비활성화하십시오. 주의: 미션 중에는 끄거나 켤 수 없습니다!</Korean>
             <French>Active le système, désactivez-le si vous voulez jouer une mission avec son propre système médical. NE PEUT PAS ÊTRE DÉSACTIVÉ OU ACTIVÉ PENDANT LA MISSION !</French>
+            <Polish>Włącza całość systemu modyfikacji, wyłącz jeśli zamieszasz grać z innym systemem medycznym. NIE MOŻNA PRZEŁĄCZYĆ W TRAKCIE MISJI!</Polish>
+            <Korean>시스템을 활성화하며, 자체적인 의료 시스템으로 플레이하려면 비활성화하십시오. 주의: 미션 중에는 끄거나 켤 수 없습니다!</Korean>
+            <Chinese>啟用該系統,如果你想玩一個擁有自我醫療系統的任務,請禁用.在任務中無法切換為關閉或開啟!</Chinese>
+            <Chinesesimp>启用该系统,如果你想玩一个拥有自我医疗系统的任务,请禁用.在任务中无法切换为关闭或开启!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageCoef">
             <English>Damage coefficient</English>
-            <Polish>Mnożnik obrażeń</Polish>
-            <Chinesesimp>伤害系数</Chinesesimp>
-            <Chinese>傷害係數</Chinese>
-            <Korean>데미지 배율</Korean>
             <French>Multiplicateur de dégâts</French>
+            <Polish>Mnożnik obrażeń</Polish>
+            <Korean>데미지 배율</Korean>
+            <Chinese>傷害係數</Chinese>
+            <Chinesesimp>伤害系数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageCoef_desc">
             <English>Coefficient which manipulates the incoming damage</English>
-            <Polish>Mnożnik decydujący o otrzymywanych obrażeniach.</Polish>
-            <Chinesesimp>控制来袭伤害造成的损伤数值</Chinesesimp>
-            <Chinese>控制來襲傷害造成的損傷數值</Chinese>
-            <Korean>받는 데미지 배율을 조작합니다.</Korean>
             <French>Un multiplicateur qui détermine les dégâts reçus.</French>
+            <Polish>Mnożnik decydujący o otrzymywanych obrażeniach.</Polish>
+            <Korean>받는 데미지 배율을 조작합니다.</Korean>
+            <Chinese>控制來襲傷害造成的損傷數值</Chinese>
+            <Chinesesimp>控制来袭伤害造成的损伤数值</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headshotMult">
             <English>Headshot Multiplier</English>
-            <Polish>Mnoż. trafień w głowę</Polish>
-            <Chinesesimp>爆头伤害(倍率)</Chinesesimp>
-            <Chinese>爆頭傷害(倍率)</Chinese>
-            <Korean>헤드샷 배율</Korean>
             <French>Multiplication des tirs à la tête</French>
+            <Polish>Mnoż. trafień w głowę</Polish>
+            <Korean>헤드샷 배율</Korean>
+            <Chinese>爆頭傷害(倍率)</Chinese>
+            <Chinesesimp>爆头伤害(倍率)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_headshotMult_desc">
             <English>Damage multiplier on headshot</English>
-            <Polish>Mnożnik obrażeń otrzymywanych podczas postrzału w głowę.</Polish>
-            <Chinesesimp>头部中弹时受到的伤害倍数</Chinesesimp>
-            <Chinese>頭部中彈時受到的傷害倍數</Chinese>
-            <Korean>헤드샷의 데미지 배율입니다.</Korean>
             <French>Multiplicateur des dégâts reçus lorsqu'une balle est tirée dans la tête.</French>
+            <Polish>Mnożnik obrażeń otrzymywanych podczas postrzału w głowę.</Polish>
+            <Korean>헤드샷의 데미지 배율입니다.</Korean>
+            <Chinese>頭部中彈時受到的傷害倍數</Chinese>
+            <Chinesesimp>头部中弹时受到的伤害倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_limbMult">
             <English>Limb Multiplier</English>
-            <Polish>Mnoż. trafień w kończyny</Polish>
-            <Chinesesimp>肢体伤害(倍率)</Chinesesimp>
-            <Chinese>肢體傷害(倍率)</Chinese>
-            <Korean>사지 데미지 배율</Korean>
             <French>Multiplication des impacts sur les membres</French>
+            <Polish>Mnoż. trafień w kończyny</Polish>
+            <Korean>사지 데미지 배율</Korean>
+            <Chinese>肢體傷害(倍率)</Chinese>
+            <Chinesesimp>肢体伤害(倍率)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_limbMult_desc">
             <English>Damage multiplier on limb shots</English>
-            <Polish>Mnożnik obrażeń otrzymywanych podczas postrzału w ręce lub nogi.</Polish>
-            <Chinesesimp>肢体中弹时受到的伤害倍数</Chinesesimp>
-            <Chinese>肢體中彈時受到的傷害倍數</Chinese>
-            <Korean>사지에 받는 데미지 배율입니다.</Korean>
             <French>Multiplicateur des dégâts reçus lors d'un tir dans les bras ou les jambes.</French>
+            <Polish>Mnożnik obrażeń otrzymywanych podczas postrzału w ręce lub nogi.</Polish>
+            <Korean>사지에 받는 데미지 배율입니다.</Korean>
+            <Chinese>肢體中彈時受到的傷害倍數</Chinese>
+            <Chinesesimp>肢体中弹时受到的伤害倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pelvisMult">
             <English>Pelvis Multiplier</English>
-            <Polish>Mnożnik dla miednicy</Polish>
-            <Chinesesimp>骨盆部位伤害(倍数)</Chinesesimp>
-            <Korean>골반 데미지 배율</Korean>
             <French>Multiplicateur de bassin</French>
+            <Polish>Mnożnik dla miednicy</Polish>
+            <Korean>골반 데미지 배율</Korean>
+            <Chinesesimp>骨盆部位伤害(倍数)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pelvisMult_desc">
             <English>Damage multiplier on pelvis shots</English>
-            <Polish>Mnożnik obrażeń przy trafieniach w miednicę</Polish>
-            <Chinesesimp>骨盆中弹时的伤害倍数</Chinesesimp>
-            <Korean>골반에 받는 데미지 배율입니다.</Korean>
             <French>Multiplicateur de dégâts pour les tirs au bassin</French>
+            <Polish>Mnożnik obrażeń przy trafieniach w miednicę</Polish>
+            <Korean>골반에 받는 데미지 배율입니다.</Korean>
+            <Chinesesimp>骨盆中弹时的伤害倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire">
             <English>Disallow friendly fire</English>
-            <Polish>Wyłącz ogień przyjacielski</Polish>
-            <Chinesesimp>禁止友军误伤</Chinesesimp>
-            <Chinese>禁止友軍誤傷</Chinese>
-            <Korean>아군 오사 비허용</Korean>
             <French>Interdire les tirs amis</French>
+            <Polish>Wyłącz ogień przyjacielski</Polish>
+            <Korean>아군 오사 비허용</Korean>
+            <Chinese>禁止友軍誤傷</Chinese>
+            <Chinesesimp>禁止友军误伤</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_disallowFriendfire_desc">
             <English>Do not allow friendly from weapon fire</English>
-            <Polish>Wyłącza otrzymywanie obrażeń od sojuszników.</Polish>
-            <Chinesesimp>不允许友军受到误击</Chinesesimp>
-            <Chinese>不允許友軍受到誤擊</Chinese>
-            <Korean>아군에 의한 무기 오사를 허용하지 않습니다.</Korean>
             <French>Ne pas autoriser les tirs d'armes amicales</French>
+            <Polish>Wyłącza otrzymywanie obrażeń od sojuszników.</Polish>
+            <Korean>아군에 의한 무기 오사를 허용하지 않습니다.</Korean>
+            <Chinese>不允許友軍受到誤擊</Chinese>
+            <Chinesesimp>不允许友军受到误击</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage">
             <English>Allow damage on unconscious units</English>
-            <Polish>Zezwól na otrzymywanie obrażeń przez nieprzytomnego</Polish>
-            <Chinesesimp>允许对昏迷单位造成伤害</Chinesesimp>
-            <Korean>무력화 유닛 데미지 허용</Korean>
             <French>Autoriser les dégâts sur les unités inconscientes</French>
+            <Polish>Zezwól na otrzymywanie obrażeń przez nieprzytomnego</Polish>
+            <Korean>무력화 유닛 데미지 허용</Korean>
+            <Chinesesimp>允许对昏迷单位造成伤害</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_desc">
             <English>Allows that unconscious units can take damage. This allows the execution of unconscious units</English>
-            <Polish>Umożliwia nieprzytomnym jednostkom otrzymywanie obrażeń. Pozwala na wykonywanie egzekucji</Polish>
-            <Chinesesimp>允许昏迷单位受到伤害.允许处决昏迷单位</Chinesesimp>
-            <Korean>무력화된 유닛이 데미지를 받도록 허용합니다. 이는 무력화된 유닛을 완전히 사망하게 할 수 있습니다.</Korean>
             <French>Permet aux unités inconscientes de subir des dégâts. Cela permet l'exécution d'unités inconscientes</French>
+            <Polish>Umożliwia nieprzytomnym jednostkom otrzymywanie obrażeń. Pozwala na wykonywanie egzekucji</Polish>
+            <Korean>무력화된 유닛이 데미지를 받도록 허용합니다. 이는 무력화된 유닛을 완전히 사망하게 할 수 있습니다.</Korean>
+            <Chinesesimp>允许昏迷单位受到伤害.允许处决昏迷单位</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_1">
             <English>Downed Hitpoints</English>
-            <Polish>Punkty życia w nieprzytomności</Polish>
-            <Chinesesimp>减少的HP值</Chinesesimp>
-            <Korean>무력화 시의 체력</Korean>
             <French>Réduction des HP</French>
+            <Polish>Punkty życia w nieprzytomności</Polish>
+            <Korean>무력화 시의 체력</Korean>
+            <Chinesesimp>减少的HP值</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_2">
             <English>Hit count</English>
-            <Polish>Liczba trafień</Polish>
-            <Chinesesimp>命中次数</Chinesesimp>
-            <Korean>공격 횟수</Korean>
             <French>Nombre de coups</French>
+            <Polish>Liczba trafień</Polish>
+            <Korean>공격 횟수</Korean>
+            <Chinesesimp>命中次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowDownedDamage_3">
             <English>Both</English>
-            <Polish>Oba</Polish>
-            <Chinesesimp>都有</Chinesesimp>
-            <Korean>둘 다</Korean>
             <French>Les deux</French>
+            <Polish>Oba</Polish>
+            <Korean>둘 다</Korean>
+            <Chinesesimp>都有</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP">
             <English>Downed HP Multiplier</English>
-            <Polish>Mnożnik HP nieprzytomnej jednostki</Polish>
-            <Chinesesimp>减少HP伤害的倍数</Chinesesimp>
-            <Korean>무력화 시 체력 배율</Korean>
             <French>Multiplicateur de HP de l'unité inconsciente</French>
+            <Polish>Mnożnik HP nieprzytomnej jednostki</Polish>
+            <Korean>무력화 시 체력 배율</Korean>
+            <Chinesesimp>减少HP伤害的倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHP_desc">
             <English>Multiplied by a unit's max hp to determine how much damage they can take while down.</English>
-            <Polish>Mnożone przez maksymalne zdrowie jednostki w celu obliczenia, ile obrażeń może przyjąć podczas nieprzytomności.</Polish>
-            <Chinesesimp>乘以一个单位的最大HP值以决定它们在被击倒时可以受到多少伤害.</Chinesesimp>
-            <Korean>무력화된 동안 얼마나 많은 데미지를 입을 수 있는지 결정하는 유닛의 최대 체력의 배율입니다.</Korean>
             <French>Multiplié par la puissance maximale d'une unité pour déterminer les dégâts qu'elle peut subir lorsqu'elle est à terre.</French>
+            <Polish>Mnożone przez maksymalne zdrowie jednostki w celu obliczenia, ile obrażeń może przyjąć podczas nieprzytomności.</Polish>
+            <Korean>무력화된 동안 얼마나 많은 데미지를 입을 수 있는지 결정하는 유닛의 최대 체력의 배율입니다.</Korean>
+            <Chinesesimp>乘以一个单位的最大HP值以决定它们在被击倒时可以受到多少伤害.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits">
             <English>Downed Hits count</English>
-            <Polish>Trafienia nieprzytomnej jednostki</Polish>
-            <Chinesesimp>被击倒次数</Chinesesimp>
-            <Korean>무력화 시 공격 횟수</Korean>
             <French>Nombre de coups qu'une unité inconsciente peut encaisser avant de mourir.</French>
+            <Polish>Trafienia nieprzytomnej jednostki</Polish>
+            <Korean>무력화 시 공격 횟수</Korean>
+            <Chinesesimp>被击倒次数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedDamageHits_desc">
             <English>Number of hits a unit can take while down before dying.</English>
-            <Polish>Liczba trafień które nieprzytomna jednostka może przyjąć zanim umrze.</Polish>
-            <Chinesesimp>一个单位在倒地后死亡前可承受的打击次数.</Chinesesimp>
-            <Korean>무력화 상태에서 유닛이 완전히 사망하기 전까지 맞을 수 있는 공격 횟수입니다.</Korean>
             <French>Nombre de coups qu'une unité peut recevoir à terre avant de mourir.</French>
+            <Polish>Liczba trafień które nieprzytomna jednostka może przyjąć zanim umrze.</Polish>
+            <Korean>무력화 상태에서 유닛이 완전히 사망하기 전까지 맞을 수 있는 공격 횟수입니다.</Korean>
+            <Chinesesimp>一个单位在倒地后死亡前可承受的打击次数.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant">
             <English>Damage EH</English>
-            <Polish>EH obrażeń</Polish>
-            <Chinesesimp>伤害EH</Chinesesimp>
-            <Chinese>傷害EH</Chinese>
-            <Korean>데미지 이벤트 핸들러</Korean>
             <French>Dommages EH</French>
+            <Polish>EH obrażeń</Polish>
+            <Korean>데미지 이벤트 핸들러</Korean>
+            <Chinese>傷害EH</Chinese>
+            <Chinesesimp>伤害EH</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_damageEhVariant_desc">
             <English>Which damage EH should be used, do mind that only HandleDamage can do multipliers to body parts!</English>
-            <Polish>Typ EventHandlera obrażeń, który będzie wykorzystywany w misji. Tylko HandleDamage obsługuje mnożniki obrażeń do części ciała!</Polish>
-            <Chinesesimp>应该启用哪种伤害EH,请注意,只有HandleDamage可以对身体部位进行倍增/减.</Chinesesimp>
-            <Chinese>應該啟用哪種傷害EH,請注意,只有HandleDamage可以對身體部位進行倍增/減.</Chinese>
-            <Korean>어떤 데미지 이벤트 핸들러를 사용해야 하는지 여부입니다. 주의: 오직 HandleDamage만이 신체 부위에 배율을 적용할 수 있다는 점에 유의하십시오!</Korean>
             <French>Quel dommage EH doit être utilisé, n'oubliez pas que seul HandleDamage peut appliquer des multiplicateurs aux parties du corps !</French>
+            <Polish>Typ EventHandlera obrażeń, który będzie wykorzystywany w misji. Tylko HandleDamage obsługuje mnożniki obrażeń do części ciała!</Polish>
+            <Korean>어떤 데미지 이벤트 핸들러를 사용해야 하는지 여부입니다. 주의: 오직 HandleDamage만이 신체 부위에 배율을 적용할 수 있다는 점에 유의하십시오!</Korean>
+            <Chinese>應該啟用哪種傷害EH,請注意,只有HandleDamage可以對身體部位進行倍增/減.</Chinese>
+            <Chinesesimp>应该启用哪种伤害EH,请注意,只有HandleDamage可以对身体部位进行倍增/减.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enablePlayerUnconscious">
             <English>Enable player unconsciousness</English>
-            <Polish>Włącz nieprzytomność gracza</Polish>
-            <Chinesesimp>启用无意识</Chinesesimp>
-            <Chinese>啟用無意識</Chinese>
-            <Korean>플레이어 무력화 활성화</Korean>
             <French>Permettre l'inconscience du joueur</French>
+            <Polish>Włącz nieprzytomność gracza</Polish>
+            <Korean>플레이어 무력화 활성화</Korean>
+            <Chinese>啟用無意識</Chinese>
+            <Chinesesimp>启用无意识</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enablePlayerUnconscious_desc">
             <English>Enables the unconscious implementation, when a player reaches 0 HP</English>
-            <Polish>Włącza nieprzytomność u graczy, których HP zejdzie do 0.</Polish>
-            <Chinesesimp>当一名玩家达到0HP时,使其陷入无意识状态</Chinesesimp>
-            <Chinese>當一名玩家達到0HP時,使其陷入無意識狀態</Chinese>
-            <Korean>플레이어가 0 HP에 도달하면 무력화 상태가 되는 것을 활성화합니다.</Korean>
             <French>Active l'implémentation de l'inconscience, lorsqu'un joueur atteint 0 HP</French>
+            <Polish>Włącza nieprzytomność u graczy, których HP zejdzie do 0.</Polish>
+            <Korean>플레이어가 0 HP에 도달하면 무력화 상태가 되는 것을 활성화합니다.</Korean>
+            <Chinese>當一名玩家達到0HP時,使其陷入無意識狀態</Chinese>
+            <Chinesesimp>当一名玩家达到0HP时,使其陷入无意识状态</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTime">
             <English>Bleed out timer</English>
-            <Polish>Czas krwawienia</Polish>
-            <Chinesesimp>失血时间(秒)</Chinesesimp>
-            <Chinese>失血時間(秒)</Chinese>
-            <Korean>출혈 타이머</Korean>
             <French>Temps de saignement</French>
+            <Polish>Czas krwawienia</Polish>
+            <Korean>출혈 타이머</Korean>
+            <Chinese>失血時間(秒)</Chinese>
+            <Chinesesimp>失血时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTime_desc">
             <English>Time in seconds how long someone can lie on the floor bleeding. 0 means it is disabled!</English>
-            <Polish>Czas w sekundach, w którym ranny będzie się wykrwawiać. 0 oznacza wyłączenie licznika!</Polish>
-            <Chinesesimp>某人可以躺在地上失血多久.0意味着它被禁用!</Chinesesimp>
-            <Chinese>某人可以躺在地上失血多久. 0意味著它被禁用!</Chinese>
-            <Korean>피를 흘리며 눕는 시간(초 단위)입니다. 0은 비활성화입니다!</Korean>
             <French>Temps en secondes pendant lequel une personne peut rester allongée sur le sol à saigner. 0 signifie qu'il est désactivé !</French>
+            <Polish>Czas w sekundach, w którym ranny będzie się wykrwawiać. 0 oznacza wyłączenie licznika!</Polish>
+            <Korean>피를 흘리며 눕는 시간(초 단위)입니다. 0은 비활성화입니다!</Korean>
+            <Chinese>某人可以躺在地上失血多久. 0意味著它被禁用!</Chinese>
+            <Chinesesimp>某人可以躺在地上失血多久.0意味着它被禁用!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction">
             <English>Bleed out timer subtraction</English>
-            <Polish>Pomniejszanie licznika czasu</Polish>
-            <Chinesesimp>失血时间缩减(秒)</Chinesesimp>
-            <Chinese>失血時間縮減(秒)</Chinese>
-            <Korean>출혈 타이머 감산</Korean>
             <French>Soustraction de la minuterie de saignement</French>
+            <Polish>Pomniejszanie licznika czasu</Polish>
+            <Korean>출혈 타이머 감산</Korean>
+            <Chinese>失血時間縮減(秒)</Chinese>
+            <Chinesesimp>失血时间缩减(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimeSubtraction_desc">
             <English>Every time a player goes down their remaining bleed out timer will be subtracted by the given value in seconds. If a player goes down too often their bleed out timer may reach 0 and they instantly die</English>
-            <Polish>Przy każdej kolejnej utracie nieprzytomności przez gracza, czas krwawienia będzie zmniejszany o podaną liczbę sekund. Jeśli gracz zbyt często się wykrwawia, licznik może dojść do 0, a gracz natychmiastowo umrze.</Polish>
-            <Chinesesimp>每次玩家倒下时,他们的剩余失血时间将被减去一个给定的数值.如果玩家倒下的次数太多,他们的失血时间可能会达到0,其会立即死亡.</Chinesesimp>
-            <Chinese>每次玩家倒下時,他們的剩餘失血時間將被減去一個給定的數值.如果玩家倒下的次數太多,他們的失血時間可能會達到0,其會立即死亡.</Chinese>
-            <Korean>플레이어가 무력화될 때마다 남은 출혈 타이머가 지정된 값(초 단위)만큼 줄어듭니다. 플레이어가 너무 자주 무력화되면 출혈 타이머가 0에 도달하며 즉사할 수 있습니다.</Korean>
             <French>A chaque fois qu'un joueur tombe, son temps de saignement restant est soustrait de la valeur donnée en secondes. Si un joueur tombe trop souvent, son temps de saignement peut atteindre 0 et il meurt instantanément.</French>
+            <Polish>Przy każdej kolejnej utracie nieprzytomności przez gracza, czas krwawienia będzie zmniejszany o podaną liczbę sekund. Jeśli gracz zbyt często się wykrwawia, licznik może dojść do 0, a gracz natychmiastowo umrze.</Polish>
+            <Korean>플레이어가 무력화될 때마다 남은 출혈 타이머가 지정된 값(초 단위)만큼 줄어듭니다. 플레이어가 너무 자주 무력화되면 출혈 타이머가 0에 도달하며 즉사할 수 있습니다.</Korean>
+            <Chinese>每次玩家倒下時,他們的剩餘失血時間將被減去一個給定的數值.如果玩家倒下的次數太多,他們的失血時間可能會達到0,其會立即死亡.</Chinese>
+            <Chinesesimp>每次玩家倒下时,他们的剩余失血时间将被减去一个给定的数值.如果玩家倒下的次数太多,他们的失血时间可能会达到0,其会立即死亡.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime">
             <English>Minimum Bleedout time</English>
-            <Polish>Minimalny czas krwawienia</Polish>
-            <Chinesesimp>最小流血时间</Chinesesimp>
-            <Korean>최소 출혈 시간</Korean>
             <French>Temps de saignement minimum</French>
+            <Polish>Minimalny czas krwawienia</Polish>
+            <Korean>최소 출혈 시간</Korean>
+            <Chinesesimp>最小流血时间</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_minBleedoutTime_desc">
             <English>Seconds of bleedout time a player gets no matter how many times they've been downed.</English>
-            <Polish>Czas krwawienia w sekundach, który otrzymuje gracz bez względu na liczbę poprzednich powaleń.</Polish>
-            <Chinesesimp>玩家不管被击倒多少次都能获得几秒钟的失血时间以缓冲死亡</Chinesesimp>
-            <Korean>몇 번이나 무력화되었든 상관없이 플레이어가 얻는 출혈 시간(초 단위)입니다.</Korean>
             <French>Les secondes de temps de saignement qu'un joueur obtient quel que soit le nombre de fois qu'il a été mis à terre.</French>
+            <Polish>Czas krwawienia w sekundach, który otrzymuje gracz bez względu na liczbę poprzednich powaleń.</Polish>
+            <Korean>몇 번이나 무력화되었든 상관없이 플레이어가 얻는 출혈 시간(초 단위)입니다.</Korean>
+            <Chinesesimp>玩家不管被击倒多少次都能获得几秒钟的失血时间以缓冲死亡</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop">
             <English>Enable Pressure Wound action</English>
-            <Polish>Włącz uciskanie rany</Polish>
-            <Chinesesimp>启用按压伤口动作</Chinesesimp>
-            <Korean>상처 압박 행동 활성화</Korean>
             <French>Activer la compression de la plaie</French>
+            <Polish>Włącz uciskanie rany</Polish>
+            <Korean>상처 압박 행동 활성화</Korean>
+            <Chinesesimp>启用按压伤口动作</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_desc">
             <English>Action allows players to delay bleedout until/while another unit revives. Revives can also be allowed to do the same.</English>
-            <Polish>Akcja ta umożliwia graczowi spowolnienie krwawienia zanim ranna jednostka zostanie uratowana. Wskrzeszanie działa na podobnej zasadzie.</Polish>
-            <Chinesesimp>允许玩家延迟失血,直到/当另一个单位复活.也可以让复活者做同样的事情.</Chinesesimp>
-            <Korean>플레이어가 다른 유닛이 소생될 때까지, 또는 될 동안 출혈을 지연시키는 행동을 허용합니다. 소생도 마찬가지로 허용됩니다.</Korean>
             <French>Cette action permet au joueur de ralentir l'hémorragie avant que l'unité blessée ne soit secourue. La résurrection fonctionne sur un principe similaire.</French>
+            <Polish>Akcja ta umożliwia graczowi spowolnienie krwawienia zanim ranna jednostka zostanie uratowana. Wskrzeszanie działa na podobnej zasadzie.</Polish>
+            <Korean>플레이어가 다른 유닛이 소생될 때까지, 또는 될 동안 출혈을 지연시키는 행동을 허용합니다. 소생도 마찬가지로 허용됩니다.</Korean>
+            <Chinesesimp>允许玩家延迟失血,直到/当另一个单位复活.也可以让复活者做同样的事情.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_1">
             <English>Enable</English>
-            <Polish>Włączone</Polish>
-            <Chinesesimp>启用</Chinesesimp>
-            <Korean>활성화</Korean>
             <French>Autoriser</French>
+            <Polish>Włączone</Polish>
+            <Korean>활성화</Korean>
+            <Chinesesimp>启用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_2">
             <English>Enable + Medic revives</English>
-            <Polish>Włączone + Wskrzeszanie przez medyka</Polish>
-            <Chinesesimp>启用+医疗复活</Chinesesimp>
-            <Korean>활성화 + 의무병만 소생 가능</Korean>
             <French>Activer + Médic réanimation</French>
+            <Polish>Włączone + Wskrzeszanie przez medyka</Polish>
+            <Korean>활성화 + 의무병만 소생 가능</Korean>
+            <Chinesesimp>启用+医疗复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutStop_3">
             <English>Enable + Revives</English>
-            <Polish>Włączone + Wskrzeszanie</Polish>
-            <Chinesesimp>启用+复活</Chinesesimp>
-            <Korean>활성화 + 모두 소생 가능</Korean>
             <French>Activé + Résurrection</French>
+            <Polish>Włączone + Wskrzeszanie</Polish>
+            <Korean>활성화 + 모두 소생 가능</Korean>
+            <Chinesesimp>启用+复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover">
             <English>Pressure Wound bleedout recovery</English>
-            <Polish>Zatrzymywanie krwawienia</Polish>
-            <Chinesesimp>按压伤口恢复失血</Chinesesimp>
-            <Korean>상처 압박 출혈 복구</Korean>
             <French>Arrêter le saignement</French>
+            <Polish>Zatrzymywanie krwawienia</Polish>
+            <Korean>상처 압박 출혈 복구</Korean>
+            <Chinesesimp>按压伤口恢复失血</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutRecover_desc">
             <English>Seconds of bleedout time recovered every 3 seconds while action held (default: 4, should more or less stabilize during action, ping may affect).</English>
-            <Polish>Sekundy krwawienia odzyskiwane co 3 sekundy uciskania rany (domyślnie: 4, stabilizuje się podczas wykonywania działania, ping ma wpływ na aktualizowanie tych wartości).</Polish>
-            <Chinesesimp>保持动作期间每3秒恢复失血时间的次数(默认值：4,在动作期间应基本稳定,ping可能会受影响).</Chinesesimp>
-            <Korean>행동을 홀드하는 동안 3초마다 출혈 시간이 복구됩니다(기본값: 4, 동작 중에 다소 안정되어야 하며 핑이 영향을 미칠 수 있습니다).</Korean>
             <French>Secondes de saignement récupérées toutes les 3 secondes de compression de la plaie (par défaut : 4, se stabilise pendant l'exécution de l'action, le ping a pour effet de mettre à jour ces valeurs).</French>
+            <Polish>Sekundy krwawienia odzyskiwane co 3 sekundy uciskania rany (domyślnie: 4, stabilizuje się podczas wykonywania działania, ping ma wpływ na aktualizowanie tych wartości).</Polish>
+            <Korean>행동을 홀드하는 동안 3초마다 출혈 시간이 복구됩니다(기본값: 4, 동작 중에 다소 안정되어야 하며 핑이 영향을 미칠 수 있습니다).</Korean>
+            <Chinesesimp>保持动作期间每3秒恢复失血时间的次数(默认值：4,在动作期间应基本稳定,ping可能会受影响).</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureWound">
             <English>Pressure Wound</English>
-            <Polish>Uciskaj ranę</Polish>
-            <Chinesesimp>按压伤口</Chinesesimp>
-            <Korean>상처 압박</Korean>
             <French>Appliquer une pression sur la plaie</French>
+            <Polish>Uciskaj ranę</Polish>
+            <Korean>상처 압박</Korean>
+            <Chinesesimp>按压伤口</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pressureUnit">
             <English>Preventing %1 from bleeding out, keep holding the button!</English>
-            <Polish>Zatrzymujesz krwawienie u: %1, trzymaj przycisk!</Polish>
-            <Chinesesimp>为防止%1失血,继续按住按钮!</Chinesesimp>
-            <Korean>%1의 출혈을 방지하기 위해 버튼을 계속 누르십시오!</Korean>
             <French>Pour éviter que %1 ne se vide de son sang, maintenez le bouton enfoncé !</French>
+            <Polish>Zatrzymujesz krwawienie u: %1, trzymaj przycisk!</Polish>
+            <Korean>%1의 출혈을 방지하기 위해 버튼을 계속 누르십시오!</Korean>
+            <Chinesesimp>为防止%1失血,继续按住按钮!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime">
             <English>Medic revive time</English>
-            <Polish>Czas leczenia przez medyka</Polish>
-            <Chinesesimp>医护兵复活时间(秒)</Chinesesimp>
-            <Chinese>醫護兵復活時間(秒)</Chinese>
-            <Korean>의무병 소생 시간</Korean>
             <French>Temps de réanimation du médecin</French>
+            <Polish>Czas leczenia przez medyka</Polish>
+            <Korean>의무병 소생 시간</Korean>
+            <Chinese>醫護兵復活時間(秒)</Chinese>
+            <Chinesesimp>医护兵复活时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_medicReviveTime_desc">
             <English>How long does it take to revive someone as a medic in seconds</English>
-            <Polish>Jak długo (w sekundach) zajmuje medykowi podniesienie rannego gracza.</Polish>
-            <Chinesesimp>医护兵需要多长时间才能把人救活</Chinesesimp>
-            <Chinese>醫護兵需要多長時間才能把人救活</Chinese>
-            <Korean>의무병으로 누군가를 소생하는 데 걸리는 시간입니다(초 단위).</Korean>
             <French>Combien de temps faut-il pour réanimer quelqu'un en tant qu'infirmier, en secondes ?</French>
+            <Polish>Jak długo (w sekundach) zajmuje medykowi podniesienie rannego gracza.</Polish>
+            <Korean>의무병으로 누군가를 소생하는 데 걸리는 시간입니다(초 단위).</Korean>
+            <Chinese>醫護兵需要多長時間才能把人救活</Chinese>
+            <Chinesesimp>医护兵需要多长时间才能把人救活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noneMedicReviveTime">
             <English>None-medic revive time</English>
-            <Polish>Czas leczenia przez nie-medyka</Polish>
-            <Chinesesimp>非医护兵复活时间(秒)</Chinesesimp>
-            <Chinese>非醫護兵復活時間(秒)</Chinese>
-            <Korean>일반병 소생 시간</Korean>
             <French>Temps de traitement non médical</French>
+            <Polish>Czas leczenia przez nie-medyka</Polish>
+            <Korean>일반병 소생 시간</Korean>
+            <Chinese>非醫護兵復活時間(秒)</Chinese>
+            <Chinesesimp>非医护兵复活时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noneMedicReviveTime_desc">
             <English>How long does it take to revive someone as not a medic in seconds</English>
-            <Polish>Jak długo (w sekundach) zajmuje nie-medykowi podniesienie rannego gracza.</Polish>
-            <Chinesesimp>非医护兵需要多长时间才能把人救活</Chinesesimp>
-            <Chinese>非醫護兵需要多長時間才能把人救活</Chinese>
-            <Korean>일반병으로 누군가를 소생하는 데 걸리는 시간입니다(초 단위).</Korean>
             <French>Combien de temps faut-il pour réanimer quelqu'un qui n'est pas médecin, en quelques secondes ?</French>
+            <Polish>Jak długo (w sekundach) zajmuje nie-medykowi podniesienie rannego gracza.</Polish>
+            <Korean>일반병으로 누군가를 소생하는 데 걸리는 시간입니다(초 단위).</Korean>
+            <Chinese>非醫護兵需要多長時間才能把人救活</Chinese>
+            <Chinesesimp>非医护兵需要多长时间才能把人救活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryFeedback">
             <English>Feedback</English>
-            <Polish>Reakcje</Polish>
-            <Chinesesimp>反馈</Chinesesimp>
-            <Chinese>反饋</Chinese>
-            <Korean>피드백</Korean>
             <French>Retour d'information</French>
+            <Polish>Reakcje</Polish>
+            <Korean>피드백</Korean>
+            <Chinese>反饋</Chinese>
+            <Chinesesimp>反馈</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDamageMarker">
             <English>Show damage markers</English>
-            <Polish>Pokaż markery obrażeń</Polish>
-            <Chinesesimp>显示损伤标记</Chinesesimp>
-            <Chinese>顯示損傷標記</Chinese>
-            <Korean>데미지 마커 표시</Korean>
             <French>Afficher les marqueurs de blessures</French>
+            <Polish>Pokaż markery obrażeń</Polish>
+            <Korean>데미지 마커 표시</Korean>
+            <Chinese>顯示損傷標記</Chinese>
+            <Chinesesimp>显示损伤标记</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDamageMarker_desc">
             <English>Shows damage marker and direction of incoming damage</English>
-            <Polish>Pokazuje charakterystyczne markery wskazujące otrzymanie obrażeń i ich kierunek.</Polish>
-            <Chinesesimp>显示损伤标记和侵入方向</Chinesesimp>
-            <Chinese>顯示損傷標記和侵入方向</Chinese>
-            <Korean>데미지 마커와 데미지를 입은 방향을 표시합니다.</Korean>
             <French>Afficher le marqueur de dégâts et la direction des dégâts reçus</French>
+            <Polish>Pokazuje charakterystyczne markery wskazujące otrzymanie obrażeń i ich kierunek.</Polish>
+            <Korean>데미지 마커와 데미지를 입은 방향을 표시합니다.</Korean>
+            <Chinese>顯示損傷標記和侵入方向</Chinese>
+            <Chinesesimp>显示损伤标记和侵入方向</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback">
             <English>Downed feedback</English>
-            <Polish>Ekran nieprzytomności</Polish>
-            <Chinesesimp>无意识反馈</Chinesesimp>
-            <Chinese>無意識反饋</Chinese>
-            <Korean>무력화 피드백</Korean>
             <French>Retour d'information</French>
+            <Polish>Ekran nieprzytomności</Polish>
+            <Korean>무력화 피드백</Korean>
+            <Chinese>無意識反饋</Chinese>
+            <Chinesesimp>无意识反馈</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_desc">
             <English>Shows text in chat and plays a sound when a friendly unit that is in your squad gets downed.</English>
-            <Polish>Pokazuje tekst w czacie i odtwarza dźwięk, kiedy sojusznicza jednostka z twojej drużyny traci przytomność.</Polish>
-            <Chinesesimp>当你的小队中的友军被击倒时,在聊天中显示文字并播放声音.</Chinesesimp>
-            <Chinese>當你的小隊中的友軍被擊倒時,在聊天中顯示文字並播放聲音.</Chinese>
-            <Korean>채팅에 텍스트를 표시하고 분대에 있는 아군 유닛이 무력화될 때 소리를 재생합니다.</Korean>
             <French>Affiche un texte dans le chat et émet un son lorsqu'une unité amie de votre escouade est abattue.</French>
+            <Polish>Pokazuje tekst w czacie i odtwarza dźwięk, kiedy sojusznicza jednostka z twojej drużyny traci przytomność.</Polish>
+            <Korean>채팅에 텍스트를 표시하고 분대에 있는 아군 유닛이 무력화될 때 소리를 재생합니다.</Korean>
+            <Chinese>當你的小隊中的友軍被擊倒時,在聊天中顯示文字並播放聲音.</Chinese>
+            <Chinesesimp>当你的小队中的友军被击倒时,在聊天中显示文字并播放声音.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_0">
             <English>Off</English>
-            <Polish>Brak</Polish>
-            <Chinesesimp>关闭</Chinesesimp>
-            <Chinese>關閉</Chinese>
-            <Korean>끔</Korean>
             <French>Arrêt</French>
+            <Polish>Brak</Polish>
+            <Korean>끔</Korean>
+            <Chinese>關閉</Chinese>
+            <Chinesesimp>关闭</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_1">
             <English>Show message</English>
-            <Polish>Tylko wiadomość</Polish>
-            <Chinesesimp>显示文字</Chinesesimp>
-            <Chinese>顯示文字</Chinese>
-            <Korean>메시지 표시</Korean>
             <French>Afficher le message</French>
+            <Polish>Tylko wiadomość</Polish>
+            <Korean>메시지 표시</Korean>
+            <Chinese>顯示文字</Chinese>
+            <Chinesesimp>显示文字</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback_2">
             <English>Message and Sound</English>
-            <Polish>Wiadomość i dźwięk</Polish>
-            <Chinesesimp>文字与声音</Chinesesimp>
-            <Chinese>文字與聲音</Chinese>
-            <Korean>메시지 표시와 소리 재생</Korean>
             <French>Message et son</French>
+            <Polish>Wiadomość i dźwięk</Polish>
+            <Korean>메시지 표시와 소리 재생</Korean>
+            <Chinese>文字與聲音</Chinese>
+            <Chinesesimp>文字与声音</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback">
             <English>Audio feedback</English>
-            <Polish>Reakcja dźwiękowa</Polish>
-            <Chinesesimp>音频反馈</Chinesesimp>
-            <Chinese>音頻反饋</Chinese>
-            <Korean>오디오 피드백</Korean>
             <French>Retour d'information audio</French>
+            <Polish>Reakcja dźwiękowa</Polish>
+            <Korean>오디오 피드백</Korean>
+            <Chinese>音頻反饋</Chinese>
+            <Chinesesimp>音频反馈</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_desc">
             <English>Plays audio clip when taking damage, receiving a headshot or an armor plate just broke.</English>
-            <Polish>Odtwarza dźwięk podczas otrzymywania obrażeń, strzału w głowę lub gdy niszczy się płyta balistyczna.</Polish>
-            <Chinesesimp>在受到伤害、被爆头或防弹插板刚刚破损时播放音频片段</Chinesesimp>
-            <Chinese>在受到傷害、被爆頭或防彈插板剛剛破損時播放​​音頻片段</Chinese>
-            <Korean>데미지를 입거나 헤드샷을 당하거나 방탄판이 부서졌을 때 오디오 클립을 재생합니다.</Korean>
             <French>Joue un clip audio lorsque le joueur subit des dégâts, reçoit un tir à la tête ou qu'une plaque d'armure vient de se briser.</French>
+            <Polish>Odtwarza dźwięk podczas otrzymywania obrażeń, strzału w głowę lub gdy niszczy się płyta balistyczna.</Polish>
+            <Korean>데미지를 입거나 헤드샷을 당하거나 방탄판이 부서졌을 때 오디오 클립을 재생합니다.</Korean>
+            <Chinese>在受到傷害、被爆頭或防彈插板剛剛破損時播放​​音頻片段</Chinese>
+            <Chinesesimp>在受到伤害、被爆头或防弹插板刚刚破损时播放音频片段</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_1">
             <English>150% Volume</English>
-            <Polish>150% głośności</Polish>
-            <Chinesesimp>150%音量</Chinesesimp>
-            <Chinese>150%音量</Chinese>
-            <Korean>음량 150%</Korean>
             <French>150% du volume</French>
+            <Polish>150% głośności</Polish>
+            <Korean>음량 150%</Korean>
+            <Chinese>150%音量</Chinese>
+            <Chinesesimp>150%音量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_2">
             <English>125% Volume</English>
-            <Polish>125% głośności</Polish>
-            <Chinesesimp>125%音量</Chinesesimp>
-            <Chinese>125%音量</Chinese>
-            <Korean>음량 125%</Korean>
             <French>125% du volume</French>
+            <Polish>125% głośności</Polish>
+            <Korean>음량 125%</Korean>
+            <Chinese>125%音量</Chinese>
+            <Chinesesimp>125%音量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_3">
             <English>100% Volume</English>
-            <Polish>100% głośności</Polish>
-            <Chinesesimp>100%音量</Chinesesimp>
-            <Chinese>100%音量</Chinese>
-            <Korean>음량 100%</Korean>
             <French>100% du volume</French>
+            <Polish>100% głośności</Polish>
+            <Korean>음량 100%</Korean>
+            <Chinese>100%音量</Chinese>
+            <Chinesesimp>100%音量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_audioFeedback_4">
             <English>75% Volume</English>
-            <Polish>75% głośności</Polish>
-            <Chinesesimp>75%音量</Chinesesimp>
-            <Chinese>75%音量</Chinese>
-            <Korean>음량 75%</Korean>
             <French>75% du volume</French>
+            <Polish>75% głośności</Polish>
+            <Korean>음량 75%</Korean>
+            <Chinese>75%音量</Chinese>
+            <Chinesesimp>75%音量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedSkull">
             <English>Show skull when downed</English>
-            <Polish>Pokaż czaszkę podczas nieprzytomności</Polish>
-            <Chinesesimp>昏迷时显示骷髅头</Chinesesimp>
-            <Chinese>昏迷時顯示骷髏頭</Chinese>
-            <Korean>무력화 시 두개골 표시</Korean>
             <French>Montrer le crâne en cas d'inconscience</French>
+            <Polish>Pokaż czaszkę podczas nieprzytomności</Polish>
+            <Korean>무력화 시 두개골 표시</Korean>
+            <Chinese>昏迷時顯示骷髏頭</Chinese>
+            <Chinesesimp>昏迷时显示骷髅头</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedSkull_desc">
             <English>Shows a slowly appearing skull when downed to indicate how much time is left on the bleedout timer</English>
-            <Polish>Pokazuje powoli rozjaśniającą się ikonę czaszki, która informuje ile czasu zostało do całkowitego wykrwawienia.</Polish>
-            <Chinesesimp>昏迷时显示一个缓慢出现的骷髅头,以表明还剩多少失血时间</Chinesesimp>
-            <Chinese>昏迷時顯示一個緩慢出現的骷髏頭,以表明還剩多少失血時間</Chinese>
-            <Korean>무력화되면 출혈 타이머에 남은 시간을 표시하기 위해 두개골이 천천히 나타납니다.</Korean>
             <French>Elle affiche une icône de crâne qui s'éclaircit lentement, indiquant le temps restant avant que la personne ne soit complètement vidée de son sang.</French>
+            <Polish>Pokazuje powoli rozjaśniającą się ikonę czaszki, która informuje ile czasu zostało do całkowitego wykrwawienia.</Polish>
+            <Korean>무력화되면 출혈 타이머에 남은 시간을 표시하기 위해 두개골이 천천히 나타납니다.</Korean>
+            <Chinese>昏迷時顯示一個緩慢出現的骷髏頭,以表明還剩多少失血時間</Chinese>
+            <Chinesesimp>昏迷时显示一个缓慢出现的骷髅头,以表明还剩多少失血时间</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator">
             <English>Show icon over downed units</English>
-            <Polish>Pokaż ikonę nad rannymi</Polish>
-            <Chinesesimp>倒地单位显示图标</Chinesesimp>
-            <Chinese>倒地單位顯示圖標</Chinese>
-            <Korean>무력화된 유닛 위에 아이콘 표시</Korean>
             <French>Afficher l'icône sur les blessés</French>
+            <Polish>Pokaż ikonę nad rannymi</Polish>
+            <Korean>무력화된 유닛 위에 아이콘 표시</Korean>
+            <Chinese>倒地單位顯示圖標</Chinese>
+            <Chinesesimp>倒地单位显示图标</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicator_desc">
             <English>Shows an icon in 3D space over a friendly downed unit</English>
-            <Polish>Pokazuje ikonę 3D nad ranną, sojuszniczą jednostką.</Polish>
-            <Chinesesimp>为一名倒地友军单位显示一个三维空间图标</Chinesesimp>
-            <Chinese>為一名倒地友軍單位顯示一個三維空間圖標</Chinese>
-            <Korean>무력화된 아군 유닛 위 3D 공간에 아이콘을 표시합니다.</Korean>
             <French>Affiche une icône 3D au-dessus d'une unité alliée blessée.</French>
+            <Polish>Pokazuje ikonę 3D nad ranną, sojuszniczą jednostką.</Polish>
+            <Korean>무력화된 아군 유닛 위 3D 공간에 아이콘을 표시합니다.</Korean>
+            <Chinese>為一名倒地友軍單位顯示一個三維空間圖標</Chinese>
+            <Chinesesimp>为一名倒地友军单位显示一个三维空间图标</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange">
             <English>Range for downed icon</English>
-            <Polish>Zasięg wyświetlania ikony</Polish>
-            <Chinesesimp>倒地图标范围</Chinesesimp>
-            <Chinese>倒地圖標範圍</Chinese>
-            <Korean>무력화 아이콘 거리</Korean>
             <French>Plage d'affichage des icônes</French>
+            <Polish>Zasięg wyświetlania ikony</Polish>
+            <Korean>무력화 아이콘 거리</Korean>
+            <Chinese>倒地圖標範圍</Chinese>
+            <Chinesesimp>倒地图标范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRange_desc">
             <English>The maximum range you can see a downed friendly unit</English>
-            <Polish>Maksymalna odległość, z której widać ikonę nad rannym sojusznikiem.</Polish>
-            <Chinesesimp>能够看到一名倒地友军单位的最大距离</Chinesesimp>
-            <Chinese>能夠看到一名倒地友軍單位的最大距離</Chinese>
-            <Korean>무력화된 아군 유닛을 볼 수 있는 최대 거리입니다.</Korean>
             <French>Distance maximale à partir de laquelle l'icône peut être vue sur un allié blessé.</French>
+            <Polish>Maksymalna odległość, z której widać ikonę nad rannym sojusznikiem.</Polish>
+            <Korean>무력화된 아군 유닛을 볼 수 있는 최대 거리입니다.</Korean>
+            <Chinese>能夠看到一名倒地友軍單位的最大距離</Chinese>
+            <Chinesesimp>能够看到一名倒地友军单位的最大距离</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic">
             <English>Medic Range for downed icon</English>
-            <Polish>Zasięg widzenia ikon dla medyka</Polish>
-            <Chinesesimp>被击倒图标的医疗范围</Chinesesimp>
-            <Korean>무력화 아이콘 거리 (의무병)</Korean>
             <French>Champ de vision des icônes pour les médecins</French>
+            <Polish>Zasięg widzenia ikon dla medyka</Polish>
+            <Korean>무력화 아이콘 거리 (의무병)</Korean>
+            <Chinesesimp>被击倒图标的医疗范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorRangeMedic_desc">
             <English>The maximum range medics can see a downed friendly unit</English>
-            <Polish>Maksymalny zasięg w którym medycy widzą nieprzytomną jednostkę sojuszniczą.</Polish>
-            <Chinesesimp>医护人员能看到被击倒友军的最大范围</Chinesesimp>
-            <Korean>무력화된 아군 유닛을 의무병이 볼 수 있는 최대 거리입니다.</Korean>
             <French>Portée maximale à laquelle les médecins peuvent voir une unité alliée inconsciente.</French>
+            <Polish>Maksymalny zasięg w którym medycy widzą nieprzytomną jednostkę sojuszniczą.</Polish>
+            <Korean>무력화된 아군 유닛을 의무병이 볼 수 있는 최대 거리입니다.</Korean>
+            <Chinesesimp>医护人员能看到被击倒友军的最大范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize">
             <English>Size for downed icon</English>
-            <Polish>Rozmiar ikony</Polish>
-            <Chinesesimp>倒地图标尺寸</Chinesesimp>
-            <Chinese>倒地圖標尺寸</Chinese>
-            <Korean>무력화 아이콘 크기</Korean>
             <French>Taille de l'icône</French>
+            <Polish>Rozmiar ikony</Polish>
+            <Korean>무력화 아이콘 크기</Korean>
+            <Chinese>倒地圖標尺寸</Chinese>
+            <Chinesesimp>倒地图标尺寸</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedUnitIndicatorSize_desc">
             <English>The size for the downed icon</English>
-            <Polish>Rozmiar ikony nad rannym sojusznikiem.</Polish>
-            <Chinesesimp>倒地图标的尺寸大小</Chinesesimp>
-            <Chinese>倒地圖標的尺寸大小</Chinese>
-            <Korean>무력화 아이콘의 크기를 결정합니다.</Korean>
             <French>Taille de l'icône au-dessus de l'allié blessé.</French>
+            <Polish>Rozmiar ikony nad rannym sojusznikiem.</Polish>
+            <Korean>무력화 아이콘의 크기를 결정합니다.</Korean>
+            <Chinese>倒地圖標的尺寸大小</Chinese>
+            <Chinesesimp>倒地图标的尺寸大小</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateItem">
             <English>Ceramic plate</English>
-            <Polish>Płyta ceramiczna</Polish>
-            <Chinesesimp>陶瓷插板</Chinesesimp>
-            <Chinese>陶瓷插板</Chinese>
-            <Korean>세라믹 방탄판</Korean>
             <French>Plaque de céramique</French>
+            <Polish>Płyta ceramiczna</Polish>
+            <Korean>세라믹 방탄판</Korean>
+            <Chinese>陶瓷插板</Chinese>
+            <Chinesesimp>陶瓷插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Short">
             <English>Ceramic plate used to protect the body from kinetic impacts</English>
-            <Polish>Płyta balistyczna chroniąca użytkownika przed nadlatującymi pociskami.</Polish>
-            <Chinesesimp>用来保护身体免受动能冲击的陶瓷插板</Chinesesimp>
-            <Chinese>用來保護身體免受動能衝擊的陶瓷插板</Chinese>
-            <Korean>물리적인 충격으로부터 신체를 보호하기 위해 사용되는 세라믹제 방탄판.</Korean>
             <French>Plaque de céramique utilisée pour protéger le corps des impacts cinétiques</French>
+            <Polish>Płyta balistyczna chroniąca użytkownika przed nadlatującymi pociskami.</Polish>
+            <Korean>물리적인 충격으로부터 신체를 보호하기 위해 사용되는 세라믹제 방탄판.</Korean>
+            <Chinese>用來保護身體免受動能衝擊的陶瓷插板</Chinese>
+            <Chinesesimp>用来保护身体免受动能冲击的陶瓷插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateIteml_Desc_Use">
             <English>Standard ceramic armor plating, just zip your vest open and push that fucker in ;)</English>
-            <Polish>Standardowa ceramiczna płyta. Rozepnij kamizelkę i wepchnij skurwysyna (klawisz T)</Polish>
-            <Chinesesimp>标准的陶瓷防弹插板,只要拉开你的背心拉链,然后把那个该死的东西塞进去 ;)</Chinesesimp>
-            <Chinese>標準的陶瓷防彈插板,只要拉開你的背心拉鍊,然後把那個該死的東西塞進去 ;)</Chinese>
-            <Korean>표준 세라믹 방탄갑주, 그냥 조끼 열고 이 놈을 넣으면 됩니다 ;)</Korean>
             <French>Blindage céramique standard, il suffit d'ouvrir le gilet et d'enfoncer cet enfoiré ;)</French>
+            <Polish>Standardowa ceramiczna płyta. Rozepnij kamizelkę i wepchnij skurwysyna (klawisz T)</Polish>
+            <Korean>표준 세라믹 방탄갑주, 그냥 조끼 열고 이 놈을 넣으면 됩니다 ;)</Korean>
+            <Chinese>標準的陶瓷防彈插板,只要拉開你的背心拉鍊,然後把那個該死的東西塞進去 ;)</Chinese>
+            <Chinesesimp>标准的陶瓷防弹插板,只要拉开你的背心拉链,然后把那个该死的东西塞进去 ;)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorItem">
             <English>Auto-Injector</English>
-            <Chinesesimp>自动注射器</Chinesesimp>
-            <Korean>자동주사기</Korean>
-            <Polish>Auto-iniektor</Polish>
             <French>Auto-Injecteur</French>
+            <Polish>Auto-iniektor</Polish>
+            <Korean>자동주사기</Korean>
+            <Chinesesimp>自动注射器</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Short">
             <English>Auto-Injector for reducing trauma to the body.</English>
-            <Chinesesimp>用于减少身体创伤的自动注射器.</Chinesesimp>
-            <Korean>신체의 외상을 줄이기 위한 자동주사기.</Korean>
-            <Polish>Auto-iniektor do obniżania obrażeń ciała.</Polish>
             <French>Auto-injecteur pour réduire les traumatismes corporels.</French>
+            <Polish>Auto-iniektor do obniżania obrażeń ciała.</Polish>
+            <Korean>신체의 외상을 줄이기 위한 자동주사기.</Korean>
+            <Chinesesimp>用于减少身体创伤的自动注射器.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_autoinjectorIteml_Desc_Use">
             <English>Standard auto-injector, just stick it in ;)</English>
-            <Chinesesimp>标准自动注射器,只需将其插入即可；)</Chinesesimp>
-            <Korean>표준 자동주사기, 걍 꽂으세요 ;)</Korean>
-            <Polish>Standardowy auto-iniektor, po prostu go wbij ;)</Polish>
             <French>Auto-injecteur standard, il suffit de l'insérer ;)</French>
+            <Polish>Standardowy auto-iniektor, po prostu go wbij ;)</Polish>
+            <Korean>표준 자동주사기, 걍 꽂으세요 ;)</Korean>
+            <Chinesesimp>标准自动注射器,只需将其插入即可；)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateKeyBind">
             <English>Add plate into vest</English>
-            <Polish>Dodaj płytę do kamizelki</Polish>
-            <Chinesesimp>背心塞入插板</Chinesesimp>
-            <Chinese>背心塞入插板</Chinese>
-            <Korean>조끼에 방탄판 삽입</Korean>
             <French>Ajouter une plaque dans le gilet</French>
+            <Polish>Dodaj płytę do kamizelki</Polish>
+            <Korean>조끼에 방탄판 삽입</Korean>
+            <Chinese>背心塞入插板</Chinese>
+            <Chinesesimp>背心塞入插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_cannotHealWhileRegenOn">
             <English>Cannot heal when HP regeneration is on!</English>
-            <Polish>Nie można leczyć gdy regeneracja HP jest włączona!</Polish>
-            <Chinesesimp>当HP回复启用时无法进行治疗!</Chinesesimp>
-            <Chinese>當HP回复啟用時無法進行治療!</Chinese>
-            <Korean>체력 자연회복이 켜져 있으면 치료할 수 없습니다!</Korean>
             <French>Impossible de soigner lorsque la régénération des HP est activée !</French>
+            <Polish>Nie można leczyć gdy regeneracja HP jest włączona!</Polish>
+            <Korean>체력 자연회복이 켜져 있으면 치료할 수 없습니다!</Korean>
+            <Chinese>當HP回复啟用時無法進行治療!</Chinese>
+            <Chinesesimp>当HP回复启用时无法进行治疗!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_cannotHealMoreThanCurrent">
             <English>Healing failed, cannot heal more than current HP!</English>
-            <Polish>Leczenie nieudane, nie można przywrócić więcej HP!</Polish>
-            <Chinesesimp>治疗失败,无法治疗超过当前的HP值!</Chinesesimp>
-            <Chinese>治療失敗,無法治療超過當前的HP值!</Chinese>
-            <Korean>치료에 실패했습니다. 현재 체력보다 더 많이 치료할 수 없습니다!</Korean>
             <French>Échec de la guérison, impossible de guérir plus que les HP actuels !</French>
+            <Polish>Leczenie nieudane, nie można przywrócić więcej HP!</Polish>
+            <Korean>치료에 실패했습니다. 현재 체력보다 더 많이 치료할 수 없습니다!</Korean>
+            <Chinese>治療失敗,無法治療超過當前的HP值!</Chinese>
+            <Chinesesimp>治疗失败,无法治疗超过当前的HP值!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage1">
             <English>%1 just went down!</English>
-            <Polish>Gracz %1 właśnie padł!</Polish>
-            <Chinesesimp>%1 刚刚倒地!</Chinesesimp>
-            <Chinese>%1 剛剛倒地!</Chinese>
-            <Korean>%1 님이 방금 무력화되었습니다!</Korean>
             <French>Le joueur %1 vient de tomber !</French>
+            <Polish>Gracz %1 właśnie padł!</Polish>
+            <Korean>%1 님이 방금 무력화되었습니다!</Korean>
+            <Chinese>%1 剛剛倒地!</Chinese>
+            <Chinesesimp>%1 刚刚倒地!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage2">
             <English>%1 just hit the dirt!</English>
-            <Polish>Gracz %1 leży na ziemi!</Polish>
-            <Chinesesimp>%1 刚刚晕倒在地!</Chinesesimp>
-            <Chinese>%1 剛剛暈倒在地!</Chinese>
-            <Korean>%1 님이 방금 땅에 누웠습니다!</Korean>
             <French>Le joueur %1 est allongé sur le sol !</French>
+            <Polish>Gracz %1 leży na ziemi!</Polish>
+            <Korean>%1 님이 방금 땅에 누웠습니다!</Korean>
+            <Chinese>%1 剛剛暈倒在地!</Chinese>
+            <Chinesesimp>%1 刚刚晕倒在地!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedMessage3">
             <English>Heads up, %1 just keeled over!</English>
-            <Polish>Uwaga, gracz %1 jest nieprzytomny!</Polish>
-            <Chinesesimp>注意,%1 刚刚倒地!</Chinesesimp>
-            <Chinese>注意,%1 剛剛倒地!</Chinese>
-            <Korean>%1 님이 방금 쓰러졌습니다!</Korean>
             <French>Attention, %1 vient de s'effondrer !</French>
+            <Polish>Uwaga, gracz %1 jest nieprzytomny!</Polish>
+            <Korean>%1 님이 방금 쓰러졌습니다!</Korean>
+            <Chinese>注意,%1 剛剛倒地!</Chinese>
+            <Chinesesimp>注意,%1 刚刚倒地!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_addPlateToVest">
             <English>Adding ceramic plate to vest</English>
-            <Polish>Dodawanie płyty do kamizelki...</Polish>
-            <Chinesesimp>背心塞入陶瓷插板</Chinesesimp>
-            <Chinese>背心塞入陶瓷插板</Chinese>
-            <Korean>조끼에 세라믹 방탄판 추가 중</Korean>
             <French>Ajout d'une plaque de céramique au gilet</French>
+            <Polish>Dodawanie płyty do kamizelki...</Polish>
+            <Korean>조끼에 세라믹 방탄판 추가 중</Korean>
+            <Chinese>背心塞入陶瓷插板</Chinese>
+            <Chinesesimp>背心塞入陶瓷插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveUnit">
             <English>Reviving %1, keep holding the button!</English>
-            <Polish>Leczysz gracza %1, trzymaj ten guzik!</Polish>
-            <Chinesesimp>复活 %1中,继续按住按钮!</Chinesesimp>
-            <Chinese>復活 %1中,繼續按住按鈕!</Chinese>
-            <Korean>%1 님을 소생하는 중입니다. 버튼을 계속 누르고 있으십시오!</Korean>
             <French>Réanimation de %1, maintenez le bouton enfoncé !</French>
+            <Polish>Leczysz gracza %1, trzymaj ten guzik!</Polish>
+            <Korean>%1 님을 소생하는 중입니다. 버튼을 계속 누르고 있으십시오!</Korean>
+            <Chinese>復活 %1中,繼續按住按鈕!</Chinese>
+            <Chinesesimp>复活 %1中,继续按住按钮!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateThickness">
             <English>Thickness</English>
-            <Polish>Grubość płyt</Polish>
-            <Chinesesimp>厚度</Chinesesimp>
-            <Chinese>厚度</Chinese>
-            <Korean>두께</Korean>
             <French>Épaisseur de la plaque</French>
+            <Polish>Grubość płyt</Polish>
+            <Korean>두께</Korean>
+            <Chinese>厚度</Chinese>
+            <Chinesesimp>厚度</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateThickness_desc">
             <English>Sets the thickness of each plate. The thicker it is the less likely it is for a bullet to penetrate it before its integrety has reached 0</English>
-            <Polish>Ustawia grubość każdej płyty balistycznej. Im grubsza jest, tym mniejsza szansa, że pocisk ją spenetruje zanim jej wytrzymałość spadnie do 0.</Polish>
-            <Chinesesimp>设定每块插板的厚度.越厚,子弹在其完整性达到0之前穿透它的可能性就越小.</Chinesesimp>
-            <Chinese>設定每塊插板的厚度.越厚,子彈在其完整性達到0之前穿透它的可能性就越小.</Chinese>
-            <Korean>각 방탄판의 두께를 설정합니다. 두께가 두꺼울수록 방탄판의 내구도가 0이 되기 전에 탄환이 관통할 확률이 줄어듭니다.</Korean>
             <French>Définit l'épaisseur de chaque plaque. Plus elle est épaisse, moins une balle a de chances de la pénétrer avant que son intégrité n'atteigne 0.</French>
+            <Polish>Ustawia grubość każdej płyty balistycznej. Im grubsza jest, tym mniejsza szansa, że pocisk ją spenetruje zanim jej wytrzymałość spadnie do 0.</Polish>
+            <Korean>각 방탄판의 두께를 설정합니다. 두께가 두꺼울수록 방탄판의 내구도가 0이 되기 전에 탄환이 관통할 확률이 줄어듭니다.</Korean>
+            <Chinese>設定每塊插板的厚度.越厚,子彈在其完整性達到0之前穿透它的可能性就越小.</Chinese>
+            <Chinesesimp>设定每块插板的厚度.越厚,子弹在其完整性达到0之前穿透它的可能性就越小.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_options">
             <English>APS Options</English>
-            <Polish>Ustawienia SPB</Polish>
-            <Chinesesimp>APS选项</Chinesesimp>
-            <Chinese>APS選項</Chinese>
-            <Korean>방탄판 시스템 설정</Korean>
             <French>Options APS</French>
+            <Polish>Ustawienia SPB</Polish>
+            <Korean>방탄판 시스템 설정</Korean>
+            <Chinese>APS選項</Chinese>
+            <Chinesesimp>APS选项</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp">
             <English>Max HP</English>
-            <Polish>Maks. HP</Polish>
-            <Chinesesimp>最大HP值</Chinesesimp>
-            <Chinese>最大HP值</Chinese>
-            <Korean>최대 체력</Korean>
             <French>Max HP</French>
+            <Polish>Maks. HP</Polish>
+            <Korean>최대 체력</Korean>
+            <Chinese>最大HP值</Chinese>
+            <Chinesesimp>最大HP值</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_Eden_maxHp_desc">
             <English>Set the maximum HP this unit can have. DOES NOTHING WITH ACE MEDICAL LOADED!</English>
-            <Polish>Ustawia maksymalną liczbę HP dla tej jednostki. NIE DZIAŁA Z ACE MEDICAL!</Polish>
-            <Chinesesimp>设置该单位可以拥有的最大HP值.加载ACE医疗下无效</Chinesesimp>
-            <Chinese>設置該單位可以擁有的最大HP值.加載ACE醫療下無效</Chinese>
-            <Korean>이 유닛이 가질 수 있는 최대 체력을 설정합니다. 경고: ACE 의료가 로드된 상태에서는 작동하지 않습니다!</Korean>
             <French>Définit la puissance maximale que cette unité peut avoir. NE FAIT RIEN AVEC ACE MEDICAL CHARGÉ !</French>
+            <Polish>Ustawia maksymalną liczbę HP dla tej jednostki. NIE DZIAŁA Z ACE MEDICAL!</Polish>
+            <Korean>이 유닛이 가질 수 있는 최대 체력을 설정합니다. 경고: ACE 의료가 로드된 상태에서는 작동하지 않습니다!</Korean>
+            <Chinese>設置該單位可以擁有的最大HP值.加載ACE醫療下無效</Chinese>
+            <Chinesesimp>设置该单位可以拥有的最大HP值.加载ACE医疗下无效</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive">
             <English>Allow self revive</English>
-            <Polish>Zezwól na samodzielne podniesienie</Polish>
-            <Chinesesimp>允许自我复苏</Chinesesimp>
-            <Chinese>允許自我複蘇</Chinese>
-            <Korean>자가소생 허용</Korean>
             <French>Permettre l'auto-réanimation</French>
+            <Polish>Zezwól na samodzielne podniesienie</Polish>
+            <Korean>자가소생 허용</Korean>
+            <Chinese>允許自我複蘇</Chinese>
+            <Chinesesimp>允许自我复苏</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_desc">
             <English>Allows players to self revive when downed. It takes double the amount of time they would need to revive someone else. Can only revive if they have medical supplies on them.</English>
-            <Polish>Pozwala graczom na samodzielne uleczenie się, gdy leżą na ziemi. Trwa to dwa razy więcej czasu niż gdy robi to ktoś inny. Gracz może się podnieść tylko, jeżeli ma przy sobie medykamenty.</Polish>
-            <Chinesesimp>允许玩家在被击倒时自我复活.它所需要的时间是复活别人的两倍.只有当身上有医疗用品下才能复活.</Chinesesimp>
-            <Chinese>允許玩家在被擊倒時自我複活.它所需要的時間是複活別人的兩倍.只有當身上有醫療用品下才能複活.</Chinese>
-            <Korean>플레이어가 무려화되었을 때 스스로 소생시킬 수 있습니다. 다른 사람을 소생하는 데 필요한 시간의 두 배가 필요합니다. 의료품을 지니고 있어야만 소생할 수 있습니다.</Korean>
             <French>Permet aux joueurs de se soigner lorsqu'ils sont allongés sur le sol. Cela prend deux fois plus de temps que lorsque quelqu'un d'autre le fait. Un joueur ne peut se relever que s'il a une trousse de soins sur lui.</French>
+            <Polish>Pozwala graczom na samodzielne uleczenie się, gdy leżą na ziemi. Trwa to dwa razy więcej czasu niż gdy robi to ktoś inny. Gracz może się podnieść tylko, jeżeli ma przy sobie medykamenty.</Polish>
+            <Korean>플레이어가 무려화되었을 때 스스로 소생시킬 수 있습니다. 다른 사람을 소생하는 데 필요한 시간의 두 배가 필요합니다. 의료품을 지니고 있어야만 소생할 수 있습니다.</Korean>
+            <Chinese>允許玩家在被擊倒時自我複活.它所需要的時間是複活別人的兩倍.只有當身上有醫療用品下才能複活.</Chinese>
+            <Chinesesimp>允许玩家在被击倒时自我复活.它所需要的时间是复活别人的两倍.只有当身上有医疗用品下才能复活.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerColor">
             <English>Bleedout timer color</English>
-            <Polish>Kolor licznika wykrwawienia</Polish>
-            <Chinesesimp>失血计时器颜色</Chinesesimp>
-            <Chinese>失血計時器顏色</Chinese>
-            <Korean>출혈 타이머 색깔</Korean>
             <French>Couleur du compteur de saignement</French>
+            <Polish>Kolor licznika wykrwawienia</Polish>
+            <Korean>출혈 타이머 색깔</Korean>
+            <Chinese>失血計時器顏色</Chinese>
+            <Chinesesimp>失血计时器颜色</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideHP">
             <English>Automatically hide HP bar</English>
-            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
-            <Chinesesimp>自动隐藏HP条</Chinesesimp>
-            <Chinese>自動隱藏HP條</Chinese>
-            <Korean>체력 표시줄 자동 숨기기</Korean>
             <French>Masque les bandes d'armure après un certain temps. Sélectionnez « Ajouter une plaque au gilet » pour les afficher à nouveau.</French>
+            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
+            <Korean>체력 표시줄 자동 숨기기</Korean>
+            <Chinese>自動隱藏HP條</Chinese>
+            <Chinesesimp>自动隐藏HP条</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideHP_desc">
             <English>Hides the HP bar after a certain time. Will only hide if HP is above warning level! Press the "Add plate into vest" key to show again</English>
-            <Polish>Ukrywa pasek życia po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
-            <Chinesesimp>在一定时间后隐藏HP条.只有在HP超过警告水平时才会隐藏!按"添加插板进入背心"键,以再次显示.</Chinesesimp>
-            <Chinese>在一定時間後隱藏HP條.只有在HP超過警告水平時才會隱藏!按"添加插板進入背心"鍵,以再次顯示.</Chinese>
-            <Korean>일정 시간이 지나면 체력 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
             <French>Masque la barre de vie après un certain temps. Sélectionnez « Ajouter une plaque dans le gilet » pour le réafficher.</French>
+            <Polish>Ukrywa pasek życia po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
+            <Korean>일정 시간이 지나면 체력 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
+            <Chinese>在一定時間後隱藏HP條.只有在HP超過警告水平時才會隱藏!按"添加插板進入背心"鍵,以再次顯示.</Chinese>
+            <Chinesesimp>在一定时间后隐藏HP条.只有在HP超过警告水平时才会隐藏!按"添加插板进入背心"键,以再次显示.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor">
             <English>Automatically hide plate bars</English>
-            <Polish>Automatycznie ukrywa paski pancerza</Polish>
-            <Chinesesimp>自动隐藏插板条</Chinesesimp>
-            <Chinese>自動隱藏插板條</Chinese>
-            <Korean>방탄 표시줄 자동 숨기기</Korean>
             <French>Masque automatiquement les bandes d'armure</French>
+            <Polish>Automatycznie ukrywa paski pancerza</Polish>
+            <Korean>방탄 표시줄 자동 숨기기</Korean>
+            <Chinese>自動隱藏插板條</Chinese>
+            <Chinesesimp>自动隐藏插板条</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowHideArmor_desc">
             <English>Hides the plate bars after a certain time. Press the "Add plate into vest" key to show again</English>
-            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
-            <Chinesesimp>在一定时间后隐藏插板条.按"添加插板进入背心"键,以再次显示.</Chinesesimp>
-            <Chinese>一段時間後隱藏插板條.按"添加插板進入背心"鍵,以再次顯示.</Chinese>
-            <Korean>일정 시간이 지나면 방탄 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
             <French>Masque les barres de plaque après un certain temps. Appuyer sur la touche « Ajouter une plaque dans le gilet » pour les afficher à nouveau.</French>
+            <Polish>Ukrywa paski pancerza po pewnym czasie. Wybierz "Dodaj płytę do kamizelki" by pokazać ponownie</Polish>
+            <Korean>일정 시간이 지나면 방탄 표시줄을 숨깁니다. 체력이 경고 레벨 이상일 경우에만 숨깁니다! 다시 표시하려면 "조끼에 방탄판 삽입" 키를 누르십시오.</Korean>
+            <Chinese>一段時間後隱藏插板條.按"添加插板進入背心"鍵,以再次顯示.</Chinese>
+            <Chinesesimp>在一定时间后隐藏插板条.按"添加插板进入背心"键,以再次显示.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds">
             <English>Hide UI timeout</English>
-            <Polish>Czas ukrycia UI</Polish>
-            <Chinesesimp>隐藏UI超时</Chinesesimp>
-            <Chinese>隱藏 UI 超時</Chinese>
-            <Korean>UI 시간 경과 숨기기</Korean>
             <French>Délai de masquage de l'interface utilisateur</French>
+            <Polish>Czas ukrycia UI</Polish>
+            <Korean>UI 시간 경과 숨기기</Korean>
+            <Chinese>隱藏 UI 超時</Chinese>
+            <Chinesesimp>隐藏UI超时</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds_desc">
             <English>When hiding the UI is enabeld, it will use this setting's specified time in seconds before any UI bars start to face away</English>
-            <Polish>Kiedy ukrywanie interfejsu jest włączone, UI zacznie znikać po upłynięciu stosownego czasu</Polish>
-            <Chinesesimp>当隐藏UI被启用时,它将在任何UI条开始面向别处之前,使用这个设置的指定时间(秒)</Chinesesimp>
-            <Chinese>當隱藏UI被啟用時,它將在任何UI條開始面向別處之前,使用這個設置的指定時間(秒)</Chinese>
-            <Korean>UI 숨기기가 활성화되었을 경우, UI 표시줄이 사라지기 전에 이 설정의 지정된 시간(초 단위)을 사용합니다.</Korean>
             <French>Lorsque le masquage de l'interface utilisateur est activé, le délai spécifié dans ce paramètre (en secondes) est utilisé avant que les barres de l'interface utilisateur ne commencent à s'effacer.</French>
+            <Polish>Kiedy ukrywanie interfejsu jest włączone, UI zacznie znikać po upłynięciu stosownego czasu</Polish>
+            <Korean>UI 숨기기가 활성화되었을 경우, UI 표시줄이 사라지기 전에 이 설정의 지정된 시간(초 단위)을 사용합니다.</Korean>
+            <Chinese>當隱藏UI被啟用時,它將在任何UI條開始面向別處之前,使用這個設置的指定時間(秒)</Chinese>
+            <Chinesesimp>当隐藏UI被启用时,它将在任何UI条开始面向别处之前,使用这个设置的指定时间(秒)</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowSelfRevive_action">
             <English>Get up by yourself</English>
-            <Polish>Podnieś się</Polish>
-            <Chinesesimp>起身</Chinesesimp>
-            <Chinese>起身</Chinese>
-            <Korean>자가소생</Korean>
             <French>Se lever tout seul</French>
+            <Polish>Podnieś się</Polish>
+            <Korean>자가소생</Korean>
+            <Chinese>起身</Chinese>
+            <Chinesesimp>起身</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_heal">
             <English>Heal unit/crew</English>
-            <Polish>Ulecz jednostkę</Polish>
-            <Chinesesimp>治疗单位</Chinesesimp>
-            <Chinese>治療單位</Chinese>
-            <Korean>유닛 치료</Korean>
             <French>Soigner l'unité/l'équipage</French>
+            <Polish>Ulecz jednostkę</Polish>
+            <Korean>유닛 치료</Korean>
+            <Chinese>治療單位</Chinese>
+            <Chinesesimp>治疗单位</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_plate">
             <English>Fill unit/crew vests with plates</English>
-            <Korean>유닛/승무원 조끼에 방탄판 채우기</Korean>
-            <Polish>Uzupełnij kamizelki jednostek</Polish>
             <French>Remplir les gilets des unités/équipages avec des plaques</French>
+            <Polish>Uzupełnij kamizelki jednostek</Polish>
+            <Korean>유닛/승무원 조끼에 방탄판 채우기</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malus">
             <English>Reset unit/crew bleedout timers</English>
-            <Korean>유닛/승무원 출혈 타이머 재설정</Korean>
-            <Polish>Zresetuj liczniki krwawienia jednostek</Polish>
             <French>Réinitialisation des minuteries de saignement de l'unité/de l'équipage</French>
+            <Polish>Zresetuj liczniki krwawienia jednostek</Polish>
+            <Korean>유닛/승무원 출혈 타이머 재설정</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_module_malusGlobal">
             <English>Reset all player bleedout timers</English>
-            <Korean>모든 플레이어 출혈 타이머 재설정</Korean>
-            <Polish>Zresetuj liczniki krwawienia graczy</Polish>
             <French>Remise à zéro des compteurs de saignement des joueurs</French>
+            <Polish>Zresetuj liczniki krwawienia graczy</Polish>
+            <Korean>모든 플레이어 출혈 타이머 재설정</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_zeus_invalid_target">
             <English>Invalid target selected</English>
-            <Polish>Wybrano niepoprawny cel.</Polish>
-            <Chinesesimp>选择的目标无效</Chinesesimp>
-            <Chinese>選擇的目標無效</Chinese>
-            <Korean>선택 대상이 잘못되었습니다.</Korean>
             <French>Cible invalide sélectionnée</French>
+            <Polish>Wybrano niepoprawny cel.</Polish>
+            <Korean>선택 대상이 잘못되었습니다.</Korean>
+            <Chinese>選擇的目標無效</Chinese>
+            <Chinesesimp>选择的目标无效</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInVest">
             <English>Plates in vest</English>
-            <Polish>Płyty w kamizelce</Polish>
-            <Chinesesimp>背心中的插板</Chinesesimp>
-            <Chinese>背心中的插板</Chinese>
-            <Korean>조끼에 방탄판 넣기</Korean>
             <French>Plaques dans un gilet</French>
+            <Polish>Płyty w kamizelce</Polish>
+            <Korean>조끼에 방탄판 넣기</Korean>
+            <Chinese>背心中的插板</Chinese>
+            <Chinesesimp>背心中的插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInVest_desc">
             <English>Adds plates pre equipped in unit's vest. Use a negative value to leave unset. Cannot add more than maximum allowed by settings. Will overwrite CBA's AI plate in vest setting!</English>
-            <Polish>Dodaje wyposażone przez jednostkę płyty do jej kamizelki. Wprowadź negatywną wartość by wyłączyć to ustawienie. Nie można dodać więcej niż liczba w ustawieniach moda. Ta opcja nadpisze wcześniejszą wartość wprowadzoną w ustawieniach kamizelek!</Polish>
-            <Chinesesimp>在单位的背心中加入预先装备的插板.使用负值可不设置.不能添加超过设置允许的最大值.将覆盖CBA的AI插板在背心的设置!</Chinesesimp>
-            <Chinese>在單位的背心中加入預先裝備的插板.使用負值可不設置.不能添加超過設置允許的最大值.將覆蓋CBA的AI插板在背心的設置!</Chinese>
-            <Korean>유닛의 조끼에 사전에 삽입된 방탄판을 추가합니다. 음수 값을 사용하여 설정하지 않은 상태로 둘 수 있습니다. 설정에서 허용하는 최대값을 초과하여 추가할 수 없습니다. CBA의 인공지능 방탄판 설정을 덮어씁니다!</Korean>
             <French>Ajoute les plaques équipées par l'unité à son gilet. Entrez une valeur négative pour désactiver ce paramètre. Vous ne pouvez pas ajouter plus que le nombre indiqué dans les paramètres du mod. Cette option écrase la valeur précédente entrée dans les paramètres du gilet !</French>
+            <Polish>Dodaje wyposażone przez jednostkę płyty do jej kamizelki. Wprowadź negatywną wartość by wyłączyć to ustawienie. Nie można dodać więcej niż liczba w ustawieniach moda. Ta opcja nadpisze wcześniejszą wartość wprowadzoną w ustawieniach kamizelek!</Polish>
+            <Korean>유닛의 조끼에 사전에 삽입된 방탄판을 추가합니다. 음수 값을 사용하여 설정하지 않은 상태로 둘 수 있습니다. 설정에서 허용하는 최대값을 초과하여 추가할 수 없습니다. CBA의 인공지능 방탄판 설정을 덮어씁니다!</Korean>
+            <Chinese>在單位的背心中加入預先裝備的插板.使用負值可不設置.不能添加超過設置允許的最大值.將覆蓋CBA的AI插板在背心的設置!</Chinese>
+            <Chinesesimp>在单位的背心中加入预先装备的插板.使用负值可不设置.不能添加超过设置允许的最大值.将覆盖CBA的AI插板在背心的设置!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor">
             <English>Plates in inventory</English>
-            <Polish>Płyty w ekwipunku</Polish>
-            <Chinesesimp>库存中的插板</Chinesesimp>
-            <Chinese>庫存中的插板</Chinese>
-            <Korean>소지품에 방탄판 넣기</Korean>
             <French>Plaques dans l'inventaire</French>
+            <Polish>Płyty w ekwipunku</Polish>
+            <Korean>소지품에 방탄판 넣기</Korean>
+            <Chinese>庫存中的插板</Chinese>
+            <Chinesesimp>库存中的插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_maxPlateInInventor_desc">
             <English>ONLY USE THIS IF YOU DO NOT OVERWRITE THE UNITS LOADOUT VIA SCRIPT!! Sets the amount of lootable plates in unit's inventory. Use a negative value to leave unset.</English>
-            <Polish>UŻYWAJ TEGO TYLKO, GDY NIE NADPISUJESZ WYPOSAŻENIA JEDNOSTKOM PRZEZ SKRYPT!!! Umieszcza wskazaną liczbę zbieralnych płyt w ekwipunku jednostki. Wprowadź negatywną wartość by wyłączyć to ustawienie.</Polish>
-            <Chinesesimp>只有在你不通过脚本覆盖单位装备的情况下才可使用这个功能!!设置单位库存中可掠夺的插板数量.使用负值可不设置.</Chinesesimp>
-            <Chinese>只有在你不通過腳本覆蓋單位裝備的情況下才可使用這個功能! !設置單位庫存中可掠奪的插板數量.使用負值可不設置.</Chinese>
-            <Korean>유닛의 인벤토리에서 노획 가능한 방탄판의 양을 설정합니다. 음수 값을 사용하여 설정하지 않은 상태로 둘 수 있습니다. 경고: 스크립트를 통해 유닛 로드아웃을 덮어쓰지 않는 경우에만 이 옵션을 사용하십시오!!</Korean>
             <French>À N'UTILISER QUE SI VOUS N'ÉCRASEZ PAS LE CHARGEMENT DE L'UNITÉ VIA LE SCRIPT ! Définit la quantité de plaques à piller dans l'inventaire de l'unité. Utilisez une valeur négative pour ne pas la définir.</French>
+            <Polish>UŻYWAJ TEGO TYLKO, GDY NIE NADPISUJESZ WYPOSAŻENIA JEDNOSTKOM PRZEZ SKRYPT!!! Umieszcza wskazaną liczbę zbieralnych płyt w ekwipunku jednostki. Wprowadź negatywną wartość by wyłączyć to ustawienie.</Polish>
+            <Korean>유닛의 인벤토리에서 노획 가능한 방탄판의 양을 설정합니다. 음수 값을 사용하여 설정하지 않은 상태로 둘 수 있습니다. 경고: 스크립트를 통해 유닛 로드아웃을 덮어쓰지 않는 경우에만 이 옵션을 사용하십시오!!</Korean>
+            <Chinese>只有在你不通過腳本覆蓋單位裝備的情況下才可使用這個功能! !設置單位庫存中可掠奪的插板數量.使用負值可不設置.</Chinese>
+            <Chinesesimp>只有在你不通过脚本覆盖单位装备的情况下才可使用这个功能!!设置单位库存中可掠夺的插板数量.使用负值可不设置.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableAIUnconscious">
             <English>Enable AI unconsciousness</English>
-            <Polish>Włącz nieprzytomność botom</Polish>
-            <Chinesesimp>启用AI无意识</Chinesesimp>
-            <Chinese>啟用AI無意識</Chinese>
-            <Korean>인공지능 무력화 활성화</Korean>
             <French>Activer l'inconscience de l'IA</French>
+            <Polish>Włącz nieprzytomność botom</Polish>
+            <Korean>인공지능 무력화 활성화</Korean>
+            <Chinese>啟用AI無意識</Chinese>
+            <Chinesesimp>启用AI无意识</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_enableAIUnconscious_desc">
             <English>Allows AI from a player squad to fall unconscious instead of straight up dying</English>
-            <Polish>Pozwala botom z oddziału gracza na tracenie przytomności zamiast nagłego umierania.</Polish>
-            <Chinesesimp>允许玩家小队的AI陷入昏迷而不是直接死亡</Chinesesimp>
-            <Chinese>允許玩家小隊的AI陷入昏迷而不是直接死亡</Chinese>
-            <Korean>플레이어 분대의 인공지능이 즉사하는 대신 무력화하게 합니다.</Korean>
             <French>Permet à l'IA d'une équipe de joueurs de tomber inconsciente au lieu de mourir.</French>
+            <Polish>Pozwala botom z oddziału gracza na tracenie przytomności zamiast nagłego umierania.</Polish>
+            <Korean>플레이어 분대의 인공지능이 즉사하는 대신 무력화하게 합니다.</Korean>
+            <Chinese>允許玩家小隊的AI陷入昏迷而不是直接死亡</Chinese>
+            <Chinesesimp>允许玩家小队的AI陷入昏迷而不是直接死亡</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions">
             <English>Radio Mod restrictions on uncon</English>
-            <Polish>Ograniczenia radia nieprzytomnego</Polish>
-            <Chinesesimp>无线电 Mod 对昏迷状态的人的限制</Chinesesimp>
-            <Korean>무력화에 대한 무전 모드 제한</Korean>
             <French>Restriction du mode radio pour la neutralisation</French>
+            <Polish>Ograniczenia radia nieprzytomnego</Polish>
+            <Korean>무력화에 대한 무전 모드 제한</Korean>
+            <Chinesesimp>无线电 Mod 对昏迷状态的人的限制</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_desc">
             <English>Allows or disallows the usage of radios, can also be set to disallow speaking entirely</English>
-            <Polish>Pozwala na włączanie lub wyłączanie korzystania z radia przez rannego, może też wyłączyć możliwość mówienia w ogóle.</Polish>
-            <Chinesesimp>允许或禁止使用收音机,也可以设置为完全禁止说话</Chinesesimp>
-            <Korean>무전기 사용을 허용하거나 허용하지 않으며, 말하는 것을 완전히 허용하지 않도록 설정할 수도 있습니다.</Korean>
             <French>Permet ou interdit l'utilisation des radios, peut également être configuré pour interdire complètement la parole.</French>
+            <Polish>Pozwala na włączanie lub wyłączanie korzystania z radia przez rannego, może też wyłączyć możliwość mówienia w ogóle.</Polish>
+            <Korean>무전기 사용을 허용하거나 허용하지 않으며, 말하는 것을 완전히 허용하지 않도록 설정할 수도 있습니다.</Korean>
+            <Chinesesimp>允许或禁止使用收音机,也可以设置为完全禁止说话</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_1">
             <English>No radio</English>
-            <Polish>Brak radia</Polish>
-            <Chinesesimp>禁用无线电</Chinesesimp>
-            <Korean>무전기 금지</Korean>
             <French>Pas de radio</French>
+            <Polish>Brak radia</Polish>
+            <Korean>무전기 금지</Korean>
+            <Chinesesimp>禁用无线电</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_radioModUnconRestrictions_2">
             <English>No speaking at all</English>
-            <Polish>Brak możliwości mówienia</Polish>
-            <Chinesesimp>完全禁言</Chinesesimp>
-            <Korean>말하기 금지</Korean>
             <French>Ne pas parler du tout</French>
+            <Polish>Brak możliwości mówienia</Polish>
+            <Korean>말하기 금지</Korean>
+            <Chinesesimp>完全禁言</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon">
             <English>Unlock Pilot Controls when downed</English>
-            <Korean>조종사 의식불명 시 조종간 잠금해제</Korean>
-            <Polish>Odblokuj kontrolę pilota, gdy nieprzytomny</Polish>
             <French>Déverrouiller les commandes du pilote lorsqu'il est abattu</French>
+            <Polish>Odblokuj kontrolę pilota, gdy nieprzytomny</Polish>
+            <Korean>조종사 의식불명 시 조종간 잠금해제</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_desc">
             <English>How to handle controls when pilot goes unconscious and has a co-pilot.</English>
-            <Korean>조종사가 의식불명 상태에서 부조종사가 있는 경우 조종을 할 수 있을 지 여부입니다.</Korean>
-            <Polish>W jaki sposób obsługiwać kontrolę pojazdu, gdy pilot jest nieprzytomny, a obecny jest kopilot.</Polish>
             <French>Comment gérer les commandes lorsque le pilote est inconscient et qu'il a un copilote.</French>
+            <Polish>W jaki sposób obsługiwać kontrolę pojazdu, gdy pilot jest nieprzytomny, a obecny jest kopilot.</Polish>
+            <Korean>조종사가 의식불명 상태에서 부조종사가 있는 경우 조종을 할 수 있을 지 여부입니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_0">
             <English>Do not unlock controls</English>
-            <Korean>비허용</Korean>
-            <Polish>Nie odblokuj kontroli</Polish>
             <French>Ne pas déverrouiller les commandes</French>
+            <Polish>Nie odblokuj kontroli</Polish>
+            <Korean>비허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_1">
             <English>Unlock Controls</English>
-            <Korean>허용</Korean>
-            <Polish>Odblokuj kontrolę</Polish>
             <French>Déverrouiller les commandes</French>
+            <Polish>Odblokuj kontrolę</Polish>
+            <Korean>허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_pilotUncon_2">
             <English>Unlock and Lock when revived</English>
-            <Korean>허용, 조종사 소생 시 비허용</Korean>
-            <Polish>Zablokuj i odblokuj po ożywieniu</Polish>
             <French>Déverrouiller et verrouiller à la réanimation</French>
+            <Polish>Zablokuj i odblokuj po ożywieniu</Polish>
+            <Korean>허용, 조종사 소생 시 비허용</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp">
             <English>AI revive squad mates</English>
-            <Polish>Leczenie przez AI</Polish>
-            <Chinesesimp>AI复活队友</Chinesesimp>
-            <Chinese>AI復活隊友</Chinese>
-            <Korean>인공지능 동료 분대원 소생</Korean>
             <French>L'IA réanime les coéquipiers</French>
+            <Polish>Leczenie przez AI</Polish>
+            <Korean>인공지능 동료 분대원 소생</Korean>
+            <Chinese>AI復活隊友</Chinese>
+            <Chinesesimp>AI复活队友</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commEnable">
             <English>Enable AI commands</English>
-            <Korean>인공지능 지휘 활성화</Korean>
-            <Polish>Włącz komendy AI</Polish>
             <French>Activer les commandes d'IA</French>
+            <Polish>Włącz komendy AI</Polish>
+            <Korean>인공지능 지휘 활성화</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commEnable_desc">
             <English>Enables the ability to command Medic AI to heal/revive through the Command menu (access with new keybind).</English>
-            <Korean>지휘 메뉴를 통해 인공지능 의무병에게 치료/소생 명령을 내릴 수 있는 기능을 제공합니다(새로운 키 설정 필요).</Korean>
-            <Polish>Włącza możliwość dowodzenia AI medykiem w celu leczenia/ożywiania przez menu dowodzenia (dostępne z nowym skrótem klawiszowym).</Polish>
             <French>Permet d'ordonner à un médecin IA de soigner/réanimer via le menu de commande (accessible par un nouveau raccourci clavier).</French>
+            <Polish>Włącza możliwość dowodzenia AI medykiem w celu leczenia/ożywiania przez menu dowodzenia (dostępne z nowym skrótem klawiszowym).</Polish>
+            <Korean>지휘 메뉴를 통해 인공지능 의무병에게 치료/소생 명령을 내릴 수 있는 기능을 제공합니다(새로운 키 설정 필요).</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_noMedic">
             <English>No medic available.</English>
-            <Korean>사용 가능 의무병 없음.</Korean>
-            <Polish>Brak dostępnych medyków.</Polish>
             <French>Aucun médecin n'est disponible.</French>
+            <Polish>Brak dostępnych medyków.</Polish>
+            <Korean>사용 가능 의무병 없음.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reqHeal">
             <English>Request Heal</English>
-            <Korean>치료 요청</Korean>
-            <Polish>Zażądaj leczenia</Polish>
             <French>Demande de soins</French>
+            <Polish>Zażądaj leczenia</Polish>
+            <Korean>치료 요청</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reqRevive">
             <English>Request Revive</English>
-            <Korean>소생 요청</Korean>
-            <Polish>Zażądaj ożywienia</Polish>
             <French>Demander de Réanimation</French>
+            <Polish>Zażądaj ożywienia</Polish>
+            <Korean>소생 요청</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commandHeal">
             <English>Heal target</English>
-            <Korean>대상 치료</Korean>
-            <Polish>Ulecz cel</Polish>
             <French>Soigner la cible</French>
+            <Polish>Ulecz cel</Polish>
+            <Korean>대상 치료</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commandRevive">
             <English>Revive target</English>
-            <Korean>대상 소생</Korean>
-            <Polish>Ożyw cel</Polish>
             <French>Ranimer la cible</French>
+            <Polish>Ożyw cel</Polish>
+            <Korean>대상 소생</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commMenu">
             <English>APS Commands</English>
-            <Korean>APS 지휘</Korean>
-            <Polish>Komendy APS</Polish>
             <French>Commandes APS</French>
+            <Polish>Komendy APS</Polish>
+            <Korean>APS 지휘</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_commOpenKeyBind">
             <English>APS Commands Menu</English>
-            <Korean>APS 지휘 메뉴</Korean>
-            <Polish>Menu komend APS</Polish>
             <French>Menu des commandes APS</French>
+            <Polish>Menu komend APS</Polish>
+            <Korean>APS 지휘 메뉴</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_requestAIforHelp_desc">
             <English>Enables the abillity for AI to revive unconscious squad mates</English>
-            <Polish>Dodaje botom możliwość leczenia nieprzytomnych sojuszników.</Polish>
-            <Chinesesimp>允许AI能够唤醒无意识的队友</Chinesesimp>
-            <Chinese>允許AI能夠喚醒無意識的隊友</Chinese>
-            <Korean>인공지능이 무력화 상태의 동료 문대원을 소생하는 능력을 활성화합니다.</Korean>
             <French>Permet à l'IA de réanimer les membres de l'équipe inconscients.</French>
+            <Polish>Dodaje botom możliwość leczenia nieprzytomnych sojuszników.</Polish>
+            <Korean>인공지능이 무력화 상태의 동료 문대원을 소생하는 능력을 활성화합니다.</Korean>
+            <Chinese>允許AI能夠喚醒無意識的隊友</Chinese>
+            <Chinesesimp>允许AI能够唤醒无意识的队友</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering">
             <English>Filter HandleDamage EH</English>
-            <Polish>Filtrowanie HandleDamage EH</Polish>
-            <Chinesesimp>筛选HandleDamage EH</Chinesesimp>
-            <Chinese>篩選HandleDamage EH</Chinese>
-            <Korean>HandleDamage 이벤트 핸들러 필터</Korean>
             <French>Filtrage EH de HandleDamage</French>
+            <Polish>Filtrowanie HandleDamage EH</Polish>
+            <Korean>HandleDamage 이벤트 핸들러 필터</Korean>
+            <Chinese>篩選HandleDamage EH</Chinese>
+            <Chinesesimp>筛选HandleDamage EH</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useHandleDamageFiltering_desc">
             <English>Adds a filter to only pass highest damage value when using HandleDamage as damage EH. Makes HandleDamage much more predictable, less chaotic but also less damaging overall.</English>
-            <Polish>Dodaje filtr przekazujący jedynie najwyższą wartość obrażeń podczas używania HandleDamage jako EH. Dzięki temu HandleDamage staje się bardziej przewidywalne, mniej chaotyczne, ale tym samym suma zadawanych obrażeń jest mniejsza.</Polish>
-            <Chinesesimp>增加了一个筛选功能,当使用HandleDamage作为伤害EH时,只传递最高的伤害值.使得HandleDamage更可预测,不那么混乱,但总体上也不那么具有伤害性.</Chinesesimp>
-            <Chinese>增加了一個篩選功能,當使用HandleDamage作為傷害EH時,只傳遞最高的傷害值.使得HandleDamage更可預測,不那麼混亂,但總體上也不那麼具有傷害性.</Chinese>
-            <Korean>HandleDamage를 데미지 이벤트 핸들러로 사용할 때만 가장 높은 데미지 값을 전달하도록 하는 필터를 추가합니다. HandleDamage를 훨씬 더 예측 가능하고 덜 혼란스러우며 전체적인 데미지를 낮춥니다.</Korean>
             <French>Ajoute un filtre pour ne laisser passer que la valeur de dégâts la plus élevée lors de l'utilisation de HandleDamage comme dégâts EH. Cela rend HandleDamage beaucoup plus prévisible, moins chaotique mais aussi moins dommageable en général.</French>
+            <Polish>Dodaje filtr przekazujący jedynie najwyższą wartość obrażeń podczas używania HandleDamage jako EH. Dzięki temu HandleDamage staje się bardziej przewidywalne, mniej chaotyczne, ale tym samym suma zadawanych obrażeń jest mniejsza.</Polish>
+            <Korean>HandleDamage를 데미지 이벤트 핸들러로 사용할 때만 가장 높은 데미지 값을 전달하도록 하는 필터를 추가합니다. HandleDamage를 훨씬 더 예측 가능하고 덜 혼란스러우며 전체적인 데미지를 낮춥니다.</Korean>
+            <Chinese>增加了一個篩選功能,當使用HandleDamage作為傷害EH時,只傳遞最高的傷害值.使得HandleDamage更可預測,不那麼混亂,但總體上也不那麼具有傷害性.</Chinese>
+            <Chinesesimp>增加了一个筛选功能,当使用HandleDamage作为伤害EH时,只传递最高的伤害值.使得HandleDamage更可预测,不那么混乱,但总体上也不那么具有伤害性.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp">
             <English>Give up</English>
-            <Polish>Poddaj się</Polish>
-            <Chinesesimp>放弃</Chinesesimp>
-            <Chinese>放棄</Chinese>
-            <Korean>포기</Korean>
             <French>Abandonner</French>
+            <Polish>Poddaj się</Polish>
+            <Korean>포기</Korean>
+            <Chinese>放棄</Chinese>
+            <Chinesesimp>放弃</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_text">
             <English>Are you really sure you want to give up? If you select "Yes" you will die, if you select "No" you will stay on the ground waiting to be revived!&lt;br/&gt;Make your choice now.&lt;br/&gt;&lt;br/&gt;You can disable this dialog from showing up by disabling it in the Feedback section in the "Addon Options" menu!</English>
-            <Polish>Czy na pewno chcesz się poddać? Jeśli wybierzesz TAK, umrzesz, jeśli wybierzesz NIE, będziesz dalej leżeć na ziemi w oczekiwaniu na ratunek!&lt;br/&gt;Zdecyduj się teraz.&lt;br/&gt;Możesz ukryć to okno poprzez wyłączenie odpowiedniej opcji w sekcji Reakcje w ustawieniach modyfikacji.</Polish>
-            <Chinesesimp>你真的确定要放弃吗？如果你选择"是"你会死亡,如果你选择"否" 你需要躺在地上继续等待救援!&lt;br/&gt;现在就做出选择吧.&lt;br/&gt;&lt;br/&gt;你可以通过在"插件选项"菜单中的反馈部分禁用该对话框,使其不显示!</Chinesesimp>
-            <Chinese>你真的確定要放棄嗎？如果你選擇"是"你會死亡,如果你選擇"否" 你需要躺在地上繼續等待救援! &lt;br/&gt;現在就做出選擇吧. &lt;br/&gt;&lt;br/&gt;你可以通過在"插件選項"菜單中的反饋部分禁用該對話框,使其不顯示!</Chinese>
-            <Korean>정말 포기하실 겁니까? "예"를 선택하면 당신은 죽을 것이고, "아니오"를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;"Addon Options" 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
             <French>Êtes-vous vraiment sûr de vouloir abandonner ? Si tu choisis « Oui », tu mourras, si tu choisis « Non », tu resteras au sol en attendant d'être réanimé !&lt;br/&gt;Faites votre choix maintenant.&lt;br/&gt;&lt;br/&gt;Vous pouvez empêcher cette boîte de dialogue de s'afficher en la désactivant dans la section &quot;Retour d'information&quot; du menu &quot;Options des Addons&quot; !</French>
+            <Polish>Czy na pewno chcesz się poddać? Jeśli wybierzesz TAK, umrzesz, jeśli wybierzesz NIE, będziesz dalej leżeć na ziemi w oczekiwaniu na ratunek!&lt;br/&gt;Zdecyduj się teraz.&lt;br/&gt;Możesz ukryć to okno poprzez wyłączenie odpowiedniej opcji w sekcji Reakcje w ustawieniach modyfikacji.</Polish>
+            <Korean>정말 포기하실 겁니까? "예"를 선택하면 당신은 죽을 것이고, "아니오"를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;"Addon Options" 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
+            <Chinese>你真的確定要放棄嗎？如果你選擇"是"你會死亡,如果你選擇"否" 你需要躺在地上繼續等待救援! &lt;br/&gt;現在就做出選擇吧. &lt;br/&gt;&lt;br/&gt;你可以通過在"插件選項"菜單中的反饋部分禁用該對話框,使其不顯示!</Chinese>
+            <Chinesesimp>你真的确定要放弃吗？如果你选择"是"你会死亡,如果你选择"否" 你需要躺在地上继续等待救援!&lt;br/&gt;现在就做出选择吧.&lt;br/&gt;&lt;br/&gt;你可以通过在"插件选项"菜单中的反馈部分禁用该对话框,使其不显示!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_title">
             <English>Hold up!</English>
-            <Polish>Poczekaj!</Polish>
-            <Chinesesimp>等等!</Chinesesimp>
-            <Chinese>等等!</Chinese>
-            <Korean>잠깐!</Korean>
             <French>Attendez !</French>
+            <Polish>Poczekaj!</Polish>
+            <Korean>잠깐!</Korean>
+            <Chinese>等等!</Chinese>
+            <Chinesesimp>等等!</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog">
             <English>Show "Give up" dialog</English>
-            <Polish>Pokaż okno "Poddaj się"</Polish>
-            <Chinesesimp>显示"放弃"对话框</Chinesesimp>
-            <Chinese>顯示"放棄"對話框</Chinese>
-            <Korean>"포기" 대화 상자 표시</Korean>
             <French>Afficher la boîte de dialogue « Abandonner ».</French>
+            <Polish>Pokaż okno "Poddaj się"</Polish>
+            <Korean>"포기" 대화 상자 표시</Korean>
+            <Chinese>顯示"放棄"對話框</Chinese>
+            <Chinesesimp>显示"放弃"对话框</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showGiveUpDialog_desc">
             <English>Shows a confirmation dialog when fully executing the "Give up" action.</English>
-            <Polish>Pokazuje okno wymuszające dodatkowe potwierdzenie poddania się podczas nieprzytomności.</Polish>
-            <Chinesesimp>在完全执行"放弃"动作时显示一个确认对话框.</Chinesesimp>
-            <Chinese>在完全執行"放棄"動作時顯示一個確認對話框.</Chinese>
-            <Korean>"포기" 행동을 완전히 실행할 때 확인 대화 상자를 표시합니다.</Korean>
             <French>Affiche un dialogue de confirmation lors de l'exécution complète de l'action « Abandonner ».</French>
+            <Polish>Pokazuje okno wymuszające dodatkowe potwierdzenie poddania się podczas nieprzytomności.</Polish>
+            <Korean>"포기" 행동을 완전히 실행할 때 확인 대화 상자를 표시합니다.</Korean>
+            <Chinese>在完全執行"放棄"動作時顯示一個確認對話框.</Chinese>
+            <Chinesesimp>在完全执行"放弃"动作时显示一个确认对话框.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount">
             <English>Display number of remaining FAKs</English>
-            <Polish>Pokaż liczbę pozostałych FAKów</Polish>
-            <Chinesesimp>显示剩余 FAK 的数量</Chinesesimp>
-            <Korean>나머지 구급상자 수 표시</Korean>
             <French>Afficher le nombre de FAK restants</French>
+            <Polish>Pokaż liczbę pozostałych FAKów</Polish>
+            <Korean>나머지 구급상자 수 표시</Korean>
+            <Chinesesimp>显示剩余 FAK 的数量</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_desc">
             <English>Shows the number of remaining FAKs after a healing action.</English>
-            <Polish>Pokazuje liczbę posiadanych FAKów po leczeniu.</Polish>
-            <Chinesesimp>显示治疗操作后剩余的 FAK 数量.</Chinesesimp>
-            <Korean>치료 작업 후 남은 구급상자 수를 표시합니다.</Korean>
             <French>Indique le nombre de FAK restants après une action de guérison.</French>
+            <Polish>Pokazuje liczbę posiadanych FAKów po leczeniu.</Polish>
+            <Korean>치료 작업 후 남은 구급상자 수를 표시합니다.</Korean>
+            <Chinesesimp>显示治疗操作后剩余的 FAK 数量.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint1">
             <English>%1 has been used</English>
-            <Polish>Zużyto: %1</Polish>
-            <Chinesesimp>%1 已被使用</Chinesesimp>
-            <Korean>%1이(가) 사용되었습니다.</Korean>
             <French>%1 a été utilisé</French>
+            <Polish>Zużyto: %1</Polish>
+            <Korean>%1이(가) 사용되었습니다.</Korean>
+            <Chinesesimp>%1 已被使用</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCount_hint2">
             <English>%1 healing item(s) remaining</English>
-            <Polish>Pozostałychh przedmiotów leczących: %1</Polish>
-            <Chinesesimp>剩余 %1 个治疗项目</Chinesesimp>
-            <Korean>%1개의 의료 아이템 남음</Korean>
             <French>%1 matériel médical restant</French>
+            <Polish>Pozostałychh przedmiotów leczących: %1</Polish>
+            <Korean>%1개의 의료 아이템 남음</Korean>
+            <Chinesesimp>剩余 %1 个治疗项目</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum">
             <English>Show FAK hint only with minimum FAKs</English>
-            <Polish>Pokaż podpowiedź o FAKach tylko z ich minimalną ilością</Polish>
-            <Chinesesimp>仅显示最小FAK提示</Chinesesimp>
-            <Korean>최소 구급상자 수일 때만 구급상자 힌트 표시</Korean>
             <French>Montrer l'indice FAK uniquement avec un minimum de FAK</French>
+            <Polish>Pokaż podpowiedź o FAKach tylko z ich minimalną ilością</Polish>
+            <Korean>최소 구급상자 수일 때만 구급상자 힌트 표시</Korean>
+            <Chinesesimp>仅显示最小FAK提示</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_showFAKCountMinimum_desc">
             <English>Only shows the FAK count hint if the remaining FAKs after healing are given number or below</English>
-            <Polish>Pokazuje informację o FAKach, jeśli jest w ich ekwipunku tyle lub mniej.</Polish>
-            <Chinesesimp>当治愈指定或以下剩余的FAK数量,才会显示FAK数量提示</Chinesesimp>
-            <Korean>치료 후 남은 구급상자 수가 해당 숫자 이하일 경우에만 구급상자 카운트 힌트를 표시합니다.</Korean>
             <French>L'indice de comptage des FAK n'apparaît que si les FAK restants après la guérison sont au nombre donné ou inférieur.</French>
+            <Polish>Pokazuje informację o FAKach, jeśli jest w ich ekwipunku tyle lub mniej.</Polish>
+            <Korean>치료 후 남은 구급상자 수가 해당 숫자 이하일 경우에만 구급상자 카운트 힌트를 표시합니다.</Korean>
+            <Chinesesimp>当治愈指定或以下剩余的FAK数量,才会显示FAK数量提示</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems">
             <English>Required Items to Revive</English>
-            <Korean>소생에 필요한 아이템</Korean>
-            <Polish>Przedmioty wymagane do ożywiania</Polish>
             <French>Éléments nécessaires à la réanimation</French>
+            <Polish>Przedmioty wymagane do ożywiania</Polish>
+            <Korean>소생에 필요한 아이템</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_desc">
             <English>Sets what items are need to perform revives.</English>
-            <Korean>소생에 필요한 아이템을 설정합니다.</Korean>
-            <Polish>Określa listę przedmiotów wymaganych do ożywiania.</Polish>
             <French>Définit les objets nécessaires pour effectuer des réanimations.</French>
+            <Polish>Określa listę przedmiotów wymaganych do ożywiania.</Polish>
+            <Korean>소생에 필요한 아이템을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_0">
             <English>None Required</English>
-            <Korean>요구하지 않음</Korean>
-            <Polish>Brak wymaganych</Polish>
             <French>Aucun requis</French>
+            <Polish>Brak wymaganych</Polish>
+            <Korean>요구하지 않음</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems">
             <English>Required Items to Heal</English>
-            <Korean>치료에 필요한 아이템</Korean>
-            <Polish>Wymagane przedmioty do leczenia</Polish>
             <French>Objets nécessaires pour soigner</French>
+            <Polish>Wymagane przedmioty do leczenia</Polish>
+            <Korean>치료에 필요한 아이템</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems_desc">
             <English>Sets what items are need to perform healing.</English>
-            <Korean>치료에 필요한 아이템을 설정합니다.</Korean>
-            <Polish>Określa listę przedmiotów wymaganych do leczenia.</Polish>
             <French>Définit les éléments nécessaires à la réalisation des soins.</French>
+            <Polish>Określa listę przedmiotów wymaganych do leczenia.</Polish>
+            <Korean>치료에 필요한 아이템을 설정합니다.</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
-            <Polish>Pokaż licznik graczom</Polish>
-            <Chinesesimp>显示失血计时器至</Chinesesimp>
-            <Chinese>顯示失血計時器至</Chinese>
-            <Korean>출혈 타이머 표시</Korean>
             <French>Afficher le délai de saignement à</French>
+            <Polish>Pokaż licznik graczom</Polish>
+            <Korean>출혈 타이머 표시</Korean>
+            <Chinese>顯示失血計時器至</Chinese>
+            <Chinesesimp>显示失血计时器至</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer_desc">
             <English>Applicable players will see a countdown over the wounded icon displaying the time until death.</English>
-            <Polish>Stosowni gracze będą widzieć licznik nad ikoną rannego pokazujący czas do śmierci.</Polish>
-            <Chinesesimp>适用的玩家会在受伤的图标上看到一个死亡倒计时.</Chinesesimp>
-            <Chinese>適用的玩家將在受傷圖標上看到死亡倒計時.</Chinese>
-            <Korean>출혈 중인 플레이어는 부상당한 아이콘에서 사망까지의 시간을 표시하는 카운트다운을 볼 수 있습니다.</Korean>
             <French>Les joueurs concernés verront un compte à rebours s'afficher au-dessus de l'icône de la blessure, indiquant le temps restant avant la mort.</French>
+            <Polish>Stosowni gracze będą widzieć licznik nad ikoną rannego pokazujący czas do śmierci.</Polish>
+            <Korean>출혈 중인 플레이어는 부상당한 아이콘에서 사망까지의 시간을 표시하는 카운트다운을 볼 수 있습니다.</Korean>
+            <Chinese>適用的玩家將在受傷圖標上看到死亡倒計時.</Chinese>
+            <Chinesesimp>适用的玩家会在受伤的图标上看到一个死亡倒计时.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange">
             <English>Range for bleed out timer</English>
-            <Polish>Zasięg renderowania licznika</Polish>
-            <Chinesesimp>失血计时器的范围</Chinesesimp>
-            <Chinese>失血計時器的範圍</Chinese>
-            <Korean>출혈 타이머 거리</Korean>
             <French>Distance de la minuterie de saignement</French>
+            <Polish>Zasięg renderowania licznika</Polish>
+            <Korean>출혈 타이머 거리</Korean>
+            <Chinese>失血計時器的範圍</Chinese>
+            <Chinesesimp>失血计时器的范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRange_desc">
             <English>The maximum range you can see the countdown to death over the downed icon.</English>
-            <Polish>Maksymalny zasięg w którym widać licznik obok ikony rannego.</Polish>
-            <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围.</Chinesesimp>
-            <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍.</Chinese>
-            <Korean>무력화된 아이콘 위에 사망하기까지의 카운트다운을 볼 수 있는 최대 거리입니다.</Korean>
             <French>Portée maximale à laquelle vous pouvez voir le compteur à côté de l'icône de la blessure.</French>
+            <Polish>Maksymalny zasięg w którym widać licznik obok ikony rannego.</Polish>
+            <Korean>무력화된 아이콘 위에 사망하기까지의 카운트다운을 볼 수 있는 최대 거리입니다.</Korean>
+            <Chinese>你能看到倒下單位上死亡倒計時圖標的最大範圍.</Chinese>
+            <Chinesesimp>你能看到倒下单位上死亡倒计时图标的最大范围.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic">
             <English>Medic Range for bleed out timer</English>
-            <Polish>Zasięg renderowania licznika dla medyka</Polish>
-            <Chinesesimp>失血计时器所需的医疗范围</Chinesesimp>
-            <Korean>출혈 타이머 거리 (의무병)</Korean>
             <French>Distance de la minuterie de saignement (Medic)</French>
+            <Polish>Zasięg renderowania licznika dla medyka</Polish>
+            <Korean>출혈 타이머 거리 (의무병)</Korean>
+            <Chinesesimp>失血计时器所需的医疗范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_bleedoutTimerRangeMedic_desc">
             <English>The maximum range medics can see the countdown to death over the downed icon.</English>
-            <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
-            <Chinesesimp>医护人员看到从倒地到死亡倒计时图标的最大范围</Chinesesimp>
-            <Korean>무력화된 아이콘 위에 사망하기까지의 카운트다운을 의무병이 볼 수 있는 최대 거리입니다.</Korean>
             <French>La portée maximale permet aux médecins de voir le compte à rebours de la mort sur l'icône de la personne abattue.</French>
+            <Polish>Maksymalny zasięg, w którym medyk widzi licznik obok ikony rannego.</Polish>
+            <Korean>무력화된 아이콘 위에 사망하기까지의 카운트다운을 의무병이 볼 수 있는 최대 거리입니다.</Korean>
+            <Chinesesimp>医护人员看到从倒地到死亡倒计时图标的最大范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority">
             <English>Hold Action Priority</English>
-            <Chinesesimp>保持行动优先权</Chinesesimp>
-            <Korean>행동 우선 순위 보류</Korean>
-            <Polish>Priorytet akcji HoldAction</Polish>
             <French>Maintenir l'action prioritaire</French>
+            <Polish>Priorytet akcji HoldAction</Polish>
+            <Korean>행동 우선 순위 보류</Korean>
+            <Chinesesimp>保持行动优先权</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_desc">
             <English>Whether to prioritize reviving or pressing wound, when both are possible. Needs mission restart.</English>
-            <Chinesesimp>是优先复活还是按压伤口,当两者都有可能时.需要重新启动任务.</Chinesesimp>
-            <Korean>둘 다 가능할 때 상처 압박과 소생 중 어느 것을 우선 시할 것인지 여부를 결정합니다. 임무 재시작이 필요합니다.</Korean>
-            <Polish>Określa czy priorytetyzować ożywianie, czy uciskanie ran, gdy obie są dostępne. Wymaga restartu misji.</Polish>
             <French>Priorité à la réanimation ou à la pression sur la blessure, lorsque les deux sont possibles. Nécessite un redémarrage de la mission.</French>
+            <Polish>Określa czy priorytetyzować ożywianie, czy uciskanie ran, gdy obie są dostępne. Wymaga restartu misji.</Polish>
+            <Korean>둘 다 가능할 때 상처 압박과 소생 중 어느 것을 우선 시할 것인지 여부를 결정합니다. 임무 재시작이 필요합니다.</Korean>
+            <Chinesesimp>是优先复活还是按压伤口,当两者都有可能时.需要重新启动任务.</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_0">
             <English>Revive</English>
-            <Chinesesimp>复活</Chinesesimp>
-            <Korean>소생</Korean>
-            <Polish>Ożyw</Polish>
             <French>Réanimer</French>
+            <Polish>Ożyw</Polish>
+            <Korean>소생</Korean>
+            <Chinesesimp>复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionPriority_1">
             <English>Press Wound</English>
-            <Chinesesimp>按压伤口</Chinesesimp>
-            <Korean>상처 압박</Korean>
-            <Polish>Uciskaj ranę</Polish>
             <French>Appliquer une pression sur la plaie</French>
+            <Polish>Uciskaj ranę</Polish>
+            <Korean>상처 압박</Korean>
+            <Chinesesimp>按压伤口</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionRange">
             <English>Revive/Press Wound range</English>
-            <Chinesesimp>复活/按压的范围</Chinesesimp>
-            <Korean>소생/상처 압박 거리</Korean>
-            <Polish>Zasięg ożywienia/uciskania ran</Polish>
             <French>Portée de la réanimation/pression des plaies</French>
+            <Polish>Zasięg ożywienia/uciskania ran</Polish>
+            <Korean>소생/상처 압박 거리</Korean>
+            <Chinesesimp>复活/按压的范围</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_holdActionRange_desc">
             <English>Range in meters from the target where revive and press wound actions become possible.</English>
-            <Chinesesimp>可进行复活和按压伤口操作的目标距离(米).</Chinesesimp>
-            <Korean>소생 및 상처 압박 행동이 가능한 대상의 거리를 미터 단위로 지정합니다.</Korean>
-            <Polish>Dystans (w metrach) od celu, w którym można użyć akcji ożywienia/uciskania ran</Polish>
             <French>Portée en mètres de la cible où les actions de réanimation et d'appui sur la blessure deviennent possibles.</French>
+            <Polish>Dystans (w metrach) od celu, w którym można użyć akcji ożywienia/uciskania ran</Polish>
+            <Korean>소생 및 상처 압박 행동이 가능한 대상의 거리를 미터 단위로 지정합니다.</Korean>
+            <Chinesesimp>可进行复活和按压伤口操作的目标距离(米).</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode">
             <English>Armor Handling Mode</English>
-            <Polish>Tryb pancerza</Polish>
-            <Chinesesimp>插板控制模式</Chinesesimp>
-            <Chinese>插板控制模式</Chinese>
-            <Korean>방탄력 취급 모드</Korean>
             <French>Mode de manipulation de l'armure</French>
+            <Polish>Tryb pancerza</Polish>
+            <Korean>방탄력 취급 모드</Korean>
+            <Chinese>插板控制模式</Chinese>
+            <Chinesesimp>插板控制模式</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode_desc">
             <English>Allows to set the armor handling mode. Arcade will not allow penetration through plates, realism however will and plates will shatter faster when damaged</English>
-            <Polish>Określa mechanikę otrzymywania obrażeń. Tryb Rozrywki nie bierze pod uwagę penetracji płyt, natomiast w Realizmie płyty będą mniej chronić, gdy zostaną uszkodzone</Polish>
-            <Chinesesimp>允许设置插板控制模式.街机模式将不允许穿透板块,但是逼真现实主义会,且板块在损坏时会更快地破碎</Chinesesimp>
-            <Chinese>允許設置插板控制模式.街機模式將不允許穿透板塊,但是逼真現實主義會,且板塊在損壞時會更快地破碎</Chinese>
-            <Korean>방탄력 취급 모드를 설정할 수 있습니다. 아케이드는는 방탄판 관통을 허용하지 않지, 리얼리즘은 방탄판이 손상되면 더 빨리 망가집니다.</Korean>
             <French>Permet de définir le mode de gestion de l'armure. Le mode Arcade ne permet pas de pénétrer dans les plaques, alors que le mode réaliste le permet et les plaques se brisent plus rapidement lorsqu'elles sont endommagées.</French>
+            <Polish>Określa mechanikę otrzymywania obrażeń. Tryb Rozrywki nie bierze pod uwagę penetracji płyt, natomiast w Realizmie płyty będą mniej chronić, gdy zostaną uszkodzone</Polish>
+            <Korean>방탄력 취급 모드를 설정할 수 있습니다. 아케이드는는 방탄판 관통을 허용하지 않지, 리얼리즘은 방탄판이 손상되면 더 빨리 망가집니다.</Korean>
+            <Chinese>允許設置插板控制模式.街機模式將不允許穿透板塊,但是逼真現實主義會,且板塊在損壞時會更快地破碎</Chinese>
+            <Chinesesimp>允许设置插板控制模式.街机模式将不允许穿透板块,但是逼真现实主义会,且板块在损坏时会更快地破碎</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode_arcade">
             <English>Arcade</English>
-            <Polish>Rozrywka</Polish>
-            <Chinesesimp>街机模式</Chinesesimp>
-            <Chinese>街機模式</Chinese>
-            <Korean>아케이드</Korean>
             <French>Arcade</French>
+            <Polish>Rozrywka</Polish>
+            <Korean>아케이드</Korean>
+            <Chinese>街機模式</Chinese>
+            <Chinesesimp>街机模式</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_armorHandlingMode_realism">
             <English>Realism</English>
-            <Polish>Realizm</Polish>
-            <Chinesesimp>逼真现实主义</Chinesesimp>
-            <Chinese>逼真現實主義</Chinese>
-            <Korean>리얼리즘</Korean>
             <French>Réalisme</French>
+            <Polish>Realizm</Polish>
+            <Korean>리얼리즘</Korean>
+            <Chinese>逼真現實主義</Chinese>
+            <Chinesesimp>逼真现实主义</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping">
             <English>Allow extended limb damage</English>
-            <Polish>Zezwól na rozszerzone obrażenia kończyn</Polish>
-            <Chinesesimp>允许延长肢体损伤</Chinesesimp>
-            <Korean>사지 데미지 확장 허용</Korean>
             <French>Autoriser les dommages étendus aux membres</French>
+            <Polish>Zezwól na rozszerzone obrażenia kończyn</Polish>
+            <Korean>사지 데미지 확장 허용</Korean>
+            <Chinesesimp>允许延长肢体损伤</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_allowLimping_desc">
             <English>Allows for limping and more sway the more damage a unit has</English>
-            <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
-            <Chinesesimp>当单位受到的伤害越多跛行和晃动的幅度越大</Chinesesimp>
-            <Korean>유닛에 더 많은 데미지를 입힐수록 다리를 절고 무기를 들 때 더 많이 흔들리도록 허용합니다.</Korean>
             <French>Plus une unité est endommagée, plus elle boite et vacille.</French>
+            <Polish>Pozwala jednostkom na bycie okulawionym i zwiększa bujanie broni przy większych otrzymanych obrażeniach.</Polish>
+            <Korean>유닛에 더 많은 데미지를 입힐수록 다리를 절고 무기를 들 때 더 많이 흔들리도록 허용합니다.</Korean>
+            <Chinesesimp>当单位受到的伤害越多跛行和晃动的幅度越大</Chinesesimp>
         </Key>
         <!-- <Key ID="STR_diw_armor_plates_main_injectorUses">
             <English>Auto-Injector use count</English>
@@ -1690,59 +1690,59 @@
         </Key> -->
         <Key ID="STR_diw_armor_plates_main_injectorEffect">
             <English>Auto-Injector effect</English>
+            <French>Effet de l'auto-injecteur</French>
             <Polish>Efekty auto-iniektora</Polish>
             <Korean>자동주사기 효과</Korean>
             <Chinesesimp>自动注射器的效果</Chinesesimp>
-            <French>Effet de l'auto-injecteur</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_desc">
             <English>How auto-injector effects remaining bleedout time</English>
+            <French>Effet de l'auto-injecteur sur le temps de saignement restant</French>
             <Polish>Jak auto-iniektor wpływa na pozostały czas krwawienia</Polish>
             <Korean>자동주사기가 남은 출혈 시간에 미치는 영향을 결정합니다.</Korean>
             <Chinesesimp>自动注射器对剩余失血时间的影响</Chinesesimp>
-            <French>Effet de l'auto-injecteur sur le temps de saignement restant</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_1">
             <English>Nullify bleedout time penalty</English>
+            <French>Annulation de la pénalité du temps de saignement</French>
             <Polish>Zeruje karę czasową od krwawienia</Polish>
             <Korean>출혈 시간 패널티 무효화</Korean>
             <Chinesesimp>取消失血时间惩罚</Chinesesimp>
-            <French>Annulation de la pénalité du temps de saignement</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_2">
             <English>Halve bleedout time penalty</English>
+            <French>Réduire de moitié la pénalité du temps de saignement</French>
             <Polish>Zmniejsza o połowę karę czasową od krwawienia</Polish>
             <Korean>출혈 시간 패널티 절반 감소</Korean>
             <Chinesesimp>失血惩罚时间减半</Chinesesimp>
-            <French>Réduire de moitié la pénalité du temps de saignement</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorEffect_3">
             <English>Number of downs</English>
+            <French>Nombre de morts</French>
             <Polish>Liczba padnięć</Polish>
             <Korean>무력화 횟수 무효화</Korean>
             <Chinesesimp>击倒次数</Chinesesimp>
-            <French>Nombre de morts</French>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorCoef">
             <English>Auto-injector coefficient</English>
-            <Polish>Współczynnik auto-iniektora</Polish>
-            <Chinesesimp>自动注射器系数</Chinesesimp>
-            <Korean>자동주사기 계수</Korean>
             <French>Coefficient d'auto-injecteur</French>
+            <Polish>Współczynnik auto-iniektora</Polish>
+            <Korean>자동주사기 계수</Korean>
+            <Chinesesimp>自动注射器系数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorCoef_desc">
             <English>How many downs Auto-injector cancels on the 'Number of downs' setting.</English>
+            <French>Nombre de fois où un auto-injecteur annule un mort dans le cadre du paramètre « Nombre de morts ».</French>
             <Polish>Jak wiele padnięć anuluje auto-iniektor z ustawienia 'Liczba padnięć'</Polish>
             <Korean>'무력화 횟수 무효화' 설정에서 자동주사기가 취소하는 무력화 횟수입니다.</Korean>
             <Chinesesimp>自动注射器在"击倒次数"设置下取消倒下的次数</Chinesesimp>
-            <French>Nombre de fois où un auto-injecteur annule un mort dans le cadre du paramètre « Nombre de morts ».</French>
         </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
+        <!-- <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
             <English>Auto-injector has been used on %1</English>
-            <Korean>%1에게 자동주사기가 사용되었습니다.</Korean>
-            <Polish>Użyto auto-iniektora na: %1</Polish>
             <French>L'auto-injecteur a été utilisé sur %1</French>
-        </Key>
+            <Polish>Użyto auto-iniektora na: %1</Polish>
+            <Korean>%1에게 자동주사기가 사용되었습니다.</Korean>
+        </Key> -->
         <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
             <English>%1 has been used</English>
             <Polish>Użyto przedmiotu %1</Polish>
@@ -1757,42 +1757,42 @@
         </Key> -->
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use auto-injector on %1</English>
-            <Chinesesimp>在%1上使用注射器</Chinesesimp>
+            <French>Utiliser l'auto-injecteur sur %1</French>
             <Polish>Użyj auto-iniektora na: %1</Polish>
             <Korean>%1에게 주사기 사용</Korean>
-            <French>Utiliser l'auto-injecteur sur %1</French>
+            <Chinesesimp>在%1上使用注射器</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorSelf">
             <English>Self</English>
-            <Chinesesimp>自己</Chinesesimp>
+            <French>À vous-même</French>
             <Polish>Sobie</Polish>
             <Korean>자신에게</Korean>
-            <French>À vous-même</French>
+            <Chinesesimp>自己</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_useInjectorAce">
             <English>Use auto-injector</English>
-            <Chinesesimp>使用注射器</Chinesesimp>
+            <French>Utiliser un auto-injecteur</French>
             <Polish>Użyj auto-iniektora</Polish>
             <Korean>주사기 사용</Korean>
-            <French>Utiliser un auto-injecteur</French>
+            <Chinesesimp>使用注射器</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_text">
             <English>Use auto-injector on %1?</English>
-            <Korean>%1에게 자동주사기를 사용합니까?</Korean>
-            <Polish>Użyć auto-iniektora na: %1?</Polish>
             <French>Utiliser l'auto-injecteur sur %1 ?</French>
+            <Polish>Użyć auto-iniektora na: %1?</Polish>
+            <Korean>%1에게 자동주사기를 사용합니까?</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm">
             <English>Show Auto-Injector Confirm dialog</English>
-            <Korean>자동주사기 확인 대화 상자 표시</Korean>
-            <Polish>Pokaż potwierdzenie użycia auto-iniektora</Polish>
             <French>Afficher la boîte de dialogue de confirmation de l'auto-injecteur</French>
+            <Polish>Pokaż potwierdzenie użycia auto-iniektora</Polish>
+            <Korean>자동주사기 확인 대화 상자 표시</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
             <English>Shows a confirmation dialog when using an auto-injector.</English>
-            <Korean>자동주사기를 사용할 때 확인 대화 상자를 표시합니다.</Korean>
-            <Polish>Pokazuje okno potwierdzenia użycia auto-iniektora</Polish>
             <French>Affiche une boîte de dialogue de confirmation lors de l'utilisation d'un auto-injecteur.</French>
+            <Polish>Pokazuje okno potwierdzenia użycia auto-iniektora</Polish>
+            <Korean>자동주사기를 사용할 때 확인 대화 상자를 표시합니다.</Korean>
         </Key>
     </Package>
 </Project>
