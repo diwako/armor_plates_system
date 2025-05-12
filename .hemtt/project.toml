@@ -46,3 +46,6 @@ parameters = [
 
 [lints.stringtables.sorted]
 options.only-lang = true
+
+[lints.config.math_could_be_unquoted]
+enabled = "pedantic"
