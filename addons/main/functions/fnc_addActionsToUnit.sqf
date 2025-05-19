@@ -99,7 +99,7 @@ _arr2 call BIS_fnc_holdActionAdd;
     _unit setUserActionText [_id, format [localize "str_a3_cfgactions_healsoldier0", getText ((configOf _unit) >> "displayName")], "<img image='\A3\ui_f\data\igui\cfg\actions\heal_ca.paa' size='1.8' shadow=2 />"];
 // };
 
-if (GVAR(bleedoutStop) <= 0) exitWith {};
+if !(GVAR(bleedoutStop) > 0) exitWith {};
 // Stop Bleeding
 private _arr3 = [_unit, "Press Wound", "\a3\ui_f\data\IGUI\Cfg\Cursors\unitBleeding_ca.paa", "\a3\ui_f\data\IGUI\Cfg\Actions\bandage_ca.paa",
     // condition show
