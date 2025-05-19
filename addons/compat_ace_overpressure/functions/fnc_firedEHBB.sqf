@@ -56,7 +56,7 @@ if (_distance < _backblastRange) then {
         [_damage * 100] call BIS_fnc_bloodEffect;
 
         if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
-            if !(GVAR(ignoreArmor)) then {_damage = [_unit,  _damage, _damage, _unit, "", true] call EFUNC(main,receiveDamageACE);};
+            if !(GVAR(ignoreArmorACE)) then {_damage = [_unit,  _damage, _damage, _unit, "", true] call EFUNC(main,receiveDamageACE);};
             if (_damage > 0) then {[_unit, _damage, "body", "backblast", _unit] call ace_medical_fnc_addDamageToUnit};
         } else {
             if ( EGVAR(main,enable) && {!(GVAR(finishDowns) && {lifeState _unit isEqualTo "INCAPACITATED"} ) } ) exitWith {
