@@ -18,7 +18,7 @@ class CfgWeapons {
 
     class GVAR(autoInjector): GVAR(plate)  {
         author = "alien314, KrazyKat";
-        model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F"; // model = QPATHTOF(data\autoInjector.p3d);
+        model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F.p3d"; // model = QPATHTOF(data\autoInjector.p3d);
         picture = QPATHTOF(ui\autoInjector_ca.paa);
         displayName = CSTRING(autoinjectorItem);
         descriptionShort = CSTRING(autoinjectorIteml_Desc_Short);

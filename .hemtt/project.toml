@@ -37,7 +37,7 @@ folder = "diw_armor_plates"
 workshop = [
     "450814997", # CBA_A3's Workshop ID
     "1779063631", # Zeus Enhanced's Workshop ID
-    "463939057", # ace Enhanced's Workshop ID
+    "463939057", # ace Workshop ID
 ]
 
 parameters = [
@@ -45,4 +45,7 @@ parameters = [
 ]
 
 [lints.stringtables.sorted]
-enabled = false
+options.only-lang = true
+
+[lints.config.math_could_be_unquoted]
+enabled = "pedantic"
