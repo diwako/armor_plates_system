@@ -164,7 +164,9 @@ params ["_unit", "_instigator"];
 
             if (!GVAR(ignoreArmorACE) && {alive _unit}) then {_damageToAdd = [_unit,  _damageToAdd, _damageToAdd, _unit, "", (_bodyPart isEqualTo "Body")] call EFUNC(main,receiveDamageACE);};
             // Use event directly, as ace_medical_fnc_addDamageToUnit requires unit to be alive
-            ["ace_medical_woundReceived", [_unit, [[_damageToAdd, _bodyPart, _damageToAdd]], _instigator, "burn"]] call CBA_fnc_localEvent;
+            if (_damageToAdd > 0) then {
+                ["ace_medical_woundReceived", [_unit, [[_damageToAdd, _bodyPart, _damageToAdd]], _instigator, "burn"]] call CBA_fnc_localEvent;
+            };
         } else {
             private _bodyParts = [["HitFace", "HitNeck", "HitHead"], ["HitPelvis", "HitAbdomen", "HitDiaphragm", "HitChest", "HitBody"], ["HitArms", "HitHands"], ["HitLegs"]] selectRandomWeighted [0.77, 0.5, 0.8, 0.3];
             _damageToAdd = _damageToAdd * GVAR(fireMult);

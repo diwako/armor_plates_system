@@ -8,6 +8,8 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoa
 
 if (GVAR(aceMedicalLoaded)) then {
     #include "initSettingsACE.inc.sqf"
-} else { #include "initSettings.inc.sqf" };
+} else {
+    #include "initSettings.inc.sqf"
+};
 
 ADDON = true;
