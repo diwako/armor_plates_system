@@ -25,7 +25,11 @@ if !(isDamageAllowed _unit && {_unit getVariable ["ace_medical_allowDamage", tru
 
 if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
     for "_i" from 0 to floor (4 + random 3) do {
-        [_unit, random [0, 0.66, 1], selectRandom ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"], selectRandom ["bullet", "shell", "explosive"], _instigator] call ace_medical_fnc_addDamageToUnit;
+        private _damage = random [0, 0.66, 1];
+        private _selection = selectRandom ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"];
+        private _isTorso = (_selection isEqualTo "Body");
+        private _damageLeft = [_unit,  _damage, _damage, _instigator, "", _isTorso] call EFUNC(main,receiveDamageACE);
+        [_unit, _damageLeft, _selection, selectRandom ["bullet", "shell", "explosive"], _instigator] call ace_medical_fnc_addDamageToUnit;
     };
 } else {
     if (EGVAR(main,enable)) exitWith {

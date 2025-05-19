@@ -6,10 +6,8 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoa
     INFO("PreInit: Disabled --> old ACE medical loaded");
 };
 
-if (GVAR(aceMedicalLoaded)) exitWith {
-    //#include "initSettingsACE.inc.sqf"
-};
-
-#include "initSettings.inc.sqf"
+if (GVAR(aceMedicalLoaded)) then {
+    #include "initSettingsACE.inc.sqf"
+} else { #include "initSettings.inc.sqf" };
 
 ADDON = true;
