@@ -64,13 +64,7 @@ _opValues params ["_overpressureAngle", "_overpressureRange", "_overpressureDama
                 } else {
                     if ( EGVAR(main,enable) && {!(GVAR(finishDowns) && {lifeState _x isEqualTo "INCAPACITATED"} ) } ) exitWith {
                         _damage = _damage * GVAR(bbdmgCoef);
-                        if (GVAR(ignoreArmor)) then {
-                            private _vest = vestContainer _unit;
-                            private _plates = _vest getVariable [QEGVAR(main,plates), []];
-                            _vest setVariable [QEGVAR(main,plates), []];
-                            [{params ["_vest","_plates"]; _vest setVariable [QEGVAR(main,plates), _plates];}, [_vest,_plates]] call CBA_fnc_execNextFrame;
-                        };
-                        [_x, _damage, "", _firer] call EFUNC(main,receiveDamage);
+                        [_x, _damage, "", _firer, GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
                     };
                     _x setDamage (damage _x + _damage);
                 };

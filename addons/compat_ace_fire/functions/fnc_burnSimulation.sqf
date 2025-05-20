@@ -171,21 +171,14 @@ params ["_unit", "_instigator"];
             private _bodyParts = [["HitFace", "HitNeck", "HitHead"], ["HitPelvis", "HitAbdomen", "HitDiaphragm", "HitChest", "HitBody"], ["HitArms", "HitHands"], ["HitLegs"]] selectRandomWeighted [0.77, 0.5, 0.8, 0.3];
             _damageToAdd = _damageToAdd * GVAR(fireMult);
 
-            if (EGVAR(main,enable)) exitWith {
+            if (EGVAR(main,enable)) then {
                 {
-                    if (GVAR(ignoreArmor)) then {
-                        private _vest = vestContainer _unit;
-                        private _plates = _vest getVariable [QEGVAR(main,plates), []];
-                        _vest setVariable [QEGVAR(main,plates), []];
-                        [{params ["_vest","_plates"]; _vest setVariable [QEGVAR(main,plates), _plates];}, [_vest,_plates]] call CBA_fnc_execNextFrame;
-                    };
-                    [_unit, _damageToAdd, _x, _instigator] call EFUNC(main,receiveDamage);
+                    [_unit, _damageToAdd, _x, _instigator, GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
+                } forEach _bodyParts;
+            } else {
+                {   _unit setHitPointDamage [_x, (_unit getHitPointDamage _x) + _damageToAdd, true, _instigator, _instigator];
                 } forEach _bodyParts;
             };
-
-            {
-                _unit setHitPointDamage [_x, (_unit getHitPointDamage _x) + _damageToAdd, true, _instigator, _instigator];
-            } forEach _bodyParts;
         };
 
         _unit setVariable ["ace_fire_intensity", _intensity, true]; // Globally sync intensity across all clients to make sure simulation is deterministic

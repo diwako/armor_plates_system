@@ -61,13 +61,7 @@ if (_distance < _backblastRange) then {
         } else {
             if ( EGVAR(main,enable) && {!(GVAR(finishDowns) && {lifeState _unit isEqualTo "INCAPACITATED"} ) } ) exitWith {
                 _damage = _damage * GVAR(bbdmgCoef);
-                if (GVAR(ignoreArmorACE)) then {
-                    private _vest = vestContainer _unit;
-                    private _plates = _vest getVariable [QEGVAR(main,plates), []];
-                    _vest setVariable [QEGVAR(main,plates), []];
-                    [{params ["_vest","_plates"]; _vest setVariable [QEGVAR(main,plates), _plates];}, [_vest,_plates]] call CBA_fnc_execNextFrame;
-                };
-                [_unit, _damage, "", _unit] call EFUNC(main,receiveDamage);
+                [_unit, _damage, "", _unit, GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
             };
             _unit setDamage (damage _unit + _damage);
         };
