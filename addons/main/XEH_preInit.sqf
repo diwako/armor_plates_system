@@ -6,9 +6,9 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!_aceMedicalLoaded}
     INFO("PreInit: Disabled --> old ACE medical loaded");
 };
 
-GVAR(aceMedicalLoaded) = (_aceMedicalLoaded && {!isClass(configFile >> "CfgPatches" >> "ace_no_medical")});
+GVAR(aceMedicalLoaded) = _aceMedicalLoaded;
 #include "XEH_PREP.hpp"
-if (GVAR(aceMedicalLoaded)) then {
+if (_aceMedicalLoaded) then {
     #include "initSettingsACE.inc.sqf"
 } else {
     #include "initSettings.inc.sqf"

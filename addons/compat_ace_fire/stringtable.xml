@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="diw_armor_plates">
     <Package name="compat_ace_fire">
-        <Key ID="STR_diw_armor_plates_compat_ace_fire_subCategoryCompat">
-            <English>Compatibility</English>
-        </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_fire_ignoreArmor">
             <English>ACE Fire Ignore Armor</English>
         </Key>

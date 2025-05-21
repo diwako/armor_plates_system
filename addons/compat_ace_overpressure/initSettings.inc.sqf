@@ -1,5 +1,5 @@
 private _header = LELSTRING(main,category);
-private _category = [_header, LLSTRING(subCategoryCompat)];
+private _category = [_header, LELSTRING(main,subCategoryCompat)];
 
 [
     QGVAR(bbdmgCoef), "SLIDER",

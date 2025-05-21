@@ -1794,5 +1794,8 @@
             <Polish>Pokazuje okno potwierdzenia użycia auto-iniektora</Polish>
             <Korean>자동주사기를 사용할 때 확인 대화 상자를 표시합니다.</Korean>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
+            <English>Compatibility</English>
+        </Key>
     </Package>
 </Project>
