@@ -165,9 +165,8 @@ params ["_unit", "_instigator"];
             ["ace_medical_woundReceived", [_unit, [[_damageToAdd, _bodyPart, _damageToAdd]], _instigator, "burn"]] call CBA_fnc_localEvent;
         } else {
             private _bodyParts = [["HitFace", "HitNeck", "HitHead"], ["HitPelvis", "HitAbdomen", "HitDiaphragm", "HitChest", "HitBody"], ["HitArms", "HitHands"], ["HitLegs"]] selectRandomWeighted [0.77, 0.5, 0.8, 0.3];
-            _damageToAdd = _damageToAdd * GVAR(fireMult);
-
             if (EGVAR(main,enable)) then {
+                _damageToAdd = _damageToAdd * GVAR(fireMult);
                 {
                     [_unit, _damageToAdd, _x, _instigator, "", GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
                 } forEach _bodyParts;
