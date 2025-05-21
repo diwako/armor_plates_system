@@ -15,7 +15,7 @@ class CfgPatches {
     };
 };
 
-#include "ACE_Medical_injuries.hpp"
+#include "ACE_Medical_Injuries.hpp"
 
 class Extended_PreInit_EventHandlers {
     class ADDON {
