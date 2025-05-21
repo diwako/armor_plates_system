@@ -58,13 +58,11 @@ _opValues params ["_overpressureAngle", "_overpressureRange", "_overpressureDama
                 };
 
                 if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
-                    // overpressure is always torso?
-                    if !(GVAR(ignoreArmorACE)) then {_damage = [_unit,  _damage, _damage, _unit, "", true] call EFUNC(main,receiveDamageACE);};
-                    if (_damage > 0) then {[_x, _damage, "body", "backblast", _firer] call ace_medical_fnc_addDamageToUnit};
+                    [_x, _damage, "body", "backblast", _firer] call ace_medical_fnc_addDamageToUnit
                 } else {
                     if ( EGVAR(main,enable) && {!(GVAR(finishDowns) && {lifeState _x isEqualTo "INCAPACITATED"} ) } ) exitWith {
                         _damage = _damage * GVAR(bbdmgCoef);
-                        [_x, _damage, "", _firer, GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
+                        [_x, _damage, "", _firer, "", GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
                     };
                     _x setDamage (damage _x + _damage);
                 };

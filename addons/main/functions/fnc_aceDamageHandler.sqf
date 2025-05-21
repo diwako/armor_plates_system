@@ -11,7 +11,7 @@ if ((_copy select 0 select 0) > 0) then {
         (side group _unit) isEqualTo (side group _parentShooter)}}}) exitWith {
             _copy = [];
         };
-    if (_damage isEqualTo 0 || {_bodyPart == "#structural"}) exitWith {};
+    if (_damage isEqualTo 0 || {_bodyPart isEqualTo "#structural" || {(missionNamespace getVariable [(QGVAR(ignoreArmor) + (toLower _typeOfDamage)),false])}}) exitWith {};
     private _isTorso = _bodyPart isEqualTo "Body";
     if (GVAR(protectOnlyTorso) && {!_isTorso}) exitWith {};
 

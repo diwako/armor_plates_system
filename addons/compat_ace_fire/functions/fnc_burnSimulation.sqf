@@ -162,18 +162,14 @@ params ["_unit", "_instigator"];
             // Common burn areas are the hands and face https://www.ncbi.nlm.nih.gov/pubmed/16899341/
             private _bodyPart = ["Head", "Body", "LeftArm", "RightArm", "LeftLeg", "RightLeg"] selectRandomWeighted [0.77, 0.5, 0.8, 0.8, 0.3, 0.3];
 
-            if (!GVAR(ignoreArmorACE) && {alive _unit}) then {_damageToAdd = [_unit,  _damageToAdd, _damageToAdd, _unit, "", (_bodyPart isEqualTo "Body")] call EFUNC(main,receiveDamageACE);};
-            // Use event directly, as ace_medical_fnc_addDamageToUnit requires unit to be alive
-            if (_damageToAdd > 0) then {
-                ["ace_medical_woundReceived", [_unit, [[_damageToAdd, _bodyPart, _damageToAdd]], _instigator, "burn"]] call CBA_fnc_localEvent;
-            };
+            ["ace_medical_woundReceived", [_unit, [[_damageToAdd, _bodyPart, _damageToAdd]], _instigator, "burn"]] call CBA_fnc_localEvent;
         } else {
             private _bodyParts = [["HitFace", "HitNeck", "HitHead"], ["HitPelvis", "HitAbdomen", "HitDiaphragm", "HitChest", "HitBody"], ["HitArms", "HitHands"], ["HitLegs"]] selectRandomWeighted [0.77, 0.5, 0.8, 0.3];
             _damageToAdd = _damageToAdd * GVAR(fireMult);
 
             if (EGVAR(main,enable)) then {
                 {
-                    [_unit, _damageToAdd, _x, _instigator, GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
+                    [_unit, _damageToAdd, _x, _instigator, "", GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
                 } forEach _bodyParts;
             } else {
                 {   _unit setHitPointDamage [_x, (_unit getHitPointDamage _x) + _damageToAdd, true, _instigator, _instigator];
