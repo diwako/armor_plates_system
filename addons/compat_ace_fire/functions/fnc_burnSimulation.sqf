@@ -171,7 +171,8 @@ params ["_unit", "_instigator"];
                     [_unit, _damageToAdd, _x, _instigator, "", GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
                 } forEach _bodyParts;
             } else {
-                {   _unit setHitPointDamage [_x, (_unit getHitPointDamage _x) + _damageToAdd, true, _instigator, _instigator];
+                {
+                    _unit setHitPointDamage [_x, (_unit getHitPointDamage _x) + _damageToAdd, true, _instigator, _instigator];
                 } forEach _bodyParts;
             };
         };
