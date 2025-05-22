@@ -1,14 +1,13 @@
 #include "script_component.hpp"
 ADDON = false;
 
-private _aceMedicalLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
-if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!_aceMedicalLoaded}) exitWith {
+GVAR(aceMedicalLoaded) = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
+if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoaded)}) exitWith {
     INFO("PreInit: Disabled --> old ACE medical loaded");
 };
 
-GVAR(aceMedicalLoaded) = _aceMedicalLoaded;
 #include "XEH_PREP.hpp"
-if (_aceMedicalLoaded) then {
+if (GVAR(aceMedicalLoaded)) then {
     #include "initSettingsACE.inc.sqf"
 } else {
     #include "initSettings.inc.sqf"

@@ -52,7 +52,7 @@ if (_distance < _backblastRange && {ace_common_playerVehAttenuation > 0.8}) then
 
     // Skip if vehicle backblast reflection is disabled
     private _vehicle = vehicle _shooter;
-    if (_vehicle isNotEqualTo _shooter && {getNumber (configOf _vehicle >> ace_overpressure_noReflection) isEqualTo 1}) exitWith {};
+    if (_vehicle isNotEqualTo _shooter && {getNumber (configOf _vehicle >> "ace_overpressure_noReflection") isEqualTo 1}) exitWith {};
 
     private _alpha = sqrt (1 - _distance / _backblastRange);
     private _beta = sqrt 0.5;
@@ -65,7 +65,7 @@ if (_distance < _backblastRange && {ace_common_playerVehAttenuation > 0.8}) then
     if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
         [_shooter, _damage, "body", "backblast", _shooter] call ace_medical_fnc_addDamageToUnit
     } else {
-        if ( EGVAR(main,enable) ) exitWith {
+        if (EGVAR(main,enable)) exitWith {
             _damage = _damage * GVAR(bbdmgCoef);
             [_shooter, _damage, "", _shooter, "", GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
         };
