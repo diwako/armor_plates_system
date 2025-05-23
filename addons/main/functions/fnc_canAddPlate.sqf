@@ -7,7 +7,7 @@ if !(GVAR(hasPlateInInvetory)) exitWith {false};
 
 private _plates = (vestContainer _player) getVariable [QGVAR(plates), []];
 if ((count _plates) >= GVAR(numWearablePlates)) exitWith {
-    GVAR(allowPlateReplace) && {_plates isNotEqualTo [] && {_plates select ((count _plates) - 1) < GVAR(maxPlateHealth)}}
+    GVAR(allowPlateReplace) && {_plates isNotEqualTo [] && {_plates select -1 < GVAR(maxPlateHealth)}}
 };
 
 true
