@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="diw_armor_plates">
+    <Package name="compat_ace_fire">
+        <Key ID="STR_diw_armor_plates_compat_ace_fire_ignoreArmor">
+            <English>ACE Fire Ignore Armor</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_fire_ignoreArmor_desc">
+            <English>Whether fire damage should ignore armor plates.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_fire_nonMedBurnMult">
+            <English>ACE Fire Burn Damage Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_fire_nonMedBurnMult_desc">
+            <English>Fire can randomly hit multiple parts, use this to tune it. (Default: 0.2)</English>
+        </Key>
+    </Package>
+</Project>

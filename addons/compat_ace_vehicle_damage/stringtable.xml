@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="diw_armor_plates">
+    <Package name="compat_ace_vehicle_damage">
+        <Key ID="STR_diw_armor_plates_compat_ace_vehicle_damage_preventScriptedDeath">
+            <English>ACE Vehicle Damage Prevent Guaranteed Death</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_vehicle_damage_preventScriptedDeath_desc">
+            <English>Whether crew should die instantly from vehicle detonation. (Other APS Settings may still lead to instant death)</English>
+        </Key>
+    </Package>
+</Project>

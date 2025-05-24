@@ -19,11 +19,7 @@ include = [
     "*.p3d",
     "*.rvmat",
 ]
-exclude = [
-    "*.psd",
-    "*.png",
-    "*.tga"
-]
+exclude = ["*.psd", "*.png", "*.tga"]
 
 [hemtt.signing]
 key_name = "{{prefix}}_{{version}}"
@@ -35,13 +31,18 @@ folder = "diw_armor_plates"
 
 [hemtt.launch.default]
 workshop = [
-    "450814997", # CBA_A3's Workshop ID
+    "450814997",  # CBA_A3's Workshop ID
     "1779063631", # Zeus Enhanced's Workshop ID
-    "463939057", # ace Workshop ID
+    "463939057",  # ace Workshop ID
+    "2369477168", # Advanced developer tools
 ]
 
-parameters = [
-    "-world=empty",
+parameters = ["-world=empty"]
+
+[hemtt.launch.nomedical]
+extends = "default"
+workshop = [
+    "3053169823", # ace no medical
 ]
 
 [lints.stringtables.sorted]

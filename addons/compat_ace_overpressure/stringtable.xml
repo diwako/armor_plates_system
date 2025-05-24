@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="diw_armor_plates">
+    <Package name="compat_ace_overpressure">
+        <Key ID="STR_diw_armor_plates_compat_ace_overpressure_bbdmgCoef">
+            <English>ACE Overpressure Damage Multiplier</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_overpressure_bbdmgCoef_desc">
+            <English>Backblast damage is weak with plates, use this to tune it(default: 2.0).</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_overpressure_ignoreArmor">
+            <English>ACE Overpressure Ignore Armor</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_overpressure_ignoreArmor_desc">
+            <English>Whether overpressure damage should ignore armor plates.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_overpressure_finishDowns">
+            <English>ACE Overpressure Finish downed units</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_compat_ace_overpressure_finishDowns_desc">
+            <English>Whether overpressure damage should kill units that in the downed state.</English>
+        </Key>
+    </Package>
+</Project>
