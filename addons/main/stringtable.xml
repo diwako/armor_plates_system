@@ -1440,7 +1440,7 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_giveUp_text">
             <English>Are you really sure you want to give up? If you select "Yes" you will die, if you select "No" you will stay on the ground waiting to be revived!&lt;br/&gt;Make your choice now.&lt;br/&gt;&lt;br/&gt;You can disable this dialog from showing up by disabling it in the Feedback section in the "Addon Options" menu!</English>
-            <French>Êtes-vous vraiment sûr de vouloir abandonner ? Si tu choisis « Oui », tu mourras, si tu choisis « Non », tu resteras au sol en attendant d'être réanimé !&lt;br/&gt;Faites votre choix maintenant.&lt;br/&gt;&lt;br/&gt;Vous pouvez empêcher cette boîte de dialogue de s'afficher en la désactivant dans la section &quot;Retour d'information&quot; du menu &quot;Options des Addons&quot; !</French>
+            <French>Êtes-vous vraiment sûr de vouloir abandonner ? Si tu choisis « Oui », tu mourras, si tu choisis « Non », tu resteras au sol en attendant d'être réanimé !&lt;br/&gt;Faites votre choix maintenant.&lt;br/&gt;&lt;br/&gt;Vous pouvez empêcher cette boîte de dialogue de s'afficher en la désactivant dans la section "Retour d'information" du menu "Options des Addons" !</French>
             <Polish>Czy na pewno chcesz się poddać? Jeśli wybierzesz TAK, umrzesz, jeśli wybierzesz NIE, będziesz dalej leżeć na ziemi w oczekiwaniu na ratunek!&lt;br/&gt;Zdecyduj się teraz.&lt;br/&gt;Możesz ukryć to okno poprzez wyłączenie odpowiedniej opcji w sekcji Reakcje w ustawieniach modyfikacji.</Polish>
             <Korean>정말 포기하실 겁니까? "예"를 선택하면 당신은 죽을 것이고, "아니오"를 선택하면 당신은 소생을 기다리며 땅에 누워 있을 것입니다!&lt;br/&gt;지금 선택하십시오.&lt;br/&gt;&lt;br/&gt;"Addon Options" 메뉴의 피드백 섹션에서 이 대화 상자를 표시하지 않도록 설정할 수 있습니다!</Korean>
             <Chinese>你真的確定要放棄嗎？如果你選擇"是"你會死亡,如果你選擇"否" 你需要躺在地上繼續等待救援! &lt;br/&gt;現在就做出選擇吧. &lt;br/&gt;&lt;br/&gt;你可以通過在"插件選項"菜單中的反饋部分禁用該對話框,使其不顯示!</Chinese>
@@ -1796,6 +1796,7 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
             <English>Compatibility</English>
+            <Korean>호환성</Korean>
         </Key>
     </Package>
 </Project>

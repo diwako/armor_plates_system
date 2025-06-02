@@ -3,9 +3,11 @@
     <Package name="compat_ace_vehicle_damage">
         <Key ID="STR_diw_armor_plates_compat_ace_vehicle_damage_preventScriptedDeath">
             <English>ACE Vehicle Damage Prevent Guaranteed Death</English>
+            <Korean>ACE 차량 대미지 확정 사망 막기</Korean>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_vehicle_damage_preventScriptedDeath_desc">
             <English>Whether crew should die instantly from vehicle detonation. (Other APS Settings may still lead to instant death)</English>
+            <Korean>차량 폭발로 인해 승무원이 즉사할 지 여부입니다. (다른 방탄판 시스템 설정에서는 여전히 즉사할 수 있습니다)</Korean>
         </Key>
     </Package>
 </Project>
