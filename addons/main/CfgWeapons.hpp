@@ -3,7 +3,7 @@ class CfgWeapons {
     class CBA_MiscItem ;
     class CBA_MiscItem_ItemInfo;
 
-    class GVAR(plate): CBA_MiscItem  {
+    class GVAR(plate): CBA_MiscItem {
         scope = 2;
         author = "diwako";
         model = QPATHTOF(data\armor_plate.p3d);
@@ -16,7 +16,7 @@ class CfgWeapons {
         };
     };
 
-    class GVAR(autoInjector): GVAR(plate)  {
+    class GVAR(autoInjector): GVAR(plate) {
         author = "alien314, KrazyKat";
         model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F.p3d"; // model = QPATHTOF(data\autoInjector.p3d);
         picture = QPATHTOF(ui\autoInjector_ca.paa);
