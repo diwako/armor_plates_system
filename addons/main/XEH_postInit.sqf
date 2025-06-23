@@ -244,6 +244,27 @@ if (GVAR(aceMedicalLoaded)) then {
     }];
 };
 
+[QGVAR(healUnit), {
+    params ["_unit"];
+    if (GVAR(aceMedicalLoaded)) then {
+        ["ace_medical_treatment_fullHealLocal", [_unit]] call CBA_fnc_localEvent;
+    } else {
+        if !(_unit getUnitTrait "Medic") then {
+            _unit setUnitTrait ["Medic", true];
+            [{  params ["_caller"];
+                _caller setUnitTrait ["Medic", false];
+            }, [_unit], 1] call CBA_fnc_waitAndExecute;
+        };
+        if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) then {
+            [_unit, _unit, false] call FUNC(revive);
+        } else {
+            _unit setDamage 0;
+            [_unit, _unit, false] call FUNC(handleHealEh);
+        };
+    };
+}] call CBA_fnc_addEventHandler;
+
+
 [QGVAR(fillPlates), {
     params ["_unit"];
     if (!alive _unit) exitWith {};
