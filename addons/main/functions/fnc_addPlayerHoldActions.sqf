@@ -4,7 +4,7 @@
     LLSTRING(giveUp),
     "\A3\Ui_f\data\IGUI\Cfg\Revive\overlayIcons\d50_ca.paa",
     "\A3\Ui_f\data\IGUI\Cfg\Revive\overlayIcons\d100_ca.paa",
-    "alive _target && {(lifeState _target) == 'INCAPACITATED' && {_target isEqualTo (call CBA_fnc_currentUnit)}}",
+    format ["alive _target && {(lifeState _target) == 'INCAPACITATED' && {_target getVariable ['%1', false] && {_target isEqualTo (call CBA_fnc_currentUnit)}}}", QGVAR(unconscious)],
     "alive _target",
     {},
     {},{
@@ -55,7 +55,7 @@ player setUserActionText [_id, localize "str_a3_cfgactions_healsoldierself0", "<
 // self revive
 private _arr = [player, LLSTRING(allowSelfRevive_action), "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
     // condition show
-    format ["%2 && {_this getUnitTrait 'Medic' && {(lifeState _this) == 'INCAPACITATED' && {([_this] call %1) > 0}}}", QFUNC(hasHealItems), QGVAR(allowSelfRevive)],
+    format ["%2 && {_this getUnitTrait 'Medic' && {(lifeState _this) == 'INCAPACITATED' && {_this getVariable ['%3', false] && {([_this] call %1) > 0}}}}", QFUNC(hasHealItems), QGVAR(allowSelfRevive), QGVAR(unconscious)],
     "alive _this && {(lifeState _this) == 'INCAPACITATED'}", {
     // code start
     params ["_target", "", "", "_arguments"];
@@ -75,7 +75,7 @@ private _arr = [player, LLSTRING(allowSelfRevive_action), "\a3\ui_f\data\IGUI\Cf
 
 _arr call BIS_fnc_holdActionAdd;
 private _arr2 = +_arr;
-_arr2 set [4, format ["%2 && {!(_this getUnitTrait 'Medic') && {(lifeState _this) == 'INCAPACITATED' && {([_this] call %1) >= %3}}}", QFUNC(hasHealItems), QGVAR(allowSelfRevive), QGVAR(reviveItems)]];
+_arr2 set [4, format ["%2 && {!(_this getUnitTrait 'Medic') && {(lifeState _this) == 'INCAPACITATED' && {_this getVariable ['%4', false] && {([_this] call %1) >= %3}}}}", QFUNC(hasHealItems), QGVAR(allowSelfRevive), QGVAR(reviveItems), QGVAR(unconscious)]];
 _arr2 set [10, [GVAR(noneMedicReviveTime) * 2]];
 _arr2 set [11, GVAR(noneMedicReviveTime) * 2];
 _arr2 call BIS_fnc_holdActionAdd;

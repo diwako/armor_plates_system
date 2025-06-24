@@ -560,6 +560,13 @@ if !(GVAR(aceMedicalLoaded)) then {
     ];
 
     {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach ("getNumber (_x >> 'attendant') > 0" configClasses (configFile >> "CfgVehicles") apply {configName _x});
+
+    ["CAManBase", "AnimDone", {
+        params ["_unit", "_anim"];
+        if (local _unit && {!(_unit getVariable [QGVAR(unconscious), false]) && {_anim find "unconsciousface" != -1}}) then {
+            _unit setUnconscious false;
+        };
+    }] call CBA_fnc_addClassEventHandler;
 };
 
 // ace interactions
