@@ -34,7 +34,7 @@ workshop = [
     "450814997",  # CBA_A3's Workshop ID
     "1779063631", # Zeus Enhanced's Workshop ID
     "463939057",  # ace Workshop ID
-    "2369477168", # Advanced developer tools
+    "3499977893", # Advanced developer tools
 ]
 
 parameters = ["-world=empty"]
