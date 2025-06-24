@@ -26,5 +26,5 @@ private _units = [];
 private _fnc_filter = [{true}, {isPlayer _x}, {!isPlayer _x}] select _mode;
 
 {
-    [QEGVAR(main,healUnit), [_x, _x], _x] call CBA_fnc_targetEvent;
+    [QEGVAR(main,healUnit), [_x], _x] call CBA_fnc_targetEvent;
 } forEach ((_units arrayIntersect _units) select {alive _x && {_x isKindOf "CAManBase"} && _fnc_filter});
