@@ -29,7 +29,7 @@ if (GVAR(disallowFriendfire) &&
         _aceSelection = "Hitchest";
     };
 
-    private _bodyArmor = ([vest _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor select 1) + ([uniform _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor select 1);
+    private _bodyArmor = ([vest _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor) + ([uniform _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor);
 
     private _actualDamage = _damage;
     if (_bodyArmor > 0 && {_hitPointArmor > 0}) then {
