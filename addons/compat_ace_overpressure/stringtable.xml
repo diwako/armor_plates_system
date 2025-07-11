@@ -4,26 +4,32 @@
         <Key ID="STR_diw_armor_plates_compat_ace_overpressure_bbdmgCoef">
             <English>ACE Overpressure Damage Multiplier</English>
             <Korean>ACE 과중압력 대미지 배수</Korean>
+            <Chinesesimp>ACE冲击波伤害倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_overpressure_bbdmgCoef_desc">
             <English>Backblast damage is weak with plates, use this to tune it(default: 2.0).</English>
             <Korean>방탄판은 후폭풍 대미지에 약합니다. 해당 값으로 대미지를 조절합니다. (기본값: 2.0</Korean>
+            <Chinesesimp>当装备防弹插板时尾焰伤害较弱，使用此项来调整（默认值：2.0）。</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_overpressure_ignoreArmor">
             <English>ACE Overpressure Ignore Armor</English>
             <Korean>ACE 과중압력 무시</Korean>
+            <Chinesesimp>ACE中的冲击波伤害将无视防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_overpressure_ignoreArmor_desc">
             <English>Whether overpressure damage should ignore armor plates.</English>
             <Korean>과중압력 대미지가 방탄판을 무시할 지 여부입니다.</Korean>
+            <Chinesesimp>冲击波伤害是否会无视防弹插板</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_overpressure_finishDowns">
             <English>ACE Overpressure Finish downed units</English>
             <Korean>ACE 과중압력으로 쓰러진 유닛 죽이기</Korean>
+            <Chinesesimp>ACE冲击波伤害终结处于倒地状态的单位</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_overpressure_finishDowns_desc">
             <English>Whether overpressure damage should kill units that in the downed state.</English>
             <Korean>과중압력 대미지로 쓰러진 상태의 유닛을 죽일 지 여부입니다.</Korean>
+            <Chinesesimp>冲击波伤害是否应致使处于倒地状态的单位死亡</Chinesesimp>
         </Key>
     </Package>
 </Project>
