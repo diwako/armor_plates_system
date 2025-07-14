@@ -244,6 +244,27 @@ if (GVAR(aceMedicalLoaded)) then {
     }];
 };
 
+[QGVAR(healUnit), {
+    params ["_unit"];
+    if (GVAR(aceMedicalLoaded)) then {
+        ["ace_medical_treatment_fullHealLocal", [_unit]] call CBA_fnc_localEvent;
+    } else {
+        if !(_unit getUnitTrait "Medic") then {
+            _unit setUnitTrait ["Medic", true];
+            [{  params ["_caller"];
+                _caller setUnitTrait ["Medic", false];
+            }, [_unit], 1] call CBA_fnc_waitAndExecute;
+        };
+        if ((lifeState _unit) == "INCAPACITATED" || {_unit getVariable [QGVAR(unconscious), false]}) then {
+            [_unit, _unit, false] call FUNC(revive);
+        } else {
+            _unit setDamage 0;
+            [_unit, _unit, false] call FUNC(handleHealEh);
+        };
+    };
+}] call CBA_fnc_addEventHandler;
+
+
 [QGVAR(fillPlates), {
     params ["_unit"];
     if (!alive _unit) exitWith {};
@@ -560,6 +581,13 @@ if !(GVAR(aceMedicalLoaded)) then {
     ];
 
     {[_x, "init", {_this spawn FUNC(addStructureHeal)}, false, [], true] call CBA_fnc_addClassEventHandler;} forEach ("getNumber (_x >> 'attendant') > 0" configClasses (configFile >> "CfgVehicles") apply {configName _x});
+
+    ["CAManBase", "AnimDone", {
+        params ["_unit", "_anim"];
+        if (local _unit && {!(_unit getVariable [QGVAR(unconscious), false]) && {_anim find "unconsciousface" != -1}}) then {
+            _unit setUnconscious false;
+        };
+    }] call CBA_fnc_addClassEventHandler;
 };
 
 // ace interactions

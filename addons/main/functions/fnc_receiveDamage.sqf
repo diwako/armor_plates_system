@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 // [player, 2, "head", player] call diw_armor_plates_main_fnc_receiveDamage
-params ["_unit", "_damage", "_bodyPart", "_instigator", "_ammo"];
+params ["_unit", "_damage", "_bodyPart", "_instigator", "_ammo", ["_ignoreArmor",false]];
 if (_damage <= 0 || {!alive _unit}) exitWith {};
 
 private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
@@ -36,7 +36,8 @@ _damage = _damage * GVAR(damageCoef);
 // };
 
 private _player = call CBA_fnc_currentUnit;
-private _returnedDamage = [_unit, _damage, _isTorso, _player, _ammo, _instigator] call FUNC(handleArmorDamage);
+private _returnedDamage = [_damage,false];
+if (!_ignoreArmor) then {_returnedDamage = [_unit, _damage, _isTorso, _player, _ammo, _instigator] call FUNC(handleArmorDamage)};
 _damage = _returnedDamage select 0;
 private _receivedDamage = _returnedDamage select 1;
 

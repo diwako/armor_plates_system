@@ -57,7 +57,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     "SLIDER",
     [LLSTRING(maxPlateHealth), LLSTRING(maxPlateHealth_desc)],
     _category,
-    [1, 50, 15, 0],
+    [1, 200, 15, 0],
     true,
     {
         params ["_value"];
