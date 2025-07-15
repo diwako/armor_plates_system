@@ -1517,30 +1517,35 @@
             <French>Éléments nécessaires à la réanimation</French>
             <Polish>Przedmioty wymagane do ożywiania</Polish>
             <Korean>소생에 필요한 아이템</Korean>
+            <Chinesesimp>需要物品才能复活</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_desc">
             <English>Sets what items are need to perform revives.</English>
             <French>Définit les objets nécessaires pour effectuer des réanimations.</French>
             <Polish>Określa listę przedmiotów wymaganych do ożywiania.</Polish>
             <Korean>소생에 필요한 아이템을 설정합니다.</Korean>
+            <Chinesesimp>配置复活所需物品</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_reviveItems_0">
             <English>None Required</English>
             <French>Aucun requis</French>
             <Polish>Brak wymaganych</Polish>
             <Korean>요구하지 않음</Korean>
+            <Chinesesimp>无必需物品</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems">
             <English>Required Items to Heal</English>
             <French>Objets nécessaires pour soigner</French>
             <Polish>Wymagane przedmioty do leczenia</Polish>
             <Korean>치료에 필요한 아이템</Korean>
+            <Chinesesimp>需要物品去治疗</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_healItems_desc">
             <English>Sets what items are need to perform healing.</English>
             <French>Définit les éléments nécessaires à la réalisation des soins.</French>
             <Polish>Określa listę przedmiotów wymaganych do leczenia.</Polish>
             <Korean>치료에 필요한 아이템을 설정합니다.</Korean>
+            <Chinesesimp>设置进行治疗所需的物品</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_visibleBleedoutTimer">
             <English>Show bleedout timer to</English>
@@ -1781,23 +1786,27 @@
             <French>Utiliser l'auto-injecteur sur %1 ?</French>
             <Polish>Użyć auto-iniektora na: %1?</Polish>
             <Korean>%1에게 자동주사기를 사용합니까?</Korean>
+            <Chinesesimp>在%1时使用自动注射器？</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm">
             <English>Show Auto-Injector Confirm dialog</English>
             <French>Afficher la boîte de dialogue de confirmation de l'auto-injecteur</French>
             <Polish>Pokaż potwierdzenie użycia auto-iniektora</Polish>
             <Korean>자동주사기 확인 대화 상자 표시</Korean>
+            <Chinesesimp>展示自动注射器确认对话框</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_injectorConfirm_desc">
             <English>Shows a confirmation dialog when using an auto-injector.</English>
             <French>Affiche une boîte de dialogue de confirmation lors de l'utilisation d'un auto-injecteur.</French>
             <Polish>Pokazuje okno potwierdzenia użycia auto-iniektora</Polish>
             <Korean>자동주사기를 사용할 때 확인 대화 상자를 표시합니다.</Korean>
+            <Chinesesimp>使用自动注射器时显示确认对话框</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
             <English>Compatibility</English>
             <Korean>호환성</Korean>
             <French>Compatibilité</French>
+            <Chinesesimp>兼容性</Chinesesimp>
         </Key>
     </Package>
 </Project>
