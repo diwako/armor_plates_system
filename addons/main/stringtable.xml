@@ -1805,6 +1805,7 @@
         <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
             <English>Compatibility</English>
             <Korean>호환성</Korean>
+            <French>Compatibilité</French>
             <Chinesesimp>兼容性</Chinesesimp>
         </Key>
     </Package>
