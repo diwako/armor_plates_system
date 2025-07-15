@@ -3,14 +3,14 @@
     <Package name="compat_ace_vehicle_damage">
         <Key ID="STR_diw_armor_plates_compat_ace_vehicle_damage_preventScriptedDeath">
             <English>ACE Vehicle Damage Prevent Guaranteed Death</English>
-            <Korean>ACE 차량 대미지 확정 사망 막기</Korean>
             <French>ACE - dommages aux véhicules - prévention des décès garantis</French>
+            <Korean>ACE 차량 대미지 확정 사망 막기</Korean>
             <Chinesesimp>免疫ACE载具致死伤害选项</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_vehicle_damage_preventScriptedDeath_desc">
             <English>Whether crew should die instantly from vehicle detonation. (Other APS Settings may still lead to instant death)</English>
-            <Korean>차량 폭발로 인해 승무원이 즉사할 지 여부입니다. (다른 방탄판 시스템 설정에서는 여전히 즉사할 수 있습니다)</Korean>
             <French>L'explosion du véhicule entraîne ou non la mort instantanée de l'équipage (d'autres paramètres du système de blindage permettent toujours une mort instantanée).</French>
+            <Korean>차량 폭발로 인해 승무원이 즉사할 지 여부입니다. (다른 방탄판 시스템 설정에서는 여전히 즉사할 수 있습니다)</Korean>
             <Chinesesimp>车组人员是否应该因车辆爆炸而立即死亡。（其他APS设置仍可能导致立刻死亡）</Chinesesimp>
         </Key>
     </Package>

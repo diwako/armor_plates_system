@@ -1,5 +1,5 @@
 
-class CBA_Extended_EventHandlers;
+// class CBA_Extended_EventHandlers;
 class CfgVehicles {
     // Treatment items
     class Item_Base_F;
