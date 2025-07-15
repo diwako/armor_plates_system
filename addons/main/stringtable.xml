@@ -1681,18 +1681,6 @@
             <Korean>유닛에 더 많은 데미지를 입힐수록 다리를 절고 무기를 들 때 더 많이 흔들리도록 허용합니다.</Korean>
             <Chinesesimp>当单位受到的伤害越多跛行和晃动的幅度越大</Chinesesimp>
         </Key>
-        <!-- <Key ID="STR_diw_armor_plates_main_injectorUses">
-            <English>Auto-Injector use count</English>
-            <Chinesesimp>自动注射器使用次数</Chinesesimp>
-            <Polish>Liczba użyć auto-iniektora</Polish>
-            <Korean>자동주사기 사용 횟수</Korean>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_injectorUses_desc">
-            <English>How many times an auto-injector can be used.</English>
-            <Chinesesimp>自动注射器可以使用多少次.</Chinesesimp>
-            <Polish>Ile razy gracz może skorzystać z auto-iniektora.</Polish>
-            <Korean>자동주사기를 사용할 수 있는 횟수입니다.</Korean>
-        </Key> -->
         <Key ID="STR_diw_armor_plates_main_injectorEffect">
             <English>Auto-Injector effect</English>
             <French>Effet de l'auto-injecteur</French>
@@ -1742,24 +1730,6 @@
             <Korean>'무력화 횟수 무효화' 설정에서 자동주사기가 취소하는 무력화 횟수입니다.</Korean>
             <Chinesesimp>自动注射器在"击倒次数"设置下取消倒下的次数</Chinesesimp>
         </Key>
-        <!-- <Key ID="STR_diw_armor_plates_main_injectorcomnfirm_text">
-            <English>Auto-injector has been used on %1</English>
-            <French>L'auto-injecteur a été utilisé sur %1</French>
-            <Polish>Użyto auto-iniektora na: %1</Polish>
-            <Korean>%1에게 자동주사기가 사용되었습니다.</Korean>
-        </Key> -->
-        <!-- <Key ID="STR_diw_armor_plates_main_showUseCount_hint1">
-            <English>%1 has been used</English>
-            <Polish>Użyto przedmiotu %1</Polish>
-            <Korean>%1이(가) 사용되었습니다.</Korean>
-            <Chinesesimp>%1已使用</Chinesesimp>
-        </Key>
-        <Key ID="STR_diw_armor_plates_main_showUseCount_hint2">
-            <English>%1 use(s) remaining</English>
-            <Polish>Pozostałych użyć: %1</Polish>
-            <Korean>%1개가 남았습니다.</Korean>
-            <Chinesesimp>剩余%1次使用</Chinesesimp>
-        </Key> -->
         <Key ID="STR_diw_armor_plates_main_useInjector">
             <English>Use auto-injector on %1</English>
             <French>Utiliser l'auto-injecteur sur %1</French>
@@ -1804,8 +1774,8 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
             <English>Compatibility</English>
-            <Korean>호환성</Korean>
             <French>Compatibilité</French>
+            <Korean>호환성</Korean>
             <Chinesesimp>兼容性</Chinesesimp>
         </Key>
     </Package>

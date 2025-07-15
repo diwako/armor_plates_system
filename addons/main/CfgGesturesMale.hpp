@@ -1,5 +1,5 @@
 class CfgMovesBasic {
-    class Default;
+    // class Default;
     class ManActions {
         GVAR(addPlate_base)= QGVAR(addPlate_base);
         GVAR(addPlate_2_0)= QGVAR(addPlate_2_0);
@@ -50,7 +50,7 @@ class CfgMovesBasic {
         GVAR(stopGesture) = QGVAR(stopGesture);
     };
     class Actions {
-        class Default;
+        // class Default;
         class NoActions: ManActions {
             GVAR(addPlate_base)[]= {QGVAR(addPlate_base), "Gesture"};
             GVAR(addPlate_2_0)[]= {QGVAR(addPlate_2_0), "Gesture"};
