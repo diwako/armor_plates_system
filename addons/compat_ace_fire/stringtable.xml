@@ -4,18 +4,24 @@
         <Key ID="STR_diw_armor_plates_compat_ace_fire_ignoreArmor">
             <English>ACE Fire Ignore Armor</English>
             <Korean>ACE 불 무시</Korean>
+            <Chinesesimp>ACE中的燃烧伤害将无视防弹插板</Chinesesimp>
+
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_fire_ignoreArmor_desc">
             <English>Whether fire damage should ignore armor plates.</English>
             <Korean>화상 대미지가 방탄판을 무시할 지 여부입니다.</Korean>
+            <Chinesesimp>燃烧伤害是否会无视防弹插板</Chinesesimp>
+
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_fire_nonMedBurnMult">
             <English>ACE Fire Burn Damage Multiplier</English>
             <Korean>ACE 화상 대미지 배율</Korean>
+            <Chinesesimp>ACE燃烧伤害倍数</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_compat_ace_fire_nonMedBurnMult_desc">
             <English>Fire can randomly hit multiple parts, use this to tune it. (Default: 0.2)</English>
             <Korean>불은 여러 부위에 무작위로 붙습니다. 해당 값을 조정해 불의 세기를 조절합니다. (기본값: 0.2)</Korean>
+            <Chinesesimp>火焰可以随机击中多个部位，用它来调整。（默认值：0.2）</Chinesesimp>
         </Key>
     </Package>
 </Project>
