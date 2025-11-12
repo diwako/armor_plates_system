@@ -1047,7 +1047,7 @@
         <Key ID="STR_diw_armor_plates_main_downedMessage1">
             <English>%1 just went down!</English>
             <French>Le joueur %1 vient de tomber !</French>
-            <Polish>Gracz %1 właśnie padł!</Polish>
+            <Polish>%1 właśnie padł!</Polish>
             <Korean>%1 님이 방금 무력화되었습니다!</Korean>
             <Chinese>%1 剛剛倒地!</Chinese>
             <Chinesesimp>%1 刚刚倒地!</Chinesesimp>
@@ -1055,7 +1055,7 @@
         <Key ID="STR_diw_armor_plates_main_downedMessage2">
             <English>%1 just hit the dirt!</English>
             <French>Le joueur %1 est allongé sur le sol !</French>
-            <Polish>Gracz %1 leży na ziemi!</Polish>
+            <Polish>%1 padł na ziemię!</Polish>
             <Korean>%1 님이 방금 땅에 누웠습니다!</Korean>
             <Chinese>%1 剛剛暈倒在地!</Chinese>
             <Chinesesimp>%1 刚刚晕倒在地!</Chinesesimp>
@@ -1063,7 +1063,7 @@
         <Key ID="STR_diw_armor_plates_main_downedMessage3">
             <English>Heads up, %1 just keeled over!</English>
             <French>Attention, %1 vient de s'effondrer !</French>
-            <Polish>Uwaga, gracz %1 jest nieprzytomny!</Polish>
+            <Polish>Uwaga, %1 jest nieprzytomny!</Polish>
             <Korean>%1 님이 방금 쓰러졌습니다!</Korean>
             <Chinese>注意,%1 剛剛倒地!</Chinese>
             <Chinesesimp>注意,%1 刚刚倒地!</Chinesesimp>
@@ -1079,7 +1079,7 @@
         <Key ID="STR_diw_armor_plates_main_reviveUnit">
             <English>Reviving %1, keep holding the button!</English>
             <French>Réanimation de %1, maintenez le bouton enfoncé !</French>
-            <Polish>Leczysz gracza %1, trzymaj ten guzik!</Polish>
+            <Polish>%1 jest leczony, trzymaj ten guzik!</Polish>
             <Korean>%1 님을 소생하는 중입니다. 버튼을 계속 누르고 있으십시오!</Korean>
             <Chinese>復活 %1中,繼續按住按鈕!</Chinese>
             <Chinesesimp>复活 %1中,继续按住按钮!</Chinesesimp>
@@ -1777,6 +1777,7 @@
             <French>Compatibilité</French>
             <Korean>호환성</Korean>
             <Chinesesimp>兼容性</Chinesesimp>
+            <Polish>Kompatybilność</Polish>
         </Key>
     </Package>
 </Project>
