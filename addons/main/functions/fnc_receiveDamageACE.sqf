@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_unit", "_damage", "_actualDamage", "_instigator", "_ammo", "_isTorso", "_isHeadshot"];
+params ["_unit", "_damage", "_actualDamage", "_instigator", "_ammo", "_isTorso", ["_isHeadshot",false,[false]]];
 if (_damage <= 0 || {!alive _unit}) exitWith {0};
 
 private _initialActualDamage = _actualDamage;
