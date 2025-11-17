@@ -36,8 +36,10 @@ if (GVAR(disallowFriendfire) &&
         _actualDamage = _damage * (_hitPointArmor + _bodyArmor) / (_hitPointArmor / _bodyArmor) * ([0.5, 0.96] select _isTorso);
     };
 
+    private _isHead = _bodyPart isEqualTo "Head";
+
     // _shooter and _ammo exist in the scope above
-    private _damageLeft = [_unit, _damage, _actualDamage, _parentShooter, _ammo, _isTorso] call FUNC(receiveDamageACE);
+    private _damageLeft = [_unit, _damage, _actualDamage, _parentShooter, _ammo, _isTorso, _isHead] call FUNC(receiveDamageACE);
     if (_damageLeft isEqualTo 0) then {
         _copy deleteAt _forEachIndex;
     } else {
