@@ -897,6 +897,14 @@
             <Chinese>75%音量</Chinese>
             <Chinesesimp>75%音量</Chinesesimp>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_audioFeedback_5">
+            <English>50% Volume</English>
+            <French>50% du volume</French>
+            <Polish>50% głośności</Polish>
+            <Korean>음량 50%</Korean>
+            <Chinese>50%音量</Chinese>
+            <Chinesesimp>50%音量</Chinesesimp>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_showDownedSkull">
             <English>Show skull when downed</English>
             <French>Montrer le crâne en cas d'inconscience</French>
