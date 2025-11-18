@@ -809,6 +809,24 @@
             <Chinese>顯示損傷標記和侵入方向</Chinese>
             <Chinesesimp>显示损伤标记和侵入方向</Chinesesimp>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_damageMarkerScale">
+            <English>Damage Marker Scale</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_damageMarkerScale_desc">
+            <English>Controls size of the damage marker if shown.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarker">
+            <English>Suppressed Marker Range</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarker_desc">
+            <English>Controls distance in meters where near misses will trigger a marker.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarkerLimit">
+            <English>Suppressed Marker Limit</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarkerLimit_desc">
+            <English>Server limit for suppressed marker range.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback">
             <English>Downed feedback</English>
             <French>Retour d'information</French>

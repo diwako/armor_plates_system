@@ -19,14 +19,22 @@ _ctrl ctrlCommit 0;
 
 if !(_selfOrUnkownDamage) then {
     private _camDirVec = (positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir;
-    private _relDir = [_instigator, _unit] call BIS_fnc_dirTo;
+    // randomize _relDir to prevent exact indication with lower scale
+    private _relDir = (([_instigator, _unit] call BIS_fnc_dirTo) + ((random 3) - 3));
+    if (_relDir > 360) then {_relDir = _relDir - 360};
     _ctrl ctrlSetAngle [180 + _relDir - _camDirVec, 0.5, 0.5, true];
 };
-if (GVAR(aceMedicalLoaded)) then {
-    _ctrl ctrlSetFade 0;
+if (_damage > 0) then {
+    if (GVAR(aceMedicalLoaded)) then {
+        _ctrl ctrlSetFade 0;
+    } else {
+        private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
+        _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
+    };
 } else {
-    private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
-    _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
+    _ctrl ctrlSetFade 0.25;
+    _ctrl ctrlSetTextColor [0, 1, 1, 0.75]; // turns black, might want a different .paa instead
+    //_ctrl ctrlSetText QPATHTOF(ui\suppressionMarker_ca.paa);
 };
 _ctrl ctrlCommit 0.05;
 
