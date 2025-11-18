@@ -14,6 +14,7 @@ _ctrl ctrlSetPosition [0, 0, 1, 1];
 _ctrl ctrlSetTextColor [1, 1, 1, 0.75];
 _ctrl ctrlSetText ([QPATHTOF(ui\damageMarker_ca.paa), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
 _ctrl ctrlSetFade 1;
+_ctrl ctrlSetScale GVAR(damageMarkerScale);
 _ctrl ctrlCommit 0;
 
 if !(_selfOrUnkownDamage) then {
