@@ -7,6 +7,12 @@ private _player = call CBA_fnc_currentUnit;
 private _returnedDamage = [_unit, _actualDamage, [true, _isTorso] select GVAR(protectOnlyTorso), _player, _ammo, _instigator] call FUNC(handleArmorDamage);
 _actualDamage = _returnedDamage select 0;
 
+if (_player isEqualTo _unit) then {
+    if (!(_returnedDamage select 1) && {GVAR(showDamageMarker)}) then {
+        [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
+    };
+};
+
 if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
     if (_isHeadshot) then {
         GVAR(lastHPDamageSound) = diag_frameNo;

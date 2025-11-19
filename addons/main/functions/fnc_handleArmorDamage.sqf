@@ -92,6 +92,7 @@ switch (GVAR(armorHandlingMode)) do {
             if (GVAR(plateToughness) && {player isEqualTo _unit}) then {
                 [cba_missionTime] spawn FUNC(toughLoop);
             };
+            _receivedDamage = true;
         };
     };
     default {

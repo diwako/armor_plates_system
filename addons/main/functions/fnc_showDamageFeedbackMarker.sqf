@@ -11,17 +11,17 @@ private _selfOrUnkownDamage = isNull _instigator || {_unit isEqualTo _instigator
 private _ctrl = _display ctrlCreate ["RscPictureKeepAspect", -1];
 _ctrl ctrlSetBackgroundColor [0, 0, 0, 1];
 _ctrl ctrlSetPosition [0, 0, 1, 1];
-_ctrl ctrlSetTextColor ([[1, 1, 1, 0.75],[0.6, 0.6, 0.6, 0.5]] select (_damage isEqualTo 0));
+_ctrl ctrlSetTextColor ([([[1, 0, 0, 0.75],GVAR(plateColor)] select (_damage isEqualTo 0)),[0.6, 0.6, 0.6, 0.25]] select (_damage isEqualTo -1));
 _ctrl ctrlSetText ([(format [QPATHTOF(ui\damageMarker_%1_ca.paa),GVAR(damageMarkerScale)]), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
 _ctrl ctrlSetFade 1;
 _ctrl ctrlCommit 0;
 
+private _inAccuracy = ((random 6) - 3); // needed to pass to waitUntilAndExecute
 if !(_selfOrUnkownDamage) then {
-    private _camDirVec = (positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir;
     // randomize _relDir to prevent exact indication with lower scale
-    private _relDir = (([_instigator, _unit] call BIS_fnc_dirTo) + ((random 3) - 3));
-    if (_relDir > 360) then {_relDir = _relDir - 360};
-    _ctrl ctrlSetAngle [180 + _relDir - _camDirVec, 0.5, 0.5, true];
+    private _relDir = ((_unit getRelDir _instigator) + _inAccuracy);
+    if (_relDir >= 360) then {_relDir = _relDir - 360};
+    _ctrl ctrlSetAngle [_relDir, 0.5, 0.5, true];
 };
 if (GVAR(aceMedicalLoaded)) then {
     _ctrl ctrlSetFade 0;
@@ -36,7 +36,9 @@ _feedback pushBack _ctrl;
 uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
 
 [{
-    (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
+    private _relDir = (((_this select 1) getRelDir (_this select 2)) + (_this select 3));
+    if (_relDir >= 360) then {_relDir = _relDir - 360};
+    (_this select 0) ctrlSetAngle [_relDir, 0.5, 0.5, true];
     ctrlCommitted (_this select 0);
 },{
     params ["_ctrl"];
@@ -44,7 +46,9 @@ uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
     _ctrl ctrlSetPosition [-0.2, -0.2, 1.4, 1.4];
     _ctrl ctrlCommit 5;
     [{
-        (_this select 0) ctrlSetAngle [180 + ([_this select 1, _this select 2] call BIS_fnc_dirTo) - ((positionCameraToWorld [0,0,0] vectorFromTo (positionCameraToWorld [0,0,1])) call CBA_fnc_vectDir), 0.5, 0.5, true];
+        private _relDir = (((_this select 1) getRelDir (_this select 2)) + (_this select 3));
+        if (_relDir >= 360) then {_relDir = _relDir - 360};
+        (_this select 0) ctrlSetAngle [_relDir, 0.5, 0.5, true];
         ctrlCommitted (_this select 0);
     },{
         params ["_ctrl"];
@@ -53,4 +57,4 @@ uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
         uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
         ctrlDelete _ctrl;
     }, _this] call CBA_fnc_waitUntilAndExecute;
-}, [_ctrl, _instigator, _unit]] call CBA_fnc_waitUntilAndExecute;
+}, [_ctrl, _unit, _instigator, _inAccuracy]] call CBA_fnc_waitUntilAndExecute;
