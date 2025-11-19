@@ -821,11 +821,17 @@
         <Key ID="STR_diw_armor_plates_main_damageMarkerScale_2">
             <English>50%</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_showSuppressedMarker">
+            <English>Show Suppressed markers</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showSuppressedMarker_desc">
+            <English>Shows suppressed markers and direction of incoming enemy fire.</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_suppressedMarker">
             <English>Suppressed Marker Range</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_suppressedMarker_desc">
-            <English>Controls distance in meters where near misses will trigger a marker.</English>
+            <English>Controls distance in meters where nearby enemy fire will trigger a marker.</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_suppressedMarkerLimit">
             <English>Suppressed Marker Limit</English>
