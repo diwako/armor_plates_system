@@ -48,7 +48,7 @@ GVAR(ammoPenCache) = createHashMap;
 if ((GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) > 0) then {
     GVAR(suppressedInit) = ["CAManBase", "Suppressed", { params ["_unit", "_distance", "_shooter"];
         if (_unit isNotEqualTo (call CBA_fnc_currentUnit)) exitWith {};
-        if (_distance > ((GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) + 1)) exitWith {};
+        if (_distance > ( (GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) + 1) ) exitWith {};
         [_unit,_shooter,0] call diw_armor_plates_main_fnc_showDamageFeedbackMarker;
     }, true, [], true] call CBA_fnc_addClassEventHandler;
 };

@@ -256,10 +256,10 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [
     QGVAR(damageMarkerScale),
-    "SLIDER",
+    "LIST",
     [LLSTRING(damageMarkerScale), LLSTRING(damageMarkerScale_desc)],
     _category,
-    [0.1, 2, 1, 2],
+    [[0, 1, 2, 3, 4, 5, 6], [LLSTRING(downedFeedback_0), LLSTRING(damageMarkerScale_1), LLSTRING(damageMarkerScale_2), LLSTRING(audioFeedback_4), LLSTRING(audioFeedback_3), LLSTRING(audioFeedback_2), LLSTRING(audioFeedback_1)], 4],
     false
 ] call CBA_fnc_addSetting;
 
@@ -275,7 +275,7 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
         if (!isNil QGVAR(suppressedInit) || {(GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) isEqualTo 0}) exitWith {};
         GVAR(suppressedInit) = ["CAManBase", "Suppressed", { params ["_unit", "_distance", "_shooter"];
             if (_unit isNotEqualTo (call CBA_fnc_currentUnit)) exitWith {};
-            if (_distance > ((GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) + 1)) exitWith {};
+            if (_distance > ( (GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) + 1) ) exitWith {};
             [_unit,_shooter,0] call diw_armor_plates_main_fnc_showDamageFeedbackMarker;
         }, true, [], true] call CBA_fnc_addClassEventHandler;
     },

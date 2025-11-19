@@ -11,10 +11,9 @@ private _selfOrUnkownDamage = isNull _instigator || {_unit isEqualTo _instigator
 private _ctrl = _display ctrlCreate ["RscPictureKeepAspect", -1];
 _ctrl ctrlSetBackgroundColor [0, 0, 0, 1];
 _ctrl ctrlSetPosition [0, 0, 1, 1];
-_ctrl ctrlSetTextColor [1, 1, 1, 0.75];
-_ctrl ctrlSetText ([QPATHTOF(ui\damageMarker_ca.paa), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
+_ctrl ctrlSetTextColor ([[1, 1, 1, 0.75],[0.6, 0.6, 0.6, 0.5]] select (_damage isEqualTo 0));
+_ctrl ctrlSetText ([(format [QPATHTOF(ui\damageMarker_%1_ca.paa),GVAR(damageMarkerScale)]), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
 _ctrl ctrlSetFade 1;
-_ctrl ctrlSetScale GVAR(damageMarkerScale);
 _ctrl ctrlCommit 0;
 
 if !(_selfOrUnkownDamage) then {
@@ -24,17 +23,11 @@ if !(_selfOrUnkownDamage) then {
     if (_relDir > 360) then {_relDir = _relDir - 360};
     _ctrl ctrlSetAngle [180 + _relDir - _camDirVec, 0.5, 0.5, true];
 };
-if (_damage > 0) then {
-    if (GVAR(aceMedicalLoaded)) then {
-        _ctrl ctrlSetFade 0;
-    } else {
-        private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
-        _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
-    };
+if (GVAR(aceMedicalLoaded)) then {
+    _ctrl ctrlSetFade 0;
 } else {
-    _ctrl ctrlSetFade 0.25;
-    _ctrl ctrlSetTextColor [0, 1, 1, 0.75]; // turns black, might want a different .paa instead
-    //_ctrl ctrlSetText QPATHTOF(ui\suppressionMarker_ca.paa);
+    private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
+    _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
 };
 _ctrl ctrlCommit 0.05;
 

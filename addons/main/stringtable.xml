@@ -815,6 +815,12 @@
         <Key ID="STR_diw_armor_plates_main_damageMarkerScale_desc">
             <English>Controls size of the damage marker if shown.</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_damageMarkerScale_1">
+            <English>25%</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_damageMarkerScale_2">
+            <English>50%</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_suppressedMarker">
             <English>Suppressed Marker Range</English>
         </Key>
