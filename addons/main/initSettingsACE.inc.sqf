@@ -264,6 +264,15 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(damageColor),
+    "COLOR",
+    LLSTRING(damageColor),
+    _category,
+    [1.0, 0.0, 0.0, 0.75],
+    false
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(showSuppressedMarker),
     "CHECKBOX",
     [LLSTRING(showSuppressedMarker), LLSTRING(showSuppressedMarker_desc)],
@@ -288,6 +297,15 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
     _category,
     [0, 10, 4, 1],
     true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(suppressedColor),
+    "COLOR",
+    LLSTRING(suppressedColor),
+    _category,
+    [0.6, 0.6, 0.6, 0.25],
+    false
 ] call CBA_fnc_addSetting;
 
 [

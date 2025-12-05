@@ -11,7 +11,7 @@ private _selfOrUnkownDamage = isNull _instigator || {_unit isEqualTo _instigator
 private _ctrl = _display ctrlCreate ["RscPictureKeepAspect", -1];
 _ctrl ctrlSetBackgroundColor [0, 0, 0, 1];
 _ctrl ctrlSetPosition [0, 0, 1, 1];
-_ctrl ctrlSetTextColor ([([[1, 0, 0, 0.75],GVAR(plateColor)] select (_damage isEqualTo 0)),[0.6, 0.6, 0.6, 0.25]] select (_damage isEqualTo -1));
+_ctrl ctrlSetTextColor ([([GVAR(damageColor),GVAR(plateColor)] select (_damage isEqualTo 0)),GVAR(suppressedColor)] select (_damage isEqualTo -1));
 _ctrl ctrlSetText ([(format [QPATHTOF(ui\damageMarker_%1_ca.paa),GVAR(damageMarkerScale)]), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
 _ctrl ctrlSetFade 1;
 _ctrl ctrlCommit 0;

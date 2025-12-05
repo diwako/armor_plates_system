@@ -821,6 +821,9 @@
         <Key ID="STR_diw_armor_plates_main_damageMarkerScale_2">
             <English>50%</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_damageColor">
+            <English>Damage Marker UI color</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_showSuppressedMarker">
             <English>Show Suppressed markers</English>
         </Key>
@@ -838,6 +841,9 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_suppressedMarkerLimit_desc">
             <English>Server limit for suppressed marker range.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedColor">
+            <English>Suppressed Marker UI color</English>
         </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback">
             <English>Downed feedback</English>
