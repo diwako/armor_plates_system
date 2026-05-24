@@ -1,9 +1,16 @@
 #include "script_component.hpp"
 ADDON = false;
 
-GVAR(aceMedicalLoaded) = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
-if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!GVAR(aceMedicalLoaded)}) exitWith {
+private _aceMedicalEngineLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine");
+GVAR(piRLoaded) = isClass(configFile >> "CfgPatches" >> "PiR") || {isClass(configFile >> "CfgPatches" >> "pir_main")};
+GVAR(aceMedicalLoaded) = _aceMedicalEngineLoaded || {GVAR(piRLoaded)};
+
+if (isClass(configFile >> "CfgPatches" >> "ace_medical") && {!_aceMedicalEngineLoaded} && {!GVAR(piRLoaded)}) exitWith {
     INFO("PreInit: Disabled --> old ACE medical loaded");
+};
+
+if (GVAR(piRLoaded)) then {
+    INFO("PreInit: PiR detected, using external medical mode");
 };
 
 #include "XEH_PREP.hpp"

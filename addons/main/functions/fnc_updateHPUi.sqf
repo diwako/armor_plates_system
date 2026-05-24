@@ -2,6 +2,7 @@
 params ["_player"];
 
 private _hpBar = uiNamespace getVariable [QGVAR(hpControl), controlNull];
+if (isNull _hpBar) exitWith {};
 private _pos = ctrlPosition _hpBar;
 private _hide = false;
 if (GVAR(aceMedicalLoaded)) then {

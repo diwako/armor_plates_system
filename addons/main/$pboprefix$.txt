@@ -1,0 +1,7 @@
+//<'diw_armor_plates_main.pbo' properties via Mikero's dos tools, dll version 10.13>
+prefix=z\diw_armor_plates\addons\main;
+hemtt=1.16.2;
+version=0.11.2.0;
+git=5c9aa07e3756402e977a4da0febb1ac022e05a0b;
+//PboType=Arma Addon;
+//</properties>

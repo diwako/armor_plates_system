@@ -1,6 +1,7 @@
 #include "script_component.hpp"
 params ["_unit", "_allDamages", "_typeOfDamage"];
 private _copy = +_allDamages;
+private _protectOnlyTorso = [GVAR(protectOnlyTorsoAI), GVAR(protectOnlyTorso)] select (isPlayer _unit);
 
 private _parentShooter = _shooter;
 if (GVAR(disallowFriendfire) &&
@@ -18,7 +19,7 @@ if (GVAR(disallowFriendfire) &&
         continue;
     };
     private _isTorso = _bodyPart isEqualTo "Body";
-    if (GVAR(protectOnlyTorso) && {!_isTorso}) then {
+    if (_protectOnlyTorso && {!_isTorso}) then {
         continue;
     };
 

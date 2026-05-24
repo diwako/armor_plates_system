@@ -2,9 +2,10 @@
 params ["_unit", "_damage", "_isTorso", "_player", "_ammo", "_instigator"];
 
 private _receivedDamage = false;
+private _protectOnlyTorso = [GVAR(protectOnlyTorsoAI), GVAR(protectOnlyTorso)] select (isPlayer _unit);
 private _vest = vestContainer _unit;
 private _plates = _vest getVariable [QGVAR(plates), []];
-if (_plates isEqualTo [] || {!_isTorso && {GVAR(protectOnlyTorso)}}) exitWith {[_damage, _receivedDamage]};
+if (_plates isEqualTo [] || {!_isTorso && {_protectOnlyTorso}}) exitWith {[_damage, _receivedDamage]};
 
 switch (GVAR(armorHandlingMode)) do {
     case "arcade": {
@@ -28,7 +29,10 @@ switch (GVAR(armorHandlingMode)) do {
                 };
             };
         };
-        _unit setVariable [QGVAR(plates), _plates];
+        if (!isNull _vest) then {
+            _vest setVariable [QGVAR(plates), _plates, true];
+        };
+        _unit setVariable [QGVAR(plates), _plates, true];
         if (_player isEqualTo _unit) then {
             [_unit] call FUNC(updatePlateUi);
             if (GVAR(showDamageMarker)) then {
@@ -76,7 +80,10 @@ switch (GVAR(armorHandlingMode)) do {
                 };
             };
         };
-        _unit setVariable [QGVAR(plates), _plates];
+        if (!isNull _vest) then {
+            _vest setVariable [QGVAR(plates), _plates, true];
+        };
+        _unit setVariable [QGVAR(plates), _plates, true];
         if (_player isEqualTo _unit) then {
             [_unit] call FUNC(updatePlateUi);
             if (GVAR(showDamageMarker)) then {

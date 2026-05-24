@@ -22,6 +22,10 @@ if (_plates isNotEqualTo []) then {
     _vest setVariable ["ace_movement_vLoad", _vLoad + PLATE_MASS, true];
 };
 _player removeItem QGVAR(plate);
-_vest setVariable [QGVAR(plates), _plates];
+_vest setVariable [QGVAR(plates), _plates, true];
+_player setVariable [QGVAR(plates), _plates, true];
 [_player] call FUNC(updatePlateUi);
+
+if (_player isEqualTo (call CBA_fnc_currentUnit)) then {
+};
 

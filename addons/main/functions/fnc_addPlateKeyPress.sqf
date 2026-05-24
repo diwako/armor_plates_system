@@ -1,8 +1,12 @@
 #include "script_component.hpp"
 params ["_player"];
 
+GVAR(addingPlate) = true;
+
 private _ctrl = [LLSTRING(addPlateToVest), GVAR(timeToAddPlate)] call FUNC(createProgressBar);
-if (isNull _ctrl) exitWith {};
+if (isNull _ctrl) exitWith {
+    GVAR(addingPlate) = false;
+};
 if (isNil "ace_common_fnc_statusEffect_set") then {
     _player setVariable [QGVAR(wasSprintingAllowed), isSprintAllowed _player];
     _player allowSprint false;
@@ -37,12 +41,18 @@ if (isNil "ace_common_fnc_statusEffect_set") then {
         (stance _player) == "PRONE" || {
         !([_player] call FUNC(canPressKey)) || {
         !([_player] call FUNC(canAddPlate))
-        }}}) exitWith {};
+		}}}) exitWith {
+		GVAR(addingPlate) = false;
+	};
 
     [_player] call FUNC(addPlate);
 
-    // add another plate
-    if ([_player] call FUNC(canAddPlate)) then {
-        [_player] call FUNC(addPlateKeyPress);
-    };
+	if (!GVAR(addPlateKeyUp) && {
+		(stance _player) != "PRONE" && {
+		[_player] call FUNC(canPressKey) && {
+		[_player] call FUNC(canAddPlate)}}}) exitWith {
+		[_player] call FUNC(addPlateKeyPress);
+	};
+
+	GVAR(addingPlate) = false;
 }, [_player, _ctrl]] call CBA_fnc_waitUntilAndExecute;

@@ -7,5 +7,9 @@ for "_i" from 1 to _num do {
     _plates pushBack GVAR(maxPlateHealth);
 };
 private _vest = vestContainer _unit;
-_vest setVariable [QGVAR(plates), _plates];
+_vest setVariable [QGVAR(plates), _plates, true];
+_unit setVariable [QGVAR(plates), _plates, true];
 _vest setVariable ["ace_movement_vLoad", (_vest getVariable ["ace_movement_vLoad", 0]) + (PLATE_MASS * _num), true];
+
+if (_unit isEqualTo (call CBA_fnc_currentUnit)) then {
+};

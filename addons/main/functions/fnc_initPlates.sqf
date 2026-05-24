@@ -65,7 +65,7 @@ if (_count isNotEqualTo GVAR(numWearablePlates)) then {
 };
 
 private _hpBar = uiNamespace getVariable [QGVAR(hpControl), controlNull];
-if (isNull _hpBar) then {
+if (!GVAR(piRLoaded) && {isNull _hpBar}) then {
     private _ctrl = _staminaDisplay ctrlCreate ["RscText", -1, _ctrlGroup];
     _ctrl ctrlSetPosition [0, GVAR(fullHeight) / 2, GVAR(fullWidth), (GVAR(fullHeight) / 2) * HEIGHTMOD_HPBARS];
     _ctrl ctrlSetTextColor [1, 1, 1, 0];
@@ -76,4 +76,6 @@ if (isNull _hpBar) then {
 };
 
 [player] call FUNC(updatePlateUi);
-[player] call FUNC(updateHPUi);
+if !(GVAR(piRLoaded)) then {
+    [player] call FUNC(updateHPUi);
+};

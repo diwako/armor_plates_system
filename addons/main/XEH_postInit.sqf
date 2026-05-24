@@ -47,13 +47,19 @@ GVAR(ammoPenCache) = createHashMap;
 
 [QGVAR(plateSync), {
     params ["_unit", "_plateHp"];
-    (vestContainer _unit) setVariable [QGVAR(plates),_plateHp];
+    if (GVAR(piRLoaded) && {local _unit} && {_unit isEqualTo (call CBA_fnc_currentUnit)}) exitWith {
+    };
+    (vestContainer _unit) setVariable [QGVAR(plates), _plateHp, true];
+    _unit setVariable [QGVAR(plates), _plateHp, true];
 }] call CBA_fnc_addEventHandlerArgs;
 
 if (GVAR(aceMedicalLoaded)) then {
     // ace medical
     ["CAManBase", "InitPost", {
         params ["_unit"];
+        if (GVAR(piRLoaded)) exitWith {
+            [_unit] call FUNC(initAIUnit);
+        };
         _unit setVariable ["ace_medical_engine_$#structural", [0, 0]];
         private _id = _unit addEventHandler ["HandleDamage", {
             _this call FUNC(handleDamageEhACE);
@@ -246,6 +252,8 @@ if (GVAR(aceMedicalLoaded)) then {
 
 [QGVAR(healUnit), {
     params ["_unit"];
+    if (GVAR(piRLoaded)) exitWith {
+    };
     if (GVAR(aceMedicalLoaded)) then {
         ["ace_medical_treatment_fullHealLocal", [_unit]] call CBA_fnc_localEvent;
     } else {
@@ -272,6 +280,304 @@ if (GVAR(aceMedicalLoaded)) then {
     if (isPlayer _unit) then { _unit call FUNC(updatePlateUi); };
 }] call CBA_fnc_addEventHandler;
 
+GVAR(syncPlayerPlateState) = {
+    params [["_unit", player, [objNull]], ["_reason", "unknown", [""]]];
+    if (!hasInterface || {isNull _unit} || {_unit isNotEqualTo player}) exitWith {false};
+
+    GVAR(uniqueItemsCache) = nil;
+    GVAR(hasPlateInInvetory) = QGVAR(plate) in (_unit call FUNC(uniqueItems));
+
+    private _vest = vestContainer _unit;
+    if (isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {
+        _unit setVariable [QGVAR(plates), [], true];
+        false
+    };
+
+    private _vestPlates = +(_vest getVariable [QGVAR(plates), []]);
+    private _unitPlates = +(_unit getVariable [QGVAR(plates), []]);
+    private _loadoutSyncReason = _reason in [
+        "pirLateInit",
+        "playerEvent_unit",
+        "playerEvent_loadout",
+        "respawn_immediate",
+        "respawn_delay",
+        "postInit_timeGt1",
+        "cba_events_loadoutEvent"
+    ];
+    private _bridge = _unit getVariable [QGVAR(lastDamageBridge), []];
+    private _recentBlockedBridge = false;
+
+    if (_bridge isNotEqualTo []) then {
+        _bridge params [
+            ["_bridgeFrame", -1, [0]],
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ["_bridgeTick", -1, [0]],
+            ["_blockedByIntactPlates", false, [false]],
+            ["_platesRemainAfterHit", false, [false]]
+        ];
+        _recentBlockedBridge = (
+            (_bridgeFrame >= 0 && {_bridgeFrame >= (diag_frameNo - 8)}) ||
+            {_bridgeTick >= 0 && {(diag_tickTime - _bridgeTick) <= 0.35}}
+        ) && {
+            _blockedByIntactPlates || {_platesRemainAfterHit}
+        };
+    };
+
+    if (
+        GVAR(piRLoaded) &&
+        {_loadoutSyncReason} &&
+        {_unitPlates isNotEqualTo []} &&
+        {_vestPlates isEqualTo []} &&
+        {_recentBlockedBridge}
+    ) then {
+        _vest setVariable [QGVAR(plates), _unitPlates, true];
+        _vestPlates = +_unitPlates;
+    };
+
+    if (
+        GVAR(piRLoaded) &&
+        {_loadoutSyncReason} &&
+        {_vestPlates isNotEqualTo []} &&
+        {_unitPlates isEqualTo []}
+    ) then {
+        private _unexpectedRestore = +_vestPlates;
+        _vest setVariable [QGVAR(plates), [], true];
+        _unit setVariable [QGVAR(plates), [], true];
+        _vestPlates = [];
+        _unitPlates = [];
+    };
+
+    if (_unitPlates isNotEqualTo _vestPlates) then {
+        _unit setVariable [QGVAR(plates), _vestPlates, true];
+        _unitPlates = +_vestPlates;
+    };
+
+    [_unit] call FUNC(updatePlateUi);
+    _vestPlates isNotEqualTo []
+};
+
+GVAR(piRShouldLimitFatalDamage) = {
+    !(missionNamespace getVariable ["PiR_instantdeathplayer_on", false])
+};
+
+if (GVAR(piRLoaded)) then {
+
+    [
+        {!isNil "PiRinstantdeath" && {!isNil "PiRnoinstantdeath"}},
+        {
+            PiRinstantdeath = {
+                params ["_unit"];
+                [_unit, true] call FUNC(installPiRHandleDamage);
+                [_unit] call FUNC(installPiRHitPart);
+            };
+
+            PiRnoinstantdeath = {
+                params ["_unit"];
+                [_unit, false] call FUNC(installPiRHandleDamage);
+                [_unit] call FUNC(installPiRHitPart);
+            };
+
+        },
+        [],
+        10
+    ] call CBA_fnc_waitUntilAndExecute;
+
+    [
+        {!isNil "PiRredirect" && {!isNil "PiRredirect0"}},
+        {
+            if (isNil QGVAR(originalPiRredirect)) then {
+                GVAR(originalPiRredirect) = PiRredirect;
+            };
+
+            if (isNil QGVAR(originalPiRredirect0)) then {
+                GVAR(originalPiRredirect0) = PiRredirect0;
+            };
+
+            private _fnc_shouldSkipPiRRedirect = {
+                params ["_event", "_unit"];
+
+                if (isNull _unit) exitWith {false};
+
+                private _isPlayerLike = isPlayer _unit || {!isNull (remoteControlled _unit)};
+                private _protectOnlyTorso = [GVAR(protectOnlyTorsoAI), GVAR(protectOnlyTorso)] select (isPlayer _unit);
+                private _eff = [_unit] call FUNC(piREffectivePlateSettings);
+                _eff params ["_blk", "_allowPiRPlateReact"];
+                private _vest = vestContainer _unit;
+                private _hasPlateState = (!isNull _vest && {(_vest getVariable [QGVAR(plates), []]) isNotEqualTo []}) || {(+(_unit getVariable [QGVAR(plates), []])) isNotEqualTo []};
+                private _isDirectHit = _event param [10, false, [false]];
+                private _selectionText = toLower str (_event param [5, [], [[]]]);
+                private _matchesTorsoProtection = !_protectOnlyTorso || {
+                    ("spine" in _selectionText) || {("pelvis" in _selectionText)} || {("body" in _selectionText)} || {("neck" in _selectionText)}
+                };
+
+                if (!_isPlayerLike && {!_blk}) exitWith {false};
+
+                if (
+                    _isPlayerLike &&
+                    {_isDirectHit} &&
+                    {_hasPlateState} &&
+                    {_matchesTorsoProtection} &&
+                    {_blk} &&
+                    {!_allowPiRPlateReact}
+                ) exitWith {
+                    true
+                };
+
+                private _bridge = _unit getVariable [QGVAR(lastDamageBridge), []];
+                if (_bridge isEqualTo []) exitWith {
+                    _event call FUNC(shouldSuppressPiRReaction)
+                };
+
+                _bridge params [
+                    ["_bridgeFrame", -1, [0]],
+                    ["_bridgeHitPoint", "", [""]],
+                    ["_ratio", 1, [0]],
+                    ["_bridgeProjectile", "", [""]],
+                    ["_bridgeSelection", "", [""]],
+                    ["_bridgeOldDamage", 0, [0]],
+                    ["_damageAfterPlates", 1, [0]],
+                    ["_bridgeTick", -1, [0]],
+                    ["_blockedByIntactPlates", false, [false]],
+                    ["_platesRemainAfterHit", false, [false]]
+                ];
+
+                private _bridgeIsRecent = (_bridgeFrame >= 0 && {_bridgeFrame >= (diag_frameNo - 8)}) || {_bridgeTick >= 0 && {(diag_tickTime - _bridgeTick) <= 0.35}};
+                if !(_bridgeIsRecent) exitWith {
+                    _event call FUNC(shouldSuppressPiRReaction)
+                };
+
+                private _fullyBlockedHit = _ratio <= 0.05 && {_damageAfterPlates <= 0.01};
+                if !(_fullyBlockedHit) exitWith {false};
+
+                if (
+                    _blk &&
+                    {_platesRemainAfterHit} &&
+                    {!_allowPiRPlateReact}
+                ) exitWith {
+                    true
+                };
+
+                _event call FUNC(shouldSuppressPiRReaction)
+            };
+
+            private _fnc_dispatchPiRReaction = {
+                params ["_event", "_unit"];
+
+                if (isNull _unit) exitWith {};
+
+                private _selection = if (_event param [10, false, [false]]) then {
+                    +(_event param [5, [], [[]]])
+                } else {
+                    []
+                };
+                private _shooter = _event param [1, objNull, [objNull]];
+
+                [_unit, _selection, _shooter, false] call FUNC(dispatchPiRReaction);
+            };
+
+            private _fnc_runPiRRedirect = {
+                params ["_event", "_unit", "_originalFunction"];
+
+                private _isPlayerLike = isPlayer _unit || {!isNull (remoteControlled _unit)};
+                if (!isNull _unit && {!_isPlayerLike} && {!GVAR(applyPiRPlateRulesToAI)}) exitWith {
+                    _event call _originalFunction;
+                };
+
+                private _eff = [_unit] call FUNC(piREffectivePlateSettings);
+                _eff params ["_blk", "_allowPiRPlateReact"];
+
+                private _vest = vestContainer _unit;
+                private _vestPlates = if (isNull _vest) then {[]} else {+(_vest getVariable [QGVAR(plates), []])};
+                private _unitPlates = +(_unit getVariable [QGVAR(plates), []]);
+                private _hasPlateState = (_vestPlates isNotEqualTo []) || {_unitPlates isNotEqualTo []};
+                private _isDirectHit = _event param [10, false, [false]];
+
+                if (
+                    _isPlayerLike &&
+                    {_isDirectHit} &&
+                    {_blk} &&
+                    {!_allowPiRPlateReact}
+                ) exitWith {
+                    [{
+                        params ["_event", "_unit", "_originalFunction", "_fnc_dispatchPiRReaction"];
+                        if (_event call FUNC(shouldSuppressPiRReaction)) exitWith {
+                        };
+                        [_event, _unit] call _fnc_dispatchPiRReaction;
+                    }, [_event, _unit, _originalFunction, _fnc_dispatchPiRReaction]] call CBA_fnc_execNextFrame;
+                };
+
+                if (_hasPlateState && {_isDirectHit}) exitWith {
+                    [{
+                        params ["_event", "_unit", "_originalFunction", "_fnc_shouldSkipPiRRedirect", "_fnc_dispatchPiRReaction"];
+                        if ([_event, _unit] call _fnc_shouldSkipPiRRedirect) exitWith {
+                        };
+                        [_event, _unit] call _fnc_dispatchPiRReaction;
+                    }, [_event, _unit, _originalFunction, _fnc_shouldSkipPiRRedirect, _fnc_dispatchPiRReaction]] call CBA_fnc_execNextFrame;
+                };
+
+                if ([_event, _unit] call _fnc_shouldSkipPiRRedirect) exitWith {
+                };
+                [_event, _unit] call _fnc_dispatchPiRReaction;
+            };
+
+            PiRredirect = {
+                private _event = +_this;
+                private _unit = _event param [0, objNull, [objNull]];
+                private _dedupeKey = [
+                    diag_frameNo,
+                    str (_event param [1, objNull, [objNull]]),
+                    toLower str (_event param [5, [], [[]]]),
+                    _event param [10, false, [false]]
+                ];
+                if ((_unit getVariable [QGVAR(lastPiRredirectEvent), []]) isEqualTo _dedupeKey) exitWith {
+                };
+                _unit setVariable [QGVAR(lastPiRredirectEvent), _dedupeKey];
+                
+                [_event, _unit, GVAR(originalPiRredirect)] call _fnc_runPiRRedirect;
+            };
+
+            PiRredirect0 = {
+                private _event = +_this;
+                private _unit = _event param [0, objNull, [objNull]];
+                private _dedupeKey = [
+                    diag_frameNo,
+                    str (_event param [1, objNull, [objNull]]),
+                    toLower str (_event param [5, [], [[]]]),
+                    _event param [10, false, [false]]
+                ];
+                if ((_unit getVariable [QGVAR(lastPiRredirect0Event), []]) isEqualTo _dedupeKey) exitWith {
+                };
+                _unit setVariable [QGVAR(lastPiRredirect0Event), _dedupeKey];
+                
+                [_event, _unit, GVAR(originalPiRredirect0)] call _fnc_runPiRRedirect;
+            };
+
+        },
+        [],
+        10
+    ] call CBA_fnc_waitUntilAndExecute;
+
+    if (hasInterface) then {
+        [
+            {!isNull player},
+            {
+                [] call FUNC(initPlates);
+                [player, "pirLateInit"] call GVAR(syncPlayerPlateState);
+                [player] call FUNC(updatePlateUi);
+                [player] call FUNC(installPiRHitPart);
+                [player, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
+            },
+            [],
+            10
+        ] call CBA_fnc_waitUntilAndExecute;
+    };
+};
+
 if !(hasInterface) exitWith {
     INFO("Dedicated server / Headless client post init done");
 };
@@ -292,6 +598,11 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
 
 ["unit", {
     params ["_newUnit", "_oldUnit"];
+    [_newUnit, "playerEvent_unit"] call GVAR(syncPlayerPlateState);
+    if (GVAR(piRLoaded)) then {
+        [_newUnit] call FUNC(installPiRHitPart);
+        [_newUnit, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
+    };
     [_newUnit] call FUNC(updatePlateUi);
     [_newUnit] call FUNC(updateHPUi);
     if !(isNil QGVAR(weaponsEvtId)) then {
@@ -304,6 +615,11 @@ if !(isNil "ace_common_fnc_addActionEventHandler") then {
     params ["_unit"];
     GVAR(uniqueItemsCache) = nil;
     GVAR(hasPlateInInvetory) = QGVAR(plate) in (_unit call FUNC(uniqueItems));
+    [_unit, "playerEvent_loadout"] call GVAR(syncPlayerPlateState);
+    if (GVAR(piRLoaded)) then {
+        [_unit] call FUNC(installPiRHitPart);
+        [_unit, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
+    };
 }] call CBA_fnc_addPlayerEventHandler;
 
 [QGVAR(downedMessage), {
@@ -341,8 +657,18 @@ GVAR(respawnEHId) = ["CAManBase", "Respawn", {
             [{
                 params ["_unit"];
                 [_unit] call FUNC(fillVestWithPlates);
+                [_unit, "respawn_delay"] call GVAR(syncPlayerPlateState);
+                if (GVAR(piRLoaded)) then {
+                    [_unit] call FUNC(installPiRHitPart);
+                    [_unit, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
+                };
                 [_unit] call FUNC(updatePlateUi);
             }, [_unit], 1] call CBA_fnc_waitAndExecute;
+        };
+        [_unit, "respawn_immediate"] call GVAR(syncPlayerPlateState);
+        if (GVAR(piRLoaded)) then {
+            [_unit] call FUNC(installPiRHitPart);
+            [_unit, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
         };
         [_unit] call FUNC(updatePlateUi);
 
@@ -647,11 +973,17 @@ if (_aceInteractLoaded) then {
   If using vanilla functions, use `diw_armor_plates_main_plateTransferArsenal = true;`, if you want the plateRefillArsenal setting to affect the transfer, then `["diw_armor_plates_main_transferStart",[_unit], _unit] call CBA_fnc_targetEvent;` before altering unit loadout, and `["diw_armor_plates_main_transfer",[_unit], _unit] call CBA_fnc_targetEvent;` after altering the loadout to maintain the player's plates when changing loadout/vest.
 */
 [QGVAR(transferStart), { params [["_unit",player,[objNull]]];
+    if (GVAR(piRLoaded) && {local _unit} && {_unit isEqualTo (call CBA_fnc_currentUnit)}) exitWith {
+        GVAR(plateTransfer) = nil;
+    };
     private _vest = vestContainer _unit;
     if (isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
     GVAR(plateTransfer) = [_unit, (_vest getVariable [QGVAR(plates),[]])];
 }] call CBA_fnc_addEventHandler;
 [QGVAR(transfer), { params [["_unit",player,[objNull]]];
+    if (GVAR(piRLoaded) && {local _unit} && {_unit isEqualTo (call CBA_fnc_currentUnit)}) exitWith {
+        GVAR(plateTransfer) = nil;
+    };
     private _plates = (missionNamespace getVariable [QGVAR(plateTransfer),nil]);
     if (isNil '_plates') exitWith {};
     GVAR(plateTransfer) = nil;
@@ -659,7 +991,8 @@ if (_aceInteractLoaded) then {
     private _plates = (_plates # 1);
     private _vest = vestContainer _unit;
     if (isNil '_unit' || {isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}}) exitWith {};
-    _vest setVariable [QGVAR(plates),_plates];
+    _vest setVariable [QGVAR(plates), _plates, true];
+    _unit setVariable [QGVAR(plates), _plates, true];
     private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * (count _plates)), true];
     if (_unit isEqualTo player) then {[_unit] call FUNC(updatePlateUi);};
@@ -684,6 +1017,8 @@ if (_aceInteractLoaded) then {
 ["CBA_loadoutSet", {
     params ["_unit", "", "_extradata"];
     if (isNull (vestContainer _unit) || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
+    if (GVAR(piRLoaded) && {local _unit} && {(_unit isEqualTo (call CBA_fnc_currentUnit)) || {isPlayer _unit} || {!isNull (remoteControlled _unit)}}) exitWith {
+    };
     private _plates = _extradata getOrDefault [QGVAR(plates), []];
 
     // setting check
@@ -702,7 +1037,8 @@ if (_aceInteractLoaded) then {
 
     private _vest = vestContainer _unit;
     private _vLoad = _vest getVariable ["ace_movement_vLoad", 0];
-    _vest setVariable [QGVAR(plates),_plates];
+    _vest setVariable [QGVAR(plates), _plates, true];
+    _unit setVariable [QGVAR(plates), _plates, true];
     _vest setVariable ["ace_movement_vLoad", _vLoad + (PLATE_MASS * _count), true];
     if (_unit isEqualTo player) then {[_unit] call FUNC(updatePlateUi);};
 }] call CBA_fnc_addEventHandler;
@@ -710,6 +1046,8 @@ if (_aceInteractLoaded) then {
 ["CBA_loadoutGet", {
     params ["_unit", "", "_extradata"];
     if (isNull (vestContainer _unit) || {(vest _unit) in GVAR(vestBlacklist)}) exitWith {};
+    if (GVAR(piRLoaded) && {local _unit} && {(_unit isEqualTo (call CBA_fnc_currentUnit)) || {isPlayer _unit} || {!isNull (remoteControlled _unit)}}) exitWith {
+    };
     private _plates = (vestContainer _unit) getVariable [QGVAR(plates),[]];
     if (_plates isNotEqualTo []) then {
         _extradata set [QGVAR(plates), _plates];
@@ -720,10 +1058,10 @@ if (_aceInteractLoaded) then {
     time > 1
 }, {
     private _3den_maxPlateInVest = player getVariable [QGVAR(3den_maxPlateInVest), -1];
+    private _3den_maxPlateInInventory = player getVariable [QGVAR(3den_maxPlateInInventory), -1];
     if (_3den_maxPlateInVest >= 0 || {GVAR(spawnWithFullPlates) && {!((vest player) in GVAR(vestBlacklist))}}) then {
         [player] call FUNC(fillVestWithPlates);
     };
-    private _3den_maxPlateInInventory = player getVariable [QGVAR(3den_maxPlateInInventory), -1];
     if (_3den_maxPlateInInventory > 0) then {
         private _container = switch (true) do {
             case ((vest player) isNotEqualTo ""): {vestContainer player};
@@ -745,9 +1083,21 @@ if (_aceInteractLoaded) then {
             (_currentVestContainer isNotEqualTo _oldVestcontainer)) then {
             _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
             _unit setVariable [QGVAR(vestContainer), _currentVestContainer];
+            if (_unit isEqualTo player) then {
+                [_unit, "cba_events_loadoutEvent"] call GVAR(syncPlayerPlateState);
+                if (GVAR(piRLoaded)) then {
+                    [_unit] call FUNC(installPiRHitPart);
+                    [_unit, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
+                };
+            };
             [_unit] call FUNC(updatePlateUi);
         };
     }] call CBA_fnc_addEventHandler;
+    [player, "postInit_timeGt1"] call GVAR(syncPlayerPlateState);
+    if (GVAR(piRLoaded)) then {
+        [player] call FUNC(installPiRHitPart);
+        [player, call GVAR(piRShouldLimitFatalDamage)] call FUNC(installPiRHandleDamage);
+    };
     INFO("UI elements initialized");
 }] call CBA_fnc_waitUntilAndExecute;
 

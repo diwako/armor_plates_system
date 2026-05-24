@@ -6,7 +6,7 @@ class CfgWeapons {
     class GVAR(plate): CBA_MiscItem {
         scope = 2;
         author = "diwako";
-        model = QPATHTOF(data\armor_plate.p3d);
+        model = "a3\Props_F_Orange\Humanitarian\Garbage\MedicalGarbage_01_Injector_F.p3d";
         picture = QPATHTOF(ui\armor_plate_ca.paa);
         displayName = CSTRING(plateItem);
         descriptionShort = CSTRING(plateIteml_Desc_Short);

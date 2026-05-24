@@ -43,10 +43,50 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     }
 ] call CBA_fnc_addSetting;
 
+#define APS_TORSO_DEFAULT_PLAYER false
+#define APS_TORSO_DEFAULT_AI false
+#include "initSettingsTorsoPlates.inc.sqf"
+
 [
-    QGVAR(protectOnlyTorso),
+    QGVAR(blockDamageUntilPlatesDestroyed),
     "CHECKBOX",
-    [LLSTRING(protectOnlyTorso), LLSTRING(protectOnlyTorso_desc)],
+    [LLSTRING(blockDamageUntilPlatesDestroyed), LLSTRING(blockDamageUntilPlatesDestroyed_desc)],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowPiRReactionsWhilePlatesHold),
+    "CHECKBOX",
+    [LLSTRING(allowPiRReactionsWhilePlatesHold), LLSTRING(allowPiRReactionsWhilePlatesHold_desc)],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(applyPiRPlateRulesToAI),
+    "CHECKBOX",
+    [LLSTRING(applyPiRPlateRulesToAI), LLSTRING(applyPiRPlateRulesToAI_desc)],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(blockDamageUntilPlatesDestroyedAI),
+    "CHECKBOX",
+    [LLSTRING(blockDamageUntilPlatesDestroyedAI), LLSTRING(blockDamageUntilPlatesDestroyedAI_desc)],
+    _category,
+    true,
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(allowPiRReactionsWhilePlatesHoldAI),
+    "CHECKBOX",
+    [LLSTRING(allowPiRReactionsWhilePlatesHoldAI), LLSTRING(allowPiRReactionsWhilePlatesHoldAI_desc)],
     _category,
     true,
     true
