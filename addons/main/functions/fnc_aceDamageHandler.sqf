@@ -37,7 +37,7 @@ if (GVAR(disallowFriendfire) &&
     };
 
     // _shooter and _ammo exist in the scope above
-    private _damageLeft = [_unit, _damage, _actualDamage, _parentShooter, _ammo, _isTorso] call FUNC(receiveDamageACE);
+    private _damageLeft = [_unit, _damage, _actualDamage, _parentShooter, _ammo, _isTorso, _bodyPart isEqualTo "Head"] call FUNC(receiveDamageACE);
     if (_damageLeft isEqualTo 0) then {
         _copy deleteAt _forEachIndex;
     } else {

@@ -6,10 +6,11 @@
     }
 
 #define SOUND(SOUNDNAME) \
-    SOUND_ID(SOUNDNAME,1,db6); \
-    SOUND_ID(SOUNDNAME,2,db3); \
-    SOUND_ID(SOUNDNAME,3,db0); \
-    SOUND_ID(SOUNDNAME,4,db-3);
+    SOUND_ID(SOUNDNAME,1,db23); \
+    SOUND_ID(SOUNDNAME,2,db20); \
+    SOUND_ID(SOUNDNAME,3,db15); \
+    SOUND_ID(SOUNDNAME,4,db9); \
+    SOUND_ID(SOUNDNAME,5,db0);
 
 
 class CfgSounds {
