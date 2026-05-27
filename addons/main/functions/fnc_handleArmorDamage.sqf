@@ -39,7 +39,7 @@ switch (GVAR(armorHandlingMode)) do {
                 [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
             };
             _receivedDamage = true;
-            if (GVAR(plateToughness)) then {
+            if (GVAR(plateToughness) && {player isEqualTo _unit}) then {
                 [cba_missionTime] spawn FUNC(toughLoop);
             };
         };
@@ -89,7 +89,7 @@ switch (GVAR(armorHandlingMode)) do {
             if (GVAR(showDamageMarker)) then {
                 [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
             };
-            if (GVAR(plateToughness)) then {
+            if (GVAR(plateToughness) && {player isEqualTo _unit}) then {
                 [cba_missionTime] spawn FUNC(toughLoop);
             };
         };
