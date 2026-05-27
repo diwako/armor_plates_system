@@ -675,6 +675,7 @@ if (_aceInteractLoaded) then {
 
 [missionNamespace, "arsenalClosed", {
     0 spawn { sleep 1;
+        if (isNil QGVAR(transferTarg)) exitWith {};
         private _unit = GVAR(transferTarg);
         GVAR(transferTarg) = nil;
         [QGVAR(transfer),[_unit],_unit] call CBA_fnc_targetEvent;
