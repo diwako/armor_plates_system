@@ -1783,9 +1783,9 @@
         <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
             <English>Compatibility</English>
             <French>Compatibilité</French>
+            <Polish>Kompatybilność</Polish>
             <Korean>호환성</Korean>
             <Chinesesimp>兼容性</Chinesesimp>
-            <Polish>Kompatybilność</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateToughness">
             <English>Enable Plate Toughness</English>

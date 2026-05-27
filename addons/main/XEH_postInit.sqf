@@ -656,7 +656,7 @@ if (_aceInteractLoaded) then {
     if (isNil '_plates') exitWith {};
     GVAR(plateTransfer) = nil;
     private _unit = (_plates # 0);
-    private _plates = (_plates # 1);
+    _plates = (_plates # 1);
     private _vest = vestContainer _unit;
     if (isNil '_unit' || {isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}}) exitWith {};
     _vest setVariable [QGVAR(plates),_plates];

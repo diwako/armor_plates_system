@@ -25,13 +25,16 @@ if (isNil QGVAR(bleedOutTimeMalus) || {!isPlayer _unit && {!isNil QGVAR(bleedOut
     }, _unit, (random 5)] call CBA_fnc_waitAndExecute;
 };
 
-private _adjustedMalus = GVAR(bleedOutTimeMalus);
+private _adjustedMalus = missionNamespace getVariable [QGVAR(bleedOutTimeMalus), 0];
 
 switch (GVAR(injectorEffect)) do
 {
     case 0: {_adjustedMalus = _adjustedMalus};
     case 1: {_adjustedMalus = nil;};
-    case 2: {_adjustedMalus = (_adjustedMalus / 2); if (_adjustedMalus < 1) then {_adjustedMalus = nil;}; };
+    case 2: {
+        _adjustedMalus = (_adjustedMalus / 2);
+        if (_adjustedMalus < 1) then {_adjustedMalus = nil;};
+    };
     case 3: {
         _adjustedMalus = (_adjustedMalus - (GVAR(injectorCoef) * GVAR(bleedoutTimeSubtraction))) max 0;
         if (_adjustedMalus < 1) then {_adjustedMalus = nil;};

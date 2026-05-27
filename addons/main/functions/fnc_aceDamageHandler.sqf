@@ -1,7 +1,8 @@
 #include "script_component.hpp"
-params ["_unit", "_allDamages", "_typeOfDamage"];
+params ["_unit", "_allDamages", "_typeOfDamage", "_ammo"];
 private _copy = +_allDamages;
 
+#pragma hemtt ignore_variables ["_shooter"];
 private _parentShooter = _shooter;
 if (GVAR(disallowFriendfire) &&
     {!isNull _parentShooter && {

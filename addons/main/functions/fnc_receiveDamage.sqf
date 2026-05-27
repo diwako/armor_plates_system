@@ -60,7 +60,7 @@ private _newHP = (_curHp - _damage) max 0;
 _unit setVariable [QGVAR(hp), [_newHP, 100] select GVAR(aceMedicalLoaded)];
 if (_player isEqualTo _unit) then {
     [_unit] call FUNC(updateHPUi);
-    if (!_receivedDamage && {GVAR(showDamageMarker)}) then {
+    if (!_receivedDamage && GVAR(showDamageMarker)) then {
         [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
     };
 };

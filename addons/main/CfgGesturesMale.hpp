@@ -105,7 +105,7 @@ class CfgMovesBasic {
 
 #define ADDPLATE(SECONDS,HEADBOBSTRENGTH) \
     class DOUBLES(ADDON,TRIPLES(addPlate,SECONDS,HEADBOBSTRENGTH)): GVAR(addPlate_base) { \
-        speed = QUOTE(-SECONDS + 0.5); headBobStrength = QUOTE(-HEADBOBSTRENGTH * 0.25); \
+        speed = -SECONDS + 0.5; headBobStrength = -HEADBOBSTRENGTH * 0.25; \
     }
 
 class CfgGesturesMale {
