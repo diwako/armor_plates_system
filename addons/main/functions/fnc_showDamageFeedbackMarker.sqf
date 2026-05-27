@@ -8,11 +8,13 @@ if (isNull _display) exitWith {
 };
 
 private _selfOrUnkownDamage = isNull _instigator || {_unit isEqualTo _instigator};
+private _plateHit = _damage isEqualTo 0;
+private _miss = _damage isEqualTo -1;
 private _ctrl = _display ctrlCreate ["RscPictureKeepAspect", -1];
 _ctrl ctrlSetBackgroundColor [0, 0, 0, 1];
 _ctrl ctrlSetPosition [0, 0, 1, 1];
-_ctrl ctrlSetTextColor ([([GVAR(damageColor),GVAR(plateColor)] select (_damage isEqualTo 0)),GVAR(suppressedColor)] select (_damage isEqualTo -1));
-_ctrl ctrlSetText ([(format [QPATHTOF(ui\damageMarker_%1_ca.paa),GVAR(damageMarkerScale)]), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
+_ctrl ctrlSetTextColor ([([GVAR(damageColor),GVAR(plateColor)] select _plateHit),GVAR(suppressedColor)] select _miss);
+_ctrl ctrlSetText ([(format [([QPATHTOF(ui\damageMarker_%1_ca.paa),QPATHTOF(ui\suppressionMarker_%1_ca.paa)] select _miss),GVAR(damageMarkerScale)]), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
 _ctrl ctrlSetFade 1;
 _ctrl ctrlCommit 0;
 
