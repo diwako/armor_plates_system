@@ -6,6 +6,10 @@ private _vest = vestContainer _unit;
 private _plates = _vest getVariable [QGVAR(plates), []];
 if (_plates isEqualTo [] || {!_isTorso && {GVAR(protectOnlyTorso)}}) exitWith {[_damage, _receivedDamage]};
 
+if (GVAR(plateToughness) && {_player isEqualTo _unit}) then {
+    _unit setVariable [QGVAR(hitTime), cba_missionTime];
+};
+
 switch (GVAR(armorHandlingMode)) do {
     case "arcade": {
         for "_i" from ((count _plates) - 1) to 0 step -1 do {
@@ -35,6 +39,9 @@ switch (GVAR(armorHandlingMode)) do {
                 [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
             };
             _receivedDamage = true;
+            if (GVAR(plateToughness)) then {
+                [cba_missionTime] spawn FUNC(toughLoop);
+            };
         };
     };
     case "realism": {
@@ -81,6 +88,9 @@ switch (GVAR(armorHandlingMode)) do {
             [_unit] call FUNC(updatePlateUi);
             if (GVAR(showDamageMarker)) then {
                 [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
+            };
+            if (GVAR(plateToughness)) then {
+                [cba_missionTime] spawn FUNC(toughLoop);
             };
         };
     };
