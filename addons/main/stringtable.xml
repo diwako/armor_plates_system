@@ -1779,5 +1779,41 @@
             <Chinesesimp>兼容性</Chinesesimp>
             <Polish>Kompatybilność</Polish>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_plateToughness">
+            <English>Enable Plate Toughness</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateToughness_desc">
+            <English>Players can regen plates over time, starts after delay while not taking damage.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateRegenCount">
+            <English>Number of Tough Plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateRegenCount_desc">
+            <English>How many plates are affected by the toughness regen. Limited by plates wearable setting in Armor Plates System.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateDelay">
+            <English>Plate Toughness Delay</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateDelay_desc">
+            <English>Number of seconds after damage is taken before toughness starts to regen armor plates.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateDelayInter">
+            <English>Delay between plates</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateDelayInter_desc">
+            <English>Whether to apply delay between each full plate during regeneration.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateRegenSpeed">
+            <English>Toughness Regen Speed</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateRegenSpeed_desc">
+            <English>Time in seconds it takes to regenerate a single plate to full armor.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateRegenPerTick">
+            <English>Plate Armor per Tick</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateRegenPerTick_desc">
+            <English>Minimum regen to apply, affects tick speed but not the seconds to full plate. Will not regen more than one full plate per tick.</English>
+        </Key>
     </Package>
 </Project>

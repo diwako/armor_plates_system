@@ -17,6 +17,7 @@ PREP(showDamageFeedbackMarker);
 PREP(uniqueItems);
 PREP(updateHPUi);
 PREP(updatePlateUi);
+PREP(toughLoop);
 
 if (GVAR(aceMedicalLoaded)) then {
     PREP(aceDamageHandler);
