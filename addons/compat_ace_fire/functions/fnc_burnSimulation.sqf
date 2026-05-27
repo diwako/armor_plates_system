@@ -153,6 +153,8 @@ params ["_unit", "_instigator"];
         private _painUnconscious = missionNamespace getVariable ["ace_medical_painUnconsciousThreshold", 0];
         private _damageToAdd = [0.15, _intensity / BURN_MAX_INTENSITY] select (!alive _unit || {_painPercieved < _painUnconscious + random 0.2});
 
+         _damageToAdd = _damageToAdd * (1 - (getNumber (configFile >> "CfgWeapons" >> uniform _unit >> "ace_fire_protection")));
+
         if (missionNamespace getVariable ["ace_medical_enabled", false]) then {
             if (!isNull _instigator) then {
                 _unit setVariable ["ace_medical_lastDamageSource", _instigator];
