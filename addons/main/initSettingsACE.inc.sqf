@@ -234,6 +234,15 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(plateToughnessRegenInUnconsciousness),
+    "CHECKBOX",
+    [LLSTRING(plateToughnessRegenInUnconsciousness), LLSTRING(plateToughnessRegenInUnconsciousness_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryFeedback)];
 
 [

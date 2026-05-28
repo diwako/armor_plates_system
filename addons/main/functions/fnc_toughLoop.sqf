@@ -61,7 +61,7 @@ while {_plateCnt <= _plateRegenCount && _plateCnt isNotEqualTo -1 && _continue} 
         _plates = (_plateCarrier getVariable [QGVAR(plates), [0]]);
         private _plateChk = _plates # _plateCnt;
         if (_plateChk > _toughPlate) exitWith {_skip = true};
-        if (lifeState _player != "INCAPACITATED") then {
+        if (GVAR(plateToughnessRegenInUnconsciousness) || {lifeState _player != "INCAPACITATED"}) then {
             _toughPlate = _toughPlate + _tickRegen;
             _plates set [_plateCnt, (_toughPlate min _plateMaxHp)];
             _plateCarrier setVariable [QGVAR(plates), _plates];
