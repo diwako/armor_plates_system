@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-params ["_unit", "_instigator", "_damage"];
+params ["_unit", ["_instigator", objNull], ["_damage", 0]];
 if (GVAR(lastDamageFeedbackMarkerShown) isEqualTo diag_frameNo) exitWith {};
 GVAR(lastDamageFeedbackMarkerShown) = diag_frameNo;
 private _display = findDisplay 46;
@@ -13,33 +13,37 @@ private _miss = _damage isEqualTo -1;
 private _ctrl = _display ctrlCreate ["RscPictureKeepAspect", -1];
 _ctrl ctrlSetBackgroundColor [0, 0, 0, 1];
 _ctrl ctrlSetPosition [0, 0, 1, 1];
-_ctrl ctrlSetTextColor ([([GVAR(damageColor),GVAR(plateColor)] select _plateHit),GVAR(suppressedColor)] select _miss);
-_ctrl ctrlSetText ([(format [([QPATHTOF(ui\damageMarker_%1_ca.paa),QPATHTOF(ui\suppressionMarker_%1_ca.paa)] select _miss),GVAR(damageMarkerScale)]), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
+if (_miss) then {
+    _ctrl ctrlSetTextColor GVAR(suppressedColor);
+    _ctrl ctrlSetText QPATHTOF(ui\suppressionMarker_ca.paa);
+} else {
+    _ctrl ctrlSetTextColor ([GVAR(damageColor), GVAR(plateColor)] select _plateHit);
+    _ctrl ctrlSetText ([QPATHTOF(ui\damageMarker_ca.paa), QPATHTOF(ui\damageMarkerRound_ca.paa)] select _selfOrUnkownDamage);
+};
+
 _ctrl ctrlSetFade 1;
 _ctrl ctrlCommit 0;
 
 private _inAccuracy = ((random 6) - 3); // needed to pass to waitUntilAndExecute
 if !(_selfOrUnkownDamage) then {
     // randomize _relDir to prevent exact indication with lower scale
-    private _relDir = ((_unit getRelDir _instigator) + _inAccuracy);
-    if (_relDir >= 360) then {_relDir = _relDir - 360};
+    private _relDir = (((_unit getRelDir _instigator) + _inAccuracy) + 360) mod 360;
     _ctrl ctrlSetAngle [_relDir, 0.5, 0.5, true];
 };
-if (GVAR(aceMedicalLoaded)) then {
+if (GVAR(aceMedicalLoaded) || _damage <= 0) then {
     _ctrl ctrlSetFade 0;
 } else {
     private _maxHp = _unit getVariable [QGVAR(maxHP), [GVAR(maxAiHP), GVAR(maxPlayerHP)] select (isPlayer _unit)];
     _ctrl ctrlSetFade (linearConversion [0, _maxHp, _damage, 0.75, 0, true]);
 };
-_ctrl ctrlCommit 0.05;
+_ctrl ctrlCommit 0.1;
 
 private _feedback = uiNamespace getVariable [QGVAR(feedBackCtrl), []];
 _feedback pushBack _ctrl;
 uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
 
 [{
-    private _relDir = (((_this select 1) getRelDir (_this select 2)) + (_this select 3));
-    if (_relDir >= 360) then {_relDir = _relDir - 360};
+    private _relDir = ((((_this select 1) getRelDir (_this select 2)) + (_this select 3)) + 360) mod 360;
     (_this select 0) ctrlSetAngle [_relDir, 0.5, 0.5, true];
     ctrlCommitted (_this select 0);
 },{
@@ -48,8 +52,7 @@ uiNamespace setVariable [QGVAR(feedBackCtrl), _feedback];
     _ctrl ctrlSetPosition [-0.2, -0.2, 1.4, 1.4];
     _ctrl ctrlCommit 5;
     [{
-        private _relDir = (((_this select 1) getRelDir (_this select 2)) + (_this select 3));
-        if (_relDir >= 360) then {_relDir = _relDir - 360};
+        private _relDir = ((((_this select 1) getRelDir (_this select 2)) + (_this select 3)) + 360) mod 360;
         (_this select 0) ctrlSetAngle [_relDir, 0.5, 0.5, true];
         ctrlCommitted (_this select 0);
     },{
