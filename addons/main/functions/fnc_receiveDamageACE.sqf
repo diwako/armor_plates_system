@@ -8,7 +8,7 @@ private _returnedDamage = [_unit, _actualDamage, [true, _isTorso] select GVAR(pr
 _actualDamage = _returnedDamage select 0;
 
 if (_player isEqualTo _unit) then {
-    if (!(_returnedDamage select 1) && {GVAR(showDamageMarker)}) then {
+    if (!(_returnedDamage select 1) && GVAR(showDamageMarker)) then {
         [_unit, _instigator, _damage] call FUNC(showDamageFeedbackMarker);
     };
 };
