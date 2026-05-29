@@ -656,7 +656,7 @@ if (_aceInteractLoaded) then {
     if (isNil '_plates') exitWith {};
     GVAR(plateTransfer) = nil;
     private _unit = (_plates # 0);
-    private _plates = (_plates # 1);
+    _plates = (_plates # 1);
     private _vest = vestContainer _unit;
     if (isNil '_unit' || {isNull _vest || {(vest _unit) in GVAR(vestBlacklist)}}) exitWith {};
     _vest setVariable [QGVAR(plates),_plates];
@@ -747,8 +747,16 @@ if (_aceInteractLoaded) then {
             _oldVestcontainer setVariable [QGVAR(plates), _oldVestcontainer getVariable [QGVAR(plates), []], true];
             _unit setVariable [QGVAR(vestContainer), _currentVestContainer];
             [_unit] call FUNC(updatePlateUi);
+            if (GVAR(plateToughness) && {player isEqualTo _unit}) then {
+                _unit setVariable [QGVAR(hitTime), cba_missionTime];
+                [cba_missionTime] spawn FUNC(toughLoop);
+            };
         };
     }] call CBA_fnc_addEventHandler;
+    if (GVAR(plateToughness)) then {
+        player setVariable [QGVAR(hitTime), cba_missionTime];
+        [cba_missionTime] spawn FUNC(toughLoop);
+    };
     INFO("UI elements initialized");
 }] call CBA_fnc_waitUntilAndExecute;
 

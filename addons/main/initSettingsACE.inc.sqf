@@ -190,7 +190,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(plateRegenCount),
+    QGVAR(plateToughnessRegenCount),
     "SLIDER",
     [LLSTRING(plateRegenCount), LLSTRING(plateRegenCount_desc)],
     _category,
@@ -199,7 +199,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(plateDelay),
+    QGVAR(plateToughnessDelay),
     "SLIDER",
     [LLSTRING(plateDelay), LLSTRING(plateDelay_desc)],
     _category,
@@ -208,7 +208,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(plateDelayInter),
+    QGVAR(plateToughnessDelayInter),
     "CHECKBOX",
     [LLSTRING(plateDelayInter), LLSTRING(plateDelayInter_desc)],
     _category,
@@ -217,7 +217,7 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(plateRegenSpeed),
+    QGVAR(plateToughnessRegenSpeed),
     "SLIDER",
     [LLSTRING(plateRegenSpeed), LLSTRING(plateRegenSpeed_desc)],
     _category,
@@ -226,12 +226,21 @@ private _category = [_header, LLSTRING(subCategoryArmorPlates)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(plateRegenPerTick),
+    QGVAR(plateToughnessRegenPerTick),
     "SLIDER",
     [LLSTRING(plateRegenPerTick), LLSTRING(plateRegenPerTick_desc)],
     _category,
     [0.5, 100, 0.5, 1],
     false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(plateToughnessRegenInUnconsciousness),
+    "CHECKBOX",
+    [LLSTRING(plateToughnessRegenInUnconsciousness), LLSTRING(plateToughnessRegenInUnconsciousness_desc)],
+    _category,
+    false,
+    true
 ] call CBA_fnc_addSetting;
 
 _category = [_header, LLSTRING(subCategoryFeedback)];

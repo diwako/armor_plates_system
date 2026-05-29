@@ -14,6 +14,6 @@ if (isNull _unit || { !_isObj || { _isPerson && {!alive _unit} } }) exitWith {
     [objNull, LLSTRING(zeus_invalid_target)] call BIS_fnc_showCuratorFeedbackMessage;
 };
 
-if (!_isPerson && {_isObj}) then {_unit = crew _unit;} else {_unit = [_unit]};
+if (!_isPerson && _isObj) then {_unit = crew _unit;} else {_unit = [_unit]};
 
 {[QGVAR(resetMalus), [], _x] call CBA_fnc_targetEvent;} forEach (_unit select {isPlayer _x});

@@ -1,4 +1,5 @@
 *.biprivatekey
+.hemttprivatekey
 hemtt\.exe
 .hemtt/local
 armake2\.exe

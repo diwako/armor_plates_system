@@ -49,7 +49,7 @@ if !(isNil QGVAR(hideHPHandle)) then {
     terminate GVAR(hideHPHandle);
     GVAR(hideHPHandle) = nil;
 };
-if (GVAR(allowHideHP) && {_hide}) then {
+if (GVAR(allowHideHP) && _hide) then {
     GVAR(hideHPHandle) = [_hpBar] spawn {
         params ["_hpBar"];
         sleep GVAR(hideUiSeconds);

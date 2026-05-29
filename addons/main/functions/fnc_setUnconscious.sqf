@@ -36,7 +36,7 @@ if (_set) then {
         }, {
             params ["_unit", "_time"];
             private _unconscious = (lifeState _unit) == "INCAPACITATED";
-            if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && {_unconscious}) then {
+            if ((_unit getVariable [QGVAR(bleedoutTime), -1]) isEqualTo _time && _unconscious) then {
                 // kill them
                 [_unit, false] call FUNC(setUnconscious);
                 _unit setHitPointDamage ["hitHead", 1, true, _unit];
@@ -117,7 +117,7 @@ if (GVAR(pilotUncon) > 0 && {alive _unit}) then {
     };
 };
 
-if (_set && {GVAR(requestAIforHelp)}) then {
+if (_set && GVAR(requestAIforHelp)) then {
     [_unit] call FUNC(requestAIRevive);
 };
 

@@ -12,7 +12,6 @@ if (_show) then {
         private _arr = [];
         getResolution params ["","_screenHeight","","","","_scale"];
         _scale = (linearConversion [0.55, 1, _scale, 1, 1.8181818181818181818181818181818]) * (_screenHeight / 1080);
-        private _display = findDisplay 46;
         private _height = 256 * _scale * pixelH;
         private _width = 256 * _scale * pixelW;
         private _pos = [

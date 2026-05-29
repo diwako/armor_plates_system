@@ -1783,9 +1783,9 @@
         <Key ID="STR_diw_armor_plates_main_subCategoryCompat">
             <English>Compatibility</English>
             <French>Compatibilité</French>
+            <Polish>Kompatybilność</Polish>
             <Korean>호환성</Korean>
             <Chinesesimp>兼容性</Chinesesimp>
-            <Polish>Kompatybilność</Polish>
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateToughness">
             <English>Enable Plate Toughness</English>
@@ -1822,6 +1822,12 @@
         </Key>
         <Key ID="STR_diw_armor_plates_main_plateRegenPerTick_desc">
             <English>Minimum regen to apply, affects tick speed but not the seconds to full plate. Will not regen more than one full plate per tick.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateToughnessRegenInUnconsciousness">
+            <English>Regen Plates While Unconscious</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_plateToughnessRegenInUnconsciousness_desc">
+            <English>Whether to regen armor plates while the player is unconscious or downed.</English>
         </Key>
     </Package>
 </Project>
