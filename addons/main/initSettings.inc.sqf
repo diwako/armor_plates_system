@@ -242,15 +242,6 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(damageMarkerScale),
-    "LIST",
-    [LLSTRING(damageMarkerScale), LLSTRING(damageMarkerScale_desc)],
-    _category,
-    [[0, 1, 2, 3, 4, 5, 6], [LLSTRING(downedFeedback_0), LLSTRING(damageMarkerScale_1), LLSTRING(damageMarkerScale_2), LLSTRING(audioFeedback_4), LLSTRING(audioFeedback_3), LLSTRING(audioFeedback_2), LLSTRING(audioFeedback_1)], 4],
-    false
-] call CBA_fnc_addSetting;
-
-[
     QGVAR(damageColor),
     "COLOR",
     LLSTRING(damageColor),
@@ -278,9 +269,9 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
-    QGVAR(suppressedMarkerLimit),
+    QGVAR(suppressedMarkerServerLimit),
     "SLIDER",
-    [LLSTRING(suppressedMarkerLimit), LLSTRING(suppressedMarkerLimit_desc)],
+    [LLSTRING(suppressedMarkerServerLimit), LLSTRING(suppressedMarkerServerLimit_desc)],
     _category,
     [0, 10, 4, 1],
     true

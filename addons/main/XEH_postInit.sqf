@@ -45,13 +45,14 @@ GVAR(ammoPenCache) = createHashMap;
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
-if ((GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) > 0) then {
-    GVAR(suppressedInit) = ["CAManBase", "Suppressed", { params ["_unit", "_distance", "_shooter"];
-        if ( !GVAR(showSuppressedMarker) || {_unit isNotEqualTo (call CBA_fnc_currentUnit)}) exitWith {};
-        if (_distance > ( (GVAR(suppressedMarker) min GVAR(suppressedMarkerLimit)) + 1) ) exitWith {};
-        [_unit,_shooter,-1] call diw_armor_plates_main_fnc_showDamageFeedbackMarker;
-    }, true, [], true] call CBA_fnc_addClassEventHandler;
-};
+["CAManBase", "Suppressed", {
+    params ["_unit", "_distance", "_shooter"];
+    if (!GVAR(showSuppressedMarker) || {_unit isNotEqualTo (call CBA_fnc_currentUnit)} ||
+        {(GVAR(suppressedMarker) min GVAR(suppressedMarkerServerLimit)) isEqualTo 0} ||
+        {_distance > ((GVAR(suppressedMarker) min GVAR(suppressedMarkerServerLimit)) + 1)}
+    ) exitWith {};
+    [_unit, _shooter, -1] call FUNC(showDamageFeedbackMarker);
+}, true, [], true] call CBA_fnc_addClassEventHandler;
 
 [QGVAR(plateSync), {
     params ["_unit", "_plateHp"];
