@@ -255,6 +255,51 @@ _category = [_header, LLSTRING(subCategoryFeedback)];
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(damageColor),
+    "COLOR",
+    LLSTRING(damageColor),
+    _category,
+    [1.0, 0.0, 0.0, 0.75],
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(showSuppressedMarker),
+    "CHECKBOX",
+    [LLSTRING(showSuppressedMarker), LLSTRING(showSuppressedMarker_desc)],
+    _category,
+    false,
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(suppressedMarker),
+    "SLIDER",
+    [LLSTRING(suppressedMarker), LLSTRING(suppressedMarker_desc)],
+    _category,
+    [0, 10, 4, 1],
+    false
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(suppressedMarkerServerLimit),
+    "SLIDER",
+    [LLSTRING(suppressedMarkerServerLimit), LLSTRING(suppressedMarkerServerLimit_desc)],
+    _category,
+    [0, 10, 4, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(suppressedColor),
+    "COLOR",
+    LLSTRING(suppressedColor),
+    _category,
+    [0.6, 0.6, 0.6, 0.25],
+    false
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(audioFeedback),
     "LIST",
     [LLSTRING(audioFeedback), LLSTRING(audioFeedback_desc)],

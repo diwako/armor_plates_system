@@ -45,6 +45,15 @@ GVAR(ammoPenCache) = createHashMap;
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
+["CAManBase", "Suppressed", {
+    params ["_unit", "_distance", "_shooter"];
+    if (!GVAR(showSuppressedMarker) || {_unit isNotEqualTo (call CBA_fnc_currentUnit)} ||
+        {(GVAR(suppressedMarker) min GVAR(suppressedMarkerServerLimit)) isEqualTo 0} ||
+        {_distance > ((GVAR(suppressedMarker) min GVAR(suppressedMarkerServerLimit)) + 1)}
+    ) exitWith {};
+    [_unit, _shooter, -1] call FUNC(showDamageFeedbackMarker);
+}, true, [], true] call CBA_fnc_addClassEventHandler;
+
 [QGVAR(plateSync), {
     params ["_unit", "_plateHp"];
     (vestContainer _unit) setVariable [QGVAR(plates),_plateHp];

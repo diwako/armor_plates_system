@@ -809,6 +809,30 @@
             <Chinese>顯示損傷標記和侵入方向</Chinese>
             <Chinesesimp>显示损伤标记和侵入方向</Chinesesimp>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_damageColor">
+            <English>Damage Marker UI color</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showSuppressedMarker">
+            <English>Show Suppressed markers</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_showSuppressedMarker_desc">
+            <English>Shows suppressed markers and direction of incoming enemy fire.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarker">
+            <English>Suppressed Marker Range</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarker_desc">
+            <English>Controls distance in meters where nearby enemy fire will trigger a marker.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarkerServerLimit">
+            <English>Suppressed Marker Server Limit</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedMarkerServerLimit_desc">
+            <English>Allows server owners to limit the suppression marker range while still allowing users to have their own values. If the server limit value is smaller than the user setting, the server setting will be used.</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_suppressedColor">
+            <English>Suppressed Marker UI color</English>
+        </Key>
         <Key ID="STR_diw_armor_plates_main_downedFeedback">
             <English>Downed feedback</English>
             <French>Retour d'information</French>
