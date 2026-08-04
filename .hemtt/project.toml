@@ -45,6 +45,12 @@ workshop = [
     "3053169823", # ace no medical
 ]
 
+[hemtt.launch.ims]
+extends = "nomedical"
+workshop = [
+    "3510959070", # IMS DEV
+]
+
 [lints.stringtables.sorted]
 options.only-lang = true
 
