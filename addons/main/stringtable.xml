@@ -1221,7 +1221,7 @@
             <Chinesesimp>隐藏UI超时</Chinesesimp>
         </Key>
         <Key ID="STR_diw_armor_plates_main_hideUiSeconds_desc">
-            <English>When hiding the UI is enabeld, it will use this setting's specified time in seconds before any UI bars start to face away</English>
+            <English>When hiding the UI is enabeld, it will use this setting's specified time in seconds before any UI bars start to fade away</English>
             <French>Lorsque le masquage de l'interface utilisateur est activé, le délai spécifié dans ce paramètre (en secondes) est utilisé avant que les barres de l'interface utilisateur ne commencent à s'effacer.</French>
             <Polish>Kiedy ukrywanie interfejsu jest włączone, UI zacznie znikać po upłynięciu stosownego czasu</Polish>
             <Korean>UI 숨기기가 활성화되었을 경우, UI 표시줄이 사라지기 전에 이 설정의 지정된 시간(초 단위)을 사용합니다.</Korean>

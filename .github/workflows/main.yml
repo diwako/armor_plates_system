@@ -15,7 +15,7 @@ jobs:
       - name: Setup HEMTT
         uses: arma-actions/hemtt@v1
       - name: Run HEMTT check
-        run: hemtt check --pedantic
+        run: hemtt check -p -e
       - name: Validate Config
         run: python3 tools/config_style_checker.py
       - name: Check for BOM
