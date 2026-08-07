@@ -376,6 +376,9 @@ GVAR(killedEHId) = ["CAManBase", "Killed",{
         GVAR(bleedOutTimeMalus) = nil;
         [false] call FUNC(showDownedSkull);
         call FUNC(deleteProgressBar);
+        if (GVAR(disallowMapOpen)) then {
+            openMap [false, false];
+        };
     };
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 

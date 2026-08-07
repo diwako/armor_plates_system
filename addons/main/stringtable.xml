@@ -1853,5 +1853,11 @@
         <Key ID="STR_diw_armor_plates_main_plateToughnessRegenInUnconsciousness_desc">
             <English>Whether to regen armor plates while the player is unconscious or downed.</English>
         </Key>
+        <Key ID="STR_diw_armor_plates_main_disallowMapOpen">
+            <English>Disallow opening map when uncon</English>
+        </Key>
+        <Key ID="STR_diw_armor_plates_main_disallowMapOpen_desc">
+            <English>Disables opening the map when unconscious. Map will be forced disabled until healed or death.</English>
+        </Key>
     </Package>
 </Project>

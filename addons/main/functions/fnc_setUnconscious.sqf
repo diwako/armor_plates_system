@@ -75,6 +75,10 @@ _unit setVariable [QGVAR(unconscious), _set, true];
 _unit setVariable ["ACE_isUnconscious", _set, true]; // support for ace dragging and other ace features if enabled
 [QGVAR(downState), [_unit, _set]] call CBA_fnc_globalEvent;
 
+if (GVAR(disallowMapOpen) && player isEqualTo _unit) then {
+    openMap [false, _set];
+};
+
 if (GVAR(radioModUnconRestrictions) > 0) then {
     // ACRE
     private _player = call CBA_fnc_currentUnit;
