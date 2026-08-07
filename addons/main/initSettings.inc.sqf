@@ -774,6 +774,15 @@ _category = [_header, LLSTRING(subCategoryGeneral)];
     false
 ] call CBA_fnc_addSetting;
 
+[
+    QGVAR(disallowMapOpen),
+    "CHECKBOX",
+    [LLSTRING(disallowMapOpen), LLSTRING(disallowMapOpen_desc)],
+    _category,
+    false,
+    true
+] call CBA_fnc_addSetting;
+
 _category = [_header, LLSTRING(subCategoryHealth)];
 
 [
