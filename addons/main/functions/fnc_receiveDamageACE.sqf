@@ -13,7 +13,7 @@ if (_player isEqualTo _unit) then {
     };
 };
 
-if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
+if (GVAR(audioFeedback) > 0 && _player isEqualTo _unit) then {
     if (_isHeadshot) then {
         GVAR(lastHPDamageSound) = diag_frameNo;
         playSound format [QGVAR(headshot%1_%2), 1 + floor random 3, GVAR(audioFeedback)];

@@ -32,7 +32,7 @@ if (GVAR(disallowFriendfire) &&
 };
 
 private _newDamage = _damage - _oldDamage;
-if (_hitPoint isNotEqualTo "ace_hdbracket" && {_newDamage isEqualTo 0 || {_newDamage < 1E-3}}) exitWith {
+if (_hitPoint isNotEqualTo "ace_hdbracket" && {_newDamage isEqualTo 0 || _newDamage < 1E-3}) exitWith {
     nil
 };
 
@@ -49,9 +49,9 @@ if (
 private _vehicle = vehicle _unit;
 if (
     ace_medical_enableVehicleCrashes &&
-    {_hitPoint isEqualTo "#structural"} &&
-    {_ammo isEqualTo ""} &&
-    {_vehicle != _unit} &&
+    _hitPoint isEqualTo "#structural" &&
+    _ammo isEqualTo "" &&
+    _vehicle != _unit &&
     {vectorMagnitude (velocity _vehicle) > 5}
 ) exitWith {
     nil

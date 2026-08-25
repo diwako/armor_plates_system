@@ -6,7 +6,7 @@ private _vest = vestContainer _unit;
 private _plates = _vest getVariable [QGVAR(plates), []];
 if (_plates isEqualTo [] || {!_isTorso && GVAR(protectOnlyTorso)}) exitWith {[_damage, _receivedDamage]};
 
-if (GVAR(plateToughness) && {_player isEqualTo _unit}) then {
+if (GVAR(plateToughness) && _player isEqualTo _unit) then {
     _unit setVariable [QGVAR(hitTime), cba_missionTime];
 };
 

@@ -7,7 +7,7 @@ if (isNull _display) exitWith {
     ERROR("display was null");
 };
 
-private _selfOrUnkownDamage = isNull _instigator || {_unit isEqualTo _instigator};
+private _selfOrUnkownDamage = isNull _instigator || _unit isEqualTo _instigator;
 private _plateHit = _damage isEqualTo 0;
 private _miss = _damage isEqualTo -1;
 private _ctrl = _display ctrlCreate ["RscPictureKeepAspect", -1];
