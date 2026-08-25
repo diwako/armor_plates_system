@@ -12,6 +12,7 @@ WBK_CreateDamage = {
         ["_killer", objNull]
     ];
     private _damage = _incomingDamage * parseNumber ([IMS_Damage_Multiplier_AI, IMS_Damage_Multiplier_Player] select (isPlayer _unit));
+    diw_debug = _this + [_damage];
     if (isNull _unit || isNull _killer || _damage <= 0.01) exitWith {};
 
     // too bad i guess

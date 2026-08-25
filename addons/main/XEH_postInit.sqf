@@ -405,7 +405,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                     player setVariable [QGVAR(hp), _oldValue, true];
                     GVAR(playerDamageSync) = _oldValue;
                 };
-                if ((damage player) isEqualTo 0 && {_oldValue < _maxHp}) then {
+                if ((damage player) isEqualTo 0 && _oldValue < _maxHp) then {
                     [player, _oldValue, _maxHp] call FUNC(setA3Damage);
                 };
             };
@@ -455,7 +455,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
-                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        if (_wasProne && _pos isEqualTo "low") then {_pos = "ras";};
                         _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
@@ -470,7 +470,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
-                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        if (_wasProne && _pos isEqualTo "low") then {_pos = "ras";};
                         _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;
@@ -529,7 +529,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
-                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        if (_wasProne && _pos isEqualTo "low") then {_pos = "ras";};
                         _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 1)]] call CBA_fnc_globalEvent;
@@ -544,7 +544,7 @@ if !(GVAR(aceMedicalLoaded)) then {
                         private _anim = ["amovpknlmstps[pos]w[wpn]dnon", "amovppnemstps[pos]w[wpn]dnon"] select _wasProne;
                         private _wpn = ["non", "rfl", "lnr", "pst"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller, "non"];
                         private _pos = ["non","low","ras","low"] param [["", primaryWeapon _caller, secondaryWeapon _caller, handgunWeapon _caller] find currentWeapon _caller,"ras"];
-                        if (_wasProne && {_pos isEqualTo "low"}) then {_pos = "ras";};
+                        if (_wasProne && _pos isEqualTo "low") then {_pos = "ras";};
                         _anim = [_anim, "[pos]", _pos] call CBA_fnc_replace;
                         _anim = [_anim, "[wpn]", _wpn] call CBA_fnc_replace;
                         [QGVAR(switchMove), [_caller, _anim, (GVAR(readyAfterRevive) > 0)]] call CBA_fnc_globalEvent;

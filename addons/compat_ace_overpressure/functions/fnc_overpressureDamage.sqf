@@ -30,7 +30,7 @@ _opValues params ["_overpressureAngle", "_overpressureRange", "_overpressureDama
 //TRACE_3("cache",_overpressureAngle,_overpressureRange,_overpressureDamage);
 
 {
-    if (local _x && {_x != _firer} && {isNull objectParent _x}) then {
+    if (local _x && _x != _firer && {isNull objectParent _x}) then {
         private _targetPositionASL = eyePos _x;
         private _relativePosition = _targetPositionASL vectorDiff _posASL;
         private _axisDistance = _relativePosition vectorDotProduct _direction;
@@ -41,7 +41,7 @@ _opValues params ["_overpressureAngle", "_overpressureRange", "_overpressureDama
         private _line2 = [_posASL, _targetPositionASL];
         //TRACE_4("Affected:",_x,_axisDistance,_distance,_angle);
 
-        if (_angle < _overpressureAngle && {_distance < _overpressureRange} && {!lineIntersects _line} && {!terrainIntersectASL _line2}) then {
+        if (_angle < _overpressureAngle && _distance < _overpressureRange && {!lineIntersects _line} && {!terrainIntersectASL _line2}) then {
             //TRACE_2("",isDamageAllowed _x,_x getVariable [ARR_2(QEGVAR(medical,allowDamage),true)]);
 
             // Skip damage if not allowed
@@ -62,7 +62,7 @@ _opValues params ["_overpressureAngle", "_overpressureRange", "_overpressureDama
                 } else {
                     if (EGVAR(main,enable)) then {
                         private _lifestate = lifeState _x;
-                        if (_lifestate isNotEqualTo "INCAPACITATED" || ({GVAR(finishDowns) && {_lifestate isEqualTo "INCAPACITATED"}})) then {
+                        if (_lifestate isNotEqualTo "INCAPACITATED" || ({GVAR(finishDowns) && _lifestate isEqualTo "INCAPACITATED"})) then {
                             _damage = _damage * GVAR(bbdmgCoef);
                             [_x, _damage, "", _firer, "", GVAR(ignoreArmor)] call EFUNC(main,receiveDamage);
                         };

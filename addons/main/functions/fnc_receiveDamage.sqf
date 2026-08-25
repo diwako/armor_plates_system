@@ -41,7 +41,7 @@ if (!_ignoreArmor) then {_returnedDamage = [_unit, _damage, _isTorso, _player, _
 _damage = _returnedDamage select 0;
 private _receivedDamage = _returnedDamage select 1;
 
-if (GVAR(audioFeedback) > 0 && {_player isEqualTo _unit}) then {
+if (GVAR(audioFeedback) > 0 && _player isEqualTo _unit) then {
     if (_isHeadshot) then {
         GVAR(lastHPDamageSound) = diag_frameNo;
         playSound format [QGVAR(headshot%1_%2), 1 + floor random 3, GVAR(audioFeedback)];
@@ -98,11 +98,11 @@ if (_newHP isEqualTo 0) exitWith {
             _downedHits = ((_unit getVariable [QGVAR(downedHits),0]) + 1);
             _unit setVariable [QGVAR(downedHits), _downedHits];
         };
-        if (_downDamage == 2 && {_downedHits < GVAR(downedDamageHits)}) exitWith {};
+        if (_downDamage == 2 && _downedHits < GVAR(downedDamageHits)) exitWith {};
         private _downedHp = _unit getVariable [QGVAR(downedHp), (_maxHp * GVAR(downedDamageHP))];
         private _newDownedHP = (_downedHp - _damage) max 0;
         _unit setVariable [QGVAR(downedHp), _newDownedHP];
-        if (_downedHits >= GVAR(downedDamageHits) || {_newDownedHP isEqualTo 0}) then {
+        if (_downedHits >= GVAR(downedDamageHits) || _newDownedHP isEqualTo 0) then {
             _unit setHitPointDamage ["hitHead", 1, true, _instigator];
         };
     };

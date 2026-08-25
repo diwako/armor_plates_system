@@ -17,7 +17,7 @@ if (GVAR(damageEhVariant) isNotEqualTo 1 || {!(isDamageAllowed _unit)}) exitWith
 if (_context == 0 && {_damage == 1 && _projectile == "" && isNull _source && isNull _instigator}) exitWith {_damage};
 
 private _newDamage = _damage - _curDamage;
-if (_context != 2 && {_context == 4 || _newDamage == 0} || {_newDamage < 1E-3}) exitWith {
+if (_context != 2 && {_context == 4 || _newDamage == 0} || _newDamage < 1E-3) exitWith {
     _curDamage
 };
 
@@ -37,8 +37,8 @@ if (
 private _vehicle = vehicle _unit;
 if (
     _hitPoint isEqualTo "#structural" &&
-    {_projectile isEqualTo ""} &&
-    {_vehicle isNotEqualTo _unit} &&
+    _projectile isEqualTo "" &&
+    _vehicle isNotEqualTo _unit &&
     {vectorMagnitude (velocity _vehicle) > 5}
 ) exitWith {
     [_unit, _newDamage / 2, "vehicle", _unit, _projectile] call FUNC(receiveDamage);

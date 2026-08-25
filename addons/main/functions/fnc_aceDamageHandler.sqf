@@ -33,7 +33,7 @@ if (GVAR(disallowFriendfire) &&
     private _bodyArmor = ([vest _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor) + ([uniform _unit, _aceSelection] call ace_medical_engine_fnc_getItemArmor);
 
     private _actualDamage = _damage;
-    if (_bodyArmor > 0 && {_hitPointArmor > 0}) then {
+    if (_bodyArmor > 0 && _hitPointArmor > 0) then {
         _actualDamage = _damage * (_hitPointArmor + _bodyArmor) / (_hitPointArmor / _bodyArmor) * ([0.5, 0.96] select _isTorso);
     };
 
